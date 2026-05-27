@@ -1,0 +1,1003 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zoo Trip - 动物园之旅</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: [
+                "Inter",
+                "ui-sans-serif",
+                "system-ui",
+                "-apple-system",
+                "BlinkMacSystemFont",
+                "Segoe UI",
+                "sans-serif",
+              ],
+            },
+            colors: {
+              banana: "#ffd86b",
+              coral: "#ff7b6e",
+              cream: "#fff8e7",
+              ink: "#263238",
+              leaf: "#2f8f5b",
+              moss: "#1f6b48",
+              nightglass: "rgba(17, 35, 25, 0.68)",
+            },
+            boxShadow: {
+              glow: "0 18px 55px rgba(18, 45, 28, 0.32)",
+              label: "0 12px 28px rgba(11, 32, 20, 0.28)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @keyframes leafDrift {
+        0%, 100% { transform: translate3d(0, 0, 0) rotate(-1deg); }
+        50% { transform: translate3d(10px, -5px, 0) rotate(2deg); }
+      }
+
+      @keyframes lightBreath {
+        0%, 100% { opacity: 0.23; transform: translate3d(-2%, -1%, 0) scale(1); }
+        50% { opacity: 0.42; transform: translate3d(2%, 1%, 0) scale(1.06); }
+      }
+
+      @keyframes sceneReveal {
+        from { opacity: 0; filter: blur(8px); transform: scale(1.08); }
+        to { opacity: 1; filter: blur(0); transform: scale(1); }
+      }
+
+      @keyframes walkingFlash {
+        0% { opacity: 0; transform: scale(1); }
+        45% { opacity: 0.48; transform: scale(1.04); }
+        100% { opacity: 0; transform: scale(1.1); }
+      }
+
+      @keyframes hudFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-4px); }
+      }
+
+      @keyframes hotspotPulse {
+        0%, 100% { box-shadow: 0 0 0 0 rgba(255, 216, 107, 0.58), 0 12px 28px rgba(11, 32, 20, 0.28); }
+        50% { box-shadow: 0 0 0 12px rgba(255, 216, 107, 0), 0 12px 28px rgba(11, 32, 20, 0.28); }
+      }
+
+      @keyframes tapBounce {
+        0% { transform: translate(-50%, -50%) scale(1); }
+        45% { transform: translate(-50%, -50%) scale(0.9); }
+        100% { transform: translate(-50%, -50%) scale(1); }
+      }
+
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(12px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes soundBars {
+        0%, 100% { transform: scaleY(0.45); opacity: 0.55; }
+        50% { transform: scaleY(1); opacity: 1; }
+      }
+
+      .leaf-drift { animation: leafDrift 8s ease-in-out infinite; }
+      .light-breath { animation: lightBreath 9s ease-in-out infinite; }
+      .scene-reveal { animation: sceneReveal 760ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+      .walking-flash { animation: walkingFlash 820ms ease-out both; }
+      .hud-float { animation: hudFloat 5s ease-in-out infinite; }
+      .hotspot-active { animation: hotspotPulse 2.6s ease-in-out infinite; }
+      .hotspot-tapped { animation: tapBounce 260ms ease-out; }
+      .dialogue-enter { animation: fadeInUp 420ms ease-out both; }
+      .sound-bar { animation: soundBars 640ms ease-in-out infinite; transform-origin: bottom; }
+      .sound-bar:nth-child(2) { animation-delay: 120ms; }
+      .sound-bar:nth-child(3) { animation-delay: 240ms; }
+    </style>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body class="bg-[#17251c] text-cream">
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const { useEffect, useMemo, useState } = React;
+
+      const scenes = [
+        {
+          id: "entrance",
+          title: "Entrance",
+          zh: "入口",
+          short: "入口",
+          bg: "assets/zoo-first-person-bg.png",
+          hotspots: [
+            {
+              id: "gate",
+              word: "gate",
+              phonetic: "/ɡeɪt/",
+              meaning: "大门，入口",
+              example: "We walk through the zoo gate.",
+              translation: "我们穿过动物园大门。",
+              label: "gate",
+              zh: "入口",
+              x: 48,
+              y: 48,
+            },
+            {
+              id: "sign",
+              word: "sign",
+              phonetic: "/saɪn/",
+              meaning: "标志，路牌",
+              example: "The sign shows the way to the animals.",
+              translation: "路牌指向动物区域。",
+              label: "sign",
+              zh: "路牌",
+              x: 34,
+              y: 57,
+            },
+            {
+              id: "ticketBooth",
+              word: "ticket booth",
+              phonetic: "/ˈtɪkɪt buːθ/",
+              meaning: "售票亭",
+              example: "The ticket booth is on the left.",
+              translation: "售票亭在左边。",
+              label: "ticket booth",
+              zh: "售票亭",
+              x: 21,
+              y: 48,
+            },
+          ],
+        },
+        {
+          id: "ticket",
+          title: "Ticket Booth",
+          zh: "售票处",
+          short: "售票处",
+          bg: "assets/zoo-ticket-booth-bg.png",
+          npc: "ticketSeller",
+          hotspots: [
+            {
+              id: "ticket",
+              word: "ticket",
+              phonetic: "/ˈtɪkɪt/",
+              meaning: "票，门票",
+              example: "I need one ticket, please.",
+              translation: "请给我一张票。",
+              label: "ticket",
+              zh: "门票",
+              x: 45,
+              y: 64,
+            },
+            {
+              id: "seller",
+              word: "ticket seller",
+              phonetic: "/ˈtɪkɪt ˈselər/",
+              meaning: "售票员",
+              example: "The ticket seller gives me a map.",
+              translation: "售票员给了我一张地图。",
+              label: "ticket seller",
+              zh: "售票员",
+              x: 25,
+              y: 42,
+            },
+            {
+              id: "map",
+              word: "map",
+              phonetic: "/mæp/",
+              meaning: "地图",
+              example: "Let's check the map.",
+              translation: "我们看一下地图吧。",
+              label: "map",
+              zh: "地图",
+              x: 58,
+              y: 58,
+            },
+          ],
+        },
+        {
+          id: "path",
+          title: "Main Path",
+          zh: "主路",
+          short: "主路",
+          bg: "assets/zoo-main-path-bg.png",
+          npc: "visitor",
+          hotspots: [
+            {
+              id: "path",
+              word: "path",
+              phonetic: "/pæθ/",
+              meaning: "小路，道路",
+              example: "Follow the path into the zoo.",
+              translation: "沿着小路走进动物园。",
+              label: "path",
+              zh: "小路",
+              x: 52,
+              y: 72,
+            },
+            {
+              id: "sign",
+              word: "sign",
+              phonetic: "/saɪn/",
+              meaning: "标志，路牌",
+              example: "The sign points to the lion area.",
+              translation: "路牌指向狮子区。",
+              label: "sign",
+              zh: "路牌",
+              x: 68,
+              y: 48,
+            },
+            {
+              id: "tree",
+              word: "tree",
+              phonetic: "/triː/",
+              meaning: "树",
+              example: "The tree gives us shade.",
+              translation: "这棵树给我们遮阴。",
+              label: "tree",
+              zh: "树",
+              x: 25,
+              y: 32,
+            },
+            {
+              id: "bench",
+              word: "bench",
+              phonetic: "/bentʃ/",
+              meaning: "长椅",
+              example: "We sit on the bench for a rest.",
+              translation: "我们坐在长椅上休息。",
+              label: "bench",
+              zh: "长椅",
+              x: 75,
+              y: 69,
+            },
+          ],
+        },
+        {
+          id: "monkey",
+          title: "Monkey Area",
+          zh: "猴子区",
+          short: "猴子区",
+          bg: "assets/zoo-monkey-area-bg.png",
+          hotspots: [
+            {
+              id: "monkey",
+              word: "monkey",
+              phonetic: "/ˈmʌŋki/",
+              meaning: "猴子",
+              example: "The monkey jumps from tree to tree.",
+              translation: "猴子从一棵树跳到另一棵树。",
+              label: "monkey",
+              zh: "猴子",
+              x: 51,
+              y: 42,
+            },
+            {
+              id: "cage",
+              word: "cage",
+              phonetic: "/keɪdʒ/",
+              meaning: "笼子，围栏",
+              example: "The cage keeps the animals safe.",
+              translation: "围栏让动物保持安全。",
+              label: "cage",
+              zh: "围栏",
+              x: 32,
+              y: 58,
+            },
+            {
+              id: "banana",
+              word: "banana",
+              phonetic: "/bəˈnænə/",
+              meaning: "香蕉",
+              example: "The monkey is eating a banana.",
+              translation: "猴子正在吃香蕉。",
+              label: "banana",
+              zh: "香蕉",
+              x: 63,
+              y: 61,
+            },
+            {
+              id: "visitor",
+              word: "visitor",
+              phonetic: "/ˈvɪzɪtər/",
+              meaning: "游客",
+              example: "The visitor takes a photo.",
+              translation: "游客拍了一张照片。",
+              label: "visitor",
+              zh: "游客",
+              x: 78,
+              y: 54,
+            },
+          ],
+        },
+        {
+          id: "elephant",
+          title: "Elephant Area",
+          zh: "大象区",
+          short: "大象区",
+          bg: "assets/zoo-elephant-area-bg.png",
+          hotspots: [
+            {
+              id: "elephant",
+              word: "elephant",
+              phonetic: "/ˈelɪfənt/",
+              meaning: "大象",
+              example: "The elephant walks slowly beside the water.",
+              translation: "大象在水边慢慢走。",
+              label: "elephant",
+              zh: "大象",
+              x: 50,
+              y: 45,
+            },
+            {
+              id: "trunk",
+              word: "trunk",
+              phonetic: "/trʌŋk/",
+              meaning: "象鼻",
+              example: "The elephant uses its trunk to drink water.",
+              translation: "大象用象鼻喝水。",
+              label: "trunk",
+              zh: "象鼻",
+              x: 57,
+              y: 57,
+            },
+            {
+              id: "water",
+              word: "water",
+              phonetic: "/ˈwɔːtər/",
+              meaning: "水",
+              example: "The water is cool and clear.",
+              translation: "水又凉又清澈。",
+              label: "water",
+              zh: "水",
+              x: 38,
+              y: 70,
+            },
+            {
+              id: "keeper",
+              word: "keeper",
+              phonetic: "/ˈkiːpər/",
+              meaning: "饲养员",
+              example: "The keeper feeds the elephant.",
+              translation: "饲养员喂大象。",
+              label: "keeper",
+              zh: "饲养员",
+              x: 78,
+              y: 47,
+            },
+          ],
+        },
+        {
+          id: "lion",
+          title: "Lion Area",
+          zh: "狮子区",
+          short: "狮子区",
+          bg: "assets/zoo-lion-area-bg.png",
+          hotspots: [
+            {
+              id: "lion",
+              word: "lion",
+              phonetic: "/ˈlaɪən/",
+              meaning: "狮子",
+              example: "The lion rests in the warm sun.",
+              translation: "狮子在温暖的阳光下休息。",
+              label: "lion",
+              zh: "狮子",
+              x: 55,
+              y: 45,
+            },
+            {
+              id: "rock",
+              word: "rock",
+              phonetic: "/rɑːk/",
+              meaning: "岩石",
+              example: "The lion is near a big rock.",
+              translation: "狮子在一块大岩石旁边。",
+              label: "rock",
+              zh: "岩石",
+              x: 38,
+              y: 62,
+            },
+            {
+              id: "shade",
+              word: "shade",
+              phonetic: "/ʃeɪd/",
+              meaning: "阴凉处",
+              example: "The lion sleeps in the shade.",
+              translation: "狮子在阴凉处睡觉。",
+              label: "shade",
+              zh: "阴凉处",
+              x: 70,
+              y: 34,
+            },
+            {
+              id: "fence",
+              word: "fence",
+              phonetic: "/fens/",
+              meaning: "围栏",
+              example: "The fence keeps visitors safe.",
+              translation: "围栏保护游客安全。",
+              label: "fence",
+              zh: "围栏",
+              x: 62,
+              y: 72,
+            },
+          ],
+        },
+        {
+          id: "exit",
+          title: "Exit",
+          zh: "出口",
+          short: "出口",
+          bg: "assets/zoo-exit-bg.png",
+          hotspots: [
+            {
+              id: "exit",
+              word: "exit",
+              phonetic: "/ˈeksɪt/",
+              meaning: "出口，离开",
+              example: "The exit is at the end of the path.",
+              translation: "出口在小路的尽头。",
+              label: "exit",
+              zh: "出口",
+              x: 50,
+              y: 45,
+            },
+            {
+              id: "giftShop",
+              word: "gift shop",
+              phonetic: "/ɡɪft ʃɑːp/",
+              meaning: "礼品店",
+              example: "The gift shop sells small toys.",
+              translation: "礼品店卖小玩具。",
+              label: "gift shop",
+              zh: "礼品店",
+              x: 30,
+              y: 55,
+            },
+            {
+              id: "goodbye",
+              word: "goodbye",
+              phonetic: "/ˌɡʊdˈbaɪ/",
+              meaning: "再见",
+              example: "We say goodbye at the exit.",
+              translation: "我们在出口说再见。",
+              label: "goodbye",
+              zh: "再见",
+              x: 68,
+              y: 36,
+            },
+          ],
+        },
+      ];
+
+      const dialogues = {
+        ticketSeller: {
+          id: "ticketSeller",
+          speaker: "Ticket Seller",
+          zh: "售票员",
+          text: "Hello! Welcome to the zoo. Can I help you?",
+          translation: "你好！欢迎来到动物园。需要帮忙吗？",
+          options: [
+            {
+              text: "One ticket, please.",
+              reply: "Sure. Here is your ticket. Enjoy your visit!",
+              translation: "当然。这是你的票。祝你参观愉快！",
+            },
+            {
+              text: "How much is the ticket?",
+              reply: "It is ten dollars for one ticket.",
+              translation: "一张票十美元。",
+            },
+            {
+              text: "Where can I see lions?",
+              reply: "Walk along the path. The lion area is near the end.",
+              translation: "沿着小路走。狮子区在靠近终点的地方。",
+            },
+          ],
+        },
+        visitor: {
+          id: "visitor",
+          speaker: "Visitor",
+          zh: "游客",
+          text: "Excuse me, where is the lion area?",
+          translation: "打扰一下，狮子区在哪里？",
+          options: [
+            {
+              text: "It's over there.",
+              reply: "Thank you! I will go that way.",
+              translation: "谢谢！我会往那边走。",
+            },
+            {
+              text: "I'm looking for it too.",
+              reply: "Let's walk together and follow the signs.",
+              translation: "我们一起走，跟着路牌找吧。",
+            },
+            {
+              text: "Let's check the map.",
+              reply: "Good idea. The map can help us.",
+              translation: "好主意。地图可以帮到我们。",
+            },
+          ],
+        },
+      };
+
+      let cachedEnglishVoice = null;
+
+      function getBestEnglishVoice() {
+        if (!("speechSynthesis" in window)) return null;
+        const voices = window.speechSynthesis.getVoices();
+        if (!voices.length) return cachedEnglishVoice;
+
+        const priorityNames = [
+          "Google US English",
+          "Google UK English Female",
+          "Microsoft Jenny",
+          "Samantha",
+          "Alex",
+          "Daniel",
+        ];
+
+        const englishVoices = voices.filter((voice) =>
+          voice.lang?.toLowerCase().startsWith("en")
+        );
+
+        const byPriorityName = priorityNames
+          .map((name) =>
+            englishVoices.find((voice) =>
+              voice.name.toLowerCase().includes(name.toLowerCase())
+            )
+          )
+          .find(Boolean);
+
+        const naturalEnglish = englishVoices.find((voice) => {
+          const name = voice.name.toLowerCase();
+          return (
+            ["google", "microsoft", "samantha", "alex", "daniel"].some((token) =>
+              name.includes(token)
+            ) && ["en-us", "en-gb"].includes(voice.lang.toLowerCase())
+          );
+        });
+
+        const usOrGb = englishVoices.find((voice) =>
+          ["en-us", "en-gb"].includes(voice.lang.toLowerCase())
+        );
+
+        cachedEnglishVoice = byPriorityName || naturalEnglish || usOrGb || englishVoices[0] || voices[0] || null;
+        return cachedEnglishVoice;
+      }
+
+      function SoundBars() {
+        return (
+          <span className="inline-flex h-4 items-end gap-0.5">
+            <span className="sound-bar block h-4 w-1 rounded-full bg-current"></span>
+            <span className="sound-bar block h-4 w-1 rounded-full bg-current"></span>
+            <span className="sound-bar block h-4 w-1 rounded-full bg-current"></span>
+          </span>
+        );
+      }
+
+      function App() {
+        const [currentIndex, setCurrentIndex] = useState(0);
+        const [selectedHotspot, setSelectedHotspot] = useState(null);
+        const [dialogueReply, setDialogueReply] = useState(null);
+        const [conversationDone, setConversationDone] = useState([]);
+        const [learnedWords, setLearnedWords] = useState([]);
+        const [savedWords, setSavedWords] = useState([]);
+        const [playingKey, setPlayingKey] = useState(null);
+        const [tappedHotspot, setTappedHotspot] = useState(null);
+        const [showWelcome, setShowWelcome] = useState(true);
+        const [showEnding, setShowEnding] = useState(false);
+        const [isWalking, setIsWalking] = useState(false);
+
+        useEffect(() => {
+          getBestEnglishVoice();
+          if ("speechSynthesis" in window) {
+            window.speechSynthesis.onvoiceschanged = getBestEnglishVoice;
+          }
+        }, []);
+
+        const currentScene = scenes[currentIndex];
+        const currentDialogue = currentScene.npc ? dialogues[currentScene.npc] : null;
+        const completedCount = Math.max(currentIndex, showEnding ? scenes.length : currentIndex);
+        const allHotspots = useMemo(() => scenes.flatMap((scene) => scene.hotspots), []);
+
+        function speakEnglish(text, rate = 0.9, key = text) {
+          if (!("speechSynthesis" in window)) return;
+          window.speechSynthesis.cancel();
+          const voice = getBestEnglishVoice();
+          const utterance = new SpeechSynthesisUtterance(text);
+          utterance.lang = voice?.lang || "en-US";
+          utterance.voice = voice;
+          utterance.rate = rate;
+          utterance.pitch = 1;
+          utterance.volume = 1;
+          utterance.onend = () => setPlayingKey(null);
+          utterance.onerror = () => setPlayingKey(null);
+          setPlayingKey(key);
+          window.speechSynthesis.speak(utterance);
+        }
+
+        function rememberWord(word) {
+          setLearnedWords((words) => (words.includes(word) ? words : [...words, word]));
+        }
+
+        function toggleSaveWord(word) {
+          setSavedWords((words) =>
+            words.includes(word) ? words.filter((item) => item !== word) : [...words, word]
+          );
+        }
+
+        function openHotspot(hotspot) {
+          setTappedHotspot(hotspot.id);
+          window.setTimeout(() => setTappedHotspot(null), 280);
+          rememberWord(hotspot.word);
+          setSelectedHotspot(hotspot);
+        }
+
+        function moveTo(index) {
+          setIsWalking(true);
+          setSelectedHotspot(null);
+          setDialogueReply(null);
+          window.setTimeout(() => {
+            setCurrentIndex(index);
+            setIsWalking(false);
+            if (index === scenes.length - 1) {
+              window.setTimeout(() => setShowEnding(true), 900);
+            }
+          }, 420);
+        }
+
+        function walkForward() {
+          if (currentIndex < scenes.length - 1) {
+            moveTo(currentIndex + 1);
+          } else {
+            setShowEnding(true);
+          }
+        }
+
+        function restartTrip() {
+          setCurrentIndex(0);
+          setSelectedHotspot(null);
+          setDialogueReply(null);
+          setConversationDone([]);
+          setLearnedWords([]);
+          setSavedWords([]);
+          setShowEnding(false);
+          setShowWelcome(true);
+        }
+
+        return (
+          <main className="relative h-screen w-screen overflow-hidden bg-[#17251c]">
+            <section key={currentScene.id} className="scene-reveal absolute inset-0">
+              <img
+                src={currentScene.bg}
+                alt={`${currentScene.title} first-person zoo scene`}
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/8 via-transparent to-black/38"></div>
+              <div className="light-breath pointer-events-none absolute -left-24 -top-24 h-[56vh] w-[56vh] rounded-full bg-banana/40 blur-3xl"></div>
+              <div className="leaf-drift pointer-events-none absolute -right-20 top-0 h-44 w-64 rounded-full bg-leaf/25 blur-2xl"></div>
+              <div className="leaf-drift pointer-events-none absolute left-6 top-10 h-36 w-48 rounded-full bg-moss/18 blur-2xl [animation-delay:1.7s]"></div>
+
+              {currentScene.hotspots.map((hotspot) => (
+                <button
+                  key={hotspot.id}
+                  onClick={() => openHotspot(hotspot)}
+                  className={`absolute -translate-x-1/2 -translate-y-1/2 rounded-full border border-banana/90 bg-[#10261a]/72 px-3 py-2 text-left text-cream shadow-label backdrop-blur-md transition hover:scale-105 active:scale-95 hotspot-active ${
+                    tappedHotspot === hotspot.id ? "hotspot-tapped" : ""
+                  }`}
+                  style={{ left: `${hotspot.x}%`, top: `${hotspot.y}%` }}
+                  aria-label={`${hotspot.label} ${hotspot.zh}`}
+                >
+                  <span className="block text-sm font-black leading-none">{hotspot.label}</span>
+                  <span className="mt-1 block text-xs font-bold text-banana">{hotspot.zh}</span>
+                </button>
+              ))}
+            </section>
+
+            {isWalking && (
+              <div className="walking-flash pointer-events-none absolute inset-0 z-30 bg-white/70 backdrop-blur-md"></div>
+            )}
+
+            <header className="hud-float absolute left-4 right-4 top-4 z-20 mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-2xl border border-white/18 bg-nightglass px-4 py-3 shadow-glow backdrop-blur-xl sm:left-6 sm:right-6">
+              <div className="shrink-0">
+                <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
+                  Zoo Trip {currentIndex + 1}/{scenes.length}
+                </p>
+                <h1 className="whitespace-nowrap text-lg font-black text-white sm:text-2xl">
+                  {currentScene.title} <span className="text-banana">{currentScene.zh}</span>
+                </h1>
+              </div>
+              <button
+                onClick={walkForward}
+                className="shrink-0 rounded-full bg-banana px-4 py-2 text-sm font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+              >
+                Walk Forward
+              </button>
+            </header>
+
+            {currentDialogue && !showEnding && (
+              <div className="dialogue-enter absolute left-[6%] top-[34%] z-20 max-w-[360px] rounded-2xl border border-white/22 bg-nightglass p-4 shadow-glow backdrop-blur-xl">
+                <button
+                  onClick={() => speakEnglish(currentDialogue.text, 0.9, `${currentDialogue.id}-line`)}
+                  className="mb-2 inline-flex items-center gap-2 rounded-full bg-banana px-3 py-1 text-[11px] font-black uppercase text-ink transition active:scale-95"
+                >
+                  {playingKey === `${currentDialogue.id}-line` && <SoundBars />}
+                  {currentDialogue.speaker}
+                </button>
+                <p className="text-lg font-black leading-7 text-white">{currentDialogue.text}</p>
+                <p className="mt-1 text-sm font-bold leading-6 text-cream/80">
+                  {currentDialogue.translation}
+                </p>
+                <div className="mt-3 grid gap-2">
+                  {currentDialogue.options.map((option) => (
+                    <button
+                      key={option.text}
+                      onClick={() => {
+                        setDialogueReply(option);
+                        speakEnglish(option.text, 0.9, `dialogue-${option.text}`);
+                        setConversationDone((items) =>
+                          items.includes(currentDialogue.id) ? items : [...items, currentDialogue.id]
+                        );
+                      }}
+                      className="rounded-xl border border-white/20 bg-white/12 px-3 py-2 text-left text-sm font-black text-white transition hover:bg-white/22 active:scale-[0.98]"
+                    >
+                      <span className="inline-flex items-center gap-2">
+                        {playingKey === `dialogue-${option.text}` && <SoundBars />}
+                        {option.text}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+                {dialogueReply && (
+                  <div className="dialogue-enter mt-3 rounded-xl bg-banana/18 p-3">
+                    <button
+                      onClick={() => speakEnglish(dialogueReply.reply, 0.86, `reply-${dialogueReply.reply}`)}
+                      className="text-left text-sm font-black text-white"
+                    >
+                      <span className="inline-flex items-center gap-2">
+                        {playingKey === `reply-${dialogueReply.reply}` && <SoundBars />}
+                        {dialogueReply.reply}
+                      </span>
+                    </button>
+                    <p className="mt-1 text-xs font-bold text-cream/75">
+                      {dialogueReply.translation}
+                    </p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            <div className="pointer-events-none absolute bottom-24 left-4 z-20 rounded-2xl border border-white/16 bg-nightglass px-4 py-3 shadow-glow backdrop-blur-xl sm:bottom-28">
+              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-banana">Now</p>
+              <p className="text-xl font-black text-white">
+                {currentScene.title} <span className="text-banana">{currentScene.zh}</span>
+              </p>
+            </div>
+
+            <nav className="absolute bottom-4 left-4 right-4 z-20 mx-auto max-w-5xl rounded-2xl border border-white/18 bg-nightglass p-3 shadow-glow backdrop-blur-xl">
+              <div className="mb-2 flex items-center justify-between gap-3">
+                <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
+                  Trip Map
+                </p>
+                <p className="hidden text-sm font-black text-cream/85 sm:block">
+                  已完成的区域会打勾
+                </p>
+              </div>
+              <div className="flex gap-2 overflow-x-auto pb-1">
+                {scenes.map((scene, index) => {
+                  const done = index < currentIndex || showEnding;
+                  const active = index === currentIndex && !showEnding;
+                  return (
+                    <button
+                      key={scene.id}
+                      onClick={() => index <= currentIndex && moveTo(index)}
+                      className={`min-h-[42px] min-w-[92px] rounded-xl px-3 text-center text-xs font-black transition hover:-translate-y-0.5 active:translate-y-0 ${
+                        active
+                          ? "bg-coral text-white"
+                          : done
+                          ? "bg-white/18 text-cream hover:bg-white/26"
+                          : "bg-black/18 text-white/38"
+                      }`}
+                    >
+                      {done ? "✓ " : ""}
+                      {scene.short}
+                    </button>
+                  );
+                })}
+              </div>
+            </nav>
+
+            {selectedHotspot && (
+              <aside className="dialogue-enter fixed bottom-0 right-0 top-0 z-40 flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/88 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
+                <div className="flex items-start justify-between gap-3 border-b border-white/12 p-5">
+                  <div>
+                    <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
+                      Explore Word
+                    </p>
+                    <h2 className="mt-2 text-5xl font-black text-white">{selectedHotspot.word}</h2>
+                    <p className="mt-2 text-2xl font-extrabold text-banana">
+                      {selectedHotspot.phonetic}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => setSelectedHotspot(null)}
+                    className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/12 text-2xl font-black text-white transition hover:bg-white/22 active:scale-95"
+                    aria-label="Close card"
+                  >
+                    ×
+                  </button>
+                </div>
+
+                <div className="flex-1 overflow-auto p-5">
+                  <div className="rounded-2xl border border-white/12 bg-white/10 p-4">
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-banana">
+                      中文意思
+                    </p>
+                    <p className="mt-2 text-2xl font-black text-white">{selectedHotspot.meaning}</p>
+                  </div>
+
+                  <div className="mt-4 rounded-2xl border border-white/12 bg-black/18 p-4">
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-coral">
+                      Example
+                    </p>
+                    <p className="mt-2 text-2xl font-black leading-9 text-white">
+                      {selectedHotspot.example}
+                    </p>
+                    <p className="mt-2 text-lg font-bold leading-8 text-cream/78">
+                      {selectedHotspot.translation}
+                    </p>
+                  </div>
+
+                  <div className="mt-5 grid grid-cols-2 gap-3">
+                    <button
+                      onClick={() => speakEnglish(selectedHotspot.word, 0.9, `${selectedHotspot.id}-normal`)}
+                      className="rounded-2xl bg-banana px-4 py-3 text-base font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                    >
+                      <span className="inline-flex items-center justify-center gap-2">
+                        {playingKey === `${selectedHotspot.id}-normal` && <SoundBars />}
+                        Normal
+                      </span>
+                    </button>
+                    <button
+                      onClick={() => speakEnglish(selectedHotspot.word, 0.65, `${selectedHotspot.id}-slow`)}
+                      className="rounded-2xl border border-banana/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"
+                    >
+                      <span className="inline-flex items-center justify-center gap-2">
+                        {playingKey === `${selectedHotspot.id}-slow` && <SoundBars />}
+                        Slow
+                      </span>
+                    </button>
+                  </div>
+
+                  <button
+                    onClick={() => speakEnglish(selectedHotspot.example, 0.86, `${selectedHotspot.id}-sentence`)}
+                    className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
+                  >
+                    <span className="inline-flex items-center justify-center gap-2">
+                      {playingKey === `${selectedHotspot.id}-sentence` && <SoundBars />}
+                      Play Sentence
+                    </span>
+                  </button>
+
+                  <button
+                    onClick={() => toggleSaveWord(selectedHotspot.word)}
+                    className={`mt-3 w-full rounded-2xl px-4 py-3 text-base font-black shadow-label transition active:scale-[0.99] ${
+                      savedWords.includes(selectedHotspot.word)
+                        ? "bg-coral text-white"
+                        : "bg-white/12 text-white hover:bg-white/22"
+                    }`}
+                  >
+                    {savedWords.includes(selectedHotspot.word) ? "Saved to Word Book" : "Add to Word Book"}
+                  </button>
+
+                  <button
+                    onClick={walkForward}
+                    className="mt-6 w-full rounded-2xl bg-coral px-4 py-4 text-lg font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-[#f36a5b] active:translate-y-0"
+                  >
+                    Walk Forward
+                  </button>
+                </div>
+              </aside>
+            )}
+
+            {showWelcome && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/52 px-4 backdrop-blur-sm">
+                <div className="dialogue-enter max-w-2xl rounded-3xl border border-white/18 bg-[#112319]/90 p-6 text-cream shadow-glow backdrop-blur-2xl">
+                  <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">Zoo Trip</p>
+                  <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">Welcome to the zoo!</h2>
+                  <p className="mt-4 text-xl font-black leading-8 text-white">
+                    Today, you will explore the zoo, meet animals, talk to people, and learn real English.
+                  </p>
+                  <p className="mt-3 text-lg font-bold leading-8 text-cream/82">
+                    欢迎来到动物园！今天你会逛动物园、遇见动物、和人对话，并学习真实场景英语。
+                  </p>
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    <button
+                      onClick={() => speakEnglish("Welcome to the zoo! Today, you will explore the zoo, meet animals, talk to people, and learn real English.", 0.9, "welcome")}
+                      className="rounded-full border border-banana/45 bg-white/12 px-5 py-3 font-black text-white transition hover:bg-white/22"
+                    >
+                      <span className="inline-flex items-center gap-2">
+                        {playingKey === "welcome" && <SoundBars />}
+                        Listen
+                      </span>
+                    </button>
+                    <button
+                      onClick={() => setShowWelcome(false)}
+                      className="rounded-full bg-banana px-6 py-3 font-black text-ink shadow-label transition hover:bg-[#ffc83f]"
+                    >
+                      Start Trip
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {showEnding && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 backdrop-blur-sm">
+                <div className="dialogue-enter max-h-[88vh] w-full max-w-3xl overflow-auto rounded-3xl border border-white/18 bg-[#112319]/92 p-6 text-cream shadow-glow backdrop-blur-2xl">
+                  <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">Trip Complete</p>
+                  <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">
+                    Great job! Your zoo trip is finished.
+                  </h2>
+                  <p className="mt-3 text-xl font-bold text-cream/82">
+                    太棒了！今天的动物园之旅到此结束啦。
+                  </p>
+
+                  <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                    <div className="rounded-2xl border border-white/12 bg-white/10 p-4">
+                      <p className="text-[10px] font-black uppercase tracking-[0.18em] text-banana">Words</p>
+                      <p className="mt-2 text-3xl font-black text-white">{learnedWords.length}</p>
+                    </div>
+                    <div className="rounded-2xl border border-white/12 bg-white/10 p-4">
+                      <p className="text-[10px] font-black uppercase tracking-[0.18em] text-banana">Dialogues</p>
+                      <p className="mt-2 text-3xl font-black text-white">{conversationDone.length}</p>
+                    </div>
+                    <div className="rounded-2xl border border-white/12 bg-white/10 p-4">
+                      <p className="text-[10px] font-black uppercase tracking-[0.18em] text-banana">Saved</p>
+                      <p className="mt-2 text-3xl font-black text-white">{savedWords.length}</p>
+                    </div>
+                  </div>
+
+                  <div className="mt-5 rounded-2xl border border-white/12 bg-black/18 p-4">
+                    <p className="text-[10px] font-black uppercase tracking-[0.18em] text-banana">
+                      Word Book
+                    </p>
+                    <p className="mt-2 text-lg font-black leading-8 text-white">
+                      {savedWords.length ? savedWords.join(", ") : "No saved words yet."}
+                    </p>
+                  </div>
+
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    <button
+                      onClick={restartTrip}
+                      className="rounded-full bg-banana px-6 py-3 font-black text-ink shadow-label transition hover:bg-[#ffc83f]"
+                    >
+                      Restart Trip
+                    </button>
+                    <button
+                      onClick={() => speakEnglish("Next scene coming soon.", 0.9, "nextScene")}
+                      className="rounded-full border border-white/18 bg-white/12 px-6 py-3 font-black text-white transition hover:bg-white/22"
+                    >
+                      <span className="inline-flex items-center gap-2">
+                        {playingKey === "nextScene" && <SoundBars />}
+                        Next Scene Coming Soon
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+          </main>
+        );
+      }
+
+      ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+  </body>
+</html>
