@@ -126,9 +126,58 @@
         50% { transform: translateY(5px) rotate(6deg) scale(0.92); opacity: 1; }
       }
 
+      @keyframes actionToast {
+        0% { opacity: 0; transform: translate(-50%, 10px) scale(0.98); }
+        14% { opacity: 1; transform: translate(-50%, 0) scale(1); }
+        82% { opacity: 1; transform: translate(-50%, 0) scale(1); }
+        100% { opacity: 0; transform: translate(-50%, -8px) scale(0.98); }
+      }
+
       @keyframes bambooLeafSway {
         0%, 100% { transform: translateX(0) rotate(-2deg); }
         50% { transform: translateX(8px) rotate(3deg); }
+      }
+
+      @keyframes monkeyHop {
+        0%, 100% { transform: translate(-50%, -50%) translateY(0) rotate(-4deg); opacity: 0.34; }
+        38% { transform: translate(-50%, -56%) translateY(-16px) rotate(6deg); opacity: 0.5; }
+        68% { transform: translate(-47%, -50%) translateY(2px) rotate(-2deg); opacity: 0.42; }
+      }
+
+      @keyframes playfulLeaves {
+        0% { opacity: 0; transform: translateY(8px) rotate(-12deg) scale(0.78); }
+        35% { opacity: 0.9; }
+        100% { opacity: 0; transform: translateY(-34px) rotate(18deg) scale(1.08); }
+      }
+
+      @keyframes waterDrop {
+        0% { opacity: 0; transform: translate(0, 0) scale(0.62); }
+        20% { opacity: 0.9; }
+        100% { opacity: 0; transform: translate(var(--drop-x), var(--drop-y)) scale(1); }
+      }
+
+      @keyframes lionSoftShake {
+        0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+        22% { transform: translate3d(-3px, 1px, 0) scale(1.004); }
+        48% { transform: translate3d(3px, -1px, 0) scale(1.006); }
+        72% { transform: translate3d(-1px, 1px, 0) scale(1.002); }
+      }
+
+      @keyframes warmRoar {
+        0% { opacity: 0; transform: translate(-50%, -50%) scale(0.72); }
+        28% { opacity: 0.34; }
+        100% { opacity: 0; transform: translate(-50%, -50%) scale(1.9); }
+      }
+
+      @keyframes roarDim {
+        0%, 100% { opacity: 0; }
+        24% { opacity: 0.22; }
+        72% { opacity: 0.14; }
+      }
+
+      @keyframes pandaNibble {
+        0%, 100% { transform: translateY(0) rotate(-3deg); }
+        50% { transform: translateY(4px) rotate(4deg); }
       }
 
       .hotspot-label {
@@ -183,12 +232,30 @@
       .hotspot-sign.is-learned {
         background:
           radial-gradient(circle at 18% 22%, rgba(255, 248, 220, 0.24), transparent 28%),
-          linear-gradient(145deg, rgba(71, 122, 68, 0.94), rgba(45, 88, 54, 0.9));
-        border-color: rgba(207, 236, 164, 0.86);
+          linear-gradient(145deg, rgba(84, 116, 70, 0.78), rgba(55, 82, 54, 0.76));
+        border-color: rgba(207, 236, 164, 0.64);
+        opacity: 0.82;
+      }
+
+      .hotspot-sign.is-action {
+        background:
+          radial-gradient(circle at 18% 22%, rgba(255, 250, 219, 0.36), transparent 30%),
+          linear-gradient(145deg, rgba(166, 103, 46, 0.98), rgba(102, 62, 31, 0.96));
+        border-color: rgba(255, 238, 176, 0.98);
+        box-shadow: 0 14px 34px rgba(80, 43, 15, 0.36), 0 0 18px rgba(255, 216, 107, 0.18);
+        opacity: 1;
+      }
+
+      .hotspot-sign.is-action::before {
+        background: linear-gradient(135deg, #ffd86b, #82bd63);
       }
 
       .hotspot-sub {
         color: #ffe7a3;
+      }
+
+      .hotspot-type-badge {
+        letter-spacing: 0.08em;
       }
 
       .hotspot-sign.is-learned .hotspot-sub {
@@ -224,6 +291,14 @@
       .panda-breath { animation: pandaBreath 4.4s ease-in-out infinite; }
       .panda-snack { animation: pandaSnack 1.25s ease-in-out infinite; transform-origin: center; }
       .bamboo-leaf-sway { animation: bambooLeafSway 5.8s ease-in-out infinite; }
+      .monkey-hop { animation: monkeyHop 2.4s ease-in-out infinite; }
+      .playful-leaf { animation: playfulLeaves 860ms ease-out both; }
+      .water-drop { animation: waterDrop 900ms ease-out both; }
+      .lion-soft-shake { animation: lionSoftShake 520ms ease-out both; }
+      .warm-roar { animation: warmRoar 760ms ease-out both; }
+      .roar-dim { animation: roarDim 900ms ease-out both; }
+      .panda-nibble { animation: pandaNibble 620ms ease-in-out 2; }
+      .action-toast { animation: actionToast var(--action-duration, 2600ms) ease-out both; }
     </style>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
@@ -390,6 +465,37 @@
               offset: { x: 44, y: 18, mobileX: 24, mobileY: 18 },
             },
             {
+              id: "climb",
+              word: "climb",
+              type: "action",
+              actionMessageEn: "Look! The monkey is climbing!",
+              actionMessageZh: "看！猴子正在爬！",
+              actionEffect: "climb",
+              actionDuration: 2600,
+              phonetic: "/klaɪm/",
+              meaning: "攀爬，爬上",
+              example: "The monkey is climbing!",
+              translation: "猴子正在往上爬！",
+              label: "climb",
+              zh: "攀爬",
+              x: 46,
+              y: 34,
+              offset: { x: -46, y: -30, mobileX: -24, mobileY: -28 },
+            },
+            {
+              id: "tail",
+              word: "tail",
+              phonetic: "/teɪl/",
+              meaning: "尾巴",
+              example: "The monkey has a long tail.",
+              translation: "猴子有一条长尾巴。",
+              label: "tail",
+              zh: "尾巴",
+              x: 57,
+              y: 49,
+              offset: { x: 58, y: -8, mobileX: 30, mobileY: -8 },
+            },
+            {
               id: "visitor",
               word: "visitor",
               phonetic: "/ˈvɪzɪtər/",
@@ -413,8 +519,8 @@
           npc: "elephantKeeper",
           coreWord: "elephant",
           intro: {
-            text: "You stop at the elephant area. The elephant is drinking water with its trunk.",
-            zh: "你来到大象区，大象正在用象鼻喝水。",
+            text: "You stop at the elephant area. The elephant lifts its trunk and sprays water.",
+            zh: "你来到大象区，大象抬起象鼻，轻轻喷水。",
           },
           hotspots: [
             {
@@ -457,6 +563,37 @@
               offset: { x: -24, y: 46, mobileX: -14, mobileY: 34 },
             },
             {
+              id: "spray",
+              word: "spray",
+              type: "action",
+              actionMessageEn: "Wow! The elephant is spraying water!",
+              actionMessageZh: "哇！大象正在喷水！",
+              actionEffect: "sprayWater",
+              actionDuration: 2600,
+              phonetic: "/spreɪ/",
+              meaning: "喷洒，喷水",
+              example: "The elephant is spraying water.",
+              translation: "大象正在喷水。",
+              label: "spray",
+              zh: "喷水",
+              x: 59,
+              y: 47,
+              offset: { x: 62, y: -36, mobileX: 32, mobileY: -30 },
+            },
+            {
+              id: "huge",
+              word: "huge",
+              phonetic: "/hjuːdʒ/",
+              meaning: "巨大的",
+              example: "The elephant is huge but gentle.",
+              translation: "大象很巨大，但很温和。",
+              label: "huge",
+              zh: "巨大的",
+              x: 47,
+              y: 37,
+              offset: { x: -96, y: -52, mobileX: -44, mobileY: -36 },
+            },
+            {
               id: "keeper",
               word: "keeper",
               phonetic: "/ˈkiːpər/",
@@ -480,8 +617,8 @@
           npc: "lionVisitor",
           coreWord: "lion",
           intro: {
-            text: "You reach the lion area. The lion is resting quietly in the shade.",
-            zh: "你来到狮子区，狮子正安静地在树荫下休息。",
+            text: "You reach the lion area. The lion is resting in the shade, calm but powerful.",
+            zh: "你来到狮子区，狮子正在树荫下休息，安静但很有力量。",
           },
           hotspots: [
             {
@@ -522,6 +659,37 @@
               x: 70,
               y: 34,
               offset: { x: 38, y: -24, mobileX: 18, mobileY: -24 },
+            },
+            {
+              id: "roar",
+              word: "roar",
+              type: "action",
+              actionMessageEn: "Listen! The lion is roaring!",
+              actionMessageZh: "听！狮子正在吼叫！",
+              actionEffect: "roarShake",
+              actionDuration: 2600,
+              phonetic: "/rɔːr/",
+              meaning: "吼叫，咆哮",
+              example: "The lion can roar loudly.",
+              translation: "狮子会大声咆哮。",
+              label: "roar",
+              zh: "咆哮",
+              x: 54,
+              y: 36,
+              offset: { x: 60, y: -50, mobileX: 32, mobileY: -36 },
+            },
+            {
+              id: "rest",
+              word: "rest",
+              phonetic: "/rest/",
+              meaning: "休息",
+              example: "The lion is resting in the shade.",
+              translation: "狮子正在树荫下休息。",
+              label: "rest",
+              zh: "休息",
+              x: 49,
+              y: 51,
+              offset: { x: -84, y: 8, mobileX: -40, mobileY: 8 },
             },
             {
               id: "fence",
@@ -578,6 +746,24 @@
               x: 58,
               y: 56,
               offset: { x: 48, y: 8, mobileX: 26, mobileY: 8 },
+            },
+            {
+              id: "eat",
+              word: "eat",
+              type: "action",
+              actionMessageEn: "Aww! The panda is eating bamboo.",
+              actionMessageZh: "哇，熊猫正在吃竹子。",
+              actionEffect: "gentleLeaves",
+              actionDuration: 2800,
+              phonetic: "/iːt/",
+              meaning: "吃",
+              example: "The panda is eating bamboo.",
+              translation: "熊猫正在吃竹子。",
+              label: "eat",
+              zh: "吃",
+              x: 55,
+              y: 50,
+              offset: { x: 72, y: -26, mobileX: 34, mobileY: -24 },
             },
             {
               id: "cute",
@@ -734,16 +920,19 @@
           options: [
             {
               text: "One ticket, please.",
+              choiceZh: "请给我一张票。",
               reply: "Sure. Here is your ticket. Enjoy your visit!",
               translation: "当然。这是你的票。祝你参观愉快！",
             },
             {
               text: "How much is the ticket?",
+              choiceZh: "票多少钱？",
               reply: "It is ten dollars for one ticket.",
               translation: "一张票十美元。",
             },
             {
               text: "Where can I see lions?",
+              choiceZh: "我在哪里可以看到狮子？",
               reply: "Walk along the path. The lion area is near the end.",
               translation: "沿着小路走。狮子区在靠近终点的地方。",
             },
@@ -758,16 +947,19 @@
           options: [
             {
               text: "It's over there.",
+              choiceZh: "就在那边。",
               reply: "Thank you! I will go that way.",
               translation: "谢谢！我会往那边走。",
             },
             {
               text: "I'm looking for it too.",
+              choiceZh: "我也在找。",
               reply: "Let's walk together and follow the signs.",
               translation: "我们一起走，跟着路牌找吧。",
             },
             {
               text: "Let's check the map.",
+              choiceZh: "我们看一下地图吧。",
               reply: "Good idea. The map can help us.",
               translation: "好主意。地图可以帮到我们。",
             },
@@ -777,18 +969,20 @@
           id: "monkeyVisitor",
           speaker: "Visitor",
           zh: "游客",
-          text: "Look! The monkey is eating a banana.",
-          translation: "看！猴子正在吃香蕉。",
+          text: "Look! The monkey is climbing!",
+          translation: "看！猴子正在爬！",
           options: [
             {
               text: "So cute!",
-              reply: "Yes, it is very cute and quick.",
-              translation: "是的，它很可爱，也很灵活。",
+              choiceZh: "太可爱了！",
+              reply: "Yes, it jumps and climbs so quickly.",
+              translation: "是的，它跳来跳去，爬得好快。",
             },
             {
               text: "What is it eating?",
-              reply: "It is eating a banana.",
-              translation: "它正在吃香蕉。",
+              choiceZh: "它在吃什么？",
+              reply: "It has a banana, but now it is climbing.",
+              translation: "它有一根香蕉，不过现在正在爬。",
             },
           ],
         },
@@ -796,18 +990,20 @@
           id: "elephantKeeper",
           speaker: "Keeper",
           zh: "饲养员",
-          text: "The elephant uses its trunk to drink water.",
-          translation: "大象用象鼻喝水。",
+          text: "The elephant is spraying water.",
+          translation: "大象正在喷水。",
           options: [
             {
               text: "It is so big!",
-              reply: "Yes, elephants are big and gentle.",
-              translation: "是的，大象很大，也很温和。",
+              choiceZh: "它好大！",
+              reply: "Yes, it is huge and gentle.",
+              translation: "是的，它很巨大，也很温和。",
             },
             {
               text: "What does trunk mean?",
-              reply: "A trunk is the long nose of an elephant.",
-              translation: "trunk 指的是大象长长的鼻子，也就是象鼻。",
+              choiceZh: "trunk 是什么意思？",
+              reply: "A trunk is the long nose of an elephant. It can spray water.",
+              translation: "trunk 指的是大象长长的鼻子，也就是象鼻。它可以喷水。",
             },
           ],
         },
@@ -815,16 +1011,18 @@
           id: "lionVisitor",
           speaker: "Visitor",
           zh: "游客",
-          text: "Be quiet. The lion is sleeping.",
-          translation: "安静一点。狮子正在睡觉。",
+          text: "The lion is resting in the shade.",
+          translation: "狮子正在树荫下休息。",
           options: [
             {
               text: "It looks strong.",
+              choiceZh: "它看起来很强壮。",
               reply: "Yes, the lion looks very strong.",
               translation: "是的，狮子看起来很强壮。",
             },
             {
               text: "Is it dangerous?",
+              choiceZh: "它危险吗？",
               reply: "We are safe behind the fence.",
               translation: "我们在围栏后面，很安全。",
             },
@@ -834,21 +1032,24 @@
           id: "pandaVisitor",
           speaker: "Visitor",
           zh: "游客",
-          text: "Look! The panda is eating bamboo!",
-          translation: "看！熊猫正在吃竹子！",
+          text: "The panda is eating bamboo.",
+          translation: "熊猫正在吃竹子。",
           options: [
             {
               text: "So cute!",
+              choiceZh: "太可爱了！",
               reply: "Yes, it is calm and adorable.",
               translation: "是的，它很安静，也很可爱。",
             },
             {
               text: "What is bamboo?",
+              choiceZh: "bamboo 是什么？",
               reply: "Bamboo is a tall green plant. Pandas love to eat it.",
               translation: "bamboo 是一种高高的绿色植物。熊猫很喜欢吃它。",
             },
             {
               text: "It looks sleepy.",
+              choiceZh: "它看起来困困的。",
               reply: "It does. Pandas often rest after eating.",
               translation: "是的。熊猫吃完东西后经常休息。",
             },
@@ -863,16 +1064,19 @@
           options: [
             {
               text: "Thank you! Goodbye.",
+              choiceZh: "谢谢！再见。",
               reply: "Goodbye! See you next time.",
               translation: "再见！下次见。",
             },
             {
               text: "I had a great time.",
+              choiceZh: "我玩得很开心。",
               reply: "I'm glad you enjoyed the zoo trip.",
               translation: "很高兴你喜欢这次动物园之旅。",
             },
             {
               text: "Can I buy a souvenir?",
+              choiceZh: "我可以买纪念品吗？",
               reply: "Yes, the gift shop is next to the exit.",
               translation: "可以，礼品店就在出口旁边。",
             },
@@ -1007,7 +1211,7 @@
         return point;
       }
 
-      function getBlockedRects({ width, height, hasDialogue, isMobile }) {
+      function getBlockedRects({ width, height, hasDialogue, hasAnimalEffect, isMobile }) {
         const side = isMobile ? 14 : 20;
         const headerHeight = isMobile ? 90 : 86;
         const observeWidth = isMobile ? Math.min(width - 28, 340) : 390;
@@ -1038,6 +1242,17 @@
           });
         }
 
+        if (hasAnimalEffect) {
+          const toastWidth = isMobile ? Math.min(width - 28, 320) : 420;
+          const toastLeft = (width - toastWidth) / 2;
+          rects.push({
+            left: toastLeft,
+            right: toastLeft + toastWidth,
+            top: headerHeight + 18,
+            bottom: headerHeight + 138,
+          });
+        }
+
         return rects;
       }
 
@@ -1048,6 +1263,7 @@
           width: viewport.width,
           height: viewport.height,
           hasDialogue: options.hasDialogue,
+          hasAnimalEffect: options.hasAnimalEffect,
           isMobile,
         });
 
@@ -1144,6 +1360,7 @@
         const [selectedHotspot, setSelectedHotspot] = useState(null);
         const [dialogueReply, setDialogueReply] = useState(null);
         const [conversationDone, setConversationDone] = useState([]);
+        const [completedActions, setCompletedActions] = useState([]);
         const [learnedHotspotKeys, setLearnedHotspotKeys] = useState([]);
         const [learnedWords, setLearnedWords] = useState([]);
         const [savedWords, setSavedWords] = useState([]);
@@ -1157,6 +1374,7 @@
         const [welcomeLeaving, setWelcomeLeaving] = useState(false);
         const [showEnding, setShowEnding] = useState(false);
         const [isWalking, setIsWalking] = useState(false);
+        const [animalEffect, setAnimalEffect] = useState(null);
 
         useEffect(() => {
           getBestEnglishVoice();
@@ -1185,15 +1403,18 @@
           ? currentScene.hotspots
           : currentScene.hotspots.slice(0, maxPrimaryHotspots);
         const hiddenHotspotCount = currentScene.hotspots.length - visibleHotspots.length;
+        const actionHotspot = currentScene.hotspots.find((hotspot) => hotspot.type === "action");
         const arrangedHotspots = layoutHotspots(visibleHotspots, viewport, {
           hasDialogue: Boolean(currentDialogue && !showEnding),
+          hasAnimalEffect: Boolean(actionHotspot),
         });
         const learnedInScene = currentScene.hotspots.filter((hotspot) =>
           learnedHotspotKeys.includes(`${currentScene.id}:${hotspot.id}`)
         );
         const hasAllWords = learnedInScene.length === currentScene.hotspots.length;
         const hasDialogue = !currentScene.npc || conversationDone.includes(currentScene.npc);
-        const sceneComplete = hasAllWords && hasDialogue;
+        const hasAction = !actionHotspot || completedActions.includes(currentScene.id);
+        const sceneComplete = hasAllWords && hasDialogue && hasAction;
         const nextActionLabel =
           currentIndex === scenes.length - 1 ? "Finish Trip" : "Walk Forward";
 
@@ -1223,6 +1444,28 @@
           );
         }
 
+        function triggerAnimalFeedback(hotspot) {
+          if (hotspot.type !== "action") return;
+
+          const sceneId = currentScene.id;
+          if (!hotspot.actionEffect) return;
+          const id = `${hotspot.actionEffect}-${Date.now()}`;
+          const duration = hotspot.actionDuration || 2600;
+          setCompletedActions((items) =>
+            items.includes(sceneId) ? items : [...items, sceneId]
+          );
+          setAnimalEffect({
+            id,
+            effect: hotspot.actionEffect,
+            text: hotspot.actionMessageEn,
+            zh: hotspot.actionMessageZh,
+            duration,
+          });
+          window.setTimeout(() => {
+            setAnimalEffect((effect) => (effect?.id === id ? null : effect));
+          }, duration);
+        }
+
         function openHotspot(hotspot) {
           setTappedHotspot(hotspot.id);
           setRipples((items) => [
@@ -1242,6 +1485,8 @@
           });
           setSelectedHotspot(hotspot);
           setProgressHint("");
+          speakEnglish(hotspot.word, 0.9, `${hotspot.id}-normal`);
+          triggerAnimalFeedback(hotspot);
         }
 
         function showMoreWords() {
@@ -1255,6 +1500,7 @@
           setSelectedHotspot(null);
           setDialogueReply(null);
           setProgressHint("");
+          setAnimalEffect(null);
           window.setTimeout(() => {
             setCurrentIndex(index);
             setIsWalking(false);
@@ -1268,6 +1514,7 @@
               needs.push(`learn all words (${learnedInScene.length}/${currentScene.hotspots.length})`);
             }
             if (!hasDialogue) needs.push("finish the conversation");
+            if (!hasAction && actionHotspot) needs.push(`try "${actionHotspot.word}"`);
             setProgressHint(`先完成当前区域：${needs.join(" + ")}。`);
             window.setTimeout(() => setProgressHint(""), 2400);
             return;
@@ -1285,17 +1532,24 @@
           setSelectedHotspot(null);
           setDialogueReply(null);
           setConversationDone([]);
+          setCompletedActions([]);
           setLearnedHotspotKeys([]);
           setLearnedWords([]);
           setSavedWords([]);
           setShowEnding(false);
           setShowWelcome(true);
           setWelcomeLeaving(false);
+          setAnimalEffect(null);
         }
 
         return (
           <main className="relative h-screen w-screen overflow-hidden bg-[#17251c]">
-            <section key={currentScene.id} className="scene-reveal absolute inset-0">
+            <section
+              key={currentScene.id}
+              className={`scene-reveal absolute inset-0 ${
+                animalEffect?.effect === "roarShake" ? "lion-soft-shake" : ""
+              }`}
+            >
               <img
                 src={currentScene.bg}
                 alt={`${currentScene.title} first-person zoo scene`}
@@ -1306,14 +1560,85 @@
               <div className="leaf-drift pointer-events-none absolute -right-20 top-0 h-44 w-64 rounded-full bg-leaf/25 blur-2xl"></div>
               <div className="leaf-drift pointer-events-none absolute left-6 top-10 h-36 w-48 rounded-full bg-moss/18 blur-2xl [animation-delay:1.7s]"></div>
 
+              {currentScene.id === "monkey" && (
+                <div className="pointer-events-none absolute inset-0 z-10">
+                  <div className="monkey-hop absolute left-[51%] top-[43%] h-24 w-24 rounded-full bg-banana/28 blur-xl"></div>
+                  {animalEffect?.effect === "climb" && (
+                    <>
+                      <div className="playful-leaf absolute left-[48%] top-[43%] h-5 w-3 rounded-full bg-[#8ac46a]"></div>
+                      <div className="playful-leaf absolute left-[53%] top-[39%] h-4 w-3 rounded-full bg-[#b8d981] [animation-delay:0.12s]"></div>
+                      <div className="playful-leaf absolute left-[56%] top-[46%] h-5 w-3 rounded-full bg-[#6fab55] [animation-delay:0.24s]"></div>
+                    </>
+                  )}
+                </div>
+              )}
+
+              {currentScene.id === "elephant" && animalEffect?.effect === "sprayWater" && (
+                <div className="pointer-events-none absolute inset-0 z-10">
+                  {[
+                    ["56%", "48%", "-72px", "-44px", "0s"],
+                    ["59%", "49%", "-28px", "-70px", "0.08s"],
+                    ["61%", "51%", "34px", "-58px", "0.16s"],
+                    ["58%", "53%", "72px", "-26px", "0.24s"],
+                    ["55%", "52%", "-48px", "-18px", "0.18s"],
+                  ].map(([left, top, x, y, delay], index) => (
+                    <span
+                      key={`${animalEffect.id}-${index}`}
+                      className="water-drop absolute h-4 w-3 rounded-full bg-[#bfe9ff]/82 shadow-[0_5px_12px_rgba(77,139,160,0.22)]"
+                      style={{
+                        left,
+                        top,
+                        "--drop-x": x,
+                        "--drop-y": y,
+                        animationDelay: delay,
+                      }}
+                    ></span>
+                  ))}
+                </div>
+              )}
+
+              {currentScene.id === "lion" && animalEffect?.effect === "roarShake" && (
+                <div className="pointer-events-none absolute inset-0 z-10">
+                  <div className="roar-dim absolute inset-0 bg-[#120b07]/45"></div>
+                  <div className="warm-roar absolute left-[55%] top-[45%] h-32 w-32 rounded-full border border-[#9b6a35]/38 bg-[#2b1a10]/12"></div>
+                  <div className="warm-roar absolute left-[55%] top-[45%] h-48 w-48 rounded-full border border-[#6f4928]/30 bg-[#1c110b]/10 [animation-delay:0.12s]"></div>
+                  <div className="warm-roar absolute left-[55%] top-[45%] h-64 w-64 rounded-full border border-[#3a2418]/24 [animation-delay:0.24s]"></div>
+                </div>
+              )}
+
               {currentScene.id === "panda" && (
                 <div className="pointer-events-none absolute inset-0 z-10">
-                  <div className="panda-breath absolute left-[50%] top-[48%] h-40 w-56 rounded-full bg-white/45 blur-2xl"></div>
-                  <div className="panda-snack absolute left-[57%] top-[55%] h-4 w-2 rounded-full bg-[#82bd63]"></div>
-                  <div className="panda-snack absolute left-[58%] top-[57%] h-3 w-2 rounded-full bg-[#5f9f52] [animation-delay:0.24s]"></div>
-                  <div className="panda-snack absolute left-[55.5%] top-[56%] h-3 w-2 rounded-full bg-[#b8d981] [animation-delay:0.48s]"></div>
+                  <div className={`panda-breath absolute left-[50%] top-[48%] h-40 w-56 rounded-full bg-white/45 blur-2xl ${
+                    animalEffect?.effect === "gentleLeaves" ? "panda-nibble" : ""
+                  }`}></div>
+                  <div className={`panda-snack absolute left-[57%] top-[55%] h-4 w-2 rounded-full bg-[#82bd63] ${
+                    animalEffect?.effect === "gentleLeaves" ? "scale-125" : ""
+                  }`}></div>
+                  <div className={`panda-snack absolute left-[58%] top-[57%] h-3 w-2 rounded-full bg-[#5f9f52] [animation-delay:0.24s] ${
+                    animalEffect?.effect === "gentleLeaves" ? "scale-125" : ""
+                  }`}></div>
+                  <div className={`panda-snack absolute left-[55.5%] top-[56%] h-3 w-2 rounded-full bg-[#b8d981] [animation-delay:0.48s] ${
+                    animalEffect?.effect === "gentleLeaves" ? "scale-125" : ""
+                  }`}></div>
+                  {animalEffect?.effect === "gentleLeaves" && (
+                    <>
+                      <div className="playful-leaf absolute left-[56%] top-[53%] h-4 w-2 rounded-full bg-[#91c96c]"></div>
+                      <div className="playful-leaf absolute left-[59%] top-[54%] h-4 w-2 rounded-full bg-[#c2de86] [animation-delay:0.16s]"></div>
+                    </>
+                  )}
                   <div className="bamboo-leaf-sway absolute left-[18%] top-[8%] h-24 w-40 rounded-full bg-leaf/22 blur-xl"></div>
                   <div className="bamboo-leaf-sway absolute right-[10%] top-[12%] h-28 w-48 rounded-full bg-[#78c66f]/24 blur-xl [animation-delay:1.1s]"></div>
+                </div>
+              )}
+
+              {animalEffect && (
+                <div
+                  className="animal-action-toast action-toast pointer-events-none absolute left-1/2 top-[calc(env(safe-area-inset-top)+6.5rem)] z-50 w-[calc(100vw-2rem)] max-w-[420px] rounded-2xl border border-[#ffe8a2]/50 bg-[#5c3a20]/80 px-4 py-3 text-center text-cream shadow-label backdrop-blur-[3px]"
+                  style={{ "--action-duration": `${animalEffect.duration || 2600}ms` }}
+                >
+                  <p className="text-sm font-black uppercase tracking-[0.12em] text-banana">Scene Event</p>
+                  <p className="mt-1 text-base font-black text-white">{animalEffect.text}</p>
+                  <p className="mt-1 text-sm font-bold text-cream/78">{animalEffect.zh}</p>
                 </div>
               )}
 
@@ -1327,12 +1652,15 @@
 
               {arrangedHotspots.map((hotspot) => {
                 const learned = learnedHotspotKeys.includes(`${currentScene.id}:${hotspot.id}`);
+                const actionDone = hotspot.type === "action" && completedActions.includes(currentScene.id);
                 return (
                   <button
                     key={hotspot.id}
                     onClick={() => openHotspot(hotspot)}
                     title={`Click to learn: ${hotspot.word}`}
                     className={`hotspot-sign group absolute z-30 -translate-x-1/2 -translate-y-1/2 rounded-2xl border px-3 py-2 text-left shadow-label backdrop-blur-[2px] transition hover:z-50 active:scale-95 hotspot-active hotspot-breathe sm:px-3.5 sm:py-2.5 ${
+                      hotspot.type === "action" ? "is-action" : ""
+                    } ${
                       learned ? "is-learned" : ""
                     } ${tappedHotspot === hotspot.id ? "hotspot-tapped" : ""}`}
                     style={{ left: `${hotspot.displayX}%`, top: `${hotspot.displayY}%` }}
@@ -1347,8 +1675,13 @@
                       {hotspot.label}
                     </span>
                     <span className="hotspot-sub mt-1 block text-xs font-bold">
-                      {learned ? "completed" : hotspot.zh}
+                      {hotspot.type === "action" ? (actionDone ? "event done" : "Try it") : learned ? "done" : hotspot.zh}
                     </span>
+                    {hotspot.type === "action" && (
+                      <span className="hotspot-type-badge mt-1 inline-flex rounded-full bg-banana/90 px-2 py-0.5 text-[10px] font-black uppercase text-ink">
+                        Action
+                      </span>
+                    )}
                     <span className="pointer-events-none absolute left-1/2 top-full mt-3 hidden -translate-x-1/2 whitespace-nowrap rounded-full bg-[#4b321d]/92 px-3 py-1 text-[11px] font-black text-cream shadow-label group-hover:block">
                       {learned ? "Reviewed" : `Learn ${hotspot.word}`}
                     </span>
@@ -1452,11 +1785,19 @@
                         {playingKey === `dialogue-${option.text}` && <SoundBars />}
                         {option.text}
                       </span>
+                      <span className="mt-1 block text-xs font-bold text-cream/68">
+                        {option.choiceZh}
+                      </span>
                     </button>
                   ))}
                 </div>
                 {dialogueReply && (
                   <div className="dialogue-enter mt-3 rounded-xl bg-banana/18 p-3">
+                    <div className="mb-3 rounded-lg bg-white/10 p-2">
+                      <p className="text-[10px] font-black uppercase tracking-[0.14em] text-banana">You chose</p>
+                      <p className="mt-1 text-sm font-black text-white">{dialogueReply.text}</p>
+                      <p className="mt-1 text-xs font-bold text-cream/72">{dialogueReply.choiceZh}</p>
+                    </div>
                     <button
                       onClick={() => speakEnglish(dialogueReply.reply, 0.86, `reply-${dialogueReply.reply}`)}
                       className="text-left text-sm font-black text-white"
