@@ -54,9 +54,9 @@
       }
 
       @keyframes walkingFlash {
-        0% { opacity: 0; transform: scale(1); }
-        45% { opacity: 0.48; transform: scale(1.04); }
-        100% { opacity: 0; transform: scale(1.1); }
+        0% { opacity: 0; transform: scale(1); filter: blur(0); }
+        35% { opacity: 0.62; transform: scale(1.06); filter: blur(4px); }
+        100% { opacity: 0; transform: scale(1.18); filter: blur(0); }
       }
 
       @keyframes hudFloat {
@@ -65,8 +65,13 @@
       }
 
       @keyframes hotspotPulse {
-        0%, 100% { box-shadow: 0 0 0 0 rgba(255, 216, 107, 0.58), 0 12px 28px rgba(11, 32, 20, 0.28); }
-        50% { box-shadow: 0 0 0 12px rgba(255, 216, 107, 0), 0 12px 28px rgba(11, 32, 20, 0.28); }
+        0%, 100% { box-shadow: 0 10px 24px rgba(44, 28, 13, 0.24), 0 0 0 0 rgba(255, 238, 176, 0.34); }
+        50% { box-shadow: 0 14px 30px rgba(44, 28, 13, 0.28), 0 0 0 8px rgba(255, 238, 176, 0); }
+      }
+
+      @keyframes hotspotBreathe {
+        0%, 100% { transform: translate(-50%, -50%) translateY(0) scale(1); }
+        50% { transform: translate(-50%, -50%) translateY(-2px) scale(1.01); }
       }
 
       @keyframes tapBounce {
@@ -75,14 +80,125 @@
         100% { transform: translate(-50%, -50%) scale(1); }
       }
 
+      @keyframes clickRipple {
+        from { opacity: 0.85; transform: translate(-50%, -50%) scale(0.45) rotate(-8deg); }
+        to { opacity: 0; transform: translate(-50%, -70%) scale(1.65) rotate(12deg); }
+      }
+
       @keyframes fadeInUp {
         from { opacity: 0; transform: translateY(12px); }
         to { opacity: 1; transform: translateY(0); }
       }
 
+      @keyframes welcomeFadeOut {
+        from { opacity: 1; filter: blur(0); }
+        to { opacity: 0; filter: blur(8px); }
+      }
+
+      @keyframes welcomeProgress {
+        from { transform: scaleX(1); }
+        to { transform: scaleX(0); }
+      }
+
+      @keyframes cardSlideIn {
+        from { opacity: 0; transform: translateX(38px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+
+      @keyframes choicePop {
+        0% { transform: scale(1); }
+        45% { transform: scale(0.97); }
+        100% { transform: scale(1); }
+      }
+
       @keyframes soundBars {
         0%, 100% { transform: scaleY(0.45); opacity: 0.55; }
         50% { transform: scaleY(1); opacity: 1; }
+      }
+
+      @keyframes pandaBreath {
+        0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.18; }
+        50% { transform: translate(-50%, -52%) scale(1.08); opacity: 0.32; }
+      }
+
+      @keyframes pandaSnack {
+        0%, 100% { transform: translateY(0) rotate(-8deg) scale(1); opacity: 0.7; }
+        50% { transform: translateY(5px) rotate(6deg) scale(0.92); opacity: 1; }
+      }
+
+      @keyframes bambooLeafSway {
+        0%, 100% { transform: translateX(0) rotate(-2deg); }
+        50% { transform: translateX(8px) rotate(3deg); }
+      }
+
+      .hotspot-label {
+        max-width: min(42vw, 168px);
+        overflow-wrap: anywhere;
+        text-wrap: balance;
+      }
+
+      .hotspot-sign {
+        background:
+          radial-gradient(circle at 18% 22%, rgba(255, 245, 204, 0.28), transparent 28%),
+          linear-gradient(145deg, rgba(140, 91, 45, 0.9), rgba(88, 57, 31, 0.86));
+        border-color: rgba(255, 232, 162, 0.82);
+        color: #fff8e7;
+        box-shadow: 0 12px 26px rgba(44, 28, 13, 0.26);
+      }
+
+      .hotspot-sign::before {
+        content: "";
+        position: absolute;
+        left: 12px;
+        top: -7px;
+        width: 15px;
+        height: 10px;
+        border-radius: 999px 999px 999px 0;
+        background: linear-gradient(135deg, #82bd63, #3f7f45);
+        transform: rotate(-24deg);
+        box-shadow: 0 2px 7px rgba(31, 79, 38, 0.22);
+      }
+
+      .hotspot-sign::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -7px;
+        width: 12px;
+        height: 12px;
+        border-right: 1px solid rgba(255, 232, 162, 0.6);
+        border-bottom: 1px solid rgba(255, 232, 162, 0.6);
+        background: rgba(98, 63, 34, 0.9);
+        transform: translateX(-50%) rotate(45deg);
+        border-radius: 2px;
+      }
+
+      .hotspot-sign:hover {
+        background:
+          radial-gradient(circle at 18% 22%, rgba(255, 248, 220, 0.34), transparent 30%),
+          linear-gradient(145deg, rgba(158, 105, 53, 0.96), rgba(96, 65, 36, 0.94));
+        box-shadow: 0 16px 34px rgba(44, 28, 13, 0.34), 0 0 20px rgba(255, 230, 142, 0.22);
+      }
+
+      .hotspot-sign.is-learned {
+        background:
+          radial-gradient(circle at 18% 22%, rgba(255, 248, 220, 0.24), transparent 28%),
+          linear-gradient(145deg, rgba(71, 122, 68, 0.94), rgba(45, 88, 54, 0.9));
+        border-color: rgba(207, 236, 164, 0.86);
+      }
+
+      .hotspot-sub {
+        color: #ffe7a3;
+      }
+
+      .hotspot-sign.is-learned .hotspot-sub {
+        color: #ffffff;
+      }
+
+      @media (max-width: 640px) {
+        .hotspot-label {
+          max-width: 124px;
+        }
       }
 
       .leaf-drift { animation: leafDrift 8s ease-in-out infinite; }
@@ -91,11 +207,23 @@
       .walking-flash { animation: walkingFlash 820ms ease-out both; }
       .hud-float { animation: hudFloat 5s ease-in-out infinite; }
       .hotspot-active { animation: hotspotPulse 2.6s ease-in-out infinite; }
+      .hotspot-breathe { animation: hotspotBreathe 3.4s ease-in-out infinite; }
       .hotspot-tapped { animation: tapBounce 260ms ease-out; }
+      .ripple {
+        animation: clickRipple 680ms ease-out both;
+        background: radial-gradient(circle at 35% 35%, rgba(255, 238, 176, 0.82), rgba(120, 178, 86, 0.28) 52%, transparent 72%);
+        clip-path: ellipse(42% 58% at 50% 50%);
+      }
       .dialogue-enter { animation: fadeInUp 420ms ease-out both; }
+      .welcome-exit { animation: welcomeFadeOut 620ms ease-in both; }
+      .card-slide-in { animation: cardSlideIn 360ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+      .choice-pop { animation: choicePop 260ms ease-out; }
       .sound-bar { animation: soundBars 640ms ease-in-out infinite; transform-origin: bottom; }
       .sound-bar:nth-child(2) { animation-delay: 120ms; }
       .sound-bar:nth-child(3) { animation-delay: 240ms; }
+      .panda-breath { animation: pandaBreath 4.4s ease-in-out infinite; }
+      .panda-snack { animation: pandaSnack 1.25s ease-in-out infinite; transform-origin: center; }
+      .bamboo-leaf-sway { animation: bambooLeafSway 5.8s ease-in-out infinite; }
     </style>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
@@ -114,6 +242,11 @@
           zh: "入口",
           short: "入口",
           bg: "assets/zoo-first-person-bg.png",
+          coreWord: "gate",
+          intro: {
+            text: "You are standing at the zoo entrance. The gate is right in front of you.",
+            zh: "你站在动物园入口，大门就在前方。",
+          },
           hotspots: [
             {
               id: "gate",
@@ -129,13 +262,13 @@
             },
             {
               id: "sign",
-              word: "sign",
-              phonetic: "/saɪn/",
-              meaning: "标志，路牌",
-              example: "The sign shows the way to the animals.",
-              translation: "路牌指向动物区域。",
-              label: "sign",
-              zh: "路牌",
+              word: "exhibit",
+              phonetic: "/ɪɡˈzɪbɪt/",
+              meaning: "展区，展览",
+              example: "The exhibit shows where the animals live.",
+              translation: "这个展区展示动物生活的地方。",
+              label: "exhibit",
+              zh: "展区",
               x: 34,
               y: 57,
             },
@@ -160,6 +293,11 @@
           short: "售票处",
           bg: "assets/zoo-ticket-booth-bg.png",
           npc: "ticketSeller",
+          coreWord: "ticket",
+          intro: {
+            text: "You walk to the ticket booth. The ticket seller smiles and waits to help.",
+            zh: "你走到售票处，售票员微笑着准备帮你。",
+          },
           hotspots: [
             {
               id: "ticket",
@@ -200,69 +338,17 @@
           ],
         },
         {
-          id: "path",
-          title: "Main Path",
-          zh: "主路",
-          short: "主路",
-          bg: "assets/zoo-main-path-bg.png",
-          npc: "visitor",
-          hotspots: [
-            {
-              id: "path",
-              word: "path",
-              phonetic: "/pæθ/",
-              meaning: "小路，道路",
-              example: "Follow the path into the zoo.",
-              translation: "沿着小路走进动物园。",
-              label: "path",
-              zh: "小路",
-              x: 52,
-              y: 72,
-            },
-            {
-              id: "sign",
-              word: "sign",
-              phonetic: "/saɪn/",
-              meaning: "标志，路牌",
-              example: "The sign points to the lion area.",
-              translation: "路牌指向狮子区。",
-              label: "sign",
-              zh: "路牌",
-              x: 68,
-              y: 48,
-            },
-            {
-              id: "tree",
-              word: "tree",
-              phonetic: "/triː/",
-              meaning: "树",
-              example: "The tree gives us shade.",
-              translation: "这棵树给我们遮阴。",
-              label: "tree",
-              zh: "树",
-              x: 25,
-              y: 32,
-            },
-            {
-              id: "bench",
-              word: "bench",
-              phonetic: "/bentʃ/",
-              meaning: "长椅",
-              example: "We sit on the bench for a rest.",
-              translation: "我们坐在长椅上休息。",
-              label: "bench",
-              zh: "长椅",
-              x: 75,
-              y: 69,
-            },
-          ],
-        },
-        {
           id: "monkey",
           title: "Monkey Area",
           zh: "猴子区",
           short: "猴子区",
           bg: "assets/zoo-monkey-area-bg.png",
+          npc: "monkeyVisitor",
+          coreWord: "monkey",
+          intro: {
+            text: "You arrive at the monkey area. A monkey grabs a banana and climbs the tree.",
+            zh: "你来到猴子区，一只猴子拿着香蕉爬上树。",
+          },
           hotspots: [
             {
               id: "monkey",
@@ -275,18 +361,20 @@
               zh: "猴子",
               x: 51,
               y: 42,
+              offset: { x: -52, y: -36, mobileX: -28, mobileY: -34 },
             },
             {
               id: "cage",
-              word: "cage",
-              phonetic: "/keɪdʒ/",
-              meaning: "笼子，围栏",
-              example: "The cage keeps the animals safe.",
-              translation: "围栏让动物保持安全。",
-              label: "cage",
-              zh: "围栏",
+              word: "enclosure",
+              phonetic: "/ɪnˈkloʊʒər/",
+              meaning: "围场，动物活动区",
+              example: "The monkeys play inside the enclosure.",
+              translation: "猴子们在围场里玩耍。",
+              label: "enclosure",
+              zh: "围场",
               x: 32,
               y: 58,
+              offset: { x: -32, y: 18, mobileX: -18, mobileY: 20 },
             },
             {
               id: "banana",
@@ -299,6 +387,7 @@
               zh: "香蕉",
               x: 63,
               y: 61,
+              offset: { x: 44, y: 18, mobileX: 24, mobileY: 18 },
             },
             {
               id: "visitor",
@@ -311,6 +400,7 @@
               zh: "游客",
               x: 78,
               y: 54,
+              offset: { x: 30, y: -18, mobileX: 16, mobileY: -18 },
             },
           ],
         },
@@ -320,6 +410,12 @@
           zh: "大象区",
           short: "大象区",
           bg: "assets/zoo-elephant-area-bg.png",
+          npc: "elephantKeeper",
+          coreWord: "elephant",
+          intro: {
+            text: "You stop at the elephant area. The elephant is drinking water with its trunk.",
+            zh: "你来到大象区，大象正在用象鼻喝水。",
+          },
           hotspots: [
             {
               id: "elephant",
@@ -332,6 +428,7 @@
               zh: "大象",
               x: 50,
               y: 45,
+              offset: { x: -80, y: -42, mobileX: -42, mobileY: -38 },
             },
             {
               id: "trunk",
@@ -344,6 +441,7 @@
               zh: "象鼻",
               x: 57,
               y: 57,
+              offset: { x: 56, y: 8, mobileX: 30, mobileY: 8 },
             },
             {
               id: "water",
@@ -356,6 +454,7 @@
               zh: "水",
               x: 38,
               y: 70,
+              offset: { x: -24, y: 46, mobileX: -14, mobileY: 34 },
             },
             {
               id: "keeper",
@@ -368,6 +467,7 @@
               zh: "饲养员",
               x: 78,
               y: 47,
+              offset: { x: 44, y: -28, mobileX: 22, mobileY: -24 },
             },
           ],
         },
@@ -377,6 +477,12 @@
           zh: "狮子区",
           short: "狮子区",
           bg: "assets/zoo-lion-area-bg.png",
+          npc: "lionVisitor",
+          coreWord: "lion",
+          intro: {
+            text: "You reach the lion area. The lion is resting quietly in the shade.",
+            zh: "你来到狮子区，狮子正安静地在树荫下休息。",
+          },
           hotspots: [
             {
               id: "lion",
@@ -389,18 +495,20 @@
               zh: "狮子",
               x: 55,
               y: 45,
+              offset: { x: -58, y: -38, mobileX: -34, mobileY: -32 },
             },
             {
               id: "rock",
-              word: "rock",
-              phonetic: "/rɑːk/",
-              meaning: "岩石",
-              example: "The lion is near a big rock.",
-              translation: "狮子在一块大岩石旁边。",
-              label: "rock",
-              zh: "岩石",
+              word: "predator",
+              phonetic: "/ˈpredətər/",
+              meaning: "捕食者，食肉动物",
+              example: "A lion is a powerful predator.",
+              translation: "狮子是一种强大的捕食者。",
+              label: "predator",
+              zh: "捕食者",
               x: 38,
               y: 62,
+              offset: { x: -38, y: 24, mobileX: -20, mobileY: 18 },
             },
             {
               id: "shade",
@@ -413,6 +521,7 @@
               zh: "阴凉处",
               x: 70,
               y: 34,
+              offset: { x: 38, y: -24, mobileX: 18, mobileY: -24 },
             },
             {
               id: "fence",
@@ -425,15 +534,143 @@
               zh: "围栏",
               x: 62,
               y: 72,
+              offset: { x: 30, y: 42, mobileX: 14, mobileY: 30 },
+            },
+          ],
+        },
+        {
+          id: "panda",
+          title: "Panda Area",
+          zh: "熊猫区",
+          short: "熊猫区",
+          bg: "assets/zoo-panda-area-bg.png",
+          npc: "pandaVisitor",
+          coreWord: "panda",
+          completeText: "Great! Let's head to the exit.",
+          completeZh: "太棒了，我们去出口吧。",
+          intro: {
+            text: "You step into the Panda Garden. The panda is eating bamboo in the quiet bamboo forest.",
+            zh: "你走进熊猫花园，熊猫正在安静的竹林里吃竹子。",
+          },
+          hotspots: [
+            {
+              id: "panda",
+              word: "panda",
+              phonetic: "/ˈpændə/",
+              meaning: "熊猫",
+              example: "The panda is eating bamboo.",
+              translation: "熊猫正在吃竹子。",
+              label: "panda",
+              zh: "熊猫",
+              x: 50,
+              y: 47,
+              offset: { x: -60, y: -42, mobileX: -34, mobileY: -34 },
+            },
+            {
+              id: "bamboo",
+              word: "bamboo",
+              phonetic: "/ˌbæmˈbuː/",
+              meaning: "竹子",
+              example: "Bamboo is the panda's favorite food.",
+              translation: "竹子是熊猫最喜欢的食物。",
+              label: "bamboo",
+              zh: "竹子",
+              x: 58,
+              y: 56,
+              offset: { x: 48, y: 8, mobileX: 26, mobileY: 8 },
+            },
+            {
+              id: "cute",
+              word: "cute",
+              phonetic: "/kjuːt/",
+              meaning: "可爱的",
+              example: "The panda looks very cute.",
+              translation: "熊猫看起来很可爱。",
+              label: "cute",
+              zh: "可爱",
+              x: 44,
+              y: 39,
+              offset: { x: -20, y: -62, mobileX: -14, mobileY: -40 },
+            },
+            {
+              id: "sleepy",
+              word: "sleepy",
+              phonetic: "/ˈsliːpi/",
+              meaning: "困倦的，想睡的",
+              example: "The panda looks sleepy after lunch.",
+              translation: "午饭后熊猫看起来有点困。",
+              label: "sleepy",
+              zh: "困困的",
+              x: 61,
+              y: 43,
+              offset: { x: 54, y: -44, mobileX: 30, mobileY: -34 },
+            },
+            {
+              id: "fur",
+              word: "fur",
+              phonetic: "/fɜːr/",
+              meaning: "皮毛",
+              example: "The panda has black and white fur.",
+              translation: "熊猫有黑白相间的皮毛。",
+              label: "fur",
+              zh: "皮毛",
+              x: 52,
+              y: 52,
+              offset: { x: -76, y: 28, mobileX: -40, mobileY: 24 },
+            },
+            {
+              id: "climb",
+              word: "climb",
+              phonetic: "/klaɪm/",
+              meaning: "攀爬",
+              example: "Young pandas like to climb.",
+              translation: "小熊猫喜欢攀爬。",
+              label: "climb",
+              zh: "攀爬",
+              x: 37,
+              y: 34,
+              offset: { x: -34, y: -24, mobileX: -18, mobileY: -24 },
+            },
+            {
+              id: "leaves",
+              word: "leaves",
+              phonetic: "/liːvz/",
+              meaning: "树叶，叶子",
+              example: "Green leaves move softly in the wind.",
+              translation: "绿色的叶子在风中轻轻摆动。",
+              label: "leaves",
+              zh: "叶子",
+              x: 66,
+              y: 28,
+              offset: { x: 34, y: -22, mobileX: 18, mobileY: -20 },
+            },
+            {
+              id: "visitor",
+              word: "visitor",
+              phonetic: "/ˈvɪzɪtər/",
+              meaning: "游客",
+              example: "A visitor watches the panda quietly.",
+              translation: "一位游客安静地看着熊猫。",
+              label: "visitor",
+              zh: "游客",
+              x: 78,
+              y: 55,
+              offset: { x: 34, y: 6, mobileX: 20, mobileY: 6 },
             },
           ],
         },
         {
           id: "exit",
           title: "Exit",
-          zh: "出口",
+          zh: "出口区",
           short: "出口",
           bg: "assets/zoo-exit-bg.png",
+          npc: "exitStaff",
+          coreWord: "exit",
+          intro: {
+            text: "This is the exit area. The trip is almost finished, but there is still English to learn.",
+            zh: "这里是出口区。旅程快结束了，但这里还有真实英语可以学。",
+          },
           hotspots: [
             {
               id: "exit",
@@ -458,6 +695,18 @@
               zh: "礼品店",
               x: 30,
               y: 55,
+            },
+            {
+              id: "souvenir",
+              word: "souvenir",
+              phonetic: "/ˌsuːvəˈnɪr/",
+              meaning: "纪念品",
+              example: "I buy a small souvenir at the gift shop.",
+              translation: "我在礼品店买了一个小纪念品。",
+              label: "souvenir",
+              zh: "纪念品",
+              x: 77,
+              y: 59,
             },
             {
               id: "goodbye",
@@ -524,6 +773,111 @@
             },
           ],
         },
+        monkeyVisitor: {
+          id: "monkeyVisitor",
+          speaker: "Visitor",
+          zh: "游客",
+          text: "Look! The monkey is eating a banana.",
+          translation: "看！猴子正在吃香蕉。",
+          options: [
+            {
+              text: "So cute!",
+              reply: "Yes, it is very cute and quick.",
+              translation: "是的，它很可爱，也很灵活。",
+            },
+            {
+              text: "What is it eating?",
+              reply: "It is eating a banana.",
+              translation: "它正在吃香蕉。",
+            },
+          ],
+        },
+        elephantKeeper: {
+          id: "elephantKeeper",
+          speaker: "Keeper",
+          zh: "饲养员",
+          text: "The elephant uses its trunk to drink water.",
+          translation: "大象用象鼻喝水。",
+          options: [
+            {
+              text: "It is so big!",
+              reply: "Yes, elephants are big and gentle.",
+              translation: "是的，大象很大，也很温和。",
+            },
+            {
+              text: "What does trunk mean?",
+              reply: "A trunk is the long nose of an elephant.",
+              translation: "trunk 指的是大象长长的鼻子，也就是象鼻。",
+            },
+          ],
+        },
+        lionVisitor: {
+          id: "lionVisitor",
+          speaker: "Visitor",
+          zh: "游客",
+          text: "Be quiet. The lion is sleeping.",
+          translation: "安静一点。狮子正在睡觉。",
+          options: [
+            {
+              text: "It looks strong.",
+              reply: "Yes, the lion looks very strong.",
+              translation: "是的，狮子看起来很强壮。",
+            },
+            {
+              text: "Is it dangerous?",
+              reply: "We are safe behind the fence.",
+              translation: "我们在围栏后面，很安全。",
+            },
+          ],
+        },
+        pandaVisitor: {
+          id: "pandaVisitor",
+          speaker: "Visitor",
+          zh: "游客",
+          text: "Look! The panda is eating bamboo!",
+          translation: "看！熊猫正在吃竹子！",
+          options: [
+            {
+              text: "So cute!",
+              reply: "Yes, it is calm and adorable.",
+              translation: "是的，它很安静，也很可爱。",
+            },
+            {
+              text: "What is bamboo?",
+              reply: "Bamboo is a tall green plant. Pandas love to eat it.",
+              translation: "bamboo 是一种高高的绿色植物。熊猫很喜欢吃它。",
+            },
+            {
+              text: "It looks sleepy.",
+              reply: "It does. Pandas often rest after eating.",
+              translation: "是的。熊猫吃完东西后经常休息。",
+            },
+          ],
+        },
+        exitStaff: {
+          id: "exitStaff",
+          speaker: "Staff",
+          zh: "工作人员",
+          text: "Thanks for visiting the zoo. Have a great day!",
+          translation: "感谢参观动物园，祝你今天愉快！",
+          options: [
+            {
+              text: "Thank you! Goodbye.",
+              reply: "Goodbye! See you next time.",
+              translation: "再见！下次见。",
+            },
+            {
+              text: "I had a great time.",
+              reply: "I'm glad you enjoyed the zoo trip.",
+              translation: "很高兴你喜欢这次动物园之旅。",
+            },
+            {
+              text: "Can I buy a souvenir?",
+              reply: "Yes, the gift shop is next to the exit.",
+              translation: "可以，礼品店就在出口旁边。",
+            },
+          ],
+        },
       };
 
       let cachedEnglishVoice = null;
@@ -581,16 +935,226 @@
         );
       }
 
+      function useViewportSize() {
+        const [size, setSize] = useState({
+          width: window.innerWidth || 1280,
+          height: window.innerHeight || 720,
+        });
+
+        useEffect(() => {
+          function handleResize() {
+            setSize({
+              width: window.innerWidth || 1280,
+              height: window.innerHeight || 720,
+            });
+          }
+
+          window.addEventListener("resize", handleResize);
+          return () => window.removeEventListener("resize", handleResize);
+        }, []);
+
+        return size;
+      }
+
+      function clamp(value, min, max) {
+        return Math.min(Math.max(value, min), max);
+      }
+
+      function estimateHotspotSize(hotspot, isMobile) {
+        const longest = Math.max(hotspot.label.length, hotspot.zh.length);
+        const maxWidth = isMobile ? 124 : 168;
+        const minWidth = isMobile ? 72 : 82;
+        const charWidth = isMobile ? 7.2 : 8.2;
+        const width = clamp(longest * charWidth + 30, minWidth, maxWidth);
+        const lines = Math.ceil((longest * charWidth + 30) / maxWidth);
+        const height = clamp(42 + (lines - 1) * 16, 42, isMobile ? 76 : 84);
+        return { width, height };
+      }
+
+      function rectFromPoint(point) {
+        return {
+          left: point.x - point.width / 2,
+          right: point.x + point.width / 2,
+          top: point.y - point.height / 2,
+          bottom: point.y + point.height / 2,
+        };
+      }
+
+      function rectsOverlap(a, b, gap = 0) {
+        return (
+          a.left - gap < b.right &&
+          a.right + gap > b.left &&
+          a.top - gap < b.bottom &&
+          a.bottom + gap > b.top
+        );
+      }
+
+      function pushAwayFromRect(point, rect, gap) {
+        const self = rectFromPoint(point);
+        if (!rectsOverlap(self, rect, gap)) return point;
+
+        const pushLeft = Math.abs(self.right - rect.left);
+        const pushRight = Math.abs(rect.right - self.left);
+        const pushUp = Math.abs(self.bottom - rect.top);
+        const pushDown = Math.abs(rect.bottom - self.top);
+        const minPush = Math.min(pushLeft, pushRight, pushUp, pushDown);
+
+        if (minPush === pushLeft) point.x -= pushLeft + gap;
+        else if (minPush === pushRight) point.x += pushRight + gap;
+        else if (minPush === pushUp) point.y -= pushUp + gap;
+        else point.y += pushDown + gap;
+
+        return point;
+      }
+
+      function getBlockedRects({ width, height, hasDialogue, isMobile }) {
+        const side = isMobile ? 14 : 20;
+        const headerHeight = isMobile ? 90 : 86;
+        const observeWidth = isMobile ? Math.min(width - 28, 340) : 390;
+        const observeHeight = isMobile ? 170 : 150;
+        const navHeight = isMobile ? 112 : 106;
+        const rects = [
+          { left: side, right: width - side, top: side, bottom: headerHeight },
+          {
+            left: side,
+            right: side + observeWidth,
+            top: headerHeight + 18,
+            bottom: headerHeight + 18 + observeHeight,
+          },
+          {
+            left: side,
+            right: width - side,
+            top: height - navHeight - side,
+            bottom: height - side,
+          },
+        ];
+
+        if (hasDialogue) {
+          rects.push({
+            left: side,
+            right: side + (isMobile ? Math.min(width - 28, 340) : 360),
+            top: height - navHeight - side - (isMobile ? 270 : 245),
+            bottom: height - navHeight - side - 12,
+          });
+        }
+
+        return rects;
+      }
+
+      function layoutHotspots(hotspots, viewport, options) {
+        const isMobile = viewport.width < 640;
+        const safeRadius = isMobile ? 16 : 24;
+        const blockedRects = getBlockedRects({
+          width: viewport.width,
+          height: viewport.height,
+          hasDialogue: options.hasDialogue,
+          isMobile,
+        });
+
+        const points = hotspots.map((hotspot, index) => {
+          const size = estimateHotspotSize(hotspot, isMobile);
+          const offset = hotspot.offset || {};
+          const dx = isMobile ? offset.mobileX ?? offset.x ?? 0 : offset.desktopX ?? offset.x ?? 0;
+          const dy = isMobile ? offset.mobileY ?? offset.y ?? 0 : offset.desktopY ?? offset.y ?? 0;
+          return {
+            id: hotspot.id,
+            hotspot,
+            width: size.width,
+            height: size.height,
+            x: (hotspot.x / 100) * viewport.width + dx + (index % 2 ? 10 : -10),
+            y: (hotspot.y / 100) * viewport.height + dy + (index % 3 - 1) * 8,
+          };
+        });
+
+        for (let round = 0; round < 20; round++) {
+          for (const point of points) {
+            for (const rect of blockedRects) {
+              pushAwayFromRect(point, rect, safeRadius);
+            }
+
+            point.x = clamp(point.x, point.width / 2 + safeRadius, viewport.width - point.width / 2 - safeRadius);
+            point.y = clamp(point.y, point.height / 2 + safeRadius, viewport.height - point.height / 2 - safeRadius);
+          }
+
+          for (let i = 0; i < points.length; i++) {
+            for (let j = i + 1; j < points.length; j++) {
+              const a = points[i];
+              const b = points[j];
+              const ar = rectFromPoint(a);
+              const br = rectFromPoint(b);
+              if (!rectsOverlap(ar, br, safeRadius)) continue;
+
+              const overlapX = Math.min(ar.right + safeRadius - br.left, br.right + safeRadius - ar.left);
+              const overlapY = Math.min(ar.bottom + safeRadius - br.top, br.bottom + safeRadius - ar.top);
+
+              if (overlapX < overlapY) {
+                const direction = a.x <= b.x ? -1 : 1;
+                const push = overlapX / 2 + 12;
+                a.x += direction * push;
+                b.x -= direction * push;
+              } else {
+                const direction = a.y <= b.y ? -1 : 1;
+                const push = overlapY / 2 + 12;
+                a.y += direction * push;
+                b.y -= direction * push;
+              }
+            }
+          }
+        }
+
+        for (let i = 0; i < points.length; i++) {
+          for (let j = i + 1; j < points.length; j++) {
+            const a = points[i];
+            const b = points[j];
+            const ar = rectFromPoint(a);
+            const br = rectFromPoint(b);
+            if (!rectsOverlap(ar, br, safeRadius)) continue;
+
+            const leftPoint = a.x <= b.x ? a : b;
+            const rightPoint = a.x <= b.x ? b : a;
+            const leftRect = rectFromPoint(leftPoint);
+            const rightRect = rectFromPoint(rightPoint);
+            const needed = leftRect.right + safeRadius - rightRect.left + 8;
+
+            if (needed > 0 && rightPoint.x + needed + rightPoint.width / 2 + safeRadius <= viewport.width) {
+              rightPoint.x += needed;
+            } else if (needed > 0 && leftPoint.x - needed - leftPoint.width / 2 - safeRadius >= 0) {
+              leftPoint.x -= needed;
+            } else {
+              b.y += br.top >= ar.top ? safeRadius + 24 : -(safeRadius + 24);
+            }
+          }
+        }
+
+        for (const point of points) {
+          point.x = clamp(point.x, point.width / 2 + safeRadius, viewport.width - point.width / 2 - safeRadius);
+          point.y = clamp(point.y, point.height / 2 + safeRadius, viewport.height - point.height / 2 - safeRadius);
+        }
+
+        return points.map((point) => ({
+          ...point.hotspot,
+          displayX: (point.x / viewport.width) * 100,
+          displayY: (point.y / viewport.height) * 100,
+          displayWidth: point.width,
+        }));
+      }
+
       function App() {
         const [currentIndex, setCurrentIndex] = useState(0);
         const [selectedHotspot, setSelectedHotspot] = useState(null);
         const [dialogueReply, setDialogueReply] = useState(null);
         const [conversationDone, setConversationDone] = useState([]);
+        const [learnedHotspotKeys, setLearnedHotspotKeys] = useState([]);
         const [learnedWords, setLearnedWords] = useState([]);
         const [savedWords, setSavedWords] = useState([]);
         const [playingKey, setPlayingKey] = useState(null);
         const [tappedHotspot, setTappedHotspot] = useState(null);
+        const [clickedChoice, setClickedChoice] = useState(null);
+        const [progressHint, setProgressHint] = useState("");
+        const [ripples, setRipples] = useState([]);
+        const [expandedHotspotScenes, setExpandedHotspotScenes] = useState([]);
         const [showWelcome, setShowWelcome] = useState(true);
+        const [welcomeLeaving, setWelcomeLeaving] = useState(false);
         const [showEnding, setShowEnding] = useState(false);
         const [isWalking, setIsWalking] = useState(false);
 
@@ -601,10 +1165,37 @@
           }
         }, []);
 
+        useEffect(() => {
+          if (!showWelcome) return;
+          setWelcomeLeaving(false);
+          const fadeTimer = window.setTimeout(() => setWelcomeLeaving(true), 3600);
+          const hideTimer = window.setTimeout(() => setShowWelcome(false), 4300);
+          return () => {
+            window.clearTimeout(fadeTimer);
+            window.clearTimeout(hideTimer);
+          };
+        }, [showWelcome]);
+
         const currentScene = scenes[currentIndex];
         const currentDialogue = currentScene.npc ? dialogues[currentScene.npc] : null;
-        const completedCount = Math.max(currentIndex, showEnding ? scenes.length : currentIndex);
-        const allHotspots = useMemo(() => scenes.flatMap((scene) => scene.hotspots), []);
+        const viewport = useViewportSize();
+        const isHotspotExpanded = expandedHotspotScenes.includes(currentScene.id);
+        const maxPrimaryHotspots = viewport.width < 640 ? 4 : 5;
+        const visibleHotspots = isHotspotExpanded
+          ? currentScene.hotspots
+          : currentScene.hotspots.slice(0, maxPrimaryHotspots);
+        const hiddenHotspotCount = currentScene.hotspots.length - visibleHotspots.length;
+        const arrangedHotspots = layoutHotspots(visibleHotspots, viewport, {
+          hasDialogue: Boolean(currentDialogue && !showEnding),
+        });
+        const learnedInScene = currentScene.hotspots.filter((hotspot) =>
+          learnedHotspotKeys.includes(`${currentScene.id}:${hotspot.id}`)
+        );
+        const hasAllWords = learnedInScene.length === currentScene.hotspots.length;
+        const hasDialogue = !currentScene.npc || conversationDone.includes(currentScene.npc);
+        const sceneComplete = hasAllWords && hasDialogue;
+        const nextActionLabel =
+          currentIndex === scenes.length - 1 ? "Finish Trip" : "Walk Forward";
 
         function speakEnglish(text, rate = 0.9, key = text) {
           if (!("speechSynthesis" in window)) return;
@@ -634,25 +1225,54 @@
 
         function openHotspot(hotspot) {
           setTappedHotspot(hotspot.id);
+          setRipples((items) => [
+            ...items,
+            {
+              id: `${hotspot.id}-${Date.now()}`,
+              x: hotspot.displayX ?? hotspot.x,
+              y: hotspot.displayY ?? hotspot.y,
+            },
+          ]);
           window.setTimeout(() => setTappedHotspot(null), 280);
+          window.setTimeout(() => setRipples((items) => items.slice(1)), 700);
           rememberWord(hotspot.word);
+          setLearnedHotspotKeys((keys) => {
+            const key = `${currentScene.id}:${hotspot.id}`;
+            return keys.includes(key) ? keys : [...keys, key];
+          });
           setSelectedHotspot(hotspot);
+          setProgressHint("");
+        }
+
+        function showMoreWords() {
+          setExpandedHotspotScenes((items) =>
+            items.includes(currentScene.id) ? items : [...items, currentScene.id]
+          );
         }
 
         function moveTo(index) {
           setIsWalking(true);
           setSelectedHotspot(null);
           setDialogueReply(null);
+          setProgressHint("");
           window.setTimeout(() => {
             setCurrentIndex(index);
             setIsWalking(false);
-            if (index === scenes.length - 1) {
-              window.setTimeout(() => setShowEnding(true), 900);
-            }
           }, 420);
         }
 
         function walkForward() {
+          if (!sceneComplete) {
+            const needs = [];
+            if (!hasAllWords) {
+              needs.push(`learn all words (${learnedInScene.length}/${currentScene.hotspots.length})`);
+            }
+            if (!hasDialogue) needs.push("finish the conversation");
+            setProgressHint(`先完成当前区域：${needs.join(" + ")}。`);
+            window.setTimeout(() => setProgressHint(""), 2400);
+            return;
+          }
+
           if (currentIndex < scenes.length - 1) {
             moveTo(currentIndex + 1);
           } else {
@@ -665,10 +1285,12 @@
           setSelectedHotspot(null);
           setDialogueReply(null);
           setConversationDone([]);
+          setLearnedHotspotKeys([]);
           setLearnedWords([]);
           setSavedWords([]);
           setShowEnding(false);
           setShowWelcome(true);
+          setWelcomeLeaving(false);
         }
 
         return (
@@ -684,27 +1306,74 @@
               <div className="leaf-drift pointer-events-none absolute -right-20 top-0 h-44 w-64 rounded-full bg-leaf/25 blur-2xl"></div>
               <div className="leaf-drift pointer-events-none absolute left-6 top-10 h-36 w-48 rounded-full bg-moss/18 blur-2xl [animation-delay:1.7s]"></div>
 
-              {currentScene.hotspots.map((hotspot) => (
-                <button
-                  key={hotspot.id}
-                  onClick={() => openHotspot(hotspot)}
-                  className={`absolute -translate-x-1/2 -translate-y-1/2 rounded-full border border-banana/90 bg-[#10261a]/72 px-3 py-2 text-left text-cream shadow-label backdrop-blur-md transition hover:scale-105 active:scale-95 hotspot-active ${
-                    tappedHotspot === hotspot.id ? "hotspot-tapped" : ""
-                  }`}
-                  style={{ left: `${hotspot.x}%`, top: `${hotspot.y}%` }}
-                  aria-label={`${hotspot.label} ${hotspot.zh}`}
-                >
-                  <span className="block text-sm font-black leading-none">{hotspot.label}</span>
-                  <span className="mt-1 block text-xs font-bold text-banana">{hotspot.zh}</span>
-                </button>
+              {currentScene.id === "panda" && (
+                <div className="pointer-events-none absolute inset-0 z-10">
+                  <div className="panda-breath absolute left-[50%] top-[48%] h-40 w-56 rounded-full bg-white/45 blur-2xl"></div>
+                  <div className="panda-snack absolute left-[57%] top-[55%] h-4 w-2 rounded-full bg-[#82bd63]"></div>
+                  <div className="panda-snack absolute left-[58%] top-[57%] h-3 w-2 rounded-full bg-[#5f9f52] [animation-delay:0.24s]"></div>
+                  <div className="panda-snack absolute left-[55.5%] top-[56%] h-3 w-2 rounded-full bg-[#b8d981] [animation-delay:0.48s]"></div>
+                  <div className="bamboo-leaf-sway absolute left-[18%] top-[8%] h-24 w-40 rounded-full bg-leaf/22 blur-xl"></div>
+                  <div className="bamboo-leaf-sway absolute right-[10%] top-[12%] h-28 w-48 rounded-full bg-[#78c66f]/24 blur-xl [animation-delay:1.1s]"></div>
+                </div>
+              )}
+
+              {ripples.map((ripple) => (
+                <span
+                  key={ripple.id}
+                  className="ripple pointer-events-none absolute z-30 h-16 w-12"
+                  style={{ left: `${ripple.x}%`, top: `${ripple.y}%` }}
+                ></span>
               ))}
+
+              {arrangedHotspots.map((hotspot) => {
+                const learned = learnedHotspotKeys.includes(`${currentScene.id}:${hotspot.id}`);
+                return (
+                  <button
+                    key={hotspot.id}
+                    onClick={() => openHotspot(hotspot)}
+                    title={`Click to learn: ${hotspot.word}`}
+                    className={`hotspot-sign group absolute z-30 -translate-x-1/2 -translate-y-1/2 rounded-2xl border px-3 py-2 text-left shadow-label backdrop-blur-[2px] transition hover:z-50 active:scale-95 hotspot-active hotspot-breathe sm:px-3.5 sm:py-2.5 ${
+                      learned ? "is-learned" : ""
+                    } ${tappedHotspot === hotspot.id ? "hotspot-tapped" : ""}`}
+                    style={{ left: `${hotspot.displayX}%`, top: `${hotspot.displayY}%` }}
+                    aria-label={`${hotspot.label} ${hotspot.zh}`}
+                  >
+                    <span
+                      className={`hotspot-label block font-black leading-tight ${
+                        hotspot.label.length > 14 ? "text-[11px]" : hotspot.label.length > 9 ? "text-xs" : "text-sm"
+                      }`}
+                    >
+                      {learned ? "✓ " : ""}
+                      {hotspot.label}
+                    </span>
+                    <span className="hotspot-sub mt-1 block text-xs font-bold">
+                      {learned ? "completed" : hotspot.zh}
+                    </span>
+                    <span className="pointer-events-none absolute left-1/2 top-full mt-3 hidden -translate-x-1/2 whitespace-nowrap rounded-full bg-[#4b321d]/92 px-3 py-1 text-[11px] font-black text-cream shadow-label group-hover:block">
+                      {learned ? "Reviewed" : `Learn ${hotspot.word}`}
+                    </span>
+                  </button>
+                );
+              })}
+
+              {hiddenHotspotCount > 0 && (
+                <button
+                  onClick={showMoreWords}
+                  className="absolute right-5 top-1/2 z-30 -translate-y-1/2 rounded-2xl border border-[#ffe8a2]/80 bg-[#6b4524]/88 px-4 py-3 text-sm font-black text-cream shadow-label backdrop-blur-[2px] transition hover:bg-[#80562d]/92 active:scale-95"
+                >
+                  +{hiddenHotspotCount} More Words
+                </button>
+              )}
             </section>
 
             {isWalking && (
-              <div className="walking-flash pointer-events-none absolute inset-0 z-30 bg-white/70 backdrop-blur-md"></div>
+              <div className="walking-flash pointer-events-none absolute inset-0 z-30 bg-white/70 backdrop-blur-md">
+                <div className="absolute left-1/2 top-1/2 h-[140vh] w-16 -translate-x-1/2 -translate-y-1/2 rotate-12 bg-white/40 blur-2xl"></div>
+                <div className="absolute left-1/3 top-1/2 h-[120vh] w-10 -translate-x-1/2 -translate-y-1/2 rotate-12 bg-banana/30 blur-2xl"></div>
+              </div>
             )}
 
-            <header className="hud-float absolute left-4 right-4 top-4 z-20 mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-2xl border border-white/18 bg-nightglass px-4 py-3 shadow-glow backdrop-blur-xl sm:left-6 sm:right-6">
+            <header className="hud-float absolute left-4 right-4 top-[calc(env(safe-area-inset-top)+1rem)] z-40 mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-2xl border border-white/18 bg-nightglass px-4 py-3 shadow-glow backdrop-blur-xl sm:left-6 sm:right-6">
               <div className="shrink-0">
                 <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
                   Zoo Trip {currentIndex + 1}/{scenes.length}
@@ -715,14 +1384,42 @@
               </div>
               <button
                 onClick={walkForward}
-                className="shrink-0 rounded-full bg-banana px-4 py-2 text-sm font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                className={`shrink-0 rounded-full px-4 py-2 text-sm font-black shadow-label transition hover:-translate-y-0.5 active:translate-y-0 ${
+                  sceneComplete
+                    ? "bg-banana text-ink hover:bg-[#ffc83f]"
+                    : "border border-banana/40 bg-white/12 text-white hover:bg-white/22"
+                }`}
               >
-                Walk Forward
+                {nextActionLabel}
               </button>
             </header>
 
+            <button
+              onClick={() => speakEnglish(currentScene.intro.text, 0.9, `${currentScene.id}-intro`)}
+              className="dialogue-enter absolute left-4 top-[calc(env(safe-area-inset-top)+6.5rem)] z-20 max-h-[20vh] max-w-[340px] overflow-auto rounded-2xl border border-white/18 bg-nightglass p-3 text-left shadow-glow backdrop-blur-xl transition hover:bg-[#143423]/80 active:scale-[0.99] sm:left-6 md:max-w-[390px]"
+            >
+              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-banana">
+                Observe
+              </p>
+              <p className="mt-2 text-base font-black leading-6 text-white md:text-lg md:leading-7">
+                <span className="inline-flex items-center gap-2">
+                  {playingKey === `${currentScene.id}-intro` && <SoundBars />}
+                  {currentScene.intro.text}
+                </span>
+              </p>
+              <p className="mt-1 text-sm font-bold leading-6 text-cream/78">
+                {currentScene.intro.zh}
+              </p>
+            </button>
+
+            {progressHint && (
+              <div className="dialogue-enter absolute left-1/2 top-[25%] z-40 -translate-x-1/2 rounded-full border border-banana/40 bg-[#112319]/88 px-5 py-3 text-sm font-black text-white shadow-glow backdrop-blur-xl">
+                {progressHint}
+              </div>
+            )}
+
             {currentDialogue && !showEnding && (
-              <div className="dialogue-enter absolute left-[6%] top-[34%] z-20 max-w-[360px] rounded-2xl border border-white/22 bg-nightglass p-4 shadow-glow backdrop-blur-xl">
+              <div className="dialogue-enter absolute bottom-[calc(env(safe-area-inset-bottom)+8.75rem)] left-4 z-20 max-h-[30vh] w-[calc(100vw-2rem)] max-w-[340px] overflow-auto rounded-2xl border border-white/22 bg-nightglass p-3 shadow-glow backdrop-blur-xl sm:left-6 md:max-w-[360px] md:p-4">
                 <button
                   onClick={() => speakEnglish(currentDialogue.text, 0.9, `${currentDialogue.id}-line`)}
                   className="mb-2 inline-flex items-center gap-2 rounded-full bg-banana px-3 py-1 text-[11px] font-black uppercase text-ink transition active:scale-95"
@@ -739,13 +1436,17 @@
                     <button
                       key={option.text}
                       onClick={() => {
+                        setClickedChoice(option.text);
                         setDialogueReply(option);
                         speakEnglish(option.text, 0.9, `dialogue-${option.text}`);
                         setConversationDone((items) =>
                           items.includes(currentDialogue.id) ? items : [...items, currentDialogue.id]
                         );
+                        window.setTimeout(() => setClickedChoice(null), 280);
                       }}
-                      className="rounded-xl border border-white/20 bg-white/12 px-3 py-2 text-left text-sm font-black text-white transition hover:bg-white/22 active:scale-[0.98]"
+                      className={`rounded-xl border border-white/20 bg-white/12 px-3 py-2 text-left text-sm font-black text-white transition hover:border-banana/50 hover:bg-white/22 active:scale-[0.98] ${
+                        clickedChoice === option.text ? "choice-pop bg-banana/24" : ""
+                      }`}
                     >
                       <span className="inline-flex items-center gap-2">
                         {playingKey === `dialogue-${option.text}` && <SoundBars />}
@@ -773,14 +1474,29 @@
               </div>
             )}
 
-            <div className="pointer-events-none absolute bottom-24 left-4 z-20 rounded-2xl border border-white/16 bg-nightglass px-4 py-3 shadow-glow backdrop-blur-xl sm:bottom-28">
+            {sceneComplete && !showEnding && (
+              <div className="dialogue-enter absolute right-4 top-[calc(env(safe-area-inset-top)+6.5rem)] z-30 hidden max-h-[24vh] max-w-[330px] overflow-auto rounded-2xl border border-banana/35 bg-[#112319]/78 p-4 text-right shadow-glow backdrop-blur-xl md:block">
+                <p className="text-lg font-black text-white">
+                  {currentScene.completeText || "Great! Let's keep walking."}
+                </p>
+                <p className="mt-1 text-sm font-bold text-cream/80">
+                  {currentScene.completeZh || "太棒了，我们继续往前走吧。"}
+                </p>
+              </div>
+            )}
+
+            <div className="pointer-events-none absolute bottom-[calc(env(safe-area-inset-bottom)+8.25rem)] right-6 z-30 hidden max-w-[320px] rounded-2xl border border-white/16 bg-nightglass px-4 py-3 text-right shadow-glow backdrop-blur-xl md:block">
               <p className="text-[10px] font-black uppercase tracking-[0.22em] text-banana">Now</p>
               <p className="text-xl font-black text-white">
                 {currentScene.title} <span className="text-banana">{currentScene.zh}</span>
               </p>
+              <p className="mt-1 text-xs font-black text-cream/75">
+                Words {learnedInScene.length}/{currentScene.hotspots.length}
+                {hasDialogue ? " · Dialogue ✓" : currentScene.npc ? " · Dialogue pending" : ""}
+              </p>
             </div>
 
-            <nav className="absolute bottom-4 left-4 right-4 z-20 mx-auto max-w-5xl rounded-2xl border border-white/18 bg-nightglass p-3 shadow-glow backdrop-blur-xl">
+            <nav className="absolute bottom-[calc(env(safe-area-inset-bottom)+1rem)] left-4 right-4 z-40 mx-auto max-w-5xl rounded-2xl border border-white/18 bg-nightglass p-3 shadow-glow backdrop-blur-xl sm:left-6 sm:right-6">
               <div className="mb-2 flex items-center justify-between gap-3">
                 <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
                   Trip Map
@@ -814,7 +1530,7 @@
             </nav>
 
             {selectedHotspot && (
-              <aside className="dialogue-enter fixed bottom-0 right-0 top-0 z-40 flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/88 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
+              <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-40 flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/88 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
                 <div className="flex items-start justify-between gap-3 border-b border-white/12 p-5">
                   <div>
                     <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
@@ -898,40 +1614,45 @@
 
                   <button
                     onClick={walkForward}
-                    className="mt-6 w-full rounded-2xl bg-coral px-4 py-4 text-lg font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-[#f36a5b] active:translate-y-0"
+                    className={`mt-6 w-full rounded-2xl px-4 py-4 text-lg font-black shadow-label transition hover:-translate-y-0.5 active:translate-y-0 ${
+                      sceneComplete
+                        ? "bg-coral text-white hover:bg-[#f36a5b]"
+                        : "border border-banana/35 bg-white/12 text-white hover:bg-white/22"
+                    }`}
                   >
-                    Walk Forward
+                    {nextActionLabel}
                   </button>
                 </div>
               </aside>
             )}
 
             {showWelcome && (
-              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/52 px-4 backdrop-blur-sm">
+              <div
+                className={`fixed inset-0 z-50 flex items-center justify-center bg-black/52 px-4 backdrop-blur-sm ${
+                  welcomeLeaving ? "welcome-exit" : ""
+                }`}
+              >
                 <div className="dialogue-enter max-w-2xl rounded-3xl border border-white/18 bg-[#112319]/90 p-6 text-cream shadow-glow backdrop-blur-2xl">
                   <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">Zoo Trip</p>
                   <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">Welcome to the zoo!</h2>
                   <p className="mt-4 text-xl font-black leading-8 text-white">
-                    Today, you will explore the zoo, meet animals, talk to people, and learn real English.
+                    Today, you will explore the zoo, meet animals, and learn real English.
                   </p>
                   <p className="mt-3 text-lg font-bold leading-8 text-cream/82">
-                    欢迎来到动物园！今天你会逛动物园、遇见动物、和人对话，并学习真实场景英语。
+                    欢迎来到动物园！今天你会逛动物园、遇见动物，并学习真实场景英语。
                   </p>
-                  <div className="mt-6 flex flex-wrap gap-3">
+                  <div className="mt-6 flex flex-wrap items-center gap-3">
+                    <div className="h-2 w-36 overflow-hidden rounded-full bg-white/18">
+                      <div className="h-full w-full origin-left animate-[welcomeProgress_4.2s_linear_forwards] bg-banana"></div>
+                    </div>
                     <button
-                      onClick={() => speakEnglish("Welcome to the zoo! Today, you will explore the zoo, meet animals, talk to people, and learn real English.", 0.9, "welcome")}
+                      onClick={() => {
+                        setWelcomeLeaving(true);
+                        window.setTimeout(() => setShowWelcome(false), 250);
+                      }}
                       className="rounded-full border border-banana/45 bg-white/12 px-5 py-3 font-black text-white transition hover:bg-white/22"
                     >
-                      <span className="inline-flex items-center gap-2">
-                        {playingKey === "welcome" && <SoundBars />}
-                        Listen
-                      </span>
-                    </button>
-                    <button
-                      onClick={() => setShowWelcome(false)}
-                      className="rounded-full bg-banana px-6 py-3 font-black text-ink shadow-label transition hover:bg-[#ffc83f]"
-                    >
-                      Start Trip
+                      Skip
                     </button>
                   </div>
                 </div>
