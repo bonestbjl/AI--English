@@ -180,6 +180,16 @@
         50% { transform: translateY(4px) rotate(4deg); }
       }
 
+      @keyframes giraffeReachGlow {
+        0%, 100% { transform: translate(-50%, -50%) translateY(0) scale(1); opacity: 0.16; }
+        50% { transform: translate(-50%, -54%) translateY(-8px) scale(1.1); opacity: 0.28; }
+      }
+
+      @keyframes tallLeavesRustle {
+        0%, 100% { transform: translateX(0) rotate(-2deg); opacity: 0.26; }
+        50% { transform: translateX(10px) rotate(4deg); opacity: 0.42; }
+      }
+
       .hotspot-label {
         max-width: min(42vw, 168px);
         overflow-wrap: anywhere;
@@ -299,6 +309,8 @@
       .roar-dim { animation: roarDim 900ms ease-out both; }
       .panda-nibble { animation: pandaNibble 620ms ease-in-out 2; }
       .action-toast { animation: actionToast var(--action-duration, 2600ms) ease-out both; }
+      .giraffe-reach-glow { animation: giraffeReachGlow 2.8s ease-in-out infinite; }
+      .tall-leaves-rustle { animation: tallLeavesRustle 4.2s ease-in-out infinite; }
     </style>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
@@ -846,6 +858,134 @@
           ],
         },
         {
+          id: "giraffe",
+          title: "Giraffe Area",
+          zh: "长颈鹿区",
+          short: "长颈鹿区",
+          bg: "assets/zoo-giraffe-area-bg.png",
+          npc: "giraffeVisitor",
+          coreWord: "giraffe",
+          dialogueRequired: false,
+          requiredHotspots: ["giraffe", "neck", "leaves", "tall", "reach"],
+          completeText: "Great! The giraffe can reach the tall leaves. Let's head to the exit.",
+          completeZh: "太棒了！长颈鹿能够到高高的树叶。我们去出口吧。",
+          intro: {
+            text: "You walk into a sunny open area. A giraffe reaches up to eat leaves from a tall tree.",
+            zh: "你走进阳光开阔的长颈鹿区，长颈鹿正伸长脖子吃高处的树叶。",
+          },
+          hotspots: [
+            {
+              id: "giraffe",
+              word: "giraffe",
+              phonetic: "/dʒəˈræf/",
+              meaning: "长颈鹿",
+              example: "The giraffe is eating leaves.",
+              translation: "长颈鹿正在吃树叶。",
+              label: "giraffe",
+              zh: "长颈鹿",
+              x: 49,
+              y: 48,
+              offset: { x: -72, y: 18, mobileX: -36, mobileY: 16 },
+            },
+            {
+              id: "neck",
+              word: "neck",
+              phonetic: "/nek/",
+              meaning: "脖子",
+              example: "The giraffe has a long neck.",
+              translation: "长颈鹿有很长的脖子。",
+              label: "neck",
+              zh: "脖子",
+              x: 55,
+              y: 34,
+              offset: { x: 50, y: -18, mobileX: 24, mobileY: -18 },
+            },
+            {
+              id: "leaves",
+              word: "leaves",
+              phonetic: "/liːvz/",
+              meaning: "树叶，叶子",
+              example: "The leaves are high in the tree.",
+              translation: "树叶在树的高处。",
+              label: "leaves",
+              zh: "树叶",
+              x: 66,
+              y: 22,
+              offset: { x: 36, y: -20, mobileX: 18, mobileY: -18 },
+            },
+            {
+              id: "tall",
+              word: "tall",
+              phonetic: "/tɔːl/",
+              meaning: "高的",
+              example: "The giraffe is very tall.",
+              translation: "长颈鹿非常高。",
+              label: "tall",
+              zh: "高的",
+              x: 47,
+              y: 36,
+              offset: { x: -88, y: -8, mobileX: -36, mobileY: -6 },
+            },
+            {
+              id: "spots",
+              word: "spots",
+              phonetic: "/spɑːts/",
+              meaning: "斑点",
+              example: "The giraffe has brown spots.",
+              translation: "长颈鹿有棕色斑点。",
+              label: "spots",
+              zh: "斑点",
+              x: 47,
+              y: 59,
+              offset: { x: 44, y: 42, mobileX: 22, mobileY: 28 },
+            },
+            {
+              id: "tree",
+              word: "tree",
+              phonetic: "/triː/",
+              meaning: "树",
+              example: "The tree has many green leaves.",
+              translation: "这棵树有很多绿色的叶子。",
+              label: "tree",
+              zh: "树",
+              x: 73,
+              y: 38,
+              offset: { x: 52, y: 10, mobileX: 26, mobileY: 10 },
+            },
+            {
+              id: "reach",
+              word: "reach",
+              type: "action",
+              actionMessageEn: "Look! The giraffe can reach the tall leaves!",
+              actionMessageZh: "看！长颈鹿能够到高高的树叶！",
+              actionEffect: "reachLeaves",
+              actionDuration: 2800,
+              phonetic: "/riːtʃ/",
+              meaning: "够到，伸手够",
+              example: "The giraffe can reach the leaves.",
+              translation: "长颈鹿能够到树叶。",
+              label: "reach",
+              zh: "够到",
+              x: 61,
+              y: 29,
+              offset: { x: 34, y: -48, mobileX: 20, mobileY: -34 },
+            },
+            {
+              id: "visitor",
+              word: "visitor",
+              phonetic: "/ˈvɪzɪtər/",
+              meaning: "游客",
+              example: "A visitor looks up at the giraffe.",
+              translation: "一位游客抬头看着长颈鹿。",
+              label: "visitor",
+              zh: "游客",
+              x: 80,
+              y: 58,
+              offset: { x: 34, y: 14, mobileX: 18, mobileY: 14 },
+            },
+          ],
+        },
+        {
           id: "exit",
           title: "Exit",
           zh: "出口区",
@@ -1052,6 +1192,33 @@
               choiceZh: "它看起来困困的。",
               reply: "It does. Pandas often rest after eating.",
               translation: "是的。熊猫吃完东西后经常休息。",
+            },
+          ],
+        },
+        giraffeVisitor: {
+          id: "giraffeVisitor",
+          speaker: "Visitor",
+          zh: "游客",
+          text: "Wow, the giraffe is so tall!",
+          translation: "哇，长颈鹿好高！",
+          options: [
+            {
+              text: "It has a long neck.",
+              choiceZh: "它有很长的脖子。",
+              reply: "Yes, its long neck helps it reach high leaves.",
+              translation: "是的，它长长的脖子帮助它够到高处的树叶。",
+            },
+            {
+              text: "What is it eating?",
+              choiceZh: "它在吃什么？",
+              reply: "It is eating leaves from the tall tree.",
+              translation: "它正在吃高树上的叶子。",
+            },
+            {
+              text: "It looks gentle.",
+              choiceZh: "它看起来很温和。",
+              reply: "Yes, giraffes often look calm and gentle.",
+              translation: "是的，长颈鹿通常看起来安静又温和。",
             },
           ],
         },
@@ -1404,15 +1571,32 @@
           : currentScene.hotspots.slice(0, maxPrimaryHotspots);
         const hiddenHotspotCount = currentScene.hotspots.length - visibleHotspots.length;
         const actionHotspot = currentScene.hotspots.find((hotspot) => hotspot.type === "action");
+        const hotspotById = Object.fromEntries(
+          currentScene.hotspots.map((hotspot) => [hotspot.id, hotspot])
+        );
+        const isHotspotCompleted = (hotspotId) => {
+          const hotspot = hotspotById[hotspotId];
+          const learned = learnedHotspotKeys.includes(`${currentScene.id}:${hotspotId}`);
+          const actionDone =
+            hotspot?.type === "action" && completedActions.includes(currentScene.id);
+          return learned || actionDone;
+        };
         const arrangedHotspots = layoutHotspots(visibleHotspots, viewport, {
           hasDialogue: Boolean(currentDialogue && !showEnding),
           hasAnimalEffect: Boolean(actionHotspot),
         });
         const learnedInScene = currentScene.hotspots.filter((hotspot) =>
-          learnedHotspotKeys.includes(`${currentScene.id}:${hotspot.id}`)
+          isHotspotCompleted(hotspot.id)
         );
-        const hasAllWords = learnedInScene.length === currentScene.hotspots.length;
-        const hasDialogue = !currentScene.npc || conversationDone.includes(currentScene.npc);
+        const requiredHotspotIds = currentScene.requiredHotspots || currentScene.hotspots.map((hotspot) => hotspot.id);
+        const missingRequiredHotspots = requiredHotspotIds.filter((id) => !isHotspotCompleted(id));
+        const learnedRequiredCount = requiredHotspotIds.length - missingRequiredHotspots.length;
+        const missingRequiredLabels = missingRequiredHotspots.map((id) => hotspotById[id]?.word || id);
+        const hasAllWords = missingRequiredHotspots.length === 0;
+        const hasDialogue =
+          currentScene.dialogueRequired === false ||
+          !currentScene.npc ||
+          conversationDone.includes(currentScene.npc);
         const hasAction = !actionHotspot || completedActions.includes(currentScene.id);
         const sceneComplete = hasAllWords && hasDialogue && hasAction;
         const nextActionLabel =
@@ -1511,10 +1695,12 @@
           if (!sceneComplete) {
             const needs = [];
             if (!hasAllWords) {
-              needs.push(`learn all words (${learnedInScene.length}/${currentScene.hotspots.length})`);
+              needs.push(`还差：${missingRequiredLabels.join("、")} (${learnedRequiredCount}/${requiredHotspotIds.length})`);
             }
             if (!hasDialogue) needs.push("finish the conversation");
-            if (!hasAction && actionHotspot) needs.push(`try "${actionHotspot.word}"`);
+            if (!hasAction && actionHotspot && !missingRequiredLabels.includes(actionHotspot.word)) {
+              needs.push(`还差 Action：${actionHotspot.word}`);
+            }
             setProgressHint(`先完成当前区域：${needs.join(" + ")}。`);
             window.setTimeout(() => setProgressHint(""), 2400);
             return;
@@ -1631,9 +1817,24 @@
                 </div>
               )}
 
+              {currentScene.id === "giraffe" && (
+                <div className="pointer-events-none absolute inset-0 z-10">
+                  <div className="giraffe-reach-glow absolute left-[55%] top-[36%] h-52 w-40 rounded-full bg-banana/24 blur-2xl"></div>
+                  <div className="tall-leaves-rustle absolute left-[61%] top-[12%] h-32 w-64 rounded-full bg-[#8bbf5d]/26 blur-xl"></div>
+                  <div className="tall-leaves-rustle absolute right-[12%] top-[18%] h-28 w-48 rounded-full bg-[#b6d978]/20 blur-xl [animation-delay:1.2s]"></div>
+                  {animalEffect?.effect === "reachLeaves" && (
+                    <>
+                      <div className="playful-leaf absolute left-[62%] top-[22%] h-5 w-3 rounded-full bg-[#9fcb6d]"></div>
+                      <div className="playful-leaf absolute left-[66%] top-[20%] h-4 w-3 rounded-full bg-[#d0e58b] [animation-delay:0.12s]"></div>
+                      <div className="playful-leaf absolute left-[59%] top-[25%] h-5 w-3 rounded-full bg-[#7fb05a] [animation-delay:0.24s]"></div>
+                    </>
+                  )}
+                </div>
+              )}
+
               {animalEffect && (
                 <div
-                  className="animal-action-toast action-toast pointer-events-none absolute left-1/2 top-[calc(env(safe-area-inset-top)+6.5rem)] z-50 w-[calc(100vw-2rem)] max-w-[420px] rounded-2xl border border-[#ffe8a2]/50 bg-[#5c3a20]/80 px-4 py-3 text-center text-cream shadow-label backdrop-blur-[3px]"
+                  className="animal-action-toast action-toast pointer-events-none absolute left-1/2 top-[calc(env(safe-area-inset-top)+6.5rem)] z-20 w-[calc(100vw-2rem)] max-w-[420px] rounded-2xl border border-[#ffe8a2]/50 bg-[#5c3a20]/72 px-4 py-3 text-center text-cream shadow-label backdrop-blur-[3px]"
                   style={{ "--action-duration": `${animalEffect.duration || 2600}ms` }}
                 >
                   <p className="text-sm font-black uppercase tracking-[0.12em] text-banana">Scene Event</p>
@@ -1651,13 +1852,12 @@
               ))}
 
               {arrangedHotspots.map((hotspot) => {
-                const learned = learnedHotspotKeys.includes(`${currentScene.id}:${hotspot.id}`);
+                const learned = isHotspotCompleted(hotspot.id);
                 const actionDone = hotspot.type === "action" && completedActions.includes(currentScene.id);
                 return (
                   <button
                     key={hotspot.id}
                     onClick={() => openHotspot(hotspot)}
-                    title={`Click to learn: ${hotspot.word}`}
                     className={`hotspot-sign group absolute z-30 -translate-x-1/2 -translate-y-1/2 rounded-2xl border px-3 py-2 text-left shadow-label backdrop-blur-[2px] transition hover:z-50 active:scale-95 hotspot-active hotspot-breathe sm:px-3.5 sm:py-2.5 ${
                       hotspot.type === "action" ? "is-action" : ""
                     } ${
@@ -1832,7 +2032,7 @@
                 {currentScene.title} <span className="text-banana">{currentScene.zh}</span>
               </p>
               <p className="mt-1 text-xs font-black text-cream/75">
-                Words {learnedInScene.length}/{currentScene.hotspots.length}
+                Words {learnedRequiredCount}/{requiredHotspotIds.length}
                 {hasDialogue ? " · Dialogue ✓" : currentScene.npc ? " · Dialogue pending" : ""}
               </p>
             </div>
