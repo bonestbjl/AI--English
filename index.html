@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zoo Trip - 动物园之旅</title>
+    <title>Real Scene English - 真实场景英语</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -2019,6 +2019,106 @@
         0
       );
 
+      const sceneCards = [
+        {
+          id: "zoo",
+          title: "Zoo",
+          zh: "动物园",
+          status: "Available",
+          statusZh: "可进入",
+          description: "Explore the zoo, meet animals, and learn real English step by step.",
+          descriptionZh: "探索动物园，遇见动物，一步一步学习真实英语。",
+          button: "Enter Zoo",
+          buttonZh: "进入动物园",
+          available: true,
+          accent: "#82bd63",
+          visual: "Nature Path",
+          visualZh: "自然探索",
+          image: "linear-gradient(180deg, rgba(10, 18, 13, 0.04), rgba(10, 18, 13, 0.72)), url('assets/zoo-explore-bg.png')",
+          imagePosition: "center 58%",
+        },
+        {
+          id: "fruit-shop",
+          title: "Fruit Shop",
+          zh: "水果店",
+          status: "Coming Soon",
+          statusZh: "即将开放",
+          description: "Learn fruits, prices, shopping phrases, and simple conversations.",
+          descriptionZh: "学习水果、价格、购物表达和简单对话。",
+          button: "Coming Soon",
+          buttonZh: "即将开放",
+          accent: "#ffb45c",
+          visual: "Fresh Market",
+          visualZh: "新鲜市集",
+          image: "linear-gradient(180deg, rgba(18, 12, 8, 0.02), rgba(18, 12, 8, 0.72)), radial-gradient(circle at 21% 68%, #e94d43 0 8%, transparent 8.5%), radial-gradient(circle at 39% 58%, #ffd05a 0 8%, transparent 8.5%), radial-gradient(circle at 56% 70%, #6fbf62 0 8%, transparent 8.5%), radial-gradient(circle at 72% 54%, #ff8b45 0 9%, transparent 9.5%), linear-gradient(110deg, rgba(255,255,255,0.18) 0 12%, transparent 12% 24%, rgba(255,255,255,0.14) 24% 36%, transparent 36% 100%), linear-gradient(145deg, #713f25, #c86a35 44%, #f6b75e)",
+          imagePosition: "center",
+        },
+        {
+          id: "campus",
+          title: "Campus",
+          zh: "校园",
+          status: "Coming Soon",
+          statusZh: "即将开放",
+          description: "Learn classroom, library, friends, teachers, and campus English.",
+          descriptionZh: "学习教室、图书馆、同学、老师和校园英语。",
+          button: "Coming Soon",
+          buttonZh: "即将开放",
+          accent: "#78a6ff",
+          visual: "Books & Halls",
+          visualZh: "书本与走廊",
+          image: "linear-gradient(180deg, rgba(8, 14, 22, 0.02), rgba(8, 14, 22, 0.72)), linear-gradient(90deg, rgba(255,255,255,0.16) 0 2%, transparent 2% 8%, rgba(255,216,107,0.32) 8% 10%, transparent 10% 18%, rgba(120,166,255,0.28) 18% 21%, transparent 21% 100%), radial-gradient(circle at 76% 28%, rgba(255,255,255,0.28), transparent 18%), linear-gradient(145deg, #1b2d46, #334b6f 54%, #587091)",
+          imagePosition: "center",
+        },
+        {
+          id: "cafe",
+          title: "Cafe",
+          zh: "咖啡馆",
+          status: "Coming Soon",
+          statusZh: "即将开放",
+          description: "Order drinks, choose a seat, and learn polite cafe conversations.",
+          descriptionZh: "点饮品、找座位，学习礼貌的咖啡馆对话。",
+          button: "Coming Soon",
+          buttonZh: "即将开放",
+          accent: "#d6a46f",
+          visual: "Warm Counter",
+          visualZh: "温暖吧台",
+          image: "linear-gradient(180deg, rgba(20, 12, 8, 0.03), rgba(20, 12, 8, 0.74)), radial-gradient(circle at 30% 58%, rgba(255,238,199,0.58) 0 10%, transparent 10.5%), radial-gradient(ellipse at 34% 72%, rgba(95,56,32,0.8) 0 18%, transparent 18.5%), radial-gradient(circle at 72% 26%, rgba(255,199,123,0.32), transparent 22%), linear-gradient(145deg, #2d1e18, #7c4b31 52%, #b87546)",
+          imagePosition: "center",
+        },
+        {
+          id: "airport",
+          title: "Airport",
+          zh: "机场",
+          status: "Coming Soon",
+          statusZh: "即将开放",
+          description: "Learn check-in, luggage, security, gates, and travel English.",
+          descriptionZh: "学习值机、行李、安检、登机口和旅行英语。",
+          button: "Coming Soon",
+          buttonZh: "即将开放",
+          accent: "#8bd3e6",
+          visual: "Travel Gate",
+          visualZh: "旅行入口",
+          image: "linear-gradient(180deg, rgba(6, 14, 22, 0.02), rgba(6, 14, 22, 0.74)), linear-gradient(90deg, rgba(255,255,255,0.22) 0 1px, transparent 1px 18%), linear-gradient(0deg, rgba(255,255,255,0.18) 0 1px, transparent 1px 34%), radial-gradient(ellipse at 62% 44%, rgba(139,211,230,0.38), transparent 28%), linear-gradient(145deg, #102033, #244a66 52%, #7fb4cf)",
+          imagePosition: "center",
+        },
+        {
+          id: "office",
+          title: "Office",
+          zh: "办公室",
+          status: "Coming Soon",
+          statusZh: "即将开放",
+          description: "Learn meetings, computers, emails, colleagues, and work English.",
+          descriptionZh: "学习会议、电脑、邮件、同事和职场英语。",
+          button: "Coming Soon",
+          buttonZh: "即将开放",
+          accent: "#b9a1ff",
+          visual: "Work Desk",
+          visualZh: "办公桌面",
+          image: "linear-gradient(180deg, rgba(9, 11, 17, 0.02), rgba(9, 11, 17, 0.74)), linear-gradient(90deg, transparent 0 18%, rgba(255,255,255,0.18) 18% 48%, transparent 48% 100%), radial-gradient(ellipse at 52% 66%, rgba(255,255,255,0.18) 0 23%, transparent 23.5%), radial-gradient(circle at 78% 28%, rgba(185,161,255,0.38), transparent 22%), linear-gradient(145deg, #171923, #334054 54%, #6b7893)",
+          imagePosition: "center",
+        },
+      ];
+
       let cachedEnglishVoice = null;
 
       function getBestEnglishVoice() {
@@ -2312,6 +2412,8 @@
       }
 
       function App() {
+        const [currentView, setCurrentView] = useState("home");
+        const [sceneSelectHint, setSceneSelectHint] = useState("");
         const [currentIndex, setCurrentIndex] = useState(0);
         const [selectedHotspot, setSelectedHotspot] = useState(null);
         const [selectedMoreAnimal, setSelectedMoreAnimal] = useState(null);
@@ -2345,7 +2447,7 @@
         }, []);
 
         useEffect(() => {
-          if (!showWelcome) return;
+          if (currentView !== "zoo" || !showWelcome) return;
           setWelcomeLeaving(false);
           const fadeTimer = window.setTimeout(() => setWelcomeLeaving(true), 3600);
           const hideTimer = window.setTimeout(() => setShowWelcome(false), 4300);
@@ -2353,7 +2455,7 @@
             window.clearTimeout(fadeTimer);
             window.clearTimeout(hideTimer);
           };
-        }, [showWelcome]);
+        }, [currentView, showWelcome]);
 
         const currentScene = scenes[currentIndex];
         const currentDialogue = currentScene.npc ? dialogues[currentScene.npc] : null;
@@ -2505,6 +2607,16 @@
           setShowEnding(true);
         }
 
+        function enterZoo() {
+          setSceneSelectHint("");
+          setCurrentView("zoo");
+        }
+
+        function showComingSoon() {
+          setSceneSelectHint("Coming soon! 即将开放");
+          window.setTimeout(() => setSceneSelectHint(""), 1800);
+        }
+
         function showMoreWords() {
           setExpandedHotspotScenes((items) =>
             items.includes(currentScene.id) ? items : [...items, currentScene.id]
@@ -2566,6 +2678,175 @@
           setShowWelcome(true);
           setWelcomeLeaving(false);
           setAnimalEffect(null);
+        }
+
+        if (currentView === "home") {
+          return (
+            <main className="relative min-h-screen overflow-hidden bg-[#111614] text-white">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(236,244,231,0.12),transparent_27%),radial-gradient(circle_at_18%_78%,rgba(98,145,124,0.16),transparent_31%),radial-gradient(circle_at_82%_72%,rgba(120,137,166,0.1),transparent_29%),linear-gradient(180deg,#18201d_0%,#101513_48%,#0b0f0e_100%)]"></div>
+              <div className="absolute inset-0 opacity-[0.16] [background-image:radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:22px_22px]"></div>
+              <div className="absolute inset-x-8 top-8 h-px bg-gradient-to-r from-transparent via-white/12 to-transparent"></div>
+              <div className="absolute inset-x-16 bottom-10 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent"></div>
+              <div className="light-breath pointer-events-none absolute left-1/2 top-[18%] h-[30rem] w-[44rem] -translate-x-1/2 rounded-full bg-[#d8ead8]/7 blur-3xl"></div>
+              <div className="leaf-drift pointer-events-none absolute left-[58%] top-[62%] h-40 w-96 -translate-x-1/2 rounded-full bg-[#7ea493]/8 blur-3xl"></div>
+              <section className="relative z-10 flex min-h-screen items-center justify-center px-6 pb-16 pt-10 text-center sm:px-8">
+                <div className="dialogue-enter mx-auto max-w-[46rem] -translate-y-3 sm:-translate-y-6">
+                  <p className="text-[10px] font-black uppercase text-white/50 sm:text-[11px]">
+                    REAL-LIFE ENGLISH PLATFORM
+                  </p>
+                  <p className="mt-2 text-sm font-bold text-white/36">
+                    真实场景英语平台
+                  </p>
+                  <h1
+                    className="mt-8 text-5xl font-black leading-[1.02] text-white sm:text-6xl lg:text-7xl"
+                    aria-label="Real Scene English"
+                  >
+                    <span className="block">Real Scene</span>
+                    <span className="mt-1 block text-white/86">English</span>
+                  </h1>
+                  <p className="mt-6 text-2xl font-black text-white/64 sm:text-4xl">
+                    真实场景英语
+                  </p>
+                  <p className="mx-auto mt-10 max-w-2xl text-xl font-black leading-8 text-white/88 sm:text-2xl">
+                    Learn English through real-life scenes.
+                  </p>
+                  <p className="mx-auto mt-2 max-w-2xl text-base font-bold leading-7 text-white/56 sm:text-lg">
+                    在真实生活场景中学习英语。
+                  </p>
+                  <p className="mx-auto mt-7 max-w-xl text-sm font-bold leading-7 text-white/46 sm:text-base">
+                    Click, listen, speak, and learn words in real situations.
+                  </p>
+                  <p className="mx-auto mt-1 max-w-xl text-sm font-bold leading-7 text-white/34">
+                    点击、聆听、开口，在真实情境中学习单词。
+                  </p>
+                  <button
+                    onClick={() => setCurrentView("sceneSelect")}
+                    className="hud-float mt-11 rounded-full border border-white/18 bg-white/12 px-7 py-3.5 text-base font-black text-white shadow-[0_18px_50px_rgba(0,0,0,0.32),inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white/18 active:scale-[0.99] sm:px-8 sm:py-4"
+                  >
+                    <ButtonCopy en="Start Journey" zh="开始旅程" />
+                  </button>
+                  <p className="mt-7 text-sm font-bold text-white/28">
+                    First scene available: <span className="text-white/58">Zoo</span>
+                    <span className="mx-2 text-white/20">/</span>
+                    首个场景：<span className="text-white/58">动物园</span>
+                  </p>
+                </div>
+              </section>
+            </main>
+          );
+        }
+
+        if (currentView === "sceneSelect") {
+          return (
+            <main className="relative min-h-screen overflow-hidden bg-[#17251c] px-4 py-5 text-cream sm:px-6">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_10%,rgba(255,216,107,0.14),transparent_28%),radial-gradient(circle_at_80%_24%,rgba(139,211,230,0.12),transparent_30%),linear-gradient(145deg,#101f1a_0%,#17251c_52%,#24382f_100%)]"></div>
+              <div className="absolute inset-0 opacity-[0.07] [background-image:linear-gradient(120deg,rgba(255,255,255,0.18)_1px,transparent_1px),linear-gradient(30deg,rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:72px_72px]"></div>
+              <div className="light-breath pointer-events-none absolute -left-20 top-4 h-[46vh] w-[46vh] rounded-full bg-banana/20 blur-3xl"></div>
+              <div className="leaf-drift pointer-events-none absolute right-0 top-10 h-48 w-72 rounded-full bg-[#8bd3e6]/12 blur-2xl"></div>
+              <div className="relative z-10 mx-auto max-w-6xl">
+                <header className="dialogue-enter flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-5 shadow-glow backdrop-blur-xl sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <button
+                      onClick={() => setCurrentView("home")}
+                      className="mb-4 rounded-full border border-white/18 bg-white/10 px-4 py-2 text-sm font-black text-white transition hover:bg-white/20"
+                    >
+                      <ButtonCopy en="Back" zh="返回" size="small" />
+                    </button>
+                    <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">
+                      Real Scene English
+                    </p>
+                    <h1 className="mt-2 text-4xl font-black text-white sm:text-6xl">
+                      Choose Your Scene
+                    </h1>
+                    <p className="mt-2 text-2xl font-black text-banana">
+                      选择你的场景
+                    </p>
+                    <p className="mt-4 text-lg font-bold text-cream/80">
+                      Where do you want to learn English today?
+                    </p>
+                    <p className="mt-1 text-base font-bold text-cream/68">
+                      今天你想在哪里学习英语？
+                    </p>
+                  </div>
+                  {sceneSelectHint && (
+                    <div className="dialogue-enter rounded-2xl border border-banana/35 bg-[#5c3a20]/72 px-4 py-3 text-sm font-black text-white shadow-label">
+                      {sceneSelectHint}
+                    </div>
+                  )}
+                </header>
+
+                <section className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                  {sceneCards.map((scene) => (
+                    <article
+                      key={scene.id}
+                      className={`dialogue-enter rounded-3xl border p-5 shadow-glow backdrop-blur-xl transition ${
+                        scene.available
+                          ? "border-banana/50 bg-[#12351f]/86"
+                          : "border-white/12 bg-white/10 opacity-72"
+                      }`}
+                    >
+                      <div
+                        className={`relative mb-5 h-32 overflow-hidden rounded-2xl border border-white/12 bg-cover shadow-[inset_0_-42px_70px_rgba(0,0,0,0.38)] ${
+                          scene.available ? "" : "opacity-[0.86] saturate-[0.78]"
+                        }`}
+                        style={{
+                          backgroundImage: scene.image,
+                          backgroundPosition: scene.imagePosition,
+                          backgroundSize: "cover",
+                        }}
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-br from-white/8 via-transparent to-black/35"></div>
+                        <div
+                          className="absolute inset-x-0 bottom-0 h-16"
+                          style={{
+                            background: `linear-gradient(180deg, transparent, rgba(8, 17, 13, 0.72)), radial-gradient(circle at 78% 20%, ${scene.accent}33, transparent 42%)`,
+                          }}
+                        ></div>
+                        <div className="relative flex h-full items-end justify-between gap-3 p-3">
+                          <span className="rounded-full border border-white/14 bg-black/28 px-3 py-1 text-[10px] font-black uppercase tracking-[0.14em] text-white/88 backdrop-blur-sm">
+                            {scene.visual}
+                          </span>
+                          <span className="rounded-full bg-black/18 px-3 py-1 text-right text-xs font-bold text-cream/76 backdrop-blur-sm">
+                            {scene.visualZh}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="flex items-start justify-between gap-3">
+                        <div>
+                          <h2 className="text-3xl font-black text-white">{scene.title}</h2>
+                          <p className="mt-1 text-xl font-black text-banana">{scene.zh}</p>
+                        </div>
+                        <span
+                          className={`rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-[0.12em] ${
+                            scene.available ? "bg-banana text-ink" : "bg-white/12 text-cream/70"
+                          }`}
+                        >
+                          {scene.status}
+                          <span className="ml-1 opacity-75">{scene.statusZh}</span>
+                        </span>
+                      </div>
+                      <p className="mt-5 text-base font-black leading-7 text-white">
+                        {scene.description}
+                      </p>
+                      <p className="mt-2 text-sm font-bold leading-6 text-cream/70">
+                        {scene.descriptionZh}
+                      </p>
+                      <button
+                        onClick={scene.available ? enterZoo : showComingSoon}
+                        className={`mt-6 w-full rounded-2xl px-4 py-3 font-black shadow-label transition active:scale-[0.99] ${
+                          scene.available
+                            ? "bg-banana text-ink hover:bg-[#ffc83f]"
+                            : "border border-white/14 bg-white/10 text-cream/72 hover:bg-white/16"
+                        }`}
+                      >
+                        <ButtonCopy en={scene.button} zh={scene.buttonZh} />
+                      </button>
+                    </article>
+                  ))}
+                </section>
+              </div>
+            </main>
+          );
         }
 
         return (
@@ -2800,14 +3081,27 @@
             )}
 
             <header className="hud-float absolute left-4 right-4 top-[calc(env(safe-area-inset-top)+1rem)] z-40 mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-2xl border border-white/18 bg-nightglass px-4 py-3 shadow-glow backdrop-blur-xl sm:left-6 sm:right-6">
-              <div className="shrink-0">
+              <div className="min-w-0 shrink-0">
                 <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
                   Zoo Trip {currentIndex + 1}/{scenes.length}
                 </p>
-                <h1 className="whitespace-nowrap text-lg font-black text-white sm:text-2xl">
+                <h1 className="truncate whitespace-nowrap text-lg font-black text-white sm:text-2xl">
                   {currentScene.title} <span className="text-banana">{currentScene.zh}</span>
                 </h1>
               </div>
+              <button
+                onClick={() => {
+                  setSelectedHotspot(null);
+                  setSelectedMoreAnimal(null);
+                  setShowMoreAnimalsChoice(false);
+                  setShowMoreAnimalsBook(false);
+                  setShowEnding(false);
+                  setCurrentView("sceneSelect");
+                }}
+                className="hidden shrink-0 rounded-full border border-white/18 bg-white/10 px-3 py-2 text-xs font-black text-white shadow-label transition hover:bg-white/20 active:scale-[0.99] sm:block"
+              >
+                <ButtonCopy en="Back to Scenes" zh="返回场景选择" size="small" />
+              </button>
               <button
                 onClick={walkForward}
                 className={`shrink-0 rounded-full px-4 py-2 text-sm font-black shadow-label transition hover:-translate-y-0.5 active:translate-y-0 ${
