@@ -190,6 +190,56 @@
         50% { transform: translateX(10px) rotate(4deg); opacity: 0.42; }
       }
 
+      @keyframes tigerForestShadow {
+        0%, 100% { opacity: 0.08; }
+        45% { opacity: 0.2; }
+        72% { opacity: 0.14; }
+      }
+
+      @keyframes grassWhisper {
+        0%, 100% { transform: translateX(0) rotate(-1deg); opacity: 0.24; }
+        50% { transform: translateX(12px) rotate(3deg); opacity: 0.42; }
+      }
+
+      @keyframes tigerStalkDrift {
+        0% { opacity: 0; transform: translateX(-10px) scale(0.96); }
+        28% { opacity: 0.3; }
+        100% { opacity: 0; transform: translateX(22px) scale(1.08); }
+      }
+
+      @keyframes savannaWind {
+        0%, 100% { transform: translateX(0) rotate(-1deg); opacity: 0.2; }
+        50% { transform: translateX(18px) rotate(2deg); opacity: 0.36; }
+      }
+
+      @keyframes zebraGallopDrift {
+        0% { opacity: 0; transform: translateX(-22px) scale(0.94); }
+        24% { opacity: 0.34; }
+        100% { opacity: 0; transform: translateX(36px) scale(1.08); }
+      }
+
+      @keyframes sunlitSweep {
+        0% { opacity: 0; transform: translateX(-18%) skewX(-8deg); }
+        30% { opacity: 0.22; }
+        100% { opacity: 0; transform: translateX(18%) skewX(-8deg); }
+      }
+
+      @keyframes pondRipple {
+        0%, 100% { transform: translateX(0) scale(1); opacity: 0.16; }
+        50% { transform: translateX(8px) scale(1.05); opacity: 0.3; }
+      }
+
+      @keyframes reedSway {
+        0%, 100% { transform: translateX(0) rotate(-2deg); opacity: 0.24; }
+        50% { transform: translateX(10px) rotate(3deg); opacity: 0.42; }
+      }
+
+      @keyframes hippoYawnDrift {
+        0% { opacity: 0; transform: translateY(8px) scale(0.86); }
+        28% { opacity: 0.36; }
+        100% { opacity: 0; transform: translateY(-12px) scale(1.28); }
+      }
+
       .hotspot-label {
         max-width: min(42vw, 168px);
         overflow-wrap: anywhere;
@@ -311,6 +361,15 @@
       .action-toast { animation: actionToast var(--action-duration, 2600ms) ease-out both; }
       .giraffe-reach-glow { animation: giraffeReachGlow 2.8s ease-in-out infinite; }
       .tall-leaves-rustle { animation: tallLeavesRustle 4.2s ease-in-out infinite; }
+      .tiger-forest-shadow { animation: tigerForestShadow 2.6s ease-in-out both; }
+      .grass-whisper { animation: grassWhisper 4.8s ease-in-out infinite; }
+      .tiger-stalk-drift { animation: tigerStalkDrift 1.4s ease-out both; }
+      .savanna-wind { animation: savannaWind 5.2s ease-in-out infinite; }
+      .zebra-gallop-drift { animation: zebraGallopDrift 1.25s ease-out both; }
+      .sunlit-sweep { animation: sunlitSweep 1.1s ease-out both; }
+      .pond-ripple { animation: pondRipple 4.4s ease-in-out infinite; }
+      .reed-sway { animation: reedSway 5.5s ease-in-out infinite; }
+      .hippo-yawn-drift { animation: hippoYawnDrift 1.2s ease-out both; }
     </style>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
@@ -829,32 +888,6 @@
               y: 34,
               offset: { x: -34, y: -24, mobileX: -18, mobileY: -24 },
             },
-            {
-              id: "leaves",
-              word: "leaves",
-              phonetic: "/liːvz/",
-              meaning: "树叶，叶子",
-              example: "Green leaves move softly in the wind.",
-              translation: "绿色的叶子在风中轻轻摆动。",
-              label: "leaves",
-              zh: "叶子",
-              x: 66,
-              y: 28,
-              offset: { x: 34, y: -22, mobileX: 18, mobileY: -20 },
-            },
-            {
-              id: "visitor",
-              word: "visitor",
-              phonetic: "/ˈvɪzɪtər/",
-              meaning: "游客",
-              example: "A visitor watches the panda quietly.",
-              translation: "一位游客安静地看着熊猫。",
-              label: "visitor",
-              zh: "游客",
-              x: 78,
-              y: 55,
-              offset: { x: 34, y: 6, mobileX: 20, mobileY: 6 },
-            },
           ],
         },
         {
@@ -865,10 +898,8 @@
           bg: "assets/zoo-giraffe-area-bg.png",
           npc: "giraffeVisitor",
           coreWord: "giraffe",
-          dialogueRequired: false,
-          requiredHotspots: ["giraffe", "neck", "leaves", "tall", "reach"],
-          completeText: "Great! The giraffe can reach the tall leaves. Let's head to the exit.",
-          completeZh: "太棒了！长颈鹿能够到高高的树叶。我们去出口吧。",
+          completeText: "Great! The giraffe can reach the tall leaves. Let's visit the tiger area.",
+          completeZh: "太棒了！长颈鹿能够到高高的树叶。我们去老虎区吧。",
           intro: {
             text: "You walk into a sunny open area. A giraffe reaches up to eat leaves from a tall tree.",
             zh: "你走进阳光开阔的长颈鹿区，长颈鹿正伸长脖子吃高处的树叶。",
@@ -970,18 +1001,357 @@
               y: 29,
               offset: { x: 34, y: -48, mobileX: 20, mobileY: -34 },
             },
+          ],
+        },
+        {
+          id: "tiger",
+          title: "Tiger Area",
+          zh: "老虎区",
+          short: "老虎区",
+          bg: "assets/zoo-tiger-area-bg.png",
+          npc: "tigerVisitor",
+          coreWord: "tiger",
+          completeText: "Great! The tiger moved quietly through the forest. Let's visit the zebra area.",
+          completeZh: "太棒了！老虎安静地穿过森林。我们去斑马区吧。",
+          intro: {
+            text: "You enter a quiet forest area. A tiger moves slowly through the grass and shadows.",
+            zh: "你进入安静的森林老虎区，一只老虎在草丛和树影中慢慢移动。",
+          },
+          hotspots: [
             {
-              id: "visitor",
-              word: "visitor",
-              phonetic: "/ˈvɪzɪtər/",
-              meaning: "游客",
-              example: "A visitor looks up at the giraffe.",
-              translation: "一位游客抬头看着长颈鹿。",
-              label: "visitor",
-              zh: "游客",
-              x: 80,
+              id: "tiger",
+              word: "tiger",
+              phonetic: "/ˈtaɪɡər/",
+              meaning: "老虎",
+              example: "The tiger is walking through the forest.",
+              translation: "老虎正在森林里行走。",
+              label: "tiger",
+              zh: "老虎",
+              x: 68,
+              y: 49,
+              offset: { x: -70, y: -26, mobileX: -34, mobileY: -24 },
+            },
+            {
+              id: "stripes",
+              word: "stripes",
+              phonetic: "/straɪps/",
+              meaning: "条纹",
+              example: "The tiger has orange and black stripes.",
+              translation: "老虎有橙色和黑色的条纹。",
+              label: "stripes",
+              zh: "条纹",
+              x: 76,
+              y: 43,
+              offset: { x: 42, y: -34, mobileX: 22, mobileY: -28 },
+            },
+            {
+              id: "forest",
+              word: "forest",
+              phonetic: "/ˈfɔːrɪst/",
+              meaning: "森林",
+              example: "The tiger lives in the forest.",
+              translation: "老虎生活在森林里。",
+              label: "forest",
+              zh: "森林",
+              x: 36,
+              y: 30,
+              offset: { x: -40, y: -28, mobileX: -22, mobileY: -26 },
+            },
+            {
+              id: "claw",
+              word: "claw",
+              phonetic: "/klɔː/",
+              meaning: "爪子",
+              example: "The tiger has sharp claws.",
+              translation: "老虎有锋利的爪子。",
+              label: "claw",
+              zh: "爪子",
+              x: 70,
+              y: 67,
+              offset: { x: -28, y: 42, mobileX: -14, mobileY: 32 },
+            },
+            {
+              id: "quiet",
+              word: "quiet",
+              phonetic: "/ˈkwaɪət/",
+              meaning: "安静的",
+              example: "Be quiet near the tiger area.",
+              translation: "在老虎区附近要安静。",
+              label: "quiet",
+              zh: "安静的",
+              x: 15,
+              y: 44,
+              offset: { x: 30, y: -22, mobileX: 22, mobileY: -20 },
+            },
+            {
+              id: "hunter",
+              word: "hunter",
+              phonetic: "/ˈhʌntər/",
+              meaning: "猎手",
+              example: "The tiger is a strong hunter.",
+              translation: "老虎是强大的猎手。",
+              label: "hunter",
+              zh: "猎手",
+              x: 62,
+              y: 52,
+              offset: { x: -90, y: 38, mobileX: -38, mobileY: 30 },
+            },
+            {
+              id: "stalk",
+              word: "stalk",
+              type: "action",
+              actionMessageEn: "Look! The tiger is stalking through the forest.",
+              actionMessageZh: "看！老虎正在森林里悄悄潜行。",
+              actionEffect: "stalkShadow",
+              actionDuration: 2800,
+              phonetic: "/stɔːk/",
+              meaning: "潜行，悄悄靠近",
+              example: "The tiger can stalk quietly.",
+              translation: "老虎可以悄悄潜行。",
+              label: "stalk",
+              zh: "潜行",
+              x: 60,
               y: 58,
-              offset: { x: 34, y: 14, mobileX: 18, mobileY: 14 },
+              offset: { x: -34, y: -48, mobileX: -18, mobileY: -36 },
+            },
+          ],
+        },
+        {
+          id: "zebra",
+          title: "Zebra Area",
+          zh: "斑马区",
+          short: "斑马区",
+          bg: "assets/zoo-zebra-area-bg.png",
+          npc: "zebraVisitor",
+          coreWord: "zebra",
+          completeText: "Great! The zebra galloped across the savanna. Let's visit the hippo area.",
+          completeZh: "太棒了！斑马在稀树草原上飞奔。我们去河马区吧。",
+          intro: {
+            text: "You step into a bright open area. A zebra moves calmly under the warm sun.",
+            zh: "你走进明亮开阔的斑马区，一只斑马在温暖阳光下悠闲地移动。",
+          },
+          hotspots: [
+            {
+              id: "zebra",
+              word: "zebra",
+              phonetic: "/ˈziːbrə/",
+              meaning: "斑马",
+              example: "The zebra is standing in the open area.",
+              translation: "斑马正站在开阔的区域里。",
+              label: "zebra",
+              zh: "斑马",
+              x: 66,
+              y: 47,
+              offset: { x: -76, y: -28, mobileX: -36, mobileY: -26 },
+            },
+            {
+              id: "hoof",
+              word: "hoof",
+              phonetic: "/huːf/",
+              meaning: "蹄子",
+              example: "The zebra has strong hooves.",
+              translation: "斑马有强壮的蹄子。",
+              label: "hoof",
+              zh: "蹄子",
+              x: 66,
+              y: 72,
+              offset: { x: -34, y: 34, mobileX: -18, mobileY: 30 },
+            },
+            {
+              id: "mane",
+              word: "mane",
+              phonetic: "/meɪn/",
+              meaning: "鬃毛",
+              example: "The zebra has a short mane.",
+              translation: "斑马有短短的鬃毛。",
+              label: "mane",
+              zh: "鬃毛",
+              x: 62,
+              y: 34,
+              offset: { x: -42, y: -46, mobileX: -22, mobileY: -34 },
+            },
+            {
+              id: "pattern",
+              word: "pattern",
+              phonetic: "/ˈpætərn/",
+              meaning: "图案，花纹",
+              example: "Each zebra has a different pattern.",
+              translation: "每只斑马都有不同的花纹。",
+              label: "pattern",
+              zh: "花纹",
+              x: 72,
+              y: 49,
+              offset: { x: 46, y: -18, mobileX: 24, mobileY: -18 },
+            },
+            {
+              id: "herd",
+              word: "herd",
+              phonetic: "/hɜːrd/",
+              meaning: "兽群",
+              example: "A herd of zebras stays together.",
+              translation: "一群斑马会待在一起。",
+              label: "herd",
+              zh: "兽群",
+              x: 86,
+              y: 38,
+              offset: { x: 26, y: -26, mobileX: 14, mobileY: -24 },
+            },
+            {
+              id: "savanna",
+              word: "savanna",
+              phonetic: "/səˈvænə/",
+              meaning: "稀树草原",
+              example: "Zebras live on the savanna.",
+              translation: "斑马生活在稀树草原上。",
+              label: "savanna",
+              zh: "稀树草原",
+              x: 36,
+              y: 43,
+              offset: { x: -42, y: -20, mobileX: -22, mobileY: -18 },
+            },
+            {
+              id: "gallop",
+              word: "gallop",
+              type: "action",
+              actionMessageEn: "Look! The zebra is galloping across the savanna.",
+              actionMessageZh: "看！斑马正在稀树草原上飞奔。",
+              actionEffect: "savannaGallop",
+              actionDuration: 2800,
+              phonetic: "/ˈɡæləp/",
+              meaning: "疾驰，飞奔",
+              example: "The zebra can gallop across the savanna.",
+              translation: "斑马可以在稀树草原上飞奔。",
+              label: "gallop",
+              zh: "飞奔",
+              x: 58,
+              y: 62,
+              offset: { x: -66, y: 20, mobileX: -34, mobileY: 18 },
+            },
+          ],
+        },
+        {
+          id: "hippo",
+          title: "Hippo Area",
+          zh: "河马区",
+          short: "河马区",
+          bg: "assets/zoo-hippo-area-bg.png",
+          npc: "hippoVisitor",
+          coreWord: "hippo",
+          completeText: "Great! The hippo opened its big mouth. Let's head to the exit.",
+          completeZh: "太棒了！河马张开了它的大嘴。我们去出口吧。",
+          intro: {
+            text: "You arrive at the hippo pond. A heavy hippo rests in the water near the muddy bank.",
+            zh: "你来到河马池边，一只沉甸甸的河马正在泥岸旁的水里休息。",
+          },
+          hotspots: [
+            {
+              id: "hippo",
+              word: "hippo",
+              phonetic: "/ˈhɪpoʊ/",
+              meaning: "河马",
+              example: "The hippo is resting in the pond.",
+              translation: "河马正在池塘里休息。",
+              label: "hippo",
+              zh: "河马",
+              x: 66,
+              y: 48,
+              offset: { x: 54, y: -28, mobileX: 24, mobileY: -24 },
+            },
+            {
+              id: "pond",
+              word: "pond",
+              phonetic: "/pɑːnd/",
+              meaning: "池塘",
+              example: "The hippo is in the pond.",
+              translation: "河马在池塘里。",
+              label: "pond",
+              zh: "池塘",
+              x: 74,
+              y: 38,
+              offset: { x: 28, y: -4, mobileX: 14, mobileY: -4 },
+            },
+            {
+              id: "mud",
+              word: "mud",
+              phonetic: "/mʌd/",
+              meaning: "泥",
+              example: "The hippo likes the mud.",
+              translation: "河马喜欢泥地。",
+              label: "mud",
+              zh: "泥",
+              x: 31,
+              y: 41,
+              offset: { x: -18, y: 0, mobileX: -10, mobileY: 0 },
+            },
+            {
+              id: "mouth",
+              word: "mouth",
+              phonetic: "/maʊθ/",
+              meaning: "嘴",
+              example: "The hippo has a big mouth.",
+              translation: "河马有一张大嘴。",
+              label: "mouth",
+              zh: "嘴",
+              x: 48,
+              y: 55,
+              offset: { x: -52, y: -8, mobileX: -26, mobileY: -8 },
+            },
+            {
+              id: "yawn",
+              word: "yawn",
+              type: "action",
+              actionMessageEn: "Look! The hippo is opening its big mouth.",
+              actionMessageZh: "看！河马正在张开它的大嘴。",
+              actionEffect: "hippoYawn",
+              actionDuration: 2800,
+              phonetic: "/jɔːn/",
+              meaning: "打哈欠，张大嘴",
+              example: "The hippo can yawn with a big mouth.",
+              translation: "河马会张大嘴打哈欠。",
+              label: "yawn",
+              zh: "打哈欠",
+              x: 50,
+              y: 52,
+              offset: { x: 44, y: -46, mobileX: 22, mobileY: -34 },
+            },
+            {
+              id: "heavy",
+              word: "heavy",
+              phonetic: "/ˈhevi/",
+              meaning: "重的",
+              example: "The hippo is very heavy.",
+              translation: "河马非常重。",
+              label: "heavy",
+              zh: "重的",
+              x: 69,
+              y: 60,
+              offset: { x: 44, y: 22, mobileX: 22, mobileY: 18 },
+            },
+            {
+              id: "splash",
+              word: "splash",
+              phonetic: "/splæʃ/",
+              meaning: "水花，溅水",
+              example: "The hippo makes a big splash.",
+              translation: "河马溅起很大的水花。",
+              label: "splash",
+              zh: "水花",
+              x: 49,
+              y: 62,
+              offset: { x: -70, y: 12, mobileX: -32, mobileY: 10 },
+            },
+            {
+              id: "reeds",
+              word: "reeds",
+              phonetic: "/riːdz/",
+              meaning: "芦苇",
+              example: "The reeds grow near the pond.",
+              translation: "芦苇长在池塘旁边。",
+              label: "reeds",
+              zh: "芦苇",
+              x: 82,
+              y: 34,
+              offset: { x: -64, y: -2, mobileX: -30, mobileY: -2 },
             },
           ],
         },
@@ -1222,6 +1592,87 @@
             },
           ],
         },
+        tigerVisitor: {
+          id: "tigerVisitor",
+          speaker: "Visitor",
+          zh: "游客",
+          text: "Shh... the tiger is moving quietly.",
+          translation: "嘘……老虎正在安静地移动。",
+          options: [
+            {
+              text: "It has beautiful stripes.",
+              choiceZh: "它有漂亮的条纹。",
+              reply: "Yes, the stripes help it hide in the forest.",
+              translation: "是的，条纹帮助它在森林里隐藏。",
+            },
+            {
+              text: "Why should we be quiet?",
+              choiceZh: "我们为什么要安静？",
+              reply: "A quiet voice helps the tiger stay calm.",
+              translation: "安静的声音能帮助老虎保持平静。",
+            },
+            {
+              text: "It looks powerful.",
+              choiceZh: "它看起来很有力量。",
+              reply: "It does. A tiger is a strong hunter.",
+              translation: "是的。老虎是强大的猎手。",
+            },
+          ],
+        },
+        zebraVisitor: {
+          id: "zebraVisitor",
+          speaker: "Visitor",
+          zh: "游客",
+          text: "Look at its pattern. Every zebra is different.",
+          translation: "看它的花纹。每只斑马都不一样。",
+          options: [
+            {
+              text: "Its pattern is beautiful.",
+              choiceZh: "它的花纹很漂亮。",
+              reply: "Yes, every pattern is special.",
+              translation: "是的，每一种花纹都很特别。",
+            },
+            {
+              text: "What is a herd?",
+              choiceZh: "什么是兽群？",
+              reply: "A herd is a group of animals that stays together.",
+              translation: "herd 指的是一群待在一起的动物。",
+            },
+            {
+              text: "The zebra can gallop fast.",
+              choiceZh: "斑马可以飞快地奔跑。",
+              reply: "Yes, it can move quickly across the savanna.",
+              translation: "是的，它可以快速穿过稀树草原。",
+            },
+          ],
+        },
+        hippoVisitor: {
+          id: "hippoVisitor",
+          speaker: "Visitor",
+          zh: "游客",
+          text: "Wow, its mouth is huge!",
+          translation: "哇，它的嘴好大！",
+          options: [
+            {
+              text: "The hippo looks heavy.",
+              choiceZh: "河马看起来很重。",
+              reply: "Yes, it has a big, heavy body.",
+              translation: "是的，它有一个很大、很重的身体。",
+            },
+            {
+              text: "Why is it in the pond?",
+              choiceZh: "它为什么在池塘里？",
+              reply: "The pond helps the hippo stay cool.",
+              translation: "池塘可以帮助河马保持凉爽。",
+            },
+            {
+              text: "Its mouth is so big.",
+              choiceZh: "它的嘴好大。",
+              reply: "It is. A hippo can open its mouth very wide.",
+              translation: "是的。河马可以把嘴张得很大。",
+            },
+          ],
+        },
         exitStaff: {
           id: "exitStaff",
           speaker: "Staff",
@@ -1306,6 +1757,17 @@
         );
       }
 
+      function ButtonCopy({ en, zh, align = "center", size = "base" }) {
+        const alignment = align === "left" ? "items-start text-left" : "items-center text-center";
+        const zhSize = size === "small" ? "text-[10px]" : "text-[11px]";
+        return (
+          <span className={`inline-flex flex-col ${alignment} leading-tight`}>
+            <span>{en}</span>
+            <span className={`mt-0.5 ${zhSize} font-bold opacity-70`}>{zh}</span>
+          </span>
+        );
+      }
+
       function useViewportSize() {
         const [size, setSize] = useState({
           width: window.innerWidth || 1280,
@@ -1378,7 +1840,7 @@
         return point;
       }
 
-      function getBlockedRects({ width, height, hasDialogue, hasAnimalEffect, isMobile }) {
+      function getBlockedRects({ width, height, hasDialogue, hasAnimalEffect, hasLearningPanel, isMobile }) {
         const side = isMobile ? 14 : 20;
         const headerHeight = isMobile ? 90 : 86;
         const observeWidth = isMobile ? Math.min(width - 28, 340) : 390;
@@ -1420,6 +1882,15 @@
           });
         }
 
+        if (hasLearningPanel && !isMobile) {
+          rects.push({
+            left: width - 456,
+            right: width,
+            top: 0,
+            bottom: height,
+          });
+        }
+
         return rects;
       }
 
@@ -1431,6 +1902,7 @@
           height: viewport.height,
           hasDialogue: options.hasDialogue,
           hasAnimalEffect: options.hasAnimalEffect,
+          hasLearningPanel: options.hasLearningPanel,
           isMobile,
         });
 
@@ -1584,23 +2056,23 @@
         const arrangedHotspots = layoutHotspots(visibleHotspots, viewport, {
           hasDialogue: Boolean(currentDialogue && !showEnding),
           hasAnimalEffect: Boolean(actionHotspot),
+          hasLearningPanel: Boolean(selectedHotspot),
         });
         const learnedInScene = currentScene.hotspots.filter((hotspot) =>
           isHotspotCompleted(hotspot.id)
         );
-        const requiredHotspotIds = currentScene.requiredHotspots || currentScene.hotspots.map((hotspot) => hotspot.id);
-        const missingRequiredHotspots = requiredHotspotIds.filter((id) => !isHotspotCompleted(id));
-        const learnedRequiredCount = requiredHotspotIds.length - missingRequiredHotspots.length;
-        const missingRequiredLabels = missingRequiredHotspots.map((id) => hotspotById[id]?.word || id);
-        const hasAllWords = missingRequiredHotspots.length === 0;
-        const hasDialogue =
-          currentScene.dialogueRequired === false ||
-          !currentScene.npc ||
-          conversationDone.includes(currentScene.npc);
+        const requiredHotspotIds = currentScene.hotspots.map((hotspot) => hotspot.id);
+        const missingHotspots = currentScene.hotspots.filter((hotspot) => !isHotspotCompleted(hotspot.id));
+        const missingWordLabels = missingHotspots.map((hotspot) => hotspot.word);
+        const learnedRequiredCount = requiredHotspotIds.length - missingHotspots.length;
+        const hasAllWords = missingHotspots.length === 0;
+        const hasDialogue = !currentScene.npc || conversationDone.includes(currentScene.npc);
         const hasAction = !actionHotspot || completedActions.includes(currentScene.id);
         const sceneComplete = hasAllWords && hasDialogue && hasAction;
         const nextActionLabel =
           currentIndex === scenes.length - 1 ? "Finish Trip" : "Walk Forward";
+        const nextActionZh =
+          currentIndex === scenes.length - 1 ? "完成旅程" : "继续前进";
 
         function speakEnglish(text, rate = 0.9, key = text) {
           if (!("speechSynthesis" in window)) return;
@@ -1695,14 +2167,16 @@
           if (!sceneComplete) {
             const needs = [];
             if (!hasAllWords) {
-              needs.push(`还差：${missingRequiredLabels.join("、")} (${learnedRequiredCount}/${requiredHotspotIds.length})`);
+              needs.push(`还差单词：${missingWordLabels.join("、")} (${learnedRequiredCount}/${requiredHotspotIds.length})`);
             }
-            if (!hasDialogue) needs.push("finish the conversation");
-            if (!hasAction && actionHotspot && !missingRequiredLabels.includes(actionHotspot.word)) {
-              needs.push(`还差 Action：${actionHotspot.word}`);
+            if (!hasAction && actionHotspot) {
+              needs.push(`还差互动：${actionHotspot.word} action`);
+            }
+            if (!hasDialogue) {
+              needs.push(`还差对话：请完成${currentDialogue?.zh || "NPC"}对话`);
             }
             setProgressHint(`先完成当前区域：${needs.join(" + ")}。`);
-            window.setTimeout(() => setProgressHint(""), 2400);
+            window.setTimeout(() => setProgressHint(""), 4200);
             return;
           }
 
@@ -1832,6 +2306,53 @@
                 </div>
               )}
 
+              {currentScene.id === "tiger" && (
+                <div className="pointer-events-none absolute inset-0 z-10">
+                  <div className="grass-whisper absolute left-[17%] top-[48%] h-40 w-52 rounded-full bg-[#436d34]/28 blur-xl"></div>
+                  <div className="grass-whisper absolute right-[12%] bottom-[15%] h-48 w-64 rounded-full bg-[#2f6a39]/24 blur-xl [animation-delay:1.1s]"></div>
+                  <div className="grass-whisper absolute left-[46%] bottom-[22%] h-24 w-44 rounded-full bg-[#8aa45a]/18 blur-xl [animation-delay:0.5s]"></div>
+                  {animalEffect?.effect === "stalkShadow" && (
+                    <>
+                      <div className="tiger-forest-shadow absolute inset-0 bg-[#07160e]/55"></div>
+                      <div className="tiger-stalk-drift absolute left-[57%] top-[48%] h-36 w-72 rounded-full bg-[#1a1209]/22 blur-2xl"></div>
+                      <div className="tiger-stalk-drift absolute left-[62%] top-[60%] h-20 w-44 rounded-full bg-[#d99a45]/18 blur-xl [animation-delay:0.16s]"></div>
+                    </>
+                  )}
+                </div>
+              )}
+
+              {currentScene.id === "zebra" && (
+                <div className="pointer-events-none absolute inset-0 z-10">
+                  <div className="savanna-wind absolute left-[20%] bottom-[24%] h-28 w-72 rounded-full bg-[#d5cb75]/20 blur-xl"></div>
+                  <div className="savanna-wind absolute right-[8%] bottom-[28%] h-32 w-80 rounded-full bg-[#8faa50]/20 blur-xl [animation-delay:1.2s]"></div>
+                  <div className="savanna-wind absolute left-[38%] top-[36%] h-20 w-64 rounded-full bg-[#f0d985]/16 blur-xl [animation-delay:0.5s]"></div>
+                  {animalEffect?.effect === "savannaGallop" && (
+                    <>
+                      <div className="sunlit-sweep absolute inset-y-0 left-0 w-full bg-banana/22 blur-2xl"></div>
+                      <div className="zebra-gallop-drift absolute left-[56%] top-[51%] h-36 w-80 rounded-full bg-[#f4e2a3]/20 blur-2xl"></div>
+                      <div className="zebra-gallop-drift absolute left-[55%] top-[64%] h-16 w-56 rounded-full bg-[#5e4f37]/16 blur-xl [animation-delay:0.14s]"></div>
+                    </>
+                  )}
+                </div>
+              )}
+
+              {currentScene.id === "hippo" && (
+                <div className="pointer-events-none absolute inset-0 z-10">
+                  <div className="pond-ripple absolute left-[45%] top-[43%] h-36 w-80 rounded-full bg-[#8ec7a6]/22 blur-xl"></div>
+                  <div className="pond-ripple absolute right-[9%] top-[44%] h-32 w-72 rounded-full bg-[#7eb79e]/18 blur-xl [animation-delay:1.1s]"></div>
+                  <div className="reed-sway absolute left-[6%] bottom-[20%] h-32 w-44 rounded-full bg-[#689a48]/24 blur-xl"></div>
+                  <div className="reed-sway absolute right-[9%] bottom-[12%] h-40 w-48 rounded-full bg-[#78a956]/24 blur-xl [animation-delay:0.8s]"></div>
+                  {animalEffect?.effect === "hippoYawn" && (
+                    <>
+                      <div className="hippo-yawn-drift absolute left-[49%] top-[56%] h-24 w-36 rounded-full bg-[#f7d8a2]/24 blur-xl"></div>
+                      <div className="hippo-yawn-drift absolute left-[50%] top-[61%] h-12 w-56 rounded-full bg-[#9bd4c3]/26 blur-lg [animation-delay:0.12s]"></div>
+                      <span className="water-drop absolute left-[48%] top-[63%] h-4 w-3 rounded-full bg-[#c9f2ff]/80" style={{ "--drop-x": "-34px", "--drop-y": "-42px" }}></span>
+                      <span className="water-drop absolute left-[53%] top-[62%] h-4 w-3 rounded-full bg-[#c9f2ff]/80 [animation-delay:0.12s]" style={{ "--drop-x": "42px", "--drop-y": "-36px" }}></span>
+                    </>
+                  )}
+                </div>
+              )}
+
               {animalEffect && (
                 <div
                   className="animal-action-toast action-toast pointer-events-none absolute left-1/2 top-[calc(env(safe-area-inset-top)+6.5rem)] z-20 w-[calc(100vw-2rem)] max-w-[420px] rounded-2xl border border-[#ffe8a2]/50 bg-[#5c3a20]/72 px-4 py-3 text-center text-cream shadow-label backdrop-blur-[3px]"
@@ -1875,11 +2396,17 @@
                       {hotspot.label}
                     </span>
                     <span className="hotspot-sub mt-1 block text-xs font-bold">
-                      {hotspot.type === "action" ? (actionDone ? "event done" : "Try it") : learned ? "done" : hotspot.zh}
+                      {hotspot.type === "action"
+                        ? actionDone
+                          ? "event done · 互动完成"
+                          : "Try it · 试试看"
+                        : learned
+                        ? "done"
+                        : hotspot.zh}
                     </span>
                     {hotspot.type === "action" && (
                       <span className="hotspot-type-badge mt-1 inline-flex rounded-full bg-banana/90 px-2 py-0.5 text-[10px] font-black uppercase text-ink">
-                        Action
+                        Action · 互动
                       </span>
                     )}
                     <span className="pointer-events-none absolute left-1/2 top-full mt-3 hidden -translate-x-1/2 whitespace-nowrap rounded-full bg-[#4b321d]/92 px-3 py-1 text-[11px] font-black text-cream shadow-label group-hover:block">
@@ -1894,7 +2421,7 @@
                   onClick={showMoreWords}
                   className="absolute right-5 top-1/2 z-30 -translate-y-1/2 rounded-2xl border border-[#ffe8a2]/80 bg-[#6b4524]/88 px-4 py-3 text-sm font-black text-cream shadow-label backdrop-blur-[2px] transition hover:bg-[#80562d]/92 active:scale-95"
                 >
-                  +{hiddenHotspotCount} More Words
+                  <ButtonCopy en={`+${hiddenHotspotCount} More Words`} zh="更多单词" size="small" />
                 </button>
               )}
             </section>
@@ -1923,7 +2450,7 @@
                     : "border border-banana/40 bg-white/12 text-white hover:bg-white/22"
                 }`}
               >
-                {nextActionLabel}
+                <ButtonCopy en={nextActionLabel} zh={nextActionZh} size="small" />
               </button>
             </header>
 
@@ -1946,7 +2473,7 @@
             </button>
 
             {progressHint && (
-              <div className="dialogue-enter absolute left-1/2 top-[25%] z-40 -translate-x-1/2 rounded-full border border-banana/40 bg-[#112319]/88 px-5 py-3 text-sm font-black text-white shadow-glow backdrop-blur-xl">
+              <div className="dialogue-enter absolute left-1/2 top-[25%] z-40 max-w-[calc(100vw-2rem)] -translate-x-1/2 rounded-2xl border border-banana/40 bg-[#112319]/88 px-5 py-3 text-sm font-black leading-6 text-white shadow-glow backdrop-blur-xl">
                 {progressHint}
               </div>
             )}
@@ -2085,7 +2612,8 @@
                   <button
                     onClick={() => setSelectedHotspot(null)}
                     className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/12 text-2xl font-black text-white transition hover:bg-white/22 active:scale-95"
-                    aria-label="Close card"
+                    aria-label="Close 关闭"
+                    title="Close / 关闭"
                   >
                     ×
                   </button>
@@ -2118,7 +2646,7 @@
                     >
                       <span className="inline-flex items-center justify-center gap-2">
                         {playingKey === `${selectedHotspot.id}-normal` && <SoundBars />}
-                        Normal
+                        <ButtonCopy en="Normal" zh="正常语速" />
                       </span>
                     </button>
                     <button
@@ -2127,7 +2655,7 @@
                     >
                       <span className="inline-flex items-center justify-center gap-2">
                         {playingKey === `${selectedHotspot.id}-slow` && <SoundBars />}
-                        Slow
+                        <ButtonCopy en="Slow" zh="慢速朗读" />
                       </span>
                     </button>
                   </div>
@@ -2138,7 +2666,7 @@
                   >
                     <span className="inline-flex items-center justify-center gap-2">
                       {playingKey === `${selectedHotspot.id}-sentence` && <SoundBars />}
-                      Play Sentence
+                      <ButtonCopy en="Play Sentence" zh="朗读例句" />
                     </span>
                   </button>
 
@@ -2150,7 +2678,10 @@
                         : "bg-white/12 text-white hover:bg-white/22"
                     }`}
                   >
-                    {savedWords.includes(selectedHotspot.word) ? "Saved to Word Book" : "Add to Word Book"}
+                    <ButtonCopy
+                      en={savedWords.includes(selectedHotspot.word) ? "Saved to Word Book" : "Add to Word Book"}
+                      zh={savedWords.includes(selectedHotspot.word) ? "已加入生词本" : "加入生词本"}
+                    />
                   </button>
 
                   <button
@@ -2161,7 +2692,7 @@
                         : "border border-banana/35 bg-white/12 text-white hover:bg-white/22"
                     }`}
                   >
-                    {nextActionLabel}
+                    <ButtonCopy en={nextActionLabel} zh={nextActionZh} />
                   </button>
                 </div>
               </aside>
@@ -2193,7 +2724,7 @@
                       }}
                       className="rounded-full border border-banana/45 bg-white/12 px-5 py-3 font-black text-white transition hover:bg-white/22"
                     >
-                      Skip
+                      <ButtonCopy en="Skip" zh="跳过" size="small" />
                     </button>
                   </div>
                 </div>
@@ -2240,7 +2771,7 @@
                       onClick={restartTrip}
                       className="rounded-full bg-banana px-6 py-3 font-black text-ink shadow-label transition hover:bg-[#ffc83f]"
                     >
-                      Restart Trip
+                      <ButtonCopy en="Restart Trip" zh="重新开始旅程" />
                     </button>
                     <button
                       onClick={() => speakEnglish("Next scene coming soon.", 0.9, "nextScene")}
@@ -2248,7 +2779,7 @@
                     >
                       <span className="inline-flex items-center gap-2">
                         {playingKey === "nextScene" && <SoundBars />}
-                        Next Scene Coming Soon
+                        <ButtonCopy en="Next Scene Coming Soon" zh="下个场景即将开放" />
                       </span>
                     </button>
                   </div>
