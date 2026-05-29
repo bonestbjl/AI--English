@@ -1702,6 +1702,323 @@
         },
       };
 
+      const moreAnimalPages = [
+        {
+          id: "mammals",
+          title: "Mammals",
+          zh: "哺乳动物",
+          animals: [
+            {
+              id: "fox",
+              word: "fox",
+              phonetic: "/fɑːks/",
+              meaning: "狐狸",
+              example: "The fox is quick and clever.",
+              translation: "狐狸又快又聪明。",
+            },
+            {
+              id: "wolf",
+              word: "wolf",
+              phonetic: "/wʊlf/",
+              meaning: "狼",
+              example: "The wolf lives in the wild.",
+              translation: "狼生活在野外。",
+            },
+            {
+              id: "deer",
+              word: "deer",
+              phonetic: "/dɪr/",
+              meaning: "鹿",
+              example: "The deer is walking quietly.",
+              translation: "鹿正在安静地行走。",
+            },
+            {
+              id: "camel",
+              word: "camel",
+              phonetic: "/ˈkæməl/",
+              meaning: "骆驼",
+              example: "The camel can live in the desert.",
+              translation: "骆驼可以生活在沙漠里。",
+            },
+            {
+              id: "kangaroo",
+              word: "kangaroo",
+              phonetic: "/ˌkæŋɡəˈruː/",
+              meaning: "袋鼠",
+              example: "The kangaroo can jump far.",
+              translation: "袋鼠可以跳得很远。",
+            },
+            {
+              id: "sloth",
+              word: "sloth",
+              phonetic: "/sloʊθ/",
+              meaning: "树懒",
+              example: "The sloth moves very slowly.",
+              translation: "树懒移动得很慢。",
+            },
+            {
+              id: "otter",
+              word: "otter",
+              phonetic: "/ˈɑːtər/",
+              meaning: "水獭",
+              example: "The otter swims in the river.",
+              translation: "水獭在河里游泳。",
+            },
+            {
+              id: "raccoon",
+              word: "raccoon",
+              phonetic: "/ræˈkuːn/",
+              meaning: "浣熊",
+              example: "The raccoon has a striped tail.",
+              translation: "浣熊有一条带条纹的尾巴。",
+            },
+            {
+              id: "squirrel",
+              word: "squirrel",
+              phonetic: "/ˈskwɜːrəl/",
+              meaning: "松鼠",
+              example: "The squirrel is climbing the tree.",
+              translation: "松鼠正在爬树。",
+            },
+            {
+              id: "meerkat",
+              word: "meerkat",
+              phonetic: "/ˈmɪrkæt/",
+              meaning: "狐獴",
+              example: "The meerkat stands and watches.",
+              translation: "狐獴站着观察。",
+            },
+            {
+              id: "koala",
+              word: "koala",
+              phonetic: "/koʊˈɑːlə/",
+              meaning: "考拉",
+              example: "The koala sleeps in the tree.",
+              translation: "考拉睡在树上。",
+            },
+            {
+              id: "leopard",
+              word: "leopard",
+              phonetic: "/ˈlepərd/",
+              meaning: "豹子",
+              example: "The leopard moves quietly.",
+              translation: "豹子安静地移动。",
+            },
+          ],
+        },
+        {
+          id: "birds",
+          title: "Birds",
+          zh: "鸟类",
+          animals: [
+            {
+              id: "owl",
+              word: "owl",
+              phonetic: "/aʊl/",
+              meaning: "猫头鹰",
+              example: "The owl can see at night.",
+              translation: "猫头鹰在夜晚也能看见。",
+            },
+            {
+              id: "eagle",
+              word: "eagle",
+              phonetic: "/ˈiːɡəl/",
+              meaning: "鹰",
+              example: "The eagle flies high in the sky.",
+              translation: "鹰在天空中飞得很高。",
+            },
+            {
+              id: "peacock",
+              word: "peacock",
+              phonetic: "/ˈpiːkɑːk/",
+              meaning: "孔雀",
+              example: "The peacock has beautiful feathers.",
+              translation: "孔雀有漂亮的羽毛。",
+            },
+            {
+              id: "flamingo",
+              word: "flamingo",
+              phonetic: "/fləˈmɪŋɡoʊ/",
+              meaning: "火烈鸟",
+              example: "The flamingo stands on one leg.",
+              translation: "火烈鸟单脚站立。",
+            },
+            {
+              id: "parrot",
+              word: "parrot",
+              phonetic: "/ˈpærət/",
+              meaning: "鹦鹉",
+              example: "The parrot can copy sounds.",
+              translation: "鹦鹉可以模仿声音。",
+            },
+            {
+              id: "swan",
+              word: "swan",
+              phonetic: "/swɑːn/",
+              meaning: "天鹅",
+              example: "The swan swims on the lake.",
+              translation: "天鹅在湖面上游。",
+            },
+            {
+              id: "crane",
+              word: "crane",
+              phonetic: "/kreɪn/",
+              meaning: "鹤",
+              example: "The crane has long legs.",
+              translation: "鹤有很长的腿。",
+            },
+            {
+              id: "ostrich",
+              word: "ostrich",
+              phonetic: "/ˈɑːstrɪtʃ/",
+              meaning: "鸵鸟",
+              example: "The ostrich is a very large bird.",
+              translation: "鸵鸟是一种很大的鸟。",
+            },
+            {
+              id: "toucan",
+              word: "toucan",
+              phonetic: "/ˈtuːkæn/",
+              meaning: "巨嘴鸟",
+              example: "The toucan has a big colorful beak.",
+              translation: "巨嘴鸟有一个彩色的大嘴。",
+            },
+            {
+              id: "pelican",
+              word: "pelican",
+              phonetic: "/ˈpelɪkən/",
+              meaning: "鹈鹕",
+              example: "The pelican catches fish.",
+              translation: "鹈鹕会捕鱼。",
+            },
+            {
+              id: "sparrow",
+              word: "sparrow",
+              phonetic: "/ˈspæroʊ/",
+              meaning: "麻雀",
+              example: "The sparrow is a small bird.",
+              translation: "麻雀是一种小鸟。",
+            },
+            {
+              id: "woodpecker",
+              word: "woodpecker",
+              phonetic: "/ˈwʊdpekər/",
+              meaning: "啄木鸟",
+              example: "The woodpecker taps the tree.",
+              translation: "啄木鸟敲打树木。",
+            },
+          ],
+        },
+        {
+          id: "rare",
+          title: "Reptiles & Rare Animals",
+          zh: "爬行动物与稀有动物",
+          animals: [
+            {
+              id: "crocodile",
+              word: "crocodile",
+              phonetic: "/ˈkrɑːkədaɪl/",
+              meaning: "鳄鱼",
+              example: "The crocodile rests near the water.",
+              translation: "鳄鱼在水边休息。",
+            },
+            {
+              id: "snake",
+              word: "snake",
+              phonetic: "/sneɪk/",
+              meaning: "蛇",
+              example: "The snake moves without legs.",
+              translation: "蛇没有腿也能移动。",
+            },
+            {
+              id: "turtle",
+              word: "turtle",
+              phonetic: "/ˈtɜːrtəl/",
+              meaning: "乌龟",
+              example: "The turtle has a hard shell.",
+              translation: "乌龟有坚硬的壳。",
+            },
+            {
+              id: "lizard",
+              word: "lizard",
+              phonetic: "/ˈlɪzərd/",
+              meaning: "蜥蜴",
+              example: "The lizard sits on a warm rock.",
+              translation: "蜥蜴趴在温暖的石头上。",
+            },
+            {
+              id: "chameleon",
+              word: "chameleon",
+              phonetic: "/kəˈmiːliən/",
+              meaning: "变色龙",
+              example: "The chameleon can change color.",
+              translation: "变色龙可以变色。",
+            },
+            {
+              id: "iguana",
+              word: "iguana",
+              phonetic: "/ɪˈɡwɑːnə/",
+              meaning: "鬣蜥",
+              example: "The iguana likes warm places.",
+              translation: "鬣蜥喜欢温暖的地方。",
+            },
+            {
+              id: "red-panda",
+              word: "red panda",
+              phonetic: "/ˌred ˈpændə/",
+              meaning: "小熊猫",
+              example: "The red panda has a long fluffy tail.",
+              translation: "小熊猫有一条长长的毛茸茸的尾巴。",
+            },
+            {
+              id: "golden-snub-nosed-monkey",
+              word: "golden snub-nosed monkey",
+              phonetic: "/ˈɡoʊldən snʌb noʊzd ˈmʌŋki/",
+              meaning: "金丝猴",
+              example: "The golden snub-nosed monkey lives in the mountains.",
+              translation: "金丝猴生活在山里。",
+            },
+            {
+              id: "tapir",
+              word: "tapir",
+              phonetic: "/ˈteɪpər/",
+              meaning: "貘",
+              example: "The tapir has a short trunk-like nose.",
+              translation: "貘有一个像短鼻子一样的鼻部。",
+            },
+            {
+              id: "lemur",
+              word: "lemur",
+              phonetic: "/ˈliːmər/",
+              meaning: "狐猴",
+              example: "The lemur has a long tail.",
+              translation: "狐猴有一条长尾巴。",
+            },
+            {
+              id: "anteater",
+              word: "anteater",
+              phonetic: "/ˈæntiːtər/",
+              meaning: "食蚁兽",
+              example: "The anteater eats ants.",
+              translation: "食蚁兽吃蚂蚁。",
+            },
+            {
+              id: "armadillo",
+              word: "armadillo",
+              phonetic: "/ˌɑːrməˈdɪloʊ/",
+              meaning: "犰狳",
+              example: "The armadillo has a hard body.",
+              translation: "犰狳有坚硬的身体。",
+            },
+          ],
+        },
+      ];
+
+      const moreAnimalCount = moreAnimalPages.reduce(
+        (count, page) => count + page.animals.length,
+        0
+      );
+
       let cachedEnglishVoice = null;
 
       function getBestEnglishVoice() {
@@ -1997,10 +2314,12 @@
       function App() {
         const [currentIndex, setCurrentIndex] = useState(0);
         const [selectedHotspot, setSelectedHotspot] = useState(null);
+        const [selectedMoreAnimal, setSelectedMoreAnimal] = useState(null);
         const [dialogueReply, setDialogueReply] = useState(null);
         const [conversationDone, setConversationDone] = useState([]);
         const [completedActions, setCompletedActions] = useState([]);
         const [learnedHotspotKeys, setLearnedHotspotKeys] = useState([]);
+        const [learnedMoreAnimals, setLearnedMoreAnimals] = useState([]);
         const [learnedWords, setLearnedWords] = useState([]);
         const [savedWords, setSavedWords] = useState([]);
         const [playingKey, setPlayingKey] = useState(null);
@@ -2011,6 +2330,9 @@
         const [expandedHotspotScenes, setExpandedHotspotScenes] = useState([]);
         const [showWelcome, setShowWelcome] = useState(true);
         const [welcomeLeaving, setWelcomeLeaving] = useState(false);
+        const [showMoreAnimalsChoice, setShowMoreAnimalsChoice] = useState(false);
+        const [showMoreAnimalsBook, setShowMoreAnimalsBook] = useState(false);
+        const [moreAnimalsPageIndex, setMoreAnimalsPageIndex] = useState(0);
         const [showEnding, setShowEnding] = useState(false);
         const [isWalking, setIsWalking] = useState(false);
         const [animalEffect, setAnimalEffect] = useState(null);
@@ -2073,6 +2395,28 @@
           currentIndex === scenes.length - 1 ? "Finish Trip" : "Walk Forward";
         const nextActionZh =
           currentIndex === scenes.length - 1 ? "完成旅程" : "继续前进";
+        const currentMoreAnimalsPage = moreAnimalPages[moreAnimalsPageIndex];
+        const exploredMoreAnimalCount = learnedMoreAnimals.length;
+        const currentPageExploredCount = currentMoreAnimalsPage.animals.filter((animal) =>
+          learnedMoreAnimals.includes(animal.id)
+        ).length;
+        const moreAnimalReward =
+          exploredMoreAnimalCount === moreAnimalCount
+            ? {
+                text: "Amazing! You discovered all more animals.",
+                zh: "太厉害了！你探索了全部拓展动物。",
+              }
+            : currentPageExploredCount === currentMoreAnimalsPage.animals.length
+            ? {
+                text: "Great explorer! You completed one page.",
+                zh: "太棒了！你完成了一页探索。",
+              }
+            : exploredMoreAnimalCount >= 5
+            ? {
+                text: `Nice! You discovered ${exploredMoreAnimalCount} more animals.`,
+                zh: `不错！你又认识了 ${exploredMoreAnimalCount} 种动物。`,
+              }
+            : null;
 
         function speakEnglish(text, rate = 0.9, key = text) {
           if (!("speechSynthesis" in window)) return;
@@ -2145,6 +2489,22 @@
           triggerAnimalFeedback(hotspot);
         }
 
+        function openMoreAnimal(animal) {
+          setSelectedMoreAnimal(animal);
+          setLearnedMoreAnimals((items) =>
+            items.includes(animal.id) ? items : [...items, animal.id]
+          );
+          rememberWord(animal.word);
+          speakEnglish(animal.word, 0.9, `more-${animal.id}-normal`);
+        }
+
+        function finishZooTrip() {
+          setShowMoreAnimalsChoice(false);
+          setShowMoreAnimalsBook(false);
+          setSelectedMoreAnimal(null);
+          setShowEnding(true);
+        }
+
         function showMoreWords() {
           setExpandedHotspotScenes((items) =>
             items.includes(currentScene.id) ? items : [...items, currentScene.id]
@@ -2183,19 +2543,25 @@
           if (currentIndex < scenes.length - 1) {
             moveTo(currentIndex + 1);
           } else {
-            setShowEnding(true);
+            setSelectedHotspot(null);
+            setShowMoreAnimalsChoice(true);
           }
         }
 
         function restartTrip() {
           setCurrentIndex(0);
           setSelectedHotspot(null);
+          setSelectedMoreAnimal(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
           setLearnedHotspotKeys([]);
+          setLearnedMoreAnimals([]);
           setLearnedWords([]);
           setSavedWords([]);
+          setShowMoreAnimalsChoice(false);
+          setShowMoreAnimalsBook(false);
+          setMoreAnimalsPageIndex(0);
           setShowEnding(false);
           setShowWelcome(true);
           setWelcomeLeaving(false);
@@ -2728,6 +3094,262 @@
                     </button>
                   </div>
                 </div>
+              </div>
+            )}
+
+            {showMoreAnimalsChoice && !showEnding && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 backdrop-blur-sm">
+                <div className="dialogue-enter w-full max-w-2xl rounded-3xl border border-white/18 bg-[#112319]/92 p-6 text-cream shadow-glow backdrop-blur-2xl">
+                  <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">
+                    More Animals Word Book
+                  </p>
+                  <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">
+                    Want to discover more animals?
+                  </h2>
+                  <p className="mt-3 text-xl font-bold text-cream/82">
+                    想探索更多动物吗？
+                  </p>
+                  <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                    <button
+                      onClick={() => {
+                        setShowMoreAnimalsChoice(false);
+                        setShowMoreAnimalsBook(true);
+                        setMoreAnimalsPageIndex(0);
+                      }}
+                      className="rounded-2xl bg-banana px-5 py-4 font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                    >
+                      <ButtonCopy en="Yes, show me more animals." zh="是的，我想看看更多动物。" />
+                    </button>
+                    <button
+                      onClick={finishZooTrip}
+                      className="rounded-2xl border border-white/18 bg-white/12 px-5 py-4 font-black text-white transition hover:bg-white/22 active:scale-[0.99]"
+                    >
+                      <ButtonCopy en="No, finish today's zoo trip." zh="不用了，结束今天的动物园之旅。" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {showMoreAnimalsBook && !showEnding && (
+              <div className="fixed inset-0 z-50 overflow-auto bg-[#17251c]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
+                <div className="mx-auto max-w-6xl">
+                  <header className="flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">
+                        More Animals Word Book
+                      </p>
+                      <h2 className="mt-2 text-3xl font-black text-white sm:text-5xl">
+                        More Animals Word Book
+                      </h2>
+                      <p className="mt-2 text-lg font-bold text-cream/78">
+                        更多动物词汇图鉴
+                      </p>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <div className="rounded-2xl border border-white/14 bg-white/10 px-4 py-3">
+                        <p className="text-[10px] font-black uppercase tracking-[0.18em] text-banana">
+                          Explored
+                        </p>
+                        <p className="mt-1 text-2xl font-black text-white">
+                          {exploredMoreAnimalCount}/{moreAnimalCount}
+                        </p>
+                        <p className="text-xs font-bold text-cream/70">已探索</p>
+                      </div>
+                      <button
+                        onClick={finishZooTrip}
+                        className="rounded-full bg-banana px-5 py-3 font-black text-ink shadow-label transition hover:bg-[#ffc83f] active:scale-[0.99]"
+                      >
+                        <ButtonCopy en="Finish Zoo Trip" zh="结束动物园之旅" />
+                      </button>
+                    </div>
+                  </header>
+
+                  {moreAnimalReward && (
+                    <div className="dialogue-enter mt-4 rounded-2xl border border-banana/35 bg-[#5c3a20]/62 px-4 py-3 shadow-label backdrop-blur-[3px]">
+                      <p className="font-black text-white">{moreAnimalReward.text}</p>
+                      <p className="mt-1 text-sm font-bold text-cream/76">{moreAnimalReward.zh}</p>
+                    </div>
+                  )}
+
+                  <div className="mt-5 flex gap-2 overflow-x-auto pb-1">
+                    {moreAnimalPages.map((page, index) => {
+                      const active = index === moreAnimalsPageIndex;
+                      return (
+                        <button
+                          key={page.id}
+                          onClick={() => {
+                            setMoreAnimalsPageIndex(index);
+                            setSelectedMoreAnimal(null);
+                          }}
+                          className={`min-w-[170px] rounded-2xl px-4 py-3 text-left font-black shadow-label transition hover:-translate-y-0.5 active:translate-y-0 ${
+                            active ? "bg-coral text-white" : "border border-white/16 bg-white/10 text-cream hover:bg-white/18"
+                          }`}
+                        >
+                          <span className="block text-sm">{page.title}</span>
+                          <span className="mt-1 block text-xs font-bold opacity-75">{page.zh}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  <section className="mt-5 rounded-3xl border border-white/14 bg-nightglass p-4 shadow-glow backdrop-blur-xl">
+                    <div className="flex flex-wrap items-end justify-between gap-3">
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.22em] text-banana">
+                          Page {moreAnimalsPageIndex + 1}/3
+                        </p>
+                        <h3 className="mt-1 text-2xl font-black text-white">
+                          {currentMoreAnimalsPage.title}
+                          <span className="ml-2 text-banana">{currentMoreAnimalsPage.zh}</span>
+                        </h3>
+                      </div>
+                      <p className="text-sm font-black text-cream/75">
+                        {currentPageExploredCount}/12 learned · 已学习
+                      </p>
+                    </div>
+
+                    <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                      {currentMoreAnimalsPage.animals.map((animal, index) => {
+                        const learned = learnedMoreAnimals.includes(animal.id);
+                        return (
+                          <button
+                            key={animal.id}
+                            onClick={() => openMoreAnimal(animal)}
+                            className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
+                              learned
+                                ? "border-[#cfe89d]/50 bg-[#375236]/72"
+                                : "border-white/14 bg-white/10 hover:border-banana/45 hover:bg-white/16"
+                            }`}
+                          >
+                            <div className="flex items-start gap-3">
+                              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-banana/35 bg-[#6b4524]/72 text-xl font-black text-banana transition group-hover:scale-105">
+                                {animal.word.slice(0, 1).toUpperCase()}
+                              </span>
+                              <span className="min-w-0">
+                                <span className="block text-lg font-black leading-tight text-white">
+                                  {animal.word}
+                                </span>
+                                <span className="mt-1 block text-sm font-bold text-cream/72">
+                                  {animal.meaning}
+                                </span>
+                              </span>
+                            </div>
+                            <div className="mt-3 flex items-center justify-between gap-2">
+                              <span className="text-xs font-black text-banana">{animal.phonetic}</span>
+                              {learned && (
+                                <span className="rounded-full bg-banana/90 px-2 py-1 text-[10px] font-black uppercase text-ink">
+                                  Learned · 已学习
+                                </span>
+                              )}
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </section>
+                </div>
+
+                {selectedMoreAnimal && (
+                  <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/92 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
+                    <div className="flex items-start justify-between gap-3 border-b border-white/12 p-5">
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
+                          More Animal
+                        </p>
+                        <h2 className="mt-2 text-4xl font-black leading-tight text-white">
+                          {selectedMoreAnimal.word}
+                        </h2>
+                        <p className="mt-2 text-2xl font-extrabold text-banana">
+                          {selectedMoreAnimal.phonetic}
+                        </p>
+                      </div>
+                      <button
+                        onClick={() => setSelectedMoreAnimal(null)}
+                        className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/12 text-2xl font-black text-white transition hover:bg-white/22 active:scale-95"
+                        aria-label="Close 关闭"
+                        title="Close / 关闭"
+                      >
+                        ×
+                      </button>
+                    </div>
+
+                    <div className="flex-1 overflow-auto p-5">
+                      <div className="rounded-2xl border border-white/12 bg-white/10 p-4">
+                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-banana">
+                          中文意思
+                        </p>
+                        <p className="mt-2 text-2xl font-black text-white">
+                          {selectedMoreAnimal.meaning}
+                        </p>
+                      </div>
+
+                      <div className="mt-4 rounded-2xl border border-white/12 bg-black/18 p-4">
+                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-coral">
+                          Example
+                        </p>
+                        <p className="mt-2 text-2xl font-black leading-9 text-white">
+                          {selectedMoreAnimal.example}
+                        </p>
+                        <p className="mt-2 text-lg font-bold leading-8 text-cream/78">
+                          {selectedMoreAnimal.translation}
+                        </p>
+                      </div>
+
+                      <div className="mt-5 grid grid-cols-2 gap-3">
+                        <button
+                          onClick={() => speakEnglish(selectedMoreAnimal.word, 0.9, `more-${selectedMoreAnimal.id}-normal`)}
+                          className="rounded-2xl bg-banana px-4 py-3 text-base font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                        >
+                          <span className="inline-flex items-center justify-center gap-2">
+                            {playingKey === `more-${selectedMoreAnimal.id}-normal` && <SoundBars />}
+                            <ButtonCopy en="Normal" zh="正常语速" />
+                          </span>
+                        </button>
+                        <button
+                          onClick={() => speakEnglish(selectedMoreAnimal.word, 0.65, `more-${selectedMoreAnimal.id}-slow`)}
+                          className="rounded-2xl border border-banana/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"
+                        >
+                          <span className="inline-flex items-center justify-center gap-2">
+                            {playingKey === `more-${selectedMoreAnimal.id}-slow` && <SoundBars />}
+                            <ButtonCopy en="Slow" zh="慢速朗读" />
+                          </span>
+                        </button>
+                      </div>
+
+                      <button
+                        onClick={() => speakEnglish(selectedMoreAnimal.example, 0.86, `more-${selectedMoreAnimal.id}-sentence`)}
+                        className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
+                      >
+                        <span className="inline-flex items-center justify-center gap-2">
+                          {playingKey === `more-${selectedMoreAnimal.id}-sentence` && <SoundBars />}
+                          <ButtonCopy en="Play Sentence" zh="朗读例句" />
+                        </span>
+                      </button>
+
+                      <button
+                        onClick={() => toggleSaveWord(selectedMoreAnimal.word)}
+                        className={`mt-3 w-full rounded-2xl px-4 py-3 text-base font-black shadow-label transition active:scale-[0.99] ${
+                          savedWords.includes(selectedMoreAnimal.word)
+                            ? "bg-coral text-white"
+                            : "bg-white/12 text-white hover:bg-white/22"
+                        }`}
+                      >
+                        <ButtonCopy
+                          en={savedWords.includes(selectedMoreAnimal.word) ? "Saved to Word Book" : "Add to Word Book"}
+                          zh={savedWords.includes(selectedMoreAnimal.word) ? "已加入生词本" : "加入生词本"}
+                        />
+                      </button>
+
+                      <button
+                        onClick={finishZooTrip}
+                        className="mt-6 w-full rounded-2xl bg-banana px-4 py-4 text-lg font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                      >
+                        <ButtonCopy en="Finish Zoo Trip" zh="结束动物园之旅" />
+                      </button>
+                    </div>
+                  </aside>
+                )}
               </div>
             )}
 
