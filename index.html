@@ -2948,6 +2948,323 @@
         0
       );
 
+      const moreFruitPages = [
+        {
+          id: "common-fruits",
+          title: "Common Fruits",
+          zh: "常见水果",
+          fruits: [
+            {
+              id: "peach",
+              word: "peach",
+              phonetic: "/piːtʃ/",
+              meaning: "桃子",
+              example: "The peach is soft and sweet.",
+              translation: "桃子又软又甜。",
+            },
+            {
+              id: "plum",
+              word: "plum",
+              phonetic: "/plʌm/",
+              meaning: "李子",
+              example: "The plum is small and juicy.",
+              translation: "李子小小的，汁水很多。",
+            },
+            {
+              id: "cherry",
+              word: "cherry",
+              phonetic: "/ˈtʃeri/",
+              meaning: "樱桃",
+              example: "The cherry is red and sweet.",
+              translation: "樱桃又红又甜。",
+            },
+            {
+              id: "lemon",
+              word: "lemon",
+              phonetic: "/ˈlemən/",
+              meaning: "柠檬",
+              example: "The lemon tastes sour.",
+              translation: "柠檬尝起来很酸。",
+            },
+            {
+              id: "lime",
+              word: "lime",
+              phonetic: "/laɪm/",
+              meaning: "青柠",
+              example: "The lime is green and sour.",
+              translation: "青柠是绿色的，味道很酸。",
+            },
+            {
+              id: "apricot",
+              word: "apricot",
+              phonetic: "/ˈæprɪkɑːt/",
+              meaning: "杏",
+              example: "The apricot is small and orange.",
+              translation: "杏很小，是橙色的。",
+            },
+            {
+              id: "persimmon",
+              word: "persimmon",
+              phonetic: "/pərˈsɪmən/",
+              meaning: "柿子",
+              example: "The persimmon is soft when ripe.",
+              translation: "柿子成熟时很软。",
+            },
+            {
+              id: "pomegranate",
+              word: "pomegranate",
+              phonetic: "/ˈpɑːmɪɡrænɪt/",
+              meaning: "石榴",
+              example: "The pomegranate has many seeds.",
+              translation: "石榴有很多籽。",
+            },
+            {
+              id: "fig",
+              word: "fig",
+              phonetic: "/fɪɡ/",
+              meaning: "无花果",
+              example: "The fig is sweet inside.",
+              translation: "无花果里面很甜。",
+            },
+            {
+              id: "kiwi",
+              word: "kiwi",
+              phonetic: "/ˈkiːwi/",
+              meaning: "猕猴桃",
+              example: "The kiwi is green inside.",
+              translation: "猕猴桃里面是绿色的。",
+            },
+            {
+              id: "date",
+              word: "date",
+              phonetic: "/deɪt/",
+              meaning: "枣，椰枣",
+              example: "The date is small and very sweet.",
+              translation: "枣很小，而且很甜。",
+            },
+            {
+              id: "guava",
+              word: "guava",
+              phonetic: "/ˈɡwɑːvə/",
+              meaning: "番石榴",
+              example: "The guava has a fresh smell.",
+              translation: "番石榴有清新的香味。",
+            },
+          ],
+        },
+        {
+          id: "tropical-fruits",
+          title: "Tropical Fruits",
+          zh: "热带水果",
+          fruits: [
+            {
+              id: "coconut",
+              word: "coconut",
+              phonetic: "/ˈkoʊkənʌt/",
+              meaning: "椰子",
+              example: "The coconut has sweet water inside.",
+              translation: "椰子里面有甜甜的椰汁。",
+            },
+            {
+              id: "papaya",
+              word: "papaya",
+              phonetic: "/pəˈpaɪə/",
+              meaning: "木瓜",
+              example: "The papaya is soft and orange.",
+              translation: "木瓜很软，是橙色的。",
+            },
+            {
+              id: "dragon-fruit",
+              word: "dragon fruit",
+              phonetic: "/ˈdræɡən fruːt/",
+              meaning: "火龙果",
+              example: "The dragon fruit has bright pink skin.",
+              translation: "火龙果有鲜艳的粉色外皮。",
+            },
+            {
+              id: "lychee",
+              word: "lychee",
+              phonetic: "/ˈliːtʃi/",
+              meaning: "荔枝",
+              example: "The lychee is sweet and juicy.",
+              translation: "荔枝又甜又多汁。",
+            },
+            {
+              id: "longan",
+              word: "longan",
+              phonetic: "/ˈlɑːŋɡən/",
+              meaning: "龙眼",
+              example: "The longan is small and sweet.",
+              translation: "龙眼小小的，很甜。",
+            },
+            {
+              id: "rambutan",
+              word: "rambutan",
+              phonetic: "/ræmˈbuːtən/",
+              meaning: "红毛丹",
+              example: "The rambutan has red hairy skin.",
+              translation: "红毛丹有红色带毛的外皮。",
+            },
+            {
+              id: "passion-fruit",
+              word: "passion fruit",
+              phonetic: "/ˈpæʃən fruːt/",
+              meaning: "百香果",
+              example: "The passion fruit smells strong and sweet.",
+              translation: "百香果有浓郁香甜的气味。",
+            },
+            {
+              id: "starfruit",
+              word: "starfruit",
+              phonetic: "/ˈstɑːrfruːt/",
+              meaning: "杨桃",
+              example: "The starfruit looks like a star.",
+              translation: "杨桃看起来像星星。",
+            },
+            {
+              id: "mangosteen",
+              word: "mangosteen",
+              phonetic: "/ˈmæŋɡəstiːn/",
+              meaning: "山竹",
+              example: "The mangosteen is sweet and soft.",
+              translation: "山竹又甜又软。",
+            },
+            {
+              id: "durian",
+              word: "durian",
+              phonetic: "/ˈdʊriən/",
+              meaning: "榴莲",
+              example: "The durian has a strong smell.",
+              translation: "榴莲有很强的气味。",
+            },
+            {
+              id: "jackfruit",
+              word: "jackfruit",
+              phonetic: "/ˈdʒækfruːt/",
+              meaning: "菠萝蜜",
+              example: "The jackfruit is large and yellow inside.",
+              translation: "菠萝蜜很大，里面是黄色的。",
+            },
+            {
+              id: "pomelo",
+              word: "pomelo",
+              phonetic: "/ˈpɑːməloʊ/",
+              meaning: "柚子",
+              example: "The pomelo is bigger than an orange.",
+              translation: "柚子比橙子大。",
+            },
+          ],
+        },
+        {
+          id: "berries-special",
+          title: "Berries & Special Fruits",
+          zh: "浆果与特色水果",
+          fruits: [
+            {
+              id: "blueberry",
+              word: "blueberry",
+              phonetic: "/ˈbluːberi/",
+              meaning: "蓝莓",
+              example: "The blueberry is small and blue.",
+              translation: "蓝莓很小，是蓝色的。",
+            },
+            {
+              id: "raspberry",
+              word: "raspberry",
+              phonetic: "/ˈræzberi/",
+              meaning: "覆盆子",
+              example: "The raspberry is soft and red.",
+              translation: "覆盆子很软，是红色的。",
+            },
+            {
+              id: "blackberry",
+              word: "blackberry",
+              phonetic: "/ˈblækberi/",
+              meaning: "黑莓",
+              example: "The blackberry is dark and juicy.",
+              translation: "黑莓颜色很深，而且多汁。",
+            },
+            {
+              id: "cranberry",
+              word: "cranberry",
+              phonetic: "/ˈkrænberi/",
+              meaning: "蔓越莓",
+              example: "The cranberry tastes a little sour.",
+              translation: "蔓越莓尝起来有点酸。",
+            },
+            {
+              id: "mulberry",
+              word: "mulberry",
+              phonetic: "/ˈmʌlberi/",
+              meaning: "桑葚",
+              example: "The mulberry can be purple or black.",
+              translation: "桑葚可以是紫色或黑色的。",
+            },
+            {
+              id: "gooseberry",
+              word: "gooseberry",
+              phonetic: "/ˈɡuːsberi/",
+              meaning: "醋栗",
+              example: "The gooseberry is small and round.",
+              translation: "醋栗小小的，圆圆的。",
+            },
+            {
+              id: "avocado",
+              word: "avocado",
+              phonetic: "/ˌævəˈkɑːdoʊ/",
+              meaning: "牛油果",
+              example: "The avocado is creamy inside.",
+              translation: "牛油果里面很绵密。",
+            },
+            {
+              id: "cantaloupe",
+              word: "cantaloupe",
+              phonetic: "/ˈkæntəloʊp/",
+              meaning: "哈密瓜",
+              example: "The cantaloupe is sweet and orange inside.",
+              translation: "哈密瓜很甜，里面是橙色的。",
+            },
+            {
+              id: "honeydew",
+              word: "honeydew",
+              phonetic: "/ˈhʌniduː/",
+              meaning: "蜜瓜",
+              example: "The honeydew is light green inside.",
+              translation: "蜜瓜里面是浅绿色的。",
+            },
+            {
+              id: "nectarine",
+              word: "nectarine",
+              phonetic: "/ˌnektəˈriːn/",
+              meaning: "油桃",
+              example: "The nectarine has smooth skin.",
+              translation: "油桃有光滑的外皮。",
+            },
+            {
+              id: "quince",
+              word: "quince",
+              phonetic: "/kwɪns/",
+              meaning: "榅桲",
+              example: "The quince is hard before cooking.",
+              translation: "榅桲在烹饪前很硬。",
+            },
+            {
+              id: "plantain",
+              word: "plantain",
+              phonetic: "/ˈplæntɪn/",
+              meaning: "大蕉",
+              example: "The plantain looks like a banana but is not as sweet.",
+              translation: "大蕉看起来像香蕉，但没那么甜。",
+            },
+          ],
+        },
+      ];
+
+      const moreFruitCount = moreFruitPages.reduce(
+        (count, page) => count + page.fruits.length,
+        0
+      );
+
       const sceneCards = [
         {
           id: "zoo",
@@ -3446,11 +3763,13 @@
         const [currentIndex, setCurrentIndex] = useState(0);
         const [selectedHotspot, setSelectedHotspot] = useState(null);
         const [selectedMoreAnimal, setSelectedMoreAnimal] = useState(null);
+        const [selectedMoreFruit, setSelectedMoreFruit] = useState(null);
         const [dialogueReply, setDialogueReply] = useState(null);
         const [conversationDone, setConversationDone] = useState([]);
         const [completedActions, setCompletedActions] = useState([]);
         const [learnedHotspotKeys, setLearnedHotspotKeys] = useState([]);
         const [learnedMoreAnimals, setLearnedMoreAnimals] = useState([]);
+        const [learnedMoreFruits, setLearnedMoreFruits] = useState([]);
         const [learnedWords, setLearnedWords] = useState([]);
         const [savedWords, setSavedWords] = useState(loadWordBookEntries);
         const [playingKey, setPlayingKey] = useState(null);
@@ -3463,7 +3782,10 @@
         const [welcomeLeaving, setWelcomeLeaving] = useState(false);
         const [showMoreAnimalsChoice, setShowMoreAnimalsChoice] = useState(false);
         const [showMoreAnimalsBook, setShowMoreAnimalsBook] = useState(false);
+        const [showMoreFruitsChoice, setShowMoreFruitsChoice] = useState(false);
+        const [showMoreFruitsBook, setShowMoreFruitsBook] = useState(false);
         const [moreAnimalsPageIndex, setMoreAnimalsPageIndex] = useState(0);
+        const [moreFruitsPageIndex, setMoreFruitsPageIndex] = useState(0);
         const [showEnding, setShowEnding] = useState(false);
         const [isWalking, setIsWalking] = useState(false);
         const [animalEffect, setAnimalEffect] = useState(null);
@@ -3591,6 +3913,28 @@
                 zh: `不错！你又认识了 ${exploredMoreAnimalCount} 种动物。`,
               }
             : null;
+        const currentMoreFruitsPage = moreFruitPages[moreFruitsPageIndex];
+        const exploredMoreFruitCount = learnedMoreFruits.length;
+        const currentFruitPageExploredCount = currentMoreFruitsPage.fruits.filter((fruit) =>
+          learnedMoreFruits.includes(fruit.id)
+        ).length;
+        const moreFruitReward =
+          exploredMoreFruitCount === moreFruitCount
+            ? {
+                text: "Amazing! You discovered all more fruits.",
+                zh: "太厉害了！你探索了全部拓展水果。",
+              }
+            : currentFruitPageExploredCount === currentMoreFruitsPage.fruits.length
+            ? {
+                text: "Great explorer! You completed one fruit page.",
+                zh: "太棒了！你完成了一页水果探索。",
+              }
+            : exploredMoreFruitCount >= 5
+            ? {
+                text: `Nice! You discovered ${exploredMoreFruitCount} more fruits.`,
+                zh: `不错！你又认识了 ${exploredMoreFruitCount} 种水果。`,
+              }
+            : null;
         const wordBookFilters = [
           { id: "all", en: "All", zh: "全部" },
           { id: "zoo", en: "Zoo", zh: "动物园" },
@@ -3658,6 +4002,19 @@
           };
         }
 
+        function makeMoreFruitWordBookEntry(fruit) {
+          return {
+            word: fruit.word,
+            zh: fruit.meaning,
+            phonetic: fruit.phonetic,
+            example: fruit.example,
+            exampleZh: fruit.translation,
+            scene: "Fruit Shop / More Fruits",
+            type: "fruit",
+            addedAt: new Date().toISOString(),
+          };
+        }
+
         function isWordSaved(word) {
           const key = getWordKey(word);
           return savedWords.some((item) => getWordKey(item.word) === key);
@@ -3682,7 +4039,11 @@
           setWordBookReturnView(returnView);
           setSelectedHotspot(null);
           setSelectedMoreAnimal(null);
+          setSelectedMoreFruit(null);
           setShowMoreAnimalsChoice(false);
+          setShowMoreAnimalsBook(false);
+          setShowMoreFruitsChoice(false);
+          setShowMoreFruitsBook(false);
           setIsReviewingWordBook(false);
           setReviewRevealed(false);
           setReviewIndex(0);
@@ -3771,10 +4132,26 @@
           speakEnglish(animal.word, 0.9, `more-${animal.id}-normal`);
         }
 
+        function openMoreFruit(fruit) {
+          setSelectedMoreFruit(fruit);
+          setLearnedMoreFruits((items) =>
+            items.includes(fruit.id) ? items : [...items, fruit.id]
+          );
+          rememberWord(fruit.word);
+          speakEnglish(fruit.word, 0.9, `more-fruit-${fruit.id}-normal`);
+        }
+
         function finishZooTrip() {
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
           setSelectedMoreAnimal(null);
+          setShowEnding(true);
+        }
+
+        function finishFruitShopTrip() {
+          setShowMoreFruitsChoice(false);
+          setShowMoreFruitsBook(false);
+          setSelectedMoreFruit(null);
           setShowEnding(true);
         }
 
@@ -3783,12 +4160,16 @@
           setCurrentChapter("zoo");
           setCurrentIndex(0);
           setSelectedHotspot(null);
+          setSelectedMoreAnimal(null);
+          setSelectedMoreFruit(null);
           setDialogueReply(null);
           setProgressHint("");
           setAnimalEffect(null);
           setShowEnding(false);
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
+          setShowMoreFruitsChoice(false);
+          setShowMoreFruitsBook(false);
           setShowWelcome(true);
           setWelcomeLeaving(false);
           setCurrentView("zoo");
@@ -3800,6 +4181,7 @@
           setCurrentIndex(0);
           setSelectedHotspot(null);
           setSelectedMoreAnimal(null);
+          setSelectedMoreFruit(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -3810,6 +4192,8 @@
           setShowEnding(false);
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
+          setShowMoreFruitsChoice(false);
+          setShowMoreFruitsBook(false);
           setShowWelcome(true);
           setWelcomeLeaving(false);
           setCurrentView("zoo");
@@ -3867,7 +4251,7 @@
             if (isZooChapter) {
               setShowMoreAnimalsChoice(true);
             } else {
-              setShowEnding(true);
+              setShowMoreFruitsChoice(true);
             }
           }
         }
@@ -3876,15 +4260,20 @@
           setCurrentIndex(0);
           setSelectedHotspot(null);
           setSelectedMoreAnimal(null);
+          setSelectedMoreFruit(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
           setLearnedHotspotKeys([]);
           setLearnedMoreAnimals([]);
+          setLearnedMoreFruits([]);
           setLearnedWords([]);
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
+          setShowMoreFruitsChoice(false);
+          setShowMoreFruitsBook(false);
           setMoreAnimalsPageIndex(0);
+          setMoreFruitsPageIndex(0);
           setShowEnding(false);
           setShowWelcome(isZooChapter);
           setWelcomeLeaving(false);
@@ -4652,8 +5041,11 @@
                 onClick={() => {
                   setSelectedHotspot(null);
                   setSelectedMoreAnimal(null);
+                  setSelectedMoreFruit(null);
                   setShowMoreAnimalsChoice(false);
                   setShowMoreAnimalsBook(false);
+                  setShowMoreFruitsChoice(false);
+                  setShowMoreFruitsBook(false);
                   setShowEnding(false);
                   setCurrentView("sceneSelect");
                 }}
@@ -5240,6 +5632,272 @@
                         className="mt-6 w-full rounded-2xl bg-banana px-4 py-4 text-lg font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
                       >
                         <ButtonCopy en="Finish Zoo Trip" zh="结束动物园之旅" />
+                      </button>
+                    </div>
+                  </aside>
+                )}
+              </div>
+            )}
+
+            {showMoreFruitsChoice && !showEnding && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 backdrop-blur-sm">
+                <div className="dialogue-enter w-full max-w-2xl rounded-3xl border border-white/18 bg-[#112319]/92 p-6 text-cream shadow-glow backdrop-blur-2xl">
+                  <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">
+                    More Fruits Word Book
+                  </p>
+                  <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">
+                    Want to discover more fruits?
+                  </h2>
+                  <p className="mt-3 text-xl font-bold text-cream/82">
+                    想认识更多水果吗？
+                  </p>
+                  <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                    <button
+                      onClick={() => {
+                        setShowMoreFruitsChoice(false);
+                        setShowMoreFruitsBook(true);
+                        setMoreFruitsPageIndex(0);
+                      }}
+                      className="rounded-2xl bg-banana px-5 py-4 font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                    >
+                      <ButtonCopy en="Yes, show me more fruits." zh="是的，我想看看更多水果。" />
+                    </button>
+                    <button
+                      onClick={finishFruitShopTrip}
+                      className="rounded-2xl border border-white/18 bg-white/12 px-5 py-4 font-black text-white transition hover:bg-white/22 active:scale-[0.99]"
+                    >
+                      <ButtonCopy en="No, finish today's fruit shop trip." zh="不用了，结束今天的水果店之旅。" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {showMoreFruitsBook && !showEnding && (
+              <div className="fixed inset-0 z-50 overflow-auto bg-[#17251c]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
+                <div className="mx-auto max-w-6xl">
+                  <header className="flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">
+                        More Fruits Word Book
+                      </p>
+                      <h2 className="mt-2 text-3xl font-black text-white sm:text-5xl">
+                        More Fruits Word Book
+                      </h2>
+                      <p className="mt-2 text-lg font-bold text-cream/78">
+                        更多水果词汇图鉴
+                      </p>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <div className="rounded-2xl border border-white/14 bg-white/10 px-4 py-3">
+                        <p className="text-[10px] font-black uppercase tracking-[0.18em] text-banana">
+                          Explored
+                        </p>
+                        <p className="mt-1 text-2xl font-black text-white">
+                          {exploredMoreFruitCount}/{moreFruitCount}
+                        </p>
+                        <p className="text-xs font-bold text-cream/70">已探索</p>
+                      </div>
+                      <button
+                        onClick={finishFruitShopTrip}
+                        className="rounded-full bg-banana px-5 py-3 font-black text-ink shadow-label transition hover:bg-[#ffc83f] active:scale-[0.99]"
+                      >
+                        <ButtonCopy en="Finish Fruit Shop Trip" zh="结束水果店之旅" />
+                      </button>
+                    </div>
+                  </header>
+
+                  {moreFruitReward && (
+                    <div className="dialogue-enter mt-4 rounded-2xl border border-banana/35 bg-[#5c3a20]/62 px-4 py-3 shadow-label backdrop-blur-[3px]">
+                      <p className="font-black text-white">{moreFruitReward.text}</p>
+                      <p className="mt-1 text-sm font-bold text-cream/76">{moreFruitReward.zh}</p>
+                    </div>
+                  )}
+
+                  <div className="mt-5 flex gap-2 overflow-x-auto pb-1">
+                    {moreFruitPages.map((page, index) => {
+                      const active = index === moreFruitsPageIndex;
+                      return (
+                        <button
+                          key={page.id}
+                          onClick={() => {
+                            setMoreFruitsPageIndex(index);
+                            setSelectedMoreFruit(null);
+                          }}
+                          className={`min-w-[180px] rounded-2xl px-4 py-3 text-left font-black shadow-label transition hover:-translate-y-0.5 active:translate-y-0 ${
+                            active ? "bg-coral text-white" : "border border-white/16 bg-white/10 text-cream hover:bg-white/18"
+                          }`}
+                        >
+                          <span className="block text-sm">{page.title}</span>
+                          <span className="mt-1 block text-xs font-bold opacity-75">{page.zh}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  <section className="mt-5 rounded-3xl border border-white/14 bg-nightglass p-4 shadow-glow backdrop-blur-xl">
+                    <div className="flex flex-wrap items-end justify-between gap-3">
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.22em] text-banana">
+                          Page {moreFruitsPageIndex + 1}/3
+                        </p>
+                        <h3 className="mt-1 text-2xl font-black text-white">
+                          {currentMoreFruitsPage.title}
+                          <span className="ml-2 text-banana">{currentMoreFruitsPage.zh}</span>
+                        </h3>
+                      </div>
+                      <p className="text-sm font-black text-cream/75">
+                        {currentFruitPageExploredCount}/12 learned · 已学习
+                      </p>
+                    </div>
+
+                    <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                      {currentMoreFruitsPage.fruits.map((fruit) => {
+                        const learned = learnedMoreFruits.includes(fruit.id);
+                        return (
+                          <button
+                            key={fruit.id}
+                            onClick={() => openMoreFruit(fruit)}
+                            className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
+                              learned
+                                ? "border-[#ffd76d]/55 bg-[#594429]/72"
+                                : "border-white/14 bg-white/10 hover:border-banana/45 hover:bg-white/16"
+                            }`}
+                          >
+                            <div className="flex items-start gap-3">
+                              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-banana/35 bg-[#6b4524]/72 text-xl font-black text-banana transition group-hover:scale-105">
+                                {fruit.word.slice(0, 1).toUpperCase()}
+                              </span>
+                              <span className="min-w-0">
+                                <span className="block text-lg font-black leading-tight text-white">
+                                  {fruit.word}
+                                </span>
+                                <span className="mt-1 block text-sm font-bold text-cream/72">
+                                  {fruit.meaning}
+                                </span>
+                              </span>
+                            </div>
+                            <div className="mt-3 flex items-center justify-between gap-2">
+                              <span className="text-xs font-black text-banana">{fruit.phonetic}</span>
+                              {learned && (
+                                <span className="rounded-full bg-banana/90 px-2 py-1 text-[10px] font-black uppercase text-ink">
+                                  Learned · 已学习
+                                </span>
+                              )}
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </section>
+                </div>
+
+                {selectedMoreFruit && (
+                  <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/92 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
+                    <div className="flex items-start justify-between gap-3 border-b border-white/12 p-5">
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
+                          More Fruit
+                        </p>
+                        <h2 className="mt-2 text-4xl font-black leading-tight text-white">
+                          {selectedMoreFruit.word}
+                        </h2>
+                        <p className="mt-2 text-2xl font-extrabold text-banana">
+                          {selectedMoreFruit.phonetic}
+                        </p>
+                      </div>
+                      <button
+                        onClick={() => setSelectedMoreFruit(null)}
+                        className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/12 text-2xl font-black text-white transition hover:bg-white/22 active:scale-95"
+                        aria-label="Close 关闭"
+                        title="Close / 关闭"
+                      >
+                        ×
+                      </button>
+                    </div>
+
+                    <div className="flex-1 overflow-auto p-5">
+                      <div className="rounded-2xl border border-white/12 bg-white/10 p-4">
+                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-banana">
+                          中文意思
+                        </p>
+                        <p className="mt-2 text-2xl font-black text-white">
+                          {selectedMoreFruit.meaning}
+                        </p>
+                      </div>
+
+                      <div className="mt-4 rounded-2xl border border-white/12 bg-black/18 p-4">
+                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-coral">
+                          Example
+                        </p>
+                        <p className="mt-2 text-2xl font-black leading-9 text-white">
+                          {selectedMoreFruit.example}
+                        </p>
+                        <p className="mt-2 text-lg font-bold leading-8 text-cream/78">
+                          {selectedMoreFruit.translation}
+                        </p>
+                      </div>
+
+                      <div className="mt-5 grid grid-cols-2 gap-3">
+                        <button
+                          onClick={() => speakEnglish(selectedMoreFruit.word, 0.9, `more-fruit-${selectedMoreFruit.id}-normal`)}
+                          className="rounded-2xl bg-banana px-4 py-3 text-base font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                        >
+                          <span className="inline-flex items-center justify-center gap-2">
+                            {playingKey === `more-fruit-${selectedMoreFruit.id}-normal` && <SoundBars />}
+                            <ButtonCopy en="Normal" zh="正常语速" />
+                          </span>
+                        </button>
+                        <button
+                          onClick={() => speakEnglish(selectedMoreFruit.word, 0.65, `more-fruit-${selectedMoreFruit.id}-slow`)}
+                          className="rounded-2xl border border-banana/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"
+                        >
+                          <span className="inline-flex items-center justify-center gap-2">
+                            {playingKey === `more-fruit-${selectedMoreFruit.id}-slow` && <SoundBars />}
+                            <ButtonCopy en="Slow" zh="慢速朗读" />
+                          </span>
+                        </button>
+                      </div>
+
+                      <button
+                        onClick={() => speakEnglish(selectedMoreFruit.example, 0.86, `more-fruit-${selectedMoreFruit.id}-sentence`)}
+                        className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
+                      >
+                        <span className="inline-flex items-center justify-center gap-2">
+                          {playingKey === `more-fruit-${selectedMoreFruit.id}-sentence` && <SoundBars />}
+                          <ButtonCopy en="Play Sentence" zh="朗读例句" />
+                        </span>
+                      </button>
+
+                      <button
+                        onClick={() => saveWordEntry(makeMoreFruitWordBookEntry(selectedMoreFruit))}
+                        disabled={isWordSaved(selectedMoreFruit.word)}
+                        className={`mt-3 w-full rounded-2xl px-4 py-3 text-base font-black shadow-label transition active:scale-[0.99] ${
+                          isWordSaved(selectedMoreFruit.word)
+                            ? "bg-coral text-white"
+                            : "bg-white/12 text-white hover:bg-white/22"
+                        }`}
+                      >
+                        <ButtonCopy
+                          en={isWordSaved(selectedMoreFruit.word) ? "Added to Word Book" : "Add to Word Book"}
+                          zh={isWordSaved(selectedMoreFruit.word) ? "已加入生词本" : "加入生词本"}
+                        />
+                      </button>
+
+                      {isWordSaved(selectedMoreFruit.word) && (
+                        <button
+                          onClick={() => removeWordEntry(selectedMoreFruit.word)}
+                          className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
+                        >
+                          <ButtonCopy en="Remove from Word Book" zh="移出生词本" />
+                        </button>
+                      )}
+
+                      <button
+                        onClick={finishFruitShopTrip}
+                        className="mt-6 w-full rounded-2xl bg-banana px-4 py-4 text-lg font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                      >
+                        <ButtonCopy en="Finish Fruit Shop Trip" zh="结束水果店之旅" />
                       </button>
                     </div>
                   </aside>
