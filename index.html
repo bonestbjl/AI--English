@@ -1702,6 +1702,935 @@
         },
       };
 
+      const fruitShopScenes = [
+        {
+          id: "fruitEntrance",
+          title: "Fruit Shop Entrance",
+          zh: "水果店入口",
+          short: "入口",
+          bg: "assets/fruit-shop-entrance-bg.png",
+          bgStyle: "radial-gradient(circle at 22% 28%, rgba(255, 224, 128, 0.36), transparent 22%), radial-gradient(circle at 72% 32%, rgba(255, 112, 75, 0.32), transparent 20%), linear-gradient(180deg, #f8c56d 0%, #9b6737 42%, #2c4b32 100%)",
+          npc: "fruitEntranceShopkeeper",
+          coreWord: "fruit shop",
+          intro: {
+            text: "You arrive at a bright street fruit shop. The entrance smells fresh and sweet.",
+            zh: "你来到一家明亮的街边水果店，入口处闻起来清新又香甜。",
+          },
+          hotspots: [
+            {
+              id: "fruitShop",
+              word: "fruit shop",
+              phonetic: "/fruːt ʃɑːp/",
+              meaning: "水果店",
+              example: "The fruit shop is open today.",
+              translation: "水果店今天开门。",
+              label: "fruit shop",
+              zh: "水果店",
+              x: 53,
+              y: 42,
+              offset: { x: -12, y: -20, mobileX: -10, mobileY: -16 },
+            },
+            {
+              id: "basket",
+              word: "basket",
+              phonetic: "/ˈbæskɪt/",
+              meaning: "篮子",
+              example: "I put the fruit in a basket.",
+              translation: "我把水果放进篮子里。",
+              label: "basket",
+              zh: "篮子",
+              x: 31,
+              y: 70,
+              offset: { x: -22, y: 12, mobileX: -12, mobileY: 10 },
+            },
+            {
+              id: "signboard",
+              word: "signboard",
+              phonetic: "/ˈsaɪnbɔːrd/",
+              meaning: "招牌",
+              example: "The signboard says Fresh Fruit.",
+              translation: "招牌上写着新鲜水果。",
+              label: "signboard",
+              zh: "招牌",
+              x: 50,
+              y: 18,
+              offset: { x: 64, y: 8, mobileX: 28, mobileY: 8 },
+            },
+            {
+              id: "aisle",
+              word: "aisle",
+              phonetic: "/aɪl/",
+              meaning: "过道",
+              example: "The aisle is between the fruit stands.",
+              translation: "过道在水果摊之间。",
+              label: "aisle",
+              zh: "过道",
+              x: 52,
+              y: 63,
+              offset: { x: 24, y: 10, mobileX: 14, mobileY: 8 },
+            },
+            {
+              id: "fresh",
+              word: "fresh",
+              phonetic: "/freʃ/",
+              meaning: "新鲜的",
+              example: "The fruit smells fresh.",
+              translation: "水果闻起来很新鲜。",
+              label: "fresh",
+              zh: "新鲜的",
+              x: 77,
+              y: 47,
+              offset: { x: 26, y: -18, mobileX: 16, mobileY: -14 },
+            },
+            {
+              id: "browse",
+              word: "browse",
+              type: "action",
+              actionMessageEn: "Let's browse the fresh fruit shop.",
+              actionMessageZh: "我们来逛逛这家新鲜水果店吧。",
+              actionEffect: "fruitBrowse",
+              actionDuration: 2600,
+              phonetic: "/braʊz/",
+              meaning: "浏览，逛",
+              example: "I browse the fruit shop.",
+              translation: "我逛水果店。",
+              label: "browse",
+              zh: "逛逛",
+              x: 45,
+              y: 58,
+              offset: { x: -36, y: 8, mobileX: -18, mobileY: 6 },
+            },
+          ],
+        },
+        {
+          id: "fruitStand",
+          title: "Fruit Stand",
+          zh: "水果摊",
+          short: "水果摊",
+          bg: "assets/fruit-shop-stand-bg.png",
+          bgStyle: "radial-gradient(circle at 24% 54%, #dc3d35 0 7%, transparent 7.5%), radial-gradient(circle at 38% 48%, #f4a23d 0 7%, transparent 7.5%), radial-gradient(circle at 58% 52%, #84b85a 0 7%, transparent 7.5%), radial-gradient(circle at 72% 46%, #7a4ea0 0 6%, transparent 6.5%), linear-gradient(180deg, #e6a955 0%, #7a4b2d 42%, #273d2e 100%)",
+          npc: "fruitStandShopkeeper",
+          coreWord: "apple",
+          intro: {
+            text: "You walk to the fruit stand. Apples, oranges, pears, and grapes are on display.",
+            zh: "你走到水果摊前，苹果、橙子、梨和葡萄整齐地摆着。",
+          },
+          hotspots: [
+            {
+              id: "apple",
+              word: "apple",
+              phonetic: "/ˈæpəl/",
+              meaning: "苹果",
+              example: "The apple is red and sweet.",
+              translation: "苹果又红又甜。",
+              label: "apple",
+              zh: "苹果",
+              x: 23,
+              y: 72,
+              offset: { x: -18, y: -26, mobileX: -12, mobileY: -20 },
+            },
+            {
+              id: "orange",
+              word: "orange",
+              phonetic: "/ˈɔːrɪndʒ/",
+              meaning: "橙子",
+              example: "The orange smells sweet.",
+              translation: "橙子闻起来很甜。",
+              label: "orange",
+              zh: "橙子",
+              x: 17,
+              y: 47,
+              offset: { x: 26, y: -20, mobileX: 14, mobileY: -16 },
+            },
+            {
+              id: "pear",
+              word: "pear",
+              phonetic: "/per/",
+              meaning: "梨",
+              example: "The pear is yellow and soft.",
+              translation: "梨是黄色的，很软。",
+              label: "pear",
+              zh: "梨",
+              x: 79,
+              y: 72,
+              offset: { x: -34, y: -16, mobileX: -18, mobileY: -12 },
+            },
+            {
+              id: "grapes",
+              word: "grapes",
+              phonetic: "/ɡreɪps/",
+              meaning: "葡萄",
+              example: "The grapes are small and sweet.",
+              translation: "葡萄又小又甜。",
+              label: "grapes",
+              zh: "葡萄",
+              x: 73,
+              y: 42,
+              offset: { x: 36, y: -18, mobileX: 18, mobileY: -14 },
+            },
+            {
+              id: "display",
+              word: "display",
+              phonetic: "/dɪˈspleɪ/",
+              meaning: "展示，陈列",
+              example: "The fruit is on display.",
+              translation: "水果正在陈列展示。",
+              label: "display",
+              zh: "陈列",
+              x: 50,
+              y: 34,
+              offset: { x: 36, y: 8, mobileX: 18, mobileY: 6 },
+            },
+            {
+              id: "crate",
+              word: "crate",
+              phonetic: "/kreɪt/",
+              meaning: "木箱，板条箱",
+              example: "The apples are in a wooden crate.",
+              translation: "苹果在一个木箱里。",
+              label: "crate",
+              zh: "木箱",
+              x: 28,
+              y: 79,
+              offset: { x: 34, y: -8, mobileX: 18, mobileY: -6 },
+            },
+            {
+              id: "pick",
+              word: "pick",
+              type: "action",
+              actionMessageEn: "Great! You picked some fresh fruit.",
+              actionMessageZh: "很好！你挑了一些新鲜水果。",
+              actionEffect: "fruitPick",
+              actionDuration: 2600,
+              phonetic: "/pɪk/",
+              meaning: "挑选",
+              example: "I pick a red apple.",
+              translation: "我挑了一个红苹果。",
+              label: "pick",
+              zh: "挑选",
+              x: 42,
+              y: 58,
+              offset: { x: -36, y: 8, mobileX: -18, mobileY: 6 },
+            },
+          ],
+        },
+        {
+          id: "askForHelp",
+          title: "Ask for Help",
+          zh: "询问推荐",
+          short: "问推荐",
+          bg: "assets/fruit-shop-help-bg.png",
+          bgStyle: "linear-gradient(180deg, #d4a05e 0%, #725038 44%, #1b342d 100%)",
+          npc: "helpShopkeeper",
+          coreWord: "recommendation",
+          completeText: "Great! You asked for a recommendation. Now let's choose some fruit.",
+          completeZh: "太棒了！你询问了推荐。现在我们去挑水果吧。",
+          intro: {
+            text: "You are not sure what to choose, so you ask the shopkeeper for a recommendation.",
+            zh: "你不确定该选什么，于是向店员询问推荐。",
+          },
+          hotspots: [
+            {
+              id: "recommendation",
+              word: "recommendation",
+              phonetic: "/ˌrekəmenˈdeɪʃən/",
+              meaning: "推荐",
+              example: "The shopkeeper gives me a recommendation.",
+              translation: "店员给了我一个推荐。",
+              label: "recommendation",
+              zh: "推荐",
+              x: 58,
+              y: 28,
+              offset: { x: 44, y: -10, mobileX: 20, mobileY: -8 },
+            },
+            {
+              id: "sweet",
+              word: "sweet",
+              phonetic: "/swiːt/",
+              meaning: "甜的",
+              example: "These oranges are sweet.",
+              translation: "这些橙子很甜。",
+              label: "sweet",
+              zh: "甜的",
+              x: 64,
+              y: 57,
+              offset: { x: -28, y: -20, mobileX: -14, mobileY: -16 },
+            },
+            {
+              id: "sour",
+              word: "sour",
+              phonetic: "/ˈsaʊər/",
+              meaning: "酸的",
+              example: "This fruit tastes sour.",
+              translation: "这个水果尝起来酸。",
+              label: "sour",
+              zh: "酸的",
+              x: 83,
+              y: 67,
+              offset: { x: -34, y: -16, mobileX: -18, mobileY: -12 },
+            },
+            {
+              id: "seasonal",
+              word: "seasonal",
+              phonetic: "/ˈsiːzənəl/",
+              meaning: "当季的",
+              example: "Seasonal fruit is fresh and tasty.",
+              translation: "当季水果新鲜又好吃。",
+              label: "seasonal",
+              zh: "当季的",
+              x: 58,
+              y: 35,
+              offset: { x: -54, y: 4, mobileX: -26, mobileY: 2 },
+            },
+            {
+              id: "popular",
+              word: "popular",
+              phonetic: "/ˈpɑːpjələr/",
+              meaning: "受欢迎的",
+              example: "This fruit is popular today.",
+              translation: "这种水果今天很受欢迎。",
+              label: "popular",
+              zh: "受欢迎的",
+              x: 78,
+              y: 55,
+              offset: { x: 36, y: -18, mobileX: 18, mobileY: -14 },
+            },
+            {
+              id: "choice",
+              word: "choice",
+              phonetic: "/tʃɔɪs/",
+              meaning: "选择",
+              example: "I need help with my choice.",
+              translation: "我需要帮忙做选择。",
+              label: "choice",
+              zh: "选择",
+              x: 46,
+              y: 76,
+              offset: { x: -36, y: -20, mobileX: -18, mobileY: -16 },
+            },
+            {
+              id: "recommend",
+              word: "recommend",
+              type: "action",
+              actionMessageEn: "The shopkeeper recommends sweet seasonal fruit.",
+              actionMessageZh: "店员推荐了甜甜的当季水果。",
+              actionEffect: "fruitRecommend",
+              actionDuration: 2600,
+              phonetic: "/ˌrekəˈmend/",
+              meaning: "推荐",
+              example: "Can you recommend something sweet?",
+              translation: "你能推荐一些甜的吗？",
+              label: "recommend",
+              zh: "推荐",
+              x: 36,
+              y: 40,
+              offset: { x: -36, y: -12, mobileX: -18, mobileY: -10 },
+            },
+          ],
+        },
+        {
+          id: "chooseFruits",
+          title: "Choose Fruits",
+          zh: "挑选水果",
+          short: "挑水果",
+          bg: "assets/fruit-shop-choose-bg.png",
+          bgStyle: "radial-gradient(circle at 23% 50%, #f2a23a 0 8%, transparent 8.5%), radial-gradient(circle at 42% 60%, #df3c4f 0 6%, transparent 6.5%), radial-gradient(circle at 63% 46%, #dfb247 0 9%, transparent 9.5%), radial-gradient(circle at 78% 60%, #9dc25d 0 8%, transparent 8.5%), linear-gradient(180deg, #ffcf78 0%, #a8643b 44%, #263d2e 100%)",
+          npc: "sampleShopkeeper",
+          coreWord: "mango",
+          intro: {
+            text: "You choose fruit up close. A small sample tray is waiting on the counter.",
+            zh: "你近距离挑选水果，柜台上有一个小小的试吃盘。",
+          },
+          hotspots: [
+            {
+              id: "mango",
+              word: "mango",
+              phonetic: "/ˈmæŋɡoʊ/",
+              meaning: "芒果",
+              example: "The mango is ripe and sweet.",
+              translation: "芒果熟了，很甜。",
+              label: "mango",
+              zh: "芒果",
+              x: 23,
+              y: 48,
+              offset: { x: -30, y: -18, mobileX: -16, mobileY: -14 },
+            },
+            {
+              id: "strawberry",
+              word: "strawberry",
+              phonetic: "/ˈstrɔːberi/",
+              meaning: "草莓",
+              example: "The strawberry is bright red.",
+              translation: "草莓是鲜红色的。",
+              label: "strawberry",
+              zh: "草莓",
+              x: 43,
+              y: 75,
+              offset: { x: -28, y: -12, mobileX: -16, mobileY: -10 },
+            },
+            {
+              id: "pineapple",
+              word: "pineapple",
+              phonetic: "/ˈpaɪnæpəl/",
+              meaning: "菠萝",
+              example: "The pineapple has a sweet smell.",
+              translation: "菠萝有香甜的味道。",
+              label: "pineapple",
+              zh: "菠萝",
+              x: 68,
+              y: 43,
+              offset: { x: 32, y: -18, mobileX: 16, mobileY: -14 },
+            },
+            {
+              id: "melon",
+              word: "melon",
+              phonetic: "/ˈmelən/",
+              meaning: "甜瓜",
+              example: "The melon is round and green.",
+              translation: "甜瓜又圆又绿。",
+              label: "melon",
+              zh: "甜瓜",
+              x: 87,
+              y: 51,
+              offset: { x: -30, y: 18, mobileX: -16, mobileY: 14 },
+            },
+            {
+              id: "ripe",
+              word: "ripe",
+              phonetic: "/raɪp/",
+              meaning: "成熟的",
+              example: "A ripe mango tastes sweet.",
+              translation: "成熟的芒果尝起来很甜。",
+              label: "ripe",
+              zh: "成熟的",
+              x: 34,
+              y: 39,
+              offset: { x: 22, y: -18, mobileX: 12, mobileY: -14 },
+            },
+            {
+              id: "sample",
+              word: "sample",
+              phonetic: "/ˈsæmpəl/",
+              meaning: "试吃品，样品",
+              example: "The shopkeeper gives me a sample.",
+              translation: "店员给了我一份试吃品。",
+              label: "sample",
+              zh: "试吃品",
+              x: 52,
+              y: 64,
+              offset: { x: -42, y: -8, mobileX: -22, mobileY: -6 },
+            },
+            {
+              id: "taste",
+              word: "taste",
+              type: "action",
+              actionMessageEn: "Yum! You tasted a sweet sample.",
+              actionMessageZh: "嗯！你尝了一块很甜的试吃水果。",
+              actionEffect: "fruitTaste",
+              actionDuration: 2600,
+              phonetic: "/teɪst/",
+              meaning: "品尝",
+              example: "I taste a fruit sample.",
+              translation: "我品尝了一份水果试吃品。",
+              label: "taste",
+              zh: "品尝",
+              x: 50,
+              y: 67,
+              offset: { x: 44, y: 12, mobileX: 22, mobileY: 8 },
+            },
+          ],
+        },
+        {
+          id: "weighingCounter",
+          title: "Weighing Counter",
+          zh: "称重台",
+          short: "称重",
+          bg: "assets/fruit-shop-weighing-bg.png",
+          bgStyle: "radial-gradient(ellipse at 52% 54%, rgba(234, 238, 219, 0.58) 0 18%, transparent 18.5%), radial-gradient(circle at 30% 64%, rgba(235, 78, 64, 0.56), transparent 16%), linear-gradient(180deg, #d9b06d 0%, #5d6048 46%, #20382f 100%)",
+          npc: "weighingShopkeeper",
+          coreWord: "scale",
+          intro: {
+            text: "You bring the fruit to the weighing counter. The scale is ready.",
+            zh: "你把水果拿到称重台，秤已经准备好了。",
+          },
+          hotspots: [
+            {
+              id: "scale",
+              word: "scale",
+              phonetic: "/skeɪl/",
+              meaning: "秤",
+              example: "The fruit is on the scale.",
+              translation: "水果在秤上。",
+              label: "scale",
+              zh: "秤",
+              x: 31,
+              y: 40,
+              offset: { x: -22, y: -20, mobileX: -12, mobileY: -16 },
+            },
+            {
+              id: "kilogram",
+              word: "kilogram",
+              phonetic: "/ˈkɪləɡræm/",
+              meaning: "千克，公斤",
+              example: "I need one kilogram of apples.",
+              translation: "我要一公斤苹果。",
+              label: "kilogram",
+              zh: "公斤",
+              x: 32,
+              y: 28,
+              offset: { x: 46, y: -4, mobileX: 22, mobileY: -4 },
+            },
+            {
+              id: "price",
+              word: "price",
+              phonetic: "/praɪs/",
+              meaning: "价格",
+              example: "The price is clear on the label.",
+              translation: "标签上的价格很清楚。",
+              label: "price",
+              zh: "价格",
+              x: 69,
+              y: 56,
+              offset: { x: 36, y: 4, mobileX: 18, mobileY: 2 },
+            },
+            {
+              id: "label",
+              word: "label",
+              phonetic: "/ˈleɪbəl/",
+              meaning: "标签",
+              example: "The label shows the price.",
+              translation: "标签显示价格。",
+              label: "label",
+              zh: "标签",
+              x: 69,
+              y: 51,
+              offset: { x: 42, y: -22, mobileX: 20, mobileY: -16 },
+            },
+            {
+              id: "total",
+              word: "total",
+              phonetic: "/ˈtoʊtəl/",
+              meaning: "总价，总数",
+              example: "The total is twelve dollars.",
+              translation: "总价是十二美元。",
+              label: "total",
+              zh: "总价",
+              x: 32,
+              y: 24,
+              offset: { x: -46, y: 14, mobileX: -22, mobileY: 10 },
+            },
+            {
+              id: "bag",
+              word: "bag",
+              phonetic: "/bæɡ/",
+              meaning: "袋子",
+              example: "The fruit is in a bag.",
+              translation: "水果在袋子里。",
+              label: "bag",
+              zh: "袋子",
+              x: 43,
+              y: 52,
+              offset: { x: 20, y: 24, mobileX: 10, mobileY: 18 },
+            },
+            {
+              id: "weigh",
+              word: "weigh",
+              type: "action",
+              actionMessageEn: "The fruit is on the scale now.",
+              actionMessageZh: "水果现在放在秤上了。",
+              actionEffect: "fruitWeigh",
+              actionDuration: 2600,
+              phonetic: "/weɪ/",
+              meaning: "称重",
+              example: "We weigh the fruit.",
+              translation: "我们给水果称重。",
+              label: "weigh",
+              zh: "称重",
+              x: 38,
+              y: 57,
+              offset: { x: -42, y: 18, mobileX: -22, mobileY: 14 },
+            },
+          ],
+        },
+        {
+          id: "cashier",
+          title: "Cashier",
+          zh: "收银台",
+          short: "收银",
+          bg: "assets/fruit-shop-cashier-bg.png",
+          bgStyle: "radial-gradient(ellipse at 58% 56%, rgba(255,255,255,0.22), transparent 20%), radial-gradient(circle at 30% 52%, rgba(255,216,107,0.34), transparent 16%), linear-gradient(180deg, #8d7253 0%, #3f584a 48%, #172f29 100%)",
+          npc: "cashier",
+          coreWord: "cashier",
+          intro: {
+            text: "You arrive at the cashier. It is time to pay for the fruit.",
+            zh: "你来到收银台，是时候为水果付款了。",
+          },
+          hotspots: [
+            {
+              id: "cashier",
+              word: "cashier",
+              phonetic: "/kæˈʃɪr/",
+              meaning: "收银员",
+              example: "The cashier is friendly.",
+              translation: "收银员很友好。",
+              label: "cashier",
+              zh: "收银员",
+              x: 31,
+              y: 39,
+              offset: { x: -26, y: -18, mobileX: -14, mobileY: -14 },
+            },
+            {
+              id: "receipt",
+              word: "receipt",
+              phonetic: "/rɪˈsiːt/",
+              meaning: "收据",
+              example: "Can I get a receipt?",
+              translation: "可以给我一张收据吗？",
+              label: "receipt",
+              zh: "收据",
+              x: 55,
+              y: 70,
+              offset: { x: 38, y: -22, mobileX: 18, mobileY: -16 },
+            },
+            {
+              id: "change",
+              word: "change",
+              phonetic: "/tʃeɪndʒ/",
+              meaning: "零钱",
+              example: "Here is your change.",
+              translation: "这是找给你的零钱。",
+              label: "change",
+              zh: "零钱",
+              x: 57,
+              y: 82,
+              offset: { x: 34, y: -22, mobileX: 18, mobileY: -16 },
+            },
+            {
+              id: "coin",
+              word: "coin",
+              phonetic: "/kɔɪn/",
+              meaning: "硬币",
+              example: "I have a small coin.",
+              translation: "我有一枚小硬币。",
+              label: "coin",
+              zh: "硬币",
+              x: 55,
+              y: 82,
+              offset: { x: -42, y: -26, mobileX: -22, mobileY: -20 },
+            },
+            {
+              id: "bill",
+              word: "bill",
+              phonetic: "/bɪl/",
+              meaning: "账单，纸币",
+              example: "I pay with a ten-dollar bill.",
+              translation: "我用一张十美元纸币付款。",
+              label: "bill",
+              zh: "纸币",
+              x: 61,
+              y: 79,
+              offset: { x: 42, y: -10, mobileX: 20, mobileY: -8 },
+            },
+            {
+              id: "counter",
+              word: "counter",
+              phonetic: "/ˈkaʊntər/",
+              meaning: "柜台",
+              example: "The fruit is on the counter.",
+              translation: "水果在柜台上。",
+              label: "counter",
+              zh: "柜台",
+              x: 48,
+              y: 75,
+              offset: { x: -36, y: -18, mobileX: -18, mobileY: -14 },
+            },
+            {
+              id: "pay",
+              word: "pay",
+              type: "action",
+              actionMessageEn: "You paid for the fruit.",
+              actionMessageZh: "你为水果付款了。",
+              actionEffect: "fruitPay",
+              actionDuration: 2600,
+              phonetic: "/peɪ/",
+              meaning: "付款",
+              example: "I pay for the fruit.",
+              translation: "我为水果付款。",
+              label: "pay",
+              zh: "付款",
+              x: 46,
+              y: 74,
+              offset: { x: 40, y: -34, mobileX: 20, mobileY: -24 },
+            },
+          ],
+        },
+        {
+          id: "leavingFruit",
+          title: "Leaving Summary",
+          zh: "离开水果店",
+          short: "离开",
+          bg: "assets/fruit-shop-leaving-bg.png",
+          bgStyle: "radial-gradient(circle at 24% 34%, rgba(255,216,107,0.2), transparent 18%), radial-gradient(circle at 76% 28%, rgba(139,211,230,0.16), transparent 22%), linear-gradient(180deg, #d9a25e 0%, #516b56 44%, #1c342d 100%)",
+          npc: "leavingShopkeeper",
+          coreWord: "doorway",
+          intro: {
+            text: "You leave the fruit shop and step toward the street with your fruit.",
+            zh: "你拿着水果离开水果店，走向街边。",
+          },
+          hotspots: [
+            {
+              id: "doorway",
+              word: "doorway",
+              phonetic: "/ˈdɔːrweɪ/",
+              meaning: "门口",
+              example: "The doorway is near the street.",
+              translation: "门口靠近街道。",
+              label: "doorway",
+              zh: "门口",
+              x: 19,
+              y: 45,
+              offset: { x: 34, y: -12, mobileX: 18, mobileY: -10 },
+            },
+            {
+              id: "street",
+              word: "street",
+              phonetic: "/striːt/",
+              meaning: "街道",
+              example: "The fruit shop is on a busy street.",
+              translation: "水果店在一条热闹的街道上。",
+              label: "street",
+              zh: "街道",
+              x: 72,
+              y: 48,
+              offset: { x: 36, y: 18, mobileX: 18, mobileY: 14 },
+            },
+            {
+              id: "carry",
+              word: "carry",
+              phonetic: "/ˈkæri/",
+              meaning: "拿着，提着",
+              example: "I carry the fruit home.",
+              translation: "我把水果提回家。",
+              label: "carry",
+              zh: "提着",
+              x: 51,
+              y: 76,
+              offset: { x: -46, y: -28, mobileX: -22, mobileY: -22 },
+            },
+            {
+              id: "leave",
+              word: "leave",
+              type: "action",
+              actionMessageEn: "Nice! You finished shopping at the fruit shop.",
+              actionMessageZh: "不错！你完成了水果店购物。",
+              actionEffect: "fruitLeave",
+              actionDuration: 2600,
+              phonetic: "/liːv/",
+              meaning: "离开",
+              example: "We leave the fruit shop.",
+              translation: "我们离开水果店。",
+              label: "leave",
+              zh: "离开",
+              x: 64,
+              y: 56,
+              offset: { x: 44, y: -18, mobileX: 22, mobileY: -14 },
+            },
+          ],
+        },
+      ];
+
+      const fruitShopDialogues = {
+        fruitEntranceShopkeeper: {
+          id: "fruitEntranceShopkeeper",
+          speaker: "Shopkeeper",
+          zh: "店员",
+          text: "Hello! Welcome to our fruit shop.",
+          translation: "你好！欢迎来到我们的水果店。",
+          options: [
+            {
+              text: "I'm looking for fresh fruit.",
+              choiceZh: "我想买新鲜水果。",
+              reply: "Great. We have many fresh fruits today.",
+              translation: "太好了。我们今天有很多新鲜水果。",
+            },
+            {
+              text: "Do you have any recommendations?",
+              choiceZh: "你有什么推荐吗？",
+              reply: "The apples and grapes are very sweet today.",
+              translation: "今天苹果和葡萄都很甜。",
+            },
+            {
+              text: "I just want to look around.",
+              choiceZh: "我先随便看看。",
+              reply: "Of course. Please take your time.",
+              translation: "当然。请慢慢看。",
+            },
+          ],
+        },
+        fruitStandShopkeeper: {
+          id: "fruitStandShopkeeper",
+          speaker: "Shopkeeper",
+          zh: "店员",
+          text: "These apples are sweet today.",
+          translation: "今天这些苹果很甜。",
+          options: [
+            {
+              text: "They look fresh.",
+              choiceZh: "它们看起来很新鲜。",
+              reply: "Yes, they arrived this morning.",
+              translation: "是的，它们今天早上刚到。",
+            },
+            {
+              text: "I want some oranges.",
+              choiceZh: "我想要一些橙子。",
+              reply: "Sure. These oranges are juicy.",
+              translation: "当然。这些橙子很多汁。",
+            },
+            {
+              text: "Are the grapes sweet?",
+              choiceZh: "葡萄甜吗？",
+              reply: "Yes, the grapes are very sweet.",
+              translation: "是的，葡萄很甜。",
+            },
+          ],
+        },
+        helpShopkeeper: {
+          id: "helpShopkeeper",
+          speaker: "Shopkeeper",
+          zh: "店员",
+          text: "These oranges are sweet and popular today.",
+          translation: "今天这些橙子很甜，也很受欢迎。",
+          options: [
+            {
+              text: "I want something sweet.",
+              choiceZh: "我想要甜一点的。",
+              reply: "Then I recommend these seasonal oranges.",
+              translation: "那我推荐这些当季橙子。",
+            },
+            {
+              text: "What is seasonal today?",
+              choiceZh: "今天什么是当季水果？",
+              reply: "Oranges and pears are seasonal today.",
+              translation: "今天橙子和梨是当季水果。",
+            },
+            {
+              text: "Which one do you recommend?",
+              choiceZh: "你推荐哪一种？",
+              reply: "I recommend the sweet oranges on this display.",
+              translation: "我推荐这个陈列架上的甜橙。",
+            },
+          ],
+        },
+        sampleShopkeeper: {
+          id: "sampleShopkeeper",
+          speaker: "Shopkeeper",
+          zh: "店员",
+          text: "Would you like to try a sample?",
+          translation: "你想试吃一下吗？",
+          options: [
+            {
+              text: "Yes, please.",
+              choiceZh: "好的，谢谢。",
+              reply: "Here you are. It is sweet and ripe.",
+              translation: "给你。它又甜又熟。",
+            },
+            {
+              text: "Is it sweet?",
+              choiceZh: "它甜吗？",
+              reply: "Yes, it tastes very sweet.",
+              translation: "是的，它尝起来很甜。",
+            },
+            {
+              text: "I like ripe mangoes.",
+              choiceZh: "我喜欢熟芒果。",
+              reply: "Then you may like this mango.",
+              translation: "那你可能会喜欢这个芒果。",
+            },
+          ],
+        },
+        weighingShopkeeper: {
+          id: "weighingShopkeeper",
+          speaker: "Shopkeeper",
+          zh: "店员",
+          text: "Let me weigh the fruit for you.",
+          translation: "我来帮你称一下水果。",
+          options: [
+            {
+              text: "How much is it?",
+              choiceZh: "多少钱？",
+              reply: "The total is twelve dollars.",
+              translation: "总价是十二美元。",
+            },
+            {
+              text: "I need one kilogram.",
+              choiceZh: "我要一公斤。",
+              reply: "Sure. I will weigh one kilogram for you.",
+              translation: "好的。我会给你称一公斤。",
+            },
+            {
+              text: "Can you put it in a bag?",
+              choiceZh: "可以帮我装进袋子里吗？",
+              reply: "Of course. I will put the fruit in a bag.",
+              translation: "当然。我会把水果装进袋子里。",
+            },
+          ],
+        },
+        cashier: {
+          id: "cashier",
+          speaker: "Cashier",
+          zh: "收银员",
+          text: "That will be twelve dollars.",
+          translation: "一共十二美元。",
+          options: [
+            {
+              text: "Here you are.",
+              choiceZh: "给你。",
+              reply: "Thank you. Here is your receipt.",
+              translation: "谢谢。这是你的收据。",
+            },
+            {
+              text: "Can I get a receipt?",
+              choiceZh: "可以给我收据吗？",
+              reply: "Sure. Here is your receipt.",
+              translation: "当然。这是你的收据。",
+            },
+            {
+              text: "Do you take cards?",
+              choiceZh: "可以刷卡吗？",
+              reply: "Yes, cards are okay.",
+              translation: "可以，银行卡可以。",
+            },
+          ],
+        },
+        leavingShopkeeper: {
+          id: "leavingShopkeeper",
+          speaker: "Shopkeeper",
+          zh: "店员",
+          text: "Thank you! Have a nice day.",
+          translation: "谢谢！祝你今天愉快。",
+          options: [
+            {
+              text: "Thank you. Goodbye.",
+              choiceZh: "谢谢，再见。",
+              reply: "Goodbye. See you next time.",
+              translation: "再见。下次见。",
+            },
+            {
+              text: "The fruit looks great.",
+              choiceZh: "水果看起来很好。",
+              reply: "I'm glad you like it.",
+              translation: "很高兴你喜欢。",
+            },
+            {
+              text: "I'll come back next time.",
+              choiceZh: "我下次还会来。",
+              reply: "Wonderful. We will be here.",
+              translation: "太好了。我们会在这里等你。",
+            },
+          ],
+        },
+      };
+
       const moreAnimalPages = [
         {
           id: "mammals",
@@ -2031,6 +2960,7 @@
           button: "Enter Zoo",
           buttonZh: "进入动物园",
           available: true,
+          chapter: "zoo",
           accent: "#82bd63",
           visual: "Nature Path",
           visualZh: "自然探索",
@@ -2041,17 +2971,19 @@
           id: "fruit-shop",
           title: "Fruit Shop",
           zh: "水果店",
-          status: "Coming Soon",
-          statusZh: "即将开放",
+          status: "Available",
+          statusZh: "可进入",
           description: "Learn fruits, prices, shopping phrases, and simple conversations.",
           descriptionZh: "学习水果、价格、购物表达和简单对话。",
-          button: "Coming Soon",
-          buttonZh: "即将开放",
+          button: "Enter Fruit Shop",
+          buttonZh: "进入水果店",
+          available: true,
+          chapter: "fruitShop",
           accent: "#ffb45c",
           visual: "Fresh Market",
           visualZh: "新鲜市集",
-          image: "linear-gradient(180deg, rgba(18, 12, 8, 0.02), rgba(18, 12, 8, 0.72)), radial-gradient(circle at 21% 68%, #e94d43 0 8%, transparent 8.5%), radial-gradient(circle at 39% 58%, #ffd05a 0 8%, transparent 8.5%), radial-gradient(circle at 56% 70%, #6fbf62 0 8%, transparent 8.5%), radial-gradient(circle at 72% 54%, #ff8b45 0 9%, transparent 9.5%), linear-gradient(110deg, rgba(255,255,255,0.18) 0 12%, transparent 12% 24%, rgba(255,255,255,0.14) 24% 36%, transparent 36% 100%), linear-gradient(145deg, #713f25, #c86a35 44%, #f6b75e)",
-          imagePosition: "center",
+          image: "linear-gradient(180deg, rgba(18, 12, 8, 0.02), rgba(18, 12, 8, 0.72)), url('assets/fruit-shop-entrance-bg.png')",
+          imagePosition: "center 58%",
         },
         {
           id: "campus",
@@ -2183,6 +3115,96 @@
             <span className={`mt-0.5 ${zhSize} font-bold opacity-70`}>{zh}</span>
           </span>
         );
+      }
+
+      const WORD_BOOK_STORAGE_KEY = "realSceneEnglishWordBook";
+      const animalWordSet = new Set([
+        "monkey",
+        "elephant",
+        "lion",
+        "panda",
+        "giraffe",
+        "tiger",
+        "zebra",
+        "hippo",
+        "fox",
+        "wolf",
+        "deer",
+        "camel",
+        "kangaroo",
+        "sloth",
+        "otter",
+        "raccoon",
+        "squirrel",
+        "meerkat",
+        "koala",
+        "leopard",
+        "owl",
+        "eagle",
+        "peacock",
+        "flamingo",
+        "parrot",
+        "swan",
+        "crane",
+        "ostrich",
+        "toucan",
+        "pelican",
+        "sparrow",
+        "woodpecker",
+        "crocodile",
+        "snake",
+        "turtle",
+        "lizard",
+        "chameleon",
+        "iguana",
+        "red panda",
+        "golden snub-nosed monkey",
+        "tapir",
+        "lemur",
+        "anteater",
+        "armadillo",
+      ]);
+
+      function getWordKey(word) {
+        return word.trim().toLowerCase();
+      }
+
+      function normalizeWordBookEntry(item) {
+        if (!item) return null;
+        if (typeof item === "string") {
+          return {
+            word: item,
+            zh: "",
+            phonetic: "",
+            example: "",
+            exampleZh: "",
+            scene: "Zoo",
+            type: animalWordSet.has(getWordKey(item)) ? "animal" : "object",
+            addedAt: new Date().toISOString(),
+          };
+        }
+        if (!item.word) return null;
+        return {
+          word: item.word,
+          zh: item.zh || item.meaning || "",
+          phonetic: item.phonetic || "",
+          example: item.example || "",
+          exampleZh: item.exampleZh || item.translation || "",
+          scene: item.scene || "Zoo",
+          type: item.type || (animalWordSet.has(getWordKey(item.word)) ? "animal" : "object"),
+          addedAt: item.addedAt || new Date().toISOString(),
+        };
+      }
+
+      function loadWordBookEntries() {
+        if (typeof window === "undefined") return [];
+        try {
+          const saved = JSON.parse(window.localStorage.getItem(WORD_BOOK_STORAGE_KEY) || "[]");
+          if (!Array.isArray(saved)) return [];
+          return saved.map(normalizeWordBookEntry).filter(Boolean);
+        } catch (error) {
+          return [];
+        }
       }
 
       function useViewportSize() {
@@ -2413,7 +3435,14 @@
 
       function App() {
         const [currentView, setCurrentView] = useState("home");
+        const [currentChapter, setCurrentChapter] = useState("zoo");
         const [sceneSelectHint, setSceneSelectHint] = useState("");
+        const [wordBookReturnView, setWordBookReturnView] = useState("sceneSelect");
+        const [wordBookFilter, setWordBookFilter] = useState("all");
+        const [isReviewingWordBook, setIsReviewingWordBook] = useState(false);
+        const [reviewIndex, setReviewIndex] = useState(0);
+        const [reviewRevealed, setReviewRevealed] = useState(false);
+        const [showLoginModal, setShowLoginModal] = useState(false);
         const [currentIndex, setCurrentIndex] = useState(0);
         const [selectedHotspot, setSelectedHotspot] = useState(null);
         const [selectedMoreAnimal, setSelectedMoreAnimal] = useState(null);
@@ -2423,7 +3452,7 @@
         const [learnedHotspotKeys, setLearnedHotspotKeys] = useState([]);
         const [learnedMoreAnimals, setLearnedMoreAnimals] = useState([]);
         const [learnedWords, setLearnedWords] = useState([]);
-        const [savedWords, setSavedWords] = useState([]);
+        const [savedWords, setSavedWords] = useState(loadWordBookEntries);
         const [playingKey, setPlayingKey] = useState(null);
         const [tappedHotspot, setTappedHotspot] = useState(null);
         const [clickedChoice, setClickedChoice] = useState(null);
@@ -2447,6 +3476,14 @@
         }, []);
 
         useEffect(() => {
+          try {
+            window.localStorage.setItem(WORD_BOOK_STORAGE_KEY, JSON.stringify(savedWords));
+          } catch (error) {
+            // Keep the in-memory word book usable if browser storage is unavailable.
+          }
+        }, [savedWords]);
+
+        useEffect(() => {
           if (currentView !== "zoo" || !showWelcome) return;
           setWelcomeLeaving(false);
           const fadeTimer = window.setTimeout(() => setWelcomeLeaving(true), 3600);
@@ -2457,8 +3494,43 @@
           };
         }, [currentView, showWelcome]);
 
-        const currentScene = scenes[currentIndex];
-        const currentDialogue = currentScene.npc ? dialogues[currentScene.npc] : null;
+        const isZooChapter = currentChapter === "zoo";
+        const activeScenes = isZooChapter ? scenes : fruitShopScenes;
+        const activeDialogues = isZooChapter ? dialogues : fruitShopDialogues;
+        const chapterTitle = isZooChapter ? "Zoo Trip" : "Fruit Shop Trip";
+        const chapterTitleZh = isZooChapter ? "动物园之旅" : "水果店之旅";
+        const chapterWordBookScene = isZooChapter ? "Zoo" : "Fruit Shop";
+        const endingTitle = isZooChapter
+          ? "Great job! Your zoo trip is finished."
+          : "Great job! Your fruit shop trip is finished.";
+        const endingZh = isZooChapter
+          ? "太棒了！今天的动物园之旅到此结束啦。"
+          : "太棒了！你的水果店之旅完成了。";
+        const restartLabel = isZooChapter ? "Restart Trip" : "Restart Fruit Shop";
+        const restartZh = isZooChapter ? "重新开始旅程" : "重新开始水果店";
+        const welcomeIntro = isZooChapter
+          ? {
+              label: "Zoo Trip",
+              labelZh: "",
+              title: "Welcome to the zoo!",
+              titleZh: "",
+              text: "Today, you will explore the zoo, meet animals, and learn real English.",
+              zh: "欢迎来到动物园！今天你会逛动物园、遇见动物，并学习真实场景英语。",
+              action: "",
+              actionZh: "",
+            }
+          : {
+              label: "Fruit Shop Trip",
+              labelZh: "水果店之旅",
+              title: "Welcome to the fruit shop!",
+              titleZh: "欢迎来到水果店！",
+              text: "Today, you will visit a fruit shop, choose fresh fruit, ask about prices, and practice real shopping English.",
+              zh: "今天你会走进水果店，挑选新鲜水果，询问价格，并练习真实购物英语。",
+              action: "Start Shopping",
+              actionZh: "开始购物",
+            };
+        const currentScene = activeScenes[currentIndex];
+        const currentDialogue = currentScene.npc ? activeDialogues[currentScene.npc] : null;
         const viewport = useViewportSize();
         const isHotspotExpanded = expandedHotspotScenes.includes(currentScene.id);
         const maxPrimaryHotspots = viewport.width < 640 ? 4 : 5;
@@ -2494,9 +3566,9 @@
         const hasAction = !actionHotspot || completedActions.includes(currentScene.id);
         const sceneComplete = hasAllWords && hasDialogue && hasAction;
         const nextActionLabel =
-          currentIndex === scenes.length - 1 ? "Finish Trip" : "Walk Forward";
+          currentIndex === activeScenes.length - 1 ? "Finish Trip" : "Walk Forward";
         const nextActionZh =
-          currentIndex === scenes.length - 1 ? "完成旅程" : "继续前进";
+          currentIndex === activeScenes.length - 1 ? "完成旅程" : "继续前进";
         const currentMoreAnimalsPage = moreAnimalPages[moreAnimalsPageIndex];
         const exploredMoreAnimalCount = learnedMoreAnimals.length;
         const currentPageExploredCount = currentMoreAnimalsPage.animals.filter((animal) =>
@@ -2519,6 +3591,19 @@
                 zh: `不错！你又认识了 ${exploredMoreAnimalCount} 种动物。`,
               }
             : null;
+        const wordBookFilters = [
+          { id: "all", en: "All", zh: "全部" },
+          { id: "zoo", en: "Zoo", zh: "动物园" },
+          { id: "action", en: "Actions", zh: "互动词" },
+          { id: "animal", en: "Animals", zh: "动物" },
+        ];
+        const filteredSavedWords = savedWords.filter((item) => {
+          if (wordBookFilter === "zoo") return item.scene.includes("Zoo");
+          if (wordBookFilter === "action") return item.type === "action";
+          if (wordBookFilter === "animal") return item.type === "animal";
+          return true;
+        });
+        const currentReviewWord = filteredSavedWords[reviewIndex] || null;
 
         function speakEnglish(text, rate = 0.9, key = text) {
           if (!("speechSynthesis" in window)) return;
@@ -2540,10 +3625,96 @@
           setLearnedWords((words) => (words.includes(word) ? words : [...words, word]));
         }
 
-        function toggleSaveWord(word) {
-          setSavedWords((words) =>
-            words.includes(word) ? words.filter((item) => item !== word) : [...words, word]
-          );
+        function inferWordType(item) {
+          if (item.type === "action") return "action";
+          if (animalWordSet.has(getWordKey(item.word))) return "animal";
+          if (item.word.includes(" ")) return "phrase";
+          return "object";
+        }
+
+        function makeHotspotWordBookEntry(hotspot) {
+          return {
+            word: hotspot.word,
+            zh: hotspot.meaning,
+            phonetic: hotspot.phonetic,
+            example: hotspot.example,
+            exampleZh: hotspot.translation,
+            scene: `${chapterWordBookScene} / ${currentScene.title}`,
+            type: inferWordType(hotspot),
+            addedAt: new Date().toISOString(),
+          };
+        }
+
+        function makeMoreAnimalWordBookEntry(animal) {
+          return {
+            word: animal.word,
+            zh: animal.meaning,
+            phonetic: animal.phonetic,
+            example: animal.example,
+            exampleZh: animal.translation,
+            scene: "Zoo / More Animals",
+            type: "animal",
+            addedAt: new Date().toISOString(),
+          };
+        }
+
+        function isWordSaved(word) {
+          const key = getWordKey(word);
+          return savedWords.some((item) => getWordKey(item.word) === key);
+        }
+
+        function saveWordEntry(entry) {
+          const normalized = normalizeWordBookEntry(entry);
+          if (!normalized) return;
+          setSavedWords((items) => {
+            const key = getWordKey(normalized.word);
+            if (items.some((item) => getWordKey(item.word) === key)) return items;
+            return [{ ...normalized, addedAt: new Date().toISOString() }, ...items];
+          });
+        }
+
+        function removeWordEntry(word) {
+          const key = getWordKey(word);
+          setSavedWords((items) => items.filter((item) => getWordKey(item.word) !== key));
+        }
+
+        function openWordBook(returnView = currentView) {
+          setWordBookReturnView(returnView);
+          setSelectedHotspot(null);
+          setSelectedMoreAnimal(null);
+          setShowMoreAnimalsChoice(false);
+          setIsReviewingWordBook(false);
+          setReviewRevealed(false);
+          setReviewIndex(0);
+          setCurrentView("wordBook");
+        }
+
+        function closeWordBook() {
+          setIsReviewingWordBook(false);
+          setReviewRevealed(false);
+          setCurrentView(wordBookReturnView || "sceneSelect");
+        }
+
+        function startWordReview() {
+          if (!filteredSavedWords.length) return;
+          setReviewIndex(0);
+          setReviewRevealed(false);
+          setIsReviewingWordBook(true);
+          speakEnglish(filteredSavedWords[0].word, 0.9, `review-${filteredSavedWords[0].word}`);
+        }
+
+        function advanceReview() {
+          if (reviewIndex >= filteredSavedWords.length - 1) {
+            setIsReviewingWordBook(false);
+            setReviewRevealed(false);
+            setReviewIndex(0);
+            return;
+          }
+          const nextIndex = reviewIndex + 1;
+          const nextWord = filteredSavedWords[nextIndex];
+          setReviewIndex(nextIndex);
+          setReviewRevealed(false);
+          if (nextWord) speakEnglish(nextWord.word, 0.9, `review-${nextWord.word}`);
         }
 
         function triggerAnimalFeedback(hotspot) {
@@ -2609,6 +3780,38 @@
 
         function enterZoo() {
           setSceneSelectHint("");
+          setCurrentChapter("zoo");
+          setCurrentIndex(0);
+          setSelectedHotspot(null);
+          setDialogueReply(null);
+          setProgressHint("");
+          setAnimalEffect(null);
+          setShowEnding(false);
+          setShowMoreAnimalsChoice(false);
+          setShowMoreAnimalsBook(false);
+          setShowWelcome(true);
+          setWelcomeLeaving(false);
+          setCurrentView("zoo");
+        }
+
+        function enterFruitShop() {
+          setSceneSelectHint("");
+          setCurrentChapter("fruitShop");
+          setCurrentIndex(0);
+          setSelectedHotspot(null);
+          setSelectedMoreAnimal(null);
+          setDialogueReply(null);
+          setConversationDone([]);
+          setCompletedActions([]);
+          setLearnedHotspotKeys([]);
+          setLearnedWords([]);
+          setProgressHint("");
+          setAnimalEffect(null);
+          setShowEnding(false);
+          setShowMoreAnimalsChoice(false);
+          setShowMoreAnimalsBook(false);
+          setShowWelcome(true);
+          setWelcomeLeaving(false);
           setCurrentView("zoo");
         }
 
@@ -2635,6 +3838,11 @@
           }, 420);
         }
 
+        function dismissWelcome() {
+          setWelcomeLeaving(true);
+          window.setTimeout(() => setShowWelcome(false), 250);
+        }
+
         function walkForward() {
           if (!sceneComplete) {
             const needs = [];
@@ -2652,11 +3860,15 @@
             return;
           }
 
-          if (currentIndex < scenes.length - 1) {
+          if (currentIndex < activeScenes.length - 1) {
             moveTo(currentIndex + 1);
           } else {
             setSelectedHotspot(null);
-            setShowMoreAnimalsChoice(true);
+            if (isZooChapter) {
+              setShowMoreAnimalsChoice(true);
+            } else {
+              setShowEnding(true);
+            }
           }
         }
 
@@ -2670,14 +3882,240 @@
           setLearnedHotspotKeys([]);
           setLearnedMoreAnimals([]);
           setLearnedWords([]);
-          setSavedWords([]);
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
           setMoreAnimalsPageIndex(0);
           setShowEnding(false);
-          setShowWelcome(true);
+          setShowWelcome(isZooChapter);
           setWelcomeLeaving(false);
           setAnimalEffect(null);
+        }
+
+        if (currentView === "wordBook") {
+          return (
+            <main className="relative min-h-screen overflow-hidden bg-[#111614] px-4 py-5 text-cream sm:px-6">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_14%,rgba(255,216,107,0.1),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(139,211,230,0.1),transparent_30%),linear-gradient(160deg,#111b17_0%,#17251c_52%,#0b0f0e_100%)]"></div>
+              <div className="absolute inset-0 opacity-[0.08] [background-image:radial-gradient(rgba(255,255,255,0.13)_1px,transparent_1px)] [background-size:24px_24px]"></div>
+              <div className="light-breath pointer-events-none absolute -left-24 top-10 h-[42vh] w-[42vh] rounded-full bg-banana/12 blur-3xl"></div>
+              <div className="relative z-10 mx-auto max-w-6xl">
+                <header className="dialogue-enter flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-5 shadow-glow backdrop-blur-xl sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <button
+                      onClick={closeWordBook}
+                      className="mb-4 rounded-full border border-white/18 bg-white/10 px-4 py-2 text-sm font-black text-white transition hover:bg-white/20"
+                    >
+                      <ButtonCopy en="Back" zh="返回" size="small" />
+                    </button>
+                    <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">
+                      Real Scene English
+                    </p>
+                    <h1 className="mt-2 text-4xl font-black text-white sm:text-6xl">
+                      Word Book
+                    </h1>
+                    <p className="mt-2 text-2xl font-black text-banana">
+                      生词本
+                    </p>
+                    <p className="mt-4 text-lg font-bold text-cream/80">
+                      Review the words you saved from real scenes.
+                    </p>
+                    <p className="mt-1 text-base font-bold text-cream/68">
+                      复习你在真实场景中收藏的单词。
+                    </p>
+                  </div>
+                  <div className="rounded-2xl border border-white/14 bg-white/10 px-4 py-3">
+                    <p className="text-[10px] font-black uppercase tracking-[0.18em] text-banana">
+                      Saved
+                    </p>
+                    <p className="mt-1 text-3xl font-black text-white">{savedWords.length}</p>
+                    <p className="text-xs font-bold text-cream/70">已收藏</p>
+                  </div>
+                </header>
+
+                <section className="mt-5 rounded-3xl border border-white/14 bg-nightglass p-4 shadow-glow backdrop-blur-xl">
+                  <div className="mb-4 rounded-2xl border border-white/12 bg-white/8 px-4 py-3">
+                    <p className="text-sm font-black text-white">Guest Mode</p>
+                    <p className="mt-1 text-sm font-bold leading-6 text-cream/68">
+                      Your data is saved in this browser. 登录同步功能即将开放。
+                    </p>
+                    <p className="mt-1 text-xs font-bold leading-5 text-cream/52">
+                      游客模式：你的学习数据会保存在当前浏览器。
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                    <div className="flex flex-wrap gap-2">
+                      {wordBookFilters.map((filter) => {
+                        const active = wordBookFilter === filter.id;
+                        return (
+                          <button
+                            key={filter.id}
+                            onClick={() => {
+                              setWordBookFilter(filter.id);
+                              setIsReviewingWordBook(false);
+                              setReviewIndex(0);
+                              setReviewRevealed(false);
+                            }}
+                            className={`rounded-full px-4 py-2 text-sm font-black shadow-label transition active:scale-[0.99] ${
+                              active
+                                ? "bg-banana text-ink"
+                                : "border border-white/14 bg-white/10 text-cream hover:bg-white/18"
+                            }`}
+                          >
+                            <ButtonCopy en={filter.en} zh={filter.zh} size="small" />
+                          </button>
+                        );
+                      })}
+                    </div>
+                    <button
+                      onClick={startWordReview}
+                      disabled={!filteredSavedWords.length}
+                      className={`rounded-full px-5 py-3 font-black shadow-label transition active:scale-[0.99] ${
+                        filteredSavedWords.length
+                          ? "bg-coral text-white hover:bg-[#f36a5b]"
+                          : "border border-white/12 bg-white/8 text-white/36"
+                      }`}
+                    >
+                      <ButtonCopy en="Start Review" zh="开始复习" />
+                    </button>
+                  </div>
+
+                  {isReviewingWordBook && currentReviewWord ? (
+                    <div className="dialogue-enter mx-auto mt-6 max-w-2xl rounded-3xl border border-banana/35 bg-[#112319]/86 p-5 text-center shadow-glow">
+                      <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
+                        Review {reviewIndex + 1}/{filteredSavedWords.length}
+                      </p>
+                      <button
+                        onClick={() => speakEnglish(currentReviewWord.word, 0.9, `review-${currentReviewWord.word}`)}
+                        className="mx-auto mt-5 block rounded-3xl border border-white/14 bg-white/10 px-6 py-5 transition hover:bg-white/16 active:scale-[0.99]"
+                      >
+                        <span className="block text-5xl font-black text-white">
+                          {currentReviewWord.word}
+                        </span>
+                        <span className="mt-3 block text-2xl font-black text-banana">
+                          {currentReviewWord.phonetic || " "}
+                        </span>
+                      </button>
+
+                      {!reviewRevealed ? (
+                        <button
+                          onClick={() => setReviewRevealed(true)}
+                          className="mt-5 rounded-full bg-banana px-6 py-3 font-black text-ink shadow-label transition hover:bg-[#ffc83f] active:scale-[0.99]"
+                        >
+                          <ButtonCopy en="Show Meaning" zh="显示意思" />
+                        </button>
+                      ) : (
+                        <div className="mt-5 text-left">
+                          <div className="rounded-2xl border border-white/12 bg-white/10 p-4">
+                            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-banana">
+                              Meaning
+                            </p>
+                            <p className="mt-2 text-2xl font-black text-white">
+                              {currentReviewWord.zh || "No meaning saved."}
+                            </p>
+                          </div>
+                          <div className="mt-3 rounded-2xl border border-white/12 bg-black/18 p-4">
+                            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-coral">
+                              Example
+                            </p>
+                            <p className="mt-2 text-xl font-black leading-8 text-white">
+                              {currentReviewWord.example || "No example saved."}
+                            </p>
+                            <p className="mt-2 text-base font-bold leading-7 text-cream/76">
+                              {currentReviewWord.exampleZh}
+                            </p>
+                          </div>
+                          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                            <button
+                              onClick={advanceReview}
+                              className="rounded-2xl bg-banana px-5 py-4 font-black text-ink shadow-label transition hover:bg-[#ffc83f] active:scale-[0.99]"
+                            >
+                              <ButtonCopy en="I know it" zh="我认识了" />
+                            </button>
+                            <button
+                              onClick={advanceReview}
+                              className="rounded-2xl border border-white/18 bg-white/12 px-5 py-4 font-black text-white transition hover:bg-white/22 active:scale-[0.99]"
+                            >
+                              <ButtonCopy en="Review later" zh="稍后复习" />
+                            </button>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ) : filteredSavedWords.length ? (
+                    <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+                      {filteredSavedWords.map((item) => (
+                        <article
+                          key={`${item.word}-${item.addedAt}`}
+                          className="rounded-2xl border border-white/14 bg-white/10 p-4 shadow-label transition hover:border-banana/40 hover:bg-white/14"
+                        >
+                          <button
+                            onClick={() => speakEnglish(item.word, 0.9, `book-${item.word}`)}
+                            className="w-full text-left"
+                          >
+                            <div className="flex items-start justify-between gap-3">
+                              <div>
+                                <h2 className="text-3xl font-black text-white">{item.word}</h2>
+                                <p className="mt-1 text-xl font-black text-banana">
+                                  {item.phonetic}
+                                </p>
+                              </div>
+                              <span className="rounded-full bg-black/20 px-3 py-1 text-[10px] font-black uppercase tracking-[0.12em] text-cream/72">
+                                {item.type}
+                              </span>
+                            </div>
+                            <p className="mt-3 text-xl font-black text-white">{item.zh}</p>
+                            <p className="mt-2 text-xs font-bold text-cream/58">{item.scene}</p>
+                            <p className="mt-4 text-base font-black leading-7 text-white">
+                              {item.example}
+                            </p>
+                            <p className="mt-1 text-sm font-bold leading-6 text-cream/70">
+                              {item.exampleZh}
+                            </p>
+                          </button>
+                          <div className="mt-4 grid grid-cols-2 gap-2">
+                            <button
+                              onClick={() => speakEnglish(item.word, 0.9, `book-${item.word}-normal`)}
+                              className="rounded-2xl bg-banana px-3 py-3 font-black text-ink shadow-label transition hover:bg-[#ffc83f] active:scale-[0.99]"
+                            >
+                              <span className="inline-flex items-center justify-center gap-2">
+                                {playingKey === `book-${item.word}-normal` && <SoundBars />}
+                                <ButtonCopy en="Normal" zh="正常语速" size="small" />
+                              </span>
+                            </button>
+                            <button
+                              onClick={() => speakEnglish(item.word, 0.65, `book-${item.word}-slow`)}
+                              className="rounded-2xl border border-banana/40 bg-white/12 px-3 py-3 font-black text-white shadow-label transition hover:bg-white/22 active:scale-[0.99]"
+                            >
+                              <span className="inline-flex items-center justify-center gap-2">
+                                {playingKey === `book-${item.word}-slow` && <SoundBars />}
+                                <ButtonCopy en="Slow" zh="慢速朗读" size="small" />
+                              </span>
+                            </button>
+                          </div>
+                          <button
+                            onClick={() => removeWordEntry(item.word)}
+                            className="mt-2 w-full rounded-2xl border border-white/14 bg-black/16 px-3 py-3 font-black text-white transition hover:bg-white/14 active:scale-[0.99]"
+                          >
+                            <ButtonCopy en="Remove" zh="移除" size="small" />
+                          </button>
+                        </article>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="dialogue-enter mx-auto mt-8 max-w-xl rounded-3xl border border-white/14 bg-white/10 p-8 text-center shadow-label">
+                      <h2 className="text-3xl font-black text-white">No saved words yet.</h2>
+                      <p className="mt-2 text-xl font-black text-banana">还没有收藏的生词。</p>
+                      <p className="mt-5 text-base font-bold leading-7 text-cream/72">
+                        Click “Add to Word Book” while learning to save words here.
+                      </p>
+                      <p className="mt-1 text-sm font-bold leading-6 text-cream/58">
+                        学习时点击“加入生词本”，单词会出现在这里。
+                      </p>
+                    </div>
+                  )}
+                </section>
+              </div>
+            </main>
+          );
         }
 
         if (currentView === "home") {
@@ -2689,6 +4127,20 @@
               <div className="absolute inset-x-16 bottom-10 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent"></div>
               <div className="light-breath pointer-events-none absolute left-1/2 top-[18%] h-[30rem] w-[44rem] -translate-x-1/2 rounded-full bg-[#d8ead8]/7 blur-3xl"></div>
               <div className="leaf-drift pointer-events-none absolute left-[58%] top-[62%] h-40 w-96 -translate-x-1/2 rounded-full bg-[#7ea493]/8 blur-3xl"></div>
+              <nav className="absolute right-4 top-[calc(env(safe-area-inset-top)+1rem)] z-20 flex gap-2 sm:right-6">
+                <button
+                  onClick={() => openWordBook("home")}
+                  className="rounded-full border border-white/14 bg-white/[0.07] px-4 py-2 text-xs font-black text-white/76 shadow-[0_12px_28px_rgba(0,0,0,0.2)] backdrop-blur-xl transition hover:bg-white/13 hover:text-white active:scale-[0.99]"
+                >
+                  <ButtonCopy en="Word Book" zh="生词本" size="small" />
+                </button>
+                <button
+                  onClick={() => setShowLoginModal(true)}
+                  className="rounded-full border border-white/14 bg-white/[0.07] px-4 py-2 text-xs font-black text-white/76 shadow-[0_12px_28px_rgba(0,0,0,0.2)] backdrop-blur-xl transition hover:bg-white/13 hover:text-white active:scale-[0.99]"
+                >
+                  <ButtonCopy en="Login" zh="登录" size="small" />
+                </button>
+              </nav>
               <section className="relative z-10 flex min-h-screen items-center justify-center px-6 pb-16 pt-10 text-center sm:px-8">
                 <div className="dialogue-enter mx-auto max-w-[46rem] -translate-y-3 sm:-translate-y-6">
                   <p className="text-[10px] font-black uppercase text-white/50 sm:text-[11px]">
@@ -2732,6 +4184,78 @@
                   </p>
                 </div>
               </section>
+              {showLoginModal && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/56 px-4 backdrop-blur-sm">
+                  <div className="dialogue-enter w-full max-w-xl rounded-3xl border border-white/16 bg-[#111b17]/92 p-6 text-left text-cream shadow-glow backdrop-blur-2xl">
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
+                          Guest Mode
+                        </p>
+                        <h2 className="mt-3 text-4xl font-black text-white">Log in</h2>
+                        <p className="mt-1 text-2xl font-black text-banana">登录</p>
+                      </div>
+                      <button
+                        onClick={() => setShowLoginModal(false)}
+                        className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/10 text-2xl font-black text-white transition hover:bg-white/18 active:scale-95"
+                        aria-label="Close 关闭"
+                        title="Close / 关闭"
+                      >
+                        ×
+                      </button>
+                    </div>
+
+                    <div className="mt-5 rounded-2xl border border-white/12 bg-white/10 p-4">
+                      <p className="text-xl font-black leading-8 text-white">
+                        Phone login is coming soon.
+                      </p>
+                      <p className="mt-1 text-base font-bold leading-7 text-cream/72">
+                        手机号登录即将开放。
+                      </p>
+                      <p className="mt-4 text-base font-black leading-7 text-white">
+                        In guest mode, your words are saved on this browser only.
+                      </p>
+                      <p className="mt-1 text-sm font-bold leading-6 text-cream/66">
+                        游客模式下，你的生词只会保存在当前浏览器。
+                      </p>
+                    </div>
+
+                    <div className="mt-4 rounded-2xl border border-white/12 bg-black/18 p-4">
+                      <p className="text-[10px] font-black uppercase tracking-[0.2em] text-banana">
+                        Future update
+                      </p>
+                      <p className="mt-1 text-sm font-bold text-cream/70">未来将支持：</p>
+                      <div className="mt-3 grid gap-2">
+                        {[
+                          ["Phone number login", "手机号登录"],
+                          ["Cloud word book", "云端生词本"],
+                          ["Cloud learning progress", "云端学习进度"],
+                        ].map(([en, zh]) => (
+                          <div key={en} className="rounded-2xl border border-white/10 bg-white/8 px-4 py-3">
+                            <p className="font-black text-white">{en}</p>
+                            <p className="mt-1 text-sm font-bold text-cream/64">{zh}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="mt-5 flex flex-wrap gap-3">
+                      <button
+                        onClick={() => setShowLoginModal(false)}
+                        className="rounded-full bg-banana px-5 py-3 font-black text-ink shadow-label transition hover:bg-[#ffc83f] active:scale-[0.99]"
+                      >
+                        <ButtonCopy en="Continue as Guest" zh="继续游客模式" />
+                      </button>
+                      <button
+                        onClick={() => setShowLoginModal(false)}
+                        className="rounded-full border border-white/16 bg-white/10 px-5 py-3 font-black text-white transition hover:bg-white/18 active:scale-[0.99]"
+                      >
+                        <ButtonCopy en="Close" zh="关闭" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
             </main>
           );
         }
@@ -2746,12 +4270,20 @@
               <div className="relative z-10 mx-auto max-w-6xl">
                 <header className="dialogue-enter flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-5 shadow-glow backdrop-blur-xl sm:flex-row sm:items-end sm:justify-between">
                   <div>
-                    <button
-                      onClick={() => setCurrentView("home")}
-                      className="mb-4 rounded-full border border-white/18 bg-white/10 px-4 py-2 text-sm font-black text-white transition hover:bg-white/20"
-                    >
-                      <ButtonCopy en="Back" zh="返回" size="small" />
-                    </button>
+                    <div className="mb-4 flex flex-wrap gap-2">
+                      <button
+                        onClick={() => setCurrentView("home")}
+                        className="rounded-full border border-white/18 bg-white/10 px-4 py-2 text-sm font-black text-white transition hover:bg-white/20"
+                      >
+                        <ButtonCopy en="Back" zh="返回" size="small" />
+                      </button>
+                      <button
+                        onClick={() => openWordBook("sceneSelect")}
+                        className="rounded-full border border-white/18 bg-white/10 px-4 py-2 text-sm font-black text-white transition hover:bg-white/20"
+                      >
+                        <ButtonCopy en="Word Book" zh="生词本" size="small" />
+                      </button>
+                    </div>
                     <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">
                       Real Scene English
                     </p>
@@ -2832,7 +4364,13 @@
                         {scene.descriptionZh}
                       </p>
                       <button
-                        onClick={scene.available ? enterZoo : showComingSoon}
+                        onClick={
+                          scene.available
+                            ? scene.chapter === "fruitShop"
+                              ? enterFruitShop
+                              : enterZoo
+                            : showComingSoon
+                        }
                         className={`mt-6 w-full rounded-2xl px-4 py-3 font-black shadow-label transition active:scale-[0.99] ${
                           scene.available
                             ? "bg-banana text-ink hover:bg-[#ffc83f]"
@@ -2853,19 +4391,40 @@
           <main className="relative h-screen w-screen overflow-hidden bg-[#17251c]">
             <section
               key={currentScene.id}
-              className={`scene-reveal absolute inset-0 ${
-                animalEffect?.effect === "roarShake" ? "lion-soft-shake" : ""
-              }`}
+              className="scene-reveal absolute inset-0"
             >
-              <img
-                src={currentScene.bg}
-                alt={`${currentScene.title} first-person zoo scene`}
-                className="absolute inset-0 h-full w-full object-cover"
-              />
+              {currentScene.bg ? (
+                <img
+                  src={currentScene.bg}
+                  alt={`${currentScene.title} first-person scene`}
+                  className={`absolute inset-0 h-full w-full object-cover ${
+                    animalEffect?.effect === "roarShake" ? "lion-soft-shake" : ""
+                  }`}
+                />
+              ) : (
+                <div
+                  className="absolute inset-0"
+                  style={{ background: currentScene.bgStyle }}
+                  aria-label={`${currentScene.title} first-person scene`}
+                ></div>
+              )}
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/8 via-transparent to-black/38"></div>
               <div className="light-breath pointer-events-none absolute -left-24 -top-24 h-[56vh] w-[56vh] rounded-full bg-banana/40 blur-3xl"></div>
               <div className="leaf-drift pointer-events-none absolute -right-20 top-0 h-44 w-64 rounded-full bg-leaf/25 blur-2xl"></div>
               <div className="leaf-drift pointer-events-none absolute left-6 top-10 h-36 w-48 rounded-full bg-moss/18 blur-2xl [animation-delay:1.7s]"></div>
+
+              {!isZooChapter && (
+                <div className="pointer-events-none absolute inset-0 z-10">
+                  {animalEffect?.effect?.startsWith("fruit") && (
+                    <>
+                      <div className="sunlit-sweep absolute left-[18%] top-0 h-full w-28 bg-white/14 blur-xl"></div>
+                      <div className="playful-leaf absolute left-[46%] top-[50%] h-4 w-3 rounded-full bg-[#f3c66d]/80"></div>
+                      <div className="playful-leaf absolute left-[52%] top-[53%] h-4 w-3 rounded-full bg-[#91b96a]/80 [animation-delay:0.12s]"></div>
+                      <div className="playful-leaf absolute left-[58%] top-[49%] h-4 w-3 rounded-full bg-[#d98c55]/75 [animation-delay:0.24s]"></div>
+                    </>
+                  )}
+                </div>
+              )}
 
               {currentScene.id === "monkey" && (
                 <div className="pointer-events-none absolute inset-0 z-10">
@@ -3083,7 +4642,7 @@
             <header className="hud-float absolute left-4 right-4 top-[calc(env(safe-area-inset-top)+1rem)] z-40 mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-2xl border border-white/18 bg-nightglass px-4 py-3 shadow-glow backdrop-blur-xl sm:left-6 sm:right-6">
               <div className="min-w-0 shrink-0">
                 <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
-                  Zoo Trip {currentIndex + 1}/{scenes.length}
+                  {chapterTitle} {currentIndex + 1}/{activeScenes.length}
                 </p>
                 <h1 className="truncate whitespace-nowrap text-lg font-black text-white sm:text-2xl">
                   {currentScene.title} <span className="text-banana">{currentScene.zh}</span>
@@ -3101,6 +4660,12 @@
                 className="hidden shrink-0 rounded-full border border-white/18 bg-white/10 px-3 py-2 text-xs font-black text-white shadow-label transition hover:bg-white/20 active:scale-[0.99] sm:block"
               >
                 <ButtonCopy en="Back to Scenes" zh="返回场景选择" size="small" />
+              </button>
+              <button
+                onClick={() => openWordBook("zoo")}
+                className="hidden shrink-0 rounded-full border border-white/18 bg-white/10 px-3 py-2 text-xs font-black text-white shadow-label transition hover:bg-white/20 active:scale-[0.99] sm:block"
+              >
+                <ButtonCopy en="Word Book" zh="生词本" size="small" />
               </button>
               <button
                 onClick={walkForward}
@@ -3234,7 +4799,7 @@
                 </p>
               </div>
               <div className="flex gap-2 overflow-x-auto pb-1">
-                {scenes.map((scene, index) => {
+                {activeScenes.map((scene, index) => {
                   const done = index < currentIndex || showEnding;
                   const active = index === currentIndex && !showEnding;
                   return (
@@ -3331,18 +4896,28 @@
                   </button>
 
                   <button
-                    onClick={() => toggleSaveWord(selectedHotspot.word)}
+                    onClick={() => saveWordEntry(makeHotspotWordBookEntry(selectedHotspot))}
+                    disabled={isWordSaved(selectedHotspot.word)}
                     className={`mt-3 w-full rounded-2xl px-4 py-3 text-base font-black shadow-label transition active:scale-[0.99] ${
-                      savedWords.includes(selectedHotspot.word)
+                      isWordSaved(selectedHotspot.word)
                         ? "bg-coral text-white"
                         : "bg-white/12 text-white hover:bg-white/22"
                     }`}
                   >
                     <ButtonCopy
-                      en={savedWords.includes(selectedHotspot.word) ? "Saved to Word Book" : "Add to Word Book"}
-                      zh={savedWords.includes(selectedHotspot.word) ? "已加入生词本" : "加入生词本"}
+                      en={isWordSaved(selectedHotspot.word) ? "Added to Word Book" : "Add to Word Book"}
+                      zh={isWordSaved(selectedHotspot.word) ? "已加入生词本" : "加入生词本"}
                     />
                   </button>
+
+                  {isWordSaved(selectedHotspot.word) && (
+                    <button
+                      onClick={() => removeWordEntry(selectedHotspot.word)}
+                      className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
+                    >
+                      <ButtonCopy en="Remove from Word Book" zh="移出生词本" />
+                    </button>
+                  )}
 
                   <button
                     onClick={walkForward}
@@ -3365,23 +4940,38 @@
                 }`}
               >
                 <div className="dialogue-enter max-w-2xl rounded-3xl border border-white/18 bg-[#112319]/90 p-6 text-cream shadow-glow backdrop-blur-2xl">
-                  <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">Zoo Trip</p>
-                  <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">Welcome to the zoo!</h2>
+                  <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">
+                    {welcomeIntro.label}
+                  </p>
+                  {welcomeIntro.labelZh && (
+                    <p className="mt-1 text-sm font-black text-banana/78">{welcomeIntro.labelZh}</p>
+                  )}
+                  <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">
+                    {welcomeIntro.title}
+                  </h2>
+                  {welcomeIntro.titleZh && (
+                    <p className="mt-2 text-2xl font-black text-banana">{welcomeIntro.titleZh}</p>
+                  )}
                   <p className="mt-4 text-xl font-black leading-8 text-white">
-                    Today, you will explore the zoo, meet animals, and learn real English.
+                    {welcomeIntro.text}
                   </p>
                   <p className="mt-3 text-lg font-bold leading-8 text-cream/82">
-                    欢迎来到动物园！今天你会逛动物园、遇见动物，并学习真实场景英语。
+                    {welcomeIntro.zh}
                   </p>
                   <div className="mt-6 flex flex-wrap items-center gap-3">
+                    {welcomeIntro.action && (
+                      <button
+                        onClick={dismissWelcome}
+                        className="rounded-full bg-banana px-5 py-3 font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                      >
+                        <ButtonCopy en={welcomeIntro.action} zh={welcomeIntro.actionZh} />
+                      </button>
+                    )}
                     <div className="h-2 w-36 overflow-hidden rounded-full bg-white/18">
                       <div className="h-full w-full origin-left animate-[welcomeProgress_4.2s_linear_forwards] bg-banana"></div>
                     </div>
                     <button
-                      onClick={() => {
-                        setWelcomeLeaving(true);
-                        window.setTimeout(() => setShowWelcome(false), 250);
-                      }}
+                      onClick={dismissWelcome}
                       className="rounded-full border border-banana/45 bg-white/12 px-5 py-3 font-black text-white transition hover:bg-white/22"
                     >
                       <ButtonCopy en="Skip" zh="跳过" size="small" />
@@ -3622,18 +5212,28 @@
                       </button>
 
                       <button
-                        onClick={() => toggleSaveWord(selectedMoreAnimal.word)}
+                        onClick={() => saveWordEntry(makeMoreAnimalWordBookEntry(selectedMoreAnimal))}
+                        disabled={isWordSaved(selectedMoreAnimal.word)}
                         className={`mt-3 w-full rounded-2xl px-4 py-3 text-base font-black shadow-label transition active:scale-[0.99] ${
-                          savedWords.includes(selectedMoreAnimal.word)
+                          isWordSaved(selectedMoreAnimal.word)
                             ? "bg-coral text-white"
                             : "bg-white/12 text-white hover:bg-white/22"
                         }`}
                       >
                         <ButtonCopy
-                          en={savedWords.includes(selectedMoreAnimal.word) ? "Saved to Word Book" : "Add to Word Book"}
-                          zh={savedWords.includes(selectedMoreAnimal.word) ? "已加入生词本" : "加入生词本"}
+                          en={isWordSaved(selectedMoreAnimal.word) ? "Added to Word Book" : "Add to Word Book"}
+                          zh={isWordSaved(selectedMoreAnimal.word) ? "已加入生词本" : "加入生词本"}
                         />
                       </button>
+
+                      {isWordSaved(selectedMoreAnimal.word) && (
+                        <button
+                          onClick={() => removeWordEntry(selectedMoreAnimal.word)}
+                          className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
+                        >
+                          <ButtonCopy en="Remove from Word Book" zh="移出生词本" />
+                        </button>
+                      )}
 
                       <button
                         onClick={finishZooTrip}
@@ -3652,10 +5252,10 @@
                 <div className="dialogue-enter max-h-[88vh] w-full max-w-3xl overflow-auto rounded-3xl border border-white/18 bg-[#112319]/92 p-6 text-cream shadow-glow backdrop-blur-2xl">
                   <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">Trip Complete</p>
                   <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">
-                    Great job! Your zoo trip is finished.
+                    {endingTitle}
                   </h2>
                   <p className="mt-3 text-xl font-bold text-cream/82">
-                    太棒了！今天的动物园之旅到此结束啦。
+                    {endingZh}
                   </p>
 
                   <div className="mt-6 grid gap-3 sm:grid-cols-3">
@@ -3678,7 +5278,7 @@
                       Word Book
                     </p>
                     <p className="mt-2 text-lg font-black leading-8 text-white">
-                      {savedWords.length ? savedWords.join(", ") : "No saved words yet."}
+                      {savedWords.length ? savedWords.map((item) => item.word).join(", ") : "No saved words yet."}
                     </p>
                   </div>
 
@@ -3687,17 +5287,29 @@
                       onClick={restartTrip}
                       className="rounded-full bg-banana px-6 py-3 font-black text-ink shadow-label transition hover:bg-[#ffc83f]"
                     >
-                      <ButtonCopy en="Restart Trip" zh="重新开始旅程" />
+                      <ButtonCopy en={restartLabel} zh={restartZh} />
                     </button>
-                    <button
-                      onClick={() => speakEnglish("Next scene coming soon.", 0.9, "nextScene")}
-                      className="rounded-full border border-white/18 bg-white/12 px-6 py-3 font-black text-white transition hover:bg-white/22"
-                    >
-                      <span className="inline-flex items-center gap-2">
-                        {playingKey === "nextScene" && <SoundBars />}
-                        <ButtonCopy en="Next Scene Coming Soon" zh="下个场景即将开放" />
-                      </span>
-                    </button>
+                    {isZooChapter ? (
+                      <button
+                        onClick={() => speakEnglish("Next scene coming soon.", 0.9, "nextScene")}
+                        className="rounded-full border border-white/18 bg-white/12 px-6 py-3 font-black text-white transition hover:bg-white/22"
+                      >
+                        <span className="inline-flex items-center gap-2">
+                          {playingKey === "nextScene" && <SoundBars />}
+                          <ButtonCopy en="Next Scene Coming Soon" zh="下个场景即将开放" />
+                        </span>
+                      </button>
+                    ) : (
+                      <button
+                        onClick={() => {
+                          setShowEnding(false);
+                          setCurrentView("sceneSelect");
+                        }}
+                        className="rounded-full border border-white/18 bg-white/12 px-6 py-3 font-black text-white transition hover:bg-white/22"
+                      >
+                        <ButtonCopy en="Back to Scenes" zh="返回场景选择" />
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>
