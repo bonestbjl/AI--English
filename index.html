@@ -3103,6 +3103,314 @@
         },
       ];
 
+      const cafeScenes = [
+        {
+          id: "cafeEntrance",
+          title: "Cafe Entrance",
+          zh: "咖啡馆入口",
+          short: "入口",
+          bg: "assets/cafe-entrance-bg.png",
+          bgStyle: "linear-gradient(180deg, #c8905a 0%, #5c3424 58%, #201513 100%)",
+          npc: "cafeEntranceStaff",
+          coreWord: "cafe",
+          intro: {
+            text: "You arrive at a warm cafe entrance. People are waiting by the door.",
+            zh: "你来到温暖的咖啡馆入口，人们正在门口排队。",
+          },
+          hotspots: [
+            { id: "cafe", word: "cafe", phonetic: "/keɪˈfeɪ/", meaning: "咖啡馆", example: "The cafe is warm in the morning.", translation: "咖啡馆早上很温暖。", label: "cafe", zh: "咖啡馆", x: 61, y: 44, offset: { x: -42, y: -20, mobileX: -22, mobileY: -16 } },
+            { id: "awning", word: "awning", phonetic: "/ˈɔːnɪŋ/", meaning: "遮阳棚", example: "The awning is above the cafe door.", translation: "遮阳棚在咖啡馆门上方。", label: "awning", zh: "遮阳棚", x: 34, y: 18, offset: { x: -34, y: 16, mobileX: -18, mobileY: 10 } },
+            { id: "window", word: "window", phonetic: "/ˈwɪndoʊ/", meaning: "窗户", example: "I can see cups through the window.", translation: "我能透过窗户看到杯子。", label: "window", zh: "窗户", x: 41, y: 43, offset: { x: -40, y: -16, mobileX: -20, mobileY: -12 } },
+            { id: "queue", word: "queue", phonetic: "/kjuː/", meaning: "队伍", example: "People wait in the queue.", translation: "人们在队伍里等待。", label: "queue", zh: "队伍", x: 62, y: 63, offset: { x: -36, y: -18, mobileX: -18, mobileY: -14 } },
+            { id: "aroma", word: "aroma", phonetic: "/əˈroʊmə/", meaning: "香气", example: "The aroma of coffee fills the cafe.", translation: "咖啡香充满了咖啡馆。", label: "aroma", zh: "香气", x: 63, y: 34, offset: { x: 34, y: -14, mobileX: 18, mobileY: -10 } },
+            { id: "doorHandle", word: "door handle", phonetic: "/dɔːr ˈhændəl/", meaning: "门把手", example: "I hold the door handle and step inside.", translation: "我握住门把手走进去。", label: "door handle", zh: "门把手", x: 78, y: 58, offset: { x: -44, y: -16, mobileX: -22, mobileY: -12 } },
+            { id: "stepInside", word: "step inside", type: "action", actionMessageEn: "You step inside the cafe and smell coffee.", actionMessageZh: "你走进咖啡馆，闻到了咖啡香。", actionEffect: "cafeStepInside", actionDuration: 2600, phonetic: "/step ɪnˈsaɪd/", meaning: "走进去", example: "I step inside the cafe.", translation: "我走进咖啡馆。", label: "step inside", zh: "走进去", x: 74, y: 69, offset: { x: -42, y: -18, mobileX: -22, mobileY: -14 } },
+          ],
+        },
+        {
+          id: "menuBoard",
+          title: "Menu Board",
+          zh: "菜单牌",
+          short: "菜单",
+          bg: "assets/cafe-menu-board-bg.png",
+          bgStyle: "linear-gradient(180deg, #9a6b44 0%, #4c3025 58%, #1e1512 100%)",
+          npc: "cafeMenuCustomer",
+          coreWord: "chalkboard",
+          intro: {
+            text: "Inside the cafe, you look up at the drink board before choosing.",
+            zh: "走进咖啡馆后，你抬头看饮品菜单牌，准备选择。",
+          },
+          hotspots: [
+            { id: "chalkboard", word: "chalkboard", phonetic: "/ˈtʃɔːkbɔːrd/", meaning: "粉笔板", example: "The chalkboard shows today's drinks.", translation: "粉笔板上写着今天的饮品。", label: "chalkboard", zh: "粉笔板", x: 67, y: 24, offset: { x: -44, y: 10, mobileX: -22, mobileY: 8 } },
+            { id: "specials", word: "specials", phonetic: "/ˈspeʃəlz/", meaning: "今日特选", example: "The specials are written at the top.", translation: "今日特选写在上方。", label: "specials", zh: "今日特选", x: 68, y: 18, offset: { x: 34, y: 14, mobileX: 18, mobileY: 10 } },
+            { id: "latte", word: "latte", phonetic: "/ˈlɑːteɪ/", meaning: "拿铁", example: "A latte has milk and coffee.", translation: "拿铁里有牛奶和咖啡。", label: "latte", zh: "拿铁", x: 42, y: 70, offset: { x: -40, y: -18, mobileX: -20, mobileY: -14 } },
+            { id: "espresso", word: "espresso", phonetic: "/eˈspresoʊ/", meaning: "浓缩咖啡", example: "Espresso is small and strong.", translation: "浓缩咖啡量少但味道浓。", label: "espresso", zh: "浓缩咖啡", x: 58, y: 70, offset: { x: 34, y: -18, mobileX: 18, mobileY: -14 } },
+            { id: "mocha", word: "mocha", phonetic: "/ˈmoʊkə/", meaning: "摩卡", example: "Mocha tastes like coffee and chocolate.", translation: "摩卡有咖啡和巧克力的味道。", label: "mocha", zh: "摩卡", x: 50, y: 74, offset: { x: -26, y: 18, mobileX: -14, mobileY: 12 } },
+            { id: "brew", word: "brew", phonetic: "/bruː/", meaning: "冲泡咖啡", example: "The brew smells rich.", translation: "这杯冲泡咖啡闻起来很浓郁。", label: "brew", zh: "冲泡咖啡", x: 72, y: 59, offset: { x: -34, y: -14, mobileX: -18, mobileY: -10 } },
+            { id: "scan", word: "scan", type: "action", actionMessageEn: "You scan the board and choose a drink.", actionMessageZh: "你浏览菜单牌并选择了一杯饮品。", actionEffect: "cafeScan", actionDuration: 2600, phonetic: "/skæn/", meaning: "浏览", example: "I scan the drink board.", translation: "我浏览饮品菜单牌。", label: "scan", zh: "浏览", x: 62, y: 33, offset: { x: -42, y: -12, mobileX: -22, mobileY: -10 } },
+          ],
+        },
+        {
+          id: "orderCounter",
+          title: "Order Counter",
+          zh: "点单区",
+          short: "点单",
+          bg: "assets/cafe-order-counter-bg.png",
+          bgStyle: "linear-gradient(180deg, #c18955 0%, #6b452f 58%, #1c1512 100%)",
+          npc: "baristaOrder",
+          coreWord: "barista",
+          intro: {
+            text: "You reach the order area. The barista smiles and waits for your request.",
+            zh: "你来到点单区，咖啡师微笑着等你点饮品。",
+          },
+          hotspots: [
+            { id: "barista", word: "barista", phonetic: "/bəˈriːstə/", meaning: "咖啡师", example: "The barista is ready to help.", translation: "咖啡师准备好帮忙。", label: "barista", zh: "咖啡师", x: 50, y: 38, offset: { x: -44, y: -18, mobileX: -22, mobileY: -14 } },
+            { id: "greeting", word: "greeting", phonetic: "/ˈɡriːtɪŋ/", meaning: "问候", example: "A greeting starts the conversation.", translation: "问候开启对话。", label: "greeting", zh: "问候", x: 51, y: 25, offset: { x: 36, y: -12, mobileX: 18, mobileY: -10 } },
+            { id: "preference", word: "preference", phonetic: "/ˈprefrəns/", meaning: "偏好", example: "Tell the barista your preference.", translation: "告诉咖啡师你的偏好。", label: "preference", zh: "偏好", x: 34, y: 67, offset: { x: -42, y: -18, mobileX: -22, mobileY: -14 } },
+            { id: "medium", word: "medium", phonetic: "/ˈmiːdiəm/", meaning: "中杯", example: "I would like a medium drink.", translation: "我想要一杯中杯饮品。", label: "medium", zh: "中杯", x: 22, y: 60, offset: { x: -36, y: -14, mobileX: -18, mobileY: -10 } },
+            { id: "dairyFree", word: "dairy-free", phonetic: "/ˈderi friː/", meaning: "不含乳制品的", example: "Do you have a dairy-free option?", translation: "有不含乳制品的选择吗？", label: "dairy-free", zh: "不含乳制品", x: 79, y: 26, offset: { x: -48, y: 20, mobileX: -24, mobileY: 14 } },
+            { id: "request", word: "request", type: "action", actionMessageEn: "Nice! You requested your drink politely.", actionMessageZh: "不错！你礼貌地点了饮品。", actionEffect: "cafeRequest", actionDuration: 2600, phonetic: "/rɪˈkwest/", meaning: "请求，点要", example: "I request a medium latte.", translation: "我点了一杯中杯拿铁。", label: "request", zh: "请求", x: 56, y: 67, offset: { x: -42, y: -18, mobileX: -22, mobileY: -14 } },
+          ],
+        },
+        {
+          id: "chooseDrink",
+          title: "Choose Drink",
+          zh: "选择饮品",
+          short: "选择",
+          bg: "assets/cafe-choose-drink-bg.png",
+          bgStyle: "linear-gradient(180deg, #cfa169 0%, #71442d 58%, #201512 100%)",
+          npc: "baristaCustomize",
+          coreWord: "iced",
+          intro: {
+            text: "Now you choose how you want your drink: hot, iced, and with extras.",
+            zh: "现在你选择饮品做法：热的、冰的，以及是否加配料。",
+          },
+          hotspots: [
+            { id: "iced", word: "iced", phonetic: "/aɪst/", meaning: "冰的", example: "I want an iced drink.", translation: "我想要冰饮。", label: "iced", zh: "冰的", x: 32, y: 68, offset: { x: -36, y: -18, mobileX: -18, mobileY: -14 } },
+            { id: "hot", word: "hot", phonetic: "/hɑːt/", meaning: "热的", example: "A hot drink feels good today.", translation: "今天喝热饮很舒服。", label: "hot", zh: "热的", x: 45, y: 66, offset: { x: -28, y: 20, mobileX: -14, mobileY: 12 } },
+            { id: "size", word: "size", phonetic: "/saɪz/", meaning: "大小，杯型", example: "What size would you like?", translation: "你想要什么杯型？", label: "size", zh: "杯型", x: 22, y: 58, offset: { x: -36, y: -18, mobileX: -18, mobileY: -14 } },
+            { id: "milk", word: "milk", phonetic: "/mɪlk/", meaning: "牛奶", example: "Milk makes the drink creamy.", translation: "牛奶让饮品更顺滑。", label: "milk", zh: "牛奶", x: 61, y: 54, offset: { x: -34, y: -18, mobileX: -18, mobileY: -14 } },
+            { id: "foam", word: "foam", phonetic: "/foʊm/", meaning: "奶泡", example: "The foam is soft on top.", translation: "上面的奶泡很柔软。", label: "foam", zh: "奶泡", x: 55, y: 40, offset: { x: 36, y: -10, mobileX: 18, mobileY: -8 } },
+            { id: "syrup", word: "syrup", phonetic: "/ˈsɪrəp/", meaning: "糖浆", example: "Vanilla syrup adds flavor.", translation: "香草糖浆增加风味。", label: "syrup", zh: "糖浆", x: 78, y: 49, offset: { x: -38, y: -16, mobileX: -20, mobileY: -12 } },
+            { id: "customize", word: "customize", type: "action", actionMessageEn: "You customize your drink just the way you like.", actionMessageZh: "你按自己的喜好定制了饮品。", actionEffect: "cafeCustomize", actionDuration: 2600, phonetic: "/ˈkʌstəmaɪz/", meaning: "定制", example: "I customize my drink with milk and syrup.", translation: "我用牛奶和糖浆定制我的饮品。", label: "customize", zh: "定制", x: 63, y: 68, offset: { x: -44, y: -18, mobileX: -22, mobileY: -14 } },
+          ],
+        },
+        {
+          id: "pickupCounter",
+          title: "Pickup Counter",
+          zh: "取餐区",
+          short: "取餐",
+          bg: "assets/cafe-pickup-counter-bg.png",
+          bgStyle: "linear-gradient(180deg, #b98552 0%, #62402b 58%, #1e1512 100%)",
+          npc: "pickupStaff",
+          coreWord: "pickup",
+          intro: {
+            text: "Your drink is almost ready. You wait near the pickup area.",
+            zh: "你的饮品快好了，你在取餐区附近等待。",
+          },
+          hotspots: [
+            { id: "pickup", word: "pickup", phonetic: "/ˈpɪkʌp/", meaning: "取餐", example: "The pickup area is on the right.", translation: "取餐区在右边。", label: "pickup", zh: "取餐", x: 37, y: 52, offset: { x: -42, y: -18, mobileX: -22, mobileY: -14 } },
+            { id: "pickupName", word: "pickup name", phonetic: "/ˈpɪkʌp neɪm/", meaning: "取餐名", example: "Listen for your pickup name.", translation: "注意听你的取餐名。", label: "pickup name", zh: "取餐名", x: 25, y: 43, offset: { x: -42, y: -12, mobileX: -22, mobileY: -10 } },
+            { id: "lid", word: "lid", phonetic: "/lɪd/", meaning: "杯盖", example: "The lid keeps the drink warm.", translation: "杯盖让饮品保持温热。", label: "lid", zh: "杯盖", x: 45, y: 54, offset: { x: 28, y: -18, mobileX: 14, mobileY: -14 } },
+            { id: "sleeve", word: "sleeve", phonetic: "/sliːv/", meaning: "杯套", example: "The sleeve protects your hand.", translation: "杯套保护你的手。", label: "sleeve", zh: "杯套", x: 44, y: 67, offset: { x: -36, y: -18, mobileX: -18, mobileY: -14 } },
+            { id: "stirrer", word: "stirrer", phonetic: "/ˈstɜːrər/", meaning: "搅拌棒", example: "Use a stirrer to mix the drink.", translation: "用搅拌棒搅拌饮品。", label: "stirrer", zh: "搅拌棒", x: 64, y: 60, offset: { x: 34, y: -18, mobileX: 18, mobileY: -14 } },
+            { id: "napkin", word: "napkin", phonetic: "/ˈnæpkɪn/", meaning: "餐巾纸", example: "Take a napkin with your drink.", translation: "拿饮品时带一张餐巾纸。", label: "napkin", zh: "餐巾纸", x: 76, y: 64, offset: { x: -38, y: 18, mobileX: -20, mobileY: 12 } },
+            { id: "collect", word: "collect", type: "action", actionMessageEn: "Your drink is ready. You collect it at the pickup area.", actionMessageZh: "你的饮品好了，你在取餐区领取了它。", actionEffect: "cafeCollect", actionDuration: 2600, phonetic: "/kəˈlekt/", meaning: "领取", example: "I collect my drink at the counter.", translation: "我在柜台领取我的饮品。", label: "collect", zh: "领取", x: 51, y: 61, offset: { x: -40, y: 24, mobileX: -20, mobileY: 16 } },
+          ],
+        },
+        {
+          id: "findTable",
+          title: "Find a Table",
+          zh: "找桌位",
+          short: "桌位",
+          bg: "assets/cafe-find-table-bg.png",
+          bgStyle: "linear-gradient(180deg, #b58455 0%, #60402b 58%, #1d1512 100%)",
+          npc: "cafeCustomerSeat",
+          coreWord: "table",
+          completeText: "Great! You found a table and enjoyed your drink.",
+          completeZh: "太棒了！你找到桌位并享用了饮品。",
+          intro: {
+            text: "You look for a comfortable place to sit or decide to take your drink away.",
+            zh: "你寻找一个舒服的位置坐下，或者决定把饮品带走。",
+          },
+          hotspots: [
+            { id: "table", word: "table", phonetic: "/ˈteɪbəl/", meaning: "桌子", example: "I find a table near the window.", translation: "我在窗边找到一张桌子。", label: "table", zh: "桌子", x: 54, y: 76, offset: { x: -36, y: -18, mobileX: -18, mobileY: -14 } },
+            { id: "chair", word: "chair", phonetic: "/tʃer/", meaning: "椅子", example: "The chair is comfortable.", translation: "这把椅子很舒服。", label: "chair", zh: "椅子", x: 34, y: 72, offset: { x: -34, y: -18, mobileX: -18, mobileY: -14 } },
+            { id: "corner", word: "corner", phonetic: "/ˈkɔːrnər/", meaning: "角落", example: "The corner is calm and cozy.", translation: "角落安静又舒服。", label: "corner", zh: "角落", x: 18, y: 43, offset: { x: 34, y: -16, mobileX: 18, mobileY: -12 } },
+            { id: "socket", word: "socket", phonetic: "/ˈsɑːkɪt/", meaning: "插座", example: "There is a socket near the wall.", translation: "墙边有一个插座。", label: "socket", zh: "插座", x: 66, y: 49, offset: { x: -40, y: -18, mobileX: -20, mobileY: -14 } },
+            { id: "wifi", word: "wifi", phonetic: "/ˈwaɪ faɪ/", meaning: "无线网络", example: "The cafe has free Wi-Fi.", translation: "咖啡馆有免费无线网络。", label: "wifi", zh: "无线网络", x: 68, y: 61, offset: { x: 32, y: -16, mobileX: 16, mobileY: -12 } },
+            { id: "takeaway", word: "takeaway", phonetic: "/ˈteɪkəweɪ/", meaning: "外带", example: "This cup is for takeaway.", translation: "这个杯子是外带用的。", label: "takeaway", zh: "外带", x: 57, y: 68, offset: { x: 42, y: -18, mobileX: 20, mobileY: -14 } },
+            { id: "settle", word: "settle", type: "action", actionMessageEn: "You settle at a table and enjoy your drink.", actionMessageZh: "你在桌边坐下，享受你的饮品。", actionEffect: "cafeSettle", actionDuration: 2600, phonetic: "/ˈsetəl/", meaning: "坐定，安顿下来", example: "I settle at a quiet table.", translation: "我在安静的桌边坐下。", label: "settle", zh: "坐定", x: 47, y: 65, offset: { x: -40, y: -18, mobileX: -20, mobileY: -14 } },
+          ],
+        },
+      ];
+
+      const airportScenes = [
+        {
+          id: "airportEntrance",
+          title: "Airport Entrance",
+          zh: "机场入口",
+          short: "入口",
+          bg: "assets/airport-entrance-bg.png",
+          bgStyle: "linear-gradient(180deg, #8aa5bb 0%, #344756 58%, #101820 100%)",
+          npc: "airportPassenger",
+          coreWord: "terminal",
+          intro: {
+            text: "You arrive at a bright airport terminal and get ready for your trip.",
+            zh: "你来到明亮的机场航站楼，准备开始旅程。",
+          },
+          hotspots: [
+            { id: "terminal", word: "terminal", phonetic: "/ˈtɜːrmɪnəl/", meaning: "航站楼", example: "The terminal is bright and busy.", translation: "航站楼明亮又繁忙。", label: "terminal", zh: "航站楼", x: 52, y: 33, offset: { x: -42, y: -18, mobileX: -22, mobileY: -14 } },
+            { id: "departures", word: "departures", phonetic: "/dɪˈpɑːrtʃərz/", meaning: "出发区", example: "Departures are on the second floor.", translation: "出发区在二楼。", label: "departures", zh: "出发区", x: 32, y: 31, offset: { x: -38, y: -10, mobileX: -20, mobileY: -8 } },
+            { id: "trolley", word: "trolley", phonetic: "/ˈtrɑːli/", meaning: "行李推车", example: "I put my suitcase on the trolley.", translation: "我把行李箱放在推车上。", label: "trolley", zh: "行李推车", x: 37, y: 66, offset: { x: -38, y: -16, mobileX: -20, mobileY: -12 } },
+            { id: "passport", word: "passport", phonetic: "/ˈpæspɔːrt/", meaning: "护照", example: "I keep my passport ready.", translation: "我把护照准备好。", label: "passport", zh: "护照", x: 57, y: 71, offset: { x: -36, y: -18, mobileX: -18, mobileY: -14 } },
+            { id: "itinerary", word: "itinerary", phonetic: "/aɪˈtɪnəreri/", meaning: "行程单", example: "My itinerary shows the flight time.", translation: "我的行程单显示航班时间。", label: "itinerary", zh: "行程单", x: 67, y: 68, offset: { x: 36, y: -16, mobileX: 18, mobileY: -12 } },
+            { id: "informationDesk", word: "information desk", phonetic: "/ˌɪnfərˈmeɪʃən desk/", meaning: "问讯处", example: "The information desk is near the entrance.", translation: "问讯处在入口附近。", label: "information desk", zh: "问讯处", x: 78, y: 41, offset: { x: -46, y: -14, mobileX: -24, mobileY: -10 } },
+            { id: "proceed", word: "proceed", type: "action", actionMessageEn: "You proceed into the airport terminal.", actionMessageZh: "你走进了机场航站楼。", actionEffect: "airportProceed", actionDuration: 2600, phonetic: "/prəˈsiːd/", meaning: "前往，继续前进", example: "Please proceed to check-in.", translation: "请前往值机。", label: "proceed", zh: "前往", x: 61, y: 51, offset: { x: -42, y: -18, mobileX: -22, mobileY: -14 } },
+          ],
+        },
+        {
+          id: "checkInCounter",
+          title: "Check-in Counter",
+          zh: "值机柜台",
+          short: "值机",
+          bg: "assets/airport-check-in-bg.png",
+          bgStyle: "linear-gradient(180deg, #9eb6ca 0%, #405569 58%, #101820 100%)",
+          npc: "airlineStaff",
+          coreWord: "airline",
+          intro: {
+            text: "You reach the check-in area and prepare your travel details.",
+            zh: "你来到值机区域，准备好旅行信息。",
+          },
+          hotspots: [
+            { id: "airline", word: "airline", phonetic: "/ˈerlaɪn/", meaning: "航空公司", example: "The airline staff helps passengers.", translation: "航空公司工作人员帮助乘客。", label: "airline", zh: "航空公司", x: 42, y: 34, offset: { x: -42, y: -16, mobileX: -22, mobileY: -12 } },
+            { id: "kiosk", word: "kiosk", phonetic: "/ˈkiːɑːsk/", meaning: "自助机", example: "I use the kiosk to check in.", translation: "我用自助机值机。", label: "kiosk", zh: "自助机", x: 72, y: 46, offset: { x: -34, y: -14, mobileX: -18, mobileY: -10 } },
+            { id: "boardingPass", word: "boarding pass", phonetic: "/ˈbɔːrdɪŋ pæs/", meaning: "登机牌", example: "The boarding pass shows my flight.", translation: "登机牌显示我的航班。", label: "boarding pass", zh: "登机牌", x: 55, y: 67, offset: { x: -42, y: -18, mobileX: -22, mobileY: -14 } },
+            { id: "confirmation", word: "confirmation", phonetic: "/ˌkɑːnfərˈmeɪʃən/", meaning: "确认信息", example: "I enter my confirmation number.", translation: "我输入确认号码。", label: "confirmation", zh: "确认信息", x: 64, y: 31, offset: { x: 36, y: 14, mobileX: 18, mobileY: 10 } },
+            { id: "destination", word: "destination", phonetic: "/ˌdestɪˈneɪʃən/", meaning: "目的地", example: "My destination is London.", translation: "我的目的地是伦敦。", label: "destination", zh: "目的地", x: 34, y: 58, offset: { x: -40, y: -16, mobileX: -20, mobileY: -12 } },
+            { id: "surname", word: "surname", phonetic: "/ˈsɜːrneɪm/", meaning: "姓", example: "Please enter your surname.", translation: "请输入你的姓。", label: "surname", zh: "姓", x: 77, y: 62, offset: { x: -36, y: -16, mobileX: -18, mobileY: -12 } },
+            { id: "checkIn", word: "check in", type: "action", actionMessageEn: "Great! You checked in and got your boarding pass.", actionMessageZh: "太好了！你完成值机并拿到了登机牌。", actionEffect: "airportCheckIn", actionDuration: 2600, phonetic: "/ˌtʃek ˈɪn/", meaning: "办理值机", example: "I check in for my flight.", translation: "我为航班办理值机。", label: "check in", zh: "值机", x: 51, y: 49, offset: { x: -40, y: -18, mobileX: -20, mobileY: -14 } },
+          ],
+        },
+        {
+          id: "baggageDrop",
+          title: "Baggage Drop",
+          zh: "托运行李",
+          short: "托运",
+          bg: "assets/airport-baggage-drop-bg.png",
+          bgStyle: "linear-gradient(180deg, #91aabd 0%, #3f5261 58%, #111820 100%)",
+          npc: "baggageStaff",
+          coreWord: "suitcase",
+          intro: {
+            text: "At baggage drop, your suitcase is weighed and sent away.",
+            zh: "在托运行李区，你的行李箱会被称重并送走。",
+          },
+          hotspots: [
+            { id: "suitcase", word: "suitcase", phonetic: "/ˈsuːtkeɪs/", meaning: "行李箱", example: "My suitcase is on the scale.", translation: "我的行李箱在秤上。", label: "suitcase", zh: "行李箱", x: 43, y: 61, offset: { x: -40, y: -18, mobileX: -20, mobileY: -14 } },
+            { id: "carryOn", word: "carry-on", phonetic: "/ˈkæri ɑːn/", meaning: "随身行李", example: "My carry-on goes with me.", translation: "我的随身行李跟我一起走。", label: "carry-on", zh: "随身行李", x: 64, y: 70, offset: { x: 36, y: -16, mobileX: 18, mobileY: -12 } },
+            { id: "checkedLuggage", word: "checked luggage", phonetic: "/ˌtʃekt ˈlʌɡɪdʒ/", meaning: "托运行李", example: "Checked luggage goes under the plane.", translation: "托运行李会放到飞机货舱。", label: "checked luggage", zh: "托运行李", x: 51, y: 52, offset: { x: 42, y: -16, mobileX: 20, mobileY: -12 } },
+            { id: "conveyorBelt", word: "conveyor belt", phonetic: "/kənˈveɪər belt/", meaning: "传送带", example: "The conveyor belt moves the luggage.", translation: "传送带移动行李。", label: "conveyor belt", zh: "传送带", x: 68, y: 51, offset: { x: -42, y: -18, mobileX: -22, mobileY: -14 } },
+            { id: "weightLimit", word: "weight limit", phonetic: "/ˈweɪt lɪmɪt/", meaning: "重量限制", example: "The suitcase is under the weight limit.", translation: "行李箱没有超过重量限制。", label: "weight limit", zh: "重量限制", x: 38, y: 39, offset: { x: -42, y: -14, mobileX: -22, mobileY: -10 } },
+            { id: "fragile", word: "fragile", phonetic: "/ˈfrædʒəl/", meaning: "易碎的", example: "This bag has fragile items.", translation: "这个包里有易碎物品。", label: "fragile", zh: "易碎的", x: 58, y: 36, offset: { x: 34, y: -10, mobileX: 18, mobileY: -8 } },
+            { id: "dropOff", word: "drop off", type: "action", actionMessageEn: "Your checked luggage is on the conveyor belt.", actionMessageZh: "你的托运行李已经上了传送带。", actionEffect: "airportDropOff", actionDuration: 2600, phonetic: "/ˈdrɑːp ɔːf/", meaning: "托运，交付", example: "I drop off my checked luggage.", translation: "我托运我的行李。", label: "drop off", zh: "托运", x: 58, y: 60, offset: { x: -40, y: 18, mobileX: -20, mobileY: 12 } },
+          ],
+        },
+        {
+          id: "securityCheck",
+          title: "Security Check",
+          zh: "安检",
+          short: "安检",
+          bg: "assets/airport-security-check-bg.png",
+          bgStyle: "linear-gradient(180deg, #9bb0c2 0%, #3e5060 58%, #101820 100%)",
+          npc: "securityOfficer",
+          coreWord: "security tray",
+          intro: {
+            text: "You place your items in trays and walk through security.",
+            zh: "你把物品放进托盘，然后通过安检。",
+          },
+          hotspots: [
+            { id: "securityTray", word: "security tray", phonetic: "/sɪˈkjʊrəti treɪ/", meaning: "安检托盘", example: "Put your laptop in the security tray.", translation: "把笔记本电脑放进安检托盘。", label: "security tray", zh: "安检托盘", x: 42, y: 63, offset: { x: -44, y: -16, mobileX: -22, mobileY: -12 } },
+            { id: "scanner", word: "scanner", phonetic: "/ˈskænər/", meaning: "扫描仪", example: "The scanner checks the bags.", translation: "扫描仪检查包。", label: "scanner", zh: "扫描仪", x: 67, y: 48, offset: { x: -36, y: -16, mobileX: -18, mobileY: -12 } },
+            { id: "metalDetector", word: "metal detector", phonetic: "/ˈmetəl dɪˌtektər/", meaning: "金属探测门", example: "Walk through the metal detector.", translation: "走过金属探测门。", label: "metal detector", zh: "金属探测门", x: 51, y: 34, offset: { x: -44, y: -14, mobileX: -22, mobileY: -10 } },
+            { id: "liquids", word: "liquids", phonetic: "/ˈlɪkwɪdz/", meaning: "液体", example: "Liquids must be in small bottles.", translation: "液体必须装在小瓶里。", label: "liquids", zh: "液体", x: 34, y: 72, offset: { x: -34, y: -18, mobileX: -18, mobileY: -14 } },
+            { id: "laptop", word: "laptop", phonetic: "/ˈlæptɑːp/", meaning: "笔记本电脑", example: "Take out your laptop.", translation: "拿出你的笔记本电脑。", label: "laptop", zh: "笔记本电脑", x: 50, y: 70, offset: { x: 34, y: -18, mobileX: 18, mobileY: -14 } },
+            { id: "jacket", word: "jacket", phonetic: "/ˈdʒækɪt/", meaning: "外套", example: "Please take off your jacket.", translation: "请脱下外套。", label: "jacket", zh: "外套", x: 72, y: 69, offset: { x: -36, y: -18, mobileX: -18, mobileY: -14 } },
+            { id: "screen", word: "screen", type: "action", actionMessageEn: "You passed the security check.", actionMessageZh: "你通过了安检。", actionEffect: "airportScreen", actionDuration: 2600, phonetic: "/skriːn/", meaning: "安检筛查", example: "Security officers screen the bags.", translation: "安检人员筛查行李。", label: "screen", zh: "筛查", x: 59, y: 58, offset: { x: -38, y: -16, mobileX: -20, mobileY: -12 } },
+          ],
+        },
+        {
+          id: "departureHall",
+          title: "Departure Hall",
+          zh: "出发大厅",
+          short: "大厅",
+          bg: "assets/airport-departure-hall-bg.png",
+          bgStyle: "linear-gradient(180deg, #aec4d8 0%, #536779 58%, #121b24 100%)",
+          npc: "departurePassenger",
+          coreWord: "departure board",
+          intro: {
+            text: "In the departure hall, you check the board and find your way.",
+            zh: "在出发大厅，你查看信息屏并寻找方向。",
+          },
+          hotspots: [
+            { id: "departureBoard", word: "departure board", phonetic: "/dɪˈpɑːrtʃər bɔːrd/", meaning: "出发信息屏", example: "The departure board shows flight times.", translation: "出发信息屏显示航班时间。", label: "departure board", zh: "出发信息屏", x: 52, y: 29, offset: { x: -44, y: -12, mobileX: -22, mobileY: -10 } },
+            { id: "flightNumber", word: "flight number", phonetic: "/ˈflaɪt nʌmbər/", meaning: "航班号", example: "My flight number is on the board.", translation: "我的航班号在屏幕上。", label: "flight number", zh: "航班号", x: 64, y: 33, offset: { x: 34, y: -8, mobileX: 18, mobileY: -6 } },
+            { id: "delay", word: "delay", phonetic: "/dɪˈleɪ/", meaning: "延误", example: "There is a short delay.", translation: "有一点延误。", label: "delay", zh: "延误", x: 65, y: 46, offset: { x: -34, y: -14, mobileX: -18, mobileY: -10 } },
+            { id: "lounge", word: "lounge", phonetic: "/laʊndʒ/", meaning: "候机休息区", example: "The lounge is quiet.", translation: "候机休息区很安静。", label: "lounge", zh: "休息区", x: 35, y: 69, offset: { x: -38, y: -18, mobileX: -20, mobileY: -14 } },
+            { id: "escalator", word: "escalator", phonetic: "/ˈeskəleɪtər/", meaning: "自动扶梯", example: "Take the escalator upstairs.", translation: "乘自动扶梯上楼。", label: "escalator", zh: "自动扶梯", x: 78, y: 57, offset: { x: -40, y: -18, mobileX: -20, mobileY: -14 } },
+            { id: "restroom", word: "restroom", phonetic: "/ˈrestruːm/", meaning: "洗手间", example: "The restroom is near the lounge.", translation: "洗手间在休息区附近。", label: "restroom", zh: "洗手间", x: 22, y: 45, offset: { x: 34, y: -14, mobileX: 18, mobileY: -10 } },
+            { id: "locate", word: "locate", type: "action", actionMessageEn: "You located your flight on the departure board.", actionMessageZh: "你在出发信息屏上找到了航班。", actionEffect: "airportLocate", actionDuration: 2600, phonetic: "/ˈloʊkeɪt/", meaning: "找到，定位", example: "I locate my boarding area.", translation: "我找到我的登机区域。", label: "locate", zh: "定位", x: 55, y: 49, offset: { x: -38, y: -14, mobileX: -20, mobileY: -10 } },
+          ],
+        },
+        {
+          id: "boardingGate",
+          title: "Boarding Gate",
+          zh: "登机口",
+          short: "登机口",
+          bg: "assets/airport-boarding-gate-bg.png",
+          bgStyle: "linear-gradient(180deg, #9eb7ce 0%, #465b70 58%, #101820 100%)",
+          npc: "gateAgent",
+          coreWord: "announcement",
+          intro: {
+            text: "At the boarding area, you listen for announcements and wait your turn.",
+            zh: "在登机区域，你听广播并等待轮到自己。",
+          },
+          hotspots: [
+            { id: "announcement", word: "announcement", phonetic: "/əˈnaʊnsmənt/", meaning: "广播通知", example: "The announcement is about boarding.", translation: "广播是关于登机的。", label: "announcement", zh: "广播通知", x: 28, y: 34, offset: { x: -42, y: -12, mobileX: -22, mobileY: -10 } },
+            { id: "boardingGroup", word: "boarding group", phonetic: "/ˈbɔːrdɪŋ ɡruːp/", meaning: "登机组别", example: "My boarding group is group two.", translation: "我的登机组别是第二组。", label: "boarding group", zh: "登机组别", x: 38, y: 67, offset: { x: -44, y: -18, mobileX: -22, mobileY: -14 } },
+            { id: "finalCall", word: "final call", phonetic: "/ˈfaɪnəl kɔːl/", meaning: "最后广播", example: "This is the final call for boarding.", translation: "这是最后登机广播。", label: "final call", zh: "最后广播", x: 52, y: 30, offset: { x: 38, y: -10, mobileX: 20, mobileY: -8 } },
+            { id: "jetBridge", word: "jet bridge", phonetic: "/ˈdʒet brɪdʒ/", meaning: "登机廊桥", example: "The jet bridge leads to the plane.", translation: "登机廊桥通向飞机。", label: "jet bridge", zh: "登机廊桥", x: 72, y: 43, offset: { x: -40, y: -16, mobileX: -20, mobileY: -12 } },
+            { id: "priorityLane", word: "priority lane", phonetic: "/praɪˈɔːrəti leɪn/", meaning: "优先通道", example: "The priority lane is for early boarding.", translation: "优先通道用于优先登机。", label: "priority lane", zh: "优先通道", x: 63, y: 66, offset: { x: 36, y: -18, mobileX: 18, mobileY: -14 } },
+            { id: "boardingZone", word: "boarding zone", phonetic: "/ˈbɔːrdɪŋ zoʊn/", meaning: "登机区域", example: "Wait in your boarding zone.", translation: "在你的登机区域等待。", label: "boarding zone", zh: "登机区域", x: 44, y: 51, offset: { x: -42, y: -16, mobileX: -22, mobileY: -12 } },
+            { id: "board", word: "board", type: "action", actionMessageEn: "Now boarding! You move toward the jet bridge.", actionMessageZh: "开始登机了！你走向登机廊桥。", actionEffect: "airportBoard", actionDuration: 2600, phonetic: "/bɔːrd/", meaning: "登机", example: "We board the plane soon.", translation: "我们很快登机。", label: "board", zh: "登机", x: 61, y: 53, offset: { x: -38, y: -16, mobileX: -20, mobileY: -12 } },
+          ],
+        },
+        {
+          id: "boardingSummary",
+          title: "Boarding Summary",
+          zh: "登机准备",
+          short: "准备",
+          bg: "assets/airport-boarding-summary-bg.png",
+          bgStyle: "linear-gradient(180deg, #9eb4c8 0%, #425767 58%, #101820 100%)",
+          npc: "flightAttendant",
+          coreWord: "aircraft",
+          completeText: "Great! You are ready to board the aircraft.",
+          completeZh: "太棒了！你已经准备好登机了。",
+          intro: {
+            text: "Near the aircraft door, you prepare your document and get ready to board.",
+            zh: "在飞机舱门附近，你准备好证件，准备登机。",
+          },
+          hotspots: [
+            { id: "aircraft", word: "aircraft", phonetic: "/ˈerkræft/", meaning: "飞机", example: "The aircraft is ready for boarding.", translation: "飞机已准备好登机。", label: "aircraft", zh: "飞机", x: 67, y: 33, offset: { x: -38, y: -12, mobileX: -20, mobileY: -10 } },
+            { id: "cabin", word: "cabin", phonetic: "/ˈkæbɪn/", meaning: "机舱", example: "The cabin looks clean and bright.", translation: "机舱看起来干净明亮。", label: "cabin", zh: "机舱", x: 58, y: 45, offset: { x: -34, y: -14, mobileX: -18, mobileY: -10 } },
+            { id: "row", word: "row", phonetic: "/roʊ/", meaning: "排", example: "My row is near the middle.", translation: "我的座位排在中间附近。", label: "row", zh: "排", x: 53, y: 62, offset: { x: 30, y: -16, mobileX: 16, mobileY: -12 } },
+            { id: "overheadBin", word: "overhead bin", phonetic: "/ˌoʊvərhed ˈbɪn/", meaning: "头顶行李舱", example: "Put your carry-on in the overhead bin.", translation: "把随身行李放进头顶行李舱。", label: "overhead bin", zh: "头顶行李舱", x: 55, y: 27, offset: { x: -46, y: -10, mobileX: -24, mobileY: -8 } },
+            { id: "travelDocument", word: "travel document", phonetic: "/ˈtrævəl ˈdɑːkjumənt/", meaning: "旅行证件", example: "Keep your travel document ready.", translation: "把旅行证件准备好。", label: "travel document", zh: "旅行证件", x: 39, y: 69, offset: { x: -42, y: -18, mobileX: -22, mobileY: -14 } },
+            { id: "boardingTime", word: "boarding time", phonetic: "/ˈbɔːrdɪŋ taɪm/", meaning: "登机时间", example: "The boarding time is printed clearly.", translation: "登机时间印得很清楚。", label: "boarding time", zh: "登机时间", x: 32, y: 47, offset: { x: 34, y: -14, mobileX: 18, mobileY: -10 } },
+            { id: "prepare", word: "prepare", type: "action", actionMessageEn: "Great! You are ready to board the aircraft.", actionMessageZh: "太棒了！你已经准备好登机了。", actionEffect: "airportPrepare", actionDuration: 2600, phonetic: "/prɪˈper/", meaning: "准备", example: "I prepare to board the aircraft.", translation: "我准备登机。", label: "prepare", zh: "准备", x: 50, y: 53, offset: { x: -40, y: -16, mobileX: -20, mobileY: -12 } },
+          ],
+        },
+      ];
+
       const fruitShopDialogues = {
         fruitEntranceShopkeeper: {
           id: "fruitEntranceShopkeeper",
@@ -3456,6 +3764,168 @@
               reply: "See you on campus tomorrow.",
               translation: "明天校园见。",
             },
+          ],
+        },
+      };
+
+      const cafeDialogues = {
+        cafeEntranceStaff: {
+          id: "cafeEntranceStaff",
+          speaker: "Staff",
+          zh: "店员",
+          text: "Welcome! Would you like to come in?",
+          translation: "欢迎！你想进来吗？",
+          options: [
+            { text: "Yes, it smells nice.", choiceZh: "是的，闻起来很香。", reply: "Great. Please step inside.", translation: "太好了。请进来吧。" },
+            { text: "Is there a line?", choiceZh: "需要排队吗？", reply: "Yes, please join the queue by the door.", translation: "是的，请在门口排队。" },
+            { text: "I want to look around.", choiceZh: "我想先看看。", reply: "Of course. Take your time.", translation: "当然，请慢慢看。" },
+          ],
+        },
+        cafeMenuCustomer: {
+          id: "cafeMenuCustomer",
+          speaker: "Customer",
+          zh: "顾客",
+          text: "I think the latte is popular here.",
+          translation: "我觉得这里的拿铁很受欢迎。",
+          options: [
+            { text: "What do you recommend?", choiceZh: "你推荐什么？", reply: "The mocha smells very good today.", translation: "今天摩卡闻起来很不错。" },
+            { text: "I like something warm.", choiceZh: "我喜欢热一点的。", reply: "Then a latte or brew may be nice.", translation: "那拿铁或冲泡咖啡可能不错。" },
+            { text: "I will check the specials.", choiceZh: "我看看今日特选。", reply: "Good idea. The board is easy to read.", translation: "好主意。菜单牌很好看。" },
+          ],
+        },
+        baristaOrder: {
+          id: "baristaOrder",
+          speaker: "Barista",
+          zh: "咖啡师",
+          text: "Hi! What can I get for you today?",
+          translation: "你好！今天想喝点什么？",
+          options: [
+            { text: "A medium latte, please.", choiceZh: "请给我一杯中杯拿铁。", reply: "Sure. One medium latte.", translation: "好的，一杯中杯拿铁。" },
+            { text: "Do you have dairy-free milk?", choiceZh: "你们有非乳制奶吗？", reply: "Yes, we have a dairy-free option.", translation: "有的，我们有非乳制选择。" },
+            { text: "What is popular today?", choiceZh: "今天什么比较受欢迎？", reply: "Mocha is popular today.", translation: "今天摩卡比较受欢迎。" },
+          ],
+        },
+        baristaCustomize: {
+          id: "baristaCustomize",
+          speaker: "Barista",
+          zh: "咖啡师",
+          text: "Would you like it hot or iced?",
+          translation: "你想要热的还是冰的？",
+          options: [
+            { text: "Iced, please.", choiceZh: "请做成冰的。", reply: "Sure. Iced drink.", translation: "好的，冰饮。" },
+            { text: "Hot sounds good.", choiceZh: "热的听起来不错。", reply: "Great. A hot drink is cozy.", translation: "很好，热饮很舒服。" },
+            { text: "Can I add syrup?", choiceZh: "我可以加糖浆吗？", reply: "Yes, you can add syrup.", translation: "可以，你可以加糖浆。" },
+          ],
+        },
+        pickupStaff: {
+          id: "pickupStaff",
+          speaker: "Staff",
+          zh: "店员",
+          text: "Your drink is ready!",
+          translation: "你的饮品好了！",
+          options: [
+            { text: "Thank you!", choiceZh: "谢谢！", reply: "You're welcome. Enjoy your drink.", translation: "不客气，祝你喝得开心。" },
+            { text: "Is this mine?", choiceZh: "这是我的吗？", reply: "Yes, please check your pickup name.", translation: "是的，请确认你的取餐名。" },
+            { text: "Can I have a sleeve?", choiceZh: "可以给我一个杯套吗？", reply: "Sure. Here is a sleeve.", translation: "当然，这是一个杯套。" },
+          ],
+        },
+        cafeCustomerSeat: {
+          id: "cafeCustomerSeat",
+          speaker: "Customer",
+          zh: "顾客",
+          text: "Is this table free?",
+          translation: "这张桌子有人吗？",
+          options: [
+            { text: "Yes, you can sit here.", choiceZh: "是的，你可以坐这里。", reply: "Thanks. This corner is nice.", translation: "谢谢，这个角落不错。" },
+            { text: "I am taking my drink away.", choiceZh: "我要把饮品带走。", reply: "No problem. Enjoy your day.", translation: "没问题，祝你今天愉快。" },
+            { text: "Do you know the Wi-Fi password?", choiceZh: "你知道 Wi-Fi 密码吗？", reply: "Please ask the staff by the window.", translation: "请问窗边的店员。" },
+          ],
+        },
+      };
+
+      const airportDialogues = {
+        airportPassenger: {
+          id: "airportPassenger",
+          speaker: "Passenger",
+          zh: "乘客",
+          text: "Is this the way to departures?",
+          translation: "这是去出发区的路吗？",
+          options: [
+            { text: "Yes, departures are this way.", choiceZh: "是的，出发区在这边。", reply: "Thanks. I will follow this path.", translation: "谢谢。我会沿着这条路走。" },
+            { text: "I'm checking my itinerary.", choiceZh: "我在看行程单。", reply: "Good idea. The itinerary helps a lot.", translation: "好主意。行程单很有帮助。" },
+            { text: "Let's ask at the information desk.", choiceZh: "我们去问讯处问问吧。", reply: "Yes, that would be helpful.", translation: "好，那会很有帮助。" },
+          ],
+        },
+        airlineStaff: {
+          id: "airlineStaff",
+          speaker: "Airline Staff",
+          zh: "航空公司工作人员",
+          text: "May I see your passport and confirmation?",
+          translation: "我可以看一下你的护照和确认信息吗？",
+          options: [
+            { text: "Here is my passport.", choiceZh: "这是我的护照。", reply: "Thank you. I will check your details.", translation: "谢谢。我来核对你的信息。" },
+            { text: "My destination is London.", choiceZh: "我的目的地是伦敦。", reply: "Great. I found your flight.", translation: "好的。我找到了你的航班。" },
+            { text: "I used the kiosk already.", choiceZh: "我已经用过自助机了。", reply: "Perfect. Your boarding pass is ready.", translation: "很好。你的登机牌准备好了。" },
+          ],
+        },
+        baggageStaff: {
+          id: "baggageStaff",
+          speaker: "Airline Staff",
+          zh: "航空公司工作人员",
+          text: "Is this suitcase yours?",
+          translation: "这个行李箱是你的吗？",
+          options: [
+            { text: "Yes, it is mine.", choiceZh: "是的，是我的。", reply: "Great. I will place it on the belt.", translation: "好的。我会把它放上传送带。" },
+            { text: "It is under the weight limit.", choiceZh: "它没有超重。", reply: "Good. There is no extra fee.", translation: "很好。没有额外费用。" },
+            { text: "There are fragile items inside.", choiceZh: "里面有易碎物品。", reply: "Thanks for telling me. We will handle it carefully.", translation: "谢谢提醒。我们会小心处理。" },
+          ],
+        },
+        securityOfficer: {
+          id: "securityOfficer",
+          speaker: "Security Officer",
+          zh: "安检人员",
+          text: "Please place your items in the tray.",
+          translation: "请把物品放进托盘。",
+          options: [
+            { text: "Do I need to take out my laptop?", choiceZh: "我需要拿出笔记本电脑吗？", reply: "Yes, please put it in a separate tray.", translation: "是的，请把它单独放进托盘。" },
+            { text: "Here are my liquids.", choiceZh: "这是我的液体物品。", reply: "Thank you. Please keep them together.", translation: "谢谢。请把它们放在一起。" },
+            { text: "I'll take off my jacket.", choiceZh: "我会脱下外套。", reply: "Good. Put it in the tray, please.", translation: "好的。请把它放进托盘。" },
+          ],
+        },
+        departurePassenger: {
+          id: "departurePassenger",
+          speaker: "Passenger",
+          zh: "乘客",
+          text: "Can you find your flight number?",
+          translation: "你能找到你的航班号吗？",
+          options: [
+            { text: "Yes, it is on the board.", choiceZh: "可以，它在屏幕上。", reply: "Great. Then we know where to go.", translation: "太好了。这样我们就知道去哪儿了。" },
+            { text: "I think there is a delay.", choiceZh: "我觉得有延误。", reply: "Let's check the board again.", translation: "我们再看一下信息屏。" },
+            { text: "I need to find the lounge.", choiceZh: "我需要找休息区。", reply: "The lounge is past the escalator.", translation: "休息区在自动扶梯后面。" },
+          ],
+        },
+        gateAgent: {
+          id: "gateAgent",
+          speaker: "Gate Agent",
+          zh: "登机口工作人员",
+          text: "Please wait for your boarding group.",
+          translation: "请等待你的登机组别。",
+          options: [
+            { text: "My boarding group is two.", choiceZh: "我的登机组别是二。", reply: "Please wait until group two is called.", translation: "请等到第二组被叫到。" },
+            { text: "Is this the final call?", choiceZh: "这是最后广播吗？", reply: "Not yet. Please listen for the announcement.", translation: "还不是。请留意广播。" },
+            { text: "I'm ready to board.", choiceZh: "我准备好登机了。", reply: "Great. Please have your document ready.", translation: "很好。请准备好你的证件。" },
+          ],
+        },
+        flightAttendant: {
+          id: "flightAttendant",
+          speaker: "Flight Attendant",
+          zh: "空乘人员",
+          text: "Welcome aboard soon. Please prepare your documents.",
+          translation: "很快欢迎登机。请准备好证件。",
+          options: [
+            { text: "My travel document is ready.", choiceZh: "我的旅行证件准备好了。", reply: "Thank you. You may continue forward.", translation: "谢谢。你可以继续往前走。" },
+            { text: "Where is my row?", choiceZh: "我的座位排在哪里？", reply: "Your row is inside the cabin.", translation: "你的座位排在机舱里面。" },
+            { text: "I'll use the overhead bin.", choiceZh: "我会使用头顶行李舱。", reply: "Good. Please place your carry-on carefully.", translation: "好的。请小心放置随身行李。" },
           ],
         },
       };
@@ -4411,6 +4881,136 @@
         0
       );
 
+      const moreCafePages = [
+        {
+          id: "cafe-drinks",
+          title: "Drinks",
+          zh: "饮品",
+          words: [
+            { id: "cappuccino", word: "cappuccino", phonetic: "/ˌkæpəˈtʃiːnoʊ/", meaning: "卡布奇诺", example: "A cappuccino has foam on top.", translation: "卡布奇诺上面有奶泡。" },
+            { id: "americano", word: "americano", phonetic: "/əˌmerɪˈkɑːnoʊ/", meaning: "美式咖啡", example: "An americano tastes smooth and light.", translation: "美式咖啡口感顺滑清淡。" },
+            { id: "macchiato", word: "macchiato", phonetic: "/ˌmɑːkiˈɑːtoʊ/", meaning: "玛奇朵", example: "A macchiato has a little milk.", translation: "玛奇朵含有少量牛奶。" },
+            { id: "flat-white", word: "flat white", phonetic: "/ˌflæt ˈwaɪt/", meaning: "馥芮白", example: "A flat white is creamy and strong.", translation: "馥芮白顺滑而浓郁。" },
+            { id: "cold-brew", word: "cold brew", phonetic: "/ˌkoʊld ˈbruː/", meaning: "冷萃咖啡", example: "Cold brew is smooth and cold.", translation: "冷萃咖啡顺滑冰爽。" },
+            { id: "matcha-latte", word: "matcha latte", phonetic: "/ˈmætʃə ˈlɑːteɪ/", meaning: "抹茶拿铁", example: "A matcha latte is green and creamy.", translation: "抹茶拿铁是绿色且顺滑的。" },
+            { id: "chai-latte", word: "chai latte", phonetic: "/ˈtʃaɪ ˈlɑːteɪ/", meaning: "印度香料茶拿铁", example: "A chai latte smells warm and spicy.", translation: "香料茶拿铁闻起来温暖辛香。" },
+            { id: "herbal-tea", word: "herbal tea", phonetic: "/ˈhɜːrbəl tiː/", meaning: "花草茶", example: "Herbal tea has a gentle taste.", translation: "花草茶味道柔和。" },
+            { id: "lemonade", word: "lemonade", phonetic: "/ˌleməˈneɪd/", meaning: "柠檬饮", example: "Lemonade is cool and bright.", translation: "柠檬饮清爽明亮。" },
+            { id: "smoothie", word: "smoothie", phonetic: "/ˈsmuːði/", meaning: "冰沙", example: "A smoothie is thick and fruity.", translation: "冰沙浓稠又有果味。" },
+            { id: "frappe", word: "frappe", phonetic: "/fræˈpeɪ/", meaning: "冰咖啡饮", example: "A frappe is sweet and icy.", translation: "冰咖啡饮甜甜的、冰冰的。" },
+            { id: "sparkling-coffee", word: "sparkling coffee", phonetic: "/ˈspɑːrklɪŋ ˈkɔːfi/", meaning: "气泡咖啡", example: "Sparkling coffee feels light and fizzy.", translation: "气泡咖啡喝起来轻盈有气泡感。" },
+          ],
+        },
+        {
+          id: "cafe-food-desserts",
+          title: "Food & Desserts",
+          zh: "食物与甜点",
+          words: [
+            { id: "croissant", word: "croissant", phonetic: "/krwɑːˈsɑːnt/", meaning: "可颂", example: "The croissant is warm and flaky.", translation: "可颂温热又酥脆。" },
+            { id: "muffin", word: "muffin", phonetic: "/ˈmʌfɪn/", meaning: "松饼", example: "The muffin goes well with coffee.", translation: "松饼很适合配咖啡。" },
+            { id: "bagel", word: "bagel", phonetic: "/ˈbeɪɡəl/", meaning: "贝果", example: "A bagel is round and chewy.", translation: "贝果是圆形的，很有嚼劲。" },
+            { id: "brownie", word: "brownie", phonetic: "/ˈbraʊni/", meaning: "布朗尼", example: "The brownie tastes rich and sweet.", translation: "布朗尼味道浓郁香甜。" },
+            { id: "cheesecake", word: "cheesecake", phonetic: "/ˈtʃiːzkeɪk/", meaning: "芝士蛋糕", example: "The cheesecake is soft and creamy.", translation: "芝士蛋糕柔软顺滑。" },
+            { id: "tiramisu", word: "tiramisu", phonetic: "/ˌtɪrəmiˈsuː/", meaning: "提拉米苏", example: "Tiramisu has a coffee flavor.", translation: "提拉米苏有咖啡风味。" },
+            { id: "cookie", word: "cookie", phonetic: "/ˈkʊki/", meaning: "曲奇", example: "The cookie is crisp and buttery.", translation: "曲奇酥脆且有黄油香。" },
+            { id: "scone", word: "scone", phonetic: "/skoʊn/", meaning: "司康", example: "A scone is nice with tea.", translation: "司康配茶很好。" },
+            { id: "sandwich", word: "sandwich", phonetic: "/ˈsændwɪtʃ/", meaning: "三明治", example: "The sandwich is good for a quick meal.", translation: "三明治适合快速用餐。" },
+            { id: "quiche", word: "quiche", phonetic: "/kiːʃ/", meaning: "咸派", example: "The quiche has eggs and cheese.", translation: "咸派里有鸡蛋和奶酪。" },
+            { id: "yogurt-parfait", word: "yogurt parfait", phonetic: "/ˈjoʊɡərt pɑːrˈfeɪ/", meaning: "酸奶杯", example: "A yogurt parfait has fruit and yogurt.", translation: "酸奶杯里有水果和酸奶。" },
+            { id: "granola-bowl", word: "granola bowl", phonetic: "/ɡrəˈnoʊlə boʊl/", meaning: "格兰诺拉碗", example: "The granola bowl is crunchy.", translation: "格兰诺拉碗很脆。" },
+          ],
+        },
+        {
+          id: "cafe-phrases-items",
+          title: "Cafe Phrases & Items",
+          zh: "咖啡馆表达与物品",
+          words: [
+            { id: "reservation", word: "reservation", phonetic: "/ˌrezərˈveɪʃən/", meaning: "预约", example: "Do you have a reservation?", translation: "你有预约吗？" },
+            { id: "refill", word: "refill", phonetic: "/ˈriːfɪl/", meaning: "续杯", example: "Can I get a refill?", translation: "我可以续杯吗？" },
+            { id: "straw", word: "straw", phonetic: "/strɔː/", meaning: "吸管", example: "I need a straw for my drink.", translation: "我的饮品需要一根吸管。" },
+            { id: "coaster", word: "coaster", phonetic: "/ˈkoʊstər/", meaning: "杯垫", example: "Put the cup on the coaster.", translation: "把杯子放在杯垫上。" },
+            { id: "ceramic-cup", word: "ceramic cup", phonetic: "/səˈræmɪk kʌp/", meaning: "陶瓷杯", example: "A ceramic cup feels warm in my hand.", translation: "陶瓷杯拿在手里很温暖。" },
+            { id: "paper-cup", word: "paper cup", phonetic: "/ˈpeɪpər kʌp/", meaning: "纸杯", example: "A paper cup is easy to carry.", translation: "纸杯方便携带。" },
+            { id: "loyalty-card", word: "loyalty card", phonetic: "/ˈlɔɪəlti kɑːrd/", meaning: "会员积分卡", example: "The loyalty card gives you points.", translation: "会员积分卡可以积分。" },
+            { id: "tip-jar", word: "tip jar", phonetic: "/ˈtɪp dʒɑːr/", meaning: "小费罐", example: "The tip jar is near the counter.", translation: "小费罐在柜台附近。" },
+            { id: "display-case", word: "display case", phonetic: "/dɪˈspleɪ keɪs/", meaning: "展示柜", example: "Desserts are inside the display case.", translation: "甜点在展示柜里。" },
+            { id: "booth", word: "booth", phonetic: "/buːθ/", meaning: "卡座", example: "The booth is quiet and comfortable.", translation: "卡座安静又舒服。" },
+            { id: "patio", word: "patio", phonetic: "/ˈpætioʊ/", meaning: "露台座位区", example: "The patio is nice on sunny days.", translation: "晴天时露台座位区很不错。" },
+            { id: "receipt-printer", word: "receipt printer", phonetic: "/rɪˈsiːt ˈprɪntər/", meaning: "小票打印机", example: "The receipt printer is beside the register.", translation: "小票打印机在收银设备旁边。" },
+          ],
+        },
+      ];
+
+      const moreCafeCount = moreCafePages.reduce(
+        (count, page) => count + page.words.length,
+        0
+      );
+
+      const moreAirportPages = [
+        {
+          id: "airport-places",
+          title: "Airport Places",
+          zh: "机场地点",
+          words: [
+            { id: "arrivals-hall", word: "arrivals hall", phonetic: "/əˈraɪvəlz hɔːl/", meaning: "到达大厅", example: "The arrivals hall is on the lower level.", translation: "到达大厅在较低楼层。" },
+            { id: "baggage-claim", word: "baggage claim", phonetic: "/ˈbæɡɪdʒ kleɪm/", meaning: "行李提取处", example: "Baggage claim is after passport control.", translation: "行李提取处在护照检查之后。" },
+            { id: "customs", word: "customs", phonetic: "/ˈkʌstəmz/", meaning: "海关", example: "Travelers pass through customs.", translation: "旅客要通过海关。" },
+            { id: "immigration", word: "immigration", phonetic: "/ˌɪmɪˈɡreɪʃən/", meaning: "入境检查", example: "Immigration checks travel documents.", translation: "入境检查会核查旅行证件。" },
+            { id: "passport-control", word: "passport control", phonetic: "/ˈpæspɔːrt kənˈtroʊl/", meaning: "护照检查处", example: "Passport control is before baggage claim.", translation: "护照检查处在行李提取处之前。" },
+            { id: "duty-free-shop", word: "duty-free shop", phonetic: "/ˌduːti ˈfriː ʃɑːp/", meaning: "免税店", example: "The duty-free shop sells gifts.", translation: "免税店售卖礼品。" },
+            { id: "currency-exchange", word: "currency exchange", phonetic: "/ˈkɜːrənsi ɪksˈtʃeɪndʒ/", meaning: "货币兑换处", example: "Currency exchange is near arrivals.", translation: "货币兑换处在到达区附近。" },
+            { id: "lost-and-found", word: "lost and found", phonetic: "/ˌlɔːst ən ˈfaʊnd/", meaning: "失物招领处", example: "Lost and found helps with missing items.", translation: "失物招领处帮助寻找丢失物品。" },
+            { id: "shuttle-stop", word: "shuttle stop", phonetic: "/ˈʃʌtəl stɑːp/", meaning: "接驳车站", example: "The shuttle stop is outside the terminal.", translation: "接驳车站在航站楼外。" },
+            { id: "taxi-stand", word: "taxi stand", phonetic: "/ˈtæksi stænd/", meaning: "出租车候车处", example: "The taxi stand is by the exit.", translation: "出租车候车处在出口旁。" },
+            { id: "rental-car-desk", word: "rental car desk", phonetic: "/ˈrentəl kɑːr desk/", meaning: "租车柜台", example: "The rental car desk is near the lobby.", translation: "租车柜台在大厅附近。" },
+            { id: "transfer-desk", word: "transfer desk", phonetic: "/ˈtrænsfɜːr desk/", meaning: "转机服务台", example: "The transfer desk helps with connecting flights.", translation: "转机服务台帮助处理转机航班。" },
+          ],
+        },
+        {
+          id: "travel-items",
+          title: "Travel Items",
+          zh: "旅行物品",
+          words: [
+            { id: "visa", word: "visa", phonetic: "/ˈviːzə/", meaning: "签证", example: "A visa may be needed for travel.", translation: "旅行可能需要签证。" },
+            { id: "luggage-strap", word: "luggage strap", phonetic: "/ˈlʌɡɪdʒ stræp/", meaning: "行李绑带", example: "A luggage strap keeps the suitcase closed.", translation: "行李绑带让行李箱保持闭合。" },
+            { id: "neck-pillow", word: "neck pillow", phonetic: "/ˈnek pɪloʊ/", meaning: "颈枕", example: "A neck pillow is useful on long flights.", translation: "颈枕在长途飞行中很有用。" },
+            { id: "travel-adapter", word: "travel adapter", phonetic: "/ˈtrævəl əˈdæptər/", meaning: "旅行转换插头", example: "A travel adapter fits different sockets.", translation: "旅行转换插头适配不同插座。" },
+            { id: "power-bank", word: "power bank", phonetic: "/ˈpaʊər bæŋk/", meaning: "充电宝", example: "My power bank charges my phone.", translation: "我的充电宝给手机充电。" },
+            { id: "travel-wallet", word: "travel wallet", phonetic: "/ˈtrævəl ˈwɑːlɪt/", meaning: "旅行钱包", example: "The travel wallet holds documents.", translation: "旅行钱包装旅行证件。" },
+            { id: "luggage-scale", word: "luggage scale", phonetic: "/ˈlʌɡɪdʒ skeɪl/", meaning: "行李秤", example: "A luggage scale checks the weight.", translation: "行李秤检查重量。" },
+            { id: "packing-cube", word: "packing cube", phonetic: "/ˈpækɪŋ kjuːb/", meaning: "收纳包", example: "A packing cube keeps clothes neat.", translation: "收纳包让衣物整齐。" },
+            { id: "earplugs", word: "earplugs", phonetic: "/ˈɪrplʌɡz/", meaning: "耳塞", example: "Earplugs help me rest.", translation: "耳塞帮助我休息。" },
+            { id: "eye-mask", word: "eye mask", phonetic: "/ˈaɪ mæsk/", meaning: "眼罩", example: "An eye mask blocks light.", translation: "眼罩遮挡光线。" },
+            { id: "travel-insurance", word: "travel insurance", phonetic: "/ˈtrævəl ɪnˈʃʊrəns/", meaning: "旅行保险", example: "Travel insurance protects the trip.", translation: "旅行保险保护旅程。" },
+            { id: "boarding-tag", word: "boarding tag", phonetic: "/ˈbɔːrdɪŋ tæɡ/", meaning: "登机标签", example: "The boarding tag is attached to the item.", translation: "登机标签贴在物品上。" },
+          ],
+        },
+        {
+          id: "flight-travel-phrases",
+          title: "Flight & Travel Phrases",
+          zh: "航班与旅行表达",
+          words: [
+            { id: "one-way-ticket", word: "one-way ticket", phonetic: "/ˌwʌn ˈweɪ ˈtɪkɪt/", meaning: "单程票", example: "I booked a one-way ticket.", translation: "我订了一张单程票。" },
+            { id: "round-trip-ticket", word: "round-trip ticket", phonetic: "/ˌraʊnd trɪp ˈtɪkɪt/", meaning: "往返票", example: "A round-trip ticket includes the return flight.", translation: "往返票包含返程航班。" },
+            { id: "connecting-flight", word: "connecting flight", phonetic: "/kəˈnektɪŋ flaɪt/", meaning: "转机航班", example: "My connecting flight leaves later.", translation: "我的转机航班晚些出发。" },
+            { id: "direct-flight", word: "direct flight", phonetic: "/dəˈrekt flaɪt/", meaning: "直达航班", example: "A direct flight has no transfer.", translation: "直达航班没有转机。" },
+            { id: "layover", word: "layover", phonetic: "/ˈleɪoʊvər/", meaning: "中转停留", example: "We have a short layover.", translation: "我们有一次短暂停留。" },
+            { id: "boarding-deadline", word: "boarding deadline", phonetic: "/ˈbɔːrdɪŋ ˈdedlaɪn/", meaning: "登机截止时间", example: "The boarding deadline is important.", translation: "登机截止时间很重要。" },
+            { id: "arrival-time", word: "arrival time", phonetic: "/əˈraɪvəl taɪm/", meaning: "到达时间", example: "The arrival time is in the evening.", translation: "到达时间在晚上。" },
+            { id: "departure-time", word: "departure time", phonetic: "/dɪˈpɑːrtʃər taɪm/", meaning: "出发时间", example: "The departure time is on the ticket.", translation: "出发时间在票上。" },
+            { id: "delayed-flight", word: "delayed flight", phonetic: "/dɪˈleɪd flaɪt/", meaning: "延误航班", example: "A delayed flight leaves later.", translation: "延误航班会晚些出发。" },
+            { id: "cancelled-flight", word: "cancelled flight", phonetic: "/ˈkænsəld flaɪt/", meaning: "取消航班", example: "A cancelled flight will not leave.", translation: "取消航班不会起飞。" },
+            { id: "seat-upgrade", word: "seat upgrade", phonetic: "/ˈsiːt ˈʌpɡreɪd/", meaning: "座位升级", example: "A seat upgrade gives more space.", translation: "座位升级会有更多空间。" },
+            { id: "aisle-access", word: "aisle access", phonetic: "/ˈaɪl ˈækses/", meaning: "过道通行", example: "Aisle access makes it easy to move.", translation: "过道通行让移动更方便。" },
+          ],
+        },
+      ];
+
+      const moreAirportCount = moreAirportPages.reduce(
+        (count, page) => count + page.words.length,
+        0
+      );
+
       const sceneCards = [
         {
           id: "zoo",
@@ -4470,33 +5070,37 @@
           id: "cafe",
           title: "Cafe",
           zh: "咖啡馆",
-          status: "Coming Soon",
-          statusZh: "即将开放",
+          status: "Available",
+          statusZh: "可进入",
           description: "Order drinks, choose a seat, and learn polite cafe conversations.",
           descriptionZh: "点饮品、找座位，学习礼貌的咖啡馆对话。",
-          button: "Coming Soon",
-          buttonZh: "即将开放",
+          button: "Enter Cafe",
+          buttonZh: "进入咖啡馆",
+          available: true,
+          chapter: "cafe",
           accent: "#d6a46f",
           visual: "Warm Counter",
           visualZh: "温暖吧台",
-          image: "linear-gradient(180deg, rgba(20, 12, 8, 0.03), rgba(20, 12, 8, 0.74)), radial-gradient(circle at 30% 58%, rgba(255,238,199,0.58) 0 10%, transparent 10.5%), radial-gradient(ellipse at 34% 72%, rgba(95,56,32,0.8) 0 18%, transparent 18.5%), radial-gradient(circle at 72% 26%, rgba(255,199,123,0.32), transparent 22%), linear-gradient(145deg, #2d1e18, #7c4b31 52%, #b87546)",
-          imagePosition: "center",
+          image: "linear-gradient(180deg, rgba(20, 12, 8, 0.03), rgba(20, 12, 8, 0.74)), url('assets/cafe-cover.png')",
+          imagePosition: "center 58%",
         },
         {
           id: "airport",
           title: "Airport",
           zh: "机场",
-          status: "Coming Soon",
-          statusZh: "即将开放",
+          status: "Available",
+          statusZh: "可进入",
           description: "Learn check-in, luggage, security, gates, and travel English.",
           descriptionZh: "学习值机、行李、安检、登机口和旅行英语。",
-          button: "Coming Soon",
-          buttonZh: "即将开放",
+          button: "Enter Airport",
+          buttonZh: "进入机场",
+          available: true,
+          chapter: "airport",
           accent: "#8bd3e6",
           visual: "Travel Gate",
           visualZh: "旅行入口",
-          image: "linear-gradient(180deg, rgba(6, 14, 22, 0.02), rgba(6, 14, 22, 0.74)), linear-gradient(90deg, rgba(255,255,255,0.22) 0 1px, transparent 1px 18%), linear-gradient(0deg, rgba(255,255,255,0.18) 0 1px, transparent 1px 34%), radial-gradient(ellipse at 62% 44%, rgba(139,211,230,0.38), transparent 28%), linear-gradient(145deg, #102033, #244a66 52%, #7fb4cf)",
-          imagePosition: "center",
+          image: "linear-gradient(180deg, rgba(6, 14, 22, 0.02), rgba(6, 14, 22, 0.74)), url('assets/airport-cover.png')",
+          imagePosition: "center 55%",
         },
         {
           id: "office",
@@ -4584,6 +5188,56 @@
             <span>{en}</span>
             <span className={`mt-0.5 ${zhSize} font-bold opacity-70`}>{zh}</span>
           </span>
+        );
+      }
+
+      function LandscapePrompt() {
+        return (
+          <div className="fixed inset-0 z-[999] flex min-h-screen items-center justify-center overflow-hidden bg-[#101614] px-6 text-center text-white">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_22%,rgba(236,244,231,0.12),transparent_28%),radial-gradient(circle_at_18%_78%,rgba(98,145,124,0.16),transparent_32%),linear-gradient(180deg,#18201d_0%,#101513_52%,#0b0f0e_100%)]"></div>
+            <div className="absolute inset-0 opacity-[0.12] [background-image:radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:22px_22px]"></div>
+            <div className="light-breath pointer-events-none absolute left-1/2 top-[20%] h-72 w-72 -translate-x-1/2 rounded-full bg-banana/10 blur-3xl"></div>
+
+            <div className="dialogue-enter relative z-10 mx-auto max-w-md rounded-[2rem] border border-white/14 bg-white/[0.08] p-7 shadow-glow backdrop-blur-2xl">
+              <div className="mx-auto mb-6 flex h-28 w-28 items-center justify-center rounded-full border border-white/12 bg-white/[0.07] shadow-label">
+                <div className="relative h-16 w-10 rounded-[1rem] border-2 border-white/72 bg-black/18 shadow-[0_0_30px_rgba(255,255,255,0.08)]">
+                  <div className="absolute left-1/2 top-1 h-1 w-5 -translate-x-1/2 rounded-full bg-white/38"></div>
+                  <div className="absolute -right-7 top-1/2 h-7 w-7 -translate-y-1/2 rounded-full border-2 border-banana/80 border-l-transparent border-t-transparent"></div>
+                  <div className="absolute -right-8 top-[58%] h-0 w-0 border-y-[5px] border-l-[7px] border-y-transparent border-l-banana/80"></div>
+                </div>
+              </div>
+
+              <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
+                Landscape Mode
+              </p>
+              <h1 className="mt-4 text-3xl font-black leading-tight text-white">
+                Rotate for the best experience
+              </h1>
+              <p className="mt-2 text-xl font-black text-banana">
+                横屏获得最佳体验
+              </p>
+
+              <p className="mt-5 text-base font-black leading-7 text-cream/86">
+                Real Scene English is designed for immersive landscape scenes.
+              </p>
+              <p className="mt-1 text-sm font-bold leading-6 text-cream/64">
+                Real Scene English 为沉浸式横屏场景学习设计。
+              </p>
+
+              <div className="mt-5 rounded-2xl border border-white/12 bg-black/18 px-4 py-3">
+                <p className="text-base font-black text-white">
+                  Please rotate your phone to continue.
+                </p>
+                <p className="mt-1 text-sm font-bold text-cream/68">
+                  请将手机横屏后继续。
+                </p>
+              </div>
+
+              <p className="mt-5 text-xs font-bold text-white/38">
+                Your progress will stay saved. 你的学习进度会保留。
+              </p>
+            </div>
+          </div>
         );
       }
 
@@ -4692,10 +5346,24 @@
           }
 
           window.addEventListener("resize", handleResize);
-          return () => window.removeEventListener("resize", handleResize);
+          window.addEventListener("orientationchange", handleResize);
+          return () => {
+            window.removeEventListener("resize", handleResize);
+            window.removeEventListener("orientationchange", handleResize);
+          };
         }, []);
 
         return size;
+      }
+
+      function shouldShowLandscapePrompt(viewport) {
+        if (typeof window === "undefined") return false;
+        const isPortrait = viewport.width < viewport.height;
+        const isSmallScreen = viewport.width <= 900;
+        const hasTouch =
+          (typeof navigator !== "undefined" && navigator.maxTouchPoints > 0) ||
+          window.matchMedia?.("(hover: none) and (pointer: coarse)")?.matches;
+        return Boolean(hasTouch && isSmallScreen && isPortrait);
       }
 
       function clamp(value, min, max) {
@@ -4918,6 +5586,8 @@
         const [selectedMoreAnimal, setSelectedMoreAnimal] = useState(null);
         const [selectedMoreFruit, setSelectedMoreFruit] = useState(null);
         const [selectedMoreCampusWord, setSelectedMoreCampusWord] = useState(null);
+        const [selectedMoreCafeWord, setSelectedMoreCafeWord] = useState(null);
+        const [selectedMoreAirportWord, setSelectedMoreAirportWord] = useState(null);
         const [dialogueReply, setDialogueReply] = useState(null);
         const [conversationDone, setConversationDone] = useState([]);
         const [completedActions, setCompletedActions] = useState([]);
@@ -4925,6 +5595,8 @@
         const [learnedMoreAnimals, setLearnedMoreAnimals] = useState([]);
         const [learnedMoreFruits, setLearnedMoreFruits] = useState([]);
         const [learnedMoreCampusWords, setLearnedMoreCampusWords] = useState([]);
+        const [learnedMoreCafeWords, setLearnedMoreCafeWords] = useState([]);
+        const [learnedMoreAirportWords, setLearnedMoreAirportWords] = useState([]);
         const [learnedWords, setLearnedWords] = useState([]);
         const [savedWords, setSavedWords] = useState(loadWordBookEntries);
         const [playingKey, setPlayingKey] = useState(null);
@@ -4941,9 +5613,15 @@
         const [showMoreFruitsBook, setShowMoreFruitsBook] = useState(false);
         const [showMoreCampusChoice, setShowMoreCampusChoice] = useState(false);
         const [showMoreCampusBook, setShowMoreCampusBook] = useState(false);
+        const [showMoreCafeChoice, setShowMoreCafeChoice] = useState(false);
+        const [showMoreCafeBook, setShowMoreCafeBook] = useState(false);
+        const [showMoreAirportChoice, setShowMoreAirportChoice] = useState(false);
+        const [showMoreAirportBook, setShowMoreAirportBook] = useState(false);
         const [moreAnimalsPageIndex, setMoreAnimalsPageIndex] = useState(0);
         const [moreFruitsPageIndex, setMoreFruitsPageIndex] = useState(0);
         const [moreCampusPageIndex, setMoreCampusPageIndex] = useState(0);
+        const [moreCafePageIndex, setMoreCafePageIndex] = useState(0);
+        const [moreAirportPageIndex, setMoreAirportPageIndex] = useState(0);
         const [showEnding, setShowEnding] = useState(false);
         const [isWalking, setIsWalking] = useState(false);
         const [animalEffect, setAnimalEffect] = useState(null);
@@ -4977,23 +5655,89 @@
         const isZooChapter = currentChapter === "zoo";
         const isFruitShopChapter = currentChapter === "fruitShop";
         const isCampusChapter = currentChapter === "campus";
-        const activeScenes = isZooChapter ? scenes : isFruitShopChapter ? fruitShopScenes : campusScenes;
-        const activeDialogues = isZooChapter ? dialogues : isFruitShopChapter ? fruitShopDialogues : campusDialogues;
-        const chapterTitle = isZooChapter ? "Zoo Trip" : isFruitShopChapter ? "Fruit Shop Trip" : "Campus Trip";
-        const chapterTitleZh = isZooChapter ? "动物园之旅" : isFruitShopChapter ? "水果店之旅" : "校园之旅";
-        const chapterWordBookScene = isZooChapter ? "Zoo" : isFruitShopChapter ? "Fruit Shop" : "Campus";
+        const isCafeChapter = currentChapter === "cafe";
+        const isAirportChapter = currentChapter === "airport";
+        const activeScenes = isZooChapter
+          ? scenes
+          : isFruitShopChapter
+          ? fruitShopScenes
+          : isCampusChapter
+          ? campusScenes
+          : isCafeChapter
+          ? cafeScenes
+          : airportScenes;
+        const activeDialogues = isZooChapter
+          ? dialogues
+          : isFruitShopChapter
+          ? fruitShopDialogues
+          : isCampusChapter
+          ? campusDialogues
+          : isCafeChapter
+          ? cafeDialogues
+          : airportDialogues;
+        const chapterTitle = isZooChapter
+          ? "Zoo Trip"
+          : isFruitShopChapter
+          ? "Fruit Shop Trip"
+          : isCampusChapter
+          ? "Campus Trip"
+          : isCafeChapter
+          ? "Cafe Trip"
+          : "Airport Trip";
+        const chapterTitleZh = isZooChapter
+          ? "动物园之旅"
+          : isFruitShopChapter
+          ? "水果店之旅"
+          : isCampusChapter
+          ? "校园之旅"
+          : isCafeChapter
+          ? "咖啡馆之旅"
+          : "机场之旅";
+        const chapterWordBookScene = isZooChapter
+          ? "Zoo"
+          : isFruitShopChapter
+          ? "Fruit Shop"
+          : isCampusChapter
+          ? "Campus"
+          : isCafeChapter
+          ? "Cafe"
+          : "Airport";
         const endingTitle = isZooChapter
           ? "Great job! Your zoo trip is finished."
           : isFruitShopChapter
           ? "Great job! Your fruit shop trip is finished."
-          : "Great job! Your campus trip is finished.";
+          : isCampusChapter
+          ? "Great job! Your campus trip is finished."
+          : isCafeChapter
+          ? "Great job! Your cafe trip is finished."
+          : "Great job! Your airport trip is finished.";
         const endingZh = isZooChapter
           ? "太棒了！今天的动物园之旅到此结束啦。"
           : isFruitShopChapter
           ? "太棒了！你的水果店之旅完成了。"
-          : "太棒了！你的校园之旅完成了。";
-        const restartLabel = isZooChapter ? "Restart Trip" : isFruitShopChapter ? "Restart Fruit Shop" : "Restart Campus";
-        const restartZh = isZooChapter ? "重新开始旅程" : isFruitShopChapter ? "重新开始水果店" : "重新开始校园";
+          : isCampusChapter
+          ? "太棒了！你的校园之旅完成了。"
+          : isCafeChapter
+          ? "太棒了！你的咖啡馆之旅完成了。"
+          : "太棒了！你的机场之旅完成了。";
+        const restartLabel = isZooChapter
+          ? "Restart Trip"
+          : isFruitShopChapter
+          ? "Restart Fruit Shop"
+          : isCampusChapter
+          ? "Restart Campus"
+          : isCafeChapter
+          ? "Restart Cafe"
+          : "Restart Airport";
+        const restartZh = isZooChapter
+          ? "重新开始旅程"
+          : isFruitShopChapter
+          ? "重新开始水果店"
+          : isCampusChapter
+          ? "重新开始校园"
+          : isCafeChapter
+          ? "重新开始咖啡馆"
+          : "重新开始机场";
         const welcomeIntro = isZooChapter
           ? {
               label: "Zoo Trip",
@@ -5016,7 +5760,8 @@
               action: "Start Shopping",
               actionZh: "开始购物",
             }
-          : {
+          : isCampusChapter
+          ? {
               label: "Campus Trip",
               labelZh: "校园之旅",
               title: "Welcome to the campus!",
@@ -5025,10 +5770,32 @@
               zh: "今天你会走进校园，参观教室、图书馆、食堂和操场，并学习真实校园英语。",
               action: "Start Campus Trip",
               actionZh: "开始校园之旅",
+            }
+          : isCafeChapter
+          ? {
+              label: "Cafe Trip",
+              labelZh: "咖啡馆之旅",
+              title: "Welcome to the cafe!",
+              titleZh: "欢迎来到咖啡馆！",
+              text: "Today, you will walk into a cafe, read the board, request a drink, customize it, pick it up, find a table, and learn real cafe English.",
+              zh: "今天你会走进咖啡馆，看菜单牌、点饮品、选择冷热和杯型、取餐、找桌位，并学习真实咖啡馆英语。",
+              action: "Start Cafe Trip",
+              actionZh: "开始咖啡馆之旅",
+            }
+          : {
+              label: "Airport Trip",
+              labelZh: "机场之旅",
+              title: "Welcome to the airport!",
+              titleZh: "欢迎来到机场！",
+              text: "Today, you will enter the airport, check in, drop off luggage, pass security, find your boarding area, and learn real airport English.",
+              zh: "今天你会走进机场，办理值机、托运行李、通过安检、找到登机区域，并学习真实机场英语。",
+              action: "Start Airport Trip",
+              actionZh: "开始机场之旅",
             };
         const currentScene = activeScenes[currentIndex];
         const currentDialogue = currentScene.npc ? activeDialogues[currentScene.npc] : null;
         const viewport = useViewportSize();
+        const showLandscapePrompt = shouldShowLandscapePrompt(viewport);
         const isHotspotExpanded = expandedHotspotScenes.includes(currentScene.id);
         const maxPrimaryHotspots = viewport.width < 640 ? 4 : 5;
         const visibleHotspots = isHotspotExpanded
@@ -5132,6 +5899,50 @@
                 zh: `不错！你又认识了 ${exploredMoreCampusCount} 个校园词汇。`,
               }
             : null;
+        const currentMoreCafePage = moreCafePages[moreCafePageIndex];
+        const exploredMoreCafeCount = learnedMoreCafeWords.length;
+        const currentCafePageExploredCount = currentMoreCafePage.words.filter((word) =>
+          learnedMoreCafeWords.includes(word.id)
+        ).length;
+        const moreCafeReward =
+          exploredMoreCafeCount === moreCafeCount
+            ? {
+                text: "Amazing! You discovered all more cafe words.",
+                zh: "太厉害了！你探索了全部拓展咖啡馆词汇。",
+              }
+            : currentCafePageExploredCount === currentMoreCafePage.words.length
+            ? {
+                text: "Great explorer! You completed one cafe page.",
+                zh: "太棒了！你完成了一页咖啡馆词汇探索。",
+              }
+            : exploredMoreCafeCount >= 5
+            ? {
+                text: `Nice! You discovered ${exploredMoreCafeCount} more cafe words.`,
+                zh: `不错！你又认识了 ${exploredMoreCafeCount} 个咖啡馆词汇。`,
+              }
+            : null;
+        const currentMoreAirportPage = moreAirportPages[moreAirportPageIndex];
+        const exploredMoreAirportCount = learnedMoreAirportWords.length;
+        const currentAirportPageExploredCount = currentMoreAirportPage.words.filter((word) =>
+          learnedMoreAirportWords.includes(word.id)
+        ).length;
+        const moreAirportReward =
+          exploredMoreAirportCount === moreAirportCount
+            ? {
+                text: "Amazing! You discovered all more airport words.",
+                zh: "太厉害了！你探索了全部拓展机场词汇。",
+              }
+            : currentAirportPageExploredCount === currentMoreAirportPage.words.length
+            ? {
+                text: "Great explorer! You completed one airport page.",
+                zh: "太棒了！你完成了一页机场词汇探索。",
+              }
+            : exploredMoreAirportCount >= 5
+            ? {
+                text: `Nice! You discovered ${exploredMoreAirportCount} more airport words.`,
+                zh: `不错！你又认识了 ${exploredMoreAirportCount} 个机场词汇。`,
+              }
+            : null;
         const wordBookFilters = [
           { id: "all", en: "All", zh: "全部" },
           { id: "zoo", en: "Zoo", zh: "动物园" },
@@ -5230,6 +6041,32 @@
           };
         }
 
+        function makeMoreCafeWordBookEntry(word) {
+          return {
+            word: word.word,
+            zh: word.meaning,
+            phonetic: word.phonetic,
+            example: word.example,
+            exampleZh: word.translation,
+            scene: "Cafe / More Cafe Words",
+            type: "cafe",
+            addedAt: new Date().toISOString(),
+          };
+        }
+
+        function makeMoreAirportWordBookEntry(word) {
+          return {
+            word: word.word,
+            zh: word.meaning,
+            phonetic: word.phonetic,
+            example: word.example,
+            exampleZh: word.translation,
+            scene: "Airport / More Airport Words",
+            type: "travel",
+            addedAt: new Date().toISOString(),
+          };
+        }
+
         function isWordSaved(word) {
           const key = getWordKey(word);
           return savedWords.some((item) => getWordKey(item.word) === key);
@@ -5256,12 +6093,18 @@
           setSelectedMoreAnimal(null);
           setSelectedMoreFruit(null);
           setSelectedMoreCampusWord(null);
+          setSelectedMoreCafeWord(null);
+          setSelectedMoreAirportWord(null);
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
           setShowMoreFruitsChoice(false);
           setShowMoreFruitsBook(false);
           setShowMoreCampusChoice(false);
           setShowMoreCampusBook(false);
+          setShowMoreCafeChoice(false);
+          setShowMoreCafeBook(false);
+          setShowMoreAirportChoice(false);
+          setShowMoreAirportBook(false);
           setIsReviewingWordBook(false);
           setReviewRevealed(false);
           setReviewIndex(0);
@@ -5368,6 +6211,24 @@
           speakEnglish(word.word, 0.9, `more-campus-${word.id}-normal`);
         }
 
+        function openMoreCafeWord(word) {
+          setSelectedMoreCafeWord(word);
+          setLearnedMoreCafeWords((items) =>
+            items.includes(word.id) ? items : [...items, word.id]
+          );
+          rememberWord(word.word);
+          speakEnglish(word.word, 0.9, `more-cafe-${word.id}-normal`);
+        }
+
+        function openMoreAirportWord(word) {
+          setSelectedMoreAirportWord(word);
+          setLearnedMoreAirportWords((items) =>
+            items.includes(word.id) ? items : [...items, word.id]
+          );
+          rememberWord(word.word);
+          speakEnglish(word.word, 0.9, `more-airport-${word.id}-normal`);
+        }
+
         function finishZooTrip() {
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
@@ -5389,6 +6250,20 @@
           setShowEnding(true);
         }
 
+        function finishCafeTrip() {
+          setShowMoreCafeChoice(false);
+          setShowMoreCafeBook(false);
+          setSelectedMoreCafeWord(null);
+          setShowEnding(true);
+        }
+
+        function finishAirportTrip() {
+          setShowMoreAirportChoice(false);
+          setShowMoreAirportBook(false);
+          setSelectedMoreAirportWord(null);
+          setShowEnding(true);
+        }
+
         function enterZoo() {
           setSceneSelectHint("");
           setCurrentChapter("zoo");
@@ -5397,6 +6272,8 @@
           setSelectedMoreAnimal(null);
           setSelectedMoreFruit(null);
           setSelectedMoreCampusWord(null);
+          setSelectedMoreCafeWord(null);
+          setSelectedMoreAirportWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -5411,6 +6288,10 @@
           setShowMoreFruitsBook(false);
           setShowMoreCampusChoice(false);
           setShowMoreCampusBook(false);
+          setShowMoreCafeChoice(false);
+          setShowMoreCafeBook(false);
+          setShowMoreAirportChoice(false);
+          setShowMoreAirportBook(false);
           setShowWelcome(true);
           setWelcomeLeaving(false);
           setCurrentView("zoo");
@@ -5424,6 +6305,8 @@
           setSelectedMoreAnimal(null);
           setSelectedMoreFruit(null);
           setSelectedMoreCampusWord(null);
+          setSelectedMoreCafeWord(null);
+          setSelectedMoreAirportWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -5438,6 +6321,76 @@
           setShowMoreFruitsBook(false);
           setShowMoreCampusChoice(false);
           setShowMoreCampusBook(false);
+          setShowMoreCafeChoice(false);
+          setShowMoreCafeBook(false);
+          setShowMoreAirportChoice(false);
+          setShowMoreAirportBook(false);
+          setShowWelcome(true);
+          setWelcomeLeaving(false);
+          setCurrentView("zoo");
+        }
+
+        function enterCafe() {
+          setSceneSelectHint("");
+          setCurrentChapter("cafe");
+          setCurrentIndex(0);
+          setSelectedHotspot(null);
+          setSelectedMoreAnimal(null);
+          setSelectedMoreFruit(null);
+          setSelectedMoreCampusWord(null);
+          setSelectedMoreCafeWord(null);
+          setSelectedMoreAirportWord(null);
+          setDialogueReply(null);
+          setConversationDone([]);
+          setCompletedActions([]);
+          setLearnedHotspotKeys([]);
+          setLearnedWords([]);
+          setProgressHint("");
+          setAnimalEffect(null);
+          setShowEnding(false);
+          setShowMoreAnimalsChoice(false);
+          setShowMoreAnimalsBook(false);
+          setShowMoreFruitsChoice(false);
+          setShowMoreFruitsBook(false);
+          setShowMoreCampusChoice(false);
+          setShowMoreCampusBook(false);
+          setShowMoreCafeChoice(false);
+          setShowMoreCafeBook(false);
+          setShowMoreAirportChoice(false);
+          setShowMoreAirportBook(false);
+          setShowWelcome(true);
+          setWelcomeLeaving(false);
+          setCurrentView("zoo");
+        }
+
+        function enterAirport() {
+          setSceneSelectHint("");
+          setCurrentChapter("airport");
+          setCurrentIndex(0);
+          setSelectedHotspot(null);
+          setSelectedMoreAnimal(null);
+          setSelectedMoreFruit(null);
+          setSelectedMoreCampusWord(null);
+          setSelectedMoreCafeWord(null);
+          setSelectedMoreAirportWord(null);
+          setDialogueReply(null);
+          setConversationDone([]);
+          setCompletedActions([]);
+          setLearnedHotspotKeys([]);
+          setLearnedWords([]);
+          setProgressHint("");
+          setAnimalEffect(null);
+          setShowEnding(false);
+          setShowMoreAnimalsChoice(false);
+          setShowMoreAnimalsBook(false);
+          setShowMoreFruitsChoice(false);
+          setShowMoreFruitsBook(false);
+          setShowMoreCampusChoice(false);
+          setShowMoreCampusBook(false);
+          setShowMoreCafeChoice(false);
+          setShowMoreCafeBook(false);
+          setShowMoreAirportChoice(false);
+          setShowMoreAirportBook(false);
           setShowWelcome(true);
           setWelcomeLeaving(false);
           setCurrentView("zoo");
@@ -5451,6 +6404,8 @@
           setSelectedMoreAnimal(null);
           setSelectedMoreFruit(null);
           setSelectedMoreCampusWord(null);
+          setSelectedMoreCafeWord(null);
+          setSelectedMoreAirportWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -5465,6 +6420,10 @@
           setShowMoreFruitsBook(false);
           setShowMoreCampusChoice(false);
           setShowMoreCampusBook(false);
+          setShowMoreCafeChoice(false);
+          setShowMoreCafeBook(false);
+          setShowMoreAirportChoice(false);
+          setShowMoreAirportBook(false);
           setShowWelcome(true);
           setWelcomeLeaving(false);
           setCurrentView("zoo");
@@ -5503,15 +6462,21 @@
           setSelectedMoreAnimal(null);
           setSelectedMoreFruit(null);
           setSelectedMoreCampusWord(null);
+          setSelectedMoreCafeWord(null);
+          setSelectedMoreAirportWord(null);
           setDialogueReply(null);
           setProgressHint("");
           setShowEnding(false);
           setShowMoreAnimalsBook(false);
           setShowMoreFruitsBook(false);
           setShowMoreCampusBook(false);
+          setShowMoreCafeBook(false);
+          setShowMoreAirportBook(false);
           setShowMoreAnimalsChoice(isZooChapter);
           setShowMoreFruitsChoice(isFruitShopChapter);
           setShowMoreCampusChoice(isCampusChapter);
+          setShowMoreCafeChoice(isCafeChapter);
+          setShowMoreAirportChoice(isAirportChapter);
         }
 
         function walkForward() {
@@ -5544,6 +6509,8 @@
           setSelectedMoreAnimal(null);
           setSelectedMoreFruit(null);
           setSelectedMoreCampusWord(null);
+          setSelectedMoreCafeWord(null);
+          setSelectedMoreAirportWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -5551,6 +6518,8 @@
           setLearnedMoreAnimals([]);
           setLearnedMoreFruits([]);
           setLearnedMoreCampusWords([]);
+          setLearnedMoreCafeWords([]);
+          setLearnedMoreAirportWords([]);
           setLearnedWords([]);
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
@@ -5558,11 +6527,17 @@
           setShowMoreFruitsBook(false);
           setShowMoreCampusChoice(false);
           setShowMoreCampusBook(false);
+          setShowMoreCafeChoice(false);
+          setShowMoreCafeBook(false);
+          setShowMoreAirportChoice(false);
+          setShowMoreAirportBook(false);
           setMoreAnimalsPageIndex(0);
           setMoreFruitsPageIndex(0);
           setMoreCampusPageIndex(0);
+          setMoreCafePageIndex(0);
+          setMoreAirportPageIndex(0);
           setShowEnding(false);
-          setShowWelcome(isZooChapter || isCampusChapter);
+          setShowWelcome(isZooChapter || isCampusChapter || isCafeChapter || isAirportChapter);
           setWelcomeLeaving(false);
           setAnimalEffect(null);
         }
@@ -5790,6 +6765,7 @@
                   )}
                 </section>
               </div>
+              {showLandscapePrompt && <LandscapePrompt />}
             </main>
           );
         }
@@ -5932,6 +6908,7 @@
                   </div>
                 </div>
               )}
+              {showLandscapePrompt && <LandscapePrompt />}
             </main>
           );
         }
@@ -6046,6 +7023,10 @@
                               ? enterFruitShop
                               : scene.chapter === "campus"
                               ? enterCampus
+                              : scene.chapter === "cafe"
+                              ? enterCafe
+                              : scene.chapter === "airport"
+                              ? enterAirport
                               : enterZoo
                             : showComingSoon
                         }
@@ -6061,6 +7042,7 @@
                   ))}
                 </section>
               </div>
+              {showLandscapePrompt && <LandscapePrompt />}
             </main>
           );
         }
@@ -6107,6 +7089,22 @@
                       <div className="playful-leaf absolute left-[43%] top-[48%] h-3 w-5 rounded-sm bg-[#f2dfb0]/80"></div>
                       <div className="playful-leaf absolute left-[50%] top-[52%] h-3 w-5 rounded-sm bg-[#d8e8f3]/80 [animation-delay:0.12s]"></div>
                       <div className="playful-leaf absolute left-[57%] top-[46%] h-3 w-5 rounded-sm bg-[#f6d883]/75 [animation-delay:0.24s]"></div>
+                    </>
+                  )}
+                  {animalEffect?.effect?.startsWith("cafe") && (
+                    <>
+                      <div className="sunlit-sweep absolute left-[20%] top-0 h-full w-24 bg-[#f6d5a6]/14 blur-xl"></div>
+                      <div className="playful-leaf absolute left-[44%] top-[50%] h-3 w-5 rounded-full bg-[#d9a56a]/80"></div>
+                      <div className="playful-leaf absolute left-[51%] top-[54%] h-3 w-5 rounded-full bg-[#f4d39a]/78 [animation-delay:0.12s]"></div>
+                      <div className="playful-leaf absolute left-[58%] top-[47%] h-3 w-5 rounded-full bg-[#8d5a36]/72 [animation-delay:0.24s]"></div>
+                    </>
+                  )}
+                  {animalEffect?.effect?.startsWith("airport") && (
+                    <>
+                      <div className="sunlit-sweep absolute left-[18%] top-0 h-full w-24 bg-[#b9d9ff]/14 blur-xl"></div>
+                      <div className="playful-leaf absolute left-[44%] top-[49%] h-3 w-6 rounded-full bg-[#8fb7df]/80"></div>
+                      <div className="playful-leaf absolute left-[51%] top-[53%] h-3 w-6 rounded-full bg-[#f2d48a]/78 [animation-delay:0.12s]"></div>
+                      <div className="playful-leaf absolute left-[58%] top-[47%] h-3 w-6 rounded-full bg-[#d9e7f7]/72 [animation-delay:0.24s]"></div>
                     </>
                   )}
                 </div>
@@ -6340,12 +7338,18 @@
                   setSelectedMoreAnimal(null);
                   setSelectedMoreFruit(null);
                   setSelectedMoreCampusWord(null);
+                  setSelectedMoreCafeWord(null);
+                  setSelectedMoreAirportWord(null);
                   setShowMoreAnimalsChoice(false);
                   setShowMoreAnimalsBook(false);
                   setShowMoreFruitsChoice(false);
                   setShowMoreFruitsBook(false);
                   setShowMoreCampusChoice(false);
                   setShowMoreCampusBook(false);
+                  setShowMoreCafeChoice(false);
+                  setShowMoreCafeBook(false);
+                  setShowMoreAirportChoice(false);
+                  setShowMoreAirportBook(false);
                   setShowEnding(false);
                   setCurrentView("sceneSelect");
                 }}
@@ -7471,6 +8475,538 @@
               </div>
             )}
 
+            {showMoreCafeChoice && !showEnding && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 backdrop-blur-sm">
+                <div className="dialogue-enter w-full max-w-2xl rounded-3xl border border-white/18 bg-[#112319]/92 p-6 text-cream shadow-glow backdrop-blur-2xl">
+                  <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">
+                    More Cafe Words
+                  </p>
+                  <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">
+                    Want to discover more cafe words?
+                  </h2>
+                  <p className="mt-3 text-xl font-bold text-cream/82">
+                    想认识更多咖啡馆词汇吗？
+                  </p>
+                  <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                    <button
+                      onClick={() => {
+                        setShowMoreCafeChoice(false);
+                        setShowMoreCafeBook(true);
+                        setMoreCafePageIndex(0);
+                      }}
+                      className="rounded-2xl bg-banana px-5 py-4 font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                    >
+                      <ButtonCopy en="Yes, show me more cafe words." zh="是的，我想看看更多咖啡馆词汇。" />
+                    </button>
+                    <button
+                      onClick={finishCafeTrip}
+                      className="rounded-2xl border border-white/18 bg-white/12 px-5 py-4 font-black text-white transition hover:bg-white/22 active:scale-[0.99]"
+                    >
+                      <ButtonCopy en="No, finish today's cafe trip." zh="不用了，结束今天的咖啡馆之旅。" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {showMoreCafeBook && !showEnding && (
+              <div className="fixed inset-0 z-50 overflow-auto bg-[#17251c]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
+                <div className="mx-auto max-w-6xl">
+                  <header className="flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">
+                        More Cafe Words
+                      </p>
+                      <h2 className="mt-2 text-3xl font-black text-white sm:text-5xl">
+                        More Cafe Words
+                      </h2>
+                      <p className="mt-2 text-lg font-bold text-cream/78">
+                        更多咖啡馆词汇
+                      </p>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <div className="rounded-2xl border border-white/14 bg-white/10 px-4 py-3">
+                        <p className="text-[10px] font-black uppercase tracking-[0.18em] text-banana">
+                          Explored
+                        </p>
+                        <p className="mt-1 text-2xl font-black text-white">
+                          {exploredMoreCafeCount}/{moreCafeCount}
+                        </p>
+                        <p className="text-xs font-bold text-cream/70">已探索</p>
+                      </div>
+                      <button
+                        onClick={finishCafeTrip}
+                        className="rounded-full bg-banana px-5 py-3 font-black text-ink shadow-label transition hover:bg-[#ffc83f] active:scale-[0.99]"
+                      >
+                        <ButtonCopy en="Finish Cafe Trip" zh="结束咖啡馆之旅" />
+                      </button>
+                    </div>
+                  </header>
+
+                  {moreCafeReward && (
+                    <div className="dialogue-enter mt-4 rounded-2xl border border-banana/35 bg-[#5f3b2d]/62 px-4 py-3 shadow-label backdrop-blur-[3px]">
+                      <p className="font-black text-white">{moreCafeReward.text}</p>
+                      <p className="mt-1 text-sm font-bold text-cream/76">{moreCafeReward.zh}</p>
+                    </div>
+                  )}
+
+                  <div className="mt-5 flex gap-2 overflow-x-auto pb-1">
+                    {moreCafePages.map((page, index) => {
+                      const active = index === moreCafePageIndex;
+                      return (
+                        <button
+                          key={page.id}
+                          onClick={() => {
+                            setMoreCafePageIndex(index);
+                            setSelectedMoreCafeWord(null);
+                          }}
+                          className={`min-w-[190px] rounded-2xl px-4 py-3 text-left font-black shadow-label transition hover:-translate-y-0.5 active:translate-y-0 ${
+                            active ? "bg-[#b97848] text-white" : "border border-white/16 bg-white/10 text-cream hover:bg-white/18"
+                          }`}
+                        >
+                          <span className="block text-sm">{page.title}</span>
+                          <span className="mt-1 block text-xs font-bold opacity-75">{page.zh}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  <section className="mt-5 rounded-3xl border border-white/14 bg-nightglass p-4 shadow-glow backdrop-blur-xl">
+                    <div className="flex flex-wrap items-end justify-between gap-3">
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.22em] text-banana">
+                          Page {moreCafePageIndex + 1}/3
+                        </p>
+                        <h3 className="mt-1 text-2xl font-black text-white">
+                          {currentMoreCafePage.title}
+                          <span className="ml-2 text-banana">{currentMoreCafePage.zh}</span>
+                        </h3>
+                      </div>
+                      <p className="text-sm font-black text-cream/75">
+                        {currentCafePageExploredCount}/12 learned · 已学习
+                      </p>
+                    </div>
+
+                    <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                      {currentMoreCafePage.words.map((word) => {
+                        const learned = learnedMoreCafeWords.includes(word.id);
+                        return (
+                          <button
+                            key={word.id}
+                            onClick={() => openMoreCafeWord(word)}
+                            className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
+                              learned
+                                ? "border-[#e3b071]/55 bg-[#4a3329]/72"
+                                : "border-white/14 bg-white/10 hover:border-banana/45 hover:bg-white/16"
+                            }`}
+                          >
+                            <div className="flex items-start gap-3">
+                              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-banana/35 bg-[#4b3024]/72 text-xl font-black text-banana transition group-hover:scale-105">
+                                {word.word.slice(0, 1).toUpperCase()}
+                              </span>
+                              <span className="min-w-0">
+                                <span className="block text-lg font-black leading-tight text-white">
+                                  {word.word}
+                                </span>
+                                <span className="mt-1 block text-sm font-bold text-cream/72">
+                                  {word.meaning}
+                                </span>
+                              </span>
+                            </div>
+                            <div className="mt-3 flex items-center justify-between gap-2">
+                              <span className="text-xs font-black text-banana">{word.phonetic}</span>
+                              {learned && (
+                                <span className="rounded-full bg-banana/90 px-2 py-1 text-[10px] font-black uppercase text-ink">
+                                  Learned · 已学习
+                                </span>
+                              )}
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </section>
+                </div>
+
+                {selectedMoreCafeWord && (
+                  <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/92 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
+                    <div className="flex items-start justify-between gap-3 border-b border-white/12 p-5">
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
+                          Cafe Word
+                        </p>
+                        <h2 className="mt-2 text-4xl font-black leading-tight text-white">
+                          {selectedMoreCafeWord.word}
+                        </h2>
+                        <p className="mt-2 text-2xl font-extrabold text-banana">
+                          {selectedMoreCafeWord.phonetic}
+                        </p>
+                      </div>
+                      <button
+                        onClick={() => setSelectedMoreCafeWord(null)}
+                        className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/12 text-2xl font-black text-white transition hover:bg-white/22 active:scale-95"
+                        aria-label="Close 关闭"
+                        title="Close / 关闭"
+                      >
+                        ×
+                      </button>
+                    </div>
+
+                    <div className="flex-1 overflow-auto p-5">
+                      <div className="rounded-2xl border border-white/12 bg-white/10 p-4">
+                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-banana">
+                          中文意思
+                        </p>
+                        <p className="mt-2 text-2xl font-black text-white">
+                          {selectedMoreCafeWord.meaning}
+                        </p>
+                      </div>
+
+                      <div className="mt-4 rounded-2xl border border-white/12 bg-black/18 p-4">
+                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-coral">
+                          Example
+                        </p>
+                        <p className="mt-2 text-2xl font-black leading-9 text-white">
+                          {selectedMoreCafeWord.example}
+                        </p>
+                        <p className="mt-2 text-lg font-bold leading-8 text-cream/78">
+                          {selectedMoreCafeWord.translation}
+                        </p>
+                      </div>
+
+                      <div className="mt-5 grid grid-cols-2 gap-3">
+                        <button
+                          onClick={() => speakEnglish(selectedMoreCafeWord.word, 0.9, `more-cafe-${selectedMoreCafeWord.id}-normal`)}
+                          className="rounded-2xl bg-banana px-4 py-3 text-base font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                        >
+                          <span className="inline-flex items-center justify-center gap-2">
+                            {playingKey === `more-cafe-${selectedMoreCafeWord.id}-normal` && <SoundBars />}
+                            <ButtonCopy en="Normal" zh="正常语速" />
+                          </span>
+                        </button>
+                        <button
+                          onClick={() => speakEnglish(selectedMoreCafeWord.word, 0.65, `more-cafe-${selectedMoreCafeWord.id}-slow`)}
+                          className="rounded-2xl border border-banana/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"
+                        >
+                          <span className="inline-flex items-center justify-center gap-2">
+                            {playingKey === `more-cafe-${selectedMoreCafeWord.id}-slow` && <SoundBars />}
+                            <ButtonCopy en="Slow" zh="慢速朗读" />
+                          </span>
+                        </button>
+                      </div>
+
+                      <button
+                        onClick={() => speakEnglish(selectedMoreCafeWord.example, 0.86, `more-cafe-${selectedMoreCafeWord.id}-sentence`)}
+                        className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
+                      >
+                        <span className="inline-flex items-center justify-center gap-2">
+                          {playingKey === `more-cafe-${selectedMoreCafeWord.id}-sentence` && <SoundBars />}
+                          <ButtonCopy en="Play Sentence" zh="朗读例句" />
+                        </span>
+                      </button>
+
+                      <button
+                        onClick={() => saveWordEntry(makeMoreCafeWordBookEntry(selectedMoreCafeWord))}
+                        disabled={isWordSaved(selectedMoreCafeWord.word)}
+                        className={`mt-3 w-full rounded-2xl px-4 py-3 text-base font-black shadow-label transition active:scale-[0.99] ${
+                          isWordSaved(selectedMoreCafeWord.word)
+                            ? "bg-coral text-white"
+                            : "bg-white/12 text-white hover:bg-white/22"
+                        }`}
+                      >
+                        <ButtonCopy
+                          en={isWordSaved(selectedMoreCafeWord.word) ? "Added to Word Book" : "Add to Word Book"}
+                          zh={isWordSaved(selectedMoreCafeWord.word) ? "已加入生词本" : "加入生词本"}
+                        />
+                      </button>
+
+                      {isWordSaved(selectedMoreCafeWord.word) && (
+                        <button
+                          onClick={() => removeWordEntry(selectedMoreCafeWord.word)}
+                          className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
+                        >
+                          <ButtonCopy en="Remove from Word Book" zh="移出生词本" />
+                        </button>
+                      )}
+
+                      <button
+                        onClick={finishCafeTrip}
+                        className="mt-6 w-full rounded-2xl bg-banana px-4 py-4 text-lg font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                      >
+                        <ButtonCopy en="Finish Cafe Trip" zh="结束咖啡馆之旅" />
+                      </button>
+                    </div>
+                  </aside>
+                )}
+              </div>
+            )}
+
+            {showMoreAirportChoice && !showEnding && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 backdrop-blur-sm">
+                <div className="dialogue-enter w-full max-w-2xl rounded-3xl border border-white/18 bg-[#112319]/92 p-6 text-cream shadow-glow backdrop-blur-2xl">
+                  <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">
+                    More Airport Words
+                  </p>
+                  <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">
+                    Want to discover more airport words?
+                  </h2>
+                  <p className="mt-3 text-xl font-bold text-cream/82">
+                    想认识更多机场词汇吗？
+                  </p>
+                  <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                    <button
+                      onClick={() => {
+                        setShowMoreAirportChoice(false);
+                        setShowMoreAirportBook(true);
+                        setMoreAirportPageIndex(0);
+                      }}
+                      className="rounded-2xl bg-banana px-5 py-4 font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                    >
+                      <ButtonCopy en="Yes, show me more airport words." zh="是的，我想看看更多机场词汇。" />
+                    </button>
+                    <button
+                      onClick={finishAirportTrip}
+                      className="rounded-2xl border border-white/18 bg-white/12 px-5 py-4 font-black text-white transition hover:bg-white/22 active:scale-[0.99]"
+                    >
+                      <ButtonCopy en="No, finish today's airport trip." zh="不用了，结束今天的机场之旅。" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {showMoreAirportBook && !showEnding && (
+              <div className="fixed inset-0 z-50 overflow-auto bg-[#162230]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
+                <div className="mx-auto max-w-6xl">
+                  <header className="flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">
+                        More Airport Words
+                      </p>
+                      <h2 className="mt-2 text-3xl font-black text-white sm:text-5xl">
+                        More Airport Words
+                      </h2>
+                      <p className="mt-2 text-lg font-bold text-cream/78">
+                        更多机场词汇
+                      </p>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <div className="rounded-2xl border border-white/14 bg-white/10 px-4 py-3">
+                        <p className="text-[10px] font-black uppercase tracking-[0.18em] text-banana">
+                          Explored
+                        </p>
+                        <p className="mt-1 text-2xl font-black text-white">
+                          {exploredMoreAirportCount}/{moreAirportCount}
+                        </p>
+                        <p className="text-xs font-bold text-cream/70">已探索</p>
+                      </div>
+                      <button
+                        onClick={finishAirportTrip}
+                        className="rounded-full bg-banana px-5 py-3 font-black text-ink shadow-label transition hover:bg-[#ffc83f] active:scale-[0.99]"
+                      >
+                        <ButtonCopy en="Finish Airport Trip" zh="结束机场之旅" />
+                      </button>
+                    </div>
+                  </header>
+
+                  {moreAirportReward && (
+                    <div className="dialogue-enter mt-4 rounded-2xl border border-banana/35 bg-[#264765]/62 px-4 py-3 shadow-label backdrop-blur-[3px]">
+                      <p className="font-black text-white">{moreAirportReward.text}</p>
+                      <p className="mt-1 text-sm font-bold text-cream/76">{moreAirportReward.zh}</p>
+                    </div>
+                  )}
+
+                  <div className="mt-5 flex gap-2 overflow-x-auto pb-1">
+                    {moreAirportPages.map((page, index) => {
+                      const active = index === moreAirportPageIndex;
+                      return (
+                        <button
+                          key={page.id}
+                          onClick={() => {
+                            setMoreAirportPageIndex(index);
+                            setSelectedMoreAirportWord(null);
+                          }}
+                          className={`min-w-[190px] rounded-2xl px-4 py-3 text-left font-black shadow-label transition hover:-translate-y-0.5 active:translate-y-0 ${
+                            active ? "bg-[#4f7fa9] text-white" : "border border-white/16 bg-white/10 text-cream hover:bg-white/18"
+                          }`}
+                        >
+                          <span className="block text-sm">{page.title}</span>
+                          <span className="mt-1 block text-xs font-bold opacity-75">{page.zh}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  <section className="mt-5 rounded-3xl border border-white/14 bg-nightglass p-4 shadow-glow backdrop-blur-xl">
+                    <div className="flex flex-wrap items-end justify-between gap-3">
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.22em] text-banana">
+                          Page {moreAirportPageIndex + 1}/3
+                        </p>
+                        <h3 className="mt-1 text-2xl font-black text-white">
+                          {currentMoreAirportPage.title}
+                          <span className="ml-2 text-banana">{currentMoreAirportPage.zh}</span>
+                        </h3>
+                      </div>
+                      <p className="text-sm font-black text-cream/75">
+                        {currentAirportPageExploredCount}/12 learned · 已学习
+                      </p>
+                    </div>
+
+                    <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                      {currentMoreAirportPage.words.map((word) => {
+                        const learned = learnedMoreAirportWords.includes(word.id);
+                        return (
+                          <button
+                            key={word.id}
+                            onClick={() => openMoreAirportWord(word)}
+                            className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
+                              learned
+                                ? "border-[#9ec7ee]/55 bg-[#253a52]/72"
+                                : "border-white/14 bg-white/10 hover:border-banana/45 hover:bg-white/16"
+                            }`}
+                          >
+                            <div className="flex items-start gap-3">
+                              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-banana/35 bg-[#263d56]/72 text-xl font-black text-banana transition group-hover:scale-105">
+                                {word.word.slice(0, 1).toUpperCase()}
+                              </span>
+                              <span className="min-w-0">
+                                <span className="block text-lg font-black leading-tight text-white">
+                                  {word.word}
+                                </span>
+                                <span className="mt-1 block text-sm font-bold text-cream/72">
+                                  {word.meaning}
+                                </span>
+                              </span>
+                            </div>
+                            <div className="mt-3 flex items-center justify-between gap-2">
+                              <span className="text-xs font-black text-banana">{word.phonetic}</span>
+                              {learned && (
+                                <span className="rounded-full bg-banana/90 px-2 py-1 text-[10px] font-black uppercase text-ink">
+                                  Learned · 已学习
+                                </span>
+                              )}
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </section>
+                </div>
+
+                {selectedMoreAirportWord && (
+                  <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/92 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
+                    <div className="flex items-start justify-between gap-3 border-b border-white/12 p-5">
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
+                          Airport Word
+                        </p>
+                        <h2 className="mt-2 text-4xl font-black leading-tight text-white">
+                          {selectedMoreAirportWord.word}
+                        </h2>
+                        <p className="mt-2 text-2xl font-extrabold text-banana">
+                          {selectedMoreAirportWord.phonetic}
+                        </p>
+                      </div>
+                      <button
+                        onClick={() => setSelectedMoreAirportWord(null)}
+                        className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/12 text-2xl font-black text-white transition hover:bg-white/22 active:scale-95"
+                        aria-label="Close 关闭"
+                        title="Close / 关闭"
+                      >
+                        ×
+                      </button>
+                    </div>
+
+                    <div className="flex-1 overflow-auto p-5">
+                      <div className="rounded-2xl border border-white/12 bg-white/10 p-4">
+                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-banana">
+                          中文意思
+                        </p>
+                        <p className="mt-2 text-2xl font-black text-white">
+                          {selectedMoreAirportWord.meaning}
+                        </p>
+                      </div>
+
+                      <div className="mt-4 rounded-2xl border border-white/12 bg-black/18 p-4">
+                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-coral">
+                          Example
+                        </p>
+                        <p className="mt-2 text-2xl font-black leading-9 text-white">
+                          {selectedMoreAirportWord.example}
+                        </p>
+                        <p className="mt-2 text-lg font-bold leading-8 text-cream/78">
+                          {selectedMoreAirportWord.translation}
+                        </p>
+                      </div>
+
+                      <div className="mt-5 grid grid-cols-2 gap-3">
+                        <button
+                          onClick={() => speakEnglish(selectedMoreAirportWord.word, 0.9, `more-airport-${selectedMoreAirportWord.id}-normal`)}
+                          className="rounded-2xl bg-banana px-4 py-3 text-base font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                        >
+                          <span className="inline-flex items-center justify-center gap-2">
+                            {playingKey === `more-airport-${selectedMoreAirportWord.id}-normal` && <SoundBars />}
+                            <ButtonCopy en="Normal" zh="正常语速" />
+                          </span>
+                        </button>
+                        <button
+                          onClick={() => speakEnglish(selectedMoreAirportWord.word, 0.65, `more-airport-${selectedMoreAirportWord.id}-slow`)}
+                          className="rounded-2xl border border-banana/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"
+                        >
+                          <span className="inline-flex items-center justify-center gap-2">
+                            {playingKey === `more-airport-${selectedMoreAirportWord.id}-slow` && <SoundBars />}
+                            <ButtonCopy en="Slow" zh="慢速朗读" />
+                          </span>
+                        </button>
+                      </div>
+
+                      <button
+                        onClick={() => speakEnglish(selectedMoreAirportWord.example, 0.86, `more-airport-${selectedMoreAirportWord.id}-sentence`)}
+                        className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
+                      >
+                        <span className="inline-flex items-center justify-center gap-2">
+                          {playingKey === `more-airport-${selectedMoreAirportWord.id}-sentence` && <SoundBars />}
+                          <ButtonCopy en="Play Sentence" zh="朗读例句" />
+                        </span>
+                      </button>
+
+                      <button
+                        onClick={() => saveWordEntry(makeMoreAirportWordBookEntry(selectedMoreAirportWord))}
+                        disabled={isWordSaved(selectedMoreAirportWord.word)}
+                        className={`mt-3 w-full rounded-2xl px-4 py-3 text-base font-black shadow-label transition active:scale-[0.99] ${
+                          isWordSaved(selectedMoreAirportWord.word)
+                            ? "bg-coral text-white"
+                            : "bg-white/12 text-white hover:bg-white/22"
+                        }`}
+                      >
+                        <ButtonCopy
+                          en={isWordSaved(selectedMoreAirportWord.word) ? "Added to Word Book" : "Add to Word Book"}
+                          zh={isWordSaved(selectedMoreAirportWord.word) ? "已加入生词本" : "加入生词本"}
+                        />
+                      </button>
+
+                      {isWordSaved(selectedMoreAirportWord.word) && (
+                        <button
+                          onClick={() => removeWordEntry(selectedMoreAirportWord.word)}
+                          className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
+                        >
+                          <ButtonCopy en="Remove from Word Book" zh="移出生词本" />
+                        </button>
+                      )}
+
+                      <button
+                        onClick={finishAirportTrip}
+                        className="mt-6 w-full rounded-2xl bg-banana px-4 py-4 text-lg font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                      >
+                        <ButtonCopy en="Finish Airport Trip" zh="结束机场之旅" />
+                      </button>
+                    </div>
+                  </aside>
+                )}
+              </div>
+            )}
+
             {showEnding && (
               <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 backdrop-blur-sm">
                 <div className="dialogue-enter max-h-[88vh] w-full max-w-3xl overflow-auto rounded-3xl border border-white/18 bg-[#112319]/92 p-6 text-cream shadow-glow backdrop-blur-2xl">
@@ -7538,6 +9074,7 @@
                 </div>
               </div>
             )}
+            {showLandscapePrompt && <LandscapePrompt />}
           </main>
         );
       }
