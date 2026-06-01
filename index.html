@@ -2439,6 +2439,670 @@
         },
       ];
 
+      const campusScenes = [
+        {
+          id: "campusEntrance",
+          title: "Campus Entrance",
+          zh: "校园入口",
+          short: "入口",
+          bg: "assets/campus-entrance-bg.png",
+          bgStyle: "linear-gradient(180deg, #a8d8f2 0%, #f7dfaa 45%, #466f49 100%)",
+          npc: "campusStudent",
+          coreWord: "campus",
+          intro: {
+            text: "You arrive at the campus entrance. Students are walking into the courtyard.",
+            zh: "你来到校园入口，学生们正走进庭院。",
+          },
+          hotspots: [
+            {
+              id: "campus",
+              word: "campus",
+              phonetic: "/ˈkæmpəs/",
+              meaning: "校园",
+              example: "The campus is quiet in the morning.",
+              translation: "早上的校园很安静。",
+              label: "campus",
+              zh: "校园",
+              x: 57,
+              y: 42,
+              offset: { x: -42, y: -22, mobileX: -22, mobileY: -18 },
+            },
+            {
+              id: "entrance",
+              word: "entrance",
+              phonetic: "/ˈentrəns/",
+              meaning: "入口",
+              example: "The entrance is next to the courtyard.",
+              translation: "入口在庭院旁边。",
+              label: "entrance",
+              zh: "入口",
+              x: 50,
+              y: 57,
+              offset: { x: 36, y: -12, mobileX: 18, mobileY: -10 },
+            },
+            {
+              id: "courtyard",
+              word: "courtyard",
+              phonetic: "/ˈkɔːrtjɑːrd/",
+              meaning: "庭院",
+              example: "Students meet in the courtyard.",
+              translation: "学生们在庭院见面。",
+              label: "courtyard",
+              zh: "庭院",
+              x: 55,
+              y: 72,
+              offset: { x: 34, y: -16, mobileX: 18, mobileY: -12 },
+            },
+            {
+              id: "schedule",
+              word: "schedule",
+              phonetic: "/ˈskedʒuːl/",
+              meaning: "课程表，日程",
+              example: "I check my schedule before class.",
+              translation: "上课前我查看课程表。",
+              label: "schedule",
+              zh: "课程表",
+              x: 13,
+              y: 55,
+              offset: { x: -30, y: 18, mobileX: -16, mobileY: 12 },
+            },
+            {
+              id: "noticeBoard",
+              word: "notice board",
+              phonetic: "/ˈnoʊtɪs bɔːrd/",
+              meaning: "公告栏",
+              example: "The notice board shows school news.",
+              translation: "公告栏展示学校消息。",
+              label: "notice board",
+              zh: "公告栏",
+              x: 88,
+              y: 54,
+              offset: { x: -48, y: -16, mobileX: -24, mobileY: -12 },
+            },
+            {
+              id: "uniform",
+              word: "uniform",
+              phonetic: "/ˈjuːnɪfɔːrm/",
+              meaning: "校服",
+              example: "The student is wearing a uniform.",
+              translation: "那个学生穿着校服。",
+              label: "uniform",
+              zh: "校服",
+              x: 74,
+              y: 67,
+              offset: { x: -34, y: -18, mobileX: -18, mobileY: -14 },
+            },
+            {
+              id: "enter",
+              word: "enter",
+              type: "action",
+              actionMessageEn: "You enter the campus and start your school day.",
+              actionMessageZh: "你走进校园，开始一天的校园生活。",
+              actionEffect: "campusEnter",
+              actionDuration: 2600,
+              phonetic: "/ˈentər/",
+              meaning: "进入",
+              example: "We enter the campus together.",
+              translation: "我们一起进入校园。",
+              label: "enter",
+              zh: "进入",
+              x: 52,
+              y: 64,
+              offset: { x: -42, y: 16, mobileX: -20, mobileY: 12 },
+            },
+          ],
+        },
+        {
+          id: "classroom",
+          title: "Classroom",
+          zh: "教室",
+          short: "教室",
+          bg: "assets/campus-classroom-bg.png",
+          bgStyle: "linear-gradient(180deg, #f0d7ae 0%, #d9b885 58%, #53392a 100%)",
+          npc: "teacher",
+          coreWord: "classroom",
+          intro: {
+            text: "You walk into a bright classroom. The teacher is ready to begin the lesson.",
+            zh: "你走进一间明亮的教室，老师准备开始上课。",
+          },
+          hotspots: [
+            {
+              id: "classroom",
+              word: "classroom",
+              phonetic: "/ˈklæsruːm/",
+              meaning: "教室",
+              example: "The classroom is bright and clean.",
+              translation: "教室明亮又干净。",
+              label: "classroom",
+              zh: "教室",
+              x: 27,
+              y: 45,
+              offset: { x: -46, y: -18, mobileX: -22, mobileY: -14 },
+            },
+            {
+              id: "desk",
+              word: "desk",
+              phonetic: "/desk/",
+              meaning: "课桌",
+              example: "My notebook is on the desk.",
+              translation: "我的笔记本在课桌上。",
+              label: "desk",
+              zh: "课桌",
+              x: 42,
+              y: 73,
+              offset: { x: -30, y: -18, mobileX: -16, mobileY: -14 },
+            },
+            {
+              id: "whiteboard",
+              word: "whiteboard",
+              phonetic: "/ˈwaɪtbɔːrd/",
+              meaning: "白板",
+              example: "The teacher writes on the whiteboard.",
+              translation: "老师在白板上写字。",
+              label: "whiteboard",
+              zh: "白板",
+              x: 50,
+              y: 28,
+              offset: { x: 44, y: -10, mobileX: 20, mobileY: -8 },
+            },
+            {
+              id: "notebook",
+              word: "notebook",
+              phonetic: "/ˈnoʊtbʊk/",
+              meaning: "笔记本",
+              example: "I write new words in my notebook.",
+              translation: "我把新单词写在笔记本里。",
+              label: "notebook",
+              zh: "笔记本",
+              x: 50,
+              y: 81,
+              offset: { x: 40, y: -18, mobileX: 20, mobileY: -14 },
+            },
+            {
+              id: "lesson",
+              word: "lesson",
+              phonetic: "/ˈlesən/",
+              meaning: "课程",
+              example: "Today's lesson is about greetings.",
+              translation: "今天的课程是关于问候语。",
+              label: "lesson",
+              zh: "课程",
+              x: 68,
+              y: 42,
+              offset: { x: 36, y: -16, mobileX: 18, mobileY: -12 },
+            },
+            {
+              id: "question",
+              word: "question",
+              phonetic: "/ˈkwestʃən/",
+              meaning: "问题",
+              example: "I have a question for the teacher.",
+              translation: "我有一个问题想问老师。",
+              label: "question",
+              zh: "问题",
+              x: 84,
+              y: 25,
+              offset: { x: -44, y: 12, mobileX: -22, mobileY: 8 },
+            },
+            {
+              id: "answer",
+              word: "answer",
+              type: "action",
+              actionMessageEn: "Great! You answered a question in class.",
+              actionMessageZh: "太棒了！你在课堂上回答了一个问题。",
+              actionEffect: "campusAnswer",
+              actionDuration: 2600,
+              phonetic: "/ˈænsər/",
+              meaning: "回答",
+              example: "I answer the teacher's question.",
+              translation: "我回答老师的问题。",
+              label: "answer",
+              zh: "回答",
+              x: 88,
+              y: 23,
+              offset: { x: -52, y: 30, mobileX: -24, mobileY: 18 },
+            },
+          ],
+        },
+        {
+          id: "library",
+          title: "Library",
+          zh: "图书馆",
+          short: "图书馆",
+          bg: "assets/campus-library-bg.png",
+          bgStyle: "linear-gradient(180deg, #d9c7a3 0%, #856346 56%, #2b251f 100%)",
+          npc: "librarian",
+          coreWord: "library",
+          intro: {
+            text: "You step into the library. It is quiet, and bookshelves surround the reading table.",
+            zh: "你走进图书馆，这里很安静，书架围绕着阅读桌。",
+          },
+          hotspots: [
+            {
+              id: "library",
+              word: "library",
+              phonetic: "/ˈlaɪbreri/",
+              meaning: "图书馆",
+              example: "The library is a quiet place to study.",
+              translation: "图书馆是安静学习的地方。",
+              label: "library",
+              zh: "图书馆",
+              x: 48,
+              y: 27,
+              offset: { x: -42, y: -18, mobileX: -20, mobileY: -14 },
+            },
+            {
+              id: "bookshelf",
+              word: "bookshelf",
+              phonetic: "/ˈbʊkʃelf/",
+              meaning: "书架",
+              example: "The books are on the bookshelf.",
+              translation: "书在书架上。",
+              label: "bookshelf",
+              zh: "书架",
+              x: 21,
+              y: 40,
+              offset: { x: 28, y: -14, mobileX: 14, mobileY: -10 },
+            },
+            {
+              id: "dictionary",
+              word: "dictionary",
+              phonetic: "/ˈdɪkʃəneri/",
+              meaning: "词典",
+              example: "I use a dictionary to learn words.",
+              translation: "我用词典学习单词。",
+              label: "dictionary",
+              zh: "词典",
+              x: 27,
+              y: 68,
+              offset: { x: 34, y: -16, mobileX: 18, mobileY: -12 },
+            },
+            {
+              id: "page",
+              word: "page",
+              phonetic: "/peɪdʒ/",
+              meaning: "页",
+              example: "Please open the book to this page.",
+              translation: "请把书翻到这一页。",
+              label: "page",
+              zh: "页",
+              x: 46,
+              y: 75,
+              offset: { x: -34, y: -14, mobileX: -18, mobileY: -10 },
+            },
+            {
+              id: "title",
+              word: "title",
+              phonetic: "/ˈtaɪtəl/",
+              meaning: "标题，书名",
+              example: "The title is easy to read.",
+              translation: "这个标题很容易读。",
+              label: "title",
+              zh: "标题",
+              x: 47,
+              y: 67,
+              offset: { x: 28, y: 20, mobileX: 14, mobileY: 14 },
+            },
+            {
+              id: "libraryCard",
+              word: "library card",
+              phonetic: "/ˈlaɪbreri kɑːrd/",
+              meaning: "借书卡",
+              example: "I use my library card to borrow books.",
+              translation: "我用借书卡借书。",
+              label: "library card",
+              zh: "借书卡",
+              x: 78,
+              y: 37,
+              offset: { x: -42, y: -18, mobileX: -22, mobileY: -14 },
+            },
+            {
+              id: "borrow",
+              word: "borrow",
+              type: "action",
+              actionMessageEn: "Nice! You borrowed a book from the library.",
+              actionMessageZh: "不错！你从图书馆借到了一本书。",
+              actionEffect: "campusBorrow",
+              actionDuration: 2600,
+              phonetic: "/ˈbɑːroʊ/",
+              meaning: "借",
+              example: "I borrow a book from the library.",
+              translation: "我从图书馆借了一本书。",
+              label: "borrow",
+              zh: "借书",
+              x: 77,
+              y: 48,
+              offset: { x: -46, y: 18, mobileX: -22, mobileY: 14 },
+            },
+          ],
+        },
+        {
+          id: "cafeteria",
+          title: "Cafeteria",
+          zh: "食堂",
+          short: "食堂",
+          bg: "assets/campus-cafeteria-bg.png",
+          bgStyle: "linear-gradient(180deg, #f3d38d 0%, #c28d58 55%, #3d4c36 100%)",
+          npc: "cafeteriaStaff",
+          coreWord: "cafeteria",
+          intro: {
+            text: "It is lunchtime. You enter the cafeteria and look at today's menu.",
+            zh: "午餐时间到了，你走进食堂，看着今天的菜单。",
+          },
+          hotspots: [
+            {
+              id: "cafeteria",
+              word: "cafeteria",
+              phonetic: "/ˌkæfəˈtɪriə/",
+              meaning: "食堂",
+              example: "The cafeteria is busy at lunch time.",
+              translation: "午餐时间食堂很忙。",
+              label: "cafeteria",
+              zh: "食堂",
+              x: 32,
+              y: 36,
+              offset: { x: -46, y: -18, mobileX: -22, mobileY: -14 },
+            },
+            {
+              id: "tray",
+              word: "tray",
+              phonetic: "/treɪ/",
+              meaning: "托盘",
+              example: "I put my lunch on the tray.",
+              translation: "我把午餐放在托盘上。",
+              label: "tray",
+              zh: "托盘",
+              x: 45,
+              y: 80,
+              offset: { x: -34, y: -16, mobileX: -18, mobileY: -12 },
+            },
+            {
+              id: "menu",
+              word: "menu",
+              phonetic: "/ˈmenjuː/",
+              meaning: "菜单",
+              example: "The menu shows today's food.",
+              translation: "菜单展示今天的食物。",
+              label: "menu",
+              zh: "菜单",
+              x: 79,
+              y: 24,
+              offset: { x: -44, y: 8, mobileX: -22, mobileY: 6 },
+            },
+            {
+              id: "lunch",
+              word: "lunch",
+              phonetic: "/lʌntʃ/",
+              meaning: "午餐",
+              example: "We eat lunch in the cafeteria.",
+              translation: "我们在食堂吃午餐。",
+              label: "lunch",
+              zh: "午餐",
+              x: 55,
+              y: 79,
+              offset: { x: -34, y: -18, mobileX: -18, mobileY: -14 },
+            },
+            {
+              id: "soup",
+              word: "soup",
+              phonetic: "/suːp/",
+              meaning: "汤",
+              example: "The soup is warm.",
+              translation: "汤是热的。",
+              label: "soup",
+              zh: "汤",
+              x: 36,
+              y: 78,
+              offset: { x: -38, y: -22, mobileX: -20, mobileY: -16 },
+            },
+            {
+              id: "seat",
+              word: "seat",
+              phonetic: "/siːt/",
+              meaning: "座位",
+              example: "I find a seat near my classmate.",
+              translation: "我在同学旁边找了个座位。",
+              label: "seat",
+              zh: "座位",
+              x: 18,
+              y: 60,
+              offset: { x: 36, y: -18, mobileX: 18, mobileY: -14 },
+            },
+            {
+              id: "order",
+              word: "order",
+              type: "action",
+              actionMessageEn: "Good choice! You ordered lunch in English.",
+              actionMessageZh: "选得好！你用英语点了午餐。",
+              actionEffect: "campusOrder",
+              actionDuration: 2600,
+              phonetic: "/ˈɔːrdər/",
+              meaning: "点餐",
+              example: "I order lunch at the cafeteria.",
+              translation: "我在食堂点午餐。",
+              label: "order",
+              zh: "点餐",
+              x: 73,
+              y: 42,
+              offset: { x: -42, y: -20, mobileX: -22, mobileY: -16 },
+            },
+          ],
+        },
+        {
+          id: "playground",
+          title: "Playground",
+          zh: "操场",
+          short: "操场",
+          bg: "assets/campus-playground-bg.png",
+          bgStyle: "linear-gradient(180deg, #8fc9ef 0%, #f7dc99 56%, #446e43 100%)",
+          npc: "classmatePlayground",
+          coreWord: "playground",
+          intro: {
+            text: "After class, you walk to the playground. Students are practicing together.",
+            zh: "下课后，你来到操场，学生们正在一起练习。",
+          },
+          hotspots: [
+            {
+              id: "playground",
+              word: "playground",
+              phonetic: "/ˈpleɪɡraʊnd/",
+              meaning: "操场",
+              example: "Students play on the playground.",
+              translation: "学生们在操场上活动。",
+              label: "playground",
+              zh: "操场",
+              x: 50,
+              y: 62,
+              offset: { x: -40, y: -18, mobileX: -20, mobileY: -14 },
+            },
+            {
+              id: "basketballCourt",
+              word: "basketball court",
+              phonetic: "/ˈbæskɪtbɔːl kɔːrt/",
+              meaning: "篮球场",
+              example: "The basketball court is near the school building.",
+              translation: "篮球场在教学楼附近。",
+              label: "basketball court",
+              zh: "篮球场",
+              x: 18,
+              y: 61,
+              offset: { x: -20, y: -18, mobileX: -12, mobileY: -14 },
+            },
+            {
+              id: "soccerField",
+              word: "soccer field",
+              phonetic: "/ˈsɑːkər fiːld/",
+              meaning: "足球场",
+              example: "The soccer field is wide and green.",
+              translation: "足球场又宽又绿。",
+              label: "soccer field",
+              zh: "足球场",
+              x: 78,
+              y: 58,
+              offset: { x: 28, y: -16, mobileX: 14, mobileY: -12 },
+            },
+            {
+              id: "whistle",
+              word: "whistle",
+              phonetic: "/ˈwɪsəl/",
+              meaning: "哨子",
+              example: "The coach blows the whistle.",
+              translation: "教练吹响哨子。",
+              label: "whistle",
+              zh: "哨子",
+              x: 73,
+              y: 62,
+              offset: { x: -32, y: -18, mobileX: -16, mobileY: -14 },
+            },
+            {
+              id: "teamwork",
+              word: "teamwork",
+              phonetic: "/ˈtiːmwɜːrk/",
+              meaning: "团队合作",
+              example: "Teamwork is important in sports.",
+              translation: "运动中团队合作很重要。",
+              label: "teamwork",
+              zh: "团队合作",
+              x: 76,
+              y: 66,
+              offset: { x: -42, y: -18, mobileX: -22, mobileY: -14 },
+            },
+            {
+              id: "scoreboard",
+              word: "scoreboard",
+              phonetic: "/ˈskɔːrbɔːrd/",
+              meaning: "记分牌",
+              example: "The scoreboard shows the score.",
+              translation: "记分牌显示比分。",
+              label: "scoreboard",
+              zh: "记分牌",
+              x: 49,
+              y: 35,
+              offset: { x: 44, y: -10, mobileX: 20, mobileY: -8 },
+            },
+            {
+              id: "practice",
+              word: "practice",
+              type: "action",
+              actionMessageEn: "Great! You practiced with your classmates.",
+              actionMessageZh: "太棒了！你和同学们一起练习了。",
+              actionEffect: "campusPractice",
+              actionDuration: 2600,
+              phonetic: "/ˈpræktɪs/",
+              meaning: "练习",
+              example: "We practice together after class.",
+              translation: "我们放学后一起练习。",
+              label: "practice",
+              zh: "练习",
+              x: 76,
+              y: 71,
+              offset: { x: -44, y: -18, mobileX: -22, mobileY: -14 },
+            },
+          ],
+        },
+        {
+          id: "hallwayLockers",
+          title: "Hallway & Lockers",
+          zh: "走廊与储物柜",
+          short: "走廊",
+          bg: "assets/campus-hallway-lockers-bg.png",
+          bgStyle: "linear-gradient(180deg, #e7d1aa 0%, #b79772 56%, #514034 100%)",
+          npc: "classmateHallway",
+          coreWord: "hallway",
+          completeText: "Well done! You reviewed your campus words.",
+          completeZh: "做得好！你复习了今天的校园单词。",
+          intro: {
+            text: "The school day is almost over. You stop by the hallway and lockers to review your words.",
+            zh: "一天的校园生活快结束了，你来到走廊和储物柜旁复习单词。",
+          },
+          hotspots: [
+            {
+              id: "hallway",
+              word: "hallway",
+              phonetic: "/ˈhɔːlweɪ/",
+              meaning: "走廊",
+              example: "The hallway is quiet after class.",
+              translation: "下课后走廊很安静。",
+              label: "hallway",
+              zh: "走廊",
+              x: 45,
+              y: 50,
+              offset: { x: -42, y: -18, mobileX: -22, mobileY: -14 },
+            },
+            {
+              id: "locker",
+              word: "locker",
+              phonetic: "/ˈlɑːkər/",
+              meaning: "储物柜",
+              example: "I put my books in the locker.",
+              translation: "我把书放进储物柜。",
+              label: "locker",
+              zh: "储物柜",
+              x: 76,
+              y: 45,
+              offset: { x: -44, y: -16, mobileX: -22, mobileY: -12 },
+            },
+            {
+              id: "backpack",
+              word: "backpack",
+              phonetic: "/ˈbækpæk/",
+              meaning: "书包",
+              example: "My backpack is heavy today.",
+              translation: "我的书包今天很重。",
+              label: "backpack",
+              zh: "书包",
+              x: 79,
+              y: 72,
+              offset: { x: -50, y: -22, mobileX: -24, mobileY: -16 },
+            },
+            {
+              id: "assignment",
+              word: "assignment",
+              phonetic: "/əˈsaɪnmənt/",
+              meaning: "作业，任务",
+              example: "The teacher gives us an assignment.",
+              translation: "老师给了我们一项作业。",
+              label: "assignment",
+              zh: "作业",
+              x: 14,
+              y: 45,
+              offset: { x: 40, y: -18, mobileX: 20, mobileY: -14 },
+            },
+            {
+              id: "dismissal",
+              word: "dismissal",
+              phonetic: "/dɪsˈmɪsəl/",
+              meaning: "放学，解散",
+              example: "Dismissal is at the end of the school day.",
+              translation: "放学在一天校园生活结束时。",
+              label: "dismissal",
+              zh: "放学",
+              x: 39,
+              y: 23,
+              offset: { x: 42, y: -12, mobileX: 20, mobileY: -10 },
+            },
+            {
+              id: "review",
+              word: "review",
+              type: "action",
+              actionMessageEn: "Well done! You reviewed your campus words.",
+              actionMessageZh: "做得好！你复习了今天的校园单词。",
+              actionEffect: "campusReview",
+              actionDuration: 2600,
+              phonetic: "/rɪˈvjuː/",
+              meaning: "复习，回顾",
+              example: "I review the words I learned today.",
+              translation: "我复习今天学到的单词。",
+              label: "review",
+              zh: "复习",
+              x: 69,
+              y: 60,
+              offset: { x: -44, y: -18, mobileX: -22, mobileY: -14 },
+            },
+          ],
+        },
+      ];
+
       const fruitShopDialogues = {
         fruitEntranceShopkeeper: {
           id: "fruitEntranceShopkeeper",
@@ -2626,6 +3290,171 @@
               choiceZh: "我下次还会来。",
               reply: "Wonderful. We will be here.",
               translation: "太好了。我们会在这里等你。",
+            },
+          ],
+        },
+      };
+
+      const campusDialogues = {
+        campusStudent: {
+          id: "campusStudent",
+          speaker: "Student",
+          zh: "学生",
+          text: "Hi! Is this your first day on campus?",
+          translation: "嗨！这是你第一天来校园吗？",
+          options: [
+            {
+              text: "Yes, I'm new here.",
+              choiceZh: "是的，我是新来的。",
+              reply: "Welcome! The courtyard is a good place to start.",
+              translation: "欢迎！庭院是一个很适合开始的地方。",
+            },
+            {
+              text: "Where is the classroom?",
+              choiceZh: "教室在哪里？",
+              reply: "The classroom is down this path.",
+              translation: "教室沿着这条路往前走。",
+            },
+            {
+              text: "I want to check my schedule.",
+              choiceZh: "我想看看我的课程表。",
+              reply: "You can check it near the notice board.",
+              translation: "你可以在公告栏附近查看。",
+            },
+          ],
+        },
+        teacher: {
+          id: "teacher",
+          speaker: "Teacher",
+          zh: "老师",
+          text: "Can you answer this question?",
+          translation: "你能回答这个问题吗？",
+          options: [
+            {
+              text: "I can try.",
+              choiceZh: "我可以试试。",
+              reply: "Good. Trying is part of learning.",
+              translation: "很好。尝试是学习的一部分。",
+            },
+            {
+              text: "Could you say it again?",
+              choiceZh: "您能再说一遍吗？",
+              reply: "Of course. Listen carefully.",
+              translation: "当然。仔细听。",
+            },
+            {
+              text: "I don't understand yet.",
+              choiceZh: "我还不太明白。",
+              reply: "That's okay. Let's review it together.",
+              translation: "没关系。我们一起复习一下。",
+            },
+          ],
+        },
+        librarian: {
+          id: "librarian",
+          speaker: "Librarian",
+          zh: "图书管理员",
+          text: "Which book would you like to borrow?",
+          translation: "你想借哪本书？",
+          options: [
+            {
+              text: "I'd like to borrow this book.",
+              choiceZh: "我想借这本书。",
+              reply: "Sure. Please use your library card.",
+              translation: "当然。请使用你的借书卡。",
+            },
+            {
+              text: "Do I need a library card?",
+              choiceZh: "我需要借书卡吗？",
+              reply: "Yes, you need a library card to borrow books.",
+              translation: "是的，你需要借书卡才能借书。",
+            },
+            {
+              text: "Where are the English books?",
+              choiceZh: "英文书在哪里？",
+              reply: "They are on the bookshelf near the window.",
+              translation: "它们在窗边的书架上。",
+            },
+          ],
+        },
+        cafeteriaStaff: {
+          id: "cafeteriaStaff",
+          speaker: "Cafeteria Staff",
+          zh: "食堂工作人员",
+          text: "What would you like for lunch?",
+          translation: "你午餐想吃什么？",
+          options: [
+            {
+              text: "I'd like soup, please.",
+              choiceZh: "我想要汤，谢谢。",
+              reply: "Here you are. It is warm today.",
+              translation: "给你。今天的汤是热的。",
+            },
+            {
+              text: "What do you recommend?",
+              choiceZh: "你推荐什么？",
+              reply: "The lunch set is popular today.",
+              translation: "今天的套餐很受欢迎。",
+            },
+            {
+              text: "Can I sit here?",
+              choiceZh: "我可以坐这里吗？",
+              reply: "Yes, this seat is open.",
+              translation: "可以，这个座位是空的。",
+            },
+          ],
+        },
+        classmatePlayground: {
+          id: "classmatePlayground",
+          speaker: "Classmate",
+          zh: "同学",
+          text: "Do you want to practice with us?",
+          translation: "你想和我们一起练习吗？",
+          options: [
+            {
+              text: "Sure, I'd love to.",
+              choiceZh: "当然，我很愿意。",
+              reply: "Great! Let's practice together.",
+              translation: "太好了！我们一起练习吧。",
+            },
+            {
+              text: "What are you playing?",
+              choiceZh: "你们在玩什么？",
+              reply: "We are playing a team game.",
+              translation: "我们正在玩一个团队游戏。",
+            },
+            {
+              text: "Let's work as a team.",
+              choiceZh: "我们一起团队合作吧。",
+              reply: "Yes, teamwork helps everyone.",
+              translation: "是的，团队合作能帮助每个人。",
+            },
+          ],
+        },
+        classmateHallway: {
+          id: "classmateHallway",
+          speaker: "Classmate",
+          zh: "同学",
+          text: "What did you learn today?",
+          translation: "你今天学到了什么？",
+          options: [
+            {
+              text: "I learned many campus words.",
+              choiceZh: "我学了很多校园单词。",
+              reply: "Nice! You can review them later.",
+              translation: "不错！你之后可以复习它们。",
+            },
+            {
+              text: "The library was my favorite place.",
+              choiceZh: "图书馆是我最喜欢的地方。",
+              reply: "I like the library too.",
+              translation: "我也喜欢图书馆。",
+            },
+            {
+              text: "I want to come back tomorrow.",
+              choiceZh: "我明天还想再来。",
+              reply: "See you on campus tomorrow.",
+              translation: "明天校园见。",
             },
           ],
         },
@@ -3265,6 +4094,323 @@
         0
       );
 
+      const moreCampusPages = [
+        {
+          id: "school-places",
+          title: "School Places",
+          zh: "校园地点",
+          words: [
+            {
+              id: "auditorium",
+              word: "auditorium",
+              phonetic: "/ˌɔːdɪˈtɔːriəm/",
+              meaning: "礼堂",
+              example: "The auditorium is used for big school events.",
+              translation: "礼堂用于大型校园活动。",
+            },
+            {
+              id: "gymnasium",
+              word: "gymnasium",
+              phonetic: "/dʒɪmˈneɪziəm/",
+              meaning: "体育馆",
+              example: "The gymnasium is open after class.",
+              translation: "体育馆放学后开放。",
+            },
+            {
+              id: "laboratory",
+              word: "laboratory",
+              phonetic: "/ˈlæbrətɔːri/",
+              meaning: "实验室",
+              example: "Students do science work in the laboratory.",
+              translation: "学生们在实验室做科学实验。",
+            },
+            {
+              id: "art-room",
+              word: "art room",
+              phonetic: "/ɑːrt ruːm/",
+              meaning: "美术教室",
+              example: "The art room has paints and paper.",
+              translation: "美术教室里有颜料和纸。",
+            },
+            {
+              id: "music-room",
+              word: "music room",
+              phonetic: "/ˈmjuːzɪk ruːm/",
+              meaning: "音乐教室",
+              example: "The music room is full of instruments.",
+              translation: "音乐教室里有很多乐器。",
+            },
+            {
+              id: "nurses-office",
+              word: "nurse's office",
+              phonetic: "/nɜːrsɪz ˈɔːfɪs/",
+              meaning: "医务室",
+              example: "The nurse's office is near the hallway.",
+              translation: "医务室在走廊附近。",
+            },
+            {
+              id: "principals-office",
+              word: "principal's office",
+              phonetic: "/ˈprɪnsəpəlz ˈɔːfɪs/",
+              meaning: "校长办公室",
+              example: "The principal's office is on the first floor.",
+              translation: "校长办公室在一楼。",
+            },
+            {
+              id: "dormitory",
+              word: "dormitory",
+              phonetic: "/ˈdɔːrmətɔːri/",
+              meaning: "宿舍",
+              example: "Some students live in the dormitory.",
+              translation: "一些学生住在宿舍里。",
+            },
+            {
+              id: "computer-lab",
+              word: "computer lab",
+              phonetic: "/kəmˈpjuːtər læb/",
+              meaning: "电脑室",
+              example: "We learn typing in the computer lab.",
+              translation: "我们在电脑室学习打字。",
+            },
+            {
+              id: "assembly-hall",
+              word: "assembly hall",
+              phonetic: "/əˈsembli hɔːl/",
+              meaning: "集会厅",
+              example: "Students meet in the assembly hall.",
+              translation: "学生们在集会厅集合。",
+            },
+            {
+              id: "staircase",
+              word: "staircase",
+              phonetic: "/ˈsterkeɪs/",
+              meaning: "楼梯",
+              example: "The staircase leads to the second floor.",
+              translation: "楼梯通向二楼。",
+            },
+            {
+              id: "parking-lot",
+              word: "parking lot",
+              phonetic: "/ˈpɑːrkɪŋ lɑːt/",
+              meaning: "停车场",
+              example: "The parking lot is behind the school.",
+              translation: "停车场在学校后面。",
+            },
+          ],
+        },
+        {
+          id: "school-objects",
+          title: "School Objects",
+          zh: "学习用品",
+          words: [
+            {
+              id: "pencil",
+              word: "pencil",
+              phonetic: "/ˈpensəl/",
+              meaning: "铅笔",
+              example: "I write with a pencil.",
+              translation: "我用铅笔写字。",
+            },
+            {
+              id: "eraser",
+              word: "eraser",
+              phonetic: "/ɪˈreɪsər/",
+              meaning: "橡皮",
+              example: "The eraser is next to my notebook.",
+              translation: "橡皮在我的笔记本旁边。",
+            },
+            {
+              id: "ruler",
+              word: "ruler",
+              phonetic: "/ˈruːlər/",
+              meaning: "尺子",
+              example: "I use a ruler to draw a line.",
+              translation: "我用尺子画线。",
+            },
+            {
+              id: "marker",
+              word: "marker",
+              phonetic: "/ˈmɑːrkər/",
+              meaning: "记号笔",
+              example: "The marker writes clearly.",
+              translation: "记号笔写得很清楚。",
+            },
+            {
+              id: "textbook",
+              word: "textbook",
+              phonetic: "/ˈtekstbʊk/",
+              meaning: "教科书",
+              example: "Please open your textbook.",
+              translation: "请打开你的教科书。",
+            },
+            {
+              id: "workbook",
+              word: "workbook",
+              phonetic: "/ˈwɜːrkbʊk/",
+              meaning: "练习册",
+              example: "The workbook has many exercises.",
+              translation: "练习册里有很多练习。",
+            },
+            {
+              id: "folder",
+              word: "folder",
+              phonetic: "/ˈfoʊldər/",
+              meaning: "文件夹",
+              example: "I keep my papers in a folder.",
+              translation: "我把纸张放在文件夹里。",
+            },
+            {
+              id: "calculator",
+              word: "calculator",
+              phonetic: "/ˈkælkjəleɪtər/",
+              meaning: "计算器",
+              example: "The calculator helps with math.",
+              translation: "计算器可以帮助做数学题。",
+            },
+            {
+              id: "glue",
+              word: "glue",
+              phonetic: "/ɡluː/",
+              meaning: "胶水",
+              example: "We use glue for the project.",
+              translation: "我们做项目时使用胶水。",
+            },
+            {
+              id: "scissors",
+              word: "scissors",
+              phonetic: "/ˈsɪzərz/",
+              meaning: "剪刀",
+              example: "The scissors are on the table.",
+              translation: "剪刀在桌子上。",
+            },
+            {
+              id: "compass",
+              word: "compass",
+              phonetic: "/ˈkʌmpəs/",
+              meaning: "圆规",
+              example: "A compass can draw a circle.",
+              translation: "圆规可以画圆。",
+            },
+            {
+              id: "stapler",
+              word: "stapler",
+              phonetic: "/ˈsteɪplər/",
+              meaning: "订书机",
+              example: "The stapler holds papers together.",
+              translation: "订书机把纸张订在一起。",
+            },
+          ],
+        },
+        {
+          id: "school-life",
+          title: "School Life",
+          zh: "校园生活",
+          words: [
+            {
+              id: "attendance",
+              word: "attendance",
+              phonetic: "/əˈtendəns/",
+              meaning: "出勤",
+              example: "The teacher checks attendance every morning.",
+              translation: "老师每天早上检查出勤。",
+            },
+            {
+              id: "homework",
+              word: "homework",
+              phonetic: "/ˈhoʊmwɜːrk/",
+              meaning: "家庭作业",
+              example: "I finish my homework after school.",
+              translation: "我放学后完成家庭作业。",
+            },
+            {
+              id: "project",
+              word: "project",
+              phonetic: "/ˈprɑːdʒekt/",
+              meaning: "项目",
+              example: "Our project is about school life.",
+              translation: "我们的项目是关于校园生活的。",
+            },
+            {
+              id: "presentation",
+              word: "presentation",
+              phonetic: "/ˌprezənˈteɪʃən/",
+              meaning: "展示，汇报",
+              example: "She gives a presentation in class.",
+              translation: "她在课堂上做展示。",
+            },
+            {
+              id: "experiment",
+              word: "experiment",
+              phonetic: "/ɪkˈsperɪmənt/",
+              meaning: "实验",
+              example: "The experiment is fun and interesting.",
+              translation: "这个实验有趣又好玩。",
+            },
+            {
+              id: "exam",
+              word: "exam",
+              phonetic: "/ɪɡˈzæm/",
+              meaning: "考试",
+              example: "The exam is next week.",
+              translation: "考试在下周。",
+            },
+            {
+              id: "grade",
+              word: "grade",
+              phonetic: "/ɡreɪd/",
+              meaning: "成绩",
+              example: "I got a good grade.",
+              translation: "我取得了好成绩。",
+            },
+            {
+              id: "recess",
+              word: "recess",
+              phonetic: "/ˈriːses/",
+              meaning: "课间休息",
+              example: "Students talk during recess.",
+              translation: "学生们在课间休息时聊天。",
+            },
+            {
+              id: "club",
+              word: "club",
+              phonetic: "/klʌb/",
+              meaning: "社团",
+              example: "I joined an English club.",
+              translation: "我加入了一个英语社团。",
+            },
+            {
+              id: "semester",
+              word: "semester",
+              phonetic: "/səˈmestər/",
+              meaning: "学期",
+              example: "This semester is very busy.",
+              translation: "这个学期很忙。",
+            },
+            {
+              id: "timetable",
+              word: "timetable",
+              phonetic: "/ˈtaɪmteɪbəl/",
+              meaning: "时间表",
+              example: "The timetable shows my classes.",
+              translation: "时间表显示我的课程。",
+            },
+            {
+              id: "graduation",
+              word: "graduation",
+              phonetic: "/ˌɡrædʒuˈeɪʃən/",
+              meaning: "毕业",
+              example: "Graduation is a special day.",
+              translation: "毕业是特别的一天。",
+            },
+          ],
+        },
+      ];
+
+      const moreCampusCount = moreCampusPages.reduce(
+        (count, page) => count + page.words.length,
+        0
+      );
+
       const sceneCards = [
         {
           id: "zoo",
@@ -3306,17 +4452,19 @@
           id: "campus",
           title: "Campus",
           zh: "校园",
-          status: "Coming Soon",
-          statusZh: "即将开放",
+          status: "Available",
+          statusZh: "可进入",
           description: "Learn classroom, library, friends, teachers, and campus English.",
           descriptionZh: "学习教室、图书馆、同学、老师和校园英语。",
-          button: "Coming Soon",
-          buttonZh: "即将开放",
+          button: "Enter Campus",
+          buttonZh: "进入校园",
+          available: true,
+          chapter: "campus",
           accent: "#78a6ff",
           visual: "Books & Halls",
           visualZh: "书本与走廊",
-          image: "linear-gradient(180deg, rgba(8, 14, 22, 0.02), rgba(8, 14, 22, 0.72)), linear-gradient(90deg, rgba(255,255,255,0.16) 0 2%, transparent 2% 8%, rgba(255,216,107,0.32) 8% 10%, transparent 10% 18%, rgba(120,166,255,0.28) 18% 21%, transparent 21% 100%), radial-gradient(circle at 76% 28%, rgba(255,255,255,0.28), transparent 18%), linear-gradient(145deg, #1b2d46, #334b6f 54%, #587091)",
-          imagePosition: "center",
+          image: "linear-gradient(180deg, rgba(8, 14, 22, 0.02), rgba(8, 14, 22, 0.72)), url('assets/campus-cover.png')",
+          imagePosition: "center 56%",
         },
         {
           id: "cafe",
@@ -3369,10 +4517,9 @@
       ];
 
       let cachedEnglishVoice = null;
+      let activeSpeechToken = 0;
 
-      function getBestEnglishVoice() {
-        if (!("speechSynthesis" in window)) return null;
-        const voices = window.speechSynthesis.getVoices();
+      function pickBestEnglishVoice(voices) {
         if (!voices.length) return cachedEnglishVoice;
 
         const priorityNames = [
@@ -3409,7 +4556,13 @@
           ["en-us", "en-gb"].includes(voice.lang.toLowerCase())
         );
 
-        cachedEnglishVoice = byPriorityName || naturalEnglish || usOrGb || englishVoices[0] || voices[0] || null;
+        return byPriorityName || naturalEnglish || usOrGb || englishVoices[0] || voices[0] || null;
+      }
+
+      function loadEnglishVoices() {
+        if (!("speechSynthesis" in window)) return null;
+        const voices = window.speechSynthesis.getVoices();
+        cachedEnglishVoice = pickBestEnglishVoice(voices);
         return cachedEnglishVoice;
       }
 
@@ -3601,7 +4754,7 @@
         const headerHeight = isMobile ? 90 : 86;
         const observeWidth = isMobile ? Math.min(width - 28, 340) : 390;
         const observeHeight = isMobile ? 170 : 150;
-        const navHeight = isMobile ? 112 : 106;
+        const navHeight = isMobile ? 156 : 146;
         const rects = [
           { left: side, right: width - side, top: side, bottom: headerHeight },
           {
@@ -3764,12 +4917,14 @@
         const [selectedHotspot, setSelectedHotspot] = useState(null);
         const [selectedMoreAnimal, setSelectedMoreAnimal] = useState(null);
         const [selectedMoreFruit, setSelectedMoreFruit] = useState(null);
+        const [selectedMoreCampusWord, setSelectedMoreCampusWord] = useState(null);
         const [dialogueReply, setDialogueReply] = useState(null);
         const [conversationDone, setConversationDone] = useState([]);
         const [completedActions, setCompletedActions] = useState([]);
         const [learnedHotspotKeys, setLearnedHotspotKeys] = useState([]);
         const [learnedMoreAnimals, setLearnedMoreAnimals] = useState([]);
         const [learnedMoreFruits, setLearnedMoreFruits] = useState([]);
+        const [learnedMoreCampusWords, setLearnedMoreCampusWords] = useState([]);
         const [learnedWords, setLearnedWords] = useState([]);
         const [savedWords, setSavedWords] = useState(loadWordBookEntries);
         const [playingKey, setPlayingKey] = useState(null);
@@ -3784,16 +4939,19 @@
         const [showMoreAnimalsBook, setShowMoreAnimalsBook] = useState(false);
         const [showMoreFruitsChoice, setShowMoreFruitsChoice] = useState(false);
         const [showMoreFruitsBook, setShowMoreFruitsBook] = useState(false);
+        const [showMoreCampusChoice, setShowMoreCampusChoice] = useState(false);
+        const [showMoreCampusBook, setShowMoreCampusBook] = useState(false);
         const [moreAnimalsPageIndex, setMoreAnimalsPageIndex] = useState(0);
         const [moreFruitsPageIndex, setMoreFruitsPageIndex] = useState(0);
+        const [moreCampusPageIndex, setMoreCampusPageIndex] = useState(0);
         const [showEnding, setShowEnding] = useState(false);
         const [isWalking, setIsWalking] = useState(false);
         const [animalEffect, setAnimalEffect] = useState(null);
 
         useEffect(() => {
-          getBestEnglishVoice();
+          loadEnglishVoices();
           if ("speechSynthesis" in window) {
-            window.speechSynthesis.onvoiceschanged = getBestEnglishVoice;
+            window.speechSynthesis.onvoiceschanged = loadEnglishVoices;
           }
         }, []);
 
@@ -3817,19 +4975,25 @@
         }, [currentView, showWelcome]);
 
         const isZooChapter = currentChapter === "zoo";
-        const activeScenes = isZooChapter ? scenes : fruitShopScenes;
-        const activeDialogues = isZooChapter ? dialogues : fruitShopDialogues;
-        const chapterTitle = isZooChapter ? "Zoo Trip" : "Fruit Shop Trip";
-        const chapterTitleZh = isZooChapter ? "动物园之旅" : "水果店之旅";
-        const chapterWordBookScene = isZooChapter ? "Zoo" : "Fruit Shop";
+        const isFruitShopChapter = currentChapter === "fruitShop";
+        const isCampusChapter = currentChapter === "campus";
+        const activeScenes = isZooChapter ? scenes : isFruitShopChapter ? fruitShopScenes : campusScenes;
+        const activeDialogues = isZooChapter ? dialogues : isFruitShopChapter ? fruitShopDialogues : campusDialogues;
+        const chapterTitle = isZooChapter ? "Zoo Trip" : isFruitShopChapter ? "Fruit Shop Trip" : "Campus Trip";
+        const chapterTitleZh = isZooChapter ? "动物园之旅" : isFruitShopChapter ? "水果店之旅" : "校园之旅";
+        const chapterWordBookScene = isZooChapter ? "Zoo" : isFruitShopChapter ? "Fruit Shop" : "Campus";
         const endingTitle = isZooChapter
           ? "Great job! Your zoo trip is finished."
-          : "Great job! Your fruit shop trip is finished.";
+          : isFruitShopChapter
+          ? "Great job! Your fruit shop trip is finished."
+          : "Great job! Your campus trip is finished.";
         const endingZh = isZooChapter
           ? "太棒了！今天的动物园之旅到此结束啦。"
-          : "太棒了！你的水果店之旅完成了。";
-        const restartLabel = isZooChapter ? "Restart Trip" : "Restart Fruit Shop";
-        const restartZh = isZooChapter ? "重新开始旅程" : "重新开始水果店";
+          : isFruitShopChapter
+          ? "太棒了！你的水果店之旅完成了。"
+          : "太棒了！你的校园之旅完成了。";
+        const restartLabel = isZooChapter ? "Restart Trip" : isFruitShopChapter ? "Restart Fruit Shop" : "Restart Campus";
+        const restartZh = isZooChapter ? "重新开始旅程" : isFruitShopChapter ? "重新开始水果店" : "重新开始校园";
         const welcomeIntro = isZooChapter
           ? {
               label: "Zoo Trip",
@@ -3841,7 +5005,8 @@
               action: "",
               actionZh: "",
             }
-          : {
+          : isFruitShopChapter
+          ? {
               label: "Fruit Shop Trip",
               labelZh: "水果店之旅",
               title: "Welcome to the fruit shop!",
@@ -3850,6 +5015,16 @@
               zh: "今天你会走进水果店，挑选新鲜水果，询问价格，并练习真实购物英语。",
               action: "Start Shopping",
               actionZh: "开始购物",
+            }
+          : {
+              label: "Campus Trip",
+              labelZh: "校园之旅",
+              title: "Welcome to the campus!",
+              titleZh: "欢迎来到校园！",
+              text: "Today, you will walk through the campus, visit the classroom, library, cafeteria, and playground, and learn real campus English.",
+              zh: "今天你会走进校园，参观教室、图书馆、食堂和操场，并学习真实校园英语。",
+              action: "Start Campus Trip",
+              actionZh: "开始校园之旅",
             };
         const currentScene = activeScenes[currentIndex];
         const currentDialogue = currentScene.npc ? activeDialogues[currentScene.npc] : null;
@@ -3935,6 +5110,28 @@
                 zh: `不错！你又认识了 ${exploredMoreFruitCount} 种水果。`,
               }
             : null;
+        const currentMoreCampusPage = moreCampusPages[moreCampusPageIndex];
+        const exploredMoreCampusCount = learnedMoreCampusWords.length;
+        const currentCampusPageExploredCount = currentMoreCampusPage.words.filter((word) =>
+          learnedMoreCampusWords.includes(word.id)
+        ).length;
+        const moreCampusReward =
+          exploredMoreCampusCount === moreCampusCount
+            ? {
+                text: "Amazing! You discovered all more campus words.",
+                zh: "太厉害了！你探索了全部拓展校园词汇。",
+              }
+            : currentCampusPageExploredCount === currentMoreCampusPage.words.length
+            ? {
+                text: "Great explorer! You completed one campus page.",
+                zh: "太棒了！你完成了一页校园词汇探索。",
+              }
+            : exploredMoreCampusCount >= 5
+            ? {
+                text: `Nice! You discovered ${exploredMoreCampusCount} more campus words.`,
+                zh: `不错！你又认识了 ${exploredMoreCampusCount} 个校园词汇。`,
+              }
+            : null;
         const wordBookFilters = [
           { id: "all", en: "All", zh: "全部" },
           { id: "zoo", en: "Zoo", zh: "动物园" },
@@ -3951,16 +5148,21 @@
 
         function speakEnglish(text, rate = 0.9, key = text) {
           if (!("speechSynthesis" in window)) return;
+          const speechToken = activeSpeechToken + 1;
+          activeSpeechToken = speechToken;
           window.speechSynthesis.cancel();
-          const voice = getBestEnglishVoice();
           const utterance = new SpeechSynthesisUtterance(text);
-          utterance.lang = voice?.lang || "en-US";
-          utterance.voice = voice;
+          utterance.lang = cachedEnglishVoice?.lang || "en-US";
+          if (cachedEnglishVoice) utterance.voice = cachedEnglishVoice;
           utterance.rate = rate;
           utterance.pitch = 1;
           utterance.volume = 1;
-          utterance.onend = () => setPlayingKey(null);
-          utterance.onerror = () => setPlayingKey(null);
+          utterance.onend = () => {
+            if (activeSpeechToken === speechToken) setPlayingKey(null);
+          };
+          utterance.onerror = () => {
+            if (activeSpeechToken === speechToken) setPlayingKey(null);
+          };
           setPlayingKey(key);
           window.speechSynthesis.speak(utterance);
         }
@@ -4015,6 +5217,19 @@
           };
         }
 
+        function makeMoreCampusWordBookEntry(word) {
+          return {
+            word: word.word,
+            zh: word.meaning,
+            phonetic: word.phonetic,
+            example: word.example,
+            exampleZh: word.translation,
+            scene: "Campus / More Campus Words",
+            type: "object",
+            addedAt: new Date().toISOString(),
+          };
+        }
+
         function isWordSaved(word) {
           const key = getWordKey(word);
           return savedWords.some((item) => getWordKey(item.word) === key);
@@ -4040,10 +5255,13 @@
           setSelectedHotspot(null);
           setSelectedMoreAnimal(null);
           setSelectedMoreFruit(null);
+          setSelectedMoreCampusWord(null);
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
           setShowMoreFruitsChoice(false);
           setShowMoreFruitsBook(false);
+          setShowMoreCampusChoice(false);
+          setShowMoreCampusBook(false);
           setIsReviewingWordBook(false);
           setReviewRevealed(false);
           setReviewIndex(0);
@@ -4141,6 +5359,15 @@
           speakEnglish(fruit.word, 0.9, `more-fruit-${fruit.id}-normal`);
         }
 
+        function openMoreCampusWord(word) {
+          setSelectedMoreCampusWord(word);
+          setLearnedMoreCampusWords((items) =>
+            items.includes(word.id) ? items : [...items, word.id]
+          );
+          rememberWord(word.word);
+          speakEnglish(word.word, 0.9, `more-campus-${word.id}-normal`);
+        }
+
         function finishZooTrip() {
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
@@ -4155,6 +5382,13 @@
           setShowEnding(true);
         }
 
+        function finishCampusTrip() {
+          setShowMoreCampusChoice(false);
+          setShowMoreCampusBook(false);
+          setSelectedMoreCampusWord(null);
+          setShowEnding(true);
+        }
+
         function enterZoo() {
           setSceneSelectHint("");
           setCurrentChapter("zoo");
@@ -4162,26 +5396,7 @@
           setSelectedHotspot(null);
           setSelectedMoreAnimal(null);
           setSelectedMoreFruit(null);
-          setDialogueReply(null);
-          setProgressHint("");
-          setAnimalEffect(null);
-          setShowEnding(false);
-          setShowMoreAnimalsChoice(false);
-          setShowMoreAnimalsBook(false);
-          setShowMoreFruitsChoice(false);
-          setShowMoreFruitsBook(false);
-          setShowWelcome(true);
-          setWelcomeLeaving(false);
-          setCurrentView("zoo");
-        }
-
-        function enterFruitShop() {
-          setSceneSelectHint("");
-          setCurrentChapter("fruitShop");
-          setCurrentIndex(0);
-          setSelectedHotspot(null);
-          setSelectedMoreAnimal(null);
-          setSelectedMoreFruit(null);
+          setSelectedMoreCampusWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -4194,6 +5409,62 @@
           setShowMoreAnimalsBook(false);
           setShowMoreFruitsChoice(false);
           setShowMoreFruitsBook(false);
+          setShowMoreCampusChoice(false);
+          setShowMoreCampusBook(false);
+          setShowWelcome(true);
+          setWelcomeLeaving(false);
+          setCurrentView("zoo");
+        }
+
+        function enterFruitShop() {
+          setSceneSelectHint("");
+          setCurrentChapter("fruitShop");
+          setCurrentIndex(0);
+          setSelectedHotspot(null);
+          setSelectedMoreAnimal(null);
+          setSelectedMoreFruit(null);
+          setSelectedMoreCampusWord(null);
+          setDialogueReply(null);
+          setConversationDone([]);
+          setCompletedActions([]);
+          setLearnedHotspotKeys([]);
+          setLearnedWords([]);
+          setProgressHint("");
+          setAnimalEffect(null);
+          setShowEnding(false);
+          setShowMoreAnimalsChoice(false);
+          setShowMoreAnimalsBook(false);
+          setShowMoreFruitsChoice(false);
+          setShowMoreFruitsBook(false);
+          setShowMoreCampusChoice(false);
+          setShowMoreCampusBook(false);
+          setShowWelcome(true);
+          setWelcomeLeaving(false);
+          setCurrentView("zoo");
+        }
+
+        function enterCampus() {
+          setSceneSelectHint("");
+          setCurrentChapter("campus");
+          setCurrentIndex(0);
+          setSelectedHotspot(null);
+          setSelectedMoreAnimal(null);
+          setSelectedMoreFruit(null);
+          setSelectedMoreCampusWord(null);
+          setDialogueReply(null);
+          setConversationDone([]);
+          setCompletedActions([]);
+          setLearnedHotspotKeys([]);
+          setLearnedWords([]);
+          setProgressHint("");
+          setAnimalEffect(null);
+          setShowEnding(false);
+          setShowMoreAnimalsChoice(false);
+          setShowMoreAnimalsBook(false);
+          setShowMoreFruitsChoice(false);
+          setShowMoreFruitsBook(false);
+          setShowMoreCampusChoice(false);
+          setShowMoreCampusBook(false);
           setShowWelcome(true);
           setWelcomeLeaving(false);
           setCurrentView("zoo");
@@ -4227,6 +5498,22 @@
           window.setTimeout(() => setShowWelcome(false), 250);
         }
 
+        function openChapterMoreChoice() {
+          setSelectedHotspot(null);
+          setSelectedMoreAnimal(null);
+          setSelectedMoreFruit(null);
+          setSelectedMoreCampusWord(null);
+          setDialogueReply(null);
+          setProgressHint("");
+          setShowEnding(false);
+          setShowMoreAnimalsBook(false);
+          setShowMoreFruitsBook(false);
+          setShowMoreCampusBook(false);
+          setShowMoreAnimalsChoice(isZooChapter);
+          setShowMoreFruitsChoice(isFruitShopChapter);
+          setShowMoreCampusChoice(isCampusChapter);
+        }
+
         function walkForward() {
           if (!sceneComplete) {
             const needs = [];
@@ -4247,12 +5534,7 @@
           if (currentIndex < activeScenes.length - 1) {
             moveTo(currentIndex + 1);
           } else {
-            setSelectedHotspot(null);
-            if (isZooChapter) {
-              setShowMoreAnimalsChoice(true);
-            } else {
-              setShowMoreFruitsChoice(true);
-            }
+            openChapterMoreChoice();
           }
         }
 
@@ -4261,21 +5543,26 @@
           setSelectedHotspot(null);
           setSelectedMoreAnimal(null);
           setSelectedMoreFruit(null);
+          setSelectedMoreCampusWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
           setLearnedHotspotKeys([]);
           setLearnedMoreAnimals([]);
           setLearnedMoreFruits([]);
+          setLearnedMoreCampusWords([]);
           setLearnedWords([]);
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
           setShowMoreFruitsChoice(false);
           setShowMoreFruitsBook(false);
+          setShowMoreCampusChoice(false);
+          setShowMoreCampusBook(false);
           setMoreAnimalsPageIndex(0);
           setMoreFruitsPageIndex(0);
+          setMoreCampusPageIndex(0);
           setShowEnding(false);
-          setShowWelcome(isZooChapter);
+          setShowWelcome(isZooChapter || isCampusChapter);
           setWelcomeLeaving(false);
           setAnimalEffect(null);
         }
@@ -4757,6 +6044,8 @@
                           scene.available
                             ? scene.chapter === "fruitShop"
                               ? enterFruitShop
+                              : scene.chapter === "campus"
+                              ? enterCampus
                               : enterZoo
                             : showComingSoon
                         }
@@ -4810,6 +6099,14 @@
                       <div className="playful-leaf absolute left-[46%] top-[50%] h-4 w-3 rounded-full bg-[#f3c66d]/80"></div>
                       <div className="playful-leaf absolute left-[52%] top-[53%] h-4 w-3 rounded-full bg-[#91b96a]/80 [animation-delay:0.12s]"></div>
                       <div className="playful-leaf absolute left-[58%] top-[49%] h-4 w-3 rounded-full bg-[#d98c55]/75 [animation-delay:0.24s]"></div>
+                    </>
+                  )}
+                  {animalEffect?.effect?.startsWith("campus") && (
+                    <>
+                      <div className="sunlit-sweep absolute left-[16%] top-0 h-full w-24 bg-white/12 blur-xl"></div>
+                      <div className="playful-leaf absolute left-[43%] top-[48%] h-3 w-5 rounded-sm bg-[#f2dfb0]/80"></div>
+                      <div className="playful-leaf absolute left-[50%] top-[52%] h-3 w-5 rounded-sm bg-[#d8e8f3]/80 [animation-delay:0.12s]"></div>
+                      <div className="playful-leaf absolute left-[57%] top-[46%] h-3 w-5 rounded-sm bg-[#f6d883]/75 [animation-delay:0.24s]"></div>
                     </>
                   )}
                 </div>
@@ -5029,7 +6326,7 @@
             )}
 
             <header className="hud-float absolute left-4 right-4 top-[calc(env(safe-area-inset-top)+1rem)] z-40 mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-2xl border border-white/18 bg-nightglass px-4 py-3 shadow-glow backdrop-blur-xl sm:left-6 sm:right-6">
-              <div className="min-w-0 shrink-0">
+              <div className="min-w-0 flex-1">
                 <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
                   {chapterTitle} {currentIndex + 1}/{activeScenes.length}
                 </p>
@@ -5042,10 +6339,13 @@
                   setSelectedHotspot(null);
                   setSelectedMoreAnimal(null);
                   setSelectedMoreFruit(null);
+                  setSelectedMoreCampusWord(null);
                   setShowMoreAnimalsChoice(false);
                   setShowMoreAnimalsBook(false);
                   setShowMoreFruitsChoice(false);
                   setShowMoreFruitsBook(false);
+                  setShowMoreCampusChoice(false);
+                  setShowMoreCampusBook(false);
                   setShowEnding(false);
                   setCurrentView("sceneSelect");
                 }}
@@ -5898,6 +7198,272 @@
                         className="mt-6 w-full rounded-2xl bg-banana px-4 py-4 text-lg font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
                       >
                         <ButtonCopy en="Finish Fruit Shop Trip" zh="结束水果店之旅" />
+                      </button>
+                    </div>
+                  </aside>
+                )}
+              </div>
+            )}
+
+            {showMoreCampusChoice && !showEnding && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 backdrop-blur-sm">
+                <div className="dialogue-enter w-full max-w-2xl rounded-3xl border border-white/18 bg-[#112319]/92 p-6 text-cream shadow-glow backdrop-blur-2xl">
+                  <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">
+                    More Campus Words
+                  </p>
+                  <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">
+                    Want to discover more campus words?
+                  </h2>
+                  <p className="mt-3 text-xl font-bold text-cream/82">
+                    想认识更多校园词汇吗？
+                  </p>
+                  <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                    <button
+                      onClick={() => {
+                        setShowMoreCampusChoice(false);
+                        setShowMoreCampusBook(true);
+                        setMoreCampusPageIndex(0);
+                      }}
+                      className="rounded-2xl bg-banana px-5 py-4 font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                    >
+                      <ButtonCopy en="Yes, show me more campus words." zh="是的，我想看看更多校园词汇。" />
+                    </button>
+                    <button
+                      onClick={finishCampusTrip}
+                      className="rounded-2xl border border-white/18 bg-white/12 px-5 py-4 font-black text-white transition hover:bg-white/22 active:scale-[0.99]"
+                    >
+                      <ButtonCopy en="No, finish today's campus trip." zh="不用了，结束今天的校园之旅。" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {showMoreCampusBook && !showEnding && (
+              <div className="fixed inset-0 z-50 overflow-auto bg-[#17251c]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
+                <div className="mx-auto max-w-6xl">
+                  <header className="flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">
+                        More Campus Words
+                      </p>
+                      <h2 className="mt-2 text-3xl font-black text-white sm:text-5xl">
+                        More Campus Words
+                      </h2>
+                      <p className="mt-2 text-lg font-bold text-cream/78">
+                        更多校园词汇
+                      </p>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <div className="rounded-2xl border border-white/14 bg-white/10 px-4 py-3">
+                        <p className="text-[10px] font-black uppercase tracking-[0.18em] text-banana">
+                          Explored
+                        </p>
+                        <p className="mt-1 text-2xl font-black text-white">
+                          {exploredMoreCampusCount}/{moreCampusCount}
+                        </p>
+                        <p className="text-xs font-bold text-cream/70">已探索</p>
+                      </div>
+                      <button
+                        onClick={finishCampusTrip}
+                        className="rounded-full bg-banana px-5 py-3 font-black text-ink shadow-label transition hover:bg-[#ffc83f] active:scale-[0.99]"
+                      >
+                        <ButtonCopy en="Finish Campus Trip" zh="结束校园之旅" />
+                      </button>
+                    </div>
+                  </header>
+
+                  {moreCampusReward && (
+                    <div className="dialogue-enter mt-4 rounded-2xl border border-banana/35 bg-[#364d68]/62 px-4 py-3 shadow-label backdrop-blur-[3px]">
+                      <p className="font-black text-white">{moreCampusReward.text}</p>
+                      <p className="mt-1 text-sm font-bold text-cream/76">{moreCampusReward.zh}</p>
+                    </div>
+                  )}
+
+                  <div className="mt-5 flex gap-2 overflow-x-auto pb-1">
+                    {moreCampusPages.map((page, index) => {
+                      const active = index === moreCampusPageIndex;
+                      return (
+                        <button
+                          key={page.id}
+                          onClick={() => {
+                            setMoreCampusPageIndex(index);
+                            setSelectedMoreCampusWord(null);
+                          }}
+                          className={`min-w-[180px] rounded-2xl px-4 py-3 text-left font-black shadow-label transition hover:-translate-y-0.5 active:translate-y-0 ${
+                            active ? "bg-[#5f8fc9] text-white" : "border border-white/16 bg-white/10 text-cream hover:bg-white/18"
+                          }`}
+                        >
+                          <span className="block text-sm">{page.title}</span>
+                          <span className="mt-1 block text-xs font-bold opacity-75">{page.zh}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  <section className="mt-5 rounded-3xl border border-white/14 bg-nightglass p-4 shadow-glow backdrop-blur-xl">
+                    <div className="flex flex-wrap items-end justify-between gap-3">
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.22em] text-banana">
+                          Page {moreCampusPageIndex + 1}/3
+                        </p>
+                        <h3 className="mt-1 text-2xl font-black text-white">
+                          {currentMoreCampusPage.title}
+                          <span className="ml-2 text-banana">{currentMoreCampusPage.zh}</span>
+                        </h3>
+                      </div>
+                      <p className="text-sm font-black text-cream/75">
+                        {currentCampusPageExploredCount}/12 learned · 已学习
+                      </p>
+                    </div>
+
+                    <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                      {currentMoreCampusPage.words.map((word) => {
+                        const learned = learnedMoreCampusWords.includes(word.id);
+                        return (
+                          <button
+                            key={word.id}
+                            onClick={() => openMoreCampusWord(word)}
+                            className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
+                              learned
+                                ? "border-[#9fc9ee]/55 bg-[#263f58]/72"
+                                : "border-white/14 bg-white/10 hover:border-banana/45 hover:bg-white/16"
+                            }`}
+                          >
+                            <div className="flex items-start gap-3">
+                              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-banana/35 bg-[#304a5f]/72 text-xl font-black text-banana transition group-hover:scale-105">
+                                {word.word.slice(0, 1).toUpperCase()}
+                              </span>
+                              <span className="min-w-0">
+                                <span className="block text-lg font-black leading-tight text-white">
+                                  {word.word}
+                                </span>
+                                <span className="mt-1 block text-sm font-bold text-cream/72">
+                                  {word.meaning}
+                                </span>
+                              </span>
+                            </div>
+                            <div className="mt-3 flex items-center justify-between gap-2">
+                              <span className="text-xs font-black text-banana">{word.phonetic}</span>
+                              {learned && (
+                                <span className="rounded-full bg-banana/90 px-2 py-1 text-[10px] font-black uppercase text-ink">
+                                  Learned · 已学习
+                                </span>
+                              )}
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </section>
+                </div>
+
+                {selectedMoreCampusWord && (
+                  <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/92 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
+                    <div className="flex items-start justify-between gap-3 border-b border-white/12 p-5">
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
+                          Campus Word
+                        </p>
+                        <h2 className="mt-2 text-4xl font-black leading-tight text-white">
+                          {selectedMoreCampusWord.word}
+                        </h2>
+                        <p className="mt-2 text-2xl font-extrabold text-banana">
+                          {selectedMoreCampusWord.phonetic}
+                        </p>
+                      </div>
+                      <button
+                        onClick={() => setSelectedMoreCampusWord(null)}
+                        className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/12 text-2xl font-black text-white transition hover:bg-white/22 active:scale-95"
+                        aria-label="Close 关闭"
+                        title="Close / 关闭"
+                      >
+                        ×
+                      </button>
+                    </div>
+
+                    <div className="flex-1 overflow-auto p-5">
+                      <div className="rounded-2xl border border-white/12 bg-white/10 p-4">
+                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-banana">
+                          中文意思
+                        </p>
+                        <p className="mt-2 text-2xl font-black text-white">
+                          {selectedMoreCampusWord.meaning}
+                        </p>
+                      </div>
+
+                      <div className="mt-4 rounded-2xl border border-white/12 bg-black/18 p-4">
+                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-coral">
+                          Example
+                        </p>
+                        <p className="mt-2 text-2xl font-black leading-9 text-white">
+                          {selectedMoreCampusWord.example}
+                        </p>
+                        <p className="mt-2 text-lg font-bold leading-8 text-cream/78">
+                          {selectedMoreCampusWord.translation}
+                        </p>
+                      </div>
+
+                      <div className="mt-5 grid grid-cols-2 gap-3">
+                        <button
+                          onClick={() => speakEnglish(selectedMoreCampusWord.word, 0.9, `more-campus-${selectedMoreCampusWord.id}-normal`)}
+                          className="rounded-2xl bg-banana px-4 py-3 text-base font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                        >
+                          <span className="inline-flex items-center justify-center gap-2">
+                            {playingKey === `more-campus-${selectedMoreCampusWord.id}-normal` && <SoundBars />}
+                            <ButtonCopy en="Normal" zh="正常语速" />
+                          </span>
+                        </button>
+                        <button
+                          onClick={() => speakEnglish(selectedMoreCampusWord.word, 0.65, `more-campus-${selectedMoreCampusWord.id}-slow`)}
+                          className="rounded-2xl border border-banana/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"
+                        >
+                          <span className="inline-flex items-center justify-center gap-2">
+                            {playingKey === `more-campus-${selectedMoreCampusWord.id}-slow` && <SoundBars />}
+                            <ButtonCopy en="Slow" zh="慢速朗读" />
+                          </span>
+                        </button>
+                      </div>
+
+                      <button
+                        onClick={() => speakEnglish(selectedMoreCampusWord.example, 0.86, `more-campus-${selectedMoreCampusWord.id}-sentence`)}
+                        className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
+                      >
+                        <span className="inline-flex items-center justify-center gap-2">
+                          {playingKey === `more-campus-${selectedMoreCampusWord.id}-sentence` && <SoundBars />}
+                          <ButtonCopy en="Play Sentence" zh="朗读例句" />
+                        </span>
+                      </button>
+
+                      <button
+                        onClick={() => saveWordEntry(makeMoreCampusWordBookEntry(selectedMoreCampusWord))}
+                        disabled={isWordSaved(selectedMoreCampusWord.word)}
+                        className={`mt-3 w-full rounded-2xl px-4 py-3 text-base font-black shadow-label transition active:scale-[0.99] ${
+                          isWordSaved(selectedMoreCampusWord.word)
+                            ? "bg-coral text-white"
+                            : "bg-white/12 text-white hover:bg-white/22"
+                        }`}
+                      >
+                        <ButtonCopy
+                          en={isWordSaved(selectedMoreCampusWord.word) ? "Added to Word Book" : "Add to Word Book"}
+                          zh={isWordSaved(selectedMoreCampusWord.word) ? "已加入生词本" : "加入生词本"}
+                        />
+                      </button>
+
+                      {isWordSaved(selectedMoreCampusWord.word) && (
+                        <button
+                          onClick={() => removeWordEntry(selectedMoreCampusWord.word)}
+                          className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
+                        >
+                          <ButtonCopy en="Remove from Word Book" zh="移出生词本" />
+                        </button>
+                      )}
+
+                      <button
+                        onClick={finishCampusTrip}
+                        className="mt-6 w-full rounded-2xl bg-banana px-4 py-4 text-lg font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                      >
+                        <ButtonCopy en="Finish Campus Trip" zh="结束校园之旅" />
                       </button>
                     </div>
                   </aside>
