@@ -3802,6 +3802,165 @@
         },
       ];
 
+      const officeScenes = [
+        {
+          id: "officeEntrance",
+          title: "Office Entrance",
+          zh: "办公室入口",
+          short: "入口",
+          bg: "assets/office-entrance-bg.png",
+          bgStyle: "linear-gradient(180deg, #d6c0a4 0%, #6d5a48 58%, #1b1816 100%)",
+          npc: "officeReceptionistEntrance",
+          coreWord: "lobby",
+          intro: {
+            text: "You arrive at a modern office entrance and get ready to start the workday.",
+            zh: "你来到现代办公室入口，准备开始一天的办公学习。",
+          },
+          hotspots: [
+            { id: "lobby", word: "lobby", phonetic: "/ˈlɑːbi/", meaning: "大厅", example: "The lobby is bright and clean.", translation: "大厅明亮又干净。", label: "lobby", zh: "大厅", x: 48, y: 50, offset: { x: -38, y: -16, mobileX: -20, mobileY: -12 } },
+            { id: "reception", word: "reception", phonetic: "/rɪˈsepʃən/", meaning: "前台，接待处", example: "Reception is near the office entrance.", translation: "前台在办公室入口附近。", label: "reception", zh: "前台", x: 75, y: 43, offset: { x: -44, y: -16, mobileX: -22, mobileY: -12 } },
+            { id: "nameBadge", word: "name badge", phonetic: "/neɪm bædʒ/", meaning: "姓名牌", example: "I wear a name badge at the office.", translation: "我在办公室佩戴姓名牌。", label: "name badge", zh: "姓名牌", x: 72, y: 75, offset: { x: -44, y: -18, mobileX: -22, mobileY: -14 } },
+            { id: "appointment", word: "appointment", phonetic: "/əˈpɔɪntmənt/", meaning: "预约", example: "I have an appointment this morning.", translation: "我今天早上有一个预约。", label: "appointment", zh: "预约", x: 23, y: 69, offset: { x: -42, y: -18, mobileX: -22, mobileY: -14 } },
+            { id: "directory", word: "directory", phonetic: "/dəˈrektəri/", meaning: "楼层目录，指引", example: "The directory shows each office floor.", translation: "楼层目录显示每个办公楼层。", label: "directory", zh: "楼层目录", x: 80, y: 30, offset: { x: -46, y: -12, mobileX: -24, mobileY: -10 } },
+            { id: "register", word: "register", type: "action", actionMessageEn: "You register at the office lobby.", actionMessageZh: "你在办公室大厅完成登记。", actionEffect: "officeRegister", actionDuration: 2600, phonetic: "/ˈredʒɪstər/", meaning: "登记", example: "I register at reception.", translation: "我在前台登记。", label: "register", zh: "登记", x: 23, y: 61, offset: { x: 42, y: -18, mobileX: 20, mobileY: -14 } },
+          ],
+        },
+        {
+          id: "receptionArea",
+          title: "Reception Area",
+          zh: "接待区",
+          short: "接待",
+          bg: "assets/office-reception-bg.png",
+          bgStyle: "linear-gradient(180deg, #d0b495 0%, #675445 58%, #1d1815 100%)",
+          npc: "officeReceptionistConfirm",
+          coreWord: "receptionist",
+          intro: {
+            text: "At the reception area, the receptionist checks your visit and gives you a badge.",
+            zh: "在接待区，前台会确认你的来访信息并给你访客牌。",
+          },
+          hotspots: [
+            { id: "receptionist", word: "receptionist", phonetic: "/rɪˈsepʃənɪst/", meaning: "接待员，前台人员", example: "The receptionist helps visitors.", translation: "前台人员帮助访客。", label: "receptionist", zh: "前台人员", x: 58, y: 38, offset: { x: -46, y: -16, mobileX: -24, mobileY: -12 } },
+            { id: "visitorLog", word: "visitor log", phonetic: "/ˈvɪzɪtər lɔːɡ/", meaning: "访客登记簿", example: "I write my name in the visitor log.", translation: "我把名字写在访客登记簿上。", label: "visitor log", zh: "访客登记簿", x: 58, y: 75, offset: { x: -46, y: -18, mobileX: -24, mobileY: -14 } },
+            { id: "appointmentSlip", word: "appointment slip", phonetic: "/əˈpɔɪntmənt slɪp/", meaning: "预约单", example: "The appointment slip is on the desk.", translation: "预约单在桌上。", label: "appointment slip", zh: "预约单", x: 72, y: 68, offset: { x: -52, y: -18, mobileX: -26, mobileY: -14 } },
+            { id: "waitingArea", word: "waiting area", phonetic: "/ˈweɪtɪŋ ˈeriə/", meaning: "等候区", example: "The waiting area has comfortable chairs.", translation: "等候区有舒适的椅子。", label: "waiting area", zh: "等候区", x: 26, y: 54, offset: { x: -42, y: -16, mobileX: -22, mobileY: -12 } },
+            { id: "badgeClip", word: "badge clip", phonetic: "/bædʒ klɪp/", meaning: "证件夹", example: "The badge clip holds my name badge.", translation: "证件夹夹住我的姓名牌。", label: "badge clip", zh: "证件夹", x: 77, y: 72, offset: { x: 34, y: -18, mobileX: 18, mobileY: -14 } },
+            { id: "confirm", word: "confirm", type: "action", actionMessageEn: "The receptionist confirms your visit.", actionMessageZh: "前台确认了你的来访信息。", actionEffect: "officeConfirm", actionDuration: 2600, phonetic: "/kənˈfɜːrm/", meaning: "确认", example: "Please confirm your appointment.", translation: "请确认你的预约。", label: "confirm", zh: "确认", x: 64, y: 57, offset: { x: -42, y: -16, mobileX: -22, mobileY: -12 } },
+          ],
+        },
+        {
+          id: "workstation",
+          title: "Workstation",
+          zh: "工位",
+          short: "工位",
+          bg: "assets/office-workstation-bg.png",
+          bgStyle: "linear-gradient(180deg, #c7b49f 0%, #5b5047 58%, #191715 100%)",
+          npc: "officeCoworkerTasks",
+          coreWord: "workstation",
+          intro: {
+            text: "You sit at your workstation and look at today's task list.",
+            zh: "你坐到工位前，查看今天的任务列表。",
+          },
+          hotspots: [
+            { id: "workstation", word: "workstation", phonetic: "/ˈwɜːrksteɪʃən/", meaning: "工位", example: "My workstation has a large monitor.", translation: "我的工位有一台大显示器。", label: "workstation", zh: "工位", x: 44, y: 71, offset: { x: -44, y: -18, mobileX: -22, mobileY: -14 } },
+            { id: "monitor", word: "monitor", phonetic: "/ˈmɑːnɪtər/", meaning: "显示器", example: "The monitor shows my task list.", translation: "显示器显示我的任务列表。", label: "monitor", zh: "显示器", x: 42, y: 38, offset: { x: -38, y: -14, mobileX: -20, mobileY: -10 } },
+            { id: "keyboard", word: "keyboard", phonetic: "/ˈkiːbɔːrd/", meaning: "键盘", example: "I type on the keyboard.", translation: "我在键盘上打字。", label: "keyboard", zh: "键盘", x: 47, y: 70, offset: { x: 38, y: -18, mobileX: 20, mobileY: -14 } },
+            { id: "mouse", word: "mouse", phonetic: "/maʊs/", meaning: "鼠标", example: "The mouse is beside the keyboard.", translation: "鼠标在键盘旁边。", label: "mouse", zh: "鼠标", x: 64, y: 72, offset: { x: -34, y: -18, mobileX: -18, mobileY: -14 } },
+            { id: "inbox", word: "inbox", phonetic: "/ˈɪnbɑːks/", meaning: "收件箱", example: "My inbox has new messages.", translation: "我的收件箱里有新消息。", label: "inbox", zh: "收件箱", x: 70, y: 41, offset: { x: -38, y: -14, mobileX: -20, mobileY: -10 } },
+            { id: "prioritize", word: "prioritize", type: "action", actionMessageEn: "You prioritize today’s tasks.", actionMessageZh: "你给今天的任务排了优先级。", actionEffect: "officePrioritize", actionDuration: 2600, phonetic: "/praɪˈɔːrətaɪz/", meaning: "确定优先级", example: "I prioritize the urgent tasks.", translation: "我给紧急任务排优先级。", label: "prioritize", zh: "排优先级", x: 58, y: 52, offset: { x: -46, y: -16, mobileX: -24, mobileY: -12 } },
+          ],
+        },
+        {
+          id: "meetingRoom",
+          title: "Meeting Room",
+          zh: "会议室",
+          short: "会议",
+          bg: "assets/office-meeting-room-bg.png",
+          bgStyle: "linear-gradient(180deg, #c9b8a2 0%, #58524c 58%, #181716 100%)",
+          npc: "officeManagerMeeting",
+          coreWord: "conference room",
+          intro: {
+            text: "You enter a glass meeting room and prepare to share an update.",
+            zh: "你走进玻璃会议室，准备做一次简短汇报。",
+          },
+          hotspots: [
+            { id: "conferenceRoom", word: "conference room", phonetic: "/ˈkɑːnfərəns ruːm/", meaning: "会议室", example: "The conference room is ready for the meeting.", translation: "会议室已经准备好开会。", label: "conference room", zh: "会议室", x: 52, y: 39, offset: { x: -50, y: -14, mobileX: -26, mobileY: -10 } },
+            { id: "agenda", word: "agenda", phonetic: "/əˈdʒendə/", meaning: "议程", example: "The agenda lists today's topics.", translation: "议程列出了今天的话题。", label: "agenda", zh: "议程", x: 35, y: 66, offset: { x: -36, y: -16, mobileX: -18, mobileY: -12 } },
+            { id: "projector", word: "projector", phonetic: "/prəˈdʒektər/", meaning: "投影仪", example: "The projector shows the slides.", translation: "投影仪显示幻灯片。", label: "projector", zh: "投影仪", x: 72, y: 34, offset: { x: -42, y: -14, mobileX: -22, mobileY: -10 } },
+            { id: "briefing", word: "briefing", phonetic: "/ˈbriːfɪŋ/", meaning: "简报，简短汇报", example: "The briefing is short and clear.", translation: "简报简短清晰。", label: "briefing", zh: "简报", x: 56, y: 67, offset: { x: -38, y: -16, mobileX: -20, mobileY: -12 } },
+            { id: "minutes", word: "minutes", phonetic: "/ˈmɪnɪts/", meaning: "会议记录", example: "The minutes record the meeting points.", translation: "会议记录记下会议要点。", label: "minutes", zh: "会议记录", x: 68, y: 68, offset: { x: 34, y: -16, mobileX: 18, mobileY: -12 } },
+            { id: "present", word: "present", type: "action", actionMessageEn: "You present a short update in the meeting.", actionMessageZh: "你在会议中做了简短汇报。", actionEffect: "officePresent", actionDuration: 2600, phonetic: "/prɪˈzent/", meaning: "展示，汇报", example: "I present my update in the meeting.", translation: "我在会议中汇报我的更新。", label: "present", zh: "汇报", x: 48, y: 55, offset: { x: -42, y: -16, mobileX: -22, mobileY: -12 } },
+          ],
+        },
+        {
+          id: "documentStation",
+          title: "Document Station",
+          zh: "文件处理区",
+          short: "文件",
+          bg: "assets/office-document-station-bg.png",
+          bgStyle: "linear-gradient(180deg, #d5c6b7 0%, #5e5954 58%, #191817 100%)",
+          npc: "officeTeammateDocs",
+          coreWord: "copier",
+          intro: {
+            text: "At the document station, you copy papers and organize meeting documents.",
+            zh: "在文件处理区，你复印文件并整理会议资料。",
+          },
+          hotspots: [
+            { id: "copier", word: "copier", phonetic: "/ˈkɑːpiər/", meaning: "复印机", example: "The copier is beside the printer.", translation: "复印机在打印机旁边。", label: "copier", zh: "复印机", x: 31, y: 47, offset: { x: -38, y: -16, mobileX: -20, mobileY: -12 } },
+            { id: "printout", word: "printout", phonetic: "/ˈprɪntaʊt/", meaning: "打印件", example: "The printout is on the tray.", translation: "打印件在托盘上。", label: "printout", zh: "打印件", x: 53, y: 68, offset: { x: -40, y: -18, mobileX: -20, mobileY: -14 } },
+            { id: "paperStack", word: "paper stack", phonetic: "/ˈpeɪpər stæk/", meaning: "一叠纸", example: "The paper stack is ready to copy.", translation: "这叠纸准备好复印了。", label: "paper stack", zh: "一叠纸", x: 68, y: 67, offset: { x: -42, y: -18, mobileX: -22, mobileY: -14 } },
+            { id: "paperJam", word: "paper jam", phonetic: "/ˈpeɪpər dʒæm/", meaning: "卡纸", example: "A paper jam stops the copier.", translation: "卡纸会让复印机停下。", label: "paper jam", zh: "卡纸", x: 38, y: 62, offset: { x: 36, y: -16, mobileX: 18, mobileY: -12 } },
+            { id: "shredder", word: "shredder", phonetic: "/ˈʃredər/", meaning: "碎纸机", example: "The shredder cuts old papers.", translation: "碎纸机会切碎旧文件。", label: "shredder", zh: "碎纸机", x: 76, y: 50, offset: { x: -40, y: -16, mobileX: -20, mobileY: -12 } },
+            { id: "copy", word: "copy", type: "action", actionMessageEn: "You copy the meeting documents.", actionMessageZh: "你复印了会议文件。", actionEffect: "officeCopy", actionDuration: 2600, phonetic: "/ˈkɑːpi/", meaning: "复印，复制", example: "I copy the handout for the team.", translation: "我为团队复印讲义。", label: "copy", zh: "复印", x: 47, y: 53, offset: { x: -36, y: -16, mobileX: -18, mobileY: -12 } },
+          ],
+        },
+        {
+          id: "breakRoom",
+          title: "Break Room",
+          zh: "休息区",
+          short: "休息",
+          bg: "assets/office-break-room-bg.png",
+          bgStyle: "linear-gradient(180deg, #d3bfa6 0%, #6b5947 58%, #1b1714 100%)",
+          npc: "officeCoworkerBreak",
+          coreWord: "break room",
+          intro: {
+            text: "You step into the break room for a short coffee break with a coworker.",
+            zh: "你走进休息区，和同事短暂喝杯咖啡休息一下。",
+          },
+          hotspots: [
+            { id: "breakRoom", word: "break room", phonetic: "/breɪk ruːm/", meaning: "休息室", example: "The break room has a coffee machine.", translation: "休息室里有一台咖啡机。", label: "break room", zh: "休息室", x: 48, y: 41, offset: { x: -42, y: -14, mobileX: -22, mobileY: -10 } },
+            { id: "coffeeMachine", word: "coffee machine", phonetic: "/ˈkɔːfi məˈʃiːn/", meaning: "咖啡机", example: "The coffee machine is ready.", translation: "咖啡机已经准备好了。", label: "coffee machine", zh: "咖啡机", x: 31, y: 49, offset: { x: -48, y: -16, mobileX: -24, mobileY: -12 } },
+            { id: "mug", word: "mug", phonetic: "/mʌɡ/", meaning: "马克杯", example: "I pour tea into a mug.", translation: "我把茶倒进马克杯里。", label: "mug", zh: "马克杯", x: 42, y: 70, offset: { x: -34, y: -18, mobileX: -18, mobileY: -14 } },
+            { id: "microwave", word: "microwave", phonetic: "/ˈmaɪkrəweɪv/", meaning: "微波炉", example: "The microwave warms the lunch.", translation: "微波炉加热午餐。", label: "microwave", zh: "微波炉", x: 74, y: 48, offset: { x: -42, y: -16, mobileX: -22, mobileY: -12 } },
+            { id: "kettle", word: "kettle", phonetic: "/ˈketəl/", meaning: "水壶", example: "The kettle is near the sink.", translation: "水壶在水槽附近。", label: "kettle", zh: "水壶", x: 61, y: 67, offset: { x: -36, y: -18, mobileX: -18, mobileY: -14 } },
+            { id: "recharge", word: "recharge", type: "action", actionMessageEn: "You take a short break and recharge.", actionMessageZh: "你短暂休息，恢复精力。", actionEffect: "officeRecharge", actionDuration: 2600, phonetic: "/ˌriːˈtʃɑːrdʒ/", meaning: "恢复精力，充电", example: "A short break helps me recharge.", translation: "短暂休息帮助我恢复精力。", label: "recharge", zh: "恢复精力", x: 54, y: 58, offset: { x: -42, y: -16, mobileX: -22, mobileY: -12 } },
+          ],
+        },
+        {
+          id: "endWorkday",
+          title: "End of Workday",
+          zh: "下班整理",
+          short: "下班",
+          bg: "assets/office-end-workday-bg.png",
+          bgStyle: "linear-gradient(180deg, #c7b6a2 0%, #514b45 58%, #171615 100%)",
+          npc: "officeManagerWrap",
+          coreWord: "handoff",
+          completeText: "Great! You signed out and finished the office day.",
+          completeZh: "太棒了！你签退并完成了一天的办公室学习。",
+          intro: {
+            text: "Before leaving, you send a status update and prepare the handoff.",
+            zh: "离开前，你发送状态更新并准备交接。",
+          },
+          hotspots: [
+            { id: "handoff", word: "handoff", phonetic: "/ˈhændɔːf/", meaning: "交接", example: "The handoff is ready for the next teammate.", translation: "交接已经为下一位同事准备好了。", label: "handoff", zh: "交接", x: 39, y: 70, offset: { x: -38, y: -18, mobileX: -20, mobileY: -14 } },
+            { id: "statusUpdate", word: "status update", phonetic: "/ˈsteɪtəs ˈʌpdeɪt/", meaning: "状态更新", example: "I send a status update before I leave.", translation: "我离开前发送状态更新。", label: "status update", zh: "状态更新", x: 48, y: 44, offset: { x: -46, y: -16, mobileX: -24, mobileY: -12 } },
+            { id: "approval", word: "approval", phonetic: "/əˈpruːvəl/", meaning: "批准，认可", example: "The manager gives approval.", translation: "经理给出了批准。", label: "approval", zh: "批准", x: 63, y: 61, offset: { x: -38, y: -16, mobileX: -20, mobileY: -12 } },
+            { id: "deadline", word: "deadline", phonetic: "/ˈdedlaɪn/", meaning: "截止日期", example: "The deadline is tomorrow afternoon.", translation: "截止日期是明天下午。", label: "deadline", zh: "截止日期", x: 71, y: 43, offset: { x: -40, y: -16, mobileX: -20, mobileY: -12 } },
+            { id: "timesheet", word: "timesheet", phonetic: "/ˈtaɪmʃiːt/", meaning: "工时表", example: "I check my timesheet at the end of the day.", translation: "我在一天结束时查看工时表。", label: "timesheet", zh: "工时表", x: 59, y: 73, offset: { x: 36, y: -18, mobileX: 18, mobileY: -14 } },
+            { id: "signOut", word: "sign out", type: "action", actionMessageEn: "You sign out and finish the office day.", actionMessageZh: "你签退并完成了一天的办公室工作。", actionEffect: "officeSignOut", actionDuration: 2600, phonetic: "/saɪn aʊt/", meaning: "签退，退出", example: "I sign out before leaving the office.", translation: "我离开办公室前签退。", label: "sign out", zh: "签退", x: 50, y: 58, offset: { x: -38, y: -16, mobileX: -20, mobileY: -12 } },
+          ],
+        },
+      ];
+
       const fruitShopDialogues = {
         fruitEntranceShopkeeper: {
           id: "fruitEntranceShopkeeper",
@@ -4317,6 +4476,93 @@
             { text: "My travel document is ready.", choiceZh: "我的旅行证件准备好了。", reply: "Thank you. You may continue forward.", translation: "谢谢。你可以继续往前走。" },
             { text: "Where is my row?", choiceZh: "我的座位排在哪里？", reply: "Your row is inside the cabin.", translation: "你的座位排在机舱里面。" },
             { text: "I'll use the overhead bin.", choiceZh: "我会使用头顶行李舱。", reply: "Good. Please place your carry-on carefully.", translation: "好的。请小心放置随身行李。" },
+          ],
+        },
+      };
+
+      const officeDialogues = {
+        officeReceptionistEntrance: {
+          id: "officeReceptionistEntrance",
+          speaker: "Receptionist",
+          zh: "前台",
+          text: "Good morning. Do you have an appointment?",
+          translation: "早上好。你有预约吗？",
+          options: [
+            { text: "Yes, I have an appointment.", choiceZh: "是的，我有预约。", reply: "Great. Please register at the lobby desk.", translation: "好的。请在大厅服务台登记。" },
+            { text: "I’m here for work.", choiceZh: "我是来上班的。", reply: "Welcome. Please take a name badge first.", translation: "欢迎。请先拿一个姓名牌。" },
+            { text: "Where should I register?", choiceZh: "我应该在哪里登记？", reply: "You can register at reception.", translation: "你可以在前台登记。" },
+          ],
+        },
+        officeReceptionistConfirm: {
+          id: "officeReceptionistConfirm",
+          speaker: "Receptionist",
+          zh: "前台",
+          text: "Please confirm your name and department.",
+          translation: "请确认你的姓名和部门。",
+          options: [
+            { text: "My name is Alex.", choiceZh: "我叫 Alex。", reply: "Thank you, Alex. I found your appointment.", translation: "谢谢你，Alex。我找到了你的预约。" },
+            { text: "I work with the design team.", choiceZh: "我在设计团队工作。", reply: "Great. The design team is on this floor.", translation: "好的。设计团队就在这一层。" },
+            { text: "Could you check my appointment?", choiceZh: "你能帮我查一下预约吗？", reply: "Of course. Let me confirm it now.", translation: "当然。我现在确认一下。" },
+          ],
+        },
+        officeCoworkerTasks: {
+          id: "officeCoworkerTasks",
+          speaker: "Coworker",
+          zh: "同事",
+          text: "Can you check the task list first?",
+          translation: "你能先看一下任务列表吗？",
+          options: [
+            { text: "Sure, I’ll check it now.", choiceZh: "好的，我现在看。", reply: "Thanks. The inbox has the latest tasks.", translation: "谢谢。收件箱里有最新任务。" },
+            { text: "Which task is urgent?", choiceZh: "哪个任务比较紧急？", reply: "The client update is urgent today.", translation: "今天客户更新比较紧急。" },
+            { text: "I’ll start with my inbox.", choiceZh: "我先从收件箱开始。", reply: "Good idea. Prioritize the new messages.", translation: "好主意。先给新消息排优先级。" },
+          ],
+        },
+        officeManagerMeeting: {
+          id: "officeManagerMeeting",
+          speaker: "Manager",
+          zh: "经理",
+          text: "Could you give us a quick update?",
+          translation: "你能给我们一个快速更新吗？",
+          options: [
+            { text: "Yes, here is my update.", choiceZh: "可以，这是我的更新。", reply: "Thank you. Please present it clearly.", translation: "谢谢。请清楚地汇报。" },
+            { text: "I need one more minute.", choiceZh: "我还需要一分钟。", reply: "No problem. We can wait briefly.", translation: "没问题。我们可以稍等一下。" },
+            { text: "Can I share the projector?", choiceZh: "我可以用投影吗？", reply: "Yes, the projector is ready.", translation: "可以，投影仪已经准备好了。" },
+          ],
+        },
+        officeTeammateDocs: {
+          id: "officeTeammateDocs",
+          speaker: "Teammate",
+          zh: "队友",
+          text: "Can you make a copy for the team?",
+          translation: "你能给团队复印一份吗？",
+          options: [
+            { text: "Sure, I’ll copy it.", choiceZh: "当然，我来复印。", reply: "Thanks. The copier is ready.", translation: "谢谢。复印机可以用了。" },
+            { text: "Is the copier working?", choiceZh: "复印机能用吗？", reply: "Yes, but check for a paper jam first.", translation: "可以，但先检查一下有没有卡纸。" },
+            { text: "How many copies do we need?", choiceZh: "我们需要几份？", reply: "Please make six copies for the team.", translation: "请给团队复印六份。" },
+          ],
+        },
+        officeCoworkerBreak: {
+          id: "officeCoworkerBreak",
+          speaker: "Coworker",
+          zh: "同事",
+          text: "Do you want a short coffee break?",
+          translation: "你想短暂喝杯咖啡休息一下吗？",
+          options: [
+            { text: "Yes, I need a break.", choiceZh: "是的，我需要休息一下。", reply: "Great. A short break helps you recharge.", translation: "很好。短暂休息能帮你恢复精力。" },
+            { text: "I’ll make some tea.", choiceZh: "我来泡点茶。", reply: "The kettle is near the coffee machine.", translation: "水壶在咖啡机旁边。" },
+            { text: "Let’s go back soon.", choiceZh: "我们一会儿回去吧。", reply: "Sure. We can return after a few minutes.", translation: "当然。几分钟后我们回去。" },
+          ],
+        },
+        officeManagerWrap: {
+          id: "officeManagerWrap",
+          speaker: "Manager",
+          zh: "经理",
+          text: "Please send a status update before you leave.",
+          translation: "离开前请发送一份状态更新。",
+          options: [
+            { text: "I’ll send it now.", choiceZh: "我现在发送。", reply: "Thank you. Then you can sign out.", translation: "谢谢。然后你就可以签退了。" },
+            { text: "The handoff is ready.", choiceZh: "交接已经准备好了。", reply: "Excellent. The team can continue tomorrow.", translation: "很好。团队明天可以继续。" },
+            { text: "See you tomorrow.", choiceZh: "明天见。", reply: "See you tomorrow. Have a good evening.", translation: "明天见。祝你晚上愉快。" },
           ],
         },
       };
@@ -5402,6 +5648,71 @@
         0
       );
 
+      const moreOfficePages = [
+        {
+          id: "office-places",
+          title: "Office Places",
+          zh: "办公室地点",
+          words: [
+            { id: "open-office", word: "open office", phonetic: "/ˌoʊpən ˈɔːfɪs/", meaning: "开放式办公室", example: "The open office has many shared desks.", translation: "开放式办公室里有很多共享办公桌。" },
+            { id: "huddle-room", word: "huddle room", phonetic: "/ˈhʌdəl ruːm/", meaning: "小型讨论室", example: "We use the huddle room for quick talks.", translation: "我们用小型讨论室进行快速沟通。" },
+            { id: "mailroom", word: "mailroom", phonetic: "/ˈmeɪlruːm/", meaning: "收发室", example: "The mailroom receives office packages.", translation: "收发室接收办公室包裹。" },
+            { id: "archive-room", word: "archive room", phonetic: "/ˈɑːrkaɪv ruːm/", meaning: "档案室", example: "Old files are kept in the archive room.", translation: "旧文件保存在档案室里。" },
+            { id: "server-room", word: "server room", phonetic: "/ˈsɜːrvər ruːm/", meaning: "服务器机房", example: "The server room stays cool.", translation: "服务器机房保持凉爽。" },
+            { id: "training-room", word: "training room", phonetic: "/ˈtreɪnɪŋ ruːm/", meaning: "培训室", example: "New employees meet in the training room.", translation: "新员工在培训室见面。" },
+            { id: "focus-room", word: "focus room", phonetic: "/ˈfoʊkəs ruːm/", meaning: "专注室", example: "The focus room is quiet for deep work.", translation: "专注室很安静，适合深度工作。" },
+            { id: "pantry", word: "pantry", phonetic: "/ˈpæntri/", meaning: "茶水间", example: "The pantry has snacks and tea.", translation: "茶水间有零食和茶。" },
+            { id: "rooftop-terrace", word: "rooftop terrace", phonetic: "/ˈruːftɑːp ˈterəs/", meaning: "屋顶露台", example: "The rooftop terrace is nice at lunch.", translation: "午餐时屋顶露台很舒服。" },
+            { id: "executive-suite", word: "executive suite", phonetic: "/ɪɡˈzekjətɪv swiːt/", meaning: "高管办公区", example: "The executive suite is on the top floor.", translation: "高管办公区在顶层。" },
+            { id: "quiet-zone", word: "quiet zone", phonetic: "/ˈkwaɪət zoʊn/", meaning: "安静区", example: "Calls are not allowed in the quiet zone.", translation: "安静区不允许打电话。" },
+            { id: "project-hub", word: "project hub", phonetic: "/ˈprɑːdʒekt hʌb/", meaning: "项目协作区", example: "The project hub shows team progress.", translation: "项目协作区展示团队进度。" },
+          ],
+        },
+        {
+          id: "office-tools",
+          title: "Office Tools",
+          zh: "办公工具",
+          words: [
+            { id: "headset", word: "headset", phonetic: "/ˈhedset/", meaning: "耳麦", example: "I use a headset for video calls.", translation: "我用耳麦开视频会议。" },
+            { id: "webcam", word: "webcam", phonetic: "/ˈwebkæm/", meaning: "网络摄像头", example: "The webcam is above the monitor.", translation: "网络摄像头在显示器上方。" },
+            { id: "docking-station", word: "docking station", phonetic: "/ˈdɑːkɪŋ ˈsteɪʃən/", meaning: "扩展坞", example: "The docking station connects my laptop.", translation: "扩展坞连接我的笔记本电脑。" },
+            { id: "trackpad", word: "trackpad", phonetic: "/ˈtrækpæd/", meaning: "触控板", example: "The trackpad helps me move the cursor.", translation: "触控板帮助我移动光标。" },
+            { id: "lamp", word: "lamp", phonetic: "/læmp/", meaning: "台灯", example: "The desk lamp gives soft light.", translation: "桌面台灯发出柔和的光。" },
+            { id: "sticky-note", word: "sticky note", phonetic: "/ˈstɪki noʊt/", meaning: "便利贴", example: "I write a reminder on a sticky note.", translation: "我在便利贴上写提醒。" },
+            { id: "binder-clip", word: "binder clip", phonetic: "/ˈbaɪndər klɪp/", meaning: "长尾夹", example: "A binder clip holds the papers together.", translation: "长尾夹把纸夹在一起。" },
+            { id: "clipboard", word: "clipboard", phonetic: "/ˈklɪpbɔːrd/", meaning: "写字板夹", example: "The clipboard holds the checklist.", translation: "写字板夹夹着清单。" },
+            { id: "paper-clip", word: "paper clip", phonetic: "/ˈpeɪpər klɪp/", meaning: "回形针", example: "A paper clip keeps the pages together.", translation: "回形针把页面夹在一起。" },
+            { id: "badge-holder", word: "badge holder", phonetic: "/bædʒ ˈhoʊldər/", meaning: "证件套", example: "The badge holder protects my card.", translation: "证件套保护我的卡。" },
+            { id: "extension-cord", word: "extension cord", phonetic: "/ɪkˈstenʃən kɔːrd/", meaning: "延长线", example: "The extension cord reaches the table.", translation: "延长线能接到桌边。" },
+            { id: "calendar-app", word: "calendar app", phonetic: "/ˈkælɪndər æp/", meaning: "日历应用", example: "The calendar app shows my meetings.", translation: "日历应用显示我的会议。" },
+          ],
+        },
+        {
+          id: "work-communication",
+          title: "Work Communication",
+          zh: "职场沟通",
+          words: [
+            { id: "kickoff", word: "kickoff", phonetic: "/ˈkɪkɔːf/", meaning: "启动会，开始", example: "The kickoff starts the project.", translation: "启动会开启项目。" },
+            { id: "follow-up", word: "follow-up", phonetic: "/ˈfɑːloʊ ʌp/", meaning: "跟进", example: "I send a follow-up after the meeting.", translation: "我在会议后发送跟进信息。" },
+            { id: "milestone", word: "milestone", phonetic: "/ˈmaɪlstoʊn/", meaning: "里程碑", example: "This milestone is important for the team.", translation: "这个里程碑对团队很重要。" },
+            { id: "deliverable", word: "deliverable", phonetic: "/dɪˈlɪvərəbəl/", meaning: "交付物", example: "The deliverable is due on Friday.", translation: "交付物周五截止。" },
+            { id: "feedback", word: "feedback", phonetic: "/ˈfiːdbæk/", meaning: "反馈", example: "Feedback helps us improve the work.", translation: "反馈帮助我们改进工作。" },
+            { id: "brainstorm", word: "brainstorm", phonetic: "/ˈbreɪnstɔːrm/", meaning: "头脑风暴", example: "We brainstorm ideas together.", translation: "我们一起头脑风暴想点子。" },
+            { id: "alignment", word: "alignment", phonetic: "/əˈlaɪnmənt/", meaning: "对齐，共识", example: "Alignment helps the team move together.", translation: "共识帮助团队一起推进。" },
+            { id: "escalation", word: "escalation", phonetic: "/ˌeskəˈleɪʃən/", meaning: "升级处理", example: "Escalation is needed for urgent issues.", translation: "紧急问题需要升级处理。" },
+            { id: "handover-note", word: "handover note", phonetic: "/ˈhændoʊvər noʊt/", meaning: "交接备注", example: "The handover note explains the next steps.", translation: "交接备注说明下一步。" },
+            { id: "sync-up", word: "sync-up", phonetic: "/sɪŋk ʌp/", meaning: "同步沟通", example: "We have a quick sync-up every morning.", translation: "我们每天早上快速同步沟通。" },
+            { id: "one-on-one", word: "one-on-one", phonetic: "/ˌwʌn ɑːn ˈwʌn/", meaning: "一对一沟通", example: "A one-on-one helps with personal feedback.", translation: "一对一沟通有助于个人反馈。" },
+            { id: "wrap-up", word: "wrap-up", phonetic: "/ˈræp ʌp/", meaning: "收尾，总结", example: "The wrap-up is at the end of the day.", translation: "收尾总结在一天结束时进行。" },
+          ],
+        },
+      ];
+
+      const moreOfficeCount = moreOfficePages.reduce(
+        (count, page) => count + page.words.length,
+        0
+      );
+
       const sceneCards = [
         {
           id: "zoo",
@@ -5497,17 +5808,19 @@
           id: "office",
           title: "Office",
           zh: "办公室",
-          status: "Coming Soon",
-          statusZh: "即将开放",
+          status: "Available",
+          statusZh: "可进入",
           description: "Learn meetings, computers, emails, colleagues, and work English.",
           descriptionZh: "学习会议、电脑、邮件、同事和职场英语。",
-          button: "Coming Soon",
-          buttonZh: "即将开放",
+          button: "Enter Office",
+          buttonZh: "进入办公室",
+          available: true,
+          chapter: "office",
           accent: "#b9a1ff",
-          visual: "Work Desk",
-          visualZh: "办公桌面",
-          image: "linear-gradient(180deg, rgba(9, 11, 17, 0.02), rgba(9, 11, 17, 0.74)), linear-gradient(90deg, transparent 0 18%, rgba(255,255,255,0.18) 18% 48%, transparent 48% 100%), radial-gradient(ellipse at 52% 66%, rgba(255,255,255,0.18) 0 23%, transparent 23.5%), radial-gradient(circle at 78% 28%, rgba(185,161,255,0.38), transparent 22%), linear-gradient(145deg, #171923, #334054 54%, #6b7893)",
-          imagePosition: "center",
+          visual: "Workplace Flow",
+          visualZh: "职场动线",
+          image: "linear-gradient(180deg, rgba(9, 11, 17, 0.02), rgba(9, 11, 17, 0.74)), url('assets/office-cover.png')",
+          imagePosition: "center 58%",
         },
       ];
 
@@ -5994,6 +6307,7 @@
         const [selectedMoreCampusWord, setSelectedMoreCampusWord] = useState(null);
         const [selectedMoreCafeWord, setSelectedMoreCafeWord] = useState(null);
         const [selectedMoreAirportWord, setSelectedMoreAirportWord] = useState(null);
+        const [selectedMoreOfficeWord, setSelectedMoreOfficeWord] = useState(null);
         const [dialogueReply, setDialogueReply] = useState(null);
         const [conversationDone, setConversationDone] = useState([]);
         const [completedActions, setCompletedActions] = useState([]);
@@ -6003,6 +6317,7 @@
         const [learnedMoreCampusWords, setLearnedMoreCampusWords] = useState([]);
         const [learnedMoreCafeWords, setLearnedMoreCafeWords] = useState([]);
         const [learnedMoreAirportWords, setLearnedMoreAirportWords] = useState([]);
+        const [learnedMoreOfficeWords, setLearnedMoreOfficeWords] = useState([]);
         const [learnedWords, setLearnedWords] = useState([]);
         const [savedWords, setSavedWords] = useState(loadWordBookEntries);
         const [playingKey, setPlayingKey] = useState(null);
@@ -6023,6 +6338,8 @@
         const [showMoreCafeBook, setShowMoreCafeBook] = useState(false);
         const [showMoreAirportChoice, setShowMoreAirportChoice] = useState(false);
         const [showMoreAirportBook, setShowMoreAirportBook] = useState(false);
+        const [showMoreOfficeChoice, setShowMoreOfficeChoice] = useState(false);
+        const [showMoreOfficeBook, setShowMoreOfficeBook] = useState(false);
         const [showMobileObserve, setShowMobileObserve] = useState(false);
         const [showMobileDialogue, setShowMobileDialogue] = useState(false);
         const [showMobileTripMap, setShowMobileTripMap] = useState(false);
@@ -6031,6 +6348,7 @@
         const [moreCampusPageIndex, setMoreCampusPageIndex] = useState(0);
         const [moreCafePageIndex, setMoreCafePageIndex] = useState(0);
         const [moreAirportPageIndex, setMoreAirportPageIndex] = useState(0);
+        const [moreOfficePageIndex, setMoreOfficePageIndex] = useState(0);
         const [showEnding, setShowEnding] = useState(false);
         const [isWalking, setIsWalking] = useState(false);
         const [animalEffect, setAnimalEffect] = useState(null);
@@ -6066,6 +6384,7 @@
         const isCampusChapter = currentChapter === "campus";
         const isCafeChapter = currentChapter === "cafe";
         const isAirportChapter = currentChapter === "airport";
+        const isOfficeChapter = currentChapter === "office";
         const activeScenes = isZooChapter
           ? scenes
           : isFruitShopChapter
@@ -6074,7 +6393,9 @@
           ? campusScenes
           : isCafeChapter
           ? cafeScenes
-          : airportScenes;
+          : isAirportChapter
+          ? airportScenes
+          : officeScenes;
         const activeDialogues = isZooChapter
           ? dialogues
           : isFruitShopChapter
@@ -6083,7 +6404,9 @@
           ? campusDialogues
           : isCafeChapter
           ? cafeDialogues
-          : airportDialogues;
+          : isAirportChapter
+          ? airportDialogues
+          : officeDialogues;
         const chapterTitle = isZooChapter
           ? "Zoo Trip"
           : isFruitShopChapter
@@ -6092,7 +6415,9 @@
           ? "Campus Trip"
           : isCafeChapter
           ? "Cafe Trip"
-          : "Airport Trip";
+          : isAirportChapter
+          ? "Airport Trip"
+          : "Office Day";
         const chapterTitleZh = isZooChapter
           ? "动物园之旅"
           : isFruitShopChapter
@@ -6101,7 +6426,9 @@
           ? "校园之旅"
           : isCafeChapter
           ? "咖啡馆之旅"
-          : "机场之旅";
+          : isAirportChapter
+          ? "机场之旅"
+          : "办公室之旅";
         const chapterWordBookScene = isZooChapter
           ? "Zoo"
           : isFruitShopChapter
@@ -6110,7 +6437,9 @@
           ? "Campus"
           : isCafeChapter
           ? "Cafe"
-          : "Airport";
+          : isAirportChapter
+          ? "Airport"
+          : "Office";
         const endingTitle = isZooChapter
           ? "Great job! Your zoo trip is finished."
           : isFruitShopChapter
@@ -6119,7 +6448,9 @@
           ? "Great job! Your campus trip is finished."
           : isCafeChapter
           ? "Great job! Your cafe trip is finished."
-          : "Great job! Your airport trip is finished.";
+          : isAirportChapter
+          ? "Great job! Your airport trip is finished."
+          : "Great job! Your office day is finished.";
         const endingZh = isZooChapter
           ? "太棒了！今天的动物园之旅到此结束啦。"
           : isFruitShopChapter
@@ -6128,7 +6459,9 @@
           ? "太棒了！你的校园之旅完成了。"
           : isCafeChapter
           ? "太棒了！你的咖啡馆之旅完成了。"
-          : "太棒了！你的机场之旅完成了。";
+          : isAirportChapter
+          ? "太棒了！你的机场之旅完成了。"
+          : "太棒了！你的办公室之旅完成了。";
         const restartLabel = isZooChapter
           ? "Restart Trip"
           : isFruitShopChapter
@@ -6137,7 +6470,9 @@
           ? "Restart Campus"
           : isCafeChapter
           ? "Restart Cafe"
-          : "Restart Airport";
+          : isAirportChapter
+          ? "Restart Airport"
+          : "Restart Office";
         const restartZh = isZooChapter
           ? "重新开始旅程"
           : isFruitShopChapter
@@ -6146,7 +6481,9 @@
           ? "重新开始校园"
           : isCafeChapter
           ? "重新开始咖啡馆"
-          : "重新开始机场";
+          : isAirportChapter
+          ? "重新开始机场"
+          : "重新开始办公室";
         const welcomeIntro = isZooChapter
           ? {
               label: "Zoo Trip",
@@ -6191,7 +6528,8 @@
               action: "Start Cafe Trip",
               actionZh: "开始咖啡馆之旅",
             }
-          : {
+          : isAirportChapter
+          ? {
               label: "Airport Trip",
               labelZh: "机场之旅",
               title: "Welcome to the airport!",
@@ -6200,6 +6538,16 @@
               zh: "今天你会走进机场，办理值机、托运行李、通过安检、找到登机区域，并学习真实机场英语。",
               action: "Start Airport Trip",
               actionZh: "开始机场之旅",
+            }
+          : {
+              label: "Office Day",
+              labelZh: "办公室之旅",
+              title: "Welcome to the office!",
+              titleZh: "欢迎来到办公室！",
+              text: "Today, you will walk into an office, check the work area, join a meeting, handle documents, talk with coworkers, and learn real workplace English.",
+              zh: "今天你会走进办公室，查看工作区、参加会议、处理文件、和同事沟通，并学习真实职场英语。",
+              action: "Start Office Day",
+              actionZh: "开始办公室之旅",
             };
         const currentScene = activeScenes[currentIndex];
         const currentDialogue = currentScene.npc ? activeDialogues[currentScene.npc] : null;
@@ -6364,6 +6712,28 @@
                 zh: `不错！你又认识了 ${exploredMoreAirportCount} 个机场词汇。`,
               }
             : null;
+        const currentMoreOfficePage = moreOfficePages[moreOfficePageIndex];
+        const exploredMoreOfficeCount = learnedMoreOfficeWords.length;
+        const currentOfficePageExploredCount = currentMoreOfficePage.words.filter((word) =>
+          learnedMoreOfficeWords.includes(word.id)
+        ).length;
+        const moreOfficeReward =
+          exploredMoreOfficeCount === moreOfficeCount
+            ? {
+                text: "Amazing! You discovered all more office words.",
+                zh: "太厉害了！你探索了全部拓展办公室词汇。",
+              }
+            : currentOfficePageExploredCount === currentMoreOfficePage.words.length
+            ? {
+                text: "Great explorer! You completed one office page.",
+                zh: "太棒了！你完成了一页办公室词汇探索。",
+              }
+            : exploredMoreOfficeCount >= 5
+            ? {
+                text: `Nice! You discovered ${exploredMoreOfficeCount} more office words.`,
+                zh: `不错！你又认识了 ${exploredMoreOfficeCount} 个办公室词汇。`,
+              }
+            : null;
         const wordBookFilters = [
           { id: "all", en: "All", zh: "全部" },
           { id: "zoo", en: "Zoo", zh: "动物园" },
@@ -6488,6 +6858,19 @@
           };
         }
 
+        function makeMoreOfficeWordBookEntry(word) {
+          return {
+            word: word.word,
+            zh: word.meaning,
+            phonetic: word.phonetic,
+            example: word.example,
+            exampleZh: word.translation,
+            scene: "Office / More Office Words",
+            type: "work",
+            addedAt: new Date().toISOString(),
+          };
+        }
+
         function isWordSaved(word) {
           const key = getWordKey(word);
           return savedWords.some((item) => getWordKey(item.word) === key);
@@ -6516,6 +6899,7 @@
           setSelectedMoreCampusWord(null);
           setSelectedMoreCafeWord(null);
           setSelectedMoreAirportWord(null);
+          setSelectedMoreOfficeWord(null);
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
           setShowMoreFruitsChoice(false);
@@ -6526,6 +6910,8 @@
           setShowMoreCafeBook(false);
           setShowMoreAirportChoice(false);
           setShowMoreAirportBook(false);
+          setShowMoreOfficeChoice(false);
+          setShowMoreOfficeBook(false);
           setIsReviewingWordBook(false);
           setReviewRevealed(false);
           setReviewIndex(0);
@@ -6655,6 +7041,15 @@
           speakEnglish(word.word, 0.9, `more-airport-${word.id}-normal`);
         }
 
+        function openMoreOfficeWord(word) {
+          setSelectedMoreOfficeWord(word);
+          setLearnedMoreOfficeWords((items) =>
+            items.includes(word.id) ? items : [...items, word.id]
+          );
+          rememberWord(word.word);
+          speakEnglish(word.word, 0.9, `more-office-${word.id}-normal`);
+        }
+
         function finishZooTrip() {
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
@@ -6690,6 +7085,13 @@
           setShowEnding(true);
         }
 
+        function finishOfficeDay() {
+          setShowMoreOfficeChoice(false);
+          setShowMoreOfficeBook(false);
+          setSelectedMoreOfficeWord(null);
+          setShowEnding(true);
+        }
+
         function enterZoo() {
           setSceneSelectHint("");
           setCurrentChapter("zoo");
@@ -6700,6 +7102,7 @@
           setSelectedMoreCampusWord(null);
           setSelectedMoreCafeWord(null);
           setSelectedMoreAirportWord(null);
+          setSelectedMoreOfficeWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -6718,6 +7121,8 @@
           setShowMoreCafeBook(false);
           setShowMoreAirportChoice(false);
           setShowMoreAirportBook(false);
+          setShowMoreOfficeChoice(false);
+          setShowMoreOfficeBook(false);
           setShowWelcome(true);
           setWelcomeLeaving(false);
           setCurrentView("zoo");
@@ -6733,6 +7138,7 @@
           setSelectedMoreCampusWord(null);
           setSelectedMoreCafeWord(null);
           setSelectedMoreAirportWord(null);
+          setSelectedMoreOfficeWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -6751,6 +7157,8 @@
           setShowMoreCafeBook(false);
           setShowMoreAirportChoice(false);
           setShowMoreAirportBook(false);
+          setShowMoreOfficeChoice(false);
+          setShowMoreOfficeBook(false);
           setShowWelcome(true);
           setWelcomeLeaving(false);
           setCurrentView("zoo");
@@ -6766,6 +7174,7 @@
           setSelectedMoreCampusWord(null);
           setSelectedMoreCafeWord(null);
           setSelectedMoreAirportWord(null);
+          setSelectedMoreOfficeWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -6784,6 +7193,8 @@
           setShowMoreCafeBook(false);
           setShowMoreAirportChoice(false);
           setShowMoreAirportBook(false);
+          setShowMoreOfficeChoice(false);
+          setShowMoreOfficeBook(false);
           setShowWelcome(true);
           setWelcomeLeaving(false);
           setCurrentView("zoo");
@@ -6799,6 +7210,7 @@
           setSelectedMoreCampusWord(null);
           setSelectedMoreCafeWord(null);
           setSelectedMoreAirportWord(null);
+          setSelectedMoreOfficeWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -6817,6 +7229,44 @@
           setShowMoreCafeBook(false);
           setShowMoreAirportChoice(false);
           setShowMoreAirportBook(false);
+          setShowMoreOfficeChoice(false);
+          setShowMoreOfficeBook(false);
+          setShowWelcome(true);
+          setWelcomeLeaving(false);
+          setCurrentView("zoo");
+        }
+
+        function enterOffice() {
+          setSceneSelectHint("");
+          setCurrentChapter("office");
+          setCurrentIndex(0);
+          setSelectedHotspot(null);
+          setSelectedMoreAnimal(null);
+          setSelectedMoreFruit(null);
+          setSelectedMoreCampusWord(null);
+          setSelectedMoreCafeWord(null);
+          setSelectedMoreAirportWord(null);
+          setSelectedMoreOfficeWord(null);
+          setDialogueReply(null);
+          setConversationDone([]);
+          setCompletedActions([]);
+          setLearnedHotspotKeys([]);
+          setLearnedWords([]);
+          setProgressHint("");
+          setAnimalEffect(null);
+          setShowEnding(false);
+          setShowMoreAnimalsChoice(false);
+          setShowMoreAnimalsBook(false);
+          setShowMoreFruitsChoice(false);
+          setShowMoreFruitsBook(false);
+          setShowMoreCampusChoice(false);
+          setShowMoreCampusBook(false);
+          setShowMoreCafeChoice(false);
+          setShowMoreCafeBook(false);
+          setShowMoreAirportChoice(false);
+          setShowMoreAirportBook(false);
+          setShowMoreOfficeChoice(false);
+          setShowMoreOfficeBook(false);
           setShowWelcome(true);
           setWelcomeLeaving(false);
           setCurrentView("zoo");
@@ -6832,6 +7282,7 @@
           setSelectedMoreCampusWord(null);
           setSelectedMoreCafeWord(null);
           setSelectedMoreAirportWord(null);
+          setSelectedMoreOfficeWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -6898,11 +7349,13 @@
           setShowMoreCampusBook(false);
           setShowMoreCafeBook(false);
           setShowMoreAirportBook(false);
+          setShowMoreOfficeBook(false);
           setShowMoreAnimalsChoice(isZooChapter);
           setShowMoreFruitsChoice(isFruitShopChapter);
           setShowMoreCampusChoice(isCampusChapter);
           setShowMoreCafeChoice(isCafeChapter);
           setShowMoreAirportChoice(isAirportChapter);
+          setShowMoreOfficeChoice(isOfficeChapter);
         }
 
         function walkForward() {
@@ -6937,6 +7390,7 @@
           setSelectedMoreCampusWord(null);
           setSelectedMoreCafeWord(null);
           setSelectedMoreAirportWord(null);
+          setSelectedMoreOfficeWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -6946,6 +7400,7 @@
           setLearnedMoreCampusWords([]);
           setLearnedMoreCafeWords([]);
           setLearnedMoreAirportWords([]);
+          setLearnedMoreOfficeWords([]);
           setLearnedWords([]);
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
@@ -6957,13 +7412,16 @@
           setShowMoreCafeBook(false);
           setShowMoreAirportChoice(false);
           setShowMoreAirportBook(false);
+          setShowMoreOfficeChoice(false);
+          setShowMoreOfficeBook(false);
           setMoreAnimalsPageIndex(0);
           setMoreFruitsPageIndex(0);
           setMoreCampusPageIndex(0);
           setMoreCafePageIndex(0);
           setMoreAirportPageIndex(0);
+          setMoreOfficePageIndex(0);
           setShowEnding(false);
-          setShowWelcome(isZooChapter || isCampusChapter || isCafeChapter || isAirportChapter);
+          setShowWelcome(isZooChapter || isCampusChapter || isCafeChapter || isAirportChapter || isOfficeChapter);
           setWelcomeLeaving(false);
           setAnimalEffect(null);
         }
@@ -7453,6 +7911,8 @@
                               ? enterCafe
                               : scene.chapter === "airport"
                               ? enterAirport
+                              : scene.chapter === "office"
+                              ? enterOffice
                               : enterZoo
                             : showComingSoon
                         }
@@ -7535,6 +7995,14 @@
                       <div className="playful-leaf absolute left-[44%] top-[49%] h-3 w-6 rounded-full bg-[#8fb7df]/80"></div>
                       <div className="playful-leaf absolute left-[51%] top-[53%] h-3 w-6 rounded-full bg-[#f2d48a]/78 [animation-delay:0.12s]"></div>
                       <div className="playful-leaf absolute left-[58%] top-[47%] h-3 w-6 rounded-full bg-[#d9e7f7]/72 [animation-delay:0.24s]"></div>
+                    </>
+                  )}
+                  {animalEffect?.effect?.startsWith("office") && (
+                    <>
+                      <div className="sunlit-sweep absolute left-[18%] top-0 h-full w-24 bg-[#d5c0ff]/12 blur-xl"></div>
+                      <div className="playful-leaf absolute left-[44%] top-[49%] h-3 w-6 rounded-full bg-[#c9b9f4]/75"></div>
+                      <div className="playful-leaf absolute left-[51%] top-[53%] h-3 w-6 rounded-full bg-[#f2d48a]/72 [animation-delay:0.12s]"></div>
+                      <div className="playful-leaf absolute left-[58%] top-[47%] h-3 w-6 rounded-full bg-[#d8dde7]/70 [animation-delay:0.24s]"></div>
                     </>
                   )}
                 </div>
@@ -7770,6 +8238,7 @@
                   setSelectedMoreCampusWord(null);
                   setSelectedMoreCafeWord(null);
                   setSelectedMoreAirportWord(null);
+                  setSelectedMoreOfficeWord(null);
                   setShowMoreAnimalsChoice(false);
                   setShowMoreAnimalsBook(false);
                   setShowMoreFruitsChoice(false);
@@ -7780,6 +8249,8 @@
                   setShowMoreCafeBook(false);
                   setShowMoreAirportChoice(false);
                   setShowMoreAirportBook(false);
+                  setShowMoreOfficeChoice(false);
+                  setShowMoreOfficeBook(false);
                   setShowEnding(false);
                   setCurrentView("sceneSelect");
                 }}
@@ -9497,6 +9968,272 @@
                         className="mt-6 w-full rounded-2xl bg-banana px-4 py-4 text-lg font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
                       >
                         <ButtonCopy en="Finish Airport Trip" zh="结束机场之旅" />
+                      </button>
+                    </div>
+                  </aside>
+                )}
+              </div>
+            )}
+
+            {showMoreOfficeChoice && !showEnding && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 backdrop-blur-sm">
+                <div className="dialogue-enter w-full max-w-2xl rounded-3xl border border-white/18 bg-[#112319]/92 p-6 text-cream shadow-glow backdrop-blur-2xl">
+                  <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">
+                    More Office Words
+                  </p>
+                  <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">
+                    Want to discover more office words?
+                  </h2>
+                  <p className="mt-3 text-xl font-bold text-cream/82">
+                    想认识更多办公室词汇吗？
+                  </p>
+                  <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                    <button
+                      onClick={() => {
+                        setShowMoreOfficeChoice(false);
+                        setShowMoreOfficeBook(true);
+                        setMoreOfficePageIndex(0);
+                      }}
+                      className="rounded-2xl bg-banana px-5 py-4 font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                    >
+                      <ButtonCopy en="Yes, show me more office words." zh="是的，我想看看更多办公室词汇。" />
+                    </button>
+                    <button
+                      onClick={finishOfficeDay}
+                      className="rounded-2xl border border-white/18 bg-white/12 px-5 py-4 font-black text-white transition hover:bg-white/22 active:scale-[0.99]"
+                    >
+                      <ButtonCopy en="No, finish today's office day." zh="不用了，结束今天的办公室之旅。" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {showMoreOfficeBook && !showEnding && (
+              <div className="fixed inset-0 z-50 overflow-auto bg-[#191c20]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
+                <div className="mx-auto max-w-6xl">
+                  <header className="flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">
+                        More Office Words
+                      </p>
+                      <h2 className="mt-2 text-3xl font-black text-white sm:text-5xl">
+                        More Office Words
+                      </h2>
+                      <p className="mt-2 text-lg font-bold text-cream/78">
+                        更多办公室词汇
+                      </p>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <div className="rounded-2xl border border-white/14 bg-white/10 px-4 py-3">
+                        <p className="text-[10px] font-black uppercase tracking-[0.18em] text-banana">
+                          Explored
+                        </p>
+                        <p className="mt-1 text-2xl font-black text-white">
+                          {exploredMoreOfficeCount}/{moreOfficeCount}
+                        </p>
+                        <p className="text-xs font-bold text-cream/70">已探索</p>
+                      </div>
+                      <button
+                        onClick={finishOfficeDay}
+                        className="rounded-full bg-banana px-5 py-3 font-black text-ink shadow-label transition hover:bg-[#ffc83f] active:scale-[0.99]"
+                      >
+                        <ButtonCopy en="Finish Office Day" zh="结束办公室之旅" />
+                      </button>
+                    </div>
+                  </header>
+
+                  {moreOfficeReward && (
+                    <div className="dialogue-enter mt-4 rounded-2xl border border-banana/35 bg-[#3a3448]/62 px-4 py-3 shadow-label backdrop-blur-[3px]">
+                      <p className="font-black text-white">{moreOfficeReward.text}</p>
+                      <p className="mt-1 text-sm font-bold text-cream/76">{moreOfficeReward.zh}</p>
+                    </div>
+                  )}
+
+                  <div className="mt-5 flex gap-2 overflow-x-auto pb-1">
+                    {moreOfficePages.map((page, index) => {
+                      const active = index === moreOfficePageIndex;
+                      return (
+                        <button
+                          key={page.id}
+                          onClick={() => {
+                            setMoreOfficePageIndex(index);
+                            setSelectedMoreOfficeWord(null);
+                          }}
+                          className={`min-w-[190px] rounded-2xl px-4 py-3 text-left font-black shadow-label transition hover:-translate-y-0.5 active:translate-y-0 ${
+                            active ? "bg-[#625583] text-white" : "border border-white/16 bg-white/10 text-cream hover:bg-white/18"
+                          }`}
+                        >
+                          <span className="block text-sm">{page.title}</span>
+                          <span className="mt-1 block text-xs font-bold opacity-75">{page.zh}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  <section className="mt-5 rounded-3xl border border-white/14 bg-nightglass p-4 shadow-glow backdrop-blur-xl">
+                    <div className="flex flex-wrap items-end justify-between gap-3">
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.22em] text-banana">
+                          Page {moreOfficePageIndex + 1}/3
+                        </p>
+                        <h3 className="mt-1 text-2xl font-black text-white">
+                          {currentMoreOfficePage.title}
+                          <span className="ml-2 text-banana">{currentMoreOfficePage.zh}</span>
+                        </h3>
+                      </div>
+                      <p className="text-sm font-black text-cream/75">
+                        {currentOfficePageExploredCount}/12 learned · 已学习
+                      </p>
+                    </div>
+
+                    <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                      {currentMoreOfficePage.words.map((word) => {
+                        const learned = learnedMoreOfficeWords.includes(word.id);
+                        return (
+                          <button
+                            key={word.id}
+                            onClick={() => openMoreOfficeWord(word)}
+                            className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
+                              learned
+                                ? "border-[#c9b9f4]/55 bg-[#302d3f]/72"
+                                : "border-white/14 bg-white/10 hover:border-banana/45 hover:bg-white/16"
+                            }`}
+                          >
+                            <div className="flex items-start gap-3">
+                              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-banana/35 bg-[#312c43]/72 text-xl font-black text-banana transition group-hover:scale-105">
+                                {word.word.slice(0, 1).toUpperCase()}
+                              </span>
+                              <span className="min-w-0">
+                                <span className="block text-lg font-black leading-tight text-white">
+                                  {word.word}
+                                </span>
+                                <span className="mt-1 block text-sm font-bold text-cream/72">
+                                  {word.meaning}
+                                </span>
+                              </span>
+                            </div>
+                            <div className="mt-3 flex items-center justify-between gap-2">
+                              <span className="text-xs font-black text-banana">{word.phonetic}</span>
+                              {learned && (
+                                <span className="rounded-full bg-banana/90 px-2 py-1 text-[10px] font-black uppercase text-ink">
+                                  Learned · 已学习
+                                </span>
+                              )}
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </section>
+                </div>
+
+                {selectedMoreOfficeWord && (
+                  <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/92 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
+                    <div className="flex items-start justify-between gap-3 border-b border-white/12 p-5">
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
+                          Office Word
+                        </p>
+                        <h2 className="mt-2 text-4xl font-black leading-tight text-white">
+                          {selectedMoreOfficeWord.word}
+                        </h2>
+                        <p className="mt-2 text-2xl font-extrabold text-banana">
+                          {selectedMoreOfficeWord.phonetic}
+                        </p>
+                      </div>
+                      <button
+                        onClick={() => setSelectedMoreOfficeWord(null)}
+                        className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/12 text-2xl font-black text-white transition hover:bg-white/22 active:scale-95"
+                        aria-label="Close 关闭"
+                        title="Close / 关闭"
+                      >
+                        ×
+                      </button>
+                    </div>
+
+                    <div className="flex-1 overflow-auto p-5">
+                      <div className="rounded-2xl border border-white/12 bg-white/10 p-4">
+                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-banana">
+                          中文意思
+                        </p>
+                        <p className="mt-2 text-2xl font-black text-white">
+                          {selectedMoreOfficeWord.meaning}
+                        </p>
+                      </div>
+
+                      <div className="mt-4 rounded-2xl border border-white/12 bg-black/18 p-4">
+                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-coral">
+                          Example
+                        </p>
+                        <p className="mt-2 text-2xl font-black leading-9 text-white">
+                          {selectedMoreOfficeWord.example}
+                        </p>
+                        <p className="mt-2 text-lg font-bold leading-8 text-cream/78">
+                          {selectedMoreOfficeWord.translation}
+                        </p>
+                      </div>
+
+                      <div className="mt-5 grid grid-cols-2 gap-3">
+                        <button
+                          onClick={() => speakEnglish(selectedMoreOfficeWord.word, 0.9, `more-office-${selectedMoreOfficeWord.id}-normal`)}
+                          className="rounded-2xl bg-banana px-4 py-3 text-base font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                        >
+                          <span className="inline-flex items-center justify-center gap-2">
+                            {playingKey === `more-office-${selectedMoreOfficeWord.id}-normal` && <SoundBars />}
+                            <ButtonCopy en="Normal" zh="正常语速" />
+                          </span>
+                        </button>
+                        <button
+                          onClick={() => speakEnglish(selectedMoreOfficeWord.word, 0.65, `more-office-${selectedMoreOfficeWord.id}-slow`)}
+                          className="rounded-2xl border border-banana/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"
+                        >
+                          <span className="inline-flex items-center justify-center gap-2">
+                            {playingKey === `more-office-${selectedMoreOfficeWord.id}-slow` && <SoundBars />}
+                            <ButtonCopy en="Slow" zh="慢速朗读" />
+                          </span>
+                        </button>
+                      </div>
+
+                      <button
+                        onClick={() => speakEnglish(selectedMoreOfficeWord.example, 0.86, `more-office-${selectedMoreOfficeWord.id}-sentence`)}
+                        className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
+                      >
+                        <span className="inline-flex items-center justify-center gap-2">
+                          {playingKey === `more-office-${selectedMoreOfficeWord.id}-sentence` && <SoundBars />}
+                          <ButtonCopy en="Play Sentence" zh="朗读例句" />
+                        </span>
+                      </button>
+
+                      <button
+                        onClick={() => saveWordEntry(makeMoreOfficeWordBookEntry(selectedMoreOfficeWord))}
+                        disabled={isWordSaved(selectedMoreOfficeWord.word)}
+                        className={`mt-3 w-full rounded-2xl px-4 py-3 text-base font-black shadow-label transition active:scale-[0.99] ${
+                          isWordSaved(selectedMoreOfficeWord.word)
+                            ? "bg-coral text-white"
+                            : "bg-white/12 text-white hover:bg-white/22"
+                        }`}
+                      >
+                        <ButtonCopy
+                          en={isWordSaved(selectedMoreOfficeWord.word) ? "Added to Word Book" : "Add to Word Book"}
+                          zh={isWordSaved(selectedMoreOfficeWord.word) ? "已加入生词本" : "加入生词本"}
+                        />
+                      </button>
+
+                      {isWordSaved(selectedMoreOfficeWord.word) && (
+                        <button
+                          onClick={() => removeWordEntry(selectedMoreOfficeWord.word)}
+                          className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
+                        >
+                          <ButtonCopy en="Remove from Word Book" zh="移出生词本" />
+                        </button>
+                      )}
+
+                      <button
+                        onClick={finishOfficeDay}
+                        className="mt-6 w-full rounded-2xl bg-banana px-4 py-4 text-lg font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                      >
+                        <ButtonCopy en="Finish Office Day" zh="结束办公室之旅" />
                       </button>
                     </div>
                   </aside>
