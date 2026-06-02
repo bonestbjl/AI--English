@@ -2,7 +2,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Real Scene English - 真实场景英语</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -333,7 +333,9 @@
         body,
         #root {
           min-height: 100dvh;
-          overflow: hidden;
+          overflow-x: hidden;
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
         }
 
         .home-page,
@@ -384,8 +386,20 @@
         }
 
         .scene-select-page {
+          height: 100dvh !important;
+          max-height: 100dvh !important;
           padding: 0.6rem !important;
-          overflow: auto !important;
+          padding-bottom: calc(env(safe-area-inset-bottom) + 1rem) !important;
+          overflow-x: hidden !important;
+          overflow-y: auto !important;
+          overscroll-behavior-y: contain;
+          -webkit-overflow-scrolling: touch;
+          touch-action: pan-y;
+        }
+
+        .scene-select-page > .relative {
+          min-height: max-content !important;
+          padding-bottom: 0.5rem !important;
         }
 
         .scene-select-page header {
@@ -457,6 +471,12 @@
           font-size: 0.68rem !important;
         }
 
+        .mobile-landscape-mode .scene-hud-secondary {
+          display: inline-flex !important;
+          padding: 0.32rem 0.5rem !important;
+          font-size: 0.62rem !important;
+        }
+
         .observe-panel {
           left: 0.55rem !important;
           top: calc(env(safe-area-inset-top) + 3.65rem) !important;
@@ -511,12 +531,112 @@
         }
 
         .trip-map {
-          left: 0.55rem !important;
-          right: 0.55rem !important;
+          left: auto !important;
+          right: calc(env(safe-area-inset-right) + 0.55rem) !important;
           bottom: calc(env(safe-area-inset-bottom) + 0.45rem) !important;
-          max-width: none !important;
+          max-width: min(32rem, calc(100vw - 1.1rem)) !important;
           padding: 0.5rem !important;
           border-radius: 0.9rem !important;
+        }
+
+        .mobile-landscape-mode .observe-panel,
+        .mobile-landscape-mode .npc-dialogue,
+        .mobile-landscape-mode .trip-map {
+          z-index: 55 !important;
+        }
+
+        .mobile-landscape-toggle {
+          min-width: 4.8rem;
+          border: 1px solid rgba(255, 255, 255, 0.18);
+          border-radius: 999px;
+          background: rgba(17, 35, 25, 0.76);
+          padding: 0.38rem 0.6rem;
+          color: #fff8df;
+          font-size: 0.68rem;
+          font-weight: 900;
+          line-height: 1.05;
+          box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+          backdrop-filter: blur(14px);
+        }
+
+        .mobile-landscape-dock {
+          position: absolute;
+          bottom: calc(env(safe-area-inset-bottom) + 0.45rem);
+          left: calc(env(safe-area-inset-left) + 0.55rem);
+          z-index: 48;
+          display: flex;
+          max-width: calc(100vw - 7rem);
+          gap: 0.35rem;
+          overflow-x: auto;
+          padding-bottom: 0.1rem;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        .mobile-trip-mini {
+          position: absolute;
+          right: calc(env(safe-area-inset-right) + 0.55rem);
+          bottom: calc(env(safe-area-inset-bottom) + 0.45rem);
+          z-index: 48;
+          border: 1px solid rgba(255, 255, 255, 0.18);
+          border-radius: 999px;
+          background: rgba(17, 35, 25, 0.78);
+          padding: 0.42rem 0.7rem;
+          color: #fff8df;
+          font-size: 0.68rem;
+          font-weight: 900;
+          box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+          backdrop-filter: blur(14px);
+        }
+
+        .mobile-panel-close {
+          position: absolute;
+          right: 0.55rem;
+          top: 0.5rem;
+          z-index: 2;
+          display: grid;
+          height: 1.55rem;
+          width: 1.55rem;
+          place-items: center;
+          border-radius: 999px;
+          background: rgba(255, 255, 255, 0.14);
+          color: white;
+          font-size: 1.1rem;
+          font-weight: 900;
+        }
+
+        .mobile-landscape-mode .observe-panel {
+          left: calc(env(safe-area-inset-left) + 0.6rem) !important;
+          top: calc(env(safe-area-inset-top) + 4.25rem) !important;
+          max-height: calc(100dvh - 5.4rem) !important;
+          max-width: min(18rem, calc(100vw - 1.2rem)) !important;
+          padding: 0.75rem 2.4rem 0.75rem 0.85rem !important;
+        }
+
+        .mobile-landscape-mode .npc-dialogue {
+          bottom: calc(env(safe-area-inset-bottom) + 3.4rem) !important;
+          left: calc(env(safe-area-inset-left) + 0.6rem) !important;
+          max-height: calc(100dvh - 4.4rem) !important;
+          max-width: min(20rem, calc(100vw - 1.2rem)) !important;
+          padding: 0.75rem !important;
+          padding-top: 2.25rem !important;
+        }
+
+        .mobile-landscape-mode .trip-map {
+          left: calc(env(safe-area-inset-left) + 0.6rem) !important;
+          right: calc(env(safe-area-inset-right) + 0.6rem) !important;
+          bottom: calc(env(safe-area-inset-bottom) + 3.25rem) !important;
+          max-height: calc(100dvh - 4.4rem) !important;
+          overflow: auto !important;
+        }
+
+        .mobile-landscape-mode .progress-hint {
+          top: calc(env(safe-area-inset-top) + 3.4rem) !important;
+          max-width: min(22rem, calc(100vw - 1rem)) !important;
+          padding: 0.5rem 0.7rem !important;
+          border-radius: 0.85rem !important;
+          font-size: 0.66rem !important;
+          line-height: 1.25 !important;
+          pointer-events: none !important;
         }
 
         .trip-map p {
@@ -541,35 +661,42 @@
         }
 
         .hotspot-sign {
-          max-width: 7.4rem !important;
-          padding: 0.32rem 0.5rem !important;
-          border-radius: 0.75rem !important;
+          max-width: 6.4rem !important;
+          padding: 0.26rem 0.42rem !important;
+          border-radius: 0.65rem !important;
         }
 
         .hotspot-label {
-          max-width: 6.6rem !important;
-          font-size: 0.66rem !important;
+          max-width: 5.8rem !important;
+          font-size: 0.58rem !important;
           line-height: 1.1 !important;
         }
 
         .hotspot-sub {
           margin-top: 0.12rem !important;
-          font-size: 0.55rem !important;
+          font-size: 0.48rem !important;
           line-height: 1.1 !important;
         }
 
         .hotspot-type-badge {
           margin-top: 0.12rem !important;
-          padding: 0.05rem 0.35rem !important;
-          font-size: 0.48rem !important;
+          padding: 0.04rem 0.28rem !important;
+          font-size: 0.42rem !important;
         }
 
         .learning-panel {
-          width: min(20rem, 42vw) !important;
-          max-width: min(20rem, 42vw) !important;
-          top: 0.35rem !important;
-          bottom: 0.35rem !important;
-          border-radius: 1rem 0 0 1rem !important;
+          left: 50% !important;
+          right: auto !important;
+          top: 50% !important;
+          bottom: auto !important;
+          z-index: 70 !important;
+          width: min(26rem, calc(100vw - 1.4rem)) !important;
+          max-width: min(26rem, calc(100vw - 1.4rem)) !important;
+          max-height: calc(100dvh - 1rem) !important;
+          transform: translate(-50%, -50%) !important;
+          border: 1px solid rgba(255, 255, 255, 0.18) !important;
+          border-radius: 1rem !important;
+          overflow: hidden !important;
         }
 
         .learning-panel > div {
@@ -5630,18 +5757,29 @@
         return Boolean(hasTouch && isSmallScreen && isPortrait);
       }
 
+      function shouldUseMobileLandscapeMode(viewport) {
+        if (typeof window === "undefined") return false;
+        const isLandscape = viewport.width > viewport.height;
+        const isSmallLandscape = viewport.width <= 950 && viewport.height <= 520;
+        const hasTouch =
+          (typeof navigator !== "undefined" && navigator.maxTouchPoints > 0) ||
+          window.matchMedia?.("(hover: none) and (pointer: coarse)")?.matches;
+        return Boolean(hasTouch && isLandscape && isSmallLandscape);
+      }
+
       function clamp(value, min, max) {
         return Math.min(Math.max(value, min), max);
       }
 
-      function estimateHotspotSize(hotspot, isMobile) {
+      function estimateHotspotSize(hotspot, isMobile, isMobileLandscape = false) {
         const longest = Math.max(hotspot.label.length, hotspot.zh.length);
-        const maxWidth = isMobile ? 124 : 168;
-        const minWidth = isMobile ? 72 : 82;
-        const charWidth = isMobile ? 7.2 : 8.2;
+        const maxWidth = isMobileLandscape ? 104 : isMobile ? 124 : 168;
+        const minWidth = isMobileLandscape ? 58 : isMobile ? 72 : 82;
+        const charWidth = isMobileLandscape ? 6.3 : isMobile ? 7.2 : 8.2;
         const width = clamp(longest * charWidth + 30, minWidth, maxWidth);
         const lines = Math.ceil((longest * charWidth + 30) / maxWidth);
-        const height = clamp(42 + (lines - 1) * 16, 42, isMobile ? 76 : 84);
+        const baseHeight = isMobileLandscape ? 34 : 42;
+        const height = clamp(baseHeight + (lines - 1) * 13, baseHeight, isMobileLandscape ? 62 : isMobile ? 76 : 84);
         return { width, height };
       }
 
@@ -5681,20 +5819,14 @@
         return point;
       }
 
-      function getBlockedRects({ width, height, hasDialogue, hasAnimalEffect, hasLearningPanel, isMobile }) {
+      function getBlockedRects({ width, height, hasDialogue, hasAnimalEffect, hasLearningPanel, isMobile, isMobileLandscape }) {
         const side = isMobile ? 14 : 20;
-        const headerHeight = isMobile ? 90 : 86;
+        const headerHeight = isMobileLandscape ? 78 : isMobile ? 90 : 86;
         const observeWidth = isMobile ? Math.min(width - 28, 340) : 390;
         const observeHeight = isMobile ? 170 : 150;
-        const navHeight = isMobile ? 156 : 146;
+        const navHeight = isMobileLandscape ? 58 : isMobile ? 156 : 146;
         const rects = [
-          { left: side, right: width - side, top: side, bottom: headerHeight },
-          {
-            left: side,
-            right: side + observeWidth,
-            top: headerHeight + 18,
-            bottom: headerHeight + 18 + observeHeight,
-          },
+          { left: side, right: width - side, top: 0, bottom: headerHeight },
           {
             left: side,
             right: width - side,
@@ -5703,7 +5835,16 @@
           },
         ];
 
-        if (hasDialogue) {
+        if (!isMobileLandscape) {
+          rects.push({
+            left: side,
+            right: side + observeWidth,
+            top: headerHeight + 18,
+            bottom: headerHeight + 18 + observeHeight,
+          });
+        }
+
+        if (hasDialogue && !isMobileLandscape) {
           rects.push({
             left: side,
             right: side + (isMobile ? Math.min(width - 28, 340) : 360),
@@ -5723,7 +5864,7 @@
           });
         }
 
-        if (hasLearningPanel && !isMobile) {
+        if (hasLearningPanel && !isMobile && !isMobileLandscape) {
           rects.push({
             left: width - 456,
             right: width,
@@ -5736,7 +5877,7 @@
       }
 
       function layoutHotspots(hotspots, viewport, options) {
-        const isMobile = viewport.width < 640;
+        const isMobile = viewport.width < 640 || options.isMobileLandscape;
         const safeRadius = isMobile ? 16 : 24;
         const blockedRects = getBlockedRects({
           width: viewport.width,
@@ -5745,10 +5886,11 @@
           hasAnimalEffect: options.hasAnimalEffect,
           hasLearningPanel: options.hasLearningPanel,
           isMobile,
+          isMobileLandscape: options.isMobileLandscape,
         });
 
         const points = hotspots.map((hotspot, index) => {
-          const size = estimateHotspotSize(hotspot, isMobile);
+          const size = estimateHotspotSize(hotspot, isMobile, options.isMobileLandscape);
           const offset = hotspot.offset || {};
           const dx = isMobile ? offset.mobileX ?? offset.x ?? 0 : offset.desktopX ?? offset.x ?? 0;
           const dy = isMobile ? offset.mobileY ?? offset.y ?? 0 : offset.desktopY ?? offset.y ?? 0;
@@ -5881,6 +6023,9 @@
         const [showMoreCafeBook, setShowMoreCafeBook] = useState(false);
         const [showMoreAirportChoice, setShowMoreAirportChoice] = useState(false);
         const [showMoreAirportBook, setShowMoreAirportBook] = useState(false);
+        const [showMobileObserve, setShowMobileObserve] = useState(false);
+        const [showMobileDialogue, setShowMobileDialogue] = useState(false);
+        const [showMobileTripMap, setShowMobileTripMap] = useState(false);
         const [moreAnimalsPageIndex, setMoreAnimalsPageIndex] = useState(0);
         const [moreFruitsPageIndex, setMoreFruitsPageIndex] = useState(0);
         const [moreCampusPageIndex, setMoreCampusPageIndex] = useState(0);
@@ -6060,8 +6205,19 @@
         const currentDialogue = currentScene.npc ? activeDialogues[currentScene.npc] : null;
         const viewport = useViewportSize();
         const showLandscapePrompt = shouldShowLandscapePrompt(viewport);
+        const isMobileLandscape = shouldUseMobileLandscapeMode(viewport);
+        useEffect(() => {
+          if (!isMobileLandscape) return;
+          setShowMobileObserve(false);
+          setShowMobileDialogue(false);
+          setShowMobileTripMap(false);
+        }, [isMobileLandscape, currentScene.id]);
         const isHotspotExpanded = expandedHotspotScenes.includes(currentScene.id);
-        const maxPrimaryHotspots = viewport.width < 640 ? 4 : 5;
+        const maxPrimaryHotspots = isMobileLandscape
+          ? currentScene.hotspots.length
+          : viewport.width < 640
+          ? 4
+          : 5;
         const visibleHotspots = isHotspotExpanded
           ? currentScene.hotspots
           : currentScene.hotspots.slice(0, maxPrimaryHotspots);
@@ -6078,9 +6234,10 @@
           return learned || actionDone;
         };
         const arrangedHotspots = layoutHotspots(visibleHotspots, viewport, {
-          hasDialogue: Boolean(currentDialogue && !showEnding),
-          hasAnimalEffect: Boolean(actionHotspot),
-          hasLearningPanel: Boolean(selectedHotspot),
+          hasDialogue: Boolean(currentDialogue && !showEnding && !isMobileLandscape),
+          hasAnimalEffect: Boolean(animalEffect && !isMobileLandscape),
+          hasLearningPanel: Boolean(selectedHotspot && !isMobileLandscape),
+          isMobileLandscape,
         });
         const learnedInScene = currentScene.hotspots.filter((hotspot) =>
           isHotspotCompleted(hotspot.id)
@@ -6426,6 +6583,11 @@
         }
 
         function openHotspot(hotspot) {
+          if (isMobileLandscape) {
+            setShowMobileObserve(false);
+            setShowMobileDialogue(false);
+            setShowMobileTripMap(false);
+          }
           setTappedHotspot(hotspot.id);
           setRipples((items) => [
             ...items,
@@ -7312,7 +7474,11 @@
         }
 
         return (
-          <main className="scene-page relative h-screen w-screen overflow-hidden bg-[#17251c]">
+          <main
+            className={`scene-page relative h-screen w-screen overflow-hidden bg-[#17251c] ${
+              isMobileLandscape ? "mobile-landscape-mode" : ""
+            }`}
+          >
             <section
               key={currentScene.id}
               className="scene-reveal absolute inset-0"
@@ -7617,15 +7783,19 @@
                   setShowEnding(false);
                   setCurrentView("sceneSelect");
                 }}
-                className="hidden shrink-0 rounded-full border border-white/18 bg-white/10 px-3 py-2 text-xs font-black text-white shadow-label transition hover:bg-white/20 active:scale-[0.99] sm:block"
+                className="scene-hud-secondary hidden shrink-0 rounded-full border border-white/18 bg-white/10 px-3 py-2 text-xs font-black text-white shadow-label transition hover:bg-white/20 active:scale-[0.99] sm:block"
               >
-                <ButtonCopy en="Back to Scenes" zh="返回场景选择" size="small" />
+                <ButtonCopy
+                  en={isMobileLandscape ? "Scenes" : "Back to Scenes"}
+                  zh={isMobileLandscape ? "场景" : "返回场景选择"}
+                  size="small"
+                />
               </button>
               <button
                 onClick={() => openWordBook("zoo")}
-                className="hidden shrink-0 rounded-full border border-white/18 bg-white/10 px-3 py-2 text-xs font-black text-white shadow-label transition hover:bg-white/20 active:scale-[0.99] sm:block"
+                className="scene-hud-secondary hidden shrink-0 rounded-full border border-white/18 bg-white/10 px-3 py-2 text-xs font-black text-white shadow-label transition hover:bg-white/20 active:scale-[0.99] sm:block"
               >
-                <ButtonCopy en="Word Book" zh="生词本" size="small" />
+                <ButtonCopy en={isMobileLandscape ? "Book" : "Word Book"} zh="生词本" size="small" />
               </button>
               <button
                 onClick={walkForward}
@@ -7639,32 +7809,82 @@
               </button>
             </header>
 
-            <button
-              onClick={() => speakEnglish(currentScene.intro.text, 0.9, `${currentScene.id}-intro`)}
-              className="observe-panel dialogue-enter absolute left-4 top-[calc(env(safe-area-inset-top)+6.5rem)] z-20 max-h-[20vh] max-w-[340px] overflow-auto rounded-2xl border border-white/18 bg-nightglass p-3 text-left shadow-glow backdrop-blur-xl transition hover:bg-[#143423]/80 active:scale-[0.99] sm:left-6 md:max-w-[390px]"
-            >
-              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-banana">
-                Observe
-              </p>
-              <p className="mt-2 text-base font-black leading-6 text-white md:text-lg md:leading-7">
-                <span className="inline-flex items-center gap-2">
-                  {playingKey === `${currentScene.id}-intro` && <SoundBars />}
-                  {currentScene.intro.text}
-                </span>
-              </p>
-              <p className="mt-1 text-sm font-bold leading-6 text-cream/78">
-                {currentScene.intro.zh}
-              </p>
-            </button>
+            {isMobileLandscape && !showEnding && !selectedHotspot && (
+              <div className="mobile-landscape-dock">
+                <button
+                  onClick={() => setShowMobileObserve((value) => !value)}
+                  className="mobile-landscape-toggle"
+                >
+                  <ButtonCopy en="Observe" zh="观察" size="small" />
+                </button>
+                {currentDialogue && (
+                  <button
+                    onClick={() => setShowMobileDialogue((value) => !value)}
+                    className="mobile-landscape-toggle"
+                  >
+                    <ButtonCopy en="Talk" zh="对话" size="small" />
+                  </button>
+                )}
+                <button
+                  onClick={() => setShowMobileTripMap((value) => !value)}
+                  className="mobile-landscape-toggle"
+                >
+                  <ButtonCopy en={`Map ${currentIndex + 1}/${activeScenes.length}`} zh="地图" size="small" />
+                </button>
+              </div>
+            )}
+
+            {(!isMobileLandscape || showMobileObserve) && (
+              <button
+                onClick={() => speakEnglish(currentScene.intro.text, 0.9, `${currentScene.id}-intro`)}
+                className="observe-panel dialogue-enter absolute left-4 top-[calc(env(safe-area-inset-top)+6.5rem)] z-20 max-h-[20vh] max-w-[340px] overflow-auto rounded-2xl border border-white/18 bg-nightglass p-3 text-left shadow-glow backdrop-blur-xl transition hover:bg-[#143423]/80 active:scale-[0.99] sm:left-6 md:max-w-[390px]"
+              >
+                {isMobileLandscape && (
+                  <span
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      setShowMobileObserve(false);
+                    }}
+                    className="mobile-panel-close"
+                    role="button"
+                    aria-label="Close observe 关闭观察"
+                  >
+                    ×
+                  </span>
+                )}
+                <p className="text-[10px] font-black uppercase tracking-[0.22em] text-banana">
+                  Observe
+                </p>
+                <p className="mt-2 text-base font-black leading-6 text-white md:text-lg md:leading-7">
+                  <span className="inline-flex items-center gap-2">
+                    {playingKey === `${currentScene.id}-intro` && <SoundBars />}
+                    {currentScene.intro.text}
+                  </span>
+                </p>
+                <p className="mt-1 text-sm font-bold leading-6 text-cream/78">
+                  {currentScene.intro.zh}
+                </p>
+              </button>
+            )}
 
             {progressHint && (
-              <div className="dialogue-enter absolute left-1/2 top-[25%] z-40 max-w-[calc(100vw-2rem)] -translate-x-1/2 rounded-2xl border border-banana/40 bg-[#112319]/88 px-5 py-3 text-sm font-black leading-6 text-white shadow-glow backdrop-blur-xl">
+              <div className="progress-hint dialogue-enter absolute left-1/2 top-[25%] z-40 max-w-[calc(100vw-2rem)] -translate-x-1/2 rounded-2xl border border-banana/40 bg-[#112319]/88 px-5 py-3 text-sm font-black leading-6 text-white shadow-glow backdrop-blur-xl">
                 {progressHint}
               </div>
             )}
 
-            {currentDialogue && !showEnding && (
+            {currentDialogue && !showEnding && (!isMobileLandscape || showMobileDialogue) && (
               <div className="npc-dialogue dialogue-enter absolute bottom-[calc(env(safe-area-inset-bottom)+8.75rem)] left-4 z-20 max-h-[30vh] w-[calc(100vw-2rem)] max-w-[340px] overflow-auto rounded-2xl border border-white/22 bg-nightglass p-3 shadow-glow backdrop-blur-xl sm:left-6 md:max-w-[360px] md:p-4">
+                {isMobileLandscape && (
+                  <button
+                    onClick={() => setShowMobileDialogue(false)}
+                    className="mobile-panel-close"
+                    aria-label="Close dialogue 关闭对话"
+                    title="Close / 关闭"
+                  >
+                    ×
+                  </button>
+                )}
                 <button
                   onClick={() => speakEnglish(currentDialogue.text, 0.9, `${currentDialogue.id}-line`)}
                   className="mb-2 inline-flex items-center gap-2 rounded-full bg-banana px-3 py-1 text-[11px] font-black uppercase text-ink transition active:scale-95"
@@ -7687,6 +7907,9 @@
                         setConversationDone((items) =>
                           items.includes(currentDialogue.id) ? items : [...items, currentDialogue.id]
                         );
+                        if (isMobileLandscape) {
+                          window.setTimeout(() => setShowMobileDialogue(false), 900);
+                        }
                         window.setTimeout(() => setClickedChoice(null), 280);
                       }}
                       className={`rounded-xl border border-white/20 bg-white/12 px-3 py-2 text-left text-sm font-black text-white transition hover:border-banana/50 hover:bg-white/22 active:scale-[0.98] ${
@@ -7727,7 +7950,7 @@
               </div>
             )}
 
-            {sceneComplete && !showEnding && (
+            {sceneComplete && !showEnding && !isMobileLandscape && (
               <div className="complete-card dialogue-enter absolute right-4 top-[calc(env(safe-area-inset-top)+6.5rem)] z-30 hidden max-h-[24vh] max-w-[330px] overflow-auto rounded-2xl border border-banana/35 bg-[#112319]/78 p-4 text-right shadow-glow backdrop-blur-xl md:block">
                 <p className="text-lg font-black text-white">
                   {currentScene.completeText || "Great! Let's keep walking."}
@@ -7738,7 +7961,7 @@
               </div>
             )}
 
-            <div className="now-card pointer-events-none absolute bottom-[calc(env(safe-area-inset-bottom)+8.25rem)] right-6 z-30 hidden max-w-[320px] rounded-2xl border border-white/16 bg-nightglass px-4 py-3 text-right shadow-glow backdrop-blur-xl md:block">
+            {!isMobileLandscape && <div className="now-card pointer-events-none absolute bottom-[calc(env(safe-area-inset-bottom)+8.25rem)] right-6 z-30 hidden max-w-[320px] rounded-2xl border border-white/16 bg-nightglass px-4 py-3 text-right shadow-glow backdrop-blur-xl md:block">
               <p className="text-[10px] font-black uppercase tracking-[0.22em] text-banana">Now</p>
               <p className="text-xl font-black text-white">
                 {currentScene.title} <span className="text-banana">{currentScene.zh}</span>
@@ -7747,9 +7970,19 @@
                 Words {learnedRequiredCount}/{requiredHotspotIds.length}
                 {hasDialogue ? " · Dialogue ✓" : currentScene.npc ? " · Dialogue pending" : ""}
               </p>
-            </div>
+            </div>}
 
-            <nav className="trip-map absolute bottom-[calc(env(safe-area-inset-bottom)+1rem)] left-4 right-4 z-40 mx-auto max-w-5xl rounded-2xl border border-white/18 bg-nightglass p-3 shadow-glow backdrop-blur-xl sm:left-6 sm:right-6">
+            {(!isMobileLandscape || showMobileTripMap) && <nav className="trip-map absolute bottom-[calc(env(safe-area-inset-bottom)+1rem)] left-4 right-4 z-40 mx-auto max-w-5xl rounded-2xl border border-white/18 bg-nightglass p-3 shadow-glow backdrop-blur-xl sm:left-6 sm:right-6">
+              {isMobileLandscape && (
+                <button
+                  onClick={() => setShowMobileTripMap(false)}
+                  className="mobile-panel-close"
+                  aria-label="Close map 关闭地图"
+                  title="Close / 关闭"
+                >
+                  ×
+                </button>
+              )}
               <div className="mb-2 flex items-center justify-between gap-3">
                 <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
                   Trip Map
@@ -7780,7 +8013,7 @@
                   );
                 })}
               </div>
-            </nav>
+            </nav>}
 
             {selectedHotspot && (
               <aside className="learning-panel card-slide-in fixed bottom-0 right-0 top-0 z-40 flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/88 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
