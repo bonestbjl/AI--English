@@ -630,13 +630,46 @@
         }
 
         .mobile-landscape-mode .progress-hint {
-          top: calc(env(safe-area-inset-top) + 3.4rem) !important;
-          max-width: min(22rem, calc(100vw - 1rem)) !important;
+          left: auto !important;
+          right: calc(env(safe-area-inset-right) + 0.6rem) !important;
+          top: auto !important;
+          bottom: calc(env(safe-area-inset-bottom) + 3.85rem) !important;
+          max-width: min(14rem, calc(100vw - 1.2rem)) !important;
+          transform: none !important;
           padding: 0.5rem 0.7rem !important;
           border-radius: 0.85rem !important;
           font-size: 0.66rem !important;
           line-height: 1.25 !important;
           pointer-events: none !important;
+        }
+
+        .mobile-landscape-mode .action-toast {
+          left: auto !important;
+          right: calc(env(safe-area-inset-right) + 0.6rem) !important;
+          top: auto !important;
+          bottom: calc(env(safe-area-inset-bottom) + 3.85rem) !important;
+          width: min(12rem, calc(100vw - 1.2rem)) !important;
+          max-width: 12rem !important;
+          transform: none !important;
+          padding: 0.5rem 0.65rem !important;
+          border-radius: 0.85rem !important;
+          text-align: left !important;
+          pointer-events: none !important;
+        }
+
+        .mobile-landscape-mode .action-toast p:first-child {
+          font-size: 0.55rem !important;
+          letter-spacing: 0.1em !important;
+        }
+
+        .mobile-landscape-mode .action-toast p:nth-child(2) {
+          font-size: 0.72rem !important;
+          line-height: 1.25 !important;
+        }
+
+        .mobile-landscape-mode .action-toast p:nth-child(3) {
+          font-size: 0.62rem !important;
+          line-height: 1.25 !important;
         }
 
         .trip-map p {
@@ -3677,9 +3710,9 @@
             { id: "airline", word: "airline", phonetic: "/ˈerlaɪn/", meaning: "航空公司", example: "The airline staff helps passengers.", translation: "航空公司工作人员帮助乘客。", label: "airline", zh: "航空公司", x: 42, y: 34, offset: { x: -42, y: -16, mobileX: -22, mobileY: -12 } },
             { id: "kiosk", word: "kiosk", phonetic: "/ˈkiːɑːsk/", meaning: "自助机", example: "I use the kiosk to check in.", translation: "我用自助机值机。", label: "kiosk", zh: "自助机", x: 72, y: 46, offset: { x: -34, y: -14, mobileX: -18, mobileY: -10 } },
             { id: "boardingPass", word: "boarding pass", phonetic: "/ˈbɔːrdɪŋ pæs/", meaning: "登机牌", example: "The boarding pass shows my flight.", translation: "登机牌显示我的航班。", label: "boarding pass", zh: "登机牌", x: 55, y: 67, offset: { x: -42, y: -18, mobileX: -22, mobileY: -14 } },
-            { id: "confirmation", word: "confirmation", phonetic: "/ˌkɑːnfərˈmeɪʃən/", meaning: "确认信息", example: "I enter my confirmation number.", translation: "我输入确认号码。", label: "confirmation", zh: "确认信息", x: 64, y: 31, offset: { x: 36, y: 14, mobileX: 18, mobileY: 10 } },
+            { id: "confirmation", word: "confirmation", phonetic: "/ˌkɑːnfərˈmeɪʃən/", meaning: "确认信息", example: "I enter my confirmation number.", translation: "我输入确认号码。", label: "confirmation", zh: "确认信息", x: 64, y: 31, offset: { x: 36, y: 14, mobileX: 8, mobileY: 30 } },
             { id: "destination", word: "destination", phonetic: "/ˌdestɪˈneɪʃən/", meaning: "目的地", example: "My destination is London.", translation: "我的目的地是伦敦。", label: "destination", zh: "目的地", x: 34, y: 58, offset: { x: -40, y: -16, mobileX: -20, mobileY: -12 } },
-            { id: "surname", word: "surname", phonetic: "/ˈsɜːrneɪm/", meaning: "姓", example: "Please enter your surname.", translation: "请输入你的姓。", label: "surname", zh: "姓", x: 77, y: 62, offset: { x: -36, y: -16, mobileX: -18, mobileY: -12 } },
+            { id: "surname", word: "surname", phonetic: "/ˈsɜːrneɪm/", meaning: "姓", example: "Please enter your surname.", translation: "请输入你的姓。", label: "surname", zh: "姓", x: 77, y: 62, offset: { x: -36, y: -16, mobileX: -76, mobileY: -26 } },
             { id: "checkIn", word: "check in", type: "action", actionMessageEn: "Great! You checked in and got your boarding pass.", actionMessageZh: "太好了！你完成值机并拿到了登机牌。", actionEffect: "airportCheckIn", actionDuration: 2600, phonetic: "/ˌtʃek ˈɪn/", meaning: "办理值机", example: "I check in for my flight.", translation: "我为航班办理值机。", label: "check in", zh: "值机", x: 51, y: 49, offset: { x: -40, y: -18, mobileX: -20, mobileY: -14 } },
           ],
         },
@@ -3840,8 +3873,8 @@
           },
           hotspots: [
             { id: "receptionist", word: "receptionist", phonetic: "/rɪˈsepʃənɪst/", meaning: "接待员，前台人员", example: "The receptionist helps visitors.", translation: "前台人员帮助访客。", label: "receptionist", zh: "前台人员", x: 58, y: 38, offset: { x: -46, y: -16, mobileX: -24, mobileY: -12 } },
-            { id: "visitorLog", word: "visitor log", phonetic: "/ˈvɪzɪtər lɔːɡ/", meaning: "访客登记簿", example: "I write my name in the visitor log.", translation: "我把名字写在访客登记簿上。", label: "visitor log", zh: "访客登记簿", x: 58, y: 75, offset: { x: -46, y: -18, mobileX: -24, mobileY: -14 } },
-            { id: "appointmentSlip", word: "appointment slip", phonetic: "/əˈpɔɪntmənt slɪp/", meaning: "预约单", example: "The appointment slip is on the desk.", translation: "预约单在桌上。", label: "appointment slip", zh: "预约单", x: 72, y: 68, offset: { x: -52, y: -18, mobileX: -26, mobileY: -14 } },
+            { id: "visitorLog", word: "visitor log", phonetic: "/ˈvɪzɪtər lɔːɡ/", meaning: "访客登记簿", example: "I write my name in the visitor log.", translation: "我把名字写在访客登记簿上。", label: "visitor log", zh: "访客登记簿", x: 58, y: 75, offset: { x: -46, y: -18, mobileX: -54, mobileY: -42 } },
+            { id: "appointmentSlip", word: "appointment slip", phonetic: "/əˈpɔɪntmənt slɪp/", meaning: "预约单", example: "The appointment slip is on the desk.", translation: "预约单在桌上。", label: "appointment slip", zh: "预约单", x: 72, y: 68, offset: { x: -52, y: -18, mobileX: -86, mobileY: -34 } },
             { id: "waitingArea", word: "waiting area", phonetic: "/ˈweɪtɪŋ ˈeriə/", meaning: "等候区", example: "The waiting area has comfortable chairs.", translation: "等候区有舒适的椅子。", label: "waiting area", zh: "等候区", x: 26, y: 54, offset: { x: -42, y: -16, mobileX: -22, mobileY: -12 } },
             { id: "badgeClip", word: "badge clip", phonetic: "/bædʒ klɪp/", meaning: "证件夹", example: "The badge clip holds my name badge.", translation: "证件夹夹住我的姓名牌。", label: "badge clip", zh: "证件夹", x: 77, y: 72, offset: { x: 34, y: -18, mobileX: 18, mobileY: -14 } },
             { id: "confirm", word: "confirm", type: "action", actionMessageEn: "The receptionist confirms your visit.", actionMessageZh: "前台确认了你的来访信息。", actionEffect: "officeConfirm", actionDuration: 2600, phonetic: "/kənˈfɜːrm/", meaning: "确认", example: "Please confirm your appointment.", translation: "请确认你的预约。", label: "confirm", zh: "确认", x: 64, y: 57, offset: { x: -42, y: -16, mobileX: -22, mobileY: -12 } },
@@ -5827,51 +5860,82 @@
       let cachedEnglishVoice = null;
       let activeSpeechToken = 0;
 
+      function isEnglishVoice(voice) {
+        const lang = voice?.lang?.toLowerCase() || "";
+        const name = voice?.name?.toLowerCase() || "";
+        return lang.startsWith("en") || name.includes("english");
+      }
+
+      function scoreEnglishVoice(voice) {
+        if (!isEnglishVoice(voice)) return -Infinity;
+        const name = voice.name.toLowerCase();
+        const lang = voice.lang?.toLowerCase() || "";
+        let score = 0;
+
+        if (lang.startsWith("en-us")) score += 42;
+        else if (lang.startsWith("en-gb")) score += 38;
+        else if (lang.startsWith("en-au") || lang.startsWith("en-ie") || lang.startsWith("en-ca")) score += 24;
+        else if (lang.startsWith("en")) score += 18;
+
+        const priorityNames = [
+          ["google us english", 140],
+          ["google uk english female", 136],
+          ["microsoft jenny", 134],
+          ["microsoft aria", 130],
+          ["microsoft guy", 122],
+          ["samantha", 128],
+          ["alex", 124],
+          ["daniel", 120],
+          ["karen", 116],
+          ["moira", 112],
+          ["tessa", 104],
+          ["fiona", 100],
+        ];
+
+        const matchedPriority = priorityNames.find(([token]) => name.includes(token));
+        if (matchedPriority) score += matchedPriority[1];
+
+        if (name.includes("premium")) score += 36;
+        if (name.includes("enhanced")) score += 32;
+        if (name.includes("neural")) score += 30;
+        if (name.includes("natural")) score += 24;
+        if (name.includes("online")) score += 10;
+        if (voice.localService) score += 12;
+        if (name.includes("compact")) score -= 26;
+        if (name.includes("novelty")) score -= 40;
+
+        return score;
+      }
+
       function pickBestEnglishVoice(voices) {
         if (!voices.length) return cachedEnglishVoice;
 
-        const priorityNames = [
-          "Google US English",
-          "Google UK English Female",
-          "Microsoft Jenny",
-          "Samantha",
-          "Alex",
-          "Daniel",
-        ];
+        const englishVoices = voices.filter(isEnglishVoice);
+        if (!englishVoices.length) return cachedEnglishVoice || null;
 
-        const englishVoices = voices.filter((voice) =>
-          voice.lang?.toLowerCase().startsWith("en")
-        );
-
-        const byPriorityName = priorityNames
-          .map((name) =>
-            englishVoices.find((voice) =>
-              voice.name.toLowerCase().includes(name.toLowerCase())
-            )
-          )
-          .find(Boolean);
-
-        const naturalEnglish = englishVoices.find((voice) => {
-          const name = voice.name.toLowerCase();
-          return (
-            ["google", "microsoft", "samantha", "alex", "daniel"].some((token) =>
-              name.includes(token)
-            ) && ["en-us", "en-gb"].includes(voice.lang.toLowerCase())
-          );
-        });
-
-        const usOrGb = englishVoices.find((voice) =>
-          ["en-us", "en-gb"].includes(voice.lang.toLowerCase())
-        );
-
-        return byPriorityName || naturalEnglish || usOrGb || englishVoices[0] || voices[0] || null;
+        return englishVoices
+          .map((voice) => ({ voice, score: scoreEnglishVoice(voice) }))
+          .sort((a, b) => b.score - a.score)[0]?.voice || cachedEnglishVoice || null;
       }
 
       function loadEnglishVoices() {
         if (!("speechSynthesis" in window)) return null;
         const voices = window.speechSynthesis.getVoices();
-        cachedEnglishVoice = pickBestEnglishVoice(voices);
+        const bestVoice = pickBestEnglishVoice(voices);
+        if (bestVoice && isEnglishVoice(bestVoice)) cachedEnglishVoice = bestVoice;
         return cachedEnglishVoice;
+      }
+
+      function warmUpEnglishVoices() {
+        loadEnglishVoices();
+        if (!("speechSynthesis" in window)) return;
+
+        let attempts = 0;
+        const interval = window.setInterval(() => {
+          attempts += 1;
+          const bestVoice = loadEnglishVoices();
+          if (bestVoice || attempts >= 8) window.clearInterval(interval);
+        }, 250);
       }
 
       function SoundBars() {
@@ -6132,7 +6196,7 @@
         return point;
       }
 
-      function getBlockedRects({ width, height, hasDialogue, hasAnimalEffect, hasLearningPanel, isMobile, isMobileLandscape }) {
+      function getBlockedRects({ width, height, hasDialogue, hasAnimalEffect, hasProgressHint, hasLearningPanel, isMobile, isMobileLandscape }) {
         const side = isMobile ? 14 : 20;
         const headerHeight = isMobileLandscape ? 78 : isMobile ? 90 : 86;
         const observeWidth = isMobile ? Math.min(width - 28, 340) : 390;
@@ -6166,15 +6230,27 @@
           });
         }
 
-        if (hasAnimalEffect) {
-          const toastWidth = isMobile ? Math.min(width - 28, 320) : 420;
-          const toastLeft = (width - toastWidth) / 2;
-          rects.push({
-            left: toastLeft,
-            right: toastLeft + toastWidth,
-            top: headerHeight + 18,
-            bottom: headerHeight + 138,
-          });
+        if (hasAnimalEffect || (hasProgressHint && isMobileLandscape)) {
+          if (isMobileLandscape) {
+            const toastWidth = Math.min(202, width - side * 2);
+            const toastHeight = 72;
+            const toastBottom = height - navHeight - side - 12;
+            rects.push({
+              left: width - side - toastWidth,
+              right: width - side,
+              top: toastBottom - toastHeight,
+              bottom: toastBottom,
+            });
+          } else {
+            const toastWidth = isMobile ? Math.min(width - 28, 320) : 420;
+            const toastLeft = (width - toastWidth) / 2;
+            rects.push({
+              left: toastLeft,
+              right: toastLeft + toastWidth,
+              top: headerHeight + 18,
+              bottom: headerHeight + 138,
+            });
+          }
         }
 
         if (hasLearningPanel && !isMobile && !isMobileLandscape) {
@@ -6197,6 +6273,7 @@
           height: viewport.height,
           hasDialogue: options.hasDialogue,
           hasAnimalEffect: options.hasAnimalEffect,
+          hasProgressHint: options.hasProgressHint,
           hasLearningPanel: options.hasLearningPanel,
           isMobile,
           isMobileLandscape: options.isMobileLandscape,
@@ -6354,10 +6431,20 @@
         const [animalEffect, setAnimalEffect] = useState(null);
 
         useEffect(() => {
-          loadEnglishVoices();
-          if ("speechSynthesis" in window) {
+          warmUpEnglishVoices();
+          if (!("speechSynthesis" in window)) return undefined;
+          if (typeof window.speechSynthesis.addEventListener === "function") {
+            window.speechSynthesis.addEventListener("voiceschanged", loadEnglishVoices);
+          } else {
             window.speechSynthesis.onvoiceschanged = loadEnglishVoices;
           }
+          return () => {
+            if (typeof window.speechSynthesis.removeEventListener === "function") {
+              window.speechSynthesis.removeEventListener("voiceschanged", loadEnglishVoices);
+            } else if (window.speechSynthesis.onvoiceschanged === loadEnglishVoices) {
+              window.speechSynthesis.onvoiceschanged = null;
+            }
+          };
         }, []);
 
         useEffect(() => {
@@ -6583,7 +6670,8 @@
         };
         const arrangedHotspots = layoutHotspots(visibleHotspots, viewport, {
           hasDialogue: Boolean(currentDialogue && !showEnding && !isMobileLandscape),
-          hasAnimalEffect: Boolean(animalEffect && !isMobileLandscape),
+          hasAnimalEffect: Boolean(animalEffect),
+          hasProgressHint: Boolean(progressHint && isMobileLandscape),
           hasLearningPanel: Boolean(selectedHotspot && !isMobileLandscape),
           isMobileLandscape,
         });
@@ -6753,9 +6841,12 @@
           const speechToken = activeSpeechToken + 1;
           activeSpeechToken = speechToken;
           window.speechSynthesis.cancel();
+          if (!cachedEnglishVoice) loadEnglishVoices();
           const utterance = new SpeechSynthesisUtterance(text);
           utterance.lang = cachedEnglishVoice?.lang || "en-US";
-          if (cachedEnglishVoice) utterance.voice = cachedEnglishVoice;
+          if (cachedEnglishVoice && isEnglishVoice(cachedEnglishVoice)) {
+            utterance.voice = cachedEnglishVoice;
+          }
           utterance.rate = rate;
           utterance.pitch = 1;
           utterance.volume = 1;
