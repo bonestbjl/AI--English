@@ -328,6 +328,270 @@
         }
       }
 
+      @media (orientation: landscape) and (max-height: 520px) and (max-width: 950px) and (hover: none) and (pointer: coarse) {
+        html,
+        body,
+        #root {
+          min-height: 100dvh;
+          overflow: hidden;
+        }
+
+        .home-page,
+        .scene-select-page,
+        .scene-page {
+          min-height: 100dvh !important;
+        }
+
+        .home-page section {
+          min-height: 100dvh !important;
+          padding-top: 0.75rem !important;
+          padding-bottom: 0.75rem !important;
+        }
+
+        .home-page .dialogue-enter {
+          max-width: 34rem !important;
+          transform: translateY(0) !important;
+        }
+
+        .home-page h1 {
+          margin-top: 0.75rem !important;
+          font-size: clamp(2.1rem, 7vw, 3rem) !important;
+          line-height: 1.02 !important;
+        }
+
+        .home-page p {
+          margin-top: 0.35rem !important;
+          font-size: 0.78rem !important;
+          line-height: 1.35 !important;
+        }
+
+        .home-page button {
+          margin-top: 0.9rem !important;
+          padding: 0.65rem 1.35rem !important;
+          font-size: 0.9rem !important;
+        }
+
+        .home-page nav {
+          top: calc(env(safe-area-inset-top) + 0.45rem) !important;
+          right: 0.65rem !important;
+          gap: 0.4rem !important;
+        }
+
+        .home-page nav button {
+          margin-top: 0 !important;
+          padding: 0.4rem 0.75rem !important;
+          font-size: 0.68rem !important;
+        }
+
+        .scene-select-page {
+          padding: 0.6rem !important;
+          overflow: auto !important;
+        }
+
+        .scene-select-page header {
+          padding: 0.8rem !important;
+          border-radius: 1.1rem !important;
+        }
+
+        .scene-select-page h1 {
+          font-size: 2rem !important;
+          line-height: 1.05 !important;
+        }
+
+        .scene-select-page section {
+          margin-top: 0.7rem !important;
+          grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+          gap: 0.6rem !important;
+        }
+
+        .scene-select-page article {
+          padding: 0.75rem !important;
+          border-radius: 1.1rem !important;
+        }
+
+        .scene-select-page article > div:first-child {
+          height: 5.4rem !important;
+          margin-bottom: 0.65rem !important;
+          border-radius: 0.85rem !important;
+        }
+
+        .scene-select-page article h2 {
+          font-size: 1.3rem !important;
+        }
+
+        .scene-select-page article p {
+          font-size: 0.72rem !important;
+          line-height: 1.35 !important;
+          margin-top: 0.35rem !important;
+        }
+
+        .scene-select-page article button {
+          margin-top: 0.6rem !important;
+          padding: 0.55rem 0.8rem !important;
+          border-radius: 0.85rem !important;
+          font-size: 0.75rem !important;
+        }
+
+        .scene-hud {
+          left: 0.5rem !important;
+          right: 0.5rem !important;
+          top: calc(env(safe-area-inset-top) + 0.35rem) !important;
+          max-width: none !important;
+          padding: 0.45rem 0.6rem !important;
+          gap: 0.45rem !important;
+          border-radius: 0.95rem !important;
+        }
+
+        .scene-hud h1 {
+          font-size: 0.92rem !important;
+          line-height: 1.1 !important;
+        }
+
+        .scene-hud p {
+          font-size: 0.52rem !important;
+          letter-spacing: 0.12em !important;
+        }
+
+        .scene-hud button {
+          padding: 0.35rem 0.55rem !important;
+          font-size: 0.68rem !important;
+        }
+
+        .observe-panel {
+          left: 0.55rem !important;
+          top: calc(env(safe-area-inset-top) + 3.65rem) !important;
+          max-width: 16.8rem !important;
+          max-height: 4.7rem !important;
+          padding: 0.55rem !important;
+          border-radius: 0.85rem !important;
+        }
+
+        .observe-panel p {
+          font-size: 0.62rem !important;
+          line-height: 1.25 !important;
+        }
+
+        .npc-dialogue {
+          left: 0.55rem !important;
+          bottom: calc(env(safe-area-inset-bottom) + 4.4rem) !important;
+          width: 18.5rem !important;
+          max-width: 42vw !important;
+          max-height: 8.5rem !important;
+          padding: 0.55rem !important;
+          border-radius: 0.9rem !important;
+        }
+
+        .npc-dialogue p,
+        .npc-dialogue button {
+          font-size: 0.62rem !important;
+          line-height: 1.25 !important;
+        }
+
+        .complete-card,
+        .now-card {
+          right: 0.6rem !important;
+          max-width: 15rem !important;
+          max-height: 5.8rem !important;
+          padding: 0.55rem 0.7rem !important;
+          border-radius: 0.9rem !important;
+        }
+
+        .complete-card {
+          top: calc(env(safe-area-inset-top) + 3.65rem) !important;
+        }
+
+        .now-card {
+          bottom: calc(env(safe-area-inset-bottom) + 4.55rem) !important;
+        }
+
+        .complete-card p,
+        .now-card p {
+          font-size: 0.62rem !important;
+          line-height: 1.25 !important;
+        }
+
+        .trip-map {
+          left: 0.55rem !important;
+          right: 0.55rem !important;
+          bottom: calc(env(safe-area-inset-bottom) + 0.45rem) !important;
+          max-width: none !important;
+          padding: 0.5rem !important;
+          border-radius: 0.9rem !important;
+        }
+
+        .trip-map p {
+          font-size: 0.55rem !important;
+          letter-spacing: 0.12em !important;
+        }
+
+        .trip-map .h-2 {
+          height: 0.35rem !important;
+        }
+
+        .trip-map .h-8 {
+          height: 1.45rem !important;
+        }
+
+        .trip-map .w-8 {
+          width: 1.45rem !important;
+        }
+
+        .trip-map .text-\[10px\] {
+          font-size: 0.5rem !important;
+        }
+
+        .hotspot-sign {
+          max-width: 7.4rem !important;
+          padding: 0.32rem 0.5rem !important;
+          border-radius: 0.75rem !important;
+        }
+
+        .hotspot-label {
+          max-width: 6.6rem !important;
+          font-size: 0.66rem !important;
+          line-height: 1.1 !important;
+        }
+
+        .hotspot-sub {
+          margin-top: 0.12rem !important;
+          font-size: 0.55rem !important;
+          line-height: 1.1 !important;
+        }
+
+        .hotspot-type-badge {
+          margin-top: 0.12rem !important;
+          padding: 0.05rem 0.35rem !important;
+          font-size: 0.48rem !important;
+        }
+
+        .learning-panel {
+          width: min(20rem, 42vw) !important;
+          max-width: min(20rem, 42vw) !important;
+          top: 0.35rem !important;
+          bottom: 0.35rem !important;
+          border-radius: 1rem 0 0 1rem !important;
+        }
+
+        .learning-panel > div {
+          padding: 0.75rem !important;
+        }
+
+        .learning-panel h2 {
+          font-size: 1.45rem !important;
+          line-height: 1.08 !important;
+        }
+
+        .learning-panel p,
+        .learning-panel button {
+          font-size: 0.68rem !important;
+          line-height: 1.25 !important;
+        }
+
+        .learning-panel .text-2xl {
+          font-size: 1rem !important;
+        }
+      }
+
       .leaf-drift { animation: leafDrift 8s ease-in-out infinite; }
       .light-breath { animation: lightBreath 9s ease-in-out infinite; }
       .scene-reveal { animation: sceneReveal 760ms cubic-bezier(0.16, 1, 0.3, 1) both; }
@@ -6544,7 +6808,7 @@
 
         if (currentView === "wordBook") {
           return (
-            <main className="relative min-h-screen overflow-hidden bg-[#111614] px-4 py-5 text-cream sm:px-6">
+            <main className="word-book-page relative min-h-screen overflow-hidden bg-[#111614] px-4 py-5 text-cream sm:px-6">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_14%,rgba(255,216,107,0.1),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(139,211,230,0.1),transparent_30%),linear-gradient(160deg,#111b17_0%,#17251c_52%,#0b0f0e_100%)]"></div>
               <div className="absolute inset-0 opacity-[0.08] [background-image:radial-gradient(rgba(255,255,255,0.13)_1px,transparent_1px)] [background-size:24px_24px]"></div>
               <div className="light-breath pointer-events-none absolute -left-24 top-10 h-[42vh] w-[42vh] rounded-full bg-banana/12 blur-3xl"></div>
@@ -6772,7 +7036,7 @@
 
         if (currentView === "home") {
           return (
-            <main className="relative min-h-screen overflow-hidden bg-[#111614] text-white">
+            <main className="home-page relative min-h-screen overflow-hidden bg-[#111614] text-white">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(236,244,231,0.12),transparent_27%),radial-gradient(circle_at_18%_78%,rgba(98,145,124,0.16),transparent_31%),radial-gradient(circle_at_82%_72%,rgba(120,137,166,0.1),transparent_29%),linear-gradient(180deg,#18201d_0%,#101513_48%,#0b0f0e_100%)]"></div>
               <div className="absolute inset-0 opacity-[0.16] [background-image:radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:22px_22px]"></div>
               <div className="absolute inset-x-8 top-8 h-px bg-gradient-to-r from-transparent via-white/12 to-transparent"></div>
@@ -6915,7 +7179,7 @@
 
         if (currentView === "sceneSelect") {
           return (
-            <main className="relative min-h-screen overflow-hidden bg-[#17251c] px-4 py-5 text-cream sm:px-6">
+            <main className="scene-select-page relative min-h-screen overflow-hidden bg-[#17251c] px-4 py-5 text-cream sm:px-6">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_10%,rgba(255,216,107,0.14),transparent_28%),radial-gradient(circle_at_80%_24%,rgba(139,211,230,0.12),transparent_30%),linear-gradient(145deg,#101f1a_0%,#17251c_52%,#24382f_100%)]"></div>
               <div className="absolute inset-0 opacity-[0.07] [background-image:linear-gradient(120deg,rgba(255,255,255,0.18)_1px,transparent_1px),linear-gradient(30deg,rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:72px_72px]"></div>
               <div className="light-breath pointer-events-none absolute -left-20 top-4 h-[46vh] w-[46vh] rounded-full bg-banana/20 blur-3xl"></div>
@@ -7048,7 +7312,7 @@
         }
 
         return (
-          <main className="relative h-screen w-screen overflow-hidden bg-[#17251c]">
+          <main className="scene-page relative h-screen w-screen overflow-hidden bg-[#17251c]">
             <section
               key={currentScene.id}
               className="scene-reveal absolute inset-0"
@@ -7323,7 +7587,7 @@
               </div>
             )}
 
-            <header className="hud-float absolute left-4 right-4 top-[calc(env(safe-area-inset-top)+1rem)] z-40 mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-2xl border border-white/18 bg-nightglass px-4 py-3 shadow-glow backdrop-blur-xl sm:left-6 sm:right-6">
+            <header className="scene-hud hud-float absolute left-4 right-4 top-[calc(env(safe-area-inset-top)+1rem)] z-40 mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-2xl border border-white/18 bg-nightglass px-4 py-3 shadow-glow backdrop-blur-xl sm:left-6 sm:right-6">
               <div className="min-w-0 flex-1">
                 <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
                   {chapterTitle} {currentIndex + 1}/{activeScenes.length}
@@ -7377,7 +7641,7 @@
 
             <button
               onClick={() => speakEnglish(currentScene.intro.text, 0.9, `${currentScene.id}-intro`)}
-              className="dialogue-enter absolute left-4 top-[calc(env(safe-area-inset-top)+6.5rem)] z-20 max-h-[20vh] max-w-[340px] overflow-auto rounded-2xl border border-white/18 bg-nightglass p-3 text-left shadow-glow backdrop-blur-xl transition hover:bg-[#143423]/80 active:scale-[0.99] sm:left-6 md:max-w-[390px]"
+              className="observe-panel dialogue-enter absolute left-4 top-[calc(env(safe-area-inset-top)+6.5rem)] z-20 max-h-[20vh] max-w-[340px] overflow-auto rounded-2xl border border-white/18 bg-nightglass p-3 text-left shadow-glow backdrop-blur-xl transition hover:bg-[#143423]/80 active:scale-[0.99] sm:left-6 md:max-w-[390px]"
             >
               <p className="text-[10px] font-black uppercase tracking-[0.22em] text-banana">
                 Observe
@@ -7400,7 +7664,7 @@
             )}
 
             {currentDialogue && !showEnding && (
-              <div className="dialogue-enter absolute bottom-[calc(env(safe-area-inset-bottom)+8.75rem)] left-4 z-20 max-h-[30vh] w-[calc(100vw-2rem)] max-w-[340px] overflow-auto rounded-2xl border border-white/22 bg-nightglass p-3 shadow-glow backdrop-blur-xl sm:left-6 md:max-w-[360px] md:p-4">
+              <div className="npc-dialogue dialogue-enter absolute bottom-[calc(env(safe-area-inset-bottom)+8.75rem)] left-4 z-20 max-h-[30vh] w-[calc(100vw-2rem)] max-w-[340px] overflow-auto rounded-2xl border border-white/22 bg-nightglass p-3 shadow-glow backdrop-blur-xl sm:left-6 md:max-w-[360px] md:p-4">
                 <button
                   onClick={() => speakEnglish(currentDialogue.text, 0.9, `${currentDialogue.id}-line`)}
                   className="mb-2 inline-flex items-center gap-2 rounded-full bg-banana px-3 py-1 text-[11px] font-black uppercase text-ink transition active:scale-95"
@@ -7464,7 +7728,7 @@
             )}
 
             {sceneComplete && !showEnding && (
-              <div className="dialogue-enter absolute right-4 top-[calc(env(safe-area-inset-top)+6.5rem)] z-30 hidden max-h-[24vh] max-w-[330px] overflow-auto rounded-2xl border border-banana/35 bg-[#112319]/78 p-4 text-right shadow-glow backdrop-blur-xl md:block">
+              <div className="complete-card dialogue-enter absolute right-4 top-[calc(env(safe-area-inset-top)+6.5rem)] z-30 hidden max-h-[24vh] max-w-[330px] overflow-auto rounded-2xl border border-banana/35 bg-[#112319]/78 p-4 text-right shadow-glow backdrop-blur-xl md:block">
                 <p className="text-lg font-black text-white">
                   {currentScene.completeText || "Great! Let's keep walking."}
                 </p>
@@ -7474,7 +7738,7 @@
               </div>
             )}
 
-            <div className="pointer-events-none absolute bottom-[calc(env(safe-area-inset-bottom)+8.25rem)] right-6 z-30 hidden max-w-[320px] rounded-2xl border border-white/16 bg-nightglass px-4 py-3 text-right shadow-glow backdrop-blur-xl md:block">
+            <div className="now-card pointer-events-none absolute bottom-[calc(env(safe-area-inset-bottom)+8.25rem)] right-6 z-30 hidden max-w-[320px] rounded-2xl border border-white/16 bg-nightglass px-4 py-3 text-right shadow-glow backdrop-blur-xl md:block">
               <p className="text-[10px] font-black uppercase tracking-[0.22em] text-banana">Now</p>
               <p className="text-xl font-black text-white">
                 {currentScene.title} <span className="text-banana">{currentScene.zh}</span>
@@ -7485,7 +7749,7 @@
               </p>
             </div>
 
-            <nav className="absolute bottom-[calc(env(safe-area-inset-bottom)+1rem)] left-4 right-4 z-40 mx-auto max-w-5xl rounded-2xl border border-white/18 bg-nightglass p-3 shadow-glow backdrop-blur-xl sm:left-6 sm:right-6">
+            <nav className="trip-map absolute bottom-[calc(env(safe-area-inset-bottom)+1rem)] left-4 right-4 z-40 mx-auto max-w-5xl rounded-2xl border border-white/18 bg-nightglass p-3 shadow-glow backdrop-blur-xl sm:left-6 sm:right-6">
               <div className="mb-2 flex items-center justify-between gap-3">
                 <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
                   Trip Map
@@ -7519,7 +7783,7 @@
             </nav>
 
             {selectedHotspot && (
-              <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-40 flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/88 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
+              <aside className="learning-panel card-slide-in fixed bottom-0 right-0 top-0 z-40 flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/88 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
                 <div className="flex items-start justify-between gap-3 border-b border-white/12 p-5">
                   <div>
                     <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
