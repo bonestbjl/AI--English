@@ -3994,6 +3994,165 @@
         },
       ];
 
+      const hotelScenes = [
+        {
+          id: "hotelArrival",
+          title: "Hotel Arrival",
+          zh: "抵达酒店",
+          short: "抵达",
+          bg: "assets/hotel-arrival-bg.png",
+          bgStyle: "linear-gradient(180deg, #d7c4a8 0%, #74604b 58%, #1b1713 100%)",
+          npc: "hotelConciergeArrival",
+          coreWord: "hotel",
+          intro: {
+            text: "You arrive beneath the hotel canopy and look for someone who can help.",
+            zh: "你来到酒店门廊下，寻找可以提供帮助的工作人员。",
+          },
+          hotspots: [
+            { id: "hotel", word: "hotel", phonetic: "/hoʊˈtel/", meaning: "酒店", example: "The hotel has a warm, modern entrance.", translation: "这家酒店有一个温暖现代的入口。", label: "hotel", zh: "酒店", x: 48, y: 31, offset: { x: -34, y: -10, mobileX: -18, mobileY: 8 } },
+            { id: "canopy", word: "canopy", phonetic: "/ˈkænəpi/", meaning: "门廊顶篷", example: "A wide canopy covers the hotel driveway.", translation: "宽大的顶篷遮住酒店车道。", label: "canopy", zh: "门廊顶篷", x: 28, y: 28, offset: { x: -38, y: -10, mobileX: -20, mobileY: 10 } },
+            { id: "bellCart", word: "bell cart", phonetic: "/ˈbel kɑːrt/", meaning: "行李车", example: "The bell cart is ready for the bags.", translation: "行李车已经准备好运送行李。", label: "bell cart", zh: "行李车", x: 87, y: 66, offset: { x: -52, y: -18, mobileX: -42, mobileY: -20 } },
+            { id: "concierge", word: "concierge", phonetic: "/ˌkɑːnsiˈerʒ/", meaning: "礼宾员", example: "The concierge welcomes arriving guests.", translation: "礼宾员欢迎到店的客人。", label: "concierge", zh: "礼宾员", x: 73, y: 47, offset: { x: -44, y: -14, mobileX: -24, mobileY: -6 } },
+            { id: "atrium", word: "atrium", phonetic: "/ˈeɪtriəm/", meaning: "中庭", example: "Sunlight fills the hotel atrium.", translation: "阳光洒满酒店中庭。", label: "atrium", zh: "中庭", x: 58, y: 63, offset: { x: 36, y: -18, mobileX: 20, mobileY: -18 } },
+            { id: "approach", word: "approach", type: "action", actionMessageEn: "You approach the concierge in the hotel atrium.", actionMessageZh: "你走向酒店中庭里的礼宾员。", actionEffect: "hotelApproach", actionDuration: 2600, phonetic: "/əˈproʊtʃ/", meaning: "走近", example: "I approach the concierge for help.", translation: "我走近礼宾员寻求帮助。", label: "approach", zh: "走近", x: 64, y: 58, offset: { x: -42, y: -16, mobileX: -22, mobileY: -14 } },
+          ],
+        },
+        {
+          id: "hotelBooking",
+          title: "Booking Confirmation",
+          zh: "确认预订",
+          short: "预订",
+          bg: "assets/hotel-booking-bg.png",
+          bgStyle: "linear-gradient(180deg, #d5c2ac 0%, #725c4a 58%, #1b1714 100%)",
+          npc: "hotelStaffBooking",
+          coreWord: "booking reference",
+          intro: {
+            text: "At the booking desk, you show your details and confirm the stay.",
+            zh: "在预订办理处，你出示信息并确认本次入住。",
+          },
+          hotspots: [
+            { id: "bookingReference", word: "booking reference", phonetic: "/ˈbʊkɪŋ ˈrefrəns/", meaning: "预订编号", example: "I show my booking reference to the staff.", translation: "我向工作人员出示预订编号。", label: "booking reference", zh: "预订编号", x: 30, y: 63, offset: { x: -48, y: -18, mobileX: -25, mobileY: -18 } },
+            { id: "vacancy", word: "vacancy", phonetic: "/ˈveɪkənsi/", meaning: "空房", example: "The hotel has one vacancy tonight.", translation: "酒店今晚还有一个空房。", label: "vacancy", zh: "空房", x: 78, y: 35, offset: { x: -38, y: -12, mobileX: -20, mobileY: 5 } },
+            { id: "deposit", word: "deposit", phonetic: "/dɪˈpɑːzɪt/", meaning: "押金", example: "The hotel requires a small deposit.", translation: "酒店需要收取一笔小额押金。", label: "deposit", zh: "押金", x: 67, y: 68, offset: { x: 34, y: -18, mobileX: 18, mobileY: -20 } },
+            { id: "signature", word: "signature", phonetic: "/ˈsɪɡnətʃər/", meaning: "签名", example: "Please put your signature on the form.", translation: "请在表格上签名。", label: "signature", zh: "签名", x: 48, y: 69, offset: { x: -40, y: -18, mobileX: -21, mobileY: -20 } },
+            { id: "roomNumber", word: "room number", phonetic: "/ˈruːm ˌnʌmbər/", meaning: "房间号", example: "My room number is written on the card.", translation: "我的房间号写在卡片上。", label: "room number", zh: "房间号", x: 75, y: 57, offset: { x: -42, y: -16, mobileX: -22, mobileY: -12 } },
+            { id: "verify", word: "verify", type: "action", actionMessageEn: "The staff verifies your booking details.", actionMessageZh: "工作人员核对了你的预订信息。", actionEffect: "hotelVerify", actionDuration: 2600, phonetic: "/ˈverɪfaɪ/", meaning: "核对", example: "The staff verifies my booking details.", translation: "工作人员核对我的预订信息。", label: "verify", zh: "核对", x: 56, y: 51, offset: { x: -38, y: -16, mobileX: -20, mobileY: -10 } },
+          ],
+        },
+        {
+          id: "hotelElevator",
+          title: "Elevator Hall",
+          zh: "电梯厅",
+          short: "电梯",
+          bg: "assets/hotel-elevator-hall-bg.png",
+          bgStyle: "linear-gradient(180deg, #c9b89f 0%, #635547 58%, #171513 100%)",
+          npc: "hotelBellhopElevator",
+          coreWord: "keycard",
+          intro: {
+            text: "With your keycard ready, you find the elevator and head to your floor.",
+            zh: "你准备好房卡，找到电梯并前往所在楼层。",
+          },
+          hotspots: [
+            { id: "keycard", word: "keycard", phonetic: "/ˈkiːkɑːrd/", meaning: "房卡", example: "I use the keycard to enter my room.", translation: "我使用房卡进入房间。", label: "keycard", zh: "房卡", x: 32, y: 69, offset: { x: -38, y: -18, mobileX: -20, mobileY: -20 } },
+            { id: "elevator", word: "elevator", phonetic: "/ˈelɪveɪtər/", meaning: "电梯", example: "The elevator takes me to the eighth floor.", translation: "电梯把我带到八楼。", label: "elevator", zh: "电梯", x: 52, y: 38, offset: { x: -40, y: -14, mobileX: -20, mobileY: 4 } },
+            { id: "floorGuide", word: "floor guide", phonetic: "/ˈflɔːr ɡaɪd/", meaning: "楼层指引", example: "The floor guide shows where my room is.", translation: "楼层指引显示了房间位置。", label: "floor guide", zh: "楼层指引", x: 70, y: 39, offset: { x: 38, y: -14, mobileX: 20, mobileY: 28 } },
+            { id: "bellhop", word: "bellhop", phonetic: "/ˈbelhɑːp/", meaning: "行李员", example: "The bellhop carries the bags upstairs.", translation: "行李员把行李送到楼上。", label: "bellhop", zh: "行李员", x: 76, y: 61, offset: { x: -38, y: -18, mobileX: -80, mobileY: -16 } },
+            { id: "corridor", word: "corridor", phonetic: "/ˈkɔːrɪdɔːr/", meaning: "走廊", example: "My room is at the end of the corridor.", translation: "我的房间在走廊尽头。", label: "corridor", zh: "走廊", x: 83, y: 48, offset: { x: -38, y: -16, mobileX: -20, mobileY: -8 } },
+            { id: "ride", word: "ride", type: "action", actionMessageEn: "The elevator carries you to your floor.", actionMessageZh: "电梯带你前往所在楼层。", actionEffect: "hotelRide", actionDuration: 2600, phonetic: "/raɪd/", meaning: "搭乘", example: "I ride the elevator to my floor.", translation: "我乘电梯前往所在楼层。", label: "ride", zh: "搭乘", x: 50, y: 57, offset: { x: 38, y: -16, mobileX: 20, mobileY: -12 } },
+          ],
+        },
+        {
+          id: "hotelGuestRoom",
+          title: "Guest Room",
+          zh: "进入客房",
+          short: "客房",
+          bg: "assets/hotel-guest-room-bg.png",
+          bgStyle: "linear-gradient(180deg, #d5c3ad 0%, #6c5949 58%, #171412 100%)",
+          npc: "hotelStaffGuestRoom",
+          coreWord: "guest room",
+          intro: {
+            text: "You unlock the door and take your first look around the guest room.",
+            zh: "你打开房门，第一次查看这间客房。",
+          },
+          hotspots: [
+            { id: "guestRoom", word: "guest room", phonetic: "/ˈɡest ruːm/", meaning: "客房", example: "The guest room is clean and quiet.", translation: "客房干净又安静。", label: "guest room", zh: "客房", x: 50, y: 40, offset: { x: -42, y: -14, mobileX: -22, mobileY: 4 } },
+            { id: "thermostat", word: "thermostat", phonetic: "/ˈθɜːrməstæt/", meaning: "温控器", example: "I adjust the thermostat before sleeping.", translation: "睡前我调节了温控器。", label: "thermostat", zh: "温控器", x: 77, y: 38, offset: { x: -42, y: -14, mobileX: -22, mobileY: 5 } },
+            { id: "minibar", word: "minibar", phonetic: "/ˈmɪnibɑːr/", meaning: "迷你吧", example: "Drinks are available in the minibar.", translation: "迷你吧里有饮品。", label: "minibar", zh: "迷你吧", x: 76, y: 67, offset: { x: -38, y: -18, mobileX: -20, mobileY: -20 } },
+            { id: "safe", word: "safe", phonetic: "/seɪf/", meaning: "保险箱", example: "I keep my valuables in the safe.", translation: "我把贵重物品放进保险箱。", label: "safe", zh: "保险箱", x: 67, y: 73, offset: { x: 34, y: -18, mobileX: 18, mobileY: -22 } },
+            { id: "bedsideLamp", word: "bedside lamp", phonetic: "/ˈbedsaɪd læmp/", meaning: "床头灯", example: "The bedside lamp gives a soft light.", translation: "床头灯发出柔和的光。", label: "bedside lamp", zh: "床头灯", x: 31, y: 53, offset: { x: -44, y: -16, mobileX: -23, mobileY: -10 } },
+            { id: "unlock", word: "unlock", type: "action", actionMessageEn: "The keycard unlocks your guest room.", actionMessageZh: "房卡打开了你的客房。", actionEffect: "hotelUnlock", actionDuration: 2600, phonetic: "/ʌnˈlɑːk/", meaning: "解锁", example: "The keycard unlocks the guest room.", translation: "房卡打开了客房。", label: "unlock", zh: "解锁", x: 24, y: 61, offset: { x: 38, y: -18, mobileX: 20, mobileY: -16 } },
+          ],
+        },
+        {
+          id: "hotelAmenities",
+          title: "Room Amenities",
+          zh: "查看客房设施",
+          short: "设施",
+          bg: "assets/hotel-amenities-bg.png",
+          bgStyle: "linear-gradient(180deg, #dbccb9 0%, #756453 58%, #1a1714 100%)",
+          npc: "hotelStaffAmenities",
+          coreWord: "pillow",
+          intro: {
+            text: "You inspect the bed and bathroom to understand the room amenities.",
+            zh: "你查看床铺和浴室，了解客房里的各项设施。",
+          },
+          hotspots: [
+            { id: "pillow", word: "pillow", phonetic: "/ˈpɪloʊ/", meaning: "枕头", example: "The pillow feels soft and comfortable.", translation: "这个枕头柔软又舒适。", label: "pillow", zh: "枕头", x: 34, y: 50, offset: { x: -36, y: -16, mobileX: -18, mobileY: -8 } },
+            { id: "blanket", word: "blanket", phonetic: "/ˈblæŋkɪt/", meaning: "毯子", example: "An extra blanket is inside the closet.", translation: "衣柜里有一条额外的毯子。", label: "blanket", zh: "毯子", x: 42, y: 69, offset: { x: -38, y: -18, mobileX: -20, mobileY: -20 } },
+            { id: "bathrobe", word: "bathrobe", phonetic: "/ˈbæθroʊb/", meaning: "浴袍", example: "A clean bathrobe hangs near the bathroom.", translation: "一件干净的浴袍挂在浴室旁。", label: "bathrobe", zh: "浴袍", x: 69, y: 44, offset: { x: -40, y: -16, mobileX: -20, mobileY: -5 } },
+            { id: "toiletries", word: "toiletries", phonetic: "/ˈtɔɪlətriz/", meaning: "洗漱用品", example: "The hotel provides basic toiletries.", translation: "酒店提供基本洗漱用品。", label: "toiletries", zh: "洗漱用品", x: 74, y: 68, offset: { x: 36, y: -18, mobileX: 18, mobileY: -20 } },
+            { id: "shower", word: "shower", phonetic: "/ˈʃaʊər/", meaning: "淋浴", example: "The shower has warm water.", translation: "淋浴有热水。", label: "shower", zh: "淋浴", x: 83, y: 38, offset: { x: -36, y: -14, mobileX: -18, mobileY: 6 } },
+            { id: "inspect", word: "inspect", type: "action", actionMessageEn: "You inspect the room amenities, and everything is ready.", actionMessageZh: "你查看了客房设施，一切都准备好了。", actionEffect: "hotelInspect", actionDuration: 2600, phonetic: "/ɪnˈspekt/", meaning: "查看", example: "I inspect the room amenities.", translation: "我查看客房设施。", label: "inspect", zh: "查看", x: 57, y: 56, offset: { x: -38, y: -16, mobileX: -20, mobileY: -12 } },
+          ],
+        },
+        {
+          id: "hotelHousekeeping",
+          title: "Housekeeping Request",
+          zh: "请求客房服务",
+          short: "客房服务",
+          bg: "assets/hotel-housekeeping-bg.png",
+          bgStyle: "linear-gradient(180deg, #d3c4b1 0%, #6b5a4b 58%, #181513 100%)",
+          npc: "hotelHousekeepingStaff",
+          coreWord: "housekeeping",
+          intro: {
+            text: "You contact housekeeping when you need clean items or help in the room.",
+            zh: "当你需要干净用品或房间帮助时，你联系客房服务。",
+          },
+          hotspots: [
+            { id: "housekeeping", word: "housekeeping", phonetic: "/ˈhaʊskiːpɪŋ/", meaning: "客房服务", example: "I call housekeeping from the room.", translation: "我从房间联系客房服务。", label: "housekeeping", zh: "客房服务", x: 48, y: 36, offset: { x: -40, y: -8, mobileX: -20, mobileY: 4 } },
+            { id: "housekeeper", word: "housekeeper", phonetic: "/ˈhaʊskiːpər/", meaning: "客房服务员", example: "The housekeeper brings clean towels.", translation: "客房服务员送来干净毛巾。", label: "housekeeper", zh: "客房服务员", x: 70, y: 42, offset: { x: -46, y: -14, mobileX: -24, mobileY: -4 } },
+            { id: "linen", word: "linen", phonetic: "/ˈlɪnɪn/", meaning: "床上用品", example: "The hotel changes the linen every day.", translation: "酒店每天更换床上用品。", label: "linen", zh: "床上用品", x: 72, y: 68, offset: { x: -34, y: -18, mobileX: -18, mobileY: -20 } },
+            { id: "extraTowel", word: "extra towel", phonetic: "/ˈekstrə ˈtaʊəl/", meaning: "额外毛巾", example: "Could I have an extra towel?", translation: "可以给我一条额外的毛巾吗？", label: "extra towel", zh: "额外毛巾", x: 55, y: 70, offset: { x: -42, y: -18, mobileX: -22, mobileY: -21 } },
+            { id: "maintenance", word: "maintenance", phonetic: "/ˈmeɪntənəns/", meaning: "维修服务", example: "Maintenance can repair the broken lamp.", translation: "维修人员可以修理坏掉的灯。", label: "maintenance", zh: "维修服务", x: 34, y: 35, offset: { x: -44, y: -12, mobileX: -22, mobileY: 5 } },
+            { id: "contact", word: "contact", type: "action", actionMessageEn: "You contact housekeeping for an extra towel.", actionMessageZh: "你联系客房服务，请他们送一条额外的毛巾。", actionEffect: "hotelContact", actionDuration: 2600, phonetic: "/ˈkɑːntækt/", meaning: "联系", example: "I contact housekeeping for help.", translation: "我联系客房服务寻求帮助。", label: "contact", zh: "联系", x: 42, y: 57, offset: { x: 38, y: -16, mobileX: 20, mobileY: -12 } },
+          ],
+        },
+        {
+          id: "hotelCheckout",
+          title: "Check-out Desk",
+          zh: "办理退房",
+          short: "退房",
+          bg: "assets/hotel-checkout-bg.png",
+          bgStyle: "linear-gradient(180deg, #d8c7b0 0%, #715e4c 58%, #1a1613 100%)",
+          npc: "hotelStaffCheckout",
+          coreWord: "folio",
+          completeText: "Great! You checked out and completed your hotel stay.",
+          completeZh: "太棒了！你完成退房并结束了这次酒店入住。",
+          intro: {
+            text: "Before departure, you review the folio, settle the final details, and check out.",
+            zh: "离店前，你查看账单明细、确认最后事项并办理退房。",
+          },
+          hotspots: [
+            { id: "folio", word: "folio", phonetic: "/ˈfoʊlioʊ/", meaning: "酒店账单明细", example: "I review the charges on my folio.", translation: "我查看酒店账单明细上的费用。", label: "folio", zh: "账单明细", x: 42, y: 68, offset: { x: -34, y: -18, mobileX: -18, mobileY: -20 } },
+            { id: "charge", word: "charge", phonetic: "/tʃɑːrdʒ/", meaning: "费用", example: "There is a minibar charge on the folio.", translation: "账单上有一笔迷你吧费用。", label: "charge", zh: "费用", x: 54, y: 69, offset: { x: 34, y: -18, mobileX: 18, mobileY: -20 } },
+            { id: "refund", word: "refund", phonetic: "/ˈriːfʌnd/", meaning: "退款", example: "The deposit refund will arrive soon.", translation: "押金退款很快会到账。", label: "refund", zh: "退款", x: 69, y: 63, offset: { x: -36, y: -18, mobileX: -18, mobileY: -17 } },
+            { id: "departure", word: "departure", phonetic: "/dɪˈpɑːrtʃər/", meaning: "离店", example: "The porter helps before my departure.", translation: "行李员在我离店前提供帮助。", label: "departure", zh: "离店", x: 82, y: 39, offset: { x: -40, y: -14, mobileX: -20, mobileY: 5 } },
+            { id: "porter", word: "porter", phonetic: "/ˈpɔːrtər/", meaning: "行李员", example: "The porter takes my bags outside.", translation: "行李员把我的行李送到外面。", label: "porter", zh: "行李员", x: 78, y: 59, offset: { x: 36, y: -16, mobileX: 18, mobileY: -14 } },
+            { id: "checkOut", word: "check out", type: "action", actionMessageEn: "You check out and finish your hotel stay.", actionMessageZh: "你完成退房，结束了这次酒店入住。", actionEffect: "hotelCheckOut", actionDuration: 2600, phonetic: "/ˌtʃek ˈaʊt/", meaning: "退房", example: "I check out before noon.", translation: "我在中午前办理退房。", label: "check out", zh: "退房", x: 60, y: 52, offset: { x: -42, y: -16, mobileX: -22, mobileY: -10 } },
+          ],
+        },
+      ];
+
       const fruitShopDialogues = {
         fruitEntranceShopkeeper: {
           id: "fruitEntranceShopkeeper",
@@ -4596,6 +4755,93 @@
             { text: "I’ll send it now.", choiceZh: "我现在发送。", reply: "Thank you. Then you can sign out.", translation: "谢谢。然后你就可以签退了。" },
             { text: "The handoff is ready.", choiceZh: "交接已经准备好了。", reply: "Excellent. The team can continue tomorrow.", translation: "很好。团队明天可以继续。" },
             { text: "See you tomorrow.", choiceZh: "明天见。", reply: "See you tomorrow. Have a good evening.", translation: "明天见。祝你晚上愉快。" },
+          ],
+        },
+      };
+
+      const hotelDialogues = {
+        hotelConciergeArrival: {
+          id: "hotelConciergeArrival",
+          speaker: "Concierge",
+          zh: "礼宾员",
+          text: "Good evening. May I help you with your bags?",
+          translation: "晚上好，需要我帮您拿行李吗？",
+          options: [
+            { text: "Yes, please. I'm checking in.", choiceZh: "好的，我来办理入住。", reply: "Of course. I will guide you into the atrium.", translation: "当然。我带您进入酒店中庭。" },
+            { text: "Where can I confirm my booking?", choiceZh: "我在哪里确认预订？", reply: "The hotel staff can help you just inside.", translation: "酒店工作人员就在里面，可以帮助您。" },
+            { text: "I can manage, thank you.", choiceZh: "我自己可以，谢谢。", reply: "Certainly. Please let me know if you need anything.", translation: "好的。如有需要请随时告诉我。" },
+          ],
+        },
+        hotelStaffBooking: {
+          id: "hotelStaffBooking",
+          speaker: "Hotel Staff",
+          zh: "酒店工作人员",
+          text: "May I have your booking reference, please?",
+          translation: "请问可以提供您的预订编号吗？",
+          options: [
+            { text: "Here is my booking reference.", choiceZh: "这是我的预订编号。", reply: "Thank you. I found your booking.", translation: "谢谢。我找到您的预订了。" },
+            { text: "Is a deposit required?", choiceZh: "需要押金吗？", reply: "Yes, a small deposit is required for the stay.", translation: "是的，本次入住需要一笔小额押金。" },
+            { text: "Could you confirm my room number?", choiceZh: "可以确认一下我的房间号吗？", reply: "Certainly. Your room number is on this card.", translation: "当然。您的房间号在这张卡片上。" },
+          ],
+        },
+        hotelBellhopElevator: {
+          id: "hotelBellhopElevator",
+          speaker: "Bellhop",
+          zh: "行李员",
+          text: "Your room is on the eighth floor. Shall I show you the way?",
+          translation: "您的房间在八楼，需要我带路吗？",
+          options: [
+            { text: "Yes, please show me the way.", choiceZh: "好的，请给我带路。", reply: "This elevator will take us to your floor.", translation: "这部电梯会带我们到您的楼层。" },
+            { text: "Which elevator should I take?", choiceZh: "我应该乘哪部电梯？", reply: "Please use the elevator beside the floor guide.", translation: "请使用楼层指引旁边的电梯。" },
+            { text: "I can follow the floor guide.", choiceZh: "我可以看楼层指引。", reply: "Great. Your corridor is clearly marked upstairs.", translation: "好的。楼上的走廊标识很清楚。" },
+          ],
+        },
+        hotelStaffGuestRoom: {
+          id: "hotelStaffGuestRoom",
+          speaker: "Hotel Staff",
+          zh: "酒店工作人员",
+          text: "Here is your guest room. Is everything comfortable?",
+          translation: "这是您的客房，一切都舒适吗？",
+          options: [
+            { text: "Yes, the room looks comfortable.", choiceZh: "是的，房间看起来很舒适。", reply: "Wonderful. I hope you enjoy your stay.", translation: "太好了。祝您入住愉快。" },
+            { text: "How do I use the thermostat?", choiceZh: "温控器怎么使用？", reply: "Use the buttons on the wall to adjust it.", translation: "使用墙上的按钮进行调节。" },
+            { text: "Is the minibar included?", choiceZh: "迷你吧包含在房费里吗？", reply: "The minibar items may have an extra charge.", translation: "迷你吧里的物品可能会额外收费。" },
+          ],
+        },
+        hotelStaffAmenities: {
+          id: "hotelStaffAmenities",
+          speaker: "Hotel Staff",
+          zh: "酒店工作人员",
+          text: "Would you like me to explain the room amenities?",
+          translation: "需要我介绍一下客房设施吗？",
+          options: [
+            { text: "Where are the toiletries?", choiceZh: "洗漱用品在哪里？", reply: "They are beside the shower in the bathroom.", translation: "它们在浴室淋浴旁边。" },
+            { text: "Could I have another blanket?", choiceZh: "可以再给我一条毯子吗？", reply: "Yes. Housekeeping can bring one to you.", translation: "可以。客房服务可以给您送来一条。" },
+            { text: "How does the shower work?", choiceZh: "淋浴怎么使用？", reply: "Turn the handle slowly to adjust the water.", translation: "慢慢转动把手来调节水温。" },
+          ],
+        },
+        hotelHousekeepingStaff: {
+          id: "hotelHousekeepingStaff",
+          speaker: "Housekeeping Staff",
+          zh: "客房服务员",
+          text: "Housekeeping. How may I help you?",
+          translation: "这里是客房服务，请问有什么可以帮您？",
+          options: [
+            { text: "Could I have an extra towel?", choiceZh: "可以给我一条额外的毛巾吗？", reply: "Certainly. I will bring one right away.", translation: "当然。我马上给您送来。" },
+            { text: "I need clean linen, please.", choiceZh: "我需要干净的床上用品。", reply: "Of course. The housekeeper will change it soon.", translation: "好的。客房服务员很快会为您更换。" },
+            { text: "Could you send maintenance?", choiceZh: "可以派维修人员过来吗？", reply: "Yes. Please tell me what needs attention.", translation: "可以。请告诉我哪里需要维修。" },
+          ],
+        },
+        hotelStaffCheckout: {
+          id: "hotelStaffCheckout",
+          speaker: "Hotel Staff",
+          zh: "酒店工作人员",
+          text: "How was your stay?",
+          translation: "您这次住得怎么样？",
+          options: [
+            { text: "It was very comfortable.", choiceZh: "住得非常舒适。", reply: "I'm glad to hear that. Thank you for staying with us.", translation: "很高兴听到您这么说。感谢您的入住。" },
+            { text: "Could I review the folio?", choiceZh: "我可以查看账单明细吗？", reply: "Certainly. Here is the complete folio.", translation: "当然。这是完整的账单明细。" },
+            { text: "When will I receive the refund?", choiceZh: "我什么时候会收到退款？", reply: "The deposit refund should arrive soon.", translation: "押金退款应该很快会到账。" },
           ],
         },
       };
@@ -5741,7 +5987,71 @@
         },
       ];
 
+      const moreHotelPages = [
+        {
+          id: "hotel-spaces",
+          title: "Hotel Spaces",
+          zh: "酒店区域",
+          words: [
+            { id: "drop-off-zone", word: "drop-off zone", phonetic: "/ˈdrɑːp ɔːf zoʊn/", meaning: "下客区", example: "The taxi stops in the drop-off zone.", translation: "出租车停在下客区。" },
+            { id: "vestibule", word: "vestibule", phonetic: "/ˈvestɪbjuːl/", meaning: "门厅", example: "The vestibule keeps cold air outside.", translation: "门厅把冷空气挡在外面。" },
+            { id: "mezzanine", word: "mezzanine", phonetic: "/ˈmezəniːn/", meaning: "夹层", example: "The meeting area is on the mezzanine.", translation: "会议区在夹层。" },
+            { id: "ballroom", word: "ballroom", phonetic: "/ˈbɔːlruːm/", meaning: "宴会舞厅", example: "A wedding is held in the ballroom.", translation: "一场婚礼在宴会舞厅举行。" },
+            { id: "banquet-hall", word: "banquet hall", phonetic: "/ˈbæŋkwɪt hɔːl/", meaning: "宴会厅", example: "Dinner is served in the banquet hall.", translation: "晚餐在宴会厅供应。" },
+            { id: "conference-suite", word: "conference suite", phonetic: "/ˈkɑːnfərəns swiːt/", meaning: "会议套间", example: "The conference suite is ready for the group.", translation: "会议套间已经为团队准备好了。" },
+            { id: "executive-floor", word: "executive floor", phonetic: "/ɪɡˈzekjətɪv flɔːr/", meaning: "行政楼层", example: "The executive floor has a quiet workspace.", translation: "行政楼层有安静的工作区。" },
+            { id: "rooftop-pool", word: "rooftop pool", phonetic: "/ˈruːftɑːp puːl/", meaning: "屋顶泳池", example: "The rooftop pool overlooks the city.", translation: "屋顶泳池俯瞰城市。" },
+            { id: "wellness-center", word: "wellness center", phonetic: "/ˈwelnəs ˈsentər/", meaning: "康体中心", example: "The wellness center opens early.", translation: "康体中心很早开放。" },
+            { id: "luggage-room", word: "luggage room", phonetic: "/ˈlʌɡɪdʒ ruːm/", meaning: "行李寄存室", example: "My bags are stored in the luggage room.", translation: "我的行李存放在行李寄存室。" },
+            { id: "service-corridor", word: "service corridor", phonetic: "/ˈsɜːrvɪs ˈkɔːrɪdɔːr/", meaning: "服务通道", example: "Staff use the service corridor.", translation: "工作人员使用服务通道。" },
+            { id: "garden-terrace", word: "garden terrace", phonetic: "/ˈɡɑːrdən ˈterəs/", meaning: "花园露台", example: "Breakfast is pleasant on the garden terrace.", translation: "在花园露台吃早餐很惬意。" },
+          ],
+        },
+        {
+          id: "room-comfort",
+          title: "Room Comfort",
+          zh: "客房用品",
+          words: [
+            { id: "headboard", word: "headboard", phonetic: "/ˈhedbɔːrd/", meaning: "床头板", example: "The headboard is made of soft fabric.", translation: "床头板由柔软的布料制成。" },
+            { id: "mattress", word: "mattress", phonetic: "/ˈmætrəs/", meaning: "床垫", example: "The mattress feels firm and comfortable.", translation: "床垫结实又舒适。" },
+            { id: "duvet", word: "duvet", phonetic: "/duːˈveɪ/", meaning: "羽绒被", example: "The duvet keeps the bed warm.", translation: "羽绒被让床铺保持温暖。" },
+            { id: "bedsheet", word: "bedsheet", phonetic: "/ˈbedʃiːt/", meaning: "床单", example: "The bedsheet is clean and smooth.", translation: "床单干净又平整。" },
+            { id: "pillowcase", word: "pillowcase", phonetic: "/ˈpɪloʊkeɪs/", meaning: "枕套", example: "The pillowcase smells fresh.", translation: "枕套闻起来很清新。" },
+            { id: "bath-mat", word: "bath mat", phonetic: "/ˈbæθ mæt/", meaning: "浴室地垫", example: "The bath mat is beside the shower.", translation: "浴室地垫在淋浴旁边。" },
+            { id: "vanity-mirror", word: "vanity mirror", phonetic: "/ˈvænəti ˈmɪrər/", meaning: "梳妆镜", example: "The vanity mirror has a bright light.", translation: "梳妆镜带有明亮的灯光。" },
+            { id: "blackout-curtain", word: "blackout curtain", phonetic: "/ˈblækaʊt ˈkɜːrtən/", meaning: "遮光窗帘", example: "The blackout curtain keeps the room dark.", translation: "遮光窗帘让房间保持黑暗。" },
+            { id: "bedside-table", word: "bedside table", phonetic: "/ˈbedsaɪd ˈteɪbəl/", meaning: "床头柜", example: "My phone is on the bedside table.", translation: "我的手机在床头柜上。" },
+            { id: "wardrobe", word: "wardrobe", phonetic: "/ˈwɔːrdroʊb/", meaning: "衣柜", example: "I hang my coat in the wardrobe.", translation: "我把外套挂进衣柜。" },
+            { id: "ironing-board", word: "ironing board", phonetic: "/ˈaɪərnɪŋ bɔːrd/", meaning: "熨衣板", example: "The ironing board folds into the closet.", translation: "熨衣板可以折叠进壁橱。" },
+            { id: "luggage-rack", word: "luggage rack", phonetic: "/ˈlʌɡɪdʒ ræk/", meaning: "行李架", example: "I place my suitcase on the luggage rack.", translation: "我把行李箱放在行李架上。" },
+          ],
+        },
+        {
+          id: "hotel-services-policies",
+          title: "Services & Policies",
+          zh: "服务与规定",
+          words: [
+            { id: "late-checkout", word: "late checkout", phonetic: "/leɪt ˈtʃekaʊt/", meaning: "延迟退房", example: "Late checkout is available until two.", translation: "延迟退房可以到两点。" },
+            { id: "early-arrival", word: "early arrival", phonetic: "/ˈɜːrli əˈraɪvəl/", meaning: "提前到店", example: "Please tell the hotel about an early arrival.", translation: "如需提前到店，请告知酒店。" },
+            { id: "wake-up-call", word: "wake-up call", phonetic: "/ˈweɪk ʌp kɔːl/", meaning: "叫醒服务", example: "I request a wake-up call for six.", translation: "我要求六点提供叫醒服务。" },
+            { id: "turndown-service", word: "turndown service", phonetic: "/ˈtɜːrndaʊn ˈsɜːrvɪs/", meaning: "夜床服务", example: "Turndown service prepares the room for sleep.", translation: "夜床服务会为睡眠整理房间。" },
+            { id: "laundry-service", word: "laundry service", phonetic: "/ˈlɔːndri ˈsɜːrvɪs/", meaning: "洗衣服务", example: "Laundry service returns clothes tomorrow.", translation: "洗衣服务明天会送回衣物。" },
+            { id: "dry-cleaning", word: "dry cleaning", phonetic: "/ˌdraɪ ˈkliːnɪŋ/", meaning: "干洗", example: "This jacket needs dry cleaning.", translation: "这件夹克需要干洗。" },
+            { id: "breakfast-buffet", word: "breakfast buffet", phonetic: "/ˈbrekfəst bəˈfeɪ/", meaning: "自助早餐", example: "The breakfast buffet starts at seven.", translation: "自助早餐七点开始。" },
+            { id: "shuttle-service", word: "shuttle service", phonetic: "/ˈʃʌtəl ˈsɜːrvɪs/", meaning: "接驳服务", example: "The shuttle service leaves every hour.", translation: "接驳服务每小时发车。" },
+            { id: "valet-parking", word: "valet parking", phonetic: "/væˈleɪ ˈpɑːrkɪŋ/", meaning: "代客泊车", example: "Valet parking is available at the entrance.", translation: "入口处提供代客泊车。" },
+            { id: "security-deposit", word: "security deposit", phonetic: "/sɪˈkjʊrəti dɪˈpɑːzɪt/", meaning: "保证金", example: "The security deposit is returned after the stay.", translation: "保证金会在入住结束后退还。" },
+            { id: "incidental-charge", word: "incidental charge", phonetic: "/ˌɪnsɪˈdentəl tʃɑːrdʒ/", meaning: "杂费", example: "An incidental charge may appear on the folio.", translation: "账单明细上可能会出现杂费。" },
+            { id: "occupancy-limit", word: "occupancy limit", phonetic: "/ˈɑːkjəpənsi ˈlɪmɪt/", meaning: "入住人数上限", example: "The room has an occupancy limit of two.", translation: "这间房的入住人数上限是两人。" },
+          ],
+        },
+      ];
+
       const moreOfficeCount = moreOfficePages.reduce(
+        (count, page) => count + page.words.length,
+        0
+      );
+      const moreHotelCount = moreHotelPages.reduce(
         (count, page) => count + page.words.length,
         0
       );
@@ -5855,87 +6165,73 @@
           image: "linear-gradient(180deg, rgba(9, 11, 17, 0.02), rgba(9, 11, 17, 0.74)), url('assets/office-cover.png')",
           imagePosition: "center 58%",
         },
+        {
+          id: "hotel",
+          title: "Hotel",
+          zh: "酒店",
+          status: "Available",
+          statusZh: "可进入",
+          description: "Confirm a booking, enter your room, request service, and learn real hotel English.",
+          descriptionZh: "确认预订、进入客房、请求服务，学习真实酒店英语。",
+          button: "Enter Hotel",
+          buttonZh: "进入酒店",
+          available: true,
+          chapter: "hotel",
+          accent: "#d9b77e",
+          visual: "Warm Atrium",
+          visualZh: "温暖中庭",
+          image: "linear-gradient(180deg, rgba(18, 13, 9, 0.02), rgba(18, 13, 9, 0.72)), url('assets/hotel-cover.png')",
+          imagePosition: "center 54%",
+        },
       ];
 
       let cachedEnglishVoice = null;
       let activeSpeechToken = 0;
 
-      function isEnglishVoice(voice) {
-        const lang = voice?.lang?.toLowerCase() || "";
-        const name = voice?.name?.toLowerCase() || "";
-        return lang.startsWith("en") || name.includes("english");
-      }
-
-      function scoreEnglishVoice(voice) {
-        if (!isEnglishVoice(voice)) return -Infinity;
-        const name = voice.name.toLowerCase();
-        const lang = voice.lang?.toLowerCase() || "";
-        let score = 0;
-
-        if (lang.startsWith("en-us")) score += 42;
-        else if (lang.startsWith("en-gb")) score += 38;
-        else if (lang.startsWith("en-au") || lang.startsWith("en-ie") || lang.startsWith("en-ca")) score += 24;
-        else if (lang.startsWith("en")) score += 18;
-
-        const priorityNames = [
-          ["google us english", 140],
-          ["google uk english female", 136],
-          ["microsoft jenny", 134],
-          ["microsoft aria", 130],
-          ["microsoft guy", 122],
-          ["samantha", 128],
-          ["alex", 124],
-          ["daniel", 120],
-          ["karen", 116],
-          ["moira", 112],
-          ["tessa", 104],
-          ["fiona", 100],
-        ];
-
-        const matchedPriority = priorityNames.find(([token]) => name.includes(token));
-        if (matchedPriority) score += matchedPriority[1];
-
-        if (name.includes("premium")) score += 36;
-        if (name.includes("enhanced")) score += 32;
-        if (name.includes("neural")) score += 30;
-        if (name.includes("natural")) score += 24;
-        if (name.includes("online")) score += 10;
-        if (voice.localService) score += 12;
-        if (name.includes("compact")) score -= 26;
-        if (name.includes("novelty")) score -= 40;
-
-        return score;
-      }
-
       function pickBestEnglishVoice(voices) {
         if (!voices.length) return cachedEnglishVoice;
+        const priorityNames = [
+          "Google US English",
+          "Google UK English Female",
+          "Microsoft Jenny",
+          "Samantha",
+          "Alex",
+          "Daniel",
+        ];
 
-        const englishVoices = voices.filter(isEnglishVoice);
-        if (!englishVoices.length) return cachedEnglishVoice || null;
+        const englishVoices = voices.filter((voice) =>
+          voice.lang?.toLowerCase().startsWith("en")
+        );
 
-        return englishVoices
-          .map((voice) => ({ voice, score: scoreEnglishVoice(voice) }))
-          .sort((a, b) => b.score - a.score)[0]?.voice || cachedEnglishVoice || null;
+        const byPriorityName = priorityNames
+          .map((name) =>
+            englishVoices.find((voice) =>
+              voice.name.toLowerCase().includes(name.toLowerCase())
+            )
+          )
+          .find(Boolean);
+
+        const naturalEnglish = englishVoices.find((voice) => {
+          const name = voice.name.toLowerCase();
+          return (
+            ["google", "microsoft", "samantha", "alex", "daniel"].some((token) =>
+              name.includes(token)
+            ) && ["en-us", "en-gb"].includes(voice.lang.toLowerCase())
+          );
+        });
+
+        const usOrGb = englishVoices.find((voice) =>
+          ["en-us", "en-gb"].includes(voice.lang.toLowerCase())
+        );
+
+        return byPriorityName || naturalEnglish || usOrGb || englishVoices[0] || voices[0] || null;
       }
 
       function loadEnglishVoices() {
         if (!("speechSynthesis" in window)) return null;
         const voices = window.speechSynthesis.getVoices();
-        const bestVoice = pickBestEnglishVoice(voices);
-        if (bestVoice && isEnglishVoice(bestVoice)) cachedEnglishVoice = bestVoice;
+        cachedEnglishVoice = pickBestEnglishVoice(voices);
         return cachedEnglishVoice;
-      }
-
-      function warmUpEnglishVoices() {
-        loadEnglishVoices();
-        if (!("speechSynthesis" in window)) return;
-
-        let attempts = 0;
-        const interval = window.setInterval(() => {
-          attempts += 1;
-          const bestVoice = loadEnglishVoices();
-          if (bestVoice || attempts >= 8) window.clearInterval(interval);
-        }, 250);
       }
 
       function SoundBars() {
@@ -6400,6 +6696,7 @@
         const [selectedMoreCafeWord, setSelectedMoreCafeWord] = useState(null);
         const [selectedMoreAirportWord, setSelectedMoreAirportWord] = useState(null);
         const [selectedMoreOfficeWord, setSelectedMoreOfficeWord] = useState(null);
+        const [selectedMoreHotelWord, setSelectedMoreHotelWord] = useState(null);
         const [dialogueReply, setDialogueReply] = useState(null);
         const [conversationDone, setConversationDone] = useState([]);
         const [completedActions, setCompletedActions] = useState([]);
@@ -6410,6 +6707,7 @@
         const [learnedMoreCafeWords, setLearnedMoreCafeWords] = useState([]);
         const [learnedMoreAirportWords, setLearnedMoreAirportWords] = useState([]);
         const [learnedMoreOfficeWords, setLearnedMoreOfficeWords] = useState([]);
+        const [learnedMoreHotelWords, setLearnedMoreHotelWords] = useState([]);
         const [learnedWords, setLearnedWords] = useState([]);
         const [savedWords, setSavedWords] = useState(loadWordBookEntries);
         const [playingKey, setPlayingKey] = useState(null);
@@ -6432,6 +6730,8 @@
         const [showMoreAirportBook, setShowMoreAirportBook] = useState(false);
         const [showMoreOfficeChoice, setShowMoreOfficeChoice] = useState(false);
         const [showMoreOfficeBook, setShowMoreOfficeBook] = useState(false);
+        const [showMoreHotelChoice, setShowMoreHotelChoice] = useState(false);
+        const [showMoreHotelBook, setShowMoreHotelBook] = useState(false);
         const [showMobileObserve, setShowMobileObserve] = useState(false);
         const [showMobileDialogue, setShowMobileDialogue] = useState(false);
         const [showMobileTripMap, setShowMobileTripMap] = useState(false);
@@ -6441,12 +6741,13 @@
         const [moreCafePageIndex, setMoreCafePageIndex] = useState(0);
         const [moreAirportPageIndex, setMoreAirportPageIndex] = useState(0);
         const [moreOfficePageIndex, setMoreOfficePageIndex] = useState(0);
+        const [moreHotelPageIndex, setMoreHotelPageIndex] = useState(0);
         const [showEnding, setShowEnding] = useState(false);
         const [isWalking, setIsWalking] = useState(false);
         const [animalEffect, setAnimalEffect] = useState(null);
 
         useEffect(() => {
-          warmUpEnglishVoices();
+          loadEnglishVoices();
           if (!("speechSynthesis" in window)) return undefined;
           if (typeof window.speechSynthesis.addEventListener === "function") {
             window.speechSynthesis.addEventListener("voiceschanged", loadEnglishVoices);
@@ -6487,6 +6788,7 @@
         const isCafeChapter = currentChapter === "cafe";
         const isAirportChapter = currentChapter === "airport";
         const isOfficeChapter = currentChapter === "office";
+        const isHotelChapter = currentChapter === "hotel";
         const activeScenes = isZooChapter
           ? scenes
           : isFruitShopChapter
@@ -6497,7 +6799,9 @@
           ? cafeScenes
           : isAirportChapter
           ? airportScenes
-          : officeScenes;
+          : isOfficeChapter
+          ? officeScenes
+          : hotelScenes;
         const activeDialogues = isZooChapter
           ? dialogues
           : isFruitShopChapter
@@ -6508,7 +6812,9 @@
           ? cafeDialogues
           : isAirportChapter
           ? airportDialogues
-          : officeDialogues;
+          : isOfficeChapter
+          ? officeDialogues
+          : hotelDialogues;
         const chapterTitle = isZooChapter
           ? "Zoo Trip"
           : isFruitShopChapter
@@ -6519,7 +6825,9 @@
           ? "Cafe Trip"
           : isAirportChapter
           ? "Airport Trip"
-          : "Office Day";
+          : isOfficeChapter
+          ? "Office Day"
+          : "Hotel Stay";
         const chapterTitleZh = isZooChapter
           ? "动物园之旅"
           : isFruitShopChapter
@@ -6530,7 +6838,9 @@
           ? "咖啡馆之旅"
           : isAirportChapter
           ? "机场之旅"
-          : "办公室之旅";
+          : isOfficeChapter
+          ? "办公室之旅"
+          : "酒店入住之旅";
         const chapterWordBookScene = isZooChapter
           ? "Zoo"
           : isFruitShopChapter
@@ -6541,7 +6851,9 @@
           ? "Cafe"
           : isAirportChapter
           ? "Airport"
-          : "Office";
+          : isOfficeChapter
+          ? "Office"
+          : "Hotel";
         const endingTitle = isZooChapter
           ? "Great job! Your zoo trip is finished."
           : isFruitShopChapter
@@ -6552,7 +6864,9 @@
           ? "Great job! Your cafe trip is finished."
           : isAirportChapter
           ? "Great job! Your airport trip is finished."
-          : "Great job! Your office day is finished.";
+          : isOfficeChapter
+          ? "Great job! Your office day is finished."
+          : "Great job! Your hotel stay is finished.";
         const endingZh = isZooChapter
           ? "太棒了！今天的动物园之旅到此结束啦。"
           : isFruitShopChapter
@@ -6563,7 +6877,9 @@
           ? "太棒了！你的咖啡馆之旅完成了。"
           : isAirportChapter
           ? "太棒了！你的机场之旅完成了。"
-          : "太棒了！你的办公室之旅完成了。";
+          : isOfficeChapter
+          ? "太棒了！你的办公室之旅完成了。"
+          : "太棒了！你的酒店入住之旅完成了。";
         const restartLabel = isZooChapter
           ? "Restart Trip"
           : isFruitShopChapter
@@ -6574,7 +6890,9 @@
           ? "Restart Cafe"
           : isAirportChapter
           ? "Restart Airport"
-          : "Restart Office";
+          : isOfficeChapter
+          ? "Restart Office"
+          : "Restart Hotel";
         const restartZh = isZooChapter
           ? "重新开始旅程"
           : isFruitShopChapter
@@ -6585,7 +6903,9 @@
           ? "重新开始咖啡馆"
           : isAirportChapter
           ? "重新开始机场"
-          : "重新开始办公室";
+          : isOfficeChapter
+          ? "重新开始办公室"
+          : "重新开始酒店";
         const welcomeIntro = isZooChapter
           ? {
               label: "Zoo Trip",
@@ -6641,7 +6961,8 @@
               action: "Start Airport Trip",
               actionZh: "开始机场之旅",
             }
-          : {
+          : isOfficeChapter
+          ? {
               label: "Office Day",
               labelZh: "办公室之旅",
               title: "Welcome to the office!",
@@ -6650,6 +6971,16 @@
               zh: "今天你会走进办公室，查看工作区、参加会议、处理文件、和同事沟通，并学习真实职场英语。",
               action: "Start Office Day",
               actionZh: "开始办公室之旅",
+            }
+          : {
+              label: "Hotel Stay",
+              labelZh: "酒店入住之旅",
+              title: "Welcome to the hotel!",
+              titleZh: "欢迎来到酒店！",
+              text: "Today, you will arrive at a hotel, confirm your booking, enter your room, request housekeeping, and learn real hotel English.",
+              zh: "今天你会走进酒店，确认预订、进入房间、请求客房服务，并学习真实酒店英语。",
+              action: "Start Hotel Stay",
+              actionZh: "开始酒店入住之旅",
             };
         const currentScene = activeScenes[currentIndex];
         const currentDialogue = currentScene.npc ? activeDialogues[currentScene.npc] : null;
@@ -6837,6 +7168,28 @@
                 zh: `不错！你又认识了 ${exploredMoreOfficeCount} 个办公室词汇。`,
               }
             : null;
+        const currentMoreHotelPage = moreHotelPages[moreHotelPageIndex];
+        const exploredMoreHotelCount = learnedMoreHotelWords.length;
+        const currentHotelPageExploredCount = currentMoreHotelPage.words.filter((word) =>
+          learnedMoreHotelWords.includes(word.id)
+        ).length;
+        const moreHotelReward =
+          exploredMoreHotelCount === moreHotelCount
+            ? {
+                text: "Amazing! You discovered all more hotel words.",
+                zh: "太厉害了！你探索了全部拓展酒店词汇。",
+              }
+            : currentHotelPageExploredCount === currentMoreHotelPage.words.length
+            ? {
+                text: "Great explorer! You completed one hotel page.",
+                zh: "太棒了！你完成了一页酒店词汇探索。",
+              }
+            : exploredMoreHotelCount >= 5
+            ? {
+                text: `Nice! You discovered ${exploredMoreHotelCount} more hotel words.`,
+                zh: `不错！你又认识了 ${exploredMoreHotelCount} 个酒店词汇。`,
+              }
+            : null;
         const wordBookFilters = [
           { id: "all", en: "All", zh: "全部" },
           { id: "zoo", en: "Zoo", zh: "动物园" },
@@ -6856,12 +7209,9 @@
           const speechToken = activeSpeechToken + 1;
           activeSpeechToken = speechToken;
           window.speechSynthesis.cancel();
-          if (!cachedEnglishVoice) loadEnglishVoices();
           const utterance = new SpeechSynthesisUtterance(text);
           utterance.lang = cachedEnglishVoice?.lang || "en-US";
-          if (cachedEnglishVoice && isEnglishVoice(cachedEnglishVoice)) {
-            utterance.voice = cachedEnglishVoice;
-          }
+          if (cachedEnglishVoice) utterance.voice = cachedEnglishVoice;
           utterance.rate = rate;
           utterance.pitch = 1;
           utterance.volume = 1;
@@ -6977,6 +7327,19 @@
           };
         }
 
+        function makeMoreHotelWordBookEntry(word) {
+          return {
+            word: word.word,
+            zh: word.meaning,
+            phonetic: word.phonetic,
+            example: word.example,
+            exampleZh: word.translation,
+            scene: "Hotel / More Hotel Words",
+            type: "travel",
+            addedAt: new Date().toISOString(),
+          };
+        }
+
         function isWordSaved(word) {
           const key = getWordKey(word);
           return savedWords.some((item) => getWordKey(item.word) === key);
@@ -7006,6 +7369,7 @@
           setSelectedMoreCafeWord(null);
           setSelectedMoreAirportWord(null);
           setSelectedMoreOfficeWord(null);
+          setSelectedMoreHotelWord(null);
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
           setShowMoreFruitsChoice(false);
@@ -7017,7 +7381,9 @@
           setShowMoreAirportChoice(false);
           setShowMoreAirportBook(false);
           setShowMoreOfficeChoice(false);
+          setShowMoreHotelChoice(false);
           setShowMoreOfficeBook(false);
+          setShowMoreHotelBook(false);
           setIsReviewingWordBook(false);
           setReviewRevealed(false);
           setReviewIndex(0);
@@ -7156,6 +7522,15 @@
           speakEnglish(word.word, 0.9, `more-office-${word.id}-normal`);
         }
 
+        function openMoreHotelWord(word) {
+          setSelectedMoreHotelWord(word);
+          setLearnedMoreHotelWords((items) =>
+            items.includes(word.id) ? items : [...items, word.id]
+          );
+          rememberWord(word.word);
+          speakEnglish(word.word, 0.9, `more-hotel-${word.id}-normal`);
+        }
+
         function finishZooTrip() {
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
@@ -7193,8 +7568,18 @@
 
         function finishOfficeDay() {
           setShowMoreOfficeChoice(false);
+          setShowMoreHotelChoice(false);
           setShowMoreOfficeBook(false);
+          setShowMoreHotelBook(false);
           setSelectedMoreOfficeWord(null);
+          setSelectedMoreHotelWord(null);
+          setShowEnding(true);
+        }
+
+        function finishHotelStay() {
+          setShowMoreHotelChoice(false);
+          setShowMoreHotelBook(false);
+          setSelectedMoreHotelWord(null);
           setShowEnding(true);
         }
 
@@ -7209,6 +7594,7 @@
           setSelectedMoreCafeWord(null);
           setSelectedMoreAirportWord(null);
           setSelectedMoreOfficeWord(null);
+          setSelectedMoreHotelWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -7228,7 +7614,9 @@
           setShowMoreAirportChoice(false);
           setShowMoreAirportBook(false);
           setShowMoreOfficeChoice(false);
+          setShowMoreHotelChoice(false);
           setShowMoreOfficeBook(false);
+          setShowMoreHotelBook(false);
           setShowWelcome(true);
           setWelcomeLeaving(false);
           setCurrentView("zoo");
@@ -7245,6 +7633,7 @@
           setSelectedMoreCafeWord(null);
           setSelectedMoreAirportWord(null);
           setSelectedMoreOfficeWord(null);
+          setSelectedMoreHotelWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -7264,7 +7653,9 @@
           setShowMoreAirportChoice(false);
           setShowMoreAirportBook(false);
           setShowMoreOfficeChoice(false);
+          setShowMoreHotelChoice(false);
           setShowMoreOfficeBook(false);
+          setShowMoreHotelBook(false);
           setShowWelcome(true);
           setWelcomeLeaving(false);
           setCurrentView("zoo");
@@ -7281,6 +7672,7 @@
           setSelectedMoreCafeWord(null);
           setSelectedMoreAirportWord(null);
           setSelectedMoreOfficeWord(null);
+          setSelectedMoreHotelWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -7300,7 +7692,9 @@
           setShowMoreAirportChoice(false);
           setShowMoreAirportBook(false);
           setShowMoreOfficeChoice(false);
+          setShowMoreHotelChoice(false);
           setShowMoreOfficeBook(false);
+          setShowMoreHotelBook(false);
           setShowWelcome(true);
           setWelcomeLeaving(false);
           setCurrentView("zoo");
@@ -7317,6 +7711,7 @@
           setSelectedMoreCafeWord(null);
           setSelectedMoreAirportWord(null);
           setSelectedMoreOfficeWord(null);
+          setSelectedMoreHotelWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -7336,7 +7731,9 @@
           setShowMoreAirportChoice(false);
           setShowMoreAirportBook(false);
           setShowMoreOfficeChoice(false);
+          setShowMoreHotelChoice(false);
           setShowMoreOfficeBook(false);
+          setShowMoreHotelBook(false);
           setShowWelcome(true);
           setWelcomeLeaving(false);
           setCurrentView("zoo");
@@ -7353,6 +7750,7 @@
           setSelectedMoreCafeWord(null);
           setSelectedMoreAirportWord(null);
           setSelectedMoreOfficeWord(null);
+          setSelectedMoreHotelWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -7372,7 +7770,48 @@
           setShowMoreAirportChoice(false);
           setShowMoreAirportBook(false);
           setShowMoreOfficeChoice(false);
+          setShowMoreHotelChoice(false);
           setShowMoreOfficeBook(false);
+          setShowMoreHotelBook(false);
+          setShowWelcome(true);
+          setWelcomeLeaving(false);
+          setCurrentView("zoo");
+        }
+
+        function enterHotel() {
+          setSceneSelectHint("");
+          setCurrentChapter("hotel");
+          setCurrentIndex(0);
+          setSelectedHotspot(null);
+          setSelectedMoreAnimal(null);
+          setSelectedMoreFruit(null);
+          setSelectedMoreCampusWord(null);
+          setSelectedMoreCafeWord(null);
+          setSelectedMoreAirportWord(null);
+          setSelectedMoreOfficeWord(null);
+          setSelectedMoreHotelWord(null);
+          setDialogueReply(null);
+          setConversationDone([]);
+          setCompletedActions([]);
+          setLearnedHotspotKeys([]);
+          setLearnedWords([]);
+          setProgressHint("");
+          setAnimalEffect(null);
+          setShowEnding(false);
+          setShowMoreAnimalsChoice(false);
+          setShowMoreAnimalsBook(false);
+          setShowMoreFruitsChoice(false);
+          setShowMoreFruitsBook(false);
+          setShowMoreCampusChoice(false);
+          setShowMoreCampusBook(false);
+          setShowMoreCafeChoice(false);
+          setShowMoreCafeBook(false);
+          setShowMoreAirportChoice(false);
+          setShowMoreAirportBook(false);
+          setShowMoreOfficeChoice(false);
+          setShowMoreHotelChoice(false);
+          setShowMoreOfficeBook(false);
+          setShowMoreHotelBook(false);
           setShowWelcome(true);
           setWelcomeLeaving(false);
           setCurrentView("zoo");
@@ -7389,6 +7828,7 @@
           setSelectedMoreCafeWord(null);
           setSelectedMoreAirportWord(null);
           setSelectedMoreOfficeWord(null);
+          setSelectedMoreHotelWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -7447,6 +7887,8 @@
           setSelectedMoreCampusWord(null);
           setSelectedMoreCafeWord(null);
           setSelectedMoreAirportWord(null);
+          setSelectedMoreOfficeWord(null);
+          setSelectedMoreHotelWord(null);
           setDialogueReply(null);
           setProgressHint("");
           setShowEnding(false);
@@ -7456,12 +7898,14 @@
           setShowMoreCafeBook(false);
           setShowMoreAirportBook(false);
           setShowMoreOfficeBook(false);
+          setShowMoreHotelBook(false);
           setShowMoreAnimalsChoice(isZooChapter);
           setShowMoreFruitsChoice(isFruitShopChapter);
           setShowMoreCampusChoice(isCampusChapter);
           setShowMoreCafeChoice(isCafeChapter);
           setShowMoreAirportChoice(isAirportChapter);
           setShowMoreOfficeChoice(isOfficeChapter);
+          setShowMoreHotelChoice(isHotelChapter);
         }
 
         function walkForward() {
@@ -7497,6 +7941,7 @@
           setSelectedMoreCafeWord(null);
           setSelectedMoreAirportWord(null);
           setSelectedMoreOfficeWord(null);
+          setSelectedMoreHotelWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -7507,6 +7952,7 @@
           setLearnedMoreCafeWords([]);
           setLearnedMoreAirportWords([]);
           setLearnedMoreOfficeWords([]);
+          setLearnedMoreHotelWords([]);
           setLearnedWords([]);
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
@@ -7519,15 +7965,18 @@
           setShowMoreAirportChoice(false);
           setShowMoreAirportBook(false);
           setShowMoreOfficeChoice(false);
+          setShowMoreHotelChoice(false);
           setShowMoreOfficeBook(false);
+          setShowMoreHotelBook(false);
           setMoreAnimalsPageIndex(0);
           setMoreFruitsPageIndex(0);
           setMoreCampusPageIndex(0);
           setMoreCafePageIndex(0);
           setMoreAirportPageIndex(0);
           setMoreOfficePageIndex(0);
+          setMoreHotelPageIndex(0);
           setShowEnding(false);
-          setShowWelcome(isZooChapter || isCampusChapter || isCafeChapter || isAirportChapter || isOfficeChapter);
+          setShowWelcome(isZooChapter || isCampusChapter || isCafeChapter || isAirportChapter || isOfficeChapter || isHotelChapter);
           setWelcomeLeaving(false);
           setAnimalEffect(null);
         }
@@ -8019,6 +8468,8 @@
                               ? enterAirport
                               : scene.chapter === "office"
                               ? enterOffice
+                              : scene.chapter === "hotel"
+                              ? enterHotel
                               : enterZoo
                             : showComingSoon
                         }
@@ -8109,6 +8560,14 @@
                       <div className="playful-leaf absolute left-[44%] top-[49%] h-3 w-6 rounded-full bg-[#c9b9f4]/75"></div>
                       <div className="playful-leaf absolute left-[51%] top-[53%] h-3 w-6 rounded-full bg-[#f2d48a]/72 [animation-delay:0.12s]"></div>
                       <div className="playful-leaf absolute left-[58%] top-[47%] h-3 w-6 rounded-full bg-[#d8dde7]/70 [animation-delay:0.24s]"></div>
+                    </>
+                  )}
+                  {animalEffect?.effect?.startsWith("hotel") && (
+                    <>
+                      <div className="sunlit-sweep absolute left-[18%] top-0 h-full w-24 bg-[#f2d7aa]/12 blur-xl"></div>
+                      <div className="playful-leaf absolute left-[44%] top-[49%] h-3 w-6 rounded-full bg-[#d9b77e]/72"></div>
+                      <div className="playful-leaf absolute left-[51%] top-[53%] h-3 w-6 rounded-full bg-[#f3e0bd]/70 [animation-delay:0.12s]"></div>
+                      <div className="playful-leaf absolute left-[58%] top-[47%] h-3 w-6 rounded-full bg-[#b5966c]/66 [animation-delay:0.24s]"></div>
                     </>
                   )}
                 </div>
@@ -8345,6 +8804,7 @@
                   setSelectedMoreCafeWord(null);
                   setSelectedMoreAirportWord(null);
                   setSelectedMoreOfficeWord(null);
+                  setSelectedMoreHotelWord(null);
                   setShowMoreAnimalsChoice(false);
                   setShowMoreAnimalsBook(false);
                   setShowMoreFruitsChoice(false);
@@ -8356,7 +8816,9 @@
                   setShowMoreAirportChoice(false);
                   setShowMoreAirportBook(false);
                   setShowMoreOfficeChoice(false);
+                  setShowMoreHotelChoice(false);
                   setShowMoreOfficeBook(false);
+                  setShowMoreHotelBook(false);
                   setShowEnding(false);
                   setCurrentView("sceneSelect");
                 }}
@@ -10097,6 +10559,7 @@
                     <button
                       onClick={() => {
                         setShowMoreOfficeChoice(false);
+                        setShowMoreHotelChoice(false);
                         setShowMoreOfficeBook(true);
                         setMoreOfficePageIndex(0);
                       }}
@@ -10165,6 +10628,7 @@
                           onClick={() => {
                             setMoreOfficePageIndex(index);
                             setSelectedMoreOfficeWord(null);
+                            setSelectedMoreHotelWord(null);
                           }}
                           className={`min-w-[190px] rounded-2xl px-4 py-3 text-left font-black shadow-label transition hover:-translate-y-0.5 active:translate-y-0 ${
                             active ? "bg-[#625583] text-white" : "border border-white/16 bg-white/10 text-cream hover:bg-white/18"
@@ -10340,6 +10804,272 @@
                         className="mt-6 w-full rounded-2xl bg-banana px-4 py-4 text-lg font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
                       >
                         <ButtonCopy en="Finish Office Day" zh="结束办公室之旅" />
+                      </button>
+                    </div>
+                  </aside>
+                )}
+              </div>
+            )}
+
+            {showMoreHotelChoice && !showEnding && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 backdrop-blur-sm">
+                <div className="dialogue-enter w-full max-w-2xl rounded-3xl border border-white/18 bg-[#112319]/92 p-6 text-cream shadow-glow backdrop-blur-2xl">
+                  <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">
+                    More Hotel Words
+                  </p>
+                  <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">
+                    Want to discover more hotel words?
+                  </h2>
+                  <p className="mt-3 text-xl font-bold text-cream/82">
+                    想认识更多酒店词汇吗？
+                  </p>
+                  <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                    <button
+                      onClick={() => {
+                        setShowMoreHotelChoice(false);
+                        setShowMoreHotelBook(true);
+                        setMoreHotelPageIndex(0);
+                      }}
+                      className="rounded-2xl bg-banana px-5 py-4 font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                    >
+                      <ButtonCopy en="Yes, show me more hotel words." zh="是的，我想看看更多酒店词汇。" />
+                    </button>
+                    <button
+                      onClick={finishHotelStay}
+                      className="rounded-2xl border border-white/18 bg-white/12 px-5 py-4 font-black text-white transition hover:bg-white/22 active:scale-[0.99]"
+                    >
+                      <ButtonCopy en="No, finish today's hotel stay." zh="不用了，结束今天的酒店入住之旅。" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {showMoreHotelBook && !showEnding && (
+              <div className="fixed inset-0 z-50 overflow-auto bg-[#191c20]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
+                <div className="mx-auto max-w-6xl">
+                  <header className="flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">
+                        More Hotel Words
+                      </p>
+                      <h2 className="mt-2 text-3xl font-black text-white sm:text-5xl">
+                        More Hotel Words
+                      </h2>
+                      <p className="mt-2 text-lg font-bold text-cream/78">
+                        更多酒店词汇
+                      </p>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <div className="rounded-2xl border border-white/14 bg-white/10 px-4 py-3">
+                        <p className="text-[10px] font-black uppercase tracking-[0.18em] text-banana">
+                          Explored
+                        </p>
+                        <p className="mt-1 text-2xl font-black text-white">
+                          {exploredMoreHotelCount}/{moreHotelCount}
+                        </p>
+                        <p className="text-xs font-bold text-cream/70">已探索</p>
+                      </div>
+                      <button
+                        onClick={finishHotelStay}
+                        className="rounded-full bg-banana px-5 py-3 font-black text-ink shadow-label transition hover:bg-[#ffc83f] active:scale-[0.99]"
+                      >
+                        <ButtonCopy en="Finish Hotel Stay" zh="结束酒店入住之旅" />
+                      </button>
+                    </div>
+                  </header>
+
+                  {moreHotelReward && (
+                    <div className="dialogue-enter mt-4 rounded-2xl border border-banana/35 bg-[#3a3448]/62 px-4 py-3 shadow-label backdrop-blur-[3px]">
+                      <p className="font-black text-white">{moreHotelReward.text}</p>
+                      <p className="mt-1 text-sm font-bold text-cream/76">{moreHotelReward.zh}</p>
+                    </div>
+                  )}
+
+                  <div className="mt-5 flex gap-2 overflow-x-auto pb-1">
+                    {moreHotelPages.map((page, index) => {
+                      const active = index === moreHotelPageIndex;
+                      return (
+                        <button
+                          key={page.id}
+                          onClick={() => {
+                            setMoreHotelPageIndex(index);
+                            setSelectedMoreHotelWord(null);
+                          }}
+                          className={`min-w-[190px] rounded-2xl px-4 py-3 text-left font-black shadow-label transition hover:-translate-y-0.5 active:translate-y-0 ${
+                            active ? "bg-[#625583] text-white" : "border border-white/16 bg-white/10 text-cream hover:bg-white/18"
+                          }`}
+                        >
+                          <span className="block text-sm">{page.title}</span>
+                          <span className="mt-1 block text-xs font-bold opacity-75">{page.zh}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  <section className="mt-5 rounded-3xl border border-white/14 bg-nightglass p-4 shadow-glow backdrop-blur-xl">
+                    <div className="flex flex-wrap items-end justify-between gap-3">
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.22em] text-banana">
+                          Page {moreHotelPageIndex + 1}/3
+                        </p>
+                        <h3 className="mt-1 text-2xl font-black text-white">
+                          {currentMoreHotelPage.title}
+                          <span className="ml-2 text-banana">{currentMoreHotelPage.zh}</span>
+                        </h3>
+                      </div>
+                      <p className="text-sm font-black text-cream/75">
+                        {currentHotelPageExploredCount}/12 learned · 已学习
+                      </p>
+                    </div>
+
+                    <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                      {currentMoreHotelPage.words.map((word) => {
+                        const learned = learnedMoreHotelWords.includes(word.id);
+                        return (
+                          <button
+                            key={word.id}
+                            onClick={() => openMoreHotelWord(word)}
+                            className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
+                              learned
+                                ? "border-[#c9b9f4]/55 bg-[#302d3f]/72"
+                                : "border-white/14 bg-white/10 hover:border-banana/45 hover:bg-white/16"
+                            }`}
+                          >
+                            <div className="flex items-start gap-3">
+                              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-banana/35 bg-[#312c43]/72 text-xl font-black text-banana transition group-hover:scale-105">
+                                {word.word.slice(0, 1).toUpperCase()}
+                              </span>
+                              <span className="min-w-0">
+                                <span className="block text-lg font-black leading-tight text-white">
+                                  {word.word}
+                                </span>
+                                <span className="mt-1 block text-sm font-bold text-cream/72">
+                                  {word.meaning}
+                                </span>
+                              </span>
+                            </div>
+                            <div className="mt-3 flex items-center justify-between gap-2">
+                              <span className="text-xs font-black text-banana">{word.phonetic}</span>
+                              {learned && (
+                                <span className="rounded-full bg-banana/90 px-2 py-1 text-[10px] font-black uppercase text-ink">
+                                  Learned · 已学习
+                                </span>
+                              )}
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </section>
+                </div>
+
+                {selectedMoreHotelWord && (
+                  <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/92 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
+                    <div className="flex items-start justify-between gap-3 border-b border-white/12 p-5">
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
+                          Hotel Word
+                        </p>
+                        <h2 className="mt-2 text-4xl font-black leading-tight text-white">
+                          {selectedMoreHotelWord.word}
+                        </h2>
+                        <p className="mt-2 text-2xl font-extrabold text-banana">
+                          {selectedMoreHotelWord.phonetic}
+                        </p>
+                      </div>
+                      <button
+                        onClick={() => setSelectedMoreHotelWord(null)}
+                        className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/12 text-2xl font-black text-white transition hover:bg-white/22 active:scale-95"
+                        aria-label="Close 关闭"
+                        title="Close / 关闭"
+                      >
+                        ×
+                      </button>
+                    </div>
+
+                    <div className="flex-1 overflow-auto p-5">
+                      <div className="rounded-2xl border border-white/12 bg-white/10 p-4">
+                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-banana">
+                          中文意思
+                        </p>
+                        <p className="mt-2 text-2xl font-black text-white">
+                          {selectedMoreHotelWord.meaning}
+                        </p>
+                      </div>
+
+                      <div className="mt-4 rounded-2xl border border-white/12 bg-black/18 p-4">
+                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-coral">
+                          Example
+                        </p>
+                        <p className="mt-2 text-2xl font-black leading-9 text-white">
+                          {selectedMoreHotelWord.example}
+                        </p>
+                        <p className="mt-2 text-lg font-bold leading-8 text-cream/78">
+                          {selectedMoreHotelWord.translation}
+                        </p>
+                      </div>
+
+                      <div className="mt-5 grid grid-cols-2 gap-3">
+                        <button
+                          onClick={() => speakEnglish(selectedMoreHotelWord.word, 0.9, `more-hotel-${selectedMoreHotelWord.id}-normal`)}
+                          className="rounded-2xl bg-banana px-4 py-3 text-base font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                        >
+                          <span className="inline-flex items-center justify-center gap-2">
+                            {playingKey === `more-hotel-${selectedMoreHotelWord.id}-normal` && <SoundBars />}
+                            <ButtonCopy en="Normal" zh="正常语速" />
+                          </span>
+                        </button>
+                        <button
+                          onClick={() => speakEnglish(selectedMoreHotelWord.word, 0.65, `more-hotel-${selectedMoreHotelWord.id}-slow`)}
+                          className="rounded-2xl border border-banana/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"
+                        >
+                          <span className="inline-flex items-center justify-center gap-2">
+                            {playingKey === `more-hotel-${selectedMoreHotelWord.id}-slow` && <SoundBars />}
+                            <ButtonCopy en="Slow" zh="慢速朗读" />
+                          </span>
+                        </button>
+                      </div>
+
+                      <button
+                        onClick={() => speakEnglish(selectedMoreHotelWord.example, 0.86, `more-hotel-${selectedMoreHotelWord.id}-sentence`)}
+                        className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
+                      >
+                        <span className="inline-flex items-center justify-center gap-2">
+                          {playingKey === `more-hotel-${selectedMoreHotelWord.id}-sentence` && <SoundBars />}
+                          <ButtonCopy en="Play Sentence" zh="朗读例句" />
+                        </span>
+                      </button>
+
+                      <button
+                        onClick={() => saveWordEntry(makeMoreHotelWordBookEntry(selectedMoreHotelWord))}
+                        disabled={isWordSaved(selectedMoreHotelWord.word)}
+                        className={`mt-3 w-full rounded-2xl px-4 py-3 text-base font-black shadow-label transition active:scale-[0.99] ${
+                          isWordSaved(selectedMoreHotelWord.word)
+                            ? "bg-coral text-white"
+                            : "bg-white/12 text-white hover:bg-white/22"
+                        }`}
+                      >
+                        <ButtonCopy
+                          en={isWordSaved(selectedMoreHotelWord.word) ? "Added to Word Book" : "Add to Word Book"}
+                          zh={isWordSaved(selectedMoreHotelWord.word) ? "已加入生词本" : "加入生词本"}
+                        />
+                      </button>
+
+                      {isWordSaved(selectedMoreHotelWord.word) && (
+                        <button
+                          onClick={() => removeWordEntry(selectedMoreHotelWord.word)}
+                          className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
+                        >
+                          <ButtonCopy en="Remove from Word Book" zh="移出生词本" />
+                        </button>
+                      )}
+
+                      <button
+                        onClick={finishHotelStay}
+                        className="mt-6 w-full rounded-2xl bg-banana px-4 py-4 text-lg font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                      >
+                        <ButtonCopy en="Finish Hotel Stay" zh="结束酒店入住之旅" />
                       </button>
                     </div>
                   </aside>
