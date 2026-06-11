@@ -4153,6 +4153,324 @@
         },
       ];
 
+      const restaurantScenes = [
+        {
+          id: "restaurantEntrance",
+          title: "Restaurant Entrance",
+          zh: "餐厅入口",
+          short: "入口",
+          bg: "assets/restaurant-entrance-bg.png",
+          bgStyle: "linear-gradient(180deg, #d2aa7c 0%, #65442f 58%, #17110d 100%)",
+          npc: "restaurantGreeterEntrance",
+          coreWord: "restaurant facade",
+          intro: {
+            text: "You arrive at a warmly lit restaurant and pause before stepping inside.",
+            zh: "你来到一家灯光温暖的餐厅，在走进去之前稍作停留。",
+          },
+          hotspots: [
+            { id: "restaurantFacade", word: "restaurant facade", phonetic: "/ˈrestərɑːnt fəˈsɑːd/", meaning: "餐厅外立面", example: "The restaurant facade looks warm and inviting.", translation: "餐厅外立面看起来温暖又吸引人。", label: "restaurant facade", zh: "餐厅外立面", x: 50, y: 30, offset: { x: -46, y: -10, mobileX: -24, mobileY: 9 } },
+            { id: "entryway", word: "entryway", phonetic: "/ˈentriweɪ/", meaning: "入口通道", example: "The entryway leads into the dining room.", translation: "入口通道通向用餐区。", label: "entryway", zh: "入口通道", x: 58, y: 59, offset: { x: -38, y: -16, mobileX: -20, mobileY: -12 } },
+            { id: "ambience", word: "ambience", phonetic: "/ˈæmbiəns/", meaning: "氛围", example: "The restaurant has a calm ambience.", translation: "这家餐厅有安静的氛围。", label: "ambience", zh: "氛围", x: 78, y: 35, offset: { x: -36, y: -12, mobileX: -18, mobileY: 6 } },
+            { id: "dressCode", word: "dress code", phonetic: "/ˈdres koʊd/", meaning: "着装要求", example: "The dress code is smart casual.", translation: "着装要求是得体休闲。", label: "dress code", zh: "着装要求", x: 29, y: 45, offset: { x: -40, y: -14, mobileX: -20, mobileY: -4 } },
+            { id: "coatCheck", word: "coat check", phonetic: "/ˈkoʊt tʃek/", meaning: "衣帽寄存处", example: "I leave my coat at the coat check.", translation: "我把外套寄存在衣帽寄存处。", label: "coat check", zh: "衣帽寄存处", x: 85, y: 60, offset: { x: -36, y: -18, mobileX: -18, mobileY: -14 } },
+            { id: "greet", word: "greet", type: "action", actionMessageEn: "A greeter welcomes you into the restaurant.", actionMessageZh: "迎宾员欢迎你走进餐厅。", actionEffect: "restaurantGreet", actionDuration: 2600, phonetic: "/ɡriːt/", meaning: "迎接，问候", example: "The greeter welcomes us at the door.", translation: "迎宾员在门口欢迎我们。", label: "greet", zh: "问候", x: 66, y: 48, offset: { x: -36, y: -16, mobileX: -18, mobileY: -8 } },
+          ],
+        },
+        {
+          id: "restaurantSeating",
+          title: "Seating Request",
+          zh: "请求入座",
+          short: "入座",
+          bg: "assets/restaurant-seating-bg.png",
+          bgStyle: "linear-gradient(180deg, #cfa477 0%, #60432f 58%, #16100d 100%)",
+          npc: "restaurantMaitreD",
+          coreWord: "maître d’",
+          intro: {
+            text: "At the host podium, you ask for a table and explain your seating needs.",
+            zh: "在迎宾台前，你询问桌位并说明入座需求。",
+          },
+          hotspots: [
+            { id: "maitreD", word: "maître d’", phonetic: "/ˌmeɪtrə ˈdiː/", meaning: "餐厅领位员", example: "The maître d’ checks the seating plan.", translation: "餐厅领位员查看座位安排。", label: "maître d’", zh: "餐厅领位员", x: 28, y: 41, offset: { x: -38, y: -14, mobileX: -20, mobileY: -4 } },
+            { id: "waitingList", word: "waiting list", phonetic: "/ˈweɪtɪŋ lɪst/", meaning: "候位名单", example: "Our name is on the waiting list.", translation: "我们的名字在候位名单上。", label: "waiting list", zh: "候位名单", x: 31, y: 68, offset: { x: -42, y: -18, mobileX: -22, mobileY: -20 } },
+            { id: "partySize", word: "party size", phonetic: "/ˈpɑːrti saɪz/", meaning: "用餐人数", example: "The staff asks about our party size.", translation: "工作人员询问我们的用餐人数。", label: "party size", zh: "用餐人数", x: 48, y: 67, offset: { x: -40, y: -18, mobileX: -20, mobileY: -20 } },
+            { id: "boothRequest", word: "booth request", phonetic: "/ˈbuːθ rɪˌkwest/", meaning: "卡座请求", example: "We make a booth request for a quiet corner.", translation: "我们请求一个安静角落的卡座。", label: "booth request", zh: "卡座请求", x: 77, y: 52, offset: { x: -44, y: -16, mobileX: -23, mobileY: -10 } },
+            { id: "highChair", word: "high chair", phonetic: "/ˈhaɪ tʃer/", meaning: "儿童高脚椅", example: "The family needs a high chair.", translation: "这个家庭需要一把儿童高脚椅。", label: "high chair", zh: "儿童高脚椅", x: 79, y: 70, offset: { x: -40, y: -18, mobileX: -20, mobileY: -21 } },
+            { id: "follow", word: "follow", type: "action", actionMessageEn: "You follow the maître d’ to your table.", actionMessageZh: "你跟着领位员走向餐桌。", actionEffect: "restaurantFollow", actionDuration: 2600, phonetic: "/ˈfɑːloʊ/", meaning: "跟随", example: "We follow the maître d’ to our table.", translation: "我们跟着领位员走向餐桌。", label: "follow", zh: "跟随", x: 60, y: 53, offset: { x: -36, y: -16, mobileX: -18, mobileY: -10 } },
+          ],
+        },
+        {
+          id: "restaurantDiningTable",
+          title: "Dining Table",
+          zh: "查看餐桌",
+          short: "餐桌",
+          bg: "assets/restaurant-dining-table-bg.png",
+          bgStyle: "linear-gradient(180deg, #d3b186 0%, #6a4d35 58%, #17110e 100%)",
+          npc: "restaurantServerTable",
+          coreWord: "place setting",
+          intro: {
+            text: "You sit down and look over the table setting before choosing from the menu.",
+            zh: "你坐下来，在看菜单前先观察餐桌摆设。",
+          },
+          hotspots: [
+            { id: "placeSetting", word: "place setting", phonetic: "/ˈpleɪs ˌsetɪŋ/", meaning: "餐位摆设", example: "The place setting includes a plate and cutlery.", translation: "餐位摆设包括餐盘和餐具。", label: "place setting", zh: "餐位摆设", x: 50, y: 62, offset: { x: -46, y: -18, mobileX: -24, mobileY: -17 } },
+            { id: "placemat", word: "placemat", phonetic: "/ˈpleɪsmæt/", meaning: "餐垫", example: "The plate rests on a clean placemat.", translation: "餐盘放在干净的餐垫上。", label: "placemat", zh: "餐垫", x: 39, y: 76, offset: { x: -36, y: -20, mobileX: -18, mobileY: -24 } },
+            { id: "centerpiece", word: "centerpiece", phonetic: "/ˈsentərpiːs/", meaning: "餐桌中央装饰", example: "Fresh flowers make a simple centerpiece.", translation: "鲜花组成了简单的餐桌中央装饰。", label: "centerpiece", zh: "中央装饰", x: 58, y: 45, offset: { x: -42, y: -14, mobileX: -22, mobileY: -5 } },
+            { id: "condiment", word: "condiment", phonetic: "/ˈkɑːndɪmənt/", meaning: "调味品", example: "Salt is a common condiment.", translation: "盐是一种常见的调味品。", label: "condiment", zh: "调味品", x: 69, y: 62, offset: { x: 34, y: -18, mobileX: 18, mobileY: -17 } },
+            { id: "wineList", word: "wine list", phonetic: "/ˈwaɪn lɪst/", meaning: "酒单", example: "The server brings the wine list.", translation: "服务员拿来了酒单。", label: "wine list", zh: "酒单", x: 82, y: 43, offset: { x: -38, y: -14, mobileX: -20, mobileY: 3 } },
+            { id: "compare", word: "compare", type: "action", actionMessageEn: "You compare the menu and wine list before ordering.", actionMessageZh: "你在点餐前比较菜单和酒单。", actionEffect: "restaurantCompare", actionDuration: 2600, phonetic: "/kəmˈper/", meaning: "比较", example: "I compare two dishes before ordering.", translation: "点餐前我比较了两道菜。", label: "compare", zh: "比较", x: 73, y: 70, offset: { x: -38, y: -18, mobileX: -20, mobileY: -21 } },
+          ],
+        },
+        {
+          id: "restaurantOrdering",
+          title: "Ordering Food",
+          zh: "点餐",
+          short: "点餐",
+          bg: "assets/restaurant-ordering-bg.png",
+          bgStyle: "linear-gradient(180deg, #d2aa82 0%, #6b4b36 58%, #17110e 100%)",
+          npc: "restaurantServerOrdering",
+          coreWord: "entrée",
+          intro: {
+            text: "The server arrives, and you explain what you would like to eat.",
+            zh: "服务员来到桌边，你说明自己想吃什么。",
+          },
+          hotspots: [
+            { id: "entree", word: "entrée", phonetic: "/ˈɑːntreɪ/", meaning: "主菜", example: "I choose steak as my entrée.", translation: "我选择牛排作为主菜。", label: "entrée", zh: "主菜", x: 63, y: 66, offset: { x: -34, y: -18, mobileX: -18, mobileY: -18 } },
+            { id: "appetizer", word: "appetizer", phonetic: "/ˈæpɪtaɪzər/", meaning: "开胃菜", example: "We share an appetizer before the main course.", translation: "主菜前我们分享了一份开胃菜。", label: "appetizer", zh: "开胃菜", x: 35, y: 67, offset: { x: -38, y: -18, mobileX: -20, mobileY: -18 } },
+            { id: "dietaryRestriction", word: "dietary restriction", phonetic: "/ˈdaɪəteri rɪˈstrɪkʃən/", meaning: "饮食限制", example: "Please tell the server about any dietary restriction.", translation: "请把任何饮食限制告诉服务员。", label: "dietary restriction", zh: "饮食限制", x: 79, y: 40, offset: { x: -52, y: -14, mobileX: -26, mobileY: 4 } },
+            { id: "doneness", word: "doneness", phonetic: "/ˈdʌnnəs/", meaning: "熟度", example: "The server asks about the steak's doneness.", translation: "服务员询问牛排的熟度。", label: "doneness", zh: "熟度", x: 55, y: 48, offset: { x: -36, y: -14, mobileX: -18, mobileY: -5 } },
+            { id: "ingredient", word: "ingredient", phonetic: "/ɪnˈɡriːdiənt/", meaning: "食材，配料", example: "I ask about an ingredient in the sauce.", translation: "我询问酱汁里的一种配料。", label: "ingredient", zh: "配料", x: 76, y: 72, offset: { x: 36, y: -18, mobileX: 18, mobileY: -22 } },
+            { id: "select", word: "select", type: "action", actionMessageEn: "You select an entrée and place your order.", actionMessageZh: "你选好主菜并完成点餐。", actionEffect: "restaurantSelect", actionDuration: 2600, phonetic: "/sɪˈlekt/", meaning: "选择", example: "I select the roasted chicken.", translation: "我选择烤鸡。", label: "select", zh: "选择", x: 46, y: 56, offset: { x: -36, y: -16, mobileX: -18, mobileY: -11 } },
+          ],
+        },
+        {
+          id: "restaurantMeal",
+          title: "During the Meal",
+          zh: "用餐中",
+          short: "用餐",
+          bg: "assets/restaurant-meal-bg.png",
+          bgStyle: "linear-gradient(180deg, #cfa47a 0%, #68472f 58%, #17100c 100%)",
+          npc: "restaurantServerMeal",
+          coreWord: "course",
+          intro: {
+            text: "Your meal is served, and the server checks whether everything is right.",
+            zh: "餐点已经上桌，服务员来确认一切是否合适。",
+          },
+          hotspots: [
+            { id: "course", word: "course", phonetic: "/kɔːrs/", meaning: "一道菜", example: "The main course arrives after the appetizer.", translation: "主菜在开胃菜之后上桌。", label: "course", zh: "一道菜", x: 50, y: 49, offset: { x: -34, y: -14, mobileX: -18, mobileY: -5 } },
+            { id: "portion", word: "portion", phonetic: "/ˈpɔːrʃən/", meaning: "一份，分量", example: "The portion is generous.", translation: "这份菜的分量很足。", label: "portion", zh: "分量", x: 48, y: 70, offset: { x: -36, y: -18, mobileX: -18, mobileY: -20 } },
+            { id: "sideDish", word: "side dish", phonetic: "/ˈsaɪd dɪʃ/", meaning: "配菜", example: "The vegetables are served as a side dish.", translation: "蔬菜作为配菜上桌。", label: "side dish", zh: "配菜", x: 75, y: 67, offset: { x: -38, y: -18, mobileX: -20, mobileY: -18 } },
+            { id: "seasoning", word: "seasoning", phonetic: "/ˈsiːzənɪŋ/", meaning: "调味料", example: "The seasoning gives the dish more flavor.", translation: "调味料让这道菜更有味道。", label: "seasoning", zh: "调味料", x: 24, y: 63, offset: { x: -40, y: -18, mobileX: -20, mobileY: -16 } },
+            { id: "serverStation", word: "server station", phonetic: "/ˈsɜːrvər ˌsteɪʃən/", meaning: "服务员工作台", example: "Extra plates are kept at the server station.", translation: "额外餐盘放在服务员工作台。", label: "server station", zh: "服务员工作台", x: 83, y: 38, offset: { x: -44, y: -14, mobileX: -23, mobileY: 5 } },
+            { id: "assist", word: "assist", type: "action", actionMessageEn: "The server assists you with an extra side dish.", actionMessageZh: "服务员帮你加了一份配菜。", actionEffect: "restaurantAssist", actionDuration: 2600, phonetic: "/əˈsɪst/", meaning: "帮助", example: "The server assists us during the meal.", translation: "服务员在用餐过程中帮助我们。", label: "assist", zh: "帮助", x: 69, y: 45, offset: { x: -34, y: -14, mobileX: -18, mobileY: -4 } },
+          ],
+        },
+        {
+          id: "restaurantPayment",
+          title: "Payment",
+          zh: "结账",
+          short: "结账",
+          bg: "assets/restaurant-payment-bg.png",
+          bgStyle: "linear-gradient(180deg, #c9a078 0%, #62442f 58%, #160f0c 100%)",
+          npc: "restaurantServerPayment",
+          coreWord: "itemized check",
+          intro: {
+            text: "After the meal, you review the bill and choose how to settle the payment.",
+            zh: "用餐后，你查看账单并选择如何结账。",
+          },
+          hotspots: [
+            { id: "itemizedCheck", word: "itemized check", phonetic: "/ˈaɪtəmaɪzd tʃek/", meaning: "明细账单", example: "The itemized check lists every dish.", translation: "明细账单列出了每道菜。", label: "itemized check", zh: "明细账单", x: 54, y: 54, offset: { x: -46, y: -16, mobileX: -24, mobileY: -10 } },
+            { id: "serviceCharge", word: "service charge", phonetic: "/ˈsɜːrvɪs tʃɑːrdʒ/", meaning: "服务费", example: "A service charge is included on the bill.", translation: "账单中包含服务费。", label: "service charge", zh: "服务费", x: 38, y: 70, offset: { x: -44, y: -18, mobileX: -23, mobileY: -20 } },
+            { id: "gratuity", word: "gratuity", phonetic: "/ɡrəˈtuːəti/", meaning: "小费", example: "We add a gratuity for good service.", translation: "我们为优质服务加了小费。", label: "gratuity", zh: "小费", x: 79, y: 67, offset: { x: -36, y: -18, mobileX: -18, mobileY: -18 } },
+            { id: "paymentTerminal", word: "payment terminal", phonetic: "/ˈpeɪmənt ˌtɜːrmɪnəl/", meaning: "支付终端", example: "I tap my card on the payment terminal.", translation: "我在支付终端上轻触银行卡。", label: "payment terminal", zh: "支付终端", x: 72, y: 48, offset: { x: -50, y: -16, mobileX: -25, mobileY: -8 } },
+            { id: "splitPayment", word: "split payment", phonetic: "/ˈsplɪt ˌpeɪmənt/", meaning: "分开付款", example: "We ask for a split payment.", translation: "我们要求分开付款。", label: "split payment", zh: "分开付款", x: 29, y: 45, offset: { x: -42, y: -14, mobileX: -22, mobileY: -4 } },
+            { id: "settleUp", word: "settle up", type: "action", actionMessageEn: "You settle up and complete the payment.", actionMessageZh: "你结清账单并完成付款。", actionEffect: "restaurantSettle", actionDuration: 2600, phonetic: "/ˈsetəl ʌp/", meaning: "结清账款", example: "We settle up before leaving.", translation: "离开前我们结清账款。", label: "settle up", zh: "结清账款", x: 57, y: 70, offset: { x: -38, y: -18, mobileX: -20, mobileY: -20 } },
+          ],
+        },
+        {
+          id: "restaurantLeaving",
+          title: "Leaving Restaurant",
+          zh: "离开餐厅",
+          short: "离店",
+          bg: "assets/restaurant-leaving-bg.png",
+          bgStyle: "linear-gradient(180deg, #cba47e 0%, #5f4331 58%, #150f0c 100%)",
+          npc: "restaurantGreeterLeaving",
+          coreWord: "coat rack",
+          completeText: "Great! You finished your restaurant visit.",
+          completeZh: "太棒了！你完成了这次餐厅用餐之旅。",
+          intro: {
+            text: "You collect your belongings, pack the leftovers, and prepare to leave.",
+            zh: "你收好随身物品、打包剩菜，并准备离开。",
+          },
+          hotspots: [
+            { id: "coatRack", word: "coat rack", phonetic: "/ˈkoʊt ræk/", meaning: "衣帽架", example: "My coat is hanging on the coat rack.", translation: "我的外套挂在衣帽架上。", label: "coat rack", zh: "衣帽架", x: 20, y: 39, offset: { x: -36, y: -14, mobileX: -18, mobileY: 4 } },
+            { id: "exitSign", word: "exit sign", phonetic: "/ˈeɡzɪt saɪn/", meaning: "出口标志", example: "The exit sign is above the doorway.", translation: "出口标志在门口上方。", label: "exit sign", zh: "出口标志", x: 54, y: 28, offset: { x: -38, y: -10, mobileX: -20, mobileY: 10 } },
+            { id: "leftovers", word: "leftovers", phonetic: "/ˈleftoʊvərz/", meaning: "剩菜", example: "We take the leftovers home.", translation: "我们把剩菜带回家。", label: "leftovers", zh: "剩菜", x: 72, y: 69, offset: { x: -38, y: -18, mobileX: -20, mobileY: -20 } },
+            { id: "toGoBox", word: "to-go box", phonetic: "/ˌtuː ˈɡoʊ bɑːks/", meaning: "外带餐盒", example: "The server puts the food in a to-go box.", translation: "服务员把食物装进外带餐盒。", label: "to-go box", zh: "外带餐盒", x: 84, y: 61, offset: { x: -42, y: -16, mobileX: -22, mobileY: -14 } },
+            { id: "farewell", word: "farewell", phonetic: "/ˌferˈwel/", meaning: "告别", example: "The staff gives us a warm farewell.", translation: "工作人员热情地向我们告别。", label: "farewell", zh: "告别", x: 63, y: 45, offset: { x: -36, y: -14, mobileX: -18, mobileY: -4 } },
+            { id: "depart", word: "depart", type: "action", actionMessageEn: "You depart after a pleasant restaurant visit.", actionMessageZh: "愉快用餐后，你离开了餐厅。", actionEffect: "restaurantDepart", actionDuration: 2600, phonetic: "/dɪˈpɑːrt/", meaning: "离开", example: "We depart after thanking the staff.", translation: "感谢工作人员后，我们离开了。", label: "depart", zh: "离开", x: 48, y: 58, offset: { x: -36, y: -16, mobileX: -18, mobileY: -12 } },
+          ],
+        },
+      ];
+
+      const supermarketScenes = [
+        {
+          id: "supermarketEntrance",
+          title: "Supermarket Entrance",
+          zh: "超市入口",
+          short: "入口",
+          bg: "assets/supermarket-entrance-bg.png",
+          bgStyle: "linear-gradient(180deg, #d9e4dc 0%, #658276 58%, #17221f 100%)",
+          npc: "supermarketGreeter",
+          coreWord: "storefront",
+          intro: {
+            text: "You arrive at a modern supermarket, check your list, and prepare to begin shopping.",
+            zh: "你来到一家现代超市，查看购物清单并准备开始购物。",
+          },
+          hotspots: [
+            { id: "storefront", word: "storefront", phonetic: "/ˈstɔːrfrʌnt/", meaning: "超市门面", example: "The storefront is brightly lit.", translation: "超市门面灯光明亮。", label: "storefront", zh: "超市门面", x: 48, y: 34, offset: { x: -38, y: -12, mobileX: -20, mobileY: 7 } },
+            { id: "automaticDoors", word: "automatic doors", phonetic: "/ˌɔːtəˈmætɪk dɔːrz/", meaning: "自动门", example: "The automatic doors open for us.", translation: "自动门为我们打开。", label: "automatic doors", zh: "自动门", x: 58, y: 55, offset: { x: -46, y: -16, mobileX: -24, mobileY: -10 } },
+            { id: "cartCorral", word: "cart corral", phonetic: "/ˈkɑːrt kəˌræl/", meaning: "购物车停放区", example: "The cart corral is beside the entrance.", translation: "购物车停放区在入口旁边。", label: "cart corral", zh: "购物车停放区", x: 22, y: 61, offset: { x: -38, y: -18, desktopX: 150, mobileX: -20, mobileY: -15 } },
+            { id: "storeDirectory", word: "store directory", phonetic: "/ˈstɔːr dəˌrektəri/", meaning: "商店导览图", example: "The store directory shows every section.", translation: "商店导览图标出了各个区域。", label: "store directory", zh: "商店导览图", x: 82, y: 43, offset: { x: -44, y: -14, mobileX: -23, mobileY: 2 } },
+            { id: "shoppingList", word: "shopping list", phonetic: "/ˈʃɑːpɪŋ lɪst/", meaning: "购物清单", example: "I check my shopping list.", translation: "我查看购物清单。", label: "shopping list", zh: "购物清单", x: 72, y: 69, offset: { x: -42, y: -18, mobileX: -22, mobileY: -20 } },
+            { id: "retrieve", word: "retrieve", type: "action", actionMessageEn: "You retrieve a trolley and check your shopping list.", actionMessageZh: "你取来购物车并查看购物清单。", actionEffect: "supermarketRetrieve", actionDuration: 2600, phonetic: "/rɪˈtriːv/", meaning: "取来", example: "I retrieve a trolley near the entrance.", translation: "我在入口附近取来一辆购物车。", label: "retrieve", zh: "取来", x: 35, y: 51, offset: { x: -36, y: -16, mobileX: -18, mobileY: -8 } },
+          ],
+        },
+        {
+          id: "supermarketGrocery",
+          title: "Grocery Aisle",
+          zh: "食品货架区",
+          short: "货架",
+          bg: "assets/supermarket-grocery-aisle-bg.png",
+          bgStyle: "linear-gradient(180deg, #e2e5d9 0%, #7d8065 58%, #24251d 100%)",
+          npc: "supermarketClerk",
+          coreWord: "pantry staple",
+          intro: {
+            text: "You move through the grocery aisle and search for pantry items on your list.",
+            zh: "你走进食品货架区，寻找购物清单上的厨房常备食品。",
+          },
+          hotspots: [
+            { id: "pantryStaple", word: "pantry staple", phonetic: "/ˈpæntri ˌsteɪpəl/", meaning: "厨房常备食品", example: "Rice is a useful pantry staple.", translation: "大米是实用的厨房常备食品。", label: "pantry staple", zh: "厨房常备食品", x: 31, y: 43, offset: { x: -44, y: -14, desktopX: 65, mobileX: -23, mobileY: 1 } },
+            { id: "cerealBox", word: "cereal box", phonetic: "/ˈsɪriəl bɑːks/", meaning: "麦片盒", example: "The cereal box is on the upper row.", translation: "麦片盒在上层。", label: "cereal box", zh: "麦片盒", x: 21, y: 58, offset: { x: -38, y: -16, desktopX: 150, mobileX: -20, mobileY: -12 } },
+            { id: "cannedGoods", word: "canned goods", phonetic: "/ˌkænd ˈɡʊdz/", meaning: "罐装食品", example: "Canned goods are easy to store.", translation: "罐装食品容易储存。", label: "canned goods", zh: "罐装食品", x: 78, y: 45, offset: { x: -40, y: -14, mobileX: -20, mobileY: 0 } },
+            { id: "pastaPacket", word: "pasta packet", phonetic: "/ˈpɑːstə ˌpækɪt/", meaning: "意面包装", example: "I choose a pasta packet.", translation: "我选了一包意面。", label: "pasta packet", zh: "意面包装", x: 82, y: 63, offset: { x: -40, y: -18, mobileX: -20, mobileY: -16 } },
+            { id: "unitPrice", word: "unit price", phonetic: "/ˈjuːnɪt praɪs/", meaning: "单位价格", example: "The unit price helps me compare products.", translation: "单位价格帮助我比较商品。", label: "unit price", zh: "单位价格", x: 64, y: 69, offset: { x: -36, y: -18, mobileX: -18, mobileY: -20 } },
+            { id: "trackDown", word: "track down", type: "action", actionMessageEn: "You track down the pantry items on your list.", actionMessageZh: "你找到了购物清单上的厨房食品。", actionEffect: "supermarketTrackDown", actionDuration: 2600, phonetic: "/ˈtræk daʊn/", meaning: "找到", example: "I track down everything on my list.", translation: "我找到了清单上的所有东西。", label: "track down", zh: "找到", x: 51, y: 52, offset: { x: -40, y: -16, mobileX: -20, mobileY: -8 } },
+          ],
+        },
+        {
+          id: "supermarketFresh",
+          title: "Fresh Section",
+          zh: "生鲜区",
+          short: "生鲜",
+          bg: "assets/supermarket-fresh-section-bg.png",
+          bgStyle: "linear-gradient(180deg, #e2e8d8 0%, #7c8b66 58%, #232a1e 100%)",
+          npc: "supermarketDeliStaff",
+          coreWord: "produce mister",
+          intro: {
+            text: "The fresh section combines vegetables, deli food, bakery items, and chilled products.",
+            zh: "生鲜区汇集了蔬菜、熟食、烘焙食品和冷藏商品。",
+          },
+          hotspots: [
+            { id: "produceMister", word: "produce mister", phonetic: "/ˈproʊduːs ˌmɪstər/", meaning: "蔬果喷雾器", example: "The produce mister keeps vegetables crisp.", translation: "蔬果喷雾器让蔬菜保持爽脆。", label: "produce mister", zh: "蔬果喷雾器", x: 21, y: 42, offset: { x: -42, y: -14, desktopX: 220, mobileX: -22, mobileY: 2 } },
+            { id: "deliCase", word: "deli case", phonetic: "/ˈdeli keɪs/", meaning: "熟食冷柜", example: "Prepared food is inside the deli case.", translation: "熟食放在熟食冷柜里。", label: "deli case", zh: "熟食冷柜", x: 79, y: 48, offset: { x: -36, y: -14, mobileX: -18, mobileY: -4 } },
+            { id: "bakeryLoaf", word: "bakery loaf", phonetic: "/ˈbeɪkəri loʊf/", meaning: "烘焙面包", example: "This bakery loaf smells wonderful.", translation: "这条烘焙面包闻起来很香。", label: "bakery loaf", zh: "烘焙面包", x: 34, y: 68, offset: { x: -40, y: -18, mobileX: -20, mobileY: -19 } },
+            { id: "eggCarton", word: "egg carton", phonetic: "/ˈeɡ ˌkɑːrtən/", meaning: "鸡蛋盒", example: "I place the egg carton carefully.", translation: "我小心地放好鸡蛋盒。", label: "egg carton", zh: "鸡蛋盒", x: 74, y: 69, offset: { x: -38, y: -18, mobileX: -20, mobileY: -20 } },
+            { id: "useByDate", word: "use-by date", phonetic: "/ˈjuːz baɪ deɪt/", meaning: "最佳食用期限", example: "Check the use-by date before buying it.", translation: "购买前请查看最佳食用期限。", label: "use-by date", zh: "食用期限", x: 62, y: 41, offset: { x: -40, y: -14, mobileX: -20, mobileY: 3 } },
+            { id: "examine", word: "examine", type: "action", actionMessageEn: "You examine the use-by date and choose carefully.", actionMessageZh: "你查看食用期限后认真挑选商品。", actionEffect: "supermarketExamine", actionDuration: 2600, phonetic: "/ɪɡˈzæmɪn/", meaning: "仔细查看", example: "I examine the package before choosing it.", translation: "选择前我仔细查看包装。", label: "examine", zh: "仔细查看", x: 52, y: 57, offset: { x: -36, y: -16, mobileX: -18, mobileY: -11 } },
+          ],
+        },
+        {
+          id: "supermarketFrozen",
+          title: "Frozen Section",
+          zh: "冷冻食品区",
+          short: "冷冻",
+          bg: "assets/supermarket-frozen-section-bg.png",
+          bgStyle: "linear-gradient(180deg, #dbe9ec 0%, #5d7b82 58%, #172126 100%)",
+          npc: "supermarketFrozenStaff",
+          coreWord: "freezer cabinet",
+          intro: {
+            text: "Cool light fills the frozen section as you compare meals and desserts.",
+            zh: "冷色灯光照亮冷冻食品区，你在这里比较冷冻餐和甜品。",
+          },
+          hotspots: [
+            { id: "freezerCabinet", word: "freezer cabinet", phonetic: "/ˈfriːzər ˌkæbɪnət/", meaning: "冷冻柜", example: "The freezer cabinet keeps food frozen.", translation: "冷冻柜让食品保持冷冻。", label: "freezer cabinet", zh: "冷冻柜", x: 25, y: 43, offset: { x: -42, y: -14, desktopX: 125, mobileX: -22, mobileY: 2 } },
+            { id: "freezerDoor", word: "freezer door", phonetic: "/ˈfriːzər dɔːr/", meaning: "冷冻柜门", example: "Please close the freezer door.", translation: "请关好冷冻柜门。", label: "freezer door", zh: "冷冻柜门", x: 38, y: 63, offset: { x: -40, y: -18, mobileX: -20, mobileY: -16 } },
+            { id: "frozenMeal", word: "frozen meal", phonetic: "/ˈfroʊzən miːl/", meaning: "冷冻餐", example: "This frozen meal is easy to prepare.", translation: "这份冷冻餐很容易准备。", label: "frozen meal", zh: "冷冻餐", x: 65, y: 46, offset: { x: -38, y: -14, mobileX: -20, mobileY: -2 } },
+            { id: "iceCreamTub", word: "ice cream tub", phonetic: "/ˈaɪs kriːm tʌb/", meaning: "盒装冰淇淋", example: "I choose a small ice cream tub.", translation: "我选了一小盒冰淇淋。", label: "ice cream tub", zh: "盒装冰淇淋", x: 82, y: 64, offset: { x: -42, y: -18, mobileX: -22, mobileY: -17 } },
+            { id: "coldChain", word: "cold chain", phonetic: "/ˈkoʊld tʃeɪn/", meaning: "冷链", example: "The cold chain keeps frozen food safe.", translation: "冷链让冷冻食品保持安全。", label: "cold chain", zh: "冷链", x: 79, y: 35, offset: { x: -36, y: -12, mobileX: -18, mobileY: 8 } },
+            { id: "pickOut", word: "pick out", type: "action", actionMessageEn: "You pick out a frozen meal and close the freezer door.", actionMessageZh: "你挑选了一份冷冻餐并关好冷冻柜门。", actionEffect: "supermarketPickOut", actionDuration: 2600, phonetic: "/ˈpɪk aʊt/", meaning: "挑选", example: "I pick out a frozen meal.", translation: "我挑选了一份冷冻餐。", label: "pick out", zh: "挑选", x: 54, y: 67, offset: { x: -36, y: -18, mobileX: -18, mobileY: -18 } },
+          ],
+        },
+        {
+          id: "supermarketHelp",
+          title: "Help from Staff",
+          zh: "向店员求助",
+          short: "求助",
+          bg: "assets/supermarket-help-bg.png",
+          bgStyle: "linear-gradient(180deg, #dfe6da 0%, #718071 58%, #1c241f 100%)",
+          npc: "supermarketAssociate",
+          coreWord: "store associate",
+          intro: {
+            text: "An item is unavailable, so you ask a store associate for help and another option.",
+            zh: "一件商品暂时缺货，于是你向超市店员求助并询问替代选择。",
+          },
+          hotspots: [
+            { id: "storeAssociate", word: "store associate", phonetic: "/ˈstɔːr əˌsoʊsiət/", meaning: "超市店员", example: "A store associate helps me find the item.", translation: "一位超市店员帮我寻找商品。", label: "store associate", zh: "超市店员", x: 72, y: 39, offset: { x: -42, y: -14, mobileX: -22, mobileY: 4 } },
+            { id: "productLocator", word: "product locator", phonetic: "/ˈprɑːdʌkt ˌloʊkeɪtər/", meaning: "商品查询器", example: "The product locator shows the correct section.", translation: "商品查询器显示了正确区域。", label: "product locator", zh: "商品查询器", x: 84, y: 62, offset: { x: -44, y: -18, mobileX: -23, mobileY: -15 } },
+            { id: "outOfStock", word: "out of stock", phonetic: "/ˌaʊt əv ˈstɑːk/", meaning: "缺货", example: "This item is currently out of stock.", translation: "这件商品目前缺货。", label: "out of stock", zh: "缺货", x: 29, y: 42, offset: { x: -40, y: -14, desktopX: 80, mobileX: -20, mobileY: 2 } },
+            { id: "restockingTrolley", word: "restocking trolley", phonetic: "/ˌriːˈstɑːkɪŋ ˈtrɑːli/", meaning: "补货推车", example: "Boxes are stacked on the restocking trolley.", translation: "箱子堆放在补货推车上。", label: "restocking trolley", zh: "补货推车", x: 22, y: 68, offset: { x: -48, y: -18, desktopX: 135, mobileX: -25, mobileY: -19 } },
+            { id: "substituteItem", word: "substitute item", phonetic: "/ˈsʌbstɪtuːt ˌaɪtəm/", meaning: "替代商品", example: "The associate suggests a substitute item.", translation: "店员推荐了一件替代商品。", label: "substitute item", zh: "替代商品", x: 53, y: 67, offset: { x: -44, y: -18, mobileX: -23, mobileY: -18 } },
+            { id: "inquire", word: "inquire", type: "action", actionMessageEn: "You inquire about an unavailable item, and the associate suggests a substitute.", actionMessageZh: "你询问缺货商品，店员推荐了替代品。", actionEffect: "supermarketInquire", actionDuration: 2600, phonetic: "/ɪnˈkwaɪr/", meaning: "询问", example: "I inquire about a product location.", translation: "我询问一件商品的位置。", label: "inquire", zh: "询问", x: 54, y: 48, offset: { x: -36, y: -14, mobileX: -18, mobileY: -4 } },
+          ],
+        },
+        {
+          id: "supermarketCheckout",
+          title: "Checkout Lane",
+          zh: "结账通道",
+          short: "结账",
+          bg: "assets/supermarket-checkout-bg.png",
+          bgStyle: "linear-gradient(180deg, #dfe4df 0%, #6e7772 58%, #1c211f 100%)",
+          npc: "supermarketCashier",
+          coreWord: "scanner bed",
+          intro: {
+            text: "At the checkout lane, you unload your shopping and choose a payment method.",
+            zh: "来到结账通道后，你放上购买的商品并选择付款方式。",
+          },
+          hotspots: [
+            { id: "scannerBed", word: "scanner bed", phonetic: "/ˈskænər bed/", meaning: "扫描台", example: "The cashier moves each item across the scanner bed.", translation: "收银员把每件商品移过扫描台。", label: "scanner bed", zh: "扫描台", x: 35, y: 59, offset: { x: -38, y: -16, mobileX: -20, mobileY: -13 } },
+            { id: "laneDivider", word: "lane divider", phonetic: "/ˈleɪn dɪˌvaɪdər/", meaning: "商品分隔条", example: "I place the lane divider after my shopping.", translation: "我在自己的商品后放上分隔条。", label: "lane divider", zh: "商品分隔条", x: 43, y: 34, offset: { desktopX: -24, desktopY: -6, mobileX: -12, mobileY: 6 } },
+            { id: "selfCheckoutKiosk", word: "self-checkout kiosk", phonetic: "/ˌself ˈtʃekaʊt ˈkiːɑːsk/", meaning: "自助结账机", example: "The self-checkout kiosk is available.", translation: "自助结账机可以使用。", label: "self-checkout kiosk", zh: "自助结账机", x: 83, y: 39, offset: { x: -50, y: -14, mobileX: -26, mobileY: 4 } },
+            { id: "loyaltyPoints", word: "loyalty points", phonetic: "/ˈlɔɪəlti pɔɪnts/", meaning: "会员积分", example: "I redeem loyalty points today.", translation: "我今天兑换会员积分。", label: "loyalty points", zh: "会员积分", x: 68, y: 67, offset: { x: -42, y: -18, mobileX: -22, mobileY: -18 } },
+            { id: "contactlessPayment", word: "contactless payment", phonetic: "/ˈkɑːntæktləs ˈpeɪmənt/", meaning: "非接触式支付", example: "Contactless payment is quick and convenient.", translation: "非接触式支付快捷又方便。", label: "contactless payment", zh: "非接触式支付", x: 80, y: 57, offset: { x: -52, y: -16, mobileX: -26, mobileY: -12 } },
+            { id: "unload", word: "unload", type: "action", actionMessageEn: "You unload your shopping onto the scanner bed.", actionMessageZh: "你把购买的商品放到扫描台上。", actionEffect: "supermarketUnload", actionDuration: 2600, phonetic: "/ˌʌnˈloʊd/", meaning: "卸下，放上商品", example: "I unload the groceries at the checkout lane.", translation: "我在结账通道放上购买的商品。", label: "unload", zh: "放上商品", x: 51, y: 45, offset: { x: -36, y: -14, mobileX: -18, mobileY: -3 } },
+          ],
+        },
+        {
+          id: "supermarketPacking",
+          title: "Packing Area",
+          zh: "装袋区",
+          short: "装袋",
+          bg: "assets/supermarket-packing-bg.png",
+          bgStyle: "linear-gradient(180deg, #dddccf 0%, #817b66 58%, #26231d 100%)",
+          npc: "supermarketPackingAttendant",
+          coreWord: "bagging station",
+          completeText: "Great! You packed your shopping and completed the supermarket trip.",
+          completeZh: "太棒了！你整理好购买的商品，完成了这次超市购物之旅。",
+          intro: {
+            text: "You organize chilled, fragile, and everyday items before leaving the supermarket.",
+            zh: "离开超市前，你整理冷藏、易碎和日常购买的商品。",
+          },
+          hotspots: [
+            { id: "baggingStation", word: "bagging station", phonetic: "/ˈbæɡɪŋ ˌsteɪʃən/", meaning: "装袋台", example: "I organize my shopping at the bagging station.", translation: "我在装袋台整理购买的商品。", label: "bagging station", zh: "装袋台", x: 50, y: 42, offset: { x: -44, y: -14, mobileX: -23, mobileY: 2 } },
+            { id: "reusableTote", word: "reusable tote", phonetic: "/ˌriːˈjuːzəbəl toʊt/", meaning: "环保购物袋", example: "I bring a reusable tote for my groceries.", translation: "我带了一个环保购物袋装商品。", label: "reusable tote", zh: "环保购物袋", x: 23, y: 65, offset: { x: -42, y: -18, desktopX: 130, mobileX: -22, mobileY: -17 } },
+            { id: "coolerPouch", word: "cooler pouch", phonetic: "/ˈkuːlər paʊtʃ/", meaning: "保冷袋", example: "Frozen food goes inside the cooler pouch.", translation: "冷冻食品放进保冷袋里。", label: "cooler pouch", zh: "保冷袋", x: 82, y: 64, offset: { x: -40, y: -18, mobileX: -20, mobileY: -17 } },
+            { id: "fragileItem", word: "fragile item", phonetic: "/ˈfrædʒəl ˌaɪtəm/", meaning: "易碎商品", example: "Keep each fragile item on top.", translation: "请把每件易碎商品放在上面。", label: "fragile item", zh: "易碎商品", x: 67, y: 48, offset: { x: -38, y: -14, mobileX: -20, mobileY: -4 } },
+            { id: "shoppingHaul", word: "shopping haul", phonetic: "/ˈʃɑːpɪŋ hɔːl/", meaning: "购买的一批商品", example: "My shopping haul includes food and household goods.", translation: "我购买的这批商品包括食品和家居用品。", label: "shopping haul", zh: "一批商品", x: 45, y: 69, offset: { x: -42, y: -18, mobileX: -22, mobileY: -20 } },
+            { id: "arrange", word: "arrange", type: "action", actionMessageEn: "You arrange the chilled and fragile items carefully.", actionMessageZh: "你小心整理冷藏商品和易碎商品。", actionEffect: "supermarketArrange", actionDuration: 2600, phonetic: "/əˈreɪndʒ/", meaning: "整理摆放", example: "I arrange the items inside my tote.", translation: "我把商品整理放进购物袋。", label: "arrange", zh: "整理摆放", x: 31, y: 49, offset: { x: -36, y: -14, mobileX: -18, mobileY: -4 } },
+          ],
+        },
+      ];
+
       const fruitShopDialogues = {
         fruitEntranceShopkeeper: {
           id: "fruitEntranceShopkeeper",
@@ -4842,6 +5160,180 @@
             { text: "It was very comfortable.", choiceZh: "住得非常舒适。", reply: "I'm glad to hear that. Thank you for staying with us.", translation: "很高兴听到您这么说。感谢您的入住。" },
             { text: "Could I review the folio?", choiceZh: "我可以查看账单明细吗？", reply: "Certainly. Here is the complete folio.", translation: "当然。这是完整的账单明细。" },
             { text: "When will I receive the refund?", choiceZh: "我什么时候会收到退款？", reply: "The deposit refund should arrive soon.", translation: "押金退款应该很快会到账。" },
+          ],
+        },
+      };
+
+      const restaurantDialogues = {
+        restaurantGreeterEntrance: {
+          id: "restaurantGreeterEntrance",
+          speaker: "Greeter",
+          zh: "迎宾员",
+          text: "Good evening. Welcome to our restaurant.",
+          translation: "晚上好。欢迎来到我们餐厅。",
+          options: [
+            { text: "Hello, we have a reservation.", choiceZh: "你好，我们有预订。", reply: "Wonderful. I will check it for you.", translation: "太好了。我来帮您确认。" },
+            { text: "Do you have a dress code?", choiceZh: "这里有着装要求吗？", reply: "Smart casual is perfect for tonight.", translation: "今晚得体休闲就很合适。" },
+            { text: "Can I leave my coat here?", choiceZh: "我可以把外套放这里吗？", reply: "Yes, the coat check is right beside the entryway.", translation: "可以，衣帽寄存处就在入口通道旁边。" },
+          ],
+        },
+        restaurantMaitreD: {
+          id: "restaurantMaitreD",
+          speaker: "Maître d’",
+          zh: "餐厅领位员",
+          text: "How many people are in your party?",
+          translation: "请问你们一共几位？",
+          options: [
+            { text: "A party of two, please.", choiceZh: "两位，谢谢。", reply: "Of course. I have a table ready for you.", translation: "当然。我已经为你们准备好桌位。" },
+            { text: "Could we have a booth?", choiceZh: "我们可以坐卡座吗？", reply: "Let me check the seating plan.", translation: "我来查看一下座位安排。" },
+            { text: "Do we need to join the waiting list?", choiceZh: "我们需要加入候位名单吗？", reply: "Just for a few minutes. I will call you soon.", translation: "只需要等几分钟。我很快会叫您。" },
+          ],
+        },
+        restaurantServerTable: {
+          id: "restaurantServerTable",
+          speaker: "Server",
+          zh: "服务员",
+          text: "Here is the menu and wine list.",
+          translation: "这是菜单和酒单。",
+          options: [
+            { text: "Thank you. We will look first.", choiceZh: "谢谢。我们先看一下。", reply: "Please take your time.", translation: "请慢慢看。" },
+            { text: "What do you recommend?", choiceZh: "你有什么推荐吗？", reply: "The chef's special is very popular tonight.", translation: "今晚主厨推荐很受欢迎。" },
+            { text: "Can we have some water?", choiceZh: "可以给我们一些水吗？", reply: "Certainly. I will bring it right away.", translation: "当然。我马上拿来。" },
+          ],
+        },
+        restaurantServerOrdering: {
+          id: "restaurantServerOrdering",
+          speaker: "Server",
+          zh: "服务员",
+          text: "Are you ready to order?",
+          translation: "您准备好点餐了吗？",
+          options: [
+            { text: "I'd like this entrée, please.", choiceZh: "我想要这道主菜，谢谢。", reply: "Great choice. How would you like it cooked?", translation: "很好的选择。您想要几分熟？" },
+            { text: "Does this dish contain nuts?", choiceZh: "这道菜含坚果吗？", reply: "Let me check the ingredient list for you.", translation: "我来帮您确认配料表。" },
+            { text: "Can we share an appetizer?", choiceZh: "我们可以分享一份开胃菜吗？", reply: "Absolutely. I will bring extra plates.", translation: "当然。我会多拿几个盘子。" },
+          ],
+        },
+        restaurantServerMeal: {
+          id: "restaurantServerMeal",
+          speaker: "Server",
+          zh: "服务员",
+          text: "How is everything so far?",
+          translation: "目前一切都还好吗？",
+          options: [
+            { text: "Everything tastes great.", choiceZh: "一切都很好吃。", reply: "I'm glad to hear that.", translation: "很高兴听您这么说。" },
+            { text: "Could I have more seasoning?", choiceZh: "可以再给我一些调味料吗？", reply: "Of course. I will bring it from the server station.", translation: "当然。我从服务员工作台给您拿来。" },
+            { text: "Can we add a side dish?", choiceZh: "我们可以加一份配菜吗？", reply: "Yes. I can add it to your order.", translation: "可以。我可以帮您加到订单里。" },
+          ],
+        },
+        restaurantServerPayment: {
+          id: "restaurantServerPayment",
+          speaker: "Server",
+          zh: "服务员",
+          text: "Would you like the check?",
+          translation: "您需要账单吗？",
+          options: [
+            { text: "Yes, the itemized check, please.", choiceZh: "是的，请给我明细账单。", reply: "Certainly. I will bring it now.", translation: "当然。我现在拿来。" },
+            { text: "Can we split the payment?", choiceZh: "我们可以分开付款吗？", reply: "Yes, I can split it for you.", translation: "可以，我可以帮您分开。" },
+            { text: "Is the service charge included?", choiceZh: "服务费包含了吗？", reply: "Yes, it is listed on the check.", translation: "是的，账单上已经列出来了。" },
+          ],
+        },
+        restaurantGreeterLeaving: {
+          id: "restaurantGreeterLeaving",
+          speaker: "Greeter",
+          zh: "迎宾员",
+          text: "Thank you for dining with us. Have a wonderful evening.",
+          translation: "感谢您来我们这里用餐。祝您晚上愉快。",
+          options: [
+            { text: "Thank you. The meal was lovely.", choiceZh: "谢谢。晚餐很棒。", reply: "We are happy you enjoyed it.", translation: "很高兴您喜欢这顿饭。" },
+            { text: "Could I take these leftovers?", choiceZh: "这些剩菜可以带走吗？", reply: "Yes, they are already in a to-go box.", translation: "可以，已经装进外带餐盒了。" },
+            { text: "Goodbye. See you next time.", choiceZh: "再见。下次见。", reply: "We look forward to seeing you again.", translation: "期待再次见到您。" },
+          ],
+        },
+      };
+
+      const supermarketDialogues = {
+        supermarketGreeter: {
+          id: "supermarketGreeter",
+          speaker: "Store Greeter",
+          zh: "超市迎宾员",
+          text: "Trolleys are beside the entrance.",
+          translation: "购物车就在入口旁边。",
+          options: [
+            { text: "Where can I find a trolley?", choiceZh: "我在哪里可以找到购物车？", reply: "They are in the cart corral on your left.", translation: "它们在您左侧的购物车停放区。" },
+            { text: "Is there a store directory?", choiceZh: "这里有商店导览图吗？", reply: "Yes. The directory is next to the automatic doors.", translation: "有的。导览图就在自动门旁边。" },
+            { text: "I have a shopping list.", choiceZh: "我有一张购物清单。", reply: "Great. The directory will help you plan your route.", translation: "很好。导览图会帮助您规划路线。" },
+          ],
+        },
+        supermarketClerk: {
+          id: "supermarketClerk",
+          speaker: "Store Clerk",
+          zh: "超市店员",
+          text: "The pantry staples are in this section.",
+          translation: "厨房常备食品就在这个区域。",
+          options: [
+            { text: "Where are the canned goods?", choiceZh: "罐装食品在哪里？", reply: "They are on the shelves to your right.", translation: "它们在您右侧的货架上。" },
+            { text: "Is this the unit price?", choiceZh: "这是单位价格吗？", reply: "Yes. It helps you compare different package sizes.", translation: "是的。它可以帮助您比较不同包装规格。" },
+            { text: "I’m looking for pasta.", choiceZh: "我正在找意面。", reply: "The pasta packets are farther down this aisle.", translation: "意面包装在这条通道更里面的位置。" },
+          ],
+        },
+        supermarketDeliStaff: {
+          id: "supermarketDeliStaff",
+          speaker: "Deli Staff",
+          zh: "熟食区店员",
+          text: "The bakery items were prepared this morning.",
+          translation: "这些烘焙食品是今天早上制作的。",
+          options: [
+            { text: "Which bakery loaf is popular?", choiceZh: "哪种烘焙面包比较受欢迎？", reply: "The whole-grain loaf is a popular choice.", translation: "全谷物面包很受欢迎。" },
+            { text: "Where can I check the use-by date?", choiceZh: "我在哪里可以查看食用期限？", reply: "It is printed on the side of the package.", translation: "它印在包装侧面。" },
+            { text: "Are the eggs kept chilled?", choiceZh: "鸡蛋是冷藏保存的吗？", reply: "Yes. The egg cartons are in the chilled case.", translation: "是的。鸡蛋盒在冷藏柜里。" },
+          ],
+        },
+        supermarketFrozenStaff: {
+          id: "supermarketFrozenStaff",
+          speaker: "Staff",
+          zh: "工作人员",
+          text: "Frozen meals are behind the second freezer door.",
+          translation: "冷冻餐在第二扇冷冻柜门后面。",
+          options: [
+            { text: "Which frozen meal is easy to prepare?", choiceZh: "哪种冷冻餐容易准备？", reply: "The smaller meals can be heated quickly.", translation: "小份冷冻餐可以快速加热。" },
+            { text: "Where is the ice cream?", choiceZh: "冰淇淋在哪里？", reply: "The ice cream tubs are in the last freezer cabinet.", translation: "盒装冰淇淋在最后一个冷冻柜里。" },
+            { text: "Should I close the freezer door?", choiceZh: "我应该关好冷冻柜门吗？", reply: "Yes, please. It helps protect the cold chain.", translation: "是的，谢谢。这样有助于维持冷链。" },
+          ],
+        },
+        supermarketAssociate: {
+          id: "supermarketAssociate",
+          speaker: "Store Associate",
+          zh: "超市店员",
+          text: "I can check the product locator for you.",
+          translation: "我可以帮你查询商品位置。",
+          options: [
+            { text: "Could you help me find this item?", choiceZh: "你能帮我找一下这个商品吗？", reply: "Of course. I will check the product locator.", translation: "当然。我来查看商品查询器。" },
+            { text: "Is it out of stock?", choiceZh: "它缺货了吗？", reply: "Yes, but another delivery is expected tomorrow.", translation: "是的，不过预计明天会再次到货。" },
+            { text: "Is there a substitute item?", choiceZh: "有替代商品吗？", reply: "Yes. This similar product is available nearby.", translation: "有的。这件类似商品就在附近。" },
+          ],
+        },
+        supermarketCashier: {
+          id: "supermarketCashier",
+          speaker: "Cashier",
+          zh: "收银员",
+          text: "Please place your items on the scanner bed.",
+          translation: "请把商品放到扫描台上。",
+          options: [
+            { text: "Can I use contactless payment?", choiceZh: "我可以使用非接触式支付吗？", reply: "Yes. Tap your device on the payment terminal.", translation: "可以。请在支付终端上轻触您的设备。" },
+            { text: "Can I redeem loyalty points?", choiceZh: "我可以使用会员积分吗？", reply: "Yes. Your points can be applied today.", translation: "可以。您的积分今天可以使用。" },
+            { text: "Can I use the self-checkout kiosk?", choiceZh: "我可以使用自助结账机吗？", reply: "Yes. The kiosk on your right is available.", translation: "可以。您右侧的自助结账机可以使用。" },
+          ],
+        },
+        supermarketPackingAttendant: {
+          id: "supermarketPackingAttendant",
+          speaker: "Packing Attendant",
+          zh: "装袋区工作人员",
+          text: "Keep fragile items on top.",
+          translation: "请把易碎商品放在上面。",
+          options: [
+            { text: "I brought a reusable tote.", choiceZh: "我带了一个环保购物袋。", reply: "Perfect. You can pack everyday items inside it.", translation: "很好。您可以把日常商品装进去。" },
+            { text: "Where should I put the frozen food?", choiceZh: "冷冻食品应该放在哪里？", reply: "Place it inside the cooler pouch.", translation: "请把它放进保冷袋。" },
+            { text: "I’ll keep the fragile items separate.", choiceZh: "我会把易碎商品分开放。", reply: "That will keep your shopping safe.", translation: "这样可以保护您购买的商品。" },
           ],
         },
       };
@@ -6047,11 +6539,139 @@
         },
       ];
 
+      const moreRestaurantPages = [
+        {
+          id: "restaurant-spaces",
+          title: "Restaurant Spaces",
+          zh: "餐厅区域",
+          words: [
+            { id: "banquette", word: "banquette", phonetic: "/bæŋˈket/", meaning: "靠墙长椅座位", example: "We sit together on the banquette.", translation: "我们一起坐在靠墙长椅座位上。" },
+            { id: "wine-cellar", word: "wine cellar", phonetic: "/ˈwaɪn selər/", meaning: "酒窖", example: "The wine cellar stays cool and dark.", translation: "酒窖保持凉爽和昏暗。" },
+            { id: "open-kitchen", word: "open kitchen", phonetic: "/ˌoʊpən ˈkɪtʃən/", meaning: "开放式厨房", example: "Guests can watch the chefs in the open kitchen.", translation: "客人可以在开放式厨房看到厨师工作。" },
+            { id: "salad-bar", word: "salad bar", phonetic: "/ˈsæləd bɑːr/", meaning: "沙拉台", example: "Fresh vegetables are arranged at the salad bar.", translation: "新鲜蔬菜摆放在沙拉台。" },
+            { id: "dessert-station", word: "dessert station", phonetic: "/dɪˈzɜːrt ˌsteɪʃən/", meaning: "甜点区", example: "Cakes are displayed at the dessert station.", translation: "蛋糕陈列在甜点区。" },
+            { id: "service-pass", word: "service pass", phonetic: "/ˈsɜːrvɪs pæs/", meaning: "出餐口", example: "Finished dishes wait at the service pass.", translation: "做好的菜在出餐口等待上桌。" },
+            { id: "dish-return", word: "dish return", phonetic: "/ˈdɪʃ rɪˌtɜːrn/", meaning: "餐具回收处", example: "Used plates go to the dish return.", translation: "用过的餐盘送到餐具回收处。" },
+            { id: "warming-station", word: "warming station", phonetic: "/ˈwɔːrmɪŋ ˌsteɪʃən/", meaning: "保温台", example: "The warming station keeps food hot.", translation: "保温台让食物保持温热。" },
+            { id: "host-podium", word: "host podium", phonetic: "/ˈhoʊst ˌpoʊdiəm/", meaning: "迎宾台", example: "The reservation book is on the host podium.", translation: "预订本放在迎宾台上。" },
+            { id: "private-dining-room", word: "private dining room", phonetic: "/ˈpraɪvət ˈdaɪnɪŋ ruːm/", meaning: "私人用餐室", example: "The family celebrates in a private dining room.", translation: "这家人在私人用餐室庆祝。" },
+            { id: "alfresco-area", word: "alfresco area", phonetic: "/ælˈfreskoʊ ˈeriə/", meaning: "户外用餐区", example: "The alfresco area is pleasant in spring.", translation: "春天的户外用餐区很舒适。" },
+            { id: "kitchen-hatch", word: "kitchen hatch", phonetic: "/ˈkɪtʃən hætʃ/", meaning: "厨房传菜窗口", example: "The server collects plates from the kitchen hatch.", translation: "服务员从厨房传菜窗口取餐。" },
+          ],
+        },
+        {
+          id: "food-dining",
+          title: "Food & Dining",
+          zh: "食物与用餐",
+          words: [
+            { id: "prix-fixe", word: "prix fixe", phonetic: "/ˌpriː ˈfiːks/", meaning: "固定价格套餐", example: "The prix fixe menu includes three courses.", translation: "固定价格套餐包含三道菜。" },
+            { id: "house-salad", word: "house salad", phonetic: "/ˈhaʊs sæləd/", meaning: "餐厅招牌沙拉", example: "The house salad comes with a light dressing.", translation: "餐厅招牌沙拉配有清淡酱汁。" },
+            { id: "roasted-chicken", word: "roasted chicken", phonetic: "/ˈroʊstɪd ˈtʃɪkɪn/", meaning: "烤鸡", example: "The roasted chicken is tender and juicy.", translation: "烤鸡鲜嫩多汁。" },
+            { id: "steak", word: "steak", phonetic: "/steɪk/", meaning: "牛排", example: "The steak is cooked medium.", translation: "这块牛排煎到五分熟。" },
+            { id: "seafood-platter", word: "seafood platter", phonetic: "/ˈsiːfuːd ˌplætər/", meaning: "海鲜拼盘", example: "The seafood platter is large enough to share.", translation: "海鲜拼盘足够大家分享。" },
+            { id: "vegetarian-dish", word: "vegetarian dish", phonetic: "/ˌvedʒəˈteriən dɪʃ/", meaning: "素食菜品", example: "The vegetarian dish uses seasonal vegetables.", translation: "这道素食菜使用当季蔬菜。" },
+            { id: "gluten-free-dish", word: "gluten-free dish", phonetic: "/ˌɡluːtən ˈfriː dɪʃ/", meaning: "无麸质菜品", example: "The kitchen can prepare a gluten-free dish.", translation: "厨房可以准备无麸质菜品。" },
+            { id: "spicy-sauce", word: "spicy sauce", phonetic: "/ˈspaɪsi sɔːs/", meaning: "辣酱", example: "The spicy sauce is served on the side.", translation: "辣酱放在旁边单独上桌。" },
+            { id: "gravy", word: "gravy", phonetic: "/ˈɡreɪvi/", meaning: "肉汁", example: "The gravy adds flavor to the meat.", translation: "肉汁让肉更有味道。" },
+            { id: "mashed-potatoes", word: "mashed potatoes", phonetic: "/ˌmæʃt pəˈteɪtoʊz/", meaning: "土豆泥", example: "Mashed potatoes come with the entrée.", translation: "主菜配有土豆泥。" },
+            { id: "risotto", word: "risotto", phonetic: "/rɪˈzɑːtoʊ/", meaning: "意式烩饭", example: "The mushroom risotto is creamy.", translation: "蘑菇意式烩饭口感绵密。" },
+            { id: "sorbet", word: "sorbet", phonetic: "/sɔːrˈbeɪ/", meaning: "果味冰霜", example: "Lemon sorbet is a refreshing dessert.", translation: "柠檬果味冰霜是一道清爽甜点。" },
+          ],
+        },
+        {
+          id: "restaurant-service-phrases",
+          title: "Service & Phrases",
+          zh: "服务与表达",
+          words: [
+            { id: "walk-in", word: "walk-in", phonetic: "/ˈwɔːk ɪn/", meaning: "无预订到店客人", example: "The restaurant accepts walk-in guests.", translation: "这家餐厅接待无预订到店客人。" },
+            { id: "fully-booked", word: "fully booked", phonetic: "/ˌfʊli ˈbʊkt/", meaning: "已订满", example: "The restaurant is fully booked tonight.", translation: "餐厅今晚已经订满。" },
+            { id: "under-my-name", word: "under my name", phonetic: "/ˈʌndər maɪ neɪm/", meaning: "以我的名字预订", example: "The reservation is under my name.", translation: "预订登记在我的名字下。" },
+            { id: "no-onions", word: "no onions", phonetic: "/noʊ ˈʌnjənz/", meaning: "不要洋葱", example: "I'd like the salad with no onions.", translation: "我的沙拉不要洋葱。" },
+            { id: "less-spicy", word: "less spicy", phonetic: "/les ˈspaɪsi/", meaning: "少辣一点", example: "Could you make the dish less spicy?", translation: "可以把这道菜做得少辣一点吗？" },
+            { id: "on-the-side", word: "on the side", phonetic: "/ɑːn ðə saɪd/", meaning: "放在旁边另上", example: "Please serve the sauce on the side.", translation: "请把酱汁放在旁边另上。" },
+            { id: "share-a-dish", word: "share a dish", phonetic: "/ʃer ə dɪʃ/", meaning: "分享一道菜", example: "We would like to share a dish.", translation: "我们想分享一道菜。" },
+            { id: "box-it-up", word: "box it up", phonetic: "/ˈbɑːks ɪt ʌp/", meaning: "把它打包", example: "Could you box it up for me?", translation: "可以帮我把它打包吗？" },
+            { id: "separate-checks", word: "separate checks", phonetic: "/ˈseprət tʃeks/", meaning: "分开结账", example: "We need separate checks, please.", translation: "请给我们分开结账。" },
+            { id: "corkage-fee", word: "corkage fee", phonetic: "/ˈkɔːrkɪdʒ fiː/", meaning: "开瓶费", example: "There is a corkage fee for outside wine.", translation: "自带葡萄酒需要支付开瓶费。" },
+            { id: "minimum-spend", word: "minimum spend", phonetic: "/ˈmɪnɪməm spend/", meaning: "最低消费", example: "The private room has a minimum spend.", translation: "私人用餐室有最低消费。" },
+            { id: "compliments-to-the-chef", word: "compliments to the chef", phonetic: "/ˈkɑːmplɪmənts tə ðə ʃef/", meaning: "请代我向主厨致意", example: "Please give our compliments to the chef.", translation: "请代我们向主厨致意。" },
+          ],
+        },
+      ];
+
+      const moreSupermarketPages = [
+        {
+          id: "supermarket-sections",
+          title: "Store Sections",
+          zh: "超市区域",
+          words: [
+            { id: "bulk-bins", word: "bulk bins", phonetic: "/ˈbʌlk bɪnz/", meaning: "散装食品桶", example: "Rice and nuts are stored in the bulk bins.", translation: "大米和坚果存放在散装食品桶里。" },
+            { id: "dairy-case", word: "dairy case", phonetic: "/ˈderi keɪs/", meaning: "乳制品冷藏柜", example: "Cheese is displayed in the dairy case.", translation: "奶酪陈列在乳制品冷藏柜里。" },
+            { id: "meat-department", word: "meat department", phonetic: "/ˈmiːt dɪˌpɑːrtmənt/", meaning: "肉类区", example: "The meat department is near the back wall.", translation: "肉类区在后墙附近。" },
+            { id: "bakery-department", word: "bakery department", phonetic: "/ˈbeɪkəri dɪˌpɑːrtmənt/", meaning: "烘焙区", example: "The bakery department smells wonderful.", translation: "烘焙区闻起来很香。" },
+            { id: "deli-department", word: "deli department", phonetic: "/ˈdeli dɪˌpɑːrtmənt/", meaning: "熟食区", example: "Prepared meals are sold in the deli department.", translation: "熟食区出售做好的餐点。" },
+            { id: "household-goods", word: "household goods", phonetic: "/ˈhaʊshoʊld ɡʊdz/", meaning: "家居用品", example: "Cleaning supplies are with the household goods.", translation: "清洁用品和家居用品放在一起。" },
+            { id: "personal-care", word: "personal care", phonetic: "/ˈpɜːrsənəl ker/", meaning: "个人护理区", example: "Shampoo is in the personal care section.", translation: "洗发水在个人护理区。" },
+            { id: "pet-supplies", word: "pet supplies", phonetic: "/ˈpet səˌplaɪz/", meaning: "宠物用品区", example: "The pet supplies include food and toys.", translation: "宠物用品包括食品和玩具。" },
+            { id: "baby-products", word: "baby products", phonetic: "/ˈbeɪbi ˌprɑːdʌkts/", meaning: "婴儿用品区", example: "Diapers are with the baby products.", translation: "尿布放在婴儿用品区。" },
+            { id: "floral-department", word: "floral department", phonetic: "/ˈflɔːrəl dɪˌpɑːrtmənt/", meaning: "鲜花区", example: "Fresh flowers fill the floral department.", translation: "鲜花摆满了鲜花区。" },
+            { id: "organic-section", word: "organic section", phonetic: "/ɔːrˈɡænɪk ˌsekʃən/", meaning: "有机食品区", example: "Organic products are grouped in the organic section.", translation: "有机商品集中摆放在有机食品区。" },
+            { id: "recycling-station", word: "recycling station", phonetic: "/riːˈsaɪklɪŋ ˌsteɪʃən/", meaning: "回收站", example: "Empty containers go to the recycling station.", translation: "空容器送到回收站。" },
+          ],
+        },
+        {
+          id: "products-packaging",
+          title: "Products & Packaging",
+          zh: "商品与包装",
+          words: [
+            { id: "family-pack", word: "family pack", phonetic: "/ˈfæməli pæk/", meaning: "家庭装", example: "The family pack contains more portions.", translation: "家庭装包含更多份量。" },
+            { id: "multipack", word: "multipack", phonetic: "/ˈmʌltipæk/", meaning: "多件组合装", example: "The multipack contains six small cartons.", translation: "这个多件组合装包含六个小纸盒。" },
+            { id: "value-size", word: "value size", phonetic: "/ˈvæljuː saɪz/", meaning: "超值大包装", example: "The value size is useful for a large family.", translation: "超值大包装适合大家庭。" },
+            { id: "shrink-wrap", word: "shrink wrap", phonetic: "/ˈʃrɪŋk ræp/", meaning: "收缩包装", example: "The bottles are held together with shrink wrap.", translation: "这些瓶子用收缩包装固定在一起。" },
+            { id: "blister-pack", word: "blister pack", phonetic: "/ˈblɪstər pæk/", meaning: "泡罩包装", example: "The batteries come in a blister pack.", translation: "电池采用泡罩包装。" },
+            { id: "glass-jar", word: "glass jar", phonetic: "/ˈɡlæs dʒɑːr/", meaning: "玻璃罐", example: "The sauce is stored in a glass jar.", translation: "酱汁装在玻璃罐里。" },
+            { id: "screw-cap", word: "screw cap", phonetic: "/ˈskruː kæp/", meaning: "螺旋盖", example: "Turn the screw cap to open the bottle.", translation: "转动螺旋盖打开瓶子。" },
+            { id: "tamper-seal", word: "tamper seal", phonetic: "/ˈtæmpər siːl/", meaning: "防拆封条", example: "Check that the tamper seal is complete.", translation: "请检查防拆封条是否完整。" },
+            { id: "nutrition-facts", word: "nutrition facts", phonetic: "/nuˈtrɪʃən fækts/", meaning: "营养成分表", example: "The nutrition facts list the calories.", translation: "营养成分表列出了热量。" },
+            { id: "serving-size", word: "serving size", phonetic: "/ˈsɜːrvɪŋ saɪz/", meaning: "每份食用量", example: "The serving size is printed on the package.", translation: "每份食用量印在包装上。" },
+            { id: "allergen-warning", word: "allergen warning", phonetic: "/ˈælərdʒən ˌwɔːrnɪŋ/", meaning: "过敏原警示", example: "Read the allergen warning carefully.", translation: "请仔细阅读过敏原警示。" },
+            { id: "bottle-deposit", word: "bottle deposit", phonetic: "/ˈbɑːtəl dɪˌpɑːzɪt/", meaning: "瓶罐押金", example: "A bottle deposit is added at checkout.", translation: "结账时会加收瓶罐押金。" },
+          ],
+        },
+        {
+          id: "shopping-actions-signs",
+          title: "Shopping Actions & Signs",
+          zh: "购物动作与标识",
+          words: [
+            { id: "buy-one-get-one-free", word: "buy one get one free", phonetic: "/ˌbaɪ wʌn ɡet wʌn ˈfriː/", meaning: "买一送一", example: "This offer is buy one get one free.", translation: "这个优惠是买一送一。" },
+            { id: "clearance-rack", word: "clearance rack", phonetic: "/ˈklɪrəns ræk/", meaning: "清仓货架", example: "Seasonal items are on the clearance rack.", translation: "季节性商品放在清仓货架上。" },
+            { id: "rain-check", word: "rain check", phonetic: "/ˈreɪn tʃek/", meaning: "缺货补购券", example: "The clerk gives me a rain check for the offer.", translation: "店员为这项优惠给了我一张缺货补购券。" },
+            { id: "price-match", word: "price match", phonetic: "/ˈpraɪs mætʃ/", meaning: "价格匹配", example: "The store offers a price match on this product.", translation: "这家超市为这件商品提供价格匹配。" },
+            { id: "member-offer", word: "member offer", phonetic: "/ˈmembər ˌɔːfər/", meaning: "会员优惠", example: "The member offer is shown in the app.", translation: "会员优惠显示在应用里。" },
+            { id: "limited-stock", word: "limited stock", phonetic: "/ˈlɪmɪtɪd stɑːk/", meaning: "库存有限", example: "The sign says limited stock.", translation: "标牌上写着库存有限。" },
+            { id: "express-lane", word: "express lane", phonetic: "/ɪkˈspres leɪn/", meaning: "快速结账通道", example: "The express lane is for a few items.", translation: "快速结账通道适合商品较少的顾客。" },
+            { id: "coupon-code", word: "coupon code", phonetic: "/ˈkuːpɑːn koʊd/", meaning: "优惠码", example: "Enter the coupon code before payment.", translation: "付款前请输入优惠码。" },
+            { id: "redeem-points", word: "redeem points", phonetic: "/rɪˈdiːm pɔɪnts/", meaning: "兑换积分", example: "I redeem points for a small reward.", translation: "我用积分兑换了一个小奖励。" },
+            { id: "return-policy", word: "return policy", phonetic: "/rɪˈtɜːrn ˌpɑːləsi/", meaning: "退货政策", example: "Read the return policy before opening the product.", translation: "打开商品前请阅读退货政策。" },
+            { id: "exchange-policy", word: "exchange policy", phonetic: "/ɪksˈtʃeɪndʒ ˌpɑːləsi/", meaning: "换货政策", example: "The exchange policy allows thirty days.", translation: "换货政策允许在三十天内换货。" },
+            { id: "per-customer-limit", word: "per-customer limit", phonetic: "/ˌpɜːr ˈkʌstəmər ˌlɪmɪt/", meaning: "每位顾客限购量", example: "There is a per-customer limit of two.", translation: "每位顾客限购两件。" },
+          ],
+        },
+      ];
+
       const moreOfficeCount = moreOfficePages.reduce(
         (count, page) => count + page.words.length,
         0
       );
       const moreHotelCount = moreHotelPages.reduce(
+        (count, page) => count + page.words.length,
+        0
+      );
+      const moreRestaurantCount = moreRestaurantPages.reduce(
+        (count, page) => count + page.words.length,
+        0
+      );
+      const moreSupermarketCount = moreSupermarketPages.reduce(
         (count, page) => count + page.words.length,
         0
       );
@@ -6182,6 +6802,42 @@
           visualZh: "温暖中庭",
           image: "linear-gradient(180deg, rgba(18, 13, 9, 0.02), rgba(18, 13, 9, 0.72)), url('assets/hotel-cover.png')",
           imagePosition: "center 54%",
+        },
+        {
+          id: "restaurant",
+          title: "Restaurant",
+          zh: "餐厅",
+          status: "Available",
+          statusZh: "可进入",
+          description: "Ask for a table, order a meal, settle the bill, and learn real restaurant English.",
+          descriptionZh: "请求入座、点餐、用餐、结账，学习真实餐厅英语。",
+          button: "Enter Restaurant",
+          buttonZh: "进入餐厅",
+          available: true,
+          chapter: "restaurant",
+          accent: "#c99a68",
+          visual: "Dining Evening",
+          visualZh: "温暖用餐",
+          image: "linear-gradient(180deg, rgba(18, 12, 8, 0.02), rgba(18, 12, 8, 0.72)), url('assets/restaurant-cover.png')",
+          imagePosition: "center 56%",
+        },
+        {
+          id: "supermarket",
+          title: "Supermarket",
+          zh: "超市",
+          status: "Available",
+          statusZh: "可进入",
+          description: "Find products, ask for help, check out, and learn real supermarket English.",
+          descriptionZh: "寻找商品、向店员求助、完成结账，学习真实超市英语。",
+          button: "Enter Supermarket",
+          buttonZh: "进入超市",
+          available: true,
+          chapter: "supermarket",
+          accent: "#8fc9a3",
+          visual: "Everyday Shopping",
+          visualZh: "日常购物",
+          image: "linear-gradient(180deg, rgba(10, 18, 14, 0.02), rgba(10, 18, 14, 0.72)), url('assets/supermarket-cover.png')",
+          imagePosition: "center 55%",
         },
       ];
 
@@ -6697,6 +7353,8 @@
         const [selectedMoreAirportWord, setSelectedMoreAirportWord] = useState(null);
         const [selectedMoreOfficeWord, setSelectedMoreOfficeWord] = useState(null);
         const [selectedMoreHotelWord, setSelectedMoreHotelWord] = useState(null);
+        const [selectedMoreRestaurantWord, setSelectedMoreRestaurantWord] = useState(null);
+        const [selectedMoreSupermarketWord, setSelectedMoreSupermarketWord] = useState(null);
         const [dialogueReply, setDialogueReply] = useState(null);
         const [conversationDone, setConversationDone] = useState([]);
         const [completedActions, setCompletedActions] = useState([]);
@@ -6708,6 +7366,8 @@
         const [learnedMoreAirportWords, setLearnedMoreAirportWords] = useState([]);
         const [learnedMoreOfficeWords, setLearnedMoreOfficeWords] = useState([]);
         const [learnedMoreHotelWords, setLearnedMoreHotelWords] = useState([]);
+        const [learnedMoreRestaurantWords, setLearnedMoreRestaurantWords] = useState([]);
+        const [learnedMoreSupermarketWords, setLearnedMoreSupermarketWords] = useState([]);
         const [learnedWords, setLearnedWords] = useState([]);
         const [savedWords, setSavedWords] = useState(loadWordBookEntries);
         const [playingKey, setPlayingKey] = useState(null);
@@ -6732,6 +7392,10 @@
         const [showMoreOfficeBook, setShowMoreOfficeBook] = useState(false);
         const [showMoreHotelChoice, setShowMoreHotelChoice] = useState(false);
         const [showMoreHotelBook, setShowMoreHotelBook] = useState(false);
+        const [showMoreRestaurantChoice, setShowMoreRestaurantChoice] = useState(false);
+        const [showMoreRestaurantBook, setShowMoreRestaurantBook] = useState(false);
+        const [showMoreSupermarketChoice, setShowMoreSupermarketChoice] = useState(false);
+        const [showMoreSupermarketBook, setShowMoreSupermarketBook] = useState(false);
         const [showMobileObserve, setShowMobileObserve] = useState(false);
         const [showMobileDialogue, setShowMobileDialogue] = useState(false);
         const [showMobileTripMap, setShowMobileTripMap] = useState(false);
@@ -6742,6 +7406,8 @@
         const [moreAirportPageIndex, setMoreAirportPageIndex] = useState(0);
         const [moreOfficePageIndex, setMoreOfficePageIndex] = useState(0);
         const [moreHotelPageIndex, setMoreHotelPageIndex] = useState(0);
+        const [moreRestaurantPageIndex, setMoreRestaurantPageIndex] = useState(0);
+        const [moreSupermarketPageIndex, setMoreSupermarketPageIndex] = useState(0);
         const [showEnding, setShowEnding] = useState(false);
         const [isWalking, setIsWalking] = useState(false);
         const [animalEffect, setAnimalEffect] = useState(null);
@@ -6789,6 +7455,8 @@
         const isAirportChapter = currentChapter === "airport";
         const isOfficeChapter = currentChapter === "office";
         const isHotelChapter = currentChapter === "hotel";
+        const isRestaurantChapter = currentChapter === "restaurant";
+        const isSupermarketChapter = currentChapter === "supermarket";
         const activeScenes = isZooChapter
           ? scenes
           : isFruitShopChapter
@@ -6801,7 +7469,11 @@
           ? airportScenes
           : isOfficeChapter
           ? officeScenes
-          : hotelScenes;
+          : isHotelChapter
+          ? hotelScenes
+          : isRestaurantChapter
+          ? restaurantScenes
+          : supermarketScenes;
         const activeDialogues = isZooChapter
           ? dialogues
           : isFruitShopChapter
@@ -6814,7 +7486,11 @@
           ? airportDialogues
           : isOfficeChapter
           ? officeDialogues
-          : hotelDialogues;
+          : isHotelChapter
+          ? hotelDialogues
+          : isRestaurantChapter
+          ? restaurantDialogues
+          : supermarketDialogues;
         const chapterTitle = isZooChapter
           ? "Zoo Trip"
           : isFruitShopChapter
@@ -6827,7 +7503,11 @@
           ? "Airport Trip"
           : isOfficeChapter
           ? "Office Day"
-          : "Hotel Stay";
+          : isHotelChapter
+          ? "Hotel Stay"
+          : isRestaurantChapter
+          ? "Restaurant Visit"
+          : "Supermarket Trip";
         const chapterTitleZh = isZooChapter
           ? "动物园之旅"
           : isFruitShopChapter
@@ -6840,7 +7520,11 @@
           ? "机场之旅"
           : isOfficeChapter
           ? "办公室之旅"
-          : "酒店入住之旅";
+          : isHotelChapter
+          ? "酒店入住之旅"
+          : isRestaurantChapter
+          ? "餐厅用餐之旅"
+          : "超市购物之旅";
         const chapterWordBookScene = isZooChapter
           ? "Zoo"
           : isFruitShopChapter
@@ -6853,7 +7537,11 @@
           ? "Airport"
           : isOfficeChapter
           ? "Office"
-          : "Hotel";
+          : isHotelChapter
+          ? "Hotel"
+          : isRestaurantChapter
+          ? "Restaurant"
+          : "Supermarket";
         const endingTitle = isZooChapter
           ? "Great job! Your zoo trip is finished."
           : isFruitShopChapter
@@ -6866,7 +7554,11 @@
           ? "Great job! Your airport trip is finished."
           : isOfficeChapter
           ? "Great job! Your office day is finished."
-          : "Great job! Your hotel stay is finished.";
+          : isHotelChapter
+          ? "Great job! Your hotel stay is finished."
+          : isRestaurantChapter
+          ? "Great job! Your restaurant visit is finished."
+          : "Great job! Your supermarket trip is finished.";
         const endingZh = isZooChapter
           ? "太棒了！今天的动物园之旅到此结束啦。"
           : isFruitShopChapter
@@ -6879,7 +7571,11 @@
           ? "太棒了！你的机场之旅完成了。"
           : isOfficeChapter
           ? "太棒了！你的办公室之旅完成了。"
-          : "太棒了！你的酒店入住之旅完成了。";
+          : isHotelChapter
+          ? "太棒了！你的酒店入住之旅完成了。"
+          : isRestaurantChapter
+          ? "太棒了！你的餐厅用餐之旅完成了。"
+          : "太棒了！你的超市购物之旅完成了。";
         const restartLabel = isZooChapter
           ? "Restart Trip"
           : isFruitShopChapter
@@ -6892,7 +7588,11 @@
           ? "Restart Airport"
           : isOfficeChapter
           ? "Restart Office"
-          : "Restart Hotel";
+          : isHotelChapter
+          ? "Restart Hotel"
+          : isRestaurantChapter
+          ? "Restart Restaurant"
+          : "Restart Supermarket";
         const restartZh = isZooChapter
           ? "重新开始旅程"
           : isFruitShopChapter
@@ -6905,7 +7605,11 @@
           ? "重新开始机场"
           : isOfficeChapter
           ? "重新开始办公室"
-          : "重新开始酒店";
+          : isHotelChapter
+          ? "重新开始酒店"
+          : isRestaurantChapter
+          ? "重新开始餐厅"
+          : "重新开始超市";
         const welcomeIntro = isZooChapter
           ? {
               label: "Zoo Trip",
@@ -6972,7 +7676,8 @@
               action: "Start Office Day",
               actionZh: "开始办公室之旅",
             }
-          : {
+          : isHotelChapter
+          ? {
               label: "Hotel Stay",
               labelZh: "酒店入住之旅",
               title: "Welcome to the hotel!",
@@ -6981,6 +7686,27 @@
               zh: "今天你会走进酒店，确认预订、进入房间、请求客房服务，并学习真实酒店英语。",
               action: "Start Hotel Stay",
               actionZh: "开始酒店入住之旅",
+            }
+          : isRestaurantChapter
+          ? {
+              label: "Restaurant Visit",
+              labelZh: "餐厅用餐之旅",
+              title: "Welcome to the restaurant!",
+              titleZh: "欢迎来到餐厅！",
+              text: "Today, you will enter a restaurant, ask for a seat, choose your food, enjoy the meal, settle the payment, and learn real restaurant English.",
+              zh: "今天你会走进餐厅，入座、点餐、用餐、结账，并学习真实餐厅英语。",
+              action: "Start Restaurant Visit",
+              actionZh: "开始餐厅用餐之旅",
+            }
+          : {
+              label: "Supermarket Trip",
+              labelZh: "超市购物之旅",
+              title: "Welcome to the supermarket!",
+              titleZh: "欢迎来到超市！",
+              text: "Today, you will enter a supermarket, find products, ask a store associate for help, check out, pack your shopping, and learn real supermarket English.",
+              zh: "今天你会走进超市、寻找商品、向店员求助、完成结账和装袋，并学习真实超市英语。",
+              action: "Start Supermarket Trip",
+              actionZh: "开始超市购物之旅",
             };
         const currentScene = activeScenes[currentIndex];
         const currentDialogue = currentScene.npc ? activeDialogues[currentScene.npc] : null;
@@ -7190,6 +7916,50 @@
                 zh: `不错！你又认识了 ${exploredMoreHotelCount} 个酒店词汇。`,
               }
             : null;
+        const currentMoreRestaurantPage = moreRestaurantPages[moreRestaurantPageIndex];
+        const exploredMoreRestaurantCount = learnedMoreRestaurantWords.length;
+        const currentRestaurantPageExploredCount = currentMoreRestaurantPage.words.filter((word) =>
+          learnedMoreRestaurantWords.includes(word.id)
+        ).length;
+        const moreRestaurantReward =
+          exploredMoreRestaurantCount === moreRestaurantCount
+            ? {
+                text: "Amazing! You discovered all more restaurant words.",
+                zh: "太厉害了！你探索了全部拓展餐厅词汇。",
+              }
+            : currentRestaurantPageExploredCount === currentMoreRestaurantPage.words.length
+            ? {
+                text: "Great explorer! You completed one restaurant page.",
+                zh: "太棒了！你完成了一页餐厅词汇探索。",
+              }
+            : exploredMoreRestaurantCount >= 5
+            ? {
+                text: `Nice! You discovered ${exploredMoreRestaurantCount} more restaurant words.`,
+                zh: `不错！你又认识了 ${exploredMoreRestaurantCount} 个餐厅词汇。`,
+              }
+            : null;
+        const currentMoreSupermarketPage = moreSupermarketPages[moreSupermarketPageIndex];
+        const exploredMoreSupermarketCount = learnedMoreSupermarketWords.length;
+        const currentSupermarketPageExploredCount = currentMoreSupermarketPage.words.filter((word) =>
+          learnedMoreSupermarketWords.includes(word.id)
+        ).length;
+        const moreSupermarketReward =
+          exploredMoreSupermarketCount === moreSupermarketCount
+            ? {
+                text: "Amazing! You discovered all more supermarket words.",
+                zh: "太厉害了！你探索了全部拓展超市词汇。",
+              }
+            : currentSupermarketPageExploredCount === currentMoreSupermarketPage.words.length
+            ? {
+                text: "Great explorer! You completed one supermarket page.",
+                zh: "太棒了！你完成了一页超市词汇探索。",
+              }
+            : exploredMoreSupermarketCount >= 5
+            ? {
+                text: `Nice! You discovered ${exploredMoreSupermarketCount} more supermarket words.`,
+                zh: `不错！你又认识了 ${exploredMoreSupermarketCount} 个超市词汇。`,
+              }
+            : null;
         const wordBookFilters = [
           { id: "all", en: "All", zh: "全部" },
           { id: "zoo", en: "Zoo", zh: "动物园" },
@@ -7340,6 +8110,32 @@
           };
         }
 
+        function makeMoreRestaurantWordBookEntry(word) {
+          return {
+            word: word.word,
+            zh: word.meaning,
+            phonetic: word.phonetic,
+            example: word.example,
+            exampleZh: word.translation,
+            scene: "Restaurant / More Restaurant Words",
+            type: "dining",
+            addedAt: new Date().toISOString(),
+          };
+        }
+
+        function makeMoreSupermarketWordBookEntry(word) {
+          return {
+            word: word.word,
+            zh: word.meaning,
+            phonetic: word.phonetic,
+            example: word.example,
+            exampleZh: word.translation,
+            scene: "Supermarket / More Supermarket Words",
+            type: "shopping",
+            addedAt: new Date().toISOString(),
+          };
+        }
+
         function isWordSaved(word) {
           const key = getWordKey(word);
           return savedWords.some((item) => getWordKey(item.word) === key);
@@ -7370,6 +8166,8 @@
           setSelectedMoreAirportWord(null);
           setSelectedMoreOfficeWord(null);
           setSelectedMoreHotelWord(null);
+          setSelectedMoreRestaurantWord(null);
+          setSelectedMoreSupermarketWord(null);
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
           setShowMoreFruitsChoice(false);
@@ -7382,8 +8180,12 @@
           setShowMoreAirportBook(false);
           setShowMoreOfficeChoice(false);
           setShowMoreHotelChoice(false);
+          setShowMoreRestaurantChoice(false);
+          setShowMoreSupermarketChoice(false);
           setShowMoreOfficeBook(false);
           setShowMoreHotelBook(false);
+          setShowMoreRestaurantBook(false);
+          setShowMoreSupermarketBook(false);
           setIsReviewingWordBook(false);
           setReviewRevealed(false);
           setReviewIndex(0);
@@ -7531,6 +8333,24 @@
           speakEnglish(word.word, 0.9, `more-hotel-${word.id}-normal`);
         }
 
+        function openMoreRestaurantWord(word) {
+          setSelectedMoreRestaurantWord(word);
+          setLearnedMoreRestaurantWords((items) =>
+            items.includes(word.id) ? items : [...items, word.id]
+          );
+          rememberWord(word.word);
+          speakEnglish(word.word, 0.9, `more-restaurant-${word.id}-normal`);
+        }
+
+        function openMoreSupermarketWord(word) {
+          setSelectedMoreSupermarketWord(word);
+          setLearnedMoreSupermarketWords((items) =>
+            items.includes(word.id) ? items : [...items, word.id]
+          );
+          rememberWord(word.word);
+          speakEnglish(word.word, 0.9, `more-supermarket-${word.id}-normal`);
+        }
+
         function finishZooTrip() {
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
@@ -7583,6 +8403,20 @@
           setShowEnding(true);
         }
 
+        function finishRestaurantVisit() {
+          setShowMoreRestaurantChoice(false);
+          setShowMoreRestaurantBook(false);
+          setSelectedMoreRestaurantWord(null);
+          setShowEnding(true);
+        }
+
+        function finishSupermarketTrip() {
+          setShowMoreSupermarketChoice(false);
+          setShowMoreSupermarketBook(false);
+          setSelectedMoreSupermarketWord(null);
+          setShowEnding(true);
+        }
+
         function enterZoo() {
           setSceneSelectHint("");
           setCurrentChapter("zoo");
@@ -7595,6 +8429,7 @@
           setSelectedMoreAirportWord(null);
           setSelectedMoreOfficeWord(null);
           setSelectedMoreHotelWord(null);
+          setSelectedMoreRestaurantWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -7615,8 +8450,10 @@
           setShowMoreAirportBook(false);
           setShowMoreOfficeChoice(false);
           setShowMoreHotelChoice(false);
+          setShowMoreRestaurantChoice(false);
           setShowMoreOfficeBook(false);
           setShowMoreHotelBook(false);
+          setShowMoreRestaurantBook(false);
           setShowWelcome(true);
           setWelcomeLeaving(false);
           setCurrentView("zoo");
@@ -7634,6 +8471,7 @@
           setSelectedMoreAirportWord(null);
           setSelectedMoreOfficeWord(null);
           setSelectedMoreHotelWord(null);
+          setSelectedMoreRestaurantWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -7654,8 +8492,10 @@
           setShowMoreAirportBook(false);
           setShowMoreOfficeChoice(false);
           setShowMoreHotelChoice(false);
+          setShowMoreRestaurantChoice(false);
           setShowMoreOfficeBook(false);
           setShowMoreHotelBook(false);
+          setShowMoreRestaurantBook(false);
           setShowWelcome(true);
           setWelcomeLeaving(false);
           setCurrentView("zoo");
@@ -7673,6 +8513,7 @@
           setSelectedMoreAirportWord(null);
           setSelectedMoreOfficeWord(null);
           setSelectedMoreHotelWord(null);
+          setSelectedMoreRestaurantWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -7693,8 +8534,10 @@
           setShowMoreAirportBook(false);
           setShowMoreOfficeChoice(false);
           setShowMoreHotelChoice(false);
+          setShowMoreRestaurantChoice(false);
           setShowMoreOfficeBook(false);
           setShowMoreHotelBook(false);
+          setShowMoreRestaurantBook(false);
           setShowWelcome(true);
           setWelcomeLeaving(false);
           setCurrentView("zoo");
@@ -7712,6 +8555,7 @@
           setSelectedMoreAirportWord(null);
           setSelectedMoreOfficeWord(null);
           setSelectedMoreHotelWord(null);
+          setSelectedMoreRestaurantWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -7732,8 +8576,10 @@
           setShowMoreAirportBook(false);
           setShowMoreOfficeChoice(false);
           setShowMoreHotelChoice(false);
+          setShowMoreRestaurantChoice(false);
           setShowMoreOfficeBook(false);
           setShowMoreHotelBook(false);
+          setShowMoreRestaurantBook(false);
           setShowWelcome(true);
           setWelcomeLeaving(false);
           setCurrentView("zoo");
@@ -7751,6 +8597,7 @@
           setSelectedMoreAirportWord(null);
           setSelectedMoreOfficeWord(null);
           setSelectedMoreHotelWord(null);
+          setSelectedMoreRestaurantWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -7771,8 +8618,10 @@
           setShowMoreAirportBook(false);
           setShowMoreOfficeChoice(false);
           setShowMoreHotelChoice(false);
+          setShowMoreRestaurantChoice(false);
           setShowMoreOfficeBook(false);
           setShowMoreHotelBook(false);
+          setShowMoreRestaurantBook(false);
           setShowWelcome(true);
           setWelcomeLeaving(false);
           setCurrentView("zoo");
@@ -7790,6 +8639,7 @@
           setSelectedMoreAirportWord(null);
           setSelectedMoreOfficeWord(null);
           setSelectedMoreHotelWord(null);
+          setSelectedMoreRestaurantWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -7810,8 +8660,97 @@
           setShowMoreAirportBook(false);
           setShowMoreOfficeChoice(false);
           setShowMoreHotelChoice(false);
+          setShowMoreRestaurantChoice(false);
           setShowMoreOfficeBook(false);
           setShowMoreHotelBook(false);
+          setShowMoreRestaurantBook(false);
+          setShowWelcome(true);
+          setWelcomeLeaving(false);
+          setCurrentView("zoo");
+        }
+
+        function enterRestaurant() {
+          setSceneSelectHint("");
+          setCurrentChapter("restaurant");
+          setCurrentIndex(0);
+          setSelectedHotspot(null);
+          setSelectedMoreAnimal(null);
+          setSelectedMoreFruit(null);
+          setSelectedMoreCampusWord(null);
+          setSelectedMoreCafeWord(null);
+          setSelectedMoreAirportWord(null);
+          setSelectedMoreOfficeWord(null);
+          setSelectedMoreHotelWord(null);
+          setSelectedMoreRestaurantWord(null);
+          setDialogueReply(null);
+          setConversationDone([]);
+          setCompletedActions([]);
+          setLearnedHotspotKeys([]);
+          setLearnedWords([]);
+          setProgressHint("");
+          setAnimalEffect(null);
+          setShowEnding(false);
+          setShowMoreAnimalsChoice(false);
+          setShowMoreAnimalsBook(false);
+          setShowMoreFruitsChoice(false);
+          setShowMoreFruitsBook(false);
+          setShowMoreCampusChoice(false);
+          setShowMoreCampusBook(false);
+          setShowMoreCafeChoice(false);
+          setShowMoreCafeBook(false);
+          setShowMoreAirportChoice(false);
+          setShowMoreAirportBook(false);
+          setShowMoreOfficeChoice(false);
+          setShowMoreOfficeBook(false);
+          setShowMoreHotelChoice(false);
+          setShowMoreHotelBook(false);
+          setShowMoreRestaurantChoice(false);
+          setShowMoreRestaurantBook(false);
+          setShowWelcome(true);
+          setWelcomeLeaving(false);
+          setCurrentView("zoo");
+        }
+
+        function enterSupermarket() {
+          setSceneSelectHint("");
+          setCurrentChapter("supermarket");
+          setCurrentIndex(0);
+          setSelectedHotspot(null);
+          setSelectedMoreAnimal(null);
+          setSelectedMoreFruit(null);
+          setSelectedMoreCampusWord(null);
+          setSelectedMoreCafeWord(null);
+          setSelectedMoreAirportWord(null);
+          setSelectedMoreOfficeWord(null);
+          setSelectedMoreHotelWord(null);
+          setSelectedMoreRestaurantWord(null);
+          setSelectedMoreSupermarketWord(null);
+          setDialogueReply(null);
+          setConversationDone([]);
+          setCompletedActions([]);
+          setLearnedHotspotKeys([]);
+          setLearnedWords([]);
+          setProgressHint("");
+          setAnimalEffect(null);
+          setShowEnding(false);
+          setShowMoreAnimalsChoice(false);
+          setShowMoreAnimalsBook(false);
+          setShowMoreFruitsChoice(false);
+          setShowMoreFruitsBook(false);
+          setShowMoreCampusChoice(false);
+          setShowMoreCampusBook(false);
+          setShowMoreCafeChoice(false);
+          setShowMoreCafeBook(false);
+          setShowMoreAirportChoice(false);
+          setShowMoreAirportBook(false);
+          setShowMoreOfficeChoice(false);
+          setShowMoreOfficeBook(false);
+          setShowMoreHotelChoice(false);
+          setShowMoreHotelBook(false);
+          setShowMoreRestaurantChoice(false);
+          setShowMoreRestaurantBook(false);
+          setShowMoreSupermarketChoice(false);
+          setShowMoreSupermarketBook(false);
           setShowWelcome(true);
           setWelcomeLeaving(false);
           setCurrentView("zoo");
@@ -7829,6 +8768,8 @@
           setSelectedMoreAirportWord(null);
           setSelectedMoreOfficeWord(null);
           setSelectedMoreHotelWord(null);
+          setSelectedMoreRestaurantWord(null);
+          setSelectedMoreSupermarketWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -7889,6 +8830,8 @@
           setSelectedMoreAirportWord(null);
           setSelectedMoreOfficeWord(null);
           setSelectedMoreHotelWord(null);
+          setSelectedMoreRestaurantWord(null);
+          setSelectedMoreSupermarketWord(null);
           setDialogueReply(null);
           setProgressHint("");
           setShowEnding(false);
@@ -7899,6 +8842,8 @@
           setShowMoreAirportBook(false);
           setShowMoreOfficeBook(false);
           setShowMoreHotelBook(false);
+          setShowMoreRestaurantBook(false);
+          setShowMoreSupermarketBook(false);
           setShowMoreAnimalsChoice(isZooChapter);
           setShowMoreFruitsChoice(isFruitShopChapter);
           setShowMoreCampusChoice(isCampusChapter);
@@ -7906,6 +8851,8 @@
           setShowMoreAirportChoice(isAirportChapter);
           setShowMoreOfficeChoice(isOfficeChapter);
           setShowMoreHotelChoice(isHotelChapter);
+          setShowMoreRestaurantChoice(isRestaurantChapter);
+          setShowMoreSupermarketChoice(isSupermarketChapter);
         }
 
         function walkForward() {
@@ -7942,6 +8889,8 @@
           setSelectedMoreAirportWord(null);
           setSelectedMoreOfficeWord(null);
           setSelectedMoreHotelWord(null);
+          setSelectedMoreRestaurantWord(null);
+          setSelectedMoreSupermarketWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -7953,6 +8902,8 @@
           setLearnedMoreAirportWords([]);
           setLearnedMoreOfficeWords([]);
           setLearnedMoreHotelWords([]);
+          setLearnedMoreRestaurantWords([]);
+          setLearnedMoreSupermarketWords([]);
           setLearnedWords([]);
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
@@ -7966,8 +8917,12 @@
           setShowMoreAirportBook(false);
           setShowMoreOfficeChoice(false);
           setShowMoreHotelChoice(false);
+          setShowMoreRestaurantChoice(false);
+          setShowMoreSupermarketChoice(false);
           setShowMoreOfficeBook(false);
           setShowMoreHotelBook(false);
+          setShowMoreRestaurantBook(false);
+          setShowMoreSupermarketBook(false);
           setMoreAnimalsPageIndex(0);
           setMoreFruitsPageIndex(0);
           setMoreCampusPageIndex(0);
@@ -7975,8 +8930,10 @@
           setMoreAirportPageIndex(0);
           setMoreOfficePageIndex(0);
           setMoreHotelPageIndex(0);
+          setMoreRestaurantPageIndex(0);
+          setMoreSupermarketPageIndex(0);
           setShowEnding(false);
-          setShowWelcome(isZooChapter || isCampusChapter || isCafeChapter || isAirportChapter || isOfficeChapter || isHotelChapter);
+          setShowWelcome(isZooChapter || isCampusChapter || isCafeChapter || isAirportChapter || isOfficeChapter || isHotelChapter || isRestaurantChapter || isSupermarketChapter);
           setWelcomeLeaving(false);
           setAnimalEffect(null);
         }
@@ -8470,6 +9427,10 @@
                               ? enterOffice
                               : scene.chapter === "hotel"
                               ? enterHotel
+                              : scene.chapter === "restaurant"
+                              ? enterRestaurant
+                              : scene.chapter === "supermarket"
+                              ? enterSupermarket
                               : enterZoo
                             : showComingSoon
                         }
@@ -8805,6 +9766,8 @@
                   setSelectedMoreAirportWord(null);
                   setSelectedMoreOfficeWord(null);
                   setSelectedMoreHotelWord(null);
+                  setSelectedMoreRestaurantWord(null);
+                  setSelectedMoreSupermarketWord(null);
                   setShowMoreAnimalsChoice(false);
                   setShowMoreAnimalsBook(false);
                   setShowMoreFruitsChoice(false);
@@ -8817,8 +9780,12 @@
                   setShowMoreAirportBook(false);
                   setShowMoreOfficeChoice(false);
                   setShowMoreHotelChoice(false);
+                  setShowMoreRestaurantChoice(false);
+                  setShowMoreSupermarketChoice(false);
                   setShowMoreOfficeBook(false);
                   setShowMoreHotelBook(false);
+                  setShowMoreRestaurantBook(false);
+                  setShowMoreSupermarketBook(false);
                   setShowEnding(false);
                   setCurrentView("sceneSelect");
                 }}
@@ -11070,6 +12037,448 @@
                         className="mt-6 w-full rounded-2xl bg-banana px-4 py-4 text-lg font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
                       >
                         <ButtonCopy en="Finish Hotel Stay" zh="结束酒店入住之旅" />
+                      </button>
+                    </div>
+                  </aside>
+                )}
+              </div>
+            )}
+
+            {showMoreRestaurantChoice && !showEnding && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 backdrop-blur-sm">
+                <div className="dialogue-enter w-full max-w-2xl rounded-3xl border border-white/18 bg-[#112319]/92 p-6 text-cream shadow-glow backdrop-blur-2xl">
+                  <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">
+                    More Restaurant Words
+                  </p>
+                  <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">
+                    Want to discover more restaurant words?
+                  </h2>
+                  <p className="mt-3 text-xl font-bold text-cream/82">
+                    想认识更多餐厅词汇吗？
+                  </p>
+                  <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                    <button
+                      onClick={() => {
+                        setShowMoreRestaurantChoice(false);
+                        setShowMoreRestaurantBook(true);
+                        setMoreRestaurantPageIndex(0);
+                      }}
+                      className="rounded-2xl bg-banana px-5 py-4 font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                    >
+                      <ButtonCopy en="Yes, show me more restaurant words." zh="是的，我想看看更多餐厅词汇。" />
+                    </button>
+                    <button
+                      onClick={finishRestaurantVisit}
+                      className="rounded-2xl border border-white/18 bg-white/12 px-5 py-4 font-black text-white transition hover:bg-white/22 active:scale-[0.99]"
+                    >
+                      <ButtonCopy en="No, finish today's restaurant visit." zh="不用了，结束今天的餐厅用餐之旅。" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {showMoreRestaurantBook && !showEnding && (
+              <div className="fixed inset-0 z-50 overflow-auto bg-[#211914]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
+                <div className="mx-auto max-w-6xl">
+                  <header className="flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">More Restaurant Words</p>
+                      <h2 className="mt-2 text-3xl font-black text-white sm:text-5xl">More Restaurant Words</h2>
+                      <p className="mt-2 text-lg font-bold text-cream/78">更多餐厅词汇</p>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <div className="rounded-2xl border border-white/14 bg-white/10 px-4 py-3">
+                        <p className="text-[10px] font-black uppercase tracking-[0.18em] text-banana">Explored</p>
+                        <p className="mt-1 text-2xl font-black text-white">{exploredMoreRestaurantCount}/{moreRestaurantCount}</p>
+                        <p className="text-xs font-bold text-cream/70">已探索</p>
+                      </div>
+                      <button
+                        onClick={finishRestaurantVisit}
+                        className="rounded-full bg-banana px-5 py-3 font-black text-ink shadow-label transition hover:bg-[#ffc83f] active:scale-[0.99]"
+                      >
+                        <ButtonCopy en="Finish Restaurant Visit" zh="结束餐厅用餐之旅" />
+                      </button>
+                    </div>
+                  </header>
+
+                  {moreRestaurantReward && (
+                    <div className="dialogue-enter mt-4 rounded-2xl border border-banana/35 bg-[#5b3a27]/62 px-4 py-3 shadow-label backdrop-blur-[3px]">
+                      <p className="font-black text-white">{moreRestaurantReward.text}</p>
+                      <p className="mt-1 text-sm font-bold text-cream/76">{moreRestaurantReward.zh}</p>
+                    </div>
+                  )}
+
+                  <div className="mt-5 flex gap-2 overflow-x-auto pb-1">
+                    {moreRestaurantPages.map((page, index) => {
+                      const active = index === moreRestaurantPageIndex;
+                      return (
+                        <button
+                          key={page.id}
+                          onClick={() => {
+                            setMoreRestaurantPageIndex(index);
+                            setSelectedMoreRestaurantWord(null);
+                          }}
+                          className={`min-w-[190px] rounded-2xl px-4 py-3 text-left font-black shadow-label transition hover:-translate-y-0.5 active:translate-y-0 ${
+                            active ? "bg-[#765139] text-white" : "border border-white/16 bg-white/10 text-cream hover:bg-white/18"
+                          }`}
+                        >
+                          <span className="block text-sm">{page.title}</span>
+                          <span className="mt-1 block text-xs font-bold opacity-75">{page.zh}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  <section className="mt-5 rounded-3xl border border-white/14 bg-nightglass p-4 shadow-glow backdrop-blur-xl">
+                    <div className="flex flex-wrap items-end justify-between gap-3">
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.22em] text-banana">Page {moreRestaurantPageIndex + 1}/3</p>
+                        <h3 className="mt-1 text-2xl font-black text-white">
+                          {currentMoreRestaurantPage.title}
+                          <span className="ml-2 text-banana">{currentMoreRestaurantPage.zh}</span>
+                        </h3>
+                      </div>
+                      <p className="text-sm font-black text-cream/75">{currentRestaurantPageExploredCount}/12 learned · 已学习</p>
+                    </div>
+
+                    <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                      {currentMoreRestaurantPage.words.map((word) => {
+                        const learned = learnedMoreRestaurantWords.includes(word.id);
+                        return (
+                          <button
+                            key={word.id}
+                            onClick={() => openMoreRestaurantWord(word)}
+                            className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
+                              learned
+                                ? "border-[#d6ad83]/55 bg-[#493325]/72"
+                                : "border-white/14 bg-white/10 hover:border-banana/45 hover:bg-white/16"
+                            }`}
+                          >
+                            <div className="flex items-start gap-3">
+                              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-banana/35 bg-[#4c3424]/72 text-xl font-black text-banana transition group-hover:scale-105">
+                                {word.word.slice(0, 1).toUpperCase()}
+                              </span>
+                              <span className="min-w-0">
+                                <span className="block text-lg font-black leading-tight text-white">{word.word}</span>
+                                <span className="mt-1 block text-sm font-bold text-cream/72">{word.meaning}</span>
+                              </span>
+                            </div>
+                            <div className="mt-3 flex items-center justify-between gap-2">
+                              <span className="text-xs font-black text-banana">{word.phonetic}</span>
+                              {learned && (
+                                <span className="rounded-full bg-banana/90 px-2 py-1 text-[10px] font-black uppercase text-ink">Learned · 已学习</span>
+                              )}
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </section>
+                </div>
+
+                {selectedMoreRestaurantWord && (
+                  <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#241914]/94 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
+                    <div className="flex items-start justify-between gap-3 border-b border-white/12 p-5">
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">Restaurant Word</p>
+                        <h2 className="mt-2 text-4xl font-black leading-tight text-white">{selectedMoreRestaurantWord.word}</h2>
+                        <p className="mt-2 text-2xl font-extrabold text-banana">{selectedMoreRestaurantWord.phonetic}</p>
+                      </div>
+                      <button
+                        onClick={() => setSelectedMoreRestaurantWord(null)}
+                        className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/12 text-2xl font-black text-white transition hover:bg-white/22 active:scale-95"
+                        aria-label="Close 关闭"
+                        title="Close / 关闭"
+                      >
+                        ×
+                      </button>
+                    </div>
+                    <div className="flex-1 overflow-auto p-5">
+                      <div className="rounded-2xl border border-white/12 bg-white/10 p-4">
+                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-banana">中文意思</p>
+                        <p className="mt-2 text-2xl font-black text-white">{selectedMoreRestaurantWord.meaning}</p>
+                      </div>
+                      <div className="mt-4 rounded-2xl border border-white/12 bg-black/18 p-4">
+                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-coral">Example</p>
+                        <p className="mt-2 text-2xl font-black leading-9 text-white">{selectedMoreRestaurantWord.example}</p>
+                        <p className="mt-2 text-lg font-bold leading-8 text-cream/78">{selectedMoreRestaurantWord.translation}</p>
+                      </div>
+                      <div className="mt-5 grid grid-cols-2 gap-3">
+                        <button
+                          onClick={() => speakEnglish(selectedMoreRestaurantWord.word, 0.9, `more-restaurant-${selectedMoreRestaurantWord.id}-normal`)}
+                          className="rounded-2xl bg-banana px-4 py-3 text-base font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                        >
+                          <span className="inline-flex items-center justify-center gap-2">
+                            {playingKey === `more-restaurant-${selectedMoreRestaurantWord.id}-normal` && <SoundBars />}
+                            <ButtonCopy en="Normal" zh="正常语速" />
+                          </span>
+                        </button>
+                        <button
+                          onClick={() => speakEnglish(selectedMoreRestaurantWord.word, 0.65, `more-restaurant-${selectedMoreRestaurantWord.id}-slow`)}
+                          className="rounded-2xl border border-banana/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"
+                        >
+                          <span className="inline-flex items-center justify-center gap-2">
+                            {playingKey === `more-restaurant-${selectedMoreRestaurantWord.id}-slow` && <SoundBars />}
+                            <ButtonCopy en="Slow" zh="慢速朗读" />
+                          </span>
+                        </button>
+                      </div>
+                      <button
+                        onClick={() => speakEnglish(selectedMoreRestaurantWord.example, 0.86, `more-restaurant-${selectedMoreRestaurantWord.id}-sentence`)}
+                        className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
+                      >
+                        <span className="inline-flex items-center justify-center gap-2">
+                          {playingKey === `more-restaurant-${selectedMoreRestaurantWord.id}-sentence` && <SoundBars />}
+                          <ButtonCopy en="Play Sentence" zh="朗读例句" />
+                        </span>
+                      </button>
+                      <button
+                        onClick={() => saveWordEntry(makeMoreRestaurantWordBookEntry(selectedMoreRestaurantWord))}
+                        disabled={isWordSaved(selectedMoreRestaurantWord.word)}
+                        className={`mt-3 w-full rounded-2xl px-4 py-3 text-base font-black shadow-label transition active:scale-[0.99] ${
+                          isWordSaved(selectedMoreRestaurantWord.word) ? "bg-coral text-white" : "bg-white/12 text-white hover:bg-white/22"
+                        }`}
+                      >
+                        <ButtonCopy
+                          en={isWordSaved(selectedMoreRestaurantWord.word) ? "Added to Word Book" : "Add to Word Book"}
+                          zh={isWordSaved(selectedMoreRestaurantWord.word) ? "已加入生词本" : "加入生词本"}
+                        />
+                      </button>
+                      {isWordSaved(selectedMoreRestaurantWord.word) && (
+                        <button
+                          onClick={() => removeWordEntry(selectedMoreRestaurantWord.word)}
+                          className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
+                        >
+                          <ButtonCopy en="Remove from Word Book" zh="移出生词本" />
+                        </button>
+                      )}
+                      <button
+                        onClick={finishRestaurantVisit}
+                        className="mt-6 w-full rounded-2xl bg-banana px-4 py-4 text-lg font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                      >
+                        <ButtonCopy en="Finish Restaurant Visit" zh="结束餐厅用餐之旅" />
+                      </button>
+                    </div>
+                  </aside>
+                )}
+              </div>
+            )}
+
+            {showMoreSupermarketChoice && !showEnding && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 backdrop-blur-sm">
+                <div className="dialogue-enter w-full max-w-2xl rounded-3xl border border-white/18 bg-[#112319]/92 p-6 text-cream shadow-glow backdrop-blur-2xl">
+                  <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">
+                    More Supermarket Words
+                  </p>
+                  <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">
+                    Want to discover more supermarket words?
+                  </h2>
+                  <p className="mt-3 text-xl font-bold text-cream/82">
+                    想认识更多超市词汇吗？
+                  </p>
+                  <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                    <button
+                      onClick={() => {
+                        setShowMoreSupermarketChoice(false);
+                        setShowMoreSupermarketBook(true);
+                        setMoreSupermarketPageIndex(0);
+                      }}
+                      className="rounded-2xl bg-banana px-5 py-4 font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                    >
+                      <ButtonCopy en="Yes, show me more supermarket words." zh="是的，我想看看更多超市词汇。" />
+                    </button>
+                    <button
+                      onClick={finishSupermarketTrip}
+                      className="rounded-2xl border border-white/18 bg-white/12 px-5 py-4 font-black text-white transition hover:bg-white/22 active:scale-[0.99]"
+                    >
+                      <ButtonCopy en="No, finish today's supermarket trip." zh="不用了，结束今天的超市购物之旅。" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {showMoreSupermarketBook && !showEnding && (
+              <div className="fixed inset-0 z-50 overflow-auto bg-[#152019]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
+                <div className="mx-auto max-w-6xl">
+                  <header className="flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">More Supermarket Words</p>
+                      <h2 className="mt-2 text-3xl font-black text-white sm:text-5xl">More Supermarket Words</h2>
+                      <p className="mt-2 text-lg font-bold text-cream/78">更多超市词汇</p>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <div className="rounded-2xl border border-white/14 bg-white/10 px-4 py-3">
+                        <p className="text-[10px] font-black uppercase tracking-[0.18em] text-banana">Explored</p>
+                        <p className="mt-1 text-2xl font-black text-white">{exploredMoreSupermarketCount}/{moreSupermarketCount}</p>
+                        <p className="text-xs font-bold text-cream/70">已探索</p>
+                      </div>
+                      <button
+                        onClick={finishSupermarketTrip}
+                        className="rounded-full bg-banana px-5 py-3 font-black text-ink shadow-label transition hover:bg-[#ffc83f] active:scale-[0.99]"
+                      >
+                        <ButtonCopy en="Finish Supermarket Trip" zh="结束超市购物之旅" />
+                      </button>
+                    </div>
+                  </header>
+
+                  {moreSupermarketReward && (
+                    <div className="dialogue-enter mt-4 rounded-2xl border border-banana/35 bg-[#31513b]/62 px-4 py-3 shadow-label backdrop-blur-[3px]">
+                      <p className="font-black text-white">{moreSupermarketReward.text}</p>
+                      <p className="mt-1 text-sm font-bold text-cream/76">{moreSupermarketReward.zh}</p>
+                    </div>
+                  )}
+
+                  <div className="mt-5 flex gap-2 overflow-x-auto pb-1">
+                    {moreSupermarketPages.map((page, index) => {
+                      const active = index === moreSupermarketPageIndex;
+                      return (
+                        <button
+                          key={page.id}
+                          onClick={() => {
+                            setMoreSupermarketPageIndex(index);
+                            setSelectedMoreSupermarketWord(null);
+                          }}
+                          className={`min-w-[190px] rounded-2xl px-4 py-3 text-left font-black shadow-label transition hover:-translate-y-0.5 active:translate-y-0 ${
+                            active ? "bg-[#39724e] text-white" : "border border-white/16 bg-white/10 text-cream hover:bg-white/18"
+                          }`}
+                        >
+                          <span className="block text-sm">{page.title}</span>
+                          <span className="mt-1 block text-xs font-bold opacity-75">{page.zh}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  <section className="mt-5 rounded-3xl border border-white/14 bg-nightglass p-4 shadow-glow backdrop-blur-xl">
+                    <div className="flex flex-wrap items-end justify-between gap-3">
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.22em] text-banana">Page {moreSupermarketPageIndex + 1}/3</p>
+                        <h3 className="mt-1 text-2xl font-black text-white">
+                          {currentMoreSupermarketPage.title}
+                          <span className="ml-2 text-banana">{currentMoreSupermarketPage.zh}</span>
+                        </h3>
+                      </div>
+                      <p className="text-sm font-black text-cream/75">{currentSupermarketPageExploredCount}/12 learned · 已学习</p>
+                    </div>
+
+                    <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                      {currentMoreSupermarketPage.words.map((word) => {
+                        const learned = learnedMoreSupermarketWords.includes(word.id);
+                        return (
+                          <button
+                            key={word.id}
+                            onClick={() => openMoreSupermarketWord(word)}
+                            className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
+                              learned
+                                ? "border-[#a6d8b2]/55 bg-[#294b35]/72"
+                                : "border-white/14 bg-white/10 hover:border-banana/45 hover:bg-white/16"
+                            }`}
+                          >
+                            <div className="flex items-start gap-3">
+                              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-banana/35 bg-[#31543b]/72 text-xl font-black text-banana transition group-hover:scale-105">
+                                {word.word.slice(0, 1).toUpperCase()}
+                              </span>
+                              <span className="min-w-0">
+                                <span className="block text-lg font-black leading-tight text-white">{word.word}</span>
+                                <span className="mt-1 block text-sm font-bold text-cream/72">{word.meaning}</span>
+                              </span>
+                            </div>
+                            <div className="mt-3 flex items-center justify-between gap-2">
+                              <span className="text-xs font-black text-banana">{word.phonetic}</span>
+                              {learned && (
+                                <span className="rounded-full bg-banana/90 px-2 py-1 text-[10px] font-black uppercase text-ink">Learned · 已学习</span>
+                              )}
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </section>
+                </div>
+
+                {selectedMoreSupermarketWord && (
+                  <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#13251a]/94 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
+                    <div className="flex items-start justify-between gap-3 border-b border-white/12 p-5">
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">Supermarket Word</p>
+                        <h2 className="mt-2 text-4xl font-black leading-tight text-white">{selectedMoreSupermarketWord.word}</h2>
+                        <p className="mt-2 text-2xl font-extrabold text-banana">{selectedMoreSupermarketWord.phonetic}</p>
+                      </div>
+                      <button
+                        onClick={() => setSelectedMoreSupermarketWord(null)}
+                        className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/12 text-2xl font-black text-white transition hover:bg-white/22 active:scale-95"
+                        aria-label="Close 关闭"
+                        title="Close / 关闭"
+                      >
+                        ×
+                      </button>
+                    </div>
+                    <div className="flex-1 overflow-auto p-5">
+                      <div className="rounded-2xl border border-white/12 bg-white/10 p-4">
+                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-banana">中文意思</p>
+                        <p className="mt-2 text-2xl font-black text-white">{selectedMoreSupermarketWord.meaning}</p>
+                      </div>
+                      <div className="mt-4 rounded-2xl border border-white/12 bg-black/18 p-4">
+                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-coral">Example</p>
+                        <p className="mt-2 text-2xl font-black leading-9 text-white">{selectedMoreSupermarketWord.example}</p>
+                        <p className="mt-2 text-lg font-bold leading-8 text-cream/78">{selectedMoreSupermarketWord.translation}</p>
+                      </div>
+                      <div className="mt-5 grid grid-cols-2 gap-3">
+                        <button
+                          onClick={() => speakEnglish(selectedMoreSupermarketWord.word, 0.9, `more-supermarket-${selectedMoreSupermarketWord.id}-normal`)}
+                          className="rounded-2xl bg-banana px-4 py-3 text-base font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                        >
+                          <span className="inline-flex items-center justify-center gap-2">
+                            {playingKey === `more-supermarket-${selectedMoreSupermarketWord.id}-normal` && <SoundBars />}
+                            <ButtonCopy en="Normal" zh="正常语速" />
+                          </span>
+                        </button>
+                        <button
+                          onClick={() => speakEnglish(selectedMoreSupermarketWord.word, 0.65, `more-supermarket-${selectedMoreSupermarketWord.id}-slow`)}
+                          className="rounded-2xl border border-banana/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"
+                        >
+                          <span className="inline-flex items-center justify-center gap-2">
+                            {playingKey === `more-supermarket-${selectedMoreSupermarketWord.id}-slow` && <SoundBars />}
+                            <ButtonCopy en="Slow" zh="慢速朗读" />
+                          </span>
+                        </button>
+                      </div>
+                      <button
+                        onClick={() => speakEnglish(selectedMoreSupermarketWord.example, 0.86, `more-supermarket-${selectedMoreSupermarketWord.id}-sentence`)}
+                        className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
+                      >
+                        <span className="inline-flex items-center justify-center gap-2">
+                          {playingKey === `more-supermarket-${selectedMoreSupermarketWord.id}-sentence` && <SoundBars />}
+                          <ButtonCopy en="Play Sentence" zh="朗读例句" />
+                        </span>
+                      </button>
+                      <button
+                        onClick={() => saveWordEntry(makeMoreSupermarketWordBookEntry(selectedMoreSupermarketWord))}
+                        disabled={isWordSaved(selectedMoreSupermarketWord.word)}
+                        className={`mt-3 w-full rounded-2xl px-4 py-3 text-base font-black shadow-label transition active:scale-[0.99] ${
+                          isWordSaved(selectedMoreSupermarketWord.word) ? "bg-coral text-white" : "bg-white/12 text-white hover:bg-white/22"
+                        }`}
+                      >
+                        <ButtonCopy
+                          en={isWordSaved(selectedMoreSupermarketWord.word) ? "Added to Word Book" : "Add to Word Book"}
+                          zh={isWordSaved(selectedMoreSupermarketWord.word) ? "已加入生词本" : "加入生词本"}
+                        />
+                      </button>
+                      {isWordSaved(selectedMoreSupermarketWord.word) && (
+                        <button
+                          onClick={() => removeWordEntry(selectedMoreSupermarketWord.word)}
+                          className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
+                        >
+                          <ButtonCopy en="Remove from Word Book" zh="移出生词本" />
+                        </button>
+                      )}
+                      <button
+                        onClick={finishSupermarketTrip}
+                        className="mt-6 w-full rounded-2xl bg-banana px-4 py-4 text-lg font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
+                      >
+                        <ButtonCopy en="Finish Supermarket Trip" zh="结束超市购物之旅" />
                       </button>
                     </div>
                   </aside>
