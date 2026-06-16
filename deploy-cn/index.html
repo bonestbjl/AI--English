@@ -4604,6 +4604,165 @@
         },
       ];
 
+      const metroScenes = [
+        {
+          id: "metroEntrance",
+          title: "Metro Entrance",
+          zh: "地铁入口",
+          short: "入口",
+          bg: "assets/metro-entrance-bg.png",
+          bgStyle: "linear-gradient(180deg, #dce5e7 0%, #67777b 58%, #192326 100%)",
+          npc: "metroStationGuide",
+          coreWord: "metro station",
+          intro: {
+            text: "You find the metro entrance and follow the stairs down to the concourse.",
+            zh: "你找到地铁入口，沿楼梯走向地下站厅。",
+          },
+          hotspots: [
+            { id: "metroStation", word: "metro station", phonetic: "/ˈmetroʊ ˌsteɪʃən/", meaning: "地铁站", example: "This metro station connects several neighborhoods.", translation: "这个地铁站连接多个街区。", label: "metro station", zh: "地铁站", x: 52, y: 34, offset: { x: -42, y: -12, mobileX: -21, mobileY: 7 } },
+            { id: "metroSymbol", word: "metro symbol", phonetic: "/ˈmetroʊ ˈsɪmbəl/", meaning: "地铁标志", example: "The metro symbol marks the station entrance.", translation: "地铁标志标明车站入口。", label: "metro symbol", zh: "地铁标志", x: 21, y: 39, offset: { x: -40, y: -14, desktopX: 260, desktopY: 40, mobileX: -20, mobileY: 3 } },
+            { id: "concourse", word: "concourse", phonetic: "/ˈkɑːnkɔːrs/", meaning: "站厅", example: "The concourse is below ground.", translation: "站厅位于地下。", label: "concourse", zh: "站厅", x: 64, y: 55, offset: { x: -36, y: -16, mobileX: -18, mobileY: -10 } },
+            { id: "commuter", word: "commuter", phonetic: "/kəˈmjuːtər/", meaning: "通勤者", example: "A commuter walks toward the trains.", translation: "一名通勤者走向列车。", label: "commuter", zh: "通勤者", x: 80, y: 62, offset: { x: -36, y: -18, mobileX: -18, mobileY: -15 } },
+            { id: "underpass", word: "underpass", phonetic: "/ˈʌndərpæs/", meaning: "地下通道", example: "The underpass leads into the station.", translation: "地下通道通向车站。", label: "underpass", zh: "地下通道", x: 36, y: 67, offset: { x: -38, y: -18, mobileX: -20, mobileY: -19 } },
+            { id: "descend", word: "descend", type: "action", actionMessageEn: "You descend into the station and reach the concourse.", actionMessageZh: "你走下地铁站，来到站厅。", actionEffect: "metroDescend", actionDuration: 2400, phonetic: "/dɪˈsend/", meaning: "下行，走下", example: "We descend into the metro station.", translation: "我们走下地铁站。", label: "descend", zh: "走下", x: 49, y: 52, offset: { x: -34, y: -16, mobileX: -17, mobileY: -7 } },
+          ],
+        },
+        {
+          id: "metroTicketing",
+          title: "Ticketing Area",
+          zh: "票务区",
+          short: "票务",
+          bg: "assets/metro-ticketing-bg.png",
+          bgStyle: "linear-gradient(180deg, #dce6e8 0%, #667b80 58%, #182327 100%)",
+          npc: "metroStationAttendant",
+          coreWord: "fare machine",
+          intro: {
+            text: "You check the fare zones, add value, and prepare your travel pass.",
+            zh: "你查看票价分区、充值余额，并准备好乘车凭证。",
+          },
+          hotspots: [
+            { id: "fareMachine", word: "fare machine", phonetic: "/fer məˈʃiːn/", meaning: "售票机", example: "The fare machine sells travel passes.", translation: "售票机出售乘车凭证。", label: "fare machine", zh: "售票机", x: 25, y: 48, offset: { x: -40, y: -14, desktopX: 115, mobileX: -20, mobileY: -3 } },
+            { id: "travelPass", word: "travel pass", phonetic: "/ˈtrævəl pæs/", meaning: "乘车凭证", example: "I hold my travel pass near the reader.", translation: "我把乘车凭证靠近读卡区域。", label: "travel pass", zh: "乘车凭证", x: 40, y: 66, offset: { x: -38, y: -18, mobileX: -20, mobileY: -18 } },
+            { id: "fareZone", word: "fare zone", phonetic: "/fer zoʊn/", meaning: "票价分区", example: "The fare zone affects the ticket price.", translation: "票价分区会影响车票价格。", label: "fare zone", zh: "票价分区", x: 74, y: 38, offset: { x: -36, y: -14, mobileX: -18, mobileY: 4 } },
+            { id: "storedValue", word: "stored value", phonetic: "/stɔːrd ˈvæljuː/", meaning: "储值金额", example: "I add stored value to my travel pass.", translation: "我给乘车凭证充值。", label: "stored value", zh: "储值金额", x: 80, y: 59, offset: { x: -40, y: -16, mobileX: -140, mobileY: -13 } },
+            { id: "balance", word: "balance", phonetic: "/ˈbæləns/", meaning: "余额", example: "The screen shows my remaining balance.", translation: "屏幕显示我的剩余余额。", label: "balance", zh: "余额", x: 61, y: 67, offset: { x: -34, y: -18, mobileX: -17, mobileY: -18 } },
+            { id: "validate", word: "validate", type: "action", actionMessageEn: "Your travel pass is valid and ready to use.", actionMessageZh: "你的乘车凭证已验证，可以使用。", actionEffect: "metroValidate", actionDuration: 2400, phonetic: "/ˈvælɪdeɪt/", meaning: "验证", example: "I validate my travel pass before entering.", translation: "进站前我验证乘车凭证。", label: "validate", zh: "验证", x: 51, y: 48, offset: { x: -36, y: -14, mobileX: -18, mobileY: -3 } },
+          ],
+        },
+        {
+          id: "metroFareGates",
+          title: "Fare Gates",
+          zh: "闸机区",
+          short: "闸机",
+          bg: "assets/metro-fare-gates-bg.png",
+          bgStyle: "linear-gradient(180deg, #dbe4e5 0%, #64767a 58%, #182225 100%)",
+          npc: "metroGateAttendant",
+          coreWord: "turnstile",
+          intro: {
+            text: "You choose an entry lane and prepare to pass through the fare gates.",
+            zh: "你选择一条进站通道，准备通过地铁闸机。",
+          },
+          hotspots: [
+            { id: "turnstile", word: "turnstile", phonetic: "/ˈtɜːrnstaɪl/", meaning: "旋转闸机", example: "The turnstile controls entry to the platform.", translation: "旋转闸机控制进入站台区域。", label: "turnstile", zh: "旋转闸机", x: 31, y: 60, offset: { x: -38, y: -16, desktopX: 90, mobileX: -20, mobileY: -13 } },
+            { id: "cardReader", word: "card reader", phonetic: "/kɑːrd ˈriːdər/", meaning: "读卡器", example: "Place your pass on the card reader.", translation: "请把乘车凭证放在读卡器上。", label: "card reader", zh: "读卡器", x: 43, y: 46, offset: { x: -38, y: -14, mobileX: -20, mobileY: -1 } },
+            { id: "barrierFlap", word: "barrier flap", phonetic: "/ˈbæriər flæp/", meaning: "闸机挡板", example: "The barrier flap opens after a valid tap.", translation: "有效刷卡后闸机挡板会打开。", label: "barrier flap", zh: "闸机挡板", x: 60, y: 63, offset: { x: -40, y: -18, mobileX: -20, mobileY: -16 } },
+            { id: "entryLane", word: "entry lane", phonetic: "/ˈentri leɪn/", meaning: "进站通道", example: "Use the open entry lane.", translation: "请使用开放的进站通道。", label: "entry lane", zh: "进站通道", x: 79, y: 61, offset: { x: -38, y: -18, mobileX: -20, mobileY: -14 } },
+            { id: "statusLight", word: "status light", phonetic: "/ˈsteɪtəs laɪt/", meaning: "状态灯", example: "The status light turns green.", translation: "状态灯变成绿色。", label: "status light", zh: "状态灯", x: 73, y: 38, offset: { x: -38, y: -14, mobileX: -20, mobileY: 4 } },
+            { id: "tapIn", word: "tap in", type: "action", actionMessageEn: "The light turns green, and the barrier opens.", actionMessageZh: "状态灯变绿，闸机挡板打开了。", actionEffect: "metroTapIn", actionDuration: 2400, phonetic: "/tæp ɪn/", meaning: "刷卡进站", example: "I tap in at the fare gate.", translation: "我在闸机处刷卡进站。", label: "tap in", zh: "刷卡进站", x: 52, y: 48, offset: { x: -34, y: -14, mobileX: -17, mobileY: -3 } },
+          ],
+        },
+        {
+          id: "metroPlatform",
+          title: "Platform",
+          zh: "站台",
+          short: "站台",
+          bg: "assets/metro-platform-bg.png",
+          bgStyle: "linear-gradient(180deg, #dbe5e7 0%, #5d7278 58%, #162126 100%)",
+          npc: "metroPlatformAttendant",
+          coreWord: "platform",
+          intro: {
+            text: "You reach the platform and wait safely behind the yellow line.",
+            zh: "你来到站台，在黄线后安全候车。",
+          },
+          hotspots: [
+            { id: "platform", word: "platform", phonetic: "/ˈplætfɔːrm/", meaning: "站台", example: "The platform is clean and well lit.", translation: "站台干净而且光线明亮。", label: "platform", zh: "站台", x: 45, y: 45, offset: { x: -36, y: -14, mobileX: -18, mobileY: -1 } },
+            { id: "tactilePaving", word: "tactile paving", phonetic: "/ˈtæktaɪl ˈpeɪvɪŋ/", meaning: "盲道铺装", example: "The tactile paving marks the platform edge.", translation: "盲道铺装标示着站台边缘。", label: "tactile paving", zh: "盲道铺装", x: 27, y: 67, offset: { x: -44, y: -18, desktopX: 105, mobileX: -23, mobileY: -18 } },
+            { id: "yellowLine", word: "yellow line", phonetic: "/ˈjeloʊ laɪn/", meaning: "黄色安全线", example: "Please wait behind the yellow line.", translation: "请在黄色安全线后等候。", label: "yellow line", zh: "黄色安全线", x: 55, y: 68, offset: { x: -40, y: -18, mobileX: -20, mobileY: -19 } },
+            { id: "track", word: "track", phonetic: "/træk/", meaning: "轨道", example: "The train runs along the track.", translation: "列车沿着轨道行驶。", label: "track", zh: "轨道", x: 78, y: 62, offset: { x: -32, y: -18, mobileX: -16, mobileY: -15 } },
+            { id: "trainIndicator", word: "train indicator", phonetic: "/treɪn ˈɪndɪkeɪtər/", meaning: "列车信息屏", example: "The train indicator shows the next service.", translation: "列车信息屏显示下一班车。", label: "train indicator", zh: "列车信息屏", x: 76, y: 35, offset: { x: -44, y: -12, mobileX: -23, mobileY: 7 } },
+            { id: "standClear", word: "stand clear", type: "action", actionMessageEn: "You stand safely behind the yellow line as the train approaches.", actionMessageZh: "列车驶近时，你安全地站在黄线后。", actionEffect: "metroStandClear", actionDuration: 2400, phonetic: "/stænd klɪr/", meaning: "站开，保持距离", example: "Stand clear of the platform edge.", translation: "请与站台边缘保持距离。", label: "stand clear", zh: "保持距离", x: 49, y: 57, offset: { x: -38, y: -16, mobileX: -20, mobileY: -11 } },
+          ],
+        },
+        {
+          id: "metroCarriage",
+          title: "Train Carriage",
+          zh: "地铁车厢",
+          short: "车厢",
+          bg: "assets/metro-carriage-bg.png",
+          bgStyle: "linear-gradient(180deg, #e2e8e9 0%, #697a7e 58%, #1b2528 100%)",
+          npc: "metroPassenger",
+          coreWord: "carriage",
+          intro: {
+            text: "You enter the train carriage, find a safe place, and leave the doorway clear.",
+            zh: "你进入地铁车厢，找到安全位置，并为门口留出空间。",
+          },
+          hotspots: [
+            { id: "carriage", word: "carriage", phonetic: "/ˈkærɪdʒ/", meaning: "车厢", example: "This carriage has space near the middle.", translation: "这节车厢中部有空间。", label: "carriage", zh: "车厢", x: 50, y: 35, offset: { x: -36, y: -12, mobileX: -18, mobileY: 7 } },
+            { id: "handrail", word: "handrail", phonetic: "/ˈhændreɪl/", meaning: "扶手", example: "Hold the handrail while the train moves.", translation: "列车行驶时请握住扶手。", label: "handrail", zh: "扶手", x: 25, y: 43, offset: { x: -34, y: -14, desktopX: 100, mobileX: -17, mobileY: 1 } },
+            { id: "grabPole", word: "grab pole", phonetic: "/ɡræb poʊl/", meaning: "立式扶杆", example: "A passenger holds the grab pole.", translation: "一名乘客握着立式扶杆。", label: "grab pole", zh: "立式扶杆", x: 35, y: 64, offset: { x: -36, y: -18, mobileX: -18, mobileY: -16 } },
+            { id: "routeDiagram", word: "route diagram", phonetic: "/ruːt ˈdaɪəɡræm/", meaning: "线路图", example: "The route diagram shows every stop.", translation: "线路图显示每一站。", label: "route diagram", zh: "线路图", x: 75, y: 37, offset: { x: -40, y: -12, mobileX: -88, mobileY: 6 } },
+            { id: "priorityArea", word: "priority area", phonetic: "/praɪˈɔːrəti ˈeriə/", meaning: "爱心专座区域", example: "Keep the priority area available for passengers who need it.", translation: "请把爱心专座区域留给有需要的乘客。", label: "priority area", zh: "爱心专座区域", x: 79, y: 64, offset: { x: -42, y: -18, mobileX: -96, mobileY: -16 } },
+            { id: "moveInside", word: "move inside", type: "action", actionMessageEn: "You move farther inside and leave space near the doors.", actionMessageZh: "你往车厢里面移动，为门口留出空间。", actionEffect: "metroMoveInside", actionDuration: 2400, phonetic: "/muːv ɪnˈsaɪd/", meaning: "往里面走", example: "Please move inside the carriage.", translation: "请往车厢里面走。", label: "move inside", zh: "往里面走", x: 52, y: 56, offset: { x: -38, y: -16, mobileX: -20, mobileY: -10 } },
+          ],
+        },
+        {
+          id: "metroTransfer",
+          title: "Transfer Passage",
+          zh: "换乘通道",
+          short: "换乘",
+          bg: "assets/metro-transfer-bg.png",
+          bgStyle: "linear-gradient(180deg, #dce5e6 0%, #657579 58%, #182326 100%)",
+          npc: "metroTransitWorker",
+          coreWord: "interchange",
+          intro: {
+            text: "You follow the route colors through a passageway to make your connection.",
+            zh: "你沿着线路颜色穿过通道，完成换乘。",
+          },
+          hotspots: [
+            { id: "interchange", word: "interchange", phonetic: "/ˈɪntərtʃeɪndʒ/", meaning: "换乘站，换乘", example: "This interchange connects two metro lines.", translation: "这个换乘站连接两条地铁线路。", label: "interchange", zh: "换乘", x: 47, y: 35, offset: { x: -38, y: -12, mobileX: -20, mobileY: 7 } },
+            { id: "passageway", word: "passageway", phonetic: "/ˈpæsɪdʒweɪ/", meaning: "通道", example: "The passageway leads to another line.", translation: "这条通道通向另一条线路。", label: "passageway", zh: "通道", x: 32, y: 59, offset: { x: -38, y: -16, desktopX: 90, mobileX: -20, mobileY: -13 } },
+            { id: "junction", word: "junction", phonetic: "/ˈdʒʌŋkʃən/", meaning: "岔路口", example: "Turn right at the junction.", translation: "在岔路口右转。", label: "junction", zh: "岔路口", x: 54, y: 60, offset: { x: -34, y: -16, mobileX: -17, mobileY: -13 } },
+            { id: "directionalArrow", word: "directional arrow", phonetic: "/dəˈrekʃənəl ˈæroʊ/", meaning: "方向箭头", example: "Follow the directional arrow to the next line.", translation: "沿方向箭头前往下一条线路。", label: "directional arrow", zh: "方向箭头", x: 75, y: 45, offset: { x: -46, y: -14, mobileX: -24, mobileY: -1 } },
+            { id: "lineColor", word: "line color", phonetic: "/laɪn ˈkʌlər/", meaning: "线路颜色", example: "The line color helps passengers find the route.", translation: "线路颜色帮助乘客找到路线。", label: "line color", zh: "线路颜色", x: 82, y: 66, offset: { x: -38, y: -18, mobileX: -20, mobileY: -18 } },
+            { id: "makeConnection", word: "make a connection", type: "action", actionMessageEn: "You follow the line color and make your connection.", actionMessageZh: "你沿着线路颜色指引完成了换乘。", actionEffect: "metroMakeConnection", actionDuration: 2400, phonetic: "/meɪk ə kəˈnekʃən/", meaning: "完成换乘", example: "We make a connection at this interchange.", translation: "我们在这个换乘站完成换乘。", label: "make a connection", zh: "完成换乘", x: 58, y: 47, offset: { x: -48, y: -14, mobileX: -25, mobileY: -3 } },
+          ],
+        },
+        {
+          id: "metroExit",
+          title: "Destination Exit",
+          zh: "目的地出站区",
+          short: "出站",
+          bg: "assets/metro-exit-bg.png",
+          bgStyle: "linear-gradient(180deg, #e8ece8 0%, #77847d 58%, #202925 100%)",
+          npc: "metroLocalCommuter",
+          coreWord: "way out",
+          completeText: "Great! You completed the metro trip and reached the correct neighborhood.",
+          completeZh: "太棒了！你完成了地铁之旅，并到达了正确的街区。",
+          intro: {
+            text: "You follow the way out, return to ground level, and look for your destination.",
+            zh: "你沿着出口回到地面，寻找自己的目的地。",
+          },
+          hotspots: [
+            { id: "wayOut", word: "way out", phonetic: "/weɪ aʊt/", meaning: "出口方向", example: "The way out leads to the station plaza.", translation: "出口方向通向车站广场。", label: "way out", zh: "出口方向", x: 35, y: 38, offset: { x: -36, y: -14, desktopX: 90, mobileX: -18, mobileY: 4 } },
+            { id: "landmark", word: "landmark", phonetic: "/ˈlændmɑːrk/", meaning: "地标", example: "The landmark helps me find the right street.", translation: "这个地标帮助我找到正确的街道。", label: "landmark", zh: "地标", x: 76, y: 36, offset: { x: -36, y: -12, mobileX: -18, mobileY: 7 } },
+            { id: "neighborhood", word: "neighborhood", phonetic: "/ˈneɪbərhʊd/", meaning: "街区", example: "This neighborhood is busy in the evening.", translation: "这个街区傍晚很热闹。", label: "neighborhood", zh: "街区", x: 81, y: 61, offset: { x: -42, y: -18, mobileX: -22, mobileY: -14 } },
+            { id: "groundLevel", word: "ground level", phonetic: "/ɡraʊnd ˈlevəl/", meaning: "地面层", example: "The stairs take us back to ground level.", translation: "楼梯带我们回到地面层。", label: "ground level", zh: "地面层", x: 48, y: 66, offset: { x: -40, y: -18, mobileX: -20, mobileY: -18 } },
+            { id: "stationPlaza", word: "station plaza", phonetic: "/ˈsteɪʃən ˈplɑːzə/", meaning: "车站广场", example: "People meet in the station plaza.", translation: "人们在车站广场会面。", label: "station plaza", zh: "车站广场", x: 66, y: 52, offset: { x: -40, y: -16, mobileX: -20, mobileY: -7 } },
+            { id: "emerge", word: "emerge", type: "action", actionMessageEn: "You emerge at ground level and find the correct neighborhood.", actionMessageZh: "你来到地面，找到了正确的街区。", actionEffect: "metroEmerge", actionDuration: 2400, phonetic: "/ɪˈmɜːrdʒ/", meaning: "走出，出现", example: "We emerge from the station into daylight.", translation: "我们走出车站，来到阳光下。", label: "emerge", zh: "走出", x: 43, y: 53, offset: { x: -34, y: -16, mobileX: -17, mobileY: -7 } },
+          ],
+        },
+      ];
+
       const fruitShopDialogues = {
         fruitEntranceShopkeeper: {
           id: "fruitEntranceShopkeeper",
@@ -5467,6 +5626,93 @@
             { text: "I brought a reusable tote.", choiceZh: "我带了一个环保购物袋。", reply: "Perfect. You can pack everyday items inside it.", translation: "很好。您可以把日常商品装进去。" },
             { text: "Where should I put the frozen food?", choiceZh: "冷冻食品应该放在哪里？", reply: "Place it inside the cooler pouch.", translation: "请把它放进保冷袋。" },
             { text: "I’ll keep the fragile items separate.", choiceZh: "我会把易碎商品分开放。", reply: "That will keep your shopping safe.", translation: "这样可以保护您购买的商品。" },
+          ],
+        },
+      };
+
+      const metroDialogues = {
+        metroStationGuide: {
+          id: "metroStationGuide",
+          speaker: "Station Guide",
+          zh: "车站引导员",
+          text: "The concourse is downstairs through this entrance.",
+          translation: "站厅就在这个入口下方。",
+          options: [
+            { text: "Is this the metro entrance?", choiceZh: "这是地铁入口吗？", reply: "Yes. Follow the stairs down to the concourse.", translation: "是的。沿楼梯向下就能到达站厅。" },
+            { text: "Where does the underpass lead?", choiceZh: "地下通道通向哪里？", reply: "It leads directly into the station.", translation: "它直接通向地铁站内。" },
+            { text: "Are many commuters here now?", choiceZh: "现在这里有很多通勤者吗？", reply: "Yes. This is a busy time for the station.", translation: "是的。现在是车站的繁忙时段。" },
+          ],
+        },
+        metroStationAttendant: {
+          id: "metroStationAttendant",
+          speaker: "Station Attendant",
+          zh: "车站工作人员",
+          text: "Check your fare zone and balance before you enter.",
+          translation: "进站前请查看票价分区和余额。",
+          options: [
+            { text: "How do I add stored value?", choiceZh: "我怎样充值储值金额？", reply: "Choose the top-up option on the fare machine.", translation: "请在售票机上选择充值选项。" },
+            { text: "Is my travel pass valid?", choiceZh: "我的乘车凭证有效吗？", reply: "Yes. The machine shows that it is ready to use.", translation: "有效。机器显示它可以使用。" },
+            { text: "Which fare zone do I need?", choiceZh: "我需要哪个票价分区？", reply: "Your destination is in the second fare zone.", translation: "你的目的地在第二票价分区。" },
+          ],
+        },
+        metroGateAttendant: {
+          id: "metroGateAttendant",
+          speaker: "Gate Attendant",
+          zh: "闸机工作人员",
+          text: "Use the open entry lane and tap your pass on the reader.",
+          translation: "请使用开放的进站通道，并在读卡器上刷乘车凭证。",
+          options: [
+            { text: "Where should I tap my pass?", choiceZh: "我应该在哪里刷乘车凭证？", reply: "Tap it on the card reader beside the status light.", translation: "请在状态灯旁边的读卡器上刷卡。" },
+            { text: "What does the green light mean?", choiceZh: "绿灯表示什么？", reply: "It means the barrier flap will open.", translation: "它表示闸机挡板会打开。" },
+            { text: "Can I use this entry lane?", choiceZh: "我可以使用这条进站通道吗？", reply: "Yes. This lane is open.", translation: "可以。这条通道是开放的。" },
+          ],
+        },
+        metroPlatformAttendant: {
+          id: "metroPlatformAttendant",
+          speaker: "Platform Attendant",
+          zh: "站台工作人员",
+          text: "Please stay behind the yellow line while the train approaches.",
+          translation: "列车驶近时，请站在黄线后。",
+          options: [
+            { text: "Is this the correct platform?", choiceZh: "这是正确的站台吗？", reply: "Yes. Check the train indicator for the next service.", translation: "是的。请查看列车信息屏确认下一班车。" },
+            { text: "What is the tactile paving for?", choiceZh: "盲道铺装有什么作用？", reply: "It helps mark the safe edge of the platform.", translation: "它帮助标示站台的安全边缘。" },
+            { text: "When will the train arrive?", choiceZh: "列车什么时候到？", reply: "The train indicator shows two minutes.", translation: "列车信息屏显示还有两分钟。" },
+          ],
+        },
+        metroPassenger: {
+          id: "metroPassenger",
+          speaker: "Passenger",
+          zh: "乘客",
+          text: "Please move farther inside so the doorway stays clear.",
+          translation: "请往里面走，让门口保持畅通。",
+          options: [
+            { text: "Can I hold this grab pole?", choiceZh: "我可以握这个立式扶杆吗？", reply: "Yes. It will help you stay steady.", translation: "可以。它能帮助你站稳。" },
+            { text: "Where is the priority area?", choiceZh: "爱心专座区域在哪里？", reply: "It is beside the doors on your right.", translation: "它在你右侧车门旁边。" },
+            { text: "Does the route diagram show our stop?", choiceZh: "线路图显示我们的站吗？", reply: "Yes. Your stop is four stations away.", translation: "显示。你的站还有四站。" },
+          ],
+        },
+        metroTransitWorker: {
+          id: "metroTransitWorker",
+          speaker: "Transit Worker",
+          zh: "地铁工作人员",
+          text: "Follow the line color through the passageway to make your connection.",
+          translation: "请沿着线路颜色穿过通道完成换乘。",
+          options: [
+            { text: "Which direction should I follow?", choiceZh: "我应该往哪个方向走？", reply: "Follow the directional arrow at the junction.", translation: "请沿着岔路口的方向箭头走。" },
+            { text: "Is this the correct line color?", choiceZh: "这是正确的线路颜色吗？", reply: "Yes. Keep following the teal line.", translation: "是的。继续沿着青绿色线路走。" },
+            { text: "How far is the interchange?", choiceZh: "换乘位置有多远？", reply: "It is at the end of this passageway.", translation: "它就在这条通道的尽头。" },
+          ],
+        },
+        metroLocalCommuter: {
+          id: "metroLocalCommuter",
+          speaker: "Local Commuter",
+          zh: "当地通勤者",
+          text: "The way out on the left leads to the station plaza.",
+          translation: "左侧的出口方向通向车站广场。",
+          options: [
+            { text: "Which way leads to the neighborhood?", choiceZh: "哪条路通向这个街区？", reply: "Go through the plaza and turn right at the landmark.", translation: "穿过广场，在地标处右转。" },
+            { text: "Is the landmark near ground level?", choiceZh: "地标在地面层附近吗？", reply: "Yes. You will see it as soon as you emerge.", translation: "是的。你一走出车站就能看到。" },
+            { text: "Does this exit reach the station plaza?", choiceZh: "这个出口通向车站广场吗？", reply: "Yes. The plaza is directly outside.", translation: "是的。广场就在外面。" },
           ],
         },
       };
@@ -6792,6 +7038,66 @@
         },
       ];
 
+      const moreMetroPages = [
+        {
+          id: "metro-station-facilities",
+          title: "Station Facilities",
+          zh: "车站设施",
+          words: [
+            { id: "help-point", word: "help point", phonetic: "/help pɔɪnt/", meaning: "求助点", example: "Use the help point if you need assistance.", translation: "如果需要帮助，请使用求助点。" },
+            { id: "fare-chart", word: "fare chart", phonetic: "/fer tʃɑːrt/", meaning: "票价表", example: "The fare chart shows prices for each zone.", translation: "票价表显示各个分区的价格。" },
+            { id: "station-clock", word: "station clock", phonetic: "/ˈsteɪʃən klɑːk/", meaning: "车站时钟", example: "The station clock shows the current time.", translation: "车站时钟显示当前时间。" },
+            { id: "platform-bench", word: "platform bench", phonetic: "/ˈplætfɔːrm bentʃ/", meaning: "站台长椅", example: "A passenger waits on the platform bench.", translation: "一名乘客坐在站台长椅上等候。" },
+            { id: "public-toilet", word: "public toilet", phonetic: "/ˈpʌblɪk ˈtɔɪlət/", meaning: "公共卫生间", example: "The public toilet is near the station office.", translation: "公共卫生间在车站办公室附近。" },
+            { id: "bicycle-rack", word: "bicycle rack", phonetic: "/ˈbaɪsɪkəl ræk/", meaning: "自行车停放架", example: "The bicycle rack is outside the station.", translation: "自行车停放架在车站外面。" },
+            { id: "emergency-intercom", word: "emergency intercom", phonetic: "/ɪˈmɜːrdʒənsi ˈɪntərkɑːm/", meaning: "紧急对讲机", example: "The emergency intercom connects you with station staff.", translation: "紧急对讲机可以联系车站工作人员。" },
+            { id: "ventilation-grille", word: "ventilation grille", phonetic: "/ˌventəˈleɪʃən ɡrɪl/", meaning: "通风格栅", example: "Air flows through the ventilation grille.", translation: "空气通过通风格栅流动。" },
+            { id: "standing-area", word: "standing area", phonetic: "/ˈstændɪŋ ˈeriə/", meaning: "候车站立区", example: "Please wait in the marked standing area.", translation: "请在标示的候车站立区等候。" },
+            { id: "station-artwork", word: "station artwork", phonetic: "/ˈsteɪʃən ˈɑːrtwɜːrk/", meaning: "车站艺术装饰", example: "The station artwork reflects the neighborhood.", translation: "车站艺术装饰体现了这个街区的特色。" },
+            { id: "station-office", word: "station office", phonetic: "/ˈsteɪʃən ˈɔːfɪs/", meaning: "车站办公室", example: "Ask at the station office about lost property.", translation: "可以到车站办公室询问失物。" },
+            { id: "accessible-ramp", word: "accessible ramp", phonetic: "/əkˈsesəbəl ræmp/", meaning: "无障碍坡道", example: "The accessible ramp leads to the entrance.", translation: "无障碍坡道通向入口。" },
+          ],
+        },
+        {
+          id: "metro-train-carriage",
+          title: "Train & Carriage",
+          zh: "列车与车厢",
+          words: [
+            { id: "carriage-number", word: "carriage number", phonetic: "/ˈkærɪdʒ ˈnʌmbər/", meaning: "车厢编号", example: "The carriage number is shown beside the door.", translation: "车厢编号显示在车门旁边。" },
+            { id: "ceiling-strap", word: "ceiling strap", phonetic: "/ˈsiːlɪŋ stræp/", meaning: "吊环", example: "Hold the ceiling strap when the train is crowded.", translation: "列车拥挤时请握住吊环。" },
+            { id: "driver-cab", word: "driver cab", phonetic: "/ˈdraɪvər kæb/", meaning: "驾驶室", example: "The driver cab is at the front of the train.", translation: "驾驶室在列车前部。" },
+            { id: "door-chime", word: "door chime", phonetic: "/dɔːr tʃaɪm/", meaning: "车门提示音", example: "The door chime sounds before the doors close.", translation: "车门关闭前会响起提示音。" },
+            { id: "emergency-handle", word: "emergency handle", phonetic: "/ɪˈmɜːrdʒənsi ˈhændəl/", meaning: "紧急手柄", example: "Use the emergency handle only when necessary.", translation: "只有在必要时才使用紧急手柄。" },
+            { id: "carriage-display", word: "carriage display", phonetic: "/ˈkærɪdʒ dɪˈspleɪ/", meaning: "车厢显示屏", example: "The carriage display shows the next stop.", translation: "车厢显示屏显示下一站。" },
+            { id: "floor-marking", word: "floor marking", phonetic: "/flɔːr ˈmɑːrkɪŋ/", meaning: "地面标识", example: "The floor marking shows where to stand.", translation: "地面标识显示应该站在哪里。" },
+            { id: "next-stop-indicator", word: "next-stop indicator", phonetic: "/nekst stɑːp ˈɪndɪkeɪtər/", meaning: "下一站提示器", example: "The next-stop indicator lights up above the door.", translation: "下一站提示器在车门上方亮起。" },
+            { id: "audible-alert", word: "audible alert", phonetic: "/ˈɔːdəbəl əˈlɜːrt/", meaning: "声音提示", example: "An audible alert warns passengers about the closing doors.", translation: "声音提示提醒乘客车门即将关闭。" },
+            { id: "courtesy-zone", word: "courtesy zone", phonetic: "/ˈkɜːrtəsi zoʊn/", meaning: "礼让区域", example: "Keep the courtesy zone clear for passengers who need it.", translation: "请把礼让区域留给有需要的乘客。" },
+            { id: "train-operator", word: "train operator", phonetic: "/treɪn ˈɑːpəreɪtər/", meaning: "列车驾驶员", example: "The train operator makes a safety announcement.", translation: "列车驾驶员发布安全广播。" },
+            { id: "train-doors", word: "train doors", phonetic: "/treɪn dɔːrz/", meaning: "列车车门", example: "Stand back when the train doors open.", translation: "列车车门打开时请往后站。" },
+          ],
+        },
+        {
+          id: "metro-routes-notices",
+          title: "Routes, Notices & Travel Phrases",
+          zh: "线路、提示与出行表达",
+          words: [
+            { id: "inbound-service", word: "inbound service", phonetic: "/ˈɪnbaʊnd ˈsɜːrvɪs/", meaning: "进城方向列车", example: "The inbound service arrives on platform two.", translation: "进城方向列车停靠二号站台。" },
+            { id: "outbound-service", word: "outbound service", phonetic: "/ˈaʊtbaʊnd ˈsɜːrvɪs/", meaning: "出城方向列车", example: "Take the outbound service for the suburbs.", translation: "前往郊区请乘坐出城方向列车。" },
+            { id: "next-stop", word: "next stop", phonetic: "/nekst stɑːp/", meaning: "下一站", example: "Our next stop is Central Square.", translation: "我们的下一站是中央广场。" },
+            { id: "service-update", word: "service update", phonetic: "/ˈsɜːrvɪs ˌʌpˈdeɪt/", meaning: "运营信息更新", example: "Check the service update before you travel.", translation: "出行前请查看运营信息更新。" },
+            { id: "temporary-closure", word: "temporary closure", phonetic: "/ˈtempəreri ˈkloʊʒər/", meaning: "临时关闭", example: "There is a temporary closure at the north entrance.", translation: "北侧入口暂时关闭。" },
+            { id: "replacement-bus", word: "replacement bus", phonetic: "/rɪˈpleɪsmənt bʌs/", meaning: "替代接驳巴士", example: "A replacement bus serves the closed section.", translation: "替代接驳巴士服务于关闭区段。" },
+            { id: "last-service", word: "last service", phonetic: "/læst ˈsɜːrvɪs/", meaning: "末班车", example: "The last service leaves at midnight.", translation: "末班车在午夜发车。" },
+            { id: "peak-hours", word: "peak hours", phonetic: "/piːk ˈaʊərz/", meaning: "高峰时段", example: "The metro is crowded during peak hours.", translation: "地铁在高峰时段很拥挤。" },
+            { id: "off-peak-fare", word: "off-peak fare", phonetic: "/ˌɔːf piːk fer/", meaning: "非高峰票价", example: "The off-peak fare is lower.", translation: "非高峰票价更低。" },
+            { id: "mind-the-gap", word: "mind the gap", phonetic: "/maɪnd ðə ɡæp/", meaning: "小心站台缝隙", example: "Mind the gap when you leave the train.", translation: "下车时请小心站台缝隙。" },
+            { id: "alight-here", word: "alight here", phonetic: "/əˈlaɪt hɪr/", meaning: "在此下车", example: "Alight here for the museum district.", translation: "前往博物馆区请在此下车。" },
+            { id: "connect-here", word: "connect here", phonetic: "/kəˈnekt hɪr/", meaning: "在此换乘", example: "Connect here for the green line.", translation: "前往绿线请在此换乘。" },
+          ],
+        },
+      ];
+
       const moreOfficeCount = moreOfficePages.reduce(
         (count, page) => count + page.words.length,
         0
@@ -6805,6 +7111,10 @@
         0
       );
       const moreSupermarketCount = moreSupermarketPages.reduce(
+        (count, page) => count + page.words.length,
+        0
+      );
+      const moreMetroCount = moreMetroPages.reduce(
         (count, page) => count + page.words.length,
         0
       );
@@ -6971,6 +7281,24 @@
           visualZh: "日常购物",
           image: "linear-gradient(180deg, rgba(10, 18, 14, 0.02), rgba(10, 18, 14, 0.72)), url('assets/supermarket-cover.png')",
           imagePosition: "center 55%",
+        },
+        {
+          id: "metro",
+          title: "Metro",
+          zh: "地铁",
+          status: "Available",
+          statusZh: "可进入",
+          description: "Enter the station, pass the fare gates, ride the train, transfer, and learn real metro English.",
+          descriptionZh: "进入车站、通过闸机、乘坐列车、完成换乘，学习真实地铁英语。",
+          button: "Enter Metro",
+          buttonZh: "进入地铁",
+          available: true,
+          chapter: "metro",
+          accent: "#6fc7c9",
+          visual: "Urban Transit",
+          visualZh: "城市通勤",
+          image: "linear-gradient(180deg, rgba(7, 17, 20, 0.02), rgba(7, 17, 20, 0.74)), url('assets/metro-cover.png')",
+          imagePosition: "center 54%",
         },
       ];
 
@@ -7488,6 +7816,7 @@
         const [selectedMoreHotelWord, setSelectedMoreHotelWord] = useState(null);
         const [selectedMoreRestaurantWord, setSelectedMoreRestaurantWord] = useState(null);
         const [selectedMoreSupermarketWord, setSelectedMoreSupermarketWord] = useState(null);
+        const [selectedMoreMetroWord, setSelectedMoreMetroWord] = useState(null);
         const [dialogueReply, setDialogueReply] = useState(null);
         const [conversationDone, setConversationDone] = useState([]);
         const [completedActions, setCompletedActions] = useState([]);
@@ -7501,6 +7830,7 @@
         const [learnedMoreHotelWords, setLearnedMoreHotelWords] = useState([]);
         const [learnedMoreRestaurantWords, setLearnedMoreRestaurantWords] = useState([]);
         const [learnedMoreSupermarketWords, setLearnedMoreSupermarketWords] = useState([]);
+        const [learnedMoreMetroWords, setLearnedMoreMetroWords] = useState([]);
         const [learnedWords, setLearnedWords] = useState([]);
         const [savedWords, setSavedWords] = useState(loadWordBookEntries);
         const [playingKey, setPlayingKey] = useState(null);
@@ -7529,6 +7859,8 @@
         const [showMoreRestaurantBook, setShowMoreRestaurantBook] = useState(false);
         const [showMoreSupermarketChoice, setShowMoreSupermarketChoice] = useState(false);
         const [showMoreSupermarketBook, setShowMoreSupermarketBook] = useState(false);
+        const [showMoreMetroChoice, setShowMoreMetroChoice] = useState(false);
+        const [showMoreMetroBook, setShowMoreMetroBook] = useState(false);
         const [showMobileObserve, setShowMobileObserve] = useState(false);
         const [showMobileDialogue, setShowMobileDialogue] = useState(false);
         const [showMobileTripMap, setShowMobileTripMap] = useState(false);
@@ -7541,6 +7873,7 @@
         const [moreHotelPageIndex, setMoreHotelPageIndex] = useState(0);
         const [moreRestaurantPageIndex, setMoreRestaurantPageIndex] = useState(0);
         const [moreSupermarketPageIndex, setMoreSupermarketPageIndex] = useState(0);
+        const [moreMetroPageIndex, setMoreMetroPageIndex] = useState(0);
         const [showEnding, setShowEnding] = useState(false);
         const [isWalking, setIsWalking] = useState(false);
         const [animalEffect, setAnimalEffect] = useState(null);
@@ -7590,6 +7923,7 @@
         const isHotelChapter = currentChapter === "hotel";
         const isRestaurantChapter = currentChapter === "restaurant";
         const isSupermarketChapter = currentChapter === "supermarket";
+        const isMetroChapter = currentChapter === "metro";
         const activeScenes = isZooChapter
           ? scenes
           : isFruitShopChapter
@@ -7606,7 +7940,9 @@
           ? hotelScenes
           : isRestaurantChapter
           ? restaurantScenes
-          : supermarketScenes;
+          : isSupermarketChapter
+          ? supermarketScenes
+          : metroScenes;
         const activeDialogues = isZooChapter
           ? dialogues
           : isFruitShopChapter
@@ -7623,7 +7959,9 @@
           ? hotelDialogues
           : isRestaurantChapter
           ? restaurantDialogues
-          : supermarketDialogues;
+          : isSupermarketChapter
+          ? supermarketDialogues
+          : metroDialogues;
         const chapterTitle = isZooChapter
           ? "Zoo Trip"
           : isFruitShopChapter
@@ -7640,7 +7978,9 @@
           ? "Hotel Stay"
           : isRestaurantChapter
           ? "Restaurant Visit"
-          : "Supermarket Trip";
+          : isSupermarketChapter
+          ? "Supermarket Trip"
+          : "Metro Trip";
         const chapterTitleZh = isZooChapter
           ? "动物园之旅"
           : isFruitShopChapter
@@ -7657,7 +7997,9 @@
           ? "酒店入住之旅"
           : isRestaurantChapter
           ? "餐厅用餐之旅"
-          : "超市购物之旅";
+          : isSupermarketChapter
+          ? "超市购物之旅"
+          : "地铁之旅";
         const chapterWordBookScene = isZooChapter
           ? "Zoo"
           : isFruitShopChapter
@@ -7674,7 +8016,9 @@
           ? "Hotel"
           : isRestaurantChapter
           ? "Restaurant"
-          : "Supermarket";
+          : isSupermarketChapter
+          ? "Supermarket"
+          : "Metro";
         const endingTitle = isZooChapter
           ? "Great job! Your zoo trip is finished."
           : isFruitShopChapter
@@ -7691,7 +8035,9 @@
           ? "Great job! Your hotel stay is finished."
           : isRestaurantChapter
           ? "Great job! Your restaurant visit is finished."
-          : "Great job! Your supermarket trip is finished.";
+          : isSupermarketChapter
+          ? "Great job! Your supermarket trip is finished."
+          : "Great job! Your metro trip is finished.";
         const endingZh = isZooChapter
           ? "太棒了！今天的动物园之旅到此结束啦。"
           : isFruitShopChapter
@@ -7708,7 +8054,9 @@
           ? "太棒了！你的酒店入住之旅完成了。"
           : isRestaurantChapter
           ? "太棒了！你的餐厅用餐之旅完成了。"
-          : "太棒了！你的超市购物之旅完成了。";
+          : isSupermarketChapter
+          ? "太棒了！你的超市购物之旅完成了。"
+          : "太棒了！你的地铁之旅完成了。";
         const restartLabel = isZooChapter
           ? "Restart Trip"
           : isFruitShopChapter
@@ -7725,7 +8073,9 @@
           ? "Restart Hotel"
           : isRestaurantChapter
           ? "Restart Restaurant"
-          : "Restart Supermarket";
+          : isSupermarketChapter
+          ? "Restart Supermarket"
+          : "Restart Metro";
         const restartZh = isZooChapter
           ? "重新开始旅程"
           : isFruitShopChapter
@@ -7742,7 +8092,9 @@
           ? "重新开始酒店"
           : isRestaurantChapter
           ? "重新开始餐厅"
-          : "重新开始超市";
+          : isSupermarketChapter
+          ? "重新开始超市"
+          : "重新开始地铁";
         const welcomeIntro = isZooChapter
           ? {
               label: "Zoo Trip",
@@ -7831,7 +8183,8 @@
               action: "Start Restaurant Visit",
               actionZh: "开始餐厅用餐之旅",
             }
-          : {
+          : isSupermarketChapter
+          ? {
               label: "Supermarket Trip",
               labelZh: "超市购物之旅",
               title: "Welcome to the supermarket!",
@@ -7840,6 +8193,16 @@
               zh: "今天你会走进超市、寻找商品、向店员求助、完成结账和装袋，并学习真实超市英语。",
               action: "Start Supermarket Trip",
               actionZh: "开始超市购物之旅",
+            }
+          : {
+              label: "Metro Trip",
+              labelZh: "地铁之旅",
+              title: "Welcome to the metro!",
+              titleZh: "欢迎来到地铁站！",
+              text: "Today, you will enter a metro station, check the route, pass through the fare gates, find the correct platform, ride the train, make a transfer, and learn real metro English.",
+              zh: "今天你会进入地铁站、查看线路、通过闸机、找到正确站台、乘坐列车、完成换乘，并学习真实地铁英语。",
+              action: "Start Metro Trip",
+              actionZh: "开始地铁之旅",
             };
         const currentScene = activeScenes[currentIndex];
         const currentDialogue = currentScene.npc ? activeDialogues[currentScene.npc] : null;
@@ -8093,6 +8456,28 @@
                 zh: `不错！你又认识了 ${exploredMoreSupermarketCount} 个超市词汇。`,
               }
             : null;
+        const currentMoreMetroPage = moreMetroPages[moreMetroPageIndex];
+        const exploredMoreMetroCount = learnedMoreMetroWords.length;
+        const currentMetroPageExploredCount = currentMoreMetroPage.words.filter((word) =>
+          learnedMoreMetroWords.includes(word.id)
+        ).length;
+        const moreMetroReward =
+          exploredMoreMetroCount === moreMetroCount
+            ? {
+                text: "Amazing! You discovered all more metro words.",
+                zh: "太厉害了！你探索了全部拓展地铁词汇。",
+              }
+            : currentMetroPageExploredCount === currentMoreMetroPage.words.length
+            ? {
+                text: "Great explorer! You completed one metro page.",
+                zh: "太棒了！你完成了一页地铁词汇探索。",
+              }
+            : exploredMoreMetroCount >= 5
+            ? {
+                text: `Nice! You discovered ${exploredMoreMetroCount} more metro words.`,
+                zh: `不错！你又认识了 ${exploredMoreMetroCount} 个地铁词汇。`,
+              }
+            : null;
         const wordBookFilters = [
           { id: "all", en: "All", zh: "全部" },
           { id: "zoo", en: "Zoo", zh: "动物园" },
@@ -8269,6 +8654,19 @@
           };
         }
 
+        function makeMoreMetroWordBookEntry(word) {
+          return {
+            word: word.word,
+            zh: word.meaning,
+            phonetic: word.phonetic,
+            example: word.example,
+            exampleZh: word.translation,
+            scene: "Metro / More Metro Words",
+            type: "travel",
+            addedAt: new Date().toISOString(),
+          };
+        }
+
         function isWordSaved(word) {
           const key = getWordKey(word);
           return savedWords.some((item) => getWordKey(item.word) === key);
@@ -8301,6 +8699,7 @@
           setSelectedMoreHotelWord(null);
           setSelectedMoreRestaurantWord(null);
           setSelectedMoreSupermarketWord(null);
+          setSelectedMoreMetroWord(null);
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
           setShowMoreFruitsChoice(false);
@@ -8319,6 +8718,8 @@
           setShowMoreHotelBook(false);
           setShowMoreRestaurantBook(false);
           setShowMoreSupermarketBook(false);
+          setShowMoreMetroChoice(false);
+          setShowMoreMetroBook(false);
           setIsReviewingWordBook(false);
           setReviewRevealed(false);
           setReviewIndex(0);
@@ -8484,6 +8885,15 @@
           speakEnglish(word.word, 0.9, `more-supermarket-${word.id}-normal`);
         }
 
+        function openMoreMetroWord(word) {
+          setSelectedMoreMetroWord(word);
+          setLearnedMoreMetroWords((items) =>
+            items.includes(word.id) ? items : [...items, word.id]
+          );
+          rememberWord(word.word);
+          speakEnglish(word.word, 0.9, `more-metro-${word.id}-normal`);
+        }
+
         function finishZooTrip() {
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
@@ -8547,6 +8957,13 @@
           setShowMoreSupermarketChoice(false);
           setShowMoreSupermarketBook(false);
           setSelectedMoreSupermarketWord(null);
+          setShowEnding(true);
+        }
+
+        function finishMetroTrip() {
+          setShowMoreMetroChoice(false);
+          setShowMoreMetroBook(false);
+          setSelectedMoreMetroWord(null);
           setShowEnding(true);
         }
 
@@ -8889,6 +9306,37 @@
           setCurrentView("zoo");
         }
 
+        function enterMetro() {
+          setSceneSelectHint("");
+          setCurrentChapter("metro");
+          setCurrentIndex(0);
+          setSelectedHotspot(null);
+          setSelectedMoreAnimal(null);
+          setSelectedMoreFruit(null);
+          setSelectedMoreCampusWord(null);
+          setSelectedMoreCafeWord(null);
+          setSelectedMoreAirportWord(null);
+          setSelectedMoreOfficeWord(null);
+          setSelectedMoreHotelWord(null);
+          setSelectedMoreRestaurantWord(null);
+          setSelectedMoreSupermarketWord(null);
+          setSelectedMoreMetroWord(null);
+          setDialogueReply(null);
+          setConversationDone([]);
+          setCompletedActions([]);
+          setLearnedHotspotKeys([]);
+          setLearnedWords([]);
+          setProgressHint("");
+          setAnimalEffect(null);
+          setShowEnding(false);
+          setShowMoreMetroChoice(false);
+          setShowMoreMetroBook(false);
+          setMoreMetroPageIndex(0);
+          setShowWelcome(true);
+          setWelcomeLeaving(false);
+          setCurrentView("zoo");
+        }
+
         function enterCampus() {
           setSceneSelectHint("");
           setCurrentChapter("campus");
@@ -8965,6 +9413,7 @@
           setSelectedMoreHotelWord(null);
           setSelectedMoreRestaurantWord(null);
           setSelectedMoreSupermarketWord(null);
+          setSelectedMoreMetroWord(null);
           setDialogueReply(null);
           setProgressHint("");
           setShowEnding(false);
@@ -8977,6 +9426,7 @@
           setShowMoreHotelBook(false);
           setShowMoreRestaurantBook(false);
           setShowMoreSupermarketBook(false);
+          setShowMoreMetroBook(false);
           setShowMoreAnimalsChoice(isZooChapter);
           setShowMoreFruitsChoice(isFruitShopChapter);
           setShowMoreCampusChoice(isCampusChapter);
@@ -8986,6 +9436,7 @@
           setShowMoreHotelChoice(isHotelChapter);
           setShowMoreRestaurantChoice(isRestaurantChapter);
           setShowMoreSupermarketChoice(isSupermarketChapter);
+          setShowMoreMetroChoice(isMetroChapter);
         }
 
         function walkForward() {
@@ -9024,6 +9475,7 @@
           setSelectedMoreHotelWord(null);
           setSelectedMoreRestaurantWord(null);
           setSelectedMoreSupermarketWord(null);
+          setSelectedMoreMetroWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -9037,6 +9489,7 @@
           setLearnedMoreHotelWords([]);
           setLearnedMoreRestaurantWords([]);
           setLearnedMoreSupermarketWords([]);
+          setLearnedMoreMetroWords([]);
           setLearnedWords([]);
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
@@ -9052,10 +9505,12 @@
           setShowMoreHotelChoice(false);
           setShowMoreRestaurantChoice(false);
           setShowMoreSupermarketChoice(false);
+          setShowMoreMetroChoice(false);
           setShowMoreOfficeBook(false);
           setShowMoreHotelBook(false);
           setShowMoreRestaurantBook(false);
           setShowMoreSupermarketBook(false);
+          setShowMoreMetroBook(false);
           setMoreAnimalsPageIndex(0);
           setMoreFruitsPageIndex(0);
           setMoreCampusPageIndex(0);
@@ -9065,8 +9520,9 @@
           setMoreHotelPageIndex(0);
           setMoreRestaurantPageIndex(0);
           setMoreSupermarketPageIndex(0);
+          setMoreMetroPageIndex(0);
           setShowEnding(false);
-          setShowWelcome(isZooChapter || isCampusChapter || isCafeChapter || isAirportChapter || isOfficeChapter || isHotelChapter || isRestaurantChapter || isSupermarketChapter);
+          setShowWelcome(isZooChapter || isCampusChapter || isCafeChapter || isAirportChapter || isOfficeChapter || isHotelChapter || isRestaurantChapter || isSupermarketChapter || isMetroChapter);
           setWelcomeLeaving(false);
           setAnimalEffect(null);
         }
@@ -9564,6 +10020,8 @@
                               ? enterRestaurant
                               : scene.chapter === "supermarket"
                               ? enterSupermarket
+                              : scene.chapter === "metro"
+                              ? enterMetro
                               : enterZoo
                             : showComingSoon
                         }
@@ -9901,6 +10359,7 @@
                   setSelectedMoreHotelWord(null);
                   setSelectedMoreRestaurantWord(null);
                   setSelectedMoreSupermarketWord(null);
+                  setSelectedMoreMetroWord(null);
                   setShowMoreAnimalsChoice(false);
                   setShowMoreAnimalsBook(false);
                   setShowMoreFruitsChoice(false);
@@ -9915,10 +10374,12 @@
                   setShowMoreHotelChoice(false);
                   setShowMoreRestaurantChoice(false);
                   setShowMoreSupermarketChoice(false);
+                  setShowMoreMetroChoice(false);
                   setShowMoreOfficeBook(false);
                   setShowMoreHotelBook(false);
                   setShowMoreRestaurantBook(false);
                   setShowMoreSupermarketBook(false);
+                  setShowMoreMetroBook(false);
                   setShowEnding(false);
                   setCurrentView("sceneSelect");
                 }}
@@ -10350,7 +10811,7 @@
             {showMoreAnimalsBook && !showEnding && (
               <div className="fixed inset-0 z-50 overflow-auto bg-[#17251c]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
                 <div className="mx-auto max-w-6xl">
-                  <header className="flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
+                  <header className="sticky top-0 z-[55] flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
                     <div>
                       <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">
                         More Animals Word Book
@@ -12612,6 +13073,227 @@
                         className="mt-6 w-full rounded-2xl bg-banana px-4 py-4 text-lg font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
                       >
                         <ButtonCopy en="Finish Supermarket Trip" zh="结束超市购物之旅" />
+                      </button>
+                    </div>
+                  </aside>
+                )}
+              </div>
+            )}
+
+            {showMoreMetroChoice && isMetroChapter && !showEnding && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 backdrop-blur-sm">
+                <div className="dialogue-enter w-full max-w-2xl rounded-3xl border border-white/18 bg-[#102329]/94 p-6 text-cream shadow-glow backdrop-blur-2xl">
+                  <p className="text-[11px] font-black uppercase tracking-[0.24em] text-[#84dfe0]">
+                    More Metro Words
+                  </p>
+                  <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">
+                    Want to discover more metro words?
+                  </h2>
+                  <p className="mt-3 text-xl font-bold text-cream/82">
+                    想认识更多地铁词汇吗？
+                  </p>
+                  <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                    <button
+                      onClick={() => {
+                        setShowMoreMetroChoice(false);
+                        setShowMoreMetroBook(true);
+                        setMoreMetroPageIndex(0);
+                      }}
+                      className="rounded-2xl bg-[#84dfe0] px-5 py-4 font-black text-[#102329] shadow-label transition hover:-translate-y-0.5 hover:bg-[#a4eff0] active:translate-y-0"
+                    >
+                      <ButtonCopy en="Yes, show me more metro words." zh="是的，我想看看更多地铁词汇。" />
+                    </button>
+                    <button
+                      onClick={finishMetroTrip}
+                      className="rounded-2xl border border-white/18 bg-white/12 px-5 py-4 font-black text-white transition hover:bg-white/22 active:scale-[0.99]"
+                    >
+                      <ButtonCopy en="No, finish today's metro trip." zh="不用了，结束今天的地铁之旅。" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {showMoreMetroBook && isMetroChapter && !showEnding && (
+              <div className="fixed inset-0 z-50 overflow-auto bg-[#101d21]/97 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
+                <div className="mx-auto max-w-6xl">
+                  <header className="flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <p className="text-[11px] font-black uppercase tracking-[0.24em] text-[#84dfe0]">More Metro Words</p>
+                      <h2 className="mt-2 text-3xl font-black text-white sm:text-5xl">More Metro Words</h2>
+                      <p className="mt-2 text-lg font-bold text-cream/78">更多地铁词汇</p>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <div className="rounded-2xl border border-white/14 bg-white/10 px-4 py-3">
+                        <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#84dfe0]">Explored</p>
+                        <p className="mt-1 text-2xl font-black text-white">{exploredMoreMetroCount}/{moreMetroCount}</p>
+                        <p className="text-xs font-bold text-cream/70">已探索</p>
+                      </div>
+                      <button
+                        onClick={finishMetroTrip}
+                        className="rounded-full bg-[#84dfe0] px-5 py-3 font-black text-[#102329] shadow-label transition hover:bg-[#a4eff0] active:scale-[0.99]"
+                      >
+                        <ButtonCopy en="Finish Metro Trip" zh="结束地铁之旅" />
+                      </button>
+                    </div>
+                  </header>
+
+                  {moreMetroReward && (
+                    <div className="dialogue-enter mt-4 rounded-2xl border border-[#84dfe0]/35 bg-[#20444a]/70 px-4 py-3 shadow-label backdrop-blur-[3px]">
+                      <p className="font-black text-white">{moreMetroReward.text}</p>
+                      <p className="mt-1 text-sm font-bold text-cream/76">{moreMetroReward.zh}</p>
+                    </div>
+                  )}
+
+                  <div className="mt-5 flex gap-2 overflow-x-auto pb-1">
+                    {moreMetroPages.map((page, index) => {
+                      const active = index === moreMetroPageIndex;
+                      return (
+                        <button
+                          key={page.id}
+                          onClick={() => {
+                            setMoreMetroPageIndex(index);
+                            setSelectedMoreMetroWord(null);
+                          }}
+                          className={`min-w-[210px] rounded-2xl px-4 py-3 text-left font-black shadow-label transition hover:-translate-y-0.5 active:translate-y-0 ${
+                            active ? "bg-[#2f6e75] text-white" : "border border-white/16 bg-white/10 text-cream hover:bg-white/18"
+                          }`}
+                        >
+                          <span className="block text-sm">{page.title}</span>
+                          <span className="mt-1 block text-xs font-bold opacity-75">{page.zh}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  <section className="mt-5 rounded-3xl border border-white/14 bg-nightglass p-4 shadow-glow backdrop-blur-xl">
+                    <div className="flex flex-wrap items-end justify-between gap-3">
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#84dfe0]">Page {moreMetroPageIndex + 1}/3</p>
+                        <h3 className="mt-1 text-2xl font-black text-white">
+                          {currentMoreMetroPage.title}
+                          <span className="ml-2 text-[#84dfe0]">{currentMoreMetroPage.zh}</span>
+                        </h3>
+                      </div>
+                      <p className="text-sm font-black text-cream/75">{currentMetroPageExploredCount}/12 learned · 已学习</p>
+                    </div>
+
+                    <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                      {currentMoreMetroPage.words.map((word) => {
+                        const learned = learnedMoreMetroWords.includes(word.id);
+                        return (
+                          <button
+                            key={word.id}
+                            onClick={() => openMoreMetroWord(word)}
+                            className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
+                              learned
+                                ? "border-[#84dfe0]/55 bg-[#20444a]/75"
+                                : "border-white/14 bg-white/10 hover:border-[#84dfe0]/45 hover:bg-white/16"
+                            }`}
+                          >
+                            <div className="flex items-start gap-3">
+                              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-[#84dfe0]/35 bg-[#214a50]/72 text-xl font-black text-[#84dfe0] transition group-hover:scale-105">
+                                {word.word.slice(0, 1).toUpperCase()}
+                              </span>
+                              <span className="min-w-0">
+                                <span className="block text-lg font-black leading-tight text-white">{word.word}</span>
+                                <span className="mt-1 block text-sm font-bold text-cream/72">{word.meaning}</span>
+                              </span>
+                            </div>
+                            <div className="mt-3 flex items-center justify-between gap-2">
+                              <span className="text-xs font-black text-[#84dfe0]">{word.phonetic}</span>
+                              {learned && (
+                                <span className="rounded-full bg-[#84dfe0] px-2 py-1 text-[10px] font-black uppercase text-[#102329]">Learned · 已学习</span>
+                              )}
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </section>
+                </div>
+
+                {selectedMoreMetroWord && (
+                  <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#102329]/96 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
+                    <div className="flex items-start justify-between gap-3 border-b border-white/12 p-5">
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.24em] text-[#84dfe0]">Metro Word</p>
+                        <h2 className="mt-2 text-4xl font-black leading-tight text-white">{selectedMoreMetroWord.word}</h2>
+                        <p className="mt-2 text-2xl font-extrabold text-[#84dfe0]">{selectedMoreMetroWord.phonetic}</p>
+                      </div>
+                      <button
+                        onClick={() => setSelectedMoreMetroWord(null)}
+                        className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/12 text-2xl font-black text-white transition hover:bg-white/22 active:scale-95"
+                        aria-label="Close 关闭"
+                        title="Close / 关闭"
+                      >
+                        ×
+                      </button>
+                    </div>
+                    <div className="flex-1 overflow-auto p-5">
+                      <div className="rounded-2xl border border-white/12 bg-white/10 p-4">
+                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#84dfe0]">中文意思</p>
+                        <p className="mt-2 text-2xl font-black text-white">{selectedMoreMetroWord.meaning}</p>
+                      </div>
+                      <div className="mt-4 rounded-2xl border border-white/12 bg-black/18 p-4">
+                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-coral">Example</p>
+                        <p className="mt-2 text-2xl font-black leading-9 text-white">{selectedMoreMetroWord.example}</p>
+                        <p className="mt-2 text-lg font-bold leading-8 text-cream/78">{selectedMoreMetroWord.translation}</p>
+                      </div>
+                      <div className="mt-5 grid grid-cols-2 gap-3">
+                        <button
+                          onClick={() => speakEnglish(selectedMoreMetroWord.word, 0.9, `more-metro-${selectedMoreMetroWord.id}-normal`)}
+                          className="rounded-2xl bg-[#84dfe0] px-4 py-3 text-base font-black text-[#102329] shadow-label transition hover:-translate-y-0.5 hover:bg-[#a4eff0] active:translate-y-0"
+                        >
+                          <span className="inline-flex items-center justify-center gap-2">
+                            {playingKey === `more-metro-${selectedMoreMetroWord.id}-normal` && <SoundBars />}
+                            <ButtonCopy en="Normal" zh="正常语速" />
+                          </span>
+                        </button>
+                        <button
+                          onClick={() => speakEnglish(selectedMoreMetroWord.word, 0.65, `more-metro-${selectedMoreMetroWord.id}-slow`)}
+                          className="rounded-2xl border border-[#84dfe0]/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"
+                        >
+                          <span className="inline-flex items-center justify-center gap-2">
+                            {playingKey === `more-metro-${selectedMoreMetroWord.id}-slow` && <SoundBars />}
+                            <ButtonCopy en="Slow" zh="慢速朗读" />
+                          </span>
+                        </button>
+                      </div>
+                      <button
+                        onClick={() => speakEnglish(selectedMoreMetroWord.example, 0.86, `more-metro-${selectedMoreMetroWord.id}-sentence`)}
+                        className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
+                      >
+                        <span className="inline-flex items-center justify-center gap-2">
+                          {playingKey === `more-metro-${selectedMoreMetroWord.id}-sentence` && <SoundBars />}
+                          <ButtonCopy en="Play Sentence" zh="朗读例句" />
+                        </span>
+                      </button>
+                      <button
+                        onClick={() => saveWordEntry(makeMoreMetroWordBookEntry(selectedMoreMetroWord))}
+                        disabled={isWordSaved(selectedMoreMetroWord.word)}
+                        className={`mt-3 w-full rounded-2xl px-4 py-3 text-base font-black shadow-label transition active:scale-[0.99] ${
+                          isWordSaved(selectedMoreMetroWord.word) ? "bg-coral text-white" : "bg-white/12 text-white hover:bg-white/22"
+                        }`}
+                      >
+                        <ButtonCopy
+                          en={isWordSaved(selectedMoreMetroWord.word) ? "Added to Word Book" : "Add to Word Book"}
+                          zh={isWordSaved(selectedMoreMetroWord.word) ? "已加入生词本" : "加入生词本"}
+                        />
+                      </button>
+                      {isWordSaved(selectedMoreMetroWord.word) && (
+                        <button
+                          onClick={() => removeWordEntry(selectedMoreMetroWord.word)}
+                          className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
+                        >
+                          <ButtonCopy en="Remove from Word Book" zh="移出生词本" />
+                        </button>
+                      )}
+                      <button
+                        onClick={finishMetroTrip}
+                        className="mt-6 w-full rounded-2xl bg-[#84dfe0] px-4 py-4 text-lg font-black text-[#102329] shadow-label transition hover:-translate-y-0.5 hover:bg-[#a4eff0] active:translate-y-0"
+                      >
+                        <ButtonCopy en="Finish Metro Trip" zh="结束地铁之旅" />
                       </button>
                     </div>
                   </aside>

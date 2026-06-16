@@ -8,6 +8,10 @@ const APP_SHELL = [
   "./manifest.json",
   "./assets/app-icon-192.png",
   "./assets/app-icon-512.png",
+  "./vendor/react.production.min.js",
+  "./vendor/react-dom.production.min.js",
+  "./vendor/babel.min.js",
+  "./vendor/tailwind-runtime.js",
 ];
 
 self.addEventListener("install", (event) => {
