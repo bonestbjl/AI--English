@@ -882,6 +882,50 @@
             padding: 0.4rem 0.9rem !important;
             font-size: 0.74rem !important;
           }
+
+          .clinic-chapter .welcome-intro-card {
+            width: min(88vw, 660px) !important;
+            padding: 0.65rem 1rem !important;
+          }
+
+          .clinic-chapter .welcome-intro-label {
+            font-size: 0.6rem !important;
+          }
+
+          .clinic-chapter .welcome-intro-label-zh {
+            font-size: 0.66rem !important;
+          }
+
+          .clinic-chapter .welcome-intro-title {
+            font-size: 1.75rem !important;
+          }
+
+          .clinic-chapter .welcome-intro-title-zh {
+            font-size: 1.02rem !important;
+          }
+
+          .clinic-chapter .welcome-intro-text {
+            margin-top: 0.35rem !important;
+            font-size: 0.76rem !important;
+            line-height: 1.22 !important;
+          }
+
+          .clinic-chapter .welcome-intro-text-zh {
+            margin-top: 0.16rem !important;
+            font-size: 0.7rem !important;
+            line-height: 1.24 !important;
+          }
+
+          .clinic-chapter .welcome-intro-actions {
+            margin-top: 0.42rem !important;
+            gap: 0.7rem !important;
+          }
+
+          .clinic-chapter .welcome-intro-action {
+            min-height: 2.65rem;
+            padding: 0.28rem 0.68rem !important;
+            font-size: 0.68rem !important;
+          }
         }
       }
 
@@ -4763,6 +4807,923 @@
         },
       ];
 
+      const clinicScenes = [
+        {
+                id: "clinic-entrance",
+                npc: "clinic-entrance",
+                title: "Clinic Entrance",
+                zh: "诊所入口",
+                hotspots: [
+                        {
+                                id: "clinic-sign",
+                                word: "clinic sign",
+                                phonetic: "/ˈklɪnɪk saɪn/",
+                                meaning: "诊所标识",
+                                example: "The clinic sign is above the entrance.",
+                                translation: "诊所标识在入口上方。",
+                                x: 22,
+                                y: 23,
+                                label: "clinic sign",
+                                zh: "诊所标识",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12,
+                                        desktopY: 54,
+                                        desktopX: 190
+                                }
+                        },
+                        {
+                                id: "entrance-mat",
+                                word: "entrance mat",
+                                phonetic: "/ˈentrəns mæt/",
+                                meaning: "入口地垫",
+                                example: "Please step on the entrance mat.",
+                                translation: "请踩在入口地垫上。",
+                                x: 41,
+                                y: 72,
+                                label: "entrance mat",
+                                zh: "入口地垫",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        },
+                        {
+                                id: "opening-hours",
+                                word: "opening hours",
+                                phonetic: "/ˈoʊpənɪŋ ˈaʊərz/",
+                                meaning: "营业时间",
+                                example: "The opening hours are posted on the door.",
+                                translation: "营业时间贴在门上。",
+                                x: 62,
+                                y: 25,
+                                label: "opening hours",
+                                zh: "营业时间",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        },
+                        {
+                                id: "health-notice",
+                                word: "health notice",
+                                phonetic: "/helθ ˈnoʊtɪs/",
+                                meaning: "健康提示",
+                                example: "A health notice is near the entrance.",
+                                translation: "健康提示在入口附近。",
+                                x: 76,
+                                y: 37,
+                                label: "health notice",
+                                zh: "健康提示",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        },
+                        {
+                                id: "sanitizer-station",
+                                word: "sanitizer station",
+                                phonetic: "/ˈsænɪtaɪzər ˈsteɪʃn/",
+                                meaning: "消毒液站",
+                                example: "The sanitizer station is beside the door.",
+                                translation: "消毒液站在门旁边。",
+                                x: 17,
+                                y: 57,
+                                label: "sanitizer station",
+                                zh: "消毒液站",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12,
+                                        desktopX: 170
+                                }
+                        },
+                        {
+                                id: "enter-quietly",
+                                word: "enter quietly",
+                                phonetic: "/ˈentər ˈkwaɪətli/",
+                                meaning: "安静进入",
+                                example: "I enter quietly and look for the front desk.",
+                                translation: "我安静进入并寻找前台。",
+                                x: 49,
+                                y: 47,
+                                type: "action",
+                                actionEffect: "sparkle",
+                                actionMessageEn: "You entered the clinic quietly.",
+                                actionMessageZh: "你安静地进入了诊所。",
+                                actionDuration: 2600,
+                                label: "enter quietly",
+                                zh: "安静进入",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        }
+                ],
+                short: "入口",
+                bg: "assets/clinic-entrance-bg.png",
+                bgStyle: "linear-gradient(180deg, #dfece7 0%, #68897d 58%, #14231f 100%)",
+                coreWord: "clinic sign",
+                intro: {
+                        text: "You arrive at the clinic entrance and get ready to check in.",
+                        zh: "你来到诊所入口，准备办理登记。"
+                }
+        },
+        {
+                id: "clinic-registration",
+                npc: "clinic-registration",
+                title: "Registration Desk",
+                zh: "登记处",
+                hotspots: [
+                        {
+                                id: "intake-form",
+                                word: "intake form",
+                                phonetic: "/ˈɪnteɪk fɔːrm/",
+                                meaning: "登记表",
+                                example: "I fill in the intake form at the desk.",
+                                translation: "我在前台填写登记表。",
+                                x: 32,
+                                y: 58,
+                                label: "intake form",
+                                zh: "登记表",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        },
+                        {
+                                id: "insurance-card",
+                                word: "insurance card",
+                                phonetic: "/ɪnˈʃʊrəns kɑːrd/",
+                                meaning: "保险卡",
+                                example: "The assistant checks my insurance card.",
+                                translation: "工作人员核对我的保险卡。",
+                                x: 52,
+                                y: 61,
+                                label: "insurance card",
+                                zh: "保险卡",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        },
+                        {
+                                id: "date-of-birth",
+                                word: "date of birth",
+                                phonetic: "/deɪt əv bɜːrθ/",
+                                meaning: "出生日期",
+                                example: "They ask for my date of birth.",
+                                translation: "他们询问我的出生日期。",
+                                x: 68,
+                                y: 44,
+                                label: "date of birth",
+                                zh: "出生日期",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        },
+                        {
+                                id: "contact-number",
+                                word: "contact number",
+                                phonetic: "/ˈkɑːntækt ˈnʌmbər/",
+                                meaning: "联系电话",
+                                example: "I write my contact number on the form.",
+                                translation: "我把联系电话写在表上。",
+                                x: 43,
+                                y: 39,
+                                label: "contact number",
+                                zh: "联系电话",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        },
+                        {
+                                id: "privacy-notice",
+                                word: "privacy notice",
+                                phonetic: "/ˈpraɪvəsi ˈnoʊtɪs/",
+                                meaning: "隐私提示",
+                                example: "The privacy notice is on the counter.",
+                                translation: "隐私提示在柜台上。",
+                                x: 79,
+                                y: 29,
+                                label: "privacy notice",
+                                zh: "隐私提示",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        },
+                        {
+                                id: "confirm-details",
+                                word: "confirm details",
+                                phonetic: "/kənˈfɜːrm ˈdiːteɪlz/",
+                                meaning: "确认信息",
+                                example: "I confirm my details with the assistant.",
+                                translation: "我和工作人员确认信息。",
+                                x: 58,
+                                y: 73,
+                                type: "action",
+                                actionEffect: "sparkle",
+                                actionMessageEn: "Your registration details are confirmed.",
+                                actionMessageZh: "你的登记信息已确认。",
+                                actionDuration: 2600,
+                                label: "confirm details",
+                                zh: "确认信息",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        }
+                ],
+                short: "登记",
+                bg: "assets/clinic-registration-bg.png",
+                bgStyle: "linear-gradient(180deg, #dfece7 0%, #68897d 58%, #14231f 100%)",
+                coreWord: "intake form",
+                intro: {
+                        text: "You check in at the registration desk and confirm basic details.",
+                        zh: "你在登记处办理手续并确认基本信息。"
+                }
+        },
+        {
+                id: "clinic-waiting",
+                npc: "clinic-waiting",
+                title: "Waiting Area",
+                zh: "候诊区",
+                hotspots: [
+                        {
+                                id: "waiting-room",
+                                word: "waiting room",
+                                phonetic: "/ˈweɪtɪŋ ruːm/",
+                                meaning: "候诊室",
+                                example: "The waiting room is calm and quiet.",
+                                translation: "候诊室安静平和。",
+                                x: 27,
+                                y: 55,
+                                label: "waiting room",
+                                zh: "候诊室",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12,
+                                        desktopX: 190
+                                }
+                        },
+                        {
+                                id: "call-board",
+                                word: "call board",
+                                phonetic: "/kɔːl bɔːrd/",
+                                meaning: "叫号屏",
+                                example: "The call board shows the next patient.",
+                                translation: "叫号屏显示下一位患者。",
+                                x: 62,
+                                y: 21,
+                                label: "call board",
+                                zh: "叫号屏",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        },
+                        {
+                                id: "exam-room-sign",
+                                word: "exam room sign",
+                                phonetic: "/ɪɡˈzæm ruːm saɪn/",
+                                meaning: "检查室标识",
+                                example: "The exam room sign points down the hall.",
+                                translation: "检查室标识指向走廊。",
+                                x: 82,
+                                y: 37,
+                                label: "exam room sign",
+                                zh: "检查室标识",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        },
+                        {
+                                id: "magazine-rack",
+                                word: "magazine rack",
+                                phonetic: "/ˌmæɡəˈziːn ræk/",
+                                meaning: "杂志架",
+                                example: "A magazine rack stands beside the chairs.",
+                                translation: "杂志架立在椅子旁边。",
+                                x: 17,
+                                y: 73,
+                                label: "magazine rack",
+                                zh: "杂志架",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12,
+                                        desktopX: 210,
+                                        desktopY: -110
+                                }
+                        },
+                        {
+                                id: "water-dispenser",
+                                word: "water dispenser",
+                                phonetic: "/ˈwɔːtər dɪˈspensər/",
+                                meaning: "饮水机",
+                                example: "The water dispenser is near the wall.",
+                                translation: "饮水机在墙边。",
+                                x: 72,
+                                y: 67,
+                                label: "water dispenser",
+                                zh: "饮水机",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        },
+                        {
+                                id: "wait-your-turn",
+                                word: "wait your turn",
+                                phonetic: "/weɪt jʊr tɜːrn/",
+                                meaning: "等候轮到自己",
+                                example: "I wait my turn in the waiting room.",
+                                translation: "我在候诊室等候轮到自己。",
+                                x: 45,
+                                y: 72,
+                                type: "action",
+                                actionEffect: "sparkle",
+                                actionMessageEn: "You waited calmly for your turn.",
+                                actionMessageZh: "你安静地等到了自己的顺序。",
+                                actionDuration: 2600,
+                                label: "wait your turn",
+                                zh: "等候轮到自己",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        }
+                ],
+                short: "候诊",
+                bg: "assets/clinic-waiting-bg.png",
+                bgStyle: "linear-gradient(180deg, #dfece7 0%, #68897d 58%, #14231f 100%)",
+                coreWord: "waiting room",
+                intro: {
+                        text: "You wait in the waiting area and watch for your turn.",
+                        zh: "你在候诊区等候，并留意轮到自己的提示。"
+                }
+        },
+        {
+                id: "clinic-basic-check",
+                npc: "clinic-basic-check",
+                title: "Basic Check",
+                zh: "基础检查",
+                hotspots: [
+                        {
+                                id: "thermometer",
+                                word: "thermometer",
+                                phonetic: "/θərˈmɑːmɪtər/",
+                                meaning: "体温计",
+                                example: "The nurse holds a thermometer.",
+                                translation: "护士拿着体温计。",
+                                x: 28,
+                                y: 48,
+                                label: "thermometer",
+                                zh: "体温计",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12,
+                                        desktopX: 190
+                                }
+                        },
+                        {
+                                id: "pulse-oximeter",
+                                word: "pulse oximeter",
+                                phonetic: "/pʌls ɑːkˈsɪmɪtər/",
+                                meaning: "脉搏血氧仪",
+                                example: "A pulse oximeter clips onto a finger.",
+                                translation: "脉搏血氧仪夹在手指上。",
+                                x: 49,
+                                y: 58,
+                                label: "pulse oximeter",
+                                zh: "脉搏血氧仪",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        },
+                        {
+                                id: "pressure-cuff",
+                                word: "pressure cuff",
+                                phonetic: "/ˈpreʃər kʌf/",
+                                meaning: "血压袖带",
+                                example: "The pressure cuff wraps around the arm.",
+                                translation: "血压袖带套在手臂上。",
+                                x: 66,
+                                y: 48,
+                                label: "pressure cuff",
+                                zh: "血压袖带",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        },
+                        {
+                                id: "height-chart",
+                                word: "height chart",
+                                phonetic: "/haɪt tʃɑːrt/",
+                                meaning: "身高尺",
+                                example: "The height chart is fixed to the wall.",
+                                translation: "身高尺固定在墙上。",
+                                x: 82,
+                                y: 35,
+                                label: "height chart",
+                                zh: "身高尺",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        },
+                        {
+                                id: "vital-signs",
+                                word: "vital signs",
+                                phonetic: "/ˈvaɪtl saɪnz/",
+                                meaning: "生命体征",
+                                example: "Vital signs are recorded before the visit.",
+                                translation: "就诊前会记录生命体征。",
+                                x: 38,
+                                y: 29,
+                                label: "vital signs",
+                                zh: "生命体征",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        },
+                        {
+                                id: "take-vitals",
+                                word: "take vitals",
+                                phonetic: "/teɪk ˈvaɪtlz/",
+                                meaning: "测量基础体征",
+                                example: "The nurse takes vitals before the consultation.",
+                                translation: "护士在问诊前测量基础体征。",
+                                x: 58,
+                                y: 72,
+                                type: "action",
+                                actionEffect: "sparkle",
+                                actionMessageEn: "The basic check is complete.",
+                                actionMessageZh: "基础检查已完成。",
+                                actionDuration: 2600,
+                                label: "take vitals",
+                                zh: "测量基础体征",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        }
+                ],
+                short: "检查",
+                bg: "assets/clinic-basic-check-bg.png",
+                bgStyle: "linear-gradient(180deg, #dfece7 0%, #68897d 58%, #14231f 100%)",
+                coreWord: "vital signs",
+                intro: {
+                        text: "The nurse does a basic check before the consultation.",
+                        zh: "护士在问诊前进行基础检查。"
+                }
+        },
+        {
+                id: "clinic-consultation",
+                npc: "clinic-consultation",
+                title: "Consultation Room",
+                zh: "诊室",
+                hotspots: [
+                        {
+                                id: "doctor",
+                                word: "doctor",
+                                phonetic: "/ˈdɑːktər/",
+                                meaning: "医生",
+                                example: "The doctor listens carefully.",
+                                translation: "医生认真倾听。",
+                                x: 23,
+                                y: 42,
+                                label: "doctor",
+                                zh: "医生",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12,
+                                        desktopX: 190
+                                }
+                        },
+                        {
+                                id: "exam-table",
+                                word: "exam table",
+                                phonetic: "/ɪɡˈzæm ˈteɪbl/",
+                                meaning: "检查床",
+                                example: "The exam table is beside the wall.",
+                                translation: "检查床在墙边。",
+                                x: 67,
+                                y: 63,
+                                label: "exam table",
+                                zh: "检查床",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        },
+                        {
+                                id: "symptom-note",
+                                word: "symptom note",
+                                phonetic: "/ˈsɪmptəm noʊt/",
+                                meaning: "症状记录",
+                                example: "I bring a symptom note to the visit.",
+                                translation: "我带了一份症状记录来就诊。",
+                                x: 43,
+                                y: 55,
+                                label: "symptom note",
+                                zh: "症状记录",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        },
+                        {
+                                id: "body-chart",
+                                word: "body chart",
+                                phonetic: "/ˈbɑːdi tʃɑːrt/",
+                                meaning: "人体示意图",
+                                example: "The body chart helps me point to the area.",
+                                translation: "人体示意图帮助我指出部位。",
+                                x: 79,
+                                y: 31,
+                                label: "body chart",
+                                zh: "人体示意图",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        },
+                        {
+                                id: "stethoscope",
+                                word: "stethoscope",
+                                phonetic: "/ˈsteθəskoʊp/",
+                                meaning: "听诊器",
+                                example: "A stethoscope is on the desk.",
+                                translation: "听诊器在桌上。",
+                                x: 34,
+                                y: 35,
+                                label: "stethoscope",
+                                zh: "听诊器",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12,
+                                        desktopX: 180
+                                }
+                        },
+                        {
+                                id: "describe-symptoms",
+                                word: "describe symptoms",
+                                phonetic: "/dɪˈskraɪb ˈsɪmptəmz/",
+                                meaning: "描述症状",
+                                example: "I describe symptoms in simple words.",
+                                translation: "我用简单的话描述症状。",
+                                x: 51,
+                                y: 73,
+                                type: "action",
+                                actionEffect: "sparkle",
+                                actionMessageEn: "You described your symptoms clearly.",
+                                actionMessageZh: "你清楚地描述了自己的症状。",
+                                actionDuration: 2600,
+                                label: "describe symptoms",
+                                zh: "描述症状",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        }
+                ],
+                short: "诊室",
+                bg: "assets/clinic-consultation-bg.png",
+                bgStyle: "linear-gradient(180deg, #dfece7 0%, #68897d 58%, #14231f 100%)",
+                coreWord: "describe symptoms",
+                intro: {
+                        text: "You meet the doctor and describe symptoms in simple words.",
+                        zh: "你见到医生，并用简单的话描述症状。"
+                }
+        },
+        {
+                id: "clinic-care",
+                npc: "clinic-care",
+                title: "Care Instructions",
+                zh: "护理说明",
+                hotspots: [
+                        {
+                                id: "care-plan",
+                                word: "care plan",
+                                phonetic: "/ker plæn/",
+                                meaning: "护理计划",
+                                example: "The care plan is written on the page.",
+                                translation: "护理计划写在纸上。",
+                                x: 29,
+                                y: 48,
+                                label: "care plan",
+                                zh: "护理计划",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12,
+                                        desktopX: 190
+                                }
+                        },
+                        {
+                                id: "rest-note",
+                                word: "rest note",
+                                phonetic: "/rest noʊt/",
+                                meaning: "休息说明",
+                                example: "The rest note explains time away from school or work.",
+                                translation: "休息说明解释离校或离岗时间。",
+                                x: 46,
+                                y: 38,
+                                label: "rest note",
+                                zh: "休息说明",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        },
+                        {
+                                id: "follow-up-visit",
+                                word: "follow-up visit",
+                                phonetic: "/ˈfɑːloʊ ʌp ˈvɪzɪt/",
+                                meaning: "复诊",
+                                example: "A follow-up visit may be listed on the form.",
+                                translation: "表格上可能会列出复诊安排。",
+                                x: 65,
+                                y: 47,
+                                label: "follow-up visit",
+                                zh: "复诊",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        },
+                        {
+                                id: "hydration-reminder",
+                                word: "hydration reminder",
+                                phonetic: "/haɪˈdreɪʃn rɪˈmaɪndər/",
+                                meaning: "补水提醒",
+                                example: "A hydration reminder appears in the leaflet.",
+                                translation: "说明页里出现了补水提醒。",
+                                x: 81,
+                                y: 32,
+                                label: "hydration reminder",
+                                zh: "补水提醒",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        },
+                        {
+                                id: "question-list",
+                                word: "question list",
+                                phonetic: "/ˈkwestʃən lɪst/",
+                                meaning: "问题清单",
+                                example: "I write a question list before I leave.",
+                                translation: "离开前我写下问题清单。",
+                                x: 36,
+                                y: 66,
+                                label: "question list",
+                                zh: "问题清单",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        },
+                        {
+                                id: "ask-questions",
+                                word: "ask questions",
+                                phonetic: "/æsk ˈkwestʃənz/",
+                                meaning: "提问",
+                                example: "I ask questions when an instruction is unclear.",
+                                translation: "当说明不清楚时，我会提问。",
+                                x: 56,
+                                y: 73,
+                                type: "action",
+                                actionEffect: "sparkle",
+                                actionMessageEn: "You asked a clear question about the instructions.",
+                                actionMessageZh: "你就说明提出了清楚的问题。",
+                                actionDuration: 2600,
+                                label: "ask questions",
+                                zh: "提问",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        }
+                ],
+                short: "护理",
+                bg: "assets/clinic-care-bg.png",
+                bgStyle: "linear-gradient(180deg, #dfece7 0%, #68897d 58%, #14231f 100%)",
+                coreWord: "care plan",
+                intro: {
+                        text: "You review written care instructions and ask clear questions.",
+                        zh: "你查看书面护理说明，并清楚提问。"
+                }
+        },
+        {
+                id: "clinic-pharmacy",
+                npc: "clinic-pharmacy",
+                title: "Pharmacy Window & Exit",
+                zh: "取药与离开诊所",
+                hotspots: [
+                        {
+                                id: "pharmacy-window",
+                                word: "pharmacy window",
+                                phonetic: "/ˈfɑːrməsi ˈwɪndoʊ/",
+                                meaning: "药房窗口",
+                                example: "The pharmacy window is near the exit.",
+                                translation: "药房窗口在出口附近。",
+                                x: 26,
+                                y: 42,
+                                label: "pharmacy window",
+                                zh: "药房窗口",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12,
+                                        desktopX: 190
+                                }
+                        },
+                        {
+                                id: "prescription-label",
+                                word: "prescription label",
+                                phonetic: "/prɪˈskrɪpʃn ˈleɪbl/",
+                                meaning: "处方标签",
+                                example: "The prescription label has printed information.",
+                                translation: "处方标签上有打印信息。",
+                                x: 46,
+                                y: 58,
+                                label: "prescription label",
+                                zh: "处方标签",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        },
+                        {
+                                id: "medicine-bag",
+                                word: "medicine bag",
+                                phonetic: "/ˈmedɪsən bæɡ/",
+                                meaning: "药品袋",
+                                example: "The medicine bag is ready at the counter.",
+                                translation: "药品袋在柜台上准备好了。",
+                                x: 61,
+                                y: 66,
+                                label: "medicine bag",
+                                zh: "药品袋",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        },
+                        {
+                                id: "pickup-shelf",
+                                word: "pickup shelf",
+                                phonetic: "/ˈpɪkʌp ʃelf/",
+                                meaning: "取件架",
+                                example: "The pickup shelf holds prepared bags.",
+                                translation: "取件架放着准备好的袋子。",
+                                x: 78,
+                                y: 40,
+                                label: "pickup shelf",
+                                zh: "取件架",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        },
+                        {
+                                id: "exit-route",
+                                word: "exit route",
+                                phonetic: "/ˈeksɪt ruːt/",
+                                meaning: "出口路线",
+                                example: "The exit route leads back outside.",
+                                translation: "出口路线通向外面。",
+                                x: 83,
+                                y: 70,
+                                label: "exit route",
+                                zh: "出口路线",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        },
+                        {
+                                id: "collect-medicine",
+                                word: "collect medicine",
+                                phonetic: "/kəˈlekt ˈmedɪsən/",
+                                meaning: "取药",
+                                example: "I collect medicine at the pharmacy window.",
+                                translation: "我在药房窗口取药。",
+                                x: 54,
+                                y: 76,
+                                type: "action",
+                                actionEffect: "sparkle",
+                                actionMessageEn: "You collected the bag and found the exit route.",
+                                actionMessageZh: "你取到了袋子并找到了出口路线。",
+                                actionDuration: 2600,
+                                label: "collect medicine",
+                                zh: "取药",
+                                offset: {
+                                        x: -34,
+                                        y: -16,
+                                        mobileX: -18,
+                                        mobileY: -12
+                                }
+                        }
+                ],
+                short: "取药",
+                bg: "assets/clinic-pharmacy-bg.png",
+                bgStyle: "linear-gradient(180deg, #dfece7 0%, #68897d 58%, #14231f 100%)",
+                coreWord: "pharmacy window",
+                intro: {
+                        text: "You visit the pharmacy window and find the exit route.",
+                        zh: "你来到药房窗口，并找到出口路线。"
+                }
+        }
+];
+
       const fruitShopDialogues = {
         fruitEntranceShopkeeper: {
           id: "fruitEntranceShopkeeper",
@@ -5716,6 +6677,156 @@
           ],
         },
       };
+
+      const clinicDialogues = {
+        "clinic-entrance": {
+                id: "clinic-entrance",
+                speaker: "Clinic Greeter",
+                zh: "诊所引导员",
+                text: "Welcome. How can I help you today?",
+                translation: "欢迎。今天我可以怎么帮你？",
+                options: [
+                        {
+                                text: "I am here for an appointment.",
+                                choiceZh: "我是来赴预约的。",
+                                reply: "Great. Please go to the registration desk.",
+                                translation: "好的。请前往登记处。"
+                        },
+                        {
+                                text: "Where is the front desk?",
+                                choiceZh: "前台在哪里？",
+                                reply: "The front desk is straight ahead.",
+                                translation: "前台就在正前方。"
+                        }
+                ]
+        },
+        "clinic-registration": {
+                id: "clinic-registration",
+                speaker: "Front Desk Assistant",
+                zh: "前台工作人员",
+                text: "May I confirm your details?",
+                translation: "我可以确认一下你的信息吗？",
+                options: [
+                        {
+                                text: "Yes, here is my information.",
+                                choiceZh: "可以，这是我的信息。",
+                                reply: "Thank you. Please take a seat after registration.",
+                                translation: "谢谢。登记后请入座等候。"
+                        },
+                        {
+                                text: "Can you repeat the question, please?",
+                                choiceZh: "可以请你重复一下问题吗？",
+                                reply: "Of course. I need to confirm your basic details.",
+                                translation: "当然。我需要确认你的基本信息。"
+                        }
+                ]
+        },
+        "clinic-waiting": {
+                id: "clinic-waiting",
+                speaker: "Waiting Area Assistant",
+                zh: "候诊区工作人员",
+                text: "Please watch the call board for your turn.",
+                translation: "请留意叫号屏，等候轮到你。",
+                options: [
+                        {
+                                text: "I will wait here.",
+                                choiceZh: "我会在这里等候。",
+                                reply: "Thank you for waiting calmly.",
+                                translation: "谢谢你安静等候。"
+                        },
+                        {
+                                text: "Which room should I go to?",
+                                choiceZh: "我应该去哪间房？",
+                                reply: "The call board will show the room number.",
+                                translation: "叫号屏会显示房间号。"
+                        }
+                ]
+        },
+        "clinic-basic-check": {
+                id: "clinic-basic-check",
+                speaker: "Clinic Nurse",
+                zh: "诊所护士",
+                text: "I will do a basic check before you see the doctor.",
+                translation: "见医生前，我会做一项基础检查。",
+                options: [
+                        {
+                                text: "Okay, what should I do?",
+                                choiceZh: "好的，我应该怎么做？",
+                                reply: "Please sit here and follow my simple instructions.",
+                                translation: "请坐在这里，并按我的简单说明操作。"
+                        },
+                        {
+                                text: "I tell the nurse when I feel dizzy.",
+                                choiceZh: "我感到头晕时会告诉护士。",
+                                reply: "Thank you for telling me. I will note it for the visit.",
+                                translation: "谢谢你告诉我。我会记录在就诊信息里。"
+                        }
+                ]
+        },
+        "clinic-consultation": {
+                id: "clinic-consultation",
+                speaker: "Clinic Doctor",
+                zh: "诊所医生",
+                text: "Please describe what you feel in simple words.",
+                translation: "请用简单的话描述你的感受。",
+                options: [
+                        {
+                                text: "I tell the doctor about my swollen ankle.",
+                                choiceZh: "我把脚踝肿胀的情况告诉医生。",
+                                reply: "Thank you. I will add that to your symptom note.",
+                                translation: "谢谢。我会把这点加入你的症状记录。"
+                        },
+                        {
+                                text: "I brought a symptom note.",
+                                choiceZh: "我带来了一份症状记录。",
+                                reply: "That helps us understand your visit today.",
+                                translation: "这有助于我们了解你今天的就诊情况。"
+                        }
+                ]
+        },
+        "clinic-care": {
+                id: "clinic-care",
+                speaker: "Care Nurse",
+                zh: "护理护士",
+                text: "Do you have questions about the written instructions?",
+                translation: "你对书面说明有问题吗？",
+                options: [
+                        {
+                                text: "Can you explain the next steps?",
+                                choiceZh: "你能解释下一步吗？",
+                                reply: "Yes. I can explain the words on this page.",
+                                translation: "可以。我可以解释这一页上的词语。"
+                        },
+                        {
+                                text: "The doctor explains what monitor symptoms means.",
+                                choiceZh: "医生解释了“留意症状”这个表达。",
+                                reply: "Good. Clear wording makes the instructions easier to follow.",
+                                translation: "很好。清楚的措辞会让说明更容易理解。"
+                        }
+                ]
+        },
+        "clinic-pharmacy": {
+                id: "clinic-pharmacy",
+                speaker: "Pharmacy Assistant",
+                zh: "药房工作人员",
+                text: "Please check the printed label and your name.",
+                translation: "请核对打印标签和你的姓名。",
+                options: [
+                        {
+                                text: "I can read the printed label.",
+                                choiceZh: "我可以阅读打印标签。",
+                                reply: "Great. Please ask if any written word is unclear.",
+                                translation: "很好。如果有任何书面词语不清楚，请提问。"
+                        },
+                        {
+                                text: "Where is the exit route?",
+                                choiceZh: "出口路线在哪里？",
+                                reply: "The exit route is marked on the right.",
+                                translation: "出口路线标在右侧。"
+                        }
+                ]
+        }
+};
 
       const moreAnimalPages = [
         {
@@ -7098,6 +8209,318 @@
         },
       ];
 
+      const moreClinicPages = [
+        {
+                id: "clinic-spaces-equipment",
+                title: "Clinic Spaces & Equipment",
+                zh: "诊所区域与设备",
+                words: [
+                        {
+                                id: "triage-desk",
+                                word: "triage desk",
+                                phonetic: "/ˈtriːɑːʒ desk/",
+                                meaning: "分诊台",
+                                example: "The triage desk is near the entrance.",
+                                translation: "分诊台在入口附近。"
+                        },
+                        {
+                                id: "consulting-room",
+                                word: "consulting room",
+                                phonetic: "/kənˈsʌltɪŋ ruːm/",
+                                meaning: "问诊室",
+                                example: "The consulting room is quiet.",
+                                translation: "问诊室很安静。"
+                        },
+                        {
+                                id: "nurse-station",
+                                word: "nurse station",
+                                phonetic: "/nɜːrs ˈsteɪʃn/",
+                                meaning: "护士站",
+                                example: "The nurse station is beside the hallway.",
+                                translation: "护士站在走廊旁边。"
+                        },
+                        {
+                                id: "hand-gel",
+                                word: "hand gel",
+                                phonetic: "/hænd dʒel/",
+                                meaning: "洗手凝胶",
+                                example: "Hand gel is available at the desk.",
+                                translation: "前台有洗手凝胶。"
+                        },
+                        {
+                                id: "privacy-curtain",
+                                word: "privacy curtain",
+                                phonetic: "/ˈpraɪvəsi ˈkɜːrtn/",
+                                meaning: "隐私帘",
+                                example: "A privacy curtain hangs beside the bed.",
+                                translation: "隐私帘挂在床边。"
+                        },
+                        {
+                                id: "medical-chart",
+                                word: "medical chart",
+                                phonetic: "/ˈmedɪkl tʃɑːrt/",
+                                meaning: "医疗记录表",
+                                example: "The medical chart stays on the clipboard.",
+                                translation: "医疗记录表夹在写字板上。"
+                        },
+                        {
+                                id: "sign-in-tablet",
+                                word: "sign-in tablet",
+                                phonetic: "/saɪn ɪn ˈtæblət/",
+                                meaning: "签到平板",
+                                example: "The sign-in tablet is on the counter.",
+                                translation: "签到平板在柜台上。"
+                        },
+                        {
+                                id: "wheelchair-space",
+                                word: "wheelchair space",
+                                phonetic: "/ˈwiːltʃer speɪs/",
+                                meaning: "轮椅空间",
+                                example: "The wheelchair space is kept clear.",
+                                translation: "轮椅空间保持通畅。"
+                        },
+                        {
+                                id: "children-corner",
+                                word: "children’s corner",
+                                phonetic: "/ˈtʃɪldrənz ˈkɔːrnər/",
+                                meaning: "儿童角",
+                                example: "The children’s corner has small chairs.",
+                                translation: "儿童角有小椅子。"
+                        },
+                        {
+                                id: "clinic-badge",
+                                word: "clinic badge",
+                                phonetic: "/ˈklɪnɪk bædʒ/",
+                                meaning: "诊所胸牌",
+                                example: "The clinic badge shows the staff name.",
+                                translation: "诊所胸牌显示工作人员姓名。"
+                        },
+                        {
+                                id: "sample-cup",
+                                word: "sample cup",
+                                phonetic: "/ˈsæmpl kʌp/",
+                                meaning: "样本杯",
+                                example: "A sample cup is a small labeled cup.",
+                                translation: "样本杯是一个带标签的小杯子。"
+                        },
+                        {
+                                id: "disposal-bin",
+                                word: "disposal bin",
+                                phonetic: "/dɪˈspoʊzl bɪn/",
+                                meaning: "废弃物桶",
+                                example: "The disposal bin is clearly marked.",
+                                translation: "废弃物桶有清晰标识。"
+                        }
+                ]
+        },
+        {
+                id: "clinic-symptoms-signals",
+                title: "Common Symptoms & Body Signals",
+                zh: "常见症状与身体反应",
+                words: [
+                        {
+                                id: "mild-ache",
+                                word: "mild ache",
+                                phonetic: "/maɪld eɪk/",
+                                meaning: "轻微疼痛",
+                                example: "I describe a mild ache in simple words.",
+                                translation: "我用简单的话描述轻微疼痛。"
+                        },
+                        {
+                                id: "sore-throat",
+                                word: "sore throat",
+                                phonetic: "/sɔːr θroʊt/",
+                                meaning: "喉咙痛",
+                                example: "I write sore throat on my symptom note.",
+                                translation: "我在症状记录上写下喉咙痛。"
+                        },
+                        {
+                                id: "runny-nose",
+                                word: "runny nose",
+                                phonetic: "/ˈrʌni noʊz/",
+                                meaning: "流鼻涕",
+                                example: "Runny nose is listed on the form.",
+                                translation: "表格上列出了流鼻涕。"
+                        },
+                        {
+                                id: "blocked-nose",
+                                word: "blocked nose",
+                                phonetic: "/blɑːkt noʊz/",
+                                meaning: "鼻塞",
+                                example: "I point to blocked nose on the list.",
+                                translation: "我指着清单上的鼻塞。"
+                        },
+                        {
+                                id: "upset-stomach",
+                                word: "upset stomach",
+                                phonetic: "/ʌpˈset ˈstʌmək/",
+                                meaning: "胃不舒服",
+                                example: "The phrase upset stomach is on the symptom list.",
+                                translation: "“胃不舒服”这个表达在症状清单上。"
+                        },
+                        {
+                                id: "dizziness",
+                                word: "dizziness",
+                                phonetic: "/ˈdɪzinəs/",
+                                meaning: "头晕",
+                                example: "I tell the nurse when I feel dizzy.",
+                                translation: "我感到头晕时会告诉护士。"
+                        },
+                        {
+                                id: "tiredness",
+                                word: "tiredness",
+                                phonetic: "/ˈtaɪərdnəs/",
+                                meaning: "疲惫",
+                                example: "I mention tiredness during the visit.",
+                                translation: "我在就诊时提到疲惫。"
+                        },
+                        {
+                                id: "rash",
+                                word: "rash",
+                                phonetic: "/ræʃ/",
+                                meaning: "皮疹",
+                                example: "The word rash is in the body signal section.",
+                                translation: "“皮疹”这个词在身体反应部分。"
+                        },
+                        {
+                                id: "sneeze",
+                                word: "sneeze",
+                                phonetic: "/sniːz/",
+                                meaning: "打喷嚏",
+                                example: "Sneeze is a common body signal word.",
+                                translation: "“打喷嚏”是常见的身体反应词。"
+                        },
+                        {
+                                id: "chills",
+                                word: "chills",
+                                phonetic: "/tʃɪlz/",
+                                meaning: "发冷",
+                                example: "I add chills to my symptom note.",
+                                translation: "我把发冷写进症状记录。"
+                        },
+                        {
+                                id: "nausea",
+                                word: "nausea",
+                                phonetic: "/ˈnɔːziə/",
+                                meaning: "恶心",
+                                example: "The nurse writes down nausea as a word.",
+                                translation: "护士把“恶心”这个词记下来。"
+                        },
+                        {
+                                id: "swollen-ankle",
+                                word: "swollen ankle",
+                                phonetic: "/ˈswoʊlən ˈæŋkl/",
+                                meaning: "脚踝肿胀",
+                                example: "I tell the doctor about my swollen ankle.",
+                                translation: "我把脚踝肿胀的情况告诉医生。"
+                        }
+                ]
+        },
+        {
+                id: "clinic-care-phrases",
+                title: "Care Instructions & Useful Phrases",
+                zh: "护理表达与实用短语",
+                words: [
+                        {
+                                id: "take-it-easy",
+                                word: "take it easy",
+                                phonetic: "/teɪk ɪt ˈiːzi/",
+                                meaning: "放轻松；别太累",
+                                example: "The phrase take it easy appears in the leaflet.",
+                                translation: "说明页中出现了“放轻松”这个表达。"
+                        },
+                        {
+                                id: "drink-fluids",
+                                word: "drink fluids",
+                                phonetic: "/drɪŋk ˈfluːɪdz/",
+                                meaning: "补充液体",
+                                example: "The leaflet includes the phrase “drink fluids.”",
+                                translation: "说明页中包含“补充液体”这个表达。"
+                        },
+                        {
+                                id: "call-the-clinic",
+                                word: "call the clinic",
+                                phonetic: "/kɔːl ðə ˈklɪnɪk/",
+                                meaning: "联系诊所",
+                                example: "The form shows the phrase call the clinic.",
+                                translation: "表格上显示“联系诊所”这个表达。"
+                        },
+                        {
+                                id: "arrange-a-visit",
+                                word: "arrange a visit",
+                                phonetic: "/əˈreɪndʒ ə ˈvɪzɪt/",
+                                meaning: "安排一次就诊",
+                                example: "I learn the phrase arrange a visit.",
+                                translation: "我学习“安排一次就诊”这个表达。"
+                        },
+                        {
+                                id: "follow-the-label",
+                                word: "follow the label",
+                                phonetic: "/ˈfɑːloʊ ðə ˈleɪbl/",
+                                meaning: "查看并遵循标签",
+                                example: "The assistant points to the phrase follow the label.",
+                                translation: "工作人员指着“查看并遵循标签”这个表达。"
+                        },
+                        {
+                                id: "read-the-leaflet",
+                                word: "read the leaflet",
+                                phonetic: "/riːd ðə ˈliːflət/",
+                                meaning: "阅读说明页",
+                                example: "I read the leaflet before I leave.",
+                                translation: "离开前我阅读说明页。"
+                        },
+                        {
+                                id: "monitor-symptoms",
+                                word: "monitor symptoms",
+                                phonetic: "/ˈmɑːnɪtər ˈsɪmptəmz/",
+                                meaning: "留意症状",
+                                example: "The doctor explains what “monitor symptoms” means.",
+                                translation: "医生解释了“留意症状”这个表达。"
+                        },
+                        {
+                                id: "next-steps",
+                                word: "next steps",
+                                phonetic: "/nekst steps/",
+                                meaning: "下一步",
+                                example: "The nurse explains the next steps on the page.",
+                                translation: "护士解释页面上的下一步。"
+                        },
+                        {
+                                id: "aftercare-leaflet",
+                                word: "aftercare leaflet",
+                                phonetic: "/ˈæftərker ˈliːflət/",
+                                meaning: "后续护理说明页",
+                                example: "The aftercare leaflet has simple headings.",
+                                translation: "后续护理说明页有简单标题。"
+                        },
+                        {
+                                id: "dosage-label",
+                                word: "dosage label",
+                                phonetic: "/ˈdoʊsɪdʒ ˈleɪbl/",
+                                meaning: "用法标签",
+                                example: "The dosage label is a written label on the package.",
+                                translation: "用法标签是包装上的书面标签。"
+                        },
+                        {
+                                id: "keep-warm",
+                                word: "keep warm",
+                                phonetic: "/kiːp wɔːrm/",
+                                meaning: "注意保暖",
+                                example: "The nurse explains the phrase “keep warm.”",
+                                translation: "护士解释了“注意保暖”这个表达。"
+                        },
+                        {
+                                id: "seek-help",
+                                word: "seek help",
+                                phonetic: "/siːk help/",
+                                meaning: "寻求帮助",
+                                example: "The poster shows the phrase seek help.",
+                                translation: "海报展示了“寻求帮助”这个表达。"
+                        }
+                ]
+        }
+];
+
       const moreOfficeCount = moreOfficePages.reduce(
         (count, page) => count + page.words.length,
         0
@@ -7115,6 +8538,10 @@
         0
       );
       const moreMetroCount = moreMetroPages.reduce(
+        (count, page) => count + page.words.length,
+        0
+      );
+      const moreClinicCount = moreClinicPages.reduce(
         (count, page) => count + page.words.length,
         0
       );
@@ -7299,6 +8726,24 @@
           visualZh: "城市通勤",
           image: "linear-gradient(180deg, rgba(7, 17, 20, 0.02), rgba(7, 17, 20, 0.74)), url('assets/metro-cover.png')",
           imagePosition: "center 54%",
+        },
+        {
+          id: "clinic",
+          title: "Clinic",
+          zh: "诊所",
+          status: "Available",
+          statusZh: "可进入",
+          description: "Visit a clinic, learn safe check-in words, and practice clear questions.",
+          descriptionZh: "走进诊所，学习安全的登记表达，并练习清楚提问。",
+          button: "Enter Clinic",
+          buttonZh: "进入诊所",
+          available: true,
+          chapter: "clinic",
+          accent: "#8fd6c8",
+          visual: "Clinic Visit",
+          visualZh: "诊所就诊",
+          image: "linear-gradient(180deg, rgba(8, 18, 18, 0.04), rgba(8, 18, 18, 0.7)), url('assets/clinic-cover.png')",
+          imagePosition: "center 52%",
         },
       ];
 
@@ -7817,6 +9262,7 @@
         const [selectedMoreRestaurantWord, setSelectedMoreRestaurantWord] = useState(null);
         const [selectedMoreSupermarketWord, setSelectedMoreSupermarketWord] = useState(null);
         const [selectedMoreMetroWord, setSelectedMoreMetroWord] = useState(null);
+        const [selectedMoreClinicWord, setSelectedMoreClinicWord] = useState(null);
         const [dialogueReply, setDialogueReply] = useState(null);
         const [conversationDone, setConversationDone] = useState([]);
         const [completedActions, setCompletedActions] = useState([]);
@@ -7831,6 +9277,7 @@
         const [learnedMoreRestaurantWords, setLearnedMoreRestaurantWords] = useState([]);
         const [learnedMoreSupermarketWords, setLearnedMoreSupermarketWords] = useState([]);
         const [learnedMoreMetroWords, setLearnedMoreMetroWords] = useState([]);
+        const [learnedMoreClinicWords, setLearnedMoreClinicWords] = useState([]);
         const [learnedWords, setLearnedWords] = useState([]);
         const [savedWords, setSavedWords] = useState(loadWordBookEntries);
         const [playingKey, setPlayingKey] = useState(null);
@@ -7861,6 +9308,8 @@
         const [showMoreSupermarketBook, setShowMoreSupermarketBook] = useState(false);
         const [showMoreMetroChoice, setShowMoreMetroChoice] = useState(false);
         const [showMoreMetroBook, setShowMoreMetroBook] = useState(false);
+        const [showMoreClinicChoice, setShowMoreClinicChoice] = useState(false);
+        const [showMoreClinicBook, setShowMoreClinicBook] = useState(false);
         const [showMobileObserve, setShowMobileObserve] = useState(false);
         const [showMobileDialogue, setShowMobileDialogue] = useState(false);
         const [showMobileTripMap, setShowMobileTripMap] = useState(false);
@@ -7874,6 +9323,7 @@
         const [moreRestaurantPageIndex, setMoreRestaurantPageIndex] = useState(0);
         const [moreSupermarketPageIndex, setMoreSupermarketPageIndex] = useState(0);
         const [moreMetroPageIndex, setMoreMetroPageIndex] = useState(0);
+        const [moreClinicPageIndex, setMoreClinicPageIndex] = useState(0);
         const [showEnding, setShowEnding] = useState(false);
         const [isWalking, setIsWalking] = useState(false);
         const [animalEffect, setAnimalEffect] = useState(null);
@@ -7924,6 +9374,7 @@
         const isRestaurantChapter = currentChapter === "restaurant";
         const isSupermarketChapter = currentChapter === "supermarket";
         const isMetroChapter = currentChapter === "metro";
+        const isClinicChapter = currentChapter === "clinic";
         const activeScenes = isZooChapter
           ? scenes
           : isFruitShopChapter
@@ -7942,7 +9393,9 @@
           ? restaurantScenes
           : isSupermarketChapter
           ? supermarketScenes
-          : metroScenes;
+          : isMetroChapter
+          ? metroScenes
+          : clinicScenes;
         const activeDialogues = isZooChapter
           ? dialogues
           : isFruitShopChapter
@@ -7961,7 +9414,9 @@
           ? restaurantDialogues
           : isSupermarketChapter
           ? supermarketDialogues
-          : metroDialogues;
+          : isMetroChapter
+          ? metroDialogues
+          : clinicDialogues;
         const chapterTitle = isZooChapter
           ? "Zoo Trip"
           : isFruitShopChapter
@@ -7980,7 +9435,9 @@
           ? "Restaurant Visit"
           : isSupermarketChapter
           ? "Supermarket Trip"
-          : "Metro Trip";
+          : isMetroChapter
+          ? "Metro Trip"
+          : "Clinic Visit";
         const chapterTitleZh = isZooChapter
           ? "动物园之旅"
           : isFruitShopChapter
@@ -7999,7 +9456,9 @@
           ? "餐厅用餐之旅"
           : isSupermarketChapter
           ? "超市购物之旅"
-          : "地铁之旅";
+          : isMetroChapter
+          ? "地铁之旅"
+          : "诊所之行";
         const chapterWordBookScene = isZooChapter
           ? "Zoo"
           : isFruitShopChapter
@@ -8018,7 +9477,9 @@
           ? "Restaurant"
           : isSupermarketChapter
           ? "Supermarket"
-          : "Metro";
+          : isMetroChapter
+          ? "Metro"
+          : "Clinic";
         const endingTitle = isZooChapter
           ? "Great job! Your zoo trip is finished."
           : isFruitShopChapter
@@ -8037,7 +9498,9 @@
           ? "Great job! Your restaurant visit is finished."
           : isSupermarketChapter
           ? "Great job! Your supermarket trip is finished."
-          : "Great job! Your metro trip is finished.";
+          : isMetroChapter
+          ? "Great job! Your metro trip is finished."
+          : "Great job! Your clinic visit is finished.";
         const endingZh = isZooChapter
           ? "太棒了！今天的动物园之旅到此结束啦。"
           : isFruitShopChapter
@@ -8056,7 +9519,9 @@
           ? "太棒了！你的餐厅用餐之旅完成了。"
           : isSupermarketChapter
           ? "太棒了！你的超市购物之旅完成了。"
-          : "太棒了！你的地铁之旅完成了。";
+          : isMetroChapter
+          ? "太棒了！你的地铁之旅完成了。"
+          : "太棒了！你的诊所之行完成了。";
         const restartLabel = isZooChapter
           ? "Restart Trip"
           : isFruitShopChapter
@@ -8075,7 +9540,9 @@
           ? "Restart Restaurant"
           : isSupermarketChapter
           ? "Restart Supermarket"
-          : "Restart Metro";
+          : isMetroChapter
+          ? "Restart Metro"
+          : "Restart Clinic";
         const restartZh = isZooChapter
           ? "重新开始旅程"
           : isFruitShopChapter
@@ -8094,7 +9561,9 @@
           ? "重新开始餐厅"
           : isSupermarketChapter
           ? "重新开始超市"
-          : "重新开始地铁";
+          : isMetroChapter
+          ? "重新开始地铁"
+          : "重新开始诊所";
         const welcomeIntro = isZooChapter
           ? {
               label: "Zoo Trip",
@@ -8194,7 +9663,8 @@
               action: "Start Supermarket Trip",
               actionZh: "开始超市购物之旅",
             }
-          : {
+          : isMetroChapter
+          ? {
               label: "Metro Trip",
               labelZh: "地铁之旅",
               title: "Welcome to the metro!",
@@ -8203,6 +9673,16 @@
               zh: "今天你会进入地铁站、查看线路、通过闸机、找到正确站台、乘坐列车、完成换乘，并学习真实地铁英语。",
               action: "Start Metro Trip",
               actionZh: "开始地铁之旅",
+            }
+          : {
+              label: "Clinic Visit",
+              labelZh: "诊所之行",
+              title: "Welcome to the clinic!",
+              titleZh: "欢迎来到诊所！",
+              text: "Today, you will check in, wait your turn, do a basic check, ask clear questions, and learn safe clinic English.",
+              zh: "今天你会完成登记、等候叫号、进行基础检查、清楚提问，并学习安全的诊所英语。",
+              action: "Start Clinic Visit",
+              actionZh: "开始诊所之行",
             };
         const currentScene = activeScenes[currentIndex];
         const currentDialogue = currentScene.npc ? activeDialogues[currentScene.npc] : null;
@@ -8216,7 +9696,7 @@
           setShowMobileTripMap(false);
         }, [isMobileLandscape, currentScene.id]);
         const isHotspotExpanded = expandedHotspotScenes.includes(currentScene.id);
-        const maxPrimaryHotspots = isMobileLandscape
+        const maxPrimaryHotspots = isClinicChapter || isMobileLandscape
           ? currentScene.hotspots.length
           : viewport.width < 640
           ? 4
@@ -8478,6 +9958,10 @@
                 zh: `不错！你又认识了 ${exploredMoreMetroCount} 个地铁词汇。`,
               }
             : null;
+        const currentMoreClinicPage = moreClinicPages[moreClinicPageIndex];
+        const exploredMoreClinicCount = learnedMoreClinicWords.length;
+        const currentClinicPageExploredCount = currentMoreClinicPage.words.filter((word) => learnedMoreClinicWords.includes(word.id)).length;
+        const moreClinicReward = exploredMoreClinicCount === moreClinicCount ? { text: "Amazing! You discovered all more clinic words.", zh: "太厉害了！你探索了全部拓展诊所词汇。" } : currentClinicPageExploredCount === currentMoreClinicPage.words.length ? { text: "Great explorer! You completed one clinic page.", zh: "太棒了！你完成了一页诊所词汇探索。" } : exploredMoreClinicCount >= 5 ? { text: `Nice! You discovered ${exploredMoreClinicCount} more clinic words.`, zh: `不错！你又认识了 ${exploredMoreClinicCount} 个诊所词汇。` } : null;
         const wordBookFilters = [
           { id: "all", en: "All", zh: "全部" },
           { id: "zoo", en: "Zoo", zh: "动物园" },
@@ -8667,6 +10151,10 @@
           };
         }
 
+        function makeMoreClinicWordBookEntry(word) {
+          return { word: word.word, zh: word.meaning, phonetic: word.phonetic, example: word.example, exampleZh: word.translation, scene: "Clinic / More Clinic Words", type: "health", addedAt: new Date().toISOString() };
+        }
+
         function isWordSaved(word) {
           const key = getWordKey(word);
           return savedWords.some((item) => getWordKey(item.word) === key);
@@ -8700,6 +10188,7 @@
           setSelectedMoreRestaurantWord(null);
           setSelectedMoreSupermarketWord(null);
           setSelectedMoreMetroWord(null);
+          setSelectedMoreClinicWord(null);
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
           setShowMoreFruitsChoice(false);
@@ -8719,7 +10208,9 @@
           setShowMoreRestaurantBook(false);
           setShowMoreSupermarketBook(false);
           setShowMoreMetroChoice(false);
+          setShowMoreClinicChoice(false);
           setShowMoreMetroBook(false);
+          setShowMoreClinicBook(false);
           setIsReviewingWordBook(false);
           setReviewRevealed(false);
           setReviewIndex(0);
@@ -8894,6 +10385,13 @@
           speakEnglish(word.word, 0.9, `more-metro-${word.id}-normal`);
         }
 
+        function openMoreClinicWord(word) {
+          setSelectedMoreClinicWord(word);
+          setLearnedMoreClinicWords((items) => items.includes(word.id) ? items : [...items, word.id]);
+          rememberWord(word.word);
+          speakEnglish(word.word, 0.9, "more-clinic-" + word.id + "-normal");
+        }
+
         function finishZooTrip() {
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
@@ -8962,8 +10460,11 @@
 
         function finishMetroTrip() {
           setShowMoreMetroChoice(false);
+          setShowMoreClinicChoice(false);
           setShowMoreMetroBook(false);
+          setShowMoreClinicBook(false);
           setSelectedMoreMetroWord(null);
+          setSelectedMoreClinicWord(null);
           setShowEnding(true);
         }
 
@@ -9321,6 +10822,7 @@
           setSelectedMoreRestaurantWord(null);
           setSelectedMoreSupermarketWord(null);
           setSelectedMoreMetroWord(null);
+          setSelectedMoreClinicWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -9330,12 +10832,20 @@
           setAnimalEffect(null);
           setShowEnding(false);
           setShowMoreMetroChoice(false);
+          setShowMoreClinicChoice(false);
           setShowMoreMetroBook(false);
+          setShowMoreClinicBook(false);
           setMoreMetroPageIndex(0);
+          setMoreClinicPageIndex(0);
           setShowWelcome(true);
           setWelcomeLeaving(false);
           setCurrentView("zoo");
         }
+
+        function finishClinicVisit() { setShowMoreClinicChoice(false); setShowMoreClinicBook(false); setSelectedMoreClinicWord(null); setShowEnding(true); }
+
+        function enterClinic() { setSceneSelectHint(""); setCurrentChapter("clinic"); setCurrentIndex(0); setSelectedHotspot(null); setSelectedMoreAnimal(null); setSelectedMoreFruit(null); setSelectedMoreCampusWord(null); setSelectedMoreCafeWord(null); setSelectedMoreAirportWord(null); setSelectedMoreOfficeWord(null); setSelectedMoreHotelWord(null); setSelectedMoreRestaurantWord(null); setSelectedMoreSupermarketWord(null); setSelectedMoreMetroWord(null);
+          setSelectedMoreClinicWord(null); setSelectedMoreClinicWord(null); setDialogueReply(null); setConversationDone([]); setCompletedActions([]); setLearnedHotspotKeys([]); setLearnedWords([]); setProgressHint(""); setAnimalEffect(null); setShowEnding(false); setShowMoreClinicChoice(false); setShowMoreClinicBook(false); setMoreClinicPageIndex(0); setShowWelcome(true); setWelcomeLeaving(false); setCurrentView("zoo"); }
 
         function enterCampus() {
           setSceneSelectHint("");
@@ -9414,6 +10924,7 @@
           setSelectedMoreRestaurantWord(null);
           setSelectedMoreSupermarketWord(null);
           setSelectedMoreMetroWord(null);
+          setSelectedMoreClinicWord(null);
           setDialogueReply(null);
           setProgressHint("");
           setShowEnding(false);
@@ -9427,6 +10938,7 @@
           setShowMoreRestaurantBook(false);
           setShowMoreSupermarketBook(false);
           setShowMoreMetroBook(false);
+          setShowMoreClinicBook(false);
           setShowMoreAnimalsChoice(isZooChapter);
           setShowMoreFruitsChoice(isFruitShopChapter);
           setShowMoreCampusChoice(isCampusChapter);
@@ -9437,6 +10949,7 @@
           setShowMoreRestaurantChoice(isRestaurantChapter);
           setShowMoreSupermarketChoice(isSupermarketChapter);
           setShowMoreMetroChoice(isMetroChapter);
+          setShowMoreClinicChoice(isClinicChapter);
         }
 
         function walkForward() {
@@ -9476,6 +10989,7 @@
           setSelectedMoreRestaurantWord(null);
           setSelectedMoreSupermarketWord(null);
           setSelectedMoreMetroWord(null);
+          setSelectedMoreClinicWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -9490,6 +11004,7 @@
           setLearnedMoreRestaurantWords([]);
           setLearnedMoreSupermarketWords([]);
           setLearnedMoreMetroWords([]);
+          setLearnedMoreClinicWords([]);
           setLearnedWords([]);
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
@@ -9506,11 +11021,13 @@
           setShowMoreRestaurantChoice(false);
           setShowMoreSupermarketChoice(false);
           setShowMoreMetroChoice(false);
+          setShowMoreClinicChoice(false);
           setShowMoreOfficeBook(false);
           setShowMoreHotelBook(false);
           setShowMoreRestaurantBook(false);
           setShowMoreSupermarketBook(false);
           setShowMoreMetroBook(false);
+          setShowMoreClinicBook(false);
           setMoreAnimalsPageIndex(0);
           setMoreFruitsPageIndex(0);
           setMoreCampusPageIndex(0);
@@ -9521,8 +11038,9 @@
           setMoreRestaurantPageIndex(0);
           setMoreSupermarketPageIndex(0);
           setMoreMetroPageIndex(0);
+          setMoreClinicPageIndex(0);
           setShowEnding(false);
-          setShowWelcome(isZooChapter || isCampusChapter || isCafeChapter || isAirportChapter || isOfficeChapter || isHotelChapter || isRestaurantChapter || isSupermarketChapter || isMetroChapter);
+          setShowWelcome(isZooChapter || isCampusChapter || isCafeChapter || isAirportChapter || isOfficeChapter || isHotelChapter || isRestaurantChapter || isSupermarketChapter || isMetroChapter || isClinicChapter);
           setWelcomeLeaving(false);
           setAnimalEffect(null);
         }
@@ -10022,6 +11540,8 @@
                               ? enterSupermarket
                               : scene.chapter === "metro"
                               ? enterMetro
+                              : scene.chapter === "clinic"
+                              ? enterClinic
                               : enterZoo
                             : showComingSoon
                         }
@@ -10045,6 +11565,8 @@
         return (
           <main
             className={`scene-page relative h-screen w-screen overflow-hidden bg-[#17251c] ${
+              isClinicChapter ? "clinic-chapter" : ""
+            } ${
               isMobileLandscape ? "mobile-landscape-mode" : ""
             }`}
           >
@@ -10360,6 +11882,7 @@
                   setSelectedMoreRestaurantWord(null);
                   setSelectedMoreSupermarketWord(null);
                   setSelectedMoreMetroWord(null);
+          setSelectedMoreClinicWord(null);
                   setShowMoreAnimalsChoice(false);
                   setShowMoreAnimalsBook(false);
                   setShowMoreFruitsChoice(false);
@@ -10375,11 +11898,13 @@
                   setShowMoreRestaurantChoice(false);
                   setShowMoreSupermarketChoice(false);
                   setShowMoreMetroChoice(false);
+          setShowMoreClinicChoice(false);
                   setShowMoreOfficeBook(false);
                   setShowMoreHotelBook(false);
                   setShowMoreRestaurantBook(false);
                   setShowMoreSupermarketBook(false);
                   setShowMoreMetroBook(false);
+          setShowMoreClinicBook(false);
                   setShowEnding(false);
                   setCurrentView("sceneSelect");
                 }}
@@ -13096,8 +14621,10 @@
                     <button
                       onClick={() => {
                         setShowMoreMetroChoice(false);
+          setShowMoreClinicChoice(false);
                         setShowMoreMetroBook(true);
                         setMoreMetroPageIndex(0);
+          setMoreClinicPageIndex(0);
                       }}
                       className="rounded-2xl bg-[#84dfe0] px-5 py-4 font-black text-[#102329] shadow-label transition hover:-translate-y-0.5 hover:bg-[#a4eff0] active:translate-y-0"
                     >
@@ -13154,6 +14681,7 @@
                           onClick={() => {
                             setMoreMetroPageIndex(index);
                             setSelectedMoreMetroWord(null);
+          setSelectedMoreClinicWord(null);
                           }}
                           className={`min-w-[210px] rounded-2xl px-4 py-3 text-left font-black shadow-label transition hover:-translate-y-0.5 active:translate-y-0 ${
                             active ? "bg-[#2f6e75] text-white" : "border border-white/16 bg-white/10 text-cream hover:bg-white/18"
@@ -13294,6 +14822,230 @@
                         className="mt-6 w-full rounded-2xl bg-[#84dfe0] px-4 py-4 text-lg font-black text-[#102329] shadow-label transition hover:-translate-y-0.5 hover:bg-[#a4eff0] active:translate-y-0"
                       >
                         <ButtonCopy en="Finish Metro Trip" zh="结束地铁之旅" />
+                      </button>
+                    </div>
+                  </aside>
+                )}
+              </div>
+            )}
+
+            {showMoreClinicChoice && isClinicChapter && !showEnding && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 backdrop-blur-sm">
+                <div className="dialogue-enter w-full max-w-2xl rounded-3xl border border-white/18 bg-[#10261f]/94 p-6 text-cream shadow-glow backdrop-blur-2xl">
+                  <p className="text-[11px] font-black uppercase tracking-[0.24em] text-[#8fd6c8]">
+                    More Clinic Words
+                  </p>
+                  <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">
+                    Want to discover more clinic words?
+                  </h2>
+                  <p className="mt-3 text-xl font-bold text-cream/82">
+                    想认识更多诊所词汇吗？
+                  </p>
+                  <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                    <button
+                      onClick={() => {
+                        setShowMoreClinicChoice(false);
+          setShowMoreClinicChoice(false);
+                        setShowMoreClinicBook(true);
+                        setMoreClinicPageIndex(0);
+          setMoreClinicPageIndex(0);
+                      }}
+                      className="rounded-2xl bg-[#8fd6c8] px-5 py-4 font-black text-[#10261f] shadow-label transition hover:-translate-y-0.5 hover:bg-[#a9eadf] active:translate-y-0"
+                    >
+                      <ButtonCopy en="Yes, show me more clinic words." zh="是的，我想看看更多诊所词汇。" />
+                    </button>
+                    <button
+                      onClick={finishClinicVisit}
+                      className="rounded-2xl border border-white/18 bg-white/12 px-5 py-4 font-black text-white transition hover:bg-white/22 active:scale-[0.99]"
+                    >
+                      <ButtonCopy en="No, finish today's clinic visit." zh="不用了，结束今天的诊所之行。" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {showMoreClinicBook && isClinicChapter && !showEnding && (
+              <div className="fixed inset-0 z-50 overflow-auto bg-[#101d21]/97 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
+                <div className="mx-auto max-w-6xl">
+                  <header className="flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <p className="text-[11px] font-black uppercase tracking-[0.24em] text-[#8fd6c8]">More Clinic Words</p>
+                      <h2 className="mt-2 text-3xl font-black text-white sm:text-5xl">More Clinic Words</h2>
+                      <p className="mt-2 text-lg font-bold text-cream/78">更多诊所词汇</p>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <div className="rounded-2xl border border-white/14 bg-white/10 px-4 py-3">
+                        <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#8fd6c8]">Explored</p>
+                        <p className="mt-1 text-2xl font-black text-white">{exploredMoreClinicCount}/{moreClinicCount}</p>
+                        <p className="text-xs font-bold text-cream/70">已探索</p>
+                      </div>
+                      <button
+                        onClick={finishClinicVisit}
+                        className="rounded-full bg-[#8fd6c8] px-5 py-3 font-black text-[#10261f] shadow-label transition hover:bg-[#a9eadf] active:scale-[0.99]"
+                      >
+                        <ButtonCopy en="Finish Clinic Visit" zh="结束诊所之行" />
+                      </button>
+                    </div>
+                  </header>
+
+                  {moreClinicReward && (
+                    <div className="dialogue-enter mt-4 rounded-2xl border border-[#8fd6c8]/35 bg-[#21493f]/70 px-4 py-3 shadow-label backdrop-blur-[3px]">
+                      <p className="font-black text-white">{moreClinicReward.text}</p>
+                      <p className="mt-1 text-sm font-bold text-cream/76">{moreClinicReward.zh}</p>
+                    </div>
+                  )}
+
+                  <div className="mt-5 flex gap-2 overflow-x-auto pb-1">
+                    {moreClinicPages.map((page, index) => {
+                      const active = index === moreClinicPageIndex;
+                      return (
+                        <button
+                          key={page.id}
+                          onClick={() => {
+                            setMoreClinicPageIndex(index);
+                            setSelectedMoreClinicWord(null);
+          setSelectedMoreClinicWord(null);
+                          }}
+                          className={`min-w-[210px] rounded-2xl px-4 py-3 text-left font-black shadow-label transition hover:-translate-y-0.5 active:translate-y-0 ${
+                            active ? "bg-[#347366] text-white" : "border border-white/16 bg-white/10 text-cream hover:bg-white/18"
+                          }`}
+                        >
+                          <span className="block text-sm">{page.title}</span>
+                          <span className="mt-1 block text-xs font-bold opacity-75">{page.zh}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  <section className="mt-5 rounded-3xl border border-white/14 bg-nightglass p-4 shadow-glow backdrop-blur-xl">
+                    <div className="flex flex-wrap items-end justify-between gap-3">
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#8fd6c8]">Page {moreClinicPageIndex + 1}/3</p>
+                        <h3 className="mt-1 text-2xl font-black text-white">
+                          {currentMoreClinicPage.title}
+                          <span className="ml-2 text-[#8fd6c8]">{currentMoreClinicPage.zh}</span>
+                        </h3>
+                      </div>
+                      <p className="text-sm font-black text-cream/75">{currentClinicPageExploredCount}/12 learned · 已学习</p>
+                    </div>
+
+                    <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                      {currentMoreClinicPage.words.map((word) => {
+                        const learned = learnedMoreClinicWords.includes(word.id);
+                        return (
+                          <button
+                            key={word.id}
+                            onClick={() => openMoreClinicWord(word)}
+                            className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
+                              learned
+                                ? "border-[#8fd6c8]/55 bg-[#21493f]/75"
+                                : "border-white/14 bg-white/10 hover:border-[#8fd6c8]/45 hover:bg-white/16"
+                            }`}
+                          >
+                            <div className="flex items-start gap-3">
+                              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-[#8fd6c8]/35 bg-[#214a50]/72 text-xl font-black text-[#8fd6c8] transition group-hover:scale-105">
+                                {word.word.slice(0, 1).toUpperCase()}
+                              </span>
+                              <span className="min-w-0">
+                                <span className="block text-lg font-black leading-tight text-white">{word.word}</span>
+                                <span className="mt-1 block text-sm font-bold text-cream/72">{word.meaning}</span>
+                              </span>
+                            </div>
+                            <div className="mt-3 flex items-center justify-between gap-2">
+                              <span className="text-xs font-black text-[#8fd6c8]">{word.phonetic}</span>
+                              {learned && (
+                                <span className="rounded-full bg-[#8fd6c8] px-2 py-1 text-[10px] font-black uppercase text-[#10261f]">Learned · 已学习</span>
+                              )}
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </section>
+                </div>
+
+                {selectedMoreClinicWord && (
+                  <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#10261f]/96 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
+                    <div className="flex items-start justify-between gap-3 border-b border-white/12 p-5">
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.24em] text-[#8fd6c8]">Clinic Word</p>
+                        <h2 className="mt-2 text-4xl font-black leading-tight text-white">{selectedMoreClinicWord.word}</h2>
+                        <p className="mt-2 text-2xl font-extrabold text-[#8fd6c8]">{selectedMoreClinicWord.phonetic}</p>
+                      </div>
+                      <button
+                        onClick={() => setSelectedMoreClinicWord(null)}
+                        className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/12 text-2xl font-black text-white transition hover:bg-white/22 active:scale-95"
+                        aria-label="Close 关闭"
+                        title="Close / 关闭"
+                      >
+                        ×
+                      </button>
+                    </div>
+                    <div className="flex-1 overflow-auto p-5">
+                      <div className="rounded-2xl border border-white/12 bg-white/10 p-4">
+                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#8fd6c8]">中文意思</p>
+                        <p className="mt-2 text-2xl font-black text-white">{selectedMoreClinicWord.meaning}</p>
+                      </div>
+                      <div className="mt-4 rounded-2xl border border-white/12 bg-black/18 p-4">
+                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-coral">Example</p>
+                        <p className="mt-2 text-2xl font-black leading-9 text-white">{selectedMoreClinicWord.example}</p>
+                        <p className="mt-2 text-lg font-bold leading-8 text-cream/78">{selectedMoreClinicWord.translation}</p>
+                      </div>
+                      <div className="mt-5 grid grid-cols-2 gap-3">
+                        <button
+                          onClick={() => speakEnglish(selectedMoreClinicWord.word, 0.9, `more-clinic-${selectedMoreClinicWord.id}-normal`)}
+                          className="rounded-2xl bg-[#8fd6c8] px-4 py-3 text-base font-black text-[#10261f] shadow-label transition hover:-translate-y-0.5 hover:bg-[#a9eadf] active:translate-y-0"
+                        >
+                          <span className="inline-flex items-center justify-center gap-2">
+                            {playingKey === `more-clinic-${selectedMoreClinicWord.id}-normal` && <SoundBars />}
+                            <ButtonCopy en="Normal" zh="正常语速" />
+                          </span>
+                        </button>
+                        <button
+                          onClick={() => speakEnglish(selectedMoreClinicWord.word, 0.65, `more-clinic-${selectedMoreClinicWord.id}-slow`)}
+                          className="rounded-2xl border border-[#8fd6c8]/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"
+                        >
+                          <span className="inline-flex items-center justify-center gap-2">
+                            {playingKey === `more-clinic-${selectedMoreClinicWord.id}-slow` && <SoundBars />}
+                            <ButtonCopy en="Slow" zh="慢速朗读" />
+                          </span>
+                        </button>
+                      </div>
+                      <button
+                        onClick={() => speakEnglish(selectedMoreClinicWord.example, 0.86, `more-clinic-${selectedMoreClinicWord.id}-sentence`)}
+                        className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
+                      >
+                        <span className="inline-flex items-center justify-center gap-2">
+                          {playingKey === `more-clinic-${selectedMoreClinicWord.id}-sentence` && <SoundBars />}
+                          <ButtonCopy en="Play Sentence" zh="朗读例句" />
+                        </span>
+                      </button>
+                      <button
+                        onClick={() => saveWordEntry(makeMoreClinicWordBookEntry(selectedMoreClinicWord))}
+                        disabled={isWordSaved(selectedMoreClinicWord.word)}
+                        className={`mt-3 w-full rounded-2xl px-4 py-3 text-base font-black shadow-label transition active:scale-[0.99] ${
+                          isWordSaved(selectedMoreClinicWord.word) ? "bg-coral text-white" : "bg-white/12 text-white hover:bg-white/22"
+                        }`}
+                      >
+                        <ButtonCopy
+                          en={isWordSaved(selectedMoreClinicWord.word) ? "Added to Word Book" : "Add to Word Book"}
+                          zh={isWordSaved(selectedMoreClinicWord.word) ? "已加入生词本" : "加入生词本"}
+                        />
+                      </button>
+                      {isWordSaved(selectedMoreClinicWord.word) && (
+                        <button
+                          onClick={() => removeWordEntry(selectedMoreClinicWord.word)}
+                          className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
+                        >
+                          <ButtonCopy en="Remove from Word Book" zh="移出生词本" />
+                        </button>
+                      )}
+                      <button
+                        onClick={finishClinicVisit}
+                        className="mt-6 w-full rounded-2xl bg-[#8fd6c8] px-4 py-4 text-lg font-black text-[#10261f] shadow-label transition hover:-translate-y-0.5 hover:bg-[#a9eadf] active:translate-y-0"
+                      >
+                        <ButtonCopy en="Finish Clinic Visit" zh="结束诊所之行" />
                       </button>
                     </div>
                   </aside>
