@@ -6678,6 +6678,96 @@
         },
       };
 
+      const bankOffset = { x: -34, y: -16, mobileX: -18, mobileY: -12 };
+      const bankWord = (id, word, phonetic, meaning, example, translation, x, y, zh = meaning) => ({ id, word, phonetic, meaning, example, translation, x, y, label: word, zh, offset: bankOffset });
+
+      const bankScenes = [
+        {
+          id: "bank-entrance", npc: "bank-entrance", title: "Bank Entrance", zh: "银行入口", short: "入口", bg: "assets/bank-entrance-bg.png", bgStyle: "linear-gradient(180deg, #e5edf2 0%, #758794 58%, #17252d 100%)", coreWord: "bank branch",
+          intro: { text: "You arrive at the bank branch and get ready to take a queue ticket.", zh: "你来到银行网点，准备领取排队号码。" },
+          hotspots: [
+            bankWord("bank-branch", "bank branch", "/bæŋk bræntʃ/", "银行网点", "The bank branch opens in the morning.", "这家银行网点早上营业。", 19, 30),
+            bankWord("entrance-canopy", "entrance canopy", "/ˈentrəns ˈkænəpi/", "入口雨棚", "The entrance canopy covers the doorway.", "入口雨棚遮住了门口。", 49, 28),
+            bankWord("service-hours", "service hours", "/ˈsɜːrvɪs aʊərz/", "服务时间", "The service hours are shown near the entrance.", "服务时间显示在入口附近。", 78, 31),
+            bankWord("queue-ticket", "queue ticket", "/kjuː ˈtɪkɪt/", "排队号票", "I hold a queue ticket while I wait.", "等候时我拿着排队号票。", 22, 59),
+            bankWord("security-guard", "security guard", "/sɪˈkjʊrəti ɡɑːrd/", "保安", "The security guard stands near the door.", "保安站在门口附近。", 52, 58),
+            { ...bankWord("take-a-ticket", "take a ticket", "/teɪk ə ˈtɪkɪt/", "领取号码票", "I take a ticket before I join the queue.", "排队前我领取号码票。", 79, 60, "领取号码票"), type: "action", actionEffect: "sparkle", actionMessageEn: "Your queue ticket is ready.", actionMessageZh: "你的排队号票已准备好。", actionDuration: 2600 }
+          ]
+        },
+        {
+          id: "bank-welcome-counter", npc: "bank-welcome-counter", title: "Welcome Counter", zh: "欢迎服务台", short: "服务台", bg: "assets/bank-welcome-counter-bg.png", bgStyle: "linear-gradient(180deg, #eaf0f1 0%, #718b91 58%, #183033 100%)", coreWord: "welcome counter",
+          intro: { text: "You explain your visit and find the right service area.", zh: "你说明来意，并找到对应的服务区域。" },
+          hotspots: [
+            bankWord("welcome-counter", "welcome counter", "/ˈwelkəm ˈkaʊntər/", "欢迎服务台", "The welcome counter is just inside the branch.", "欢迎服务台就在网点里面。", 20, 30),
+            bankWord("service-guide", "service guide", "/ˈsɜːrvɪs ɡaɪd/", "服务指南", "The service guide lists everyday services.", "服务指南列出日常服务。", 49, 29),
+            bankWord("appointment-desk", "appointment desk", "/əˈpɔɪntmənt desk/", "预约服务台", "The appointment desk is beside the counter.", "预约服务台在柜台旁边。", 78, 32),
+            bankWord("counter-map", "counter map", "/ˈkaʊntər mæp/", "柜台分布图", "The counter map shows the service areas.", "柜台分布图显示服务区域。", 23, 59),
+            bankWord("customer-advisor", "customer advisor", "/ˈkʌstəmər ədˈvaɪzər/", "客户顾问", "A customer advisor answers my question.", "客户顾问回答我的问题。", 52, 58),
+            { ...bankWord("choose-a-service", "choose a service", "/tʃuːz ə ˈsɜːrvɪs/", "选择服务", "I choose a service area for my visit.", "我为本次办理选择服务区域。", 79, 60, "选择服务"), type: "action", actionEffect: "sparkle", actionMessageEn: "You choose the service area for your visit.", actionMessageZh: "你选择了本次办理的服务区域。", actionDuration: 2600 }
+          ]
+        },
+        {
+          id: "bank-queue-area", npc: "bank-queue-area", title: "Queue Area", zh: "排队等候区", short: "等候", bg: "assets/bank-queue-area-bg.png", bgStyle: "linear-gradient(180deg, #e6edf0 0%, #73868f 58%, #16242c 100%)", coreWord: "waiting number",
+          intro: { text: "You watch the display and wait for your number.", zh: "你查看显示屏，等待轮到自己的号码。" },
+          hotspots: [
+            bankWord("waiting-number", "waiting number", "/ˈweɪtɪŋ ˈnʌmbər/", "等候号码", "My waiting number is on the ticket.", "我的等候号码在号票上。", 20, 30),
+            bankWord("queue-display", "queue display", "/kjuː dɪˈspleɪ/", "叫号屏", "The queue display changes when it is my turn.", "轮到我时，叫号屏会变化。", 50, 29),
+            bankWord("counter-number", "counter number", "/ˈkaʊntər ˈnʌmbər/", "柜台号码", "The counter number appears on the display.", "柜台号码显示在屏幕上。", 78, 32),
+            bankWord("seating-row", "seating row", "/ˈsiːtɪŋ roʊ/", "等候座椅", "The seating row is near the queue display.", "等候座椅在叫号屏附近。", 22, 59),
+            bankWord("turn-indicator", "turn indicator", "/tɜːrn ˈɪndɪkeɪtər/", "轮到提示", "The turn indicator tells me when to go.", "轮到提示告诉我何时前往柜台。", 52, 58),
+            { ...bankWord("wait-for-your-number", "wait for your number", "/weɪt fɔːr jʊr ˈnʌmbər/", "等候叫号", "I wait for my number in the queue area.", "我在等候区等待叫号。", 79, 60, "等候叫号"), type: "action", actionEffect: "sparkle", actionMessageEn: "You watch the queue display for your turn.", actionMessageZh: "你查看叫号屏，等待轮到自己。", actionDuration: 2600 }
+          ]
+        },
+        {
+          id: "bank-teller-counter", npc: "bank-teller-counter", title: "Teller Counter", zh: "柜员柜台", short: "柜员", bg: "assets/bank-teller-counter-bg.png", bgStyle: "linear-gradient(180deg, #e7eeef 0%, #71888d 58%, #142b2d 100%)", coreWord: "bank teller",
+          intro: { text: "You greet the teller and use clear, polite service language.", zh: "你向柜员问好，并使用清楚礼貌的服务语言。" },
+          hotspots: [
+            bankWord("bank-teller", "bank teller", "/bæŋk ˈtelər/", "银行柜员", "The bank teller greets me at the counter.", "银行柜员在柜台前向我问好。", 20, 30),
+            bankWord("counter-screen", "counter screen", "/ˈkaʊntər skriːn/", "柜台隔板", "The counter screen separates the desk area.", "柜台隔板分隔了桌面区域。", 49, 29),
+            bankWord("cash-envelope", "cash envelope", "/kæʃ ˈenvəloʊp/", "现金信封", "The cash envelope is a service item on the counter.", "现金信封是柜台上的服务用品。", 78, 32),
+            bankWord("service-token", "service token", "/ˈsɜːrvɪs ˈtoʊkən/", "服务凭条", "The service token has a queue number.", "服务凭条上有排队号码。", 22, 59),
+            bankWord("form-tray", "form tray", "/fɔːrm treɪ/", "表格托盘", "The form tray holds blank service forms.", "表格托盘里放着空白服务表。", 52, 58),
+            { ...bankWord("speak-to-the-teller", "speak to the teller", "/spiːk tə ðə ˈtelər/", "与柜员沟通", "I speak to the teller clearly and politely.", "我清楚礼貌地与柜员沟通。", 79, 60, "与柜员沟通"), type: "action", actionEffect: "sparkle", actionMessageEn: "You greet the teller and explain your request clearly.", actionMessageZh: "你向柜员问好，并清楚说明需求。", actionDuration: 2600 }
+          ]
+        },
+        {
+          id: "bank-self-service", npc: "bank-self-service", title: "Self-Service Kiosk", zh: "自助服务机", short: "自助机", bg: "assets/bank-self-service-bg.png", bgStyle: "linear-gradient(180deg, #e8eff2 0%, #728a92 58%, #152c31 100%)", coreWord: "self-service kiosk",
+          intro: { text: "You learn the names of general self-service equipment without entering any personal details.", zh: "你学习一般自助设备名称，不输入任何个人信息。" },
+          hotspots: [
+            bankWord("self-service-kiosk", "self-service kiosk", "/ˌself ˈsɜːrvɪs ˈkiːɑːsk/", "自助服务机", "The self-service kiosk shows general options.", "自助服务机显示一般选项。", 20, 30),
+            bankWord("touchscreen-menu", "touchscreen menu", "/ˈtʌtʃskriːn ˈmenjuː/", "触屏菜单", "The touchscreen menu has large service buttons.", "触屏菜单上有大的服务按钮。", 49, 29),
+            bankWord("cash-dispenser", "cash dispenser", "/kæʃ dɪˈspensər/", "现金发放机", "The cash dispenser is one machine in the branch.", "现金发放机是网点中的一台设备。", 78, 32),
+            bankWord("help-button", "help button", "/help ˈbʌtn/", "帮助按钮", "I can press the help button in the learning scene.", "在学习场景中我可以按帮助按钮。", 22, 59),
+            bankWord("printed-notice", "printed notice", "/ˈprɪntɪd ˈnoʊtɪs/", "打印提示单", "The printed notice explains a general service.", "打印提示单说明一项一般服务。", 52, 58),
+            { ...bankWord("follow-the-screen", "follow the screen", "/ˈfɑːloʊ ðə skriːn/", "按屏幕提示操作", "I follow the sample screen in the learning scene.", "我在学习场景中按示例屏幕提示操作。", 79, 60, "按屏幕提示操作"), type: "action", actionEffect: "sparkle", actionMessageEn: "You follow the sample screen steps in the learning scene.", actionMessageZh: "你在学习场景中按示例屏幕提示操作。", actionDuration: 2600 }
+          ]
+        },
+        {
+          id: "bank-documents", npc: "bank-documents", title: "Documents & Notices", zh: "文件与通知", short: "文件", bg: "assets/bank-documents-bg.png", bgStyle: "linear-gradient(180deg, #ebf0f1 0%, #748a8c 58%, #172b2d 100%)", coreWord: "statement request",
+          intro: { text: "You learn general document names without viewing any account details.", zh: "你学习一般文件名称，不查看任何账户信息。" },
+          hotspots: [
+            bankWord("statement-request", "statement request", "/ˈsteɪtmənt rɪˈkwest/", "对账单申请", "A statement request is a general service phrase.", "“对账单申请”是一个一般服务表达。", 20, 30),
+            bankWord("document-tray", "document tray", "/ˈdɑːkjəmənt treɪ/", "文件托盘", "The document tray holds blank papers.", "文件托盘里放着空白纸张。", 49, 29),
+            bankWord("branch-stamp", "branch stamp", "/bræntʃ stæmp/", "网点印章", "The branch stamp is beside the desk.", "网点印章在桌子旁边。", 78, 32),
+            bankWord("information-leaflet", "information leaflet", "/ˌɪnfərˈmeɪʃn ˈliːflət/", "信息折页", "The information leaflet has simple headings.", "信息折页有简单标题。", 22, 59),
+            bankWord("service-confirmation", "service confirmation", "/ˈsɜːrvɪs ˌkɑːnfərˈmeɪʃn/", "服务确认单", "The service confirmation is a sample document.", "服务确认单是一份示例文件。", 52, 58),
+            { ...bankWord("request-a-statement", "request a statement", "/rɪˈkwest ə ˈsteɪtmənt/", "申请对账单", "I practice how to request a statement.", "我练习如何申请对账单。", 79, 60, "申请对账单"), type: "action", actionEffect: "sparkle", actionMessageEn: "You practice asking for a statement without viewing any account details.", actionMessageZh: "你练习申请对账单，但不会查看任何账户信息。", actionDuration: 2600 }
+          ]
+        },
+        {
+          id: "bank-exit", npc: "bank-exit", title: "Departure & Next Steps", zh: "离开与下一步", short: "离开", bg: "assets/bank-exit-bg.png", bgStyle: "linear-gradient(180deg, #e8eef0 0%, #71868b 58%, #162a2e 100%)", coreWord: "feedback card",
+          intro: { text: "You finish your visit and confirm the next step before you leave.", zh: "你结束本次办理，并在离开前确认下一步。" },
+          hotspots: [
+            bankWord("feedback-card", "feedback card", "/ˈfiːdbæk kɑːrd/", "反馈卡", "The feedback card is near the branch doorway.", "反馈卡在网点出口门附近。", 20, 30),
+            bankWord("service-survey", "service survey", "/ˈsɜːrvɪs ˈsɜːrveɪ/", "服务问卷", "The service survey asks about the visit.", "服务问卷询问本次办理体验。", 49, 29),
+            bankWord("branch-doorway", "branch doorway", "/bræntʃ ˈdɔːrweɪ/", "网点出口门", "The branch doorway leads to the sidewalk.", "网点出口门通向人行道。", 78, 32),
+            bankWord("appointment-reminder", "appointment reminder", "/əˈpɔɪntmənt rɪˈmaɪndər/", "预约提醒", "The appointment reminder shows a future visit.", "预约提醒显示未来的到访安排。", 22, 59),
+            bankWord("help-line", "help line", "/help laɪn/", "帮助热线", "The help line is listed on the notice.", "帮助热线列在提示单上。", 52, 58),
+            { ...bankWord("confirm-the-next-steps", "confirm the next steps", "/kənˈfɜːrm ðə nekst steps/", "确认下一步", "I confirm the next steps before I leave.", "我离开前确认下一步。", 79, 60, "确认下一步"), type: "action", actionEffect: "sparkle", actionMessageEn: "You confirm the next steps before leaving the branch.", actionMessageZh: "你在离开网点前确认了下一步。", actionDuration: 2600 }
+          ]
+        }
+      ];
+
       const clinicDialogues = {
         "clinic-entrance": {
                 id: "clinic-entrance",
@@ -6827,6 +6917,37 @@
                 ]
         }
 };
+
+      const bankDialogues = {
+        "bank-entrance": { id: "bank-entrance", speaker: "Security Guard", zh: "保安", text: "How can I direct you today?", translation: "今天我可以怎样为你指路？", options: [
+          { text: "I need help at the counter.", choiceZh: "我需要到柜台咨询。", reply: "Please take a ticket and watch the display.", translation: "请领取号码票并留意显示屏。" },
+          { text: "I would like a queue ticket.", choiceZh: "我想领取排队号票。", reply: "The ticket dispenser is just inside the entrance.", translation: "取号机就在入口里面。" }
+        ] },
+        "bank-welcome-counter": { id: "bank-welcome-counter", speaker: "Customer Advisor", zh: "客户顾问", text: "What kind of everyday service are you looking for?", translation: "你今天需要哪类日常服务？", options: [
+          { text: "I would like to speak with a teller.", choiceZh: "我想和柜员沟通。", reply: "Certainly. The queue display will show your counter.", translation: "当然。叫号屏会显示你的柜台。" },
+          { text: "Could you show me the service guide?", choiceZh: "你可以给我看看服务指南吗？", reply: "Of course. This guide names the service areas.", translation: "当然。这份指南标出服务区域。" }
+        ] },
+        "bank-queue-area": { id: "bank-queue-area", speaker: "Lobby Host", zh: "大堂引导员", text: "Please watch the display for your number.", translation: "请留意显示屏上的号码。", options: [
+          { text: "Thank you, I will wait here.", choiceZh: "谢谢，我会在这里等候。", reply: "Thank you. Your turn indicator will light up.", translation: "谢谢。轮到提示会亮起。" },
+          { text: "Which counter should I go to?", choiceZh: "我应该去哪个柜台？", reply: "The counter number will appear on the display.", translation: "柜台号码会显示在屏幕上。" }
+        ] },
+        "bank-teller-counter": { id: "bank-teller-counter", speaker: "Bank Teller", zh: "银行柜员", text: "Hello. How may I help you with today's visit?", translation: "你好。今天我可以怎样协助你办理？", options: [
+          { text: "I have a general service question.", choiceZh: "我有一个一般服务问题。", reply: "I can explain the service names shown here.", translation: "我可以说明这里显示的服务名称。" },
+          { text: "Could you explain this service token?", choiceZh: "你可以解释一下这张服务凭条吗？", reply: "It helps the branch organize the queue.", translation: "它帮助网点安排等候队列。" }
+        ] },
+        "bank-self-service": { id: "bank-self-service", speaker: "Kiosk Assistant", zh: "自助设备引导员", text: "This screen shows general service options.", translation: "这个屏幕显示一般服务选项。", options: [
+          { text: "Could you show me the help button?", choiceZh: "你可以指出帮助按钮吗？", reply: "The help button is on the side of the kiosk.", translation: "帮助按钮在自助机侧边。" },
+          { text: "I will read the printed notice.", choiceZh: "我会阅读打印提示单。", reply: "Good idea. It explains the learning scene clearly.", translation: "很好。它会清楚说明学习场景。" }
+        ] },
+        "bank-documents": { id: "bank-documents", speaker: "Document Clerk", zh: "文件服务人员", text: "I can explain the names of these documents.", translation: "我可以说明这些文件的名称。", options: [
+          { text: "What is this information leaflet for?", choiceZh: "这份信息折页是做什么的？", reply: "It gives general information in simple language.", translation: "它用简单语言提供一般信息。" },
+          { text: "I would like to request a statement.", choiceZh: "我想申请一份对账单。", reply: "This is a language practice request with no account details shown.", translation: "这是语言练习申请，不会显示账户信息。" }
+        ] },
+        "bank-exit": { id: "bank-exit", speaker: "Branch Host", zh: "网点引导员", text: "Is there anything else you need before you leave?", translation: "离开前还有什么需要吗？", options: [
+          { text: "No, thank you for your help.", choiceZh: "没有了，谢谢你的帮助。", reply: "You are welcome. Have a good day.", translation: "不客气。祝你今天愉快。" },
+          { text: "Could you repeat the next step?", choiceZh: "你可以再说一遍下一步吗？", reply: "Please check the appointment reminder before your next visit.", translation: "下次到访前请查看预约提醒。" }
+        ] }
+      };
 
       const moreAnimalPages = [
         {
@@ -8521,6 +8642,52 @@
         }
 ];
 
+      const bankMoreWord = (id, word, phonetic, meaning, example, translation) => ({ id, word, phonetic, meaning, example, translation });
+      const moreBankPages = [
+        { id: "bank-spaces-people", title: "Branch Spaces & People", zh: "网点空间与人员", words: [
+          bankMoreWord("branch-lobby", "branch lobby", "/bræntʃ ˈlɑːbi/", "网点大厅", "The branch lobby is bright and orderly.", "网点大厅明亮而有秩序。"),
+          bankMoreWord("queue-barrier", "queue barrier", "/kjuː ˈbæriər/", "排队隔离栏", "The queue barrier guides people to the counter.", "排队隔离栏引导人们前往柜台。"),
+          bankMoreWord("service-booth", "service booth", "/ˈsɜːrvɪs buːθ/", "服务窗口", "The service booth is open for general questions.", "服务窗口可回答一般问题。"),
+          bankMoreWord("customer-lounge", "customer lounge", "/ˈkʌstəmər laʊndʒ/", "客户休息区", "The customer lounge has comfortable seats.", "客户休息区有舒适座椅。"),
+          bankMoreWord("teller-station", "teller station", "/ˈtelər ˈsteɪʃn/", "柜员工位", "Each teller station has a counter screen.", "每个柜员工位都有柜台隔板。"),
+          bankMoreWord("security-camera", "security camera", "/sɪˈkjʊrəti ˈkæmərə/", "安保摄像头", "A security camera is near the ceiling.", "天花板附近有安保摄像头。"),
+          bankMoreWord("digital-notice-panel", "digital notice panel", "/ˈdɪdʒɪtl ˈnoʊtɪs ˈpænl/", "电子提示面板", "The digital notice panel shows general messages.", "电子提示面板显示一般消息。"),
+          bankMoreWord("brochure-rack", "brochure rack", "/broʊˈʃʊr ræk/", "宣传册架", "The brochure rack holds information guides.", "宣传册架放着信息指南。"),
+          bankMoreWord("consultation-booth", "consultation booth", "/ˌkɑːnsəlˈteɪʃn buːθ/", "咨询区", "The consultation booth is a quiet space.", "咨询区是一个安静空间。"),
+          bankMoreWord("cash-counter", "cash counter", "/kæʃ ˈkaʊntər/", "现金柜台", "The cash counter is one area of the branch.", "现金柜台是网点的一个区域。"),
+          bankMoreWord("private-desk", "private desk", "/ˈpraɪvət desk/", "私密服务桌", "The private desk is away from the queue.", "私密服务桌远离等候队列。"),
+          bankMoreWord("waiting-zone", "waiting zone", "/ˈweɪtɪŋ zoʊn/", "等候区域", "Please stay in the waiting zone.", "请留在等候区域。")
+        ] },
+        { id: "bank-services-documents", title: "Everyday Services & Documents", zh: "日常服务与文件", words: [
+          bankMoreWord("account-statement", "account statement", "/əˈkaʊnt ˈsteɪtmənt/", "账户对账单", "Account statement is a general document name.", "“账户对账单”是一个一般文件名称。"),
+          bankMoreWord("cash-withdrawal", "cash withdrawal", "/kæʃ wɪðˈdrɔːəl/", "现金取款", "Cash withdrawal is a service name on the screen.", "“现金取款”是屏幕上的服务名称。"),
+          bankMoreWord("foreign-currency-desk", "foreign currency desk", "/ˈfɔːrən ˈkɜːrənsi desk/", "外币服务台", "The foreign currency desk is a service area.", "外币服务台是一个服务区域。"),
+          bankMoreWord("exchange-counter", "exchange counter", "/ɪksˈtʃeɪndʒ ˈkaʊntər/", "兑换柜台", "The exchange counter has a general service sign.", "兑换柜台有一般服务标志。"),
+          bankMoreWord("bank-draft", "bank draft", "/bæŋk dræft/", "银行汇票", "Bank draft is a document vocabulary word.", "“银行汇票”是一个文件词汇。"),
+          bankMoreWord("cheque-book", "cheque book", "/tʃek bʊk/", "支票簿", "A cheque book is kept in a document tray.", "支票簿放在文件托盘中。"),
+          bankMoreWord("confirmation-slip", "confirmation slip", "/ˌkɑːnfərˈmeɪʃn slɪp/", "确认凭条", "The confirmation slip is a sample paper.", "确认凭条是一张示例纸。"),
+          bankMoreWord("document-copy", "document copy", "/ˈdɑːkjəmənt ˈkɑːpi/", "文件副本", "The document copy has no personal information.", "文件副本不含个人信息。"),
+          bankMoreWord("processing-fee", "processing fee", "/ˈprɑːsesɪŋ fiː/", "处理费用", "Processing fee is a general service phrase.", "“处理费用”是一个一般服务表达。"),
+          bankMoreWord("reference-number", "reference number", "/ˈrefrəns ˈnʌmbər/", "参考编号", "Reference number is a vocabulary phrase in this lesson.", "“参考编号”是本课中的词汇表达。"),
+          bankMoreWord("branch-notice", "branch notice", "/bræntʃ ˈnoʊtɪs/", "网点通知", "The branch notice has simple headings.", "网点通知有简单标题。"),
+          bankMoreWord("account-summary", "account summary", "/əˈkaʊnt ˈsʌməri/", "账户概览", "Account summary is a general document term.", "“账户概览”是一个一般文件术语。")
+        ] },
+        { id: "bank-service-phrases", title: "Service Phrases & Etiquette", zh: "服务表达与礼貌沟通", words: [
+          bankMoreWord("join-the-queue", "join the queue", "/dʒɔɪn ðə kjuː/", "加入队列", "I join the queue after taking a ticket.", "领取号码票后我加入队列。"),
+          bankMoreWord("ask-for-assistance", "ask for assistance", "/æsk fɔːr əˈsɪstəns/", "寻求协助", "I ask for assistance at the welcome counter.", "我在欢迎服务台寻求协助。"),
+          bankMoreWord("wait-in-line", "wait in line", "/weɪt ɪn laɪn/", "排队等候", "I wait in line calmly.", "我安静地排队等候。"),
+          bankMoreWord("take-a-seat", "take a seat", "/teɪk ə siːt/", "入座等候", "Please take a seat in the waiting zone.", "请在等候区域入座等候。"),
+          bankMoreWord("show-the-notice", "show the notice", "/ʃoʊ ðə ˈnoʊtɪs/", "出示提示单", "The advisor can show the notice.", "顾问可以出示提示单。"),
+          bankMoreWord("browse-the-guide", "browse the guide", "/braʊz ðə ɡaɪd/", "浏览指南", "I browse the guide before I ask a question.", "提问前我浏览指南。"),
+          bankMoreWord("speak-clearly", "speak clearly", "/spiːk ˈklɪrli/", "清楚表达", "I speak clearly to the teller.", "我向柜员清楚表达。"),
+          bankMoreWord("check-the-counter", "check the counter", "/tʃek ðə ˈkaʊntər/", "查看柜台", "I check the counter number on the display.", "我查看显示屏上的柜台号码。"),
+          bankMoreWord("return-later", "return later", "/rɪˈtɜːrn ˈleɪtər/", "稍后再来", "I can return later for another visit.", "我可以稍后再来办理。"),
+          bankMoreWord("ask-about-hours", "ask about hours", "/æsk əˈbaʊt aʊərz/", "询问服务时间", "I ask about hours at the entrance.", "我在入口询问服务时间。"),
+          bankMoreWord("follow-the-sign", "follow the sign", "/ˈfɑːloʊ ðə saɪn/", "按标志指引前往", "I follow the sign to the waiting zone.", "我按标志指引前往等候区域。"),
+          bankMoreWord("finish-my-visit", "finish my visit", "/ˈfɪnɪʃ maɪ ˈvɪzɪt/", "结束本次办理", "I finish my visit and leave politely.", "我结束本次办理并礼貌离开。")
+        ] }
+      ];
+
       const moreOfficeCount = moreOfficePages.reduce(
         (count, page) => count + page.words.length,
         0
@@ -8542,6 +8709,10 @@
         0
       );
       const moreClinicCount = moreClinicPages.reduce(
+        (count, page) => count + page.words.length,
+        0
+      );
+      const moreBankCount = moreBankPages.reduce(
         (count, page) => count + page.words.length,
         0
       );
@@ -8743,6 +8914,24 @@
           visual: "Clinic Visit",
           visualZh: "诊所就诊",
           image: "linear-gradient(180deg, rgba(8, 18, 18, 0.04), rgba(8, 18, 18, 0.7)), url('assets/clinic-cover.png')",
+          imagePosition: "center 52%",
+        },
+        {
+          id: "bank",
+          title: "Bank",
+          zh: "银行",
+          status: "Available",
+          statusZh: "可进入",
+          description: "Visit a bank branch, take a queue ticket, speak with a teller, and learn everyday bank English.",
+          descriptionZh: "走进银行网点、领取排队号码、与柜员沟通，学习日常银行英语。",
+          button: "Enter Bank",
+          buttonZh: "进入银行",
+          available: true,
+          chapter: "bank",
+          accent: "#8eb9cf",
+          visual: "Everyday Banking",
+          visualZh: "日常银行服务",
+          image: "linear-gradient(180deg, rgba(9, 18, 25, 0.04), rgba(9, 18, 25, 0.72)), url('assets/bank-cover.png')",
           imagePosition: "center 52%",
         },
       ];
@@ -9263,6 +9452,7 @@
         const [selectedMoreSupermarketWord, setSelectedMoreSupermarketWord] = useState(null);
         const [selectedMoreMetroWord, setSelectedMoreMetroWord] = useState(null);
         const [selectedMoreClinicWord, setSelectedMoreClinicWord] = useState(null);
+        const [selectedMoreBankWord, setSelectedMoreBankWord] = useState(null);
         const [dialogueReply, setDialogueReply] = useState(null);
         const [conversationDone, setConversationDone] = useState([]);
         const [completedActions, setCompletedActions] = useState([]);
@@ -9278,6 +9468,7 @@
         const [learnedMoreSupermarketWords, setLearnedMoreSupermarketWords] = useState([]);
         const [learnedMoreMetroWords, setLearnedMoreMetroWords] = useState([]);
         const [learnedMoreClinicWords, setLearnedMoreClinicWords] = useState([]);
+        const [learnedMoreBankWords, setLearnedMoreBankWords] = useState([]);
         const [learnedWords, setLearnedWords] = useState([]);
         const [savedWords, setSavedWords] = useState(loadWordBookEntries);
         const [playingKey, setPlayingKey] = useState(null);
@@ -9310,6 +9501,8 @@
         const [showMoreMetroBook, setShowMoreMetroBook] = useState(false);
         const [showMoreClinicChoice, setShowMoreClinicChoice] = useState(false);
         const [showMoreClinicBook, setShowMoreClinicBook] = useState(false);
+        const [showMoreBankChoice, setShowMoreBankChoice] = useState(false);
+        const [showMoreBankBook, setShowMoreBankBook] = useState(false);
         const [showMobileObserve, setShowMobileObserve] = useState(false);
         const [showMobileDialogue, setShowMobileDialogue] = useState(false);
         const [showMobileTripMap, setShowMobileTripMap] = useState(false);
@@ -9324,6 +9517,7 @@
         const [moreSupermarketPageIndex, setMoreSupermarketPageIndex] = useState(0);
         const [moreMetroPageIndex, setMoreMetroPageIndex] = useState(0);
         const [moreClinicPageIndex, setMoreClinicPageIndex] = useState(0);
+        const [moreBankPageIndex, setMoreBankPageIndex] = useState(0);
         const [showEnding, setShowEnding] = useState(false);
         const [isWalking, setIsWalking] = useState(false);
         const [animalEffect, setAnimalEffect] = useState(null);
@@ -9375,6 +9569,7 @@
         const isSupermarketChapter = currentChapter === "supermarket";
         const isMetroChapter = currentChapter === "metro";
         const isClinicChapter = currentChapter === "clinic";
+        const isBankChapter = currentChapter === "bank";
         const activeScenes = isZooChapter
           ? scenes
           : isFruitShopChapter
@@ -9395,7 +9590,9 @@
           ? supermarketScenes
           : isMetroChapter
           ? metroScenes
-          : clinicScenes;
+          : isClinicChapter
+          ? clinicScenes
+          : bankScenes;
         const activeDialogues = isZooChapter
           ? dialogues
           : isFruitShopChapter
@@ -9416,7 +9613,9 @@
           ? supermarketDialogues
           : isMetroChapter
           ? metroDialogues
-          : clinicDialogues;
+          : isClinicChapter
+          ? clinicDialogues
+          : bankDialogues;
         const chapterTitle = isZooChapter
           ? "Zoo Trip"
           : isFruitShopChapter
@@ -9437,7 +9636,9 @@
           ? "Supermarket Trip"
           : isMetroChapter
           ? "Metro Trip"
-          : "Clinic Visit";
+          : isClinicChapter
+          ? "Clinic Visit"
+          : "Bank Visit";
         const chapterTitleZh = isZooChapter
           ? "动物园之旅"
           : isFruitShopChapter
@@ -9458,7 +9659,9 @@
           ? "超市购物之旅"
           : isMetroChapter
           ? "地铁之旅"
-          : "诊所之行";
+          : isClinicChapter
+          ? "诊所之行"
+          : "银行之旅";
         const chapterWordBookScene = isZooChapter
           ? "Zoo"
           : isFruitShopChapter
@@ -9479,7 +9682,9 @@
           ? "Supermarket"
           : isMetroChapter
           ? "Metro"
-          : "Clinic";
+          : isClinicChapter
+          ? "Clinic"
+          : "Bank";
         const endingTitle = isZooChapter
           ? "Great job! Your zoo trip is finished."
           : isFruitShopChapter
@@ -9500,7 +9705,9 @@
           ? "Great job! Your supermarket trip is finished."
           : isMetroChapter
           ? "Great job! Your metro trip is finished."
-          : "Great job! Your clinic visit is finished.";
+          : isClinicChapter
+          ? "Great job! Your clinic visit is finished."
+          : "Great job! Your bank visit is finished.";
         const endingZh = isZooChapter
           ? "太棒了！今天的动物园之旅到此结束啦。"
           : isFruitShopChapter
@@ -9521,7 +9728,9 @@
           ? "太棒了！你的超市购物之旅完成了。"
           : isMetroChapter
           ? "太棒了！你的地铁之旅完成了。"
-          : "太棒了！你的诊所之行完成了。";
+          : isClinicChapter
+          ? "太棒了！你的诊所之行完成了。"
+          : "太棒了！你的银行之旅完成了。";
         const restartLabel = isZooChapter
           ? "Restart Trip"
           : isFruitShopChapter
@@ -9542,7 +9751,9 @@
           ? "Restart Supermarket"
           : isMetroChapter
           ? "Restart Metro"
-          : "Restart Clinic";
+          : isClinicChapter
+          ? "Restart Clinic"
+          : "Restart Bank";
         const restartZh = isZooChapter
           ? "重新开始旅程"
           : isFruitShopChapter
@@ -9563,7 +9774,9 @@
           ? "重新开始超市"
           : isMetroChapter
           ? "重新开始地铁"
-          : "重新开始诊所";
+          : isClinicChapter
+          ? "重新开始诊所"
+          : "重新开始银行";
         const welcomeIntro = isZooChapter
           ? {
               label: "Zoo Trip",
@@ -9674,7 +9887,8 @@
               action: "Start Metro Trip",
               actionZh: "开始地铁之旅",
             }
-          : {
+          : isClinicChapter
+          ? {
               label: "Clinic Visit",
               labelZh: "诊所之行",
               title: "Welcome to the clinic!",
@@ -9683,6 +9897,16 @@
               zh: "今天你会完成登记、等候叫号、进行基础检查、清楚提问，并学习安全的诊所英语。",
               action: "Start Clinic Visit",
               actionZh: "开始诊所之行",
+            }
+          : {
+              label: "Bank Visit",
+              labelZh: "银行之旅",
+              title: "Welcome to the bank!",
+              titleZh: "欢迎来到银行！",
+              text: "Today, you will visit a bank branch, ask for help, take a queue ticket, speak with a teller, use a self-service kiosk, and learn everyday bank English.",
+              zh: "今天你会走进银行网点、寻求帮助、领取排队号码、与柜员沟通、使用自助服务设备，并学习日常银行英语。",
+              action: "Start Bank Visit",
+              actionZh: "开始银行之旅",
             };
         const currentScene = activeScenes[currentIndex];
         const currentDialogue = currentScene.npc ? activeDialogues[currentScene.npc] : null;
@@ -9696,7 +9920,7 @@
           setShowMobileTripMap(false);
         }, [isMobileLandscape, currentScene.id]);
         const isHotspotExpanded = expandedHotspotScenes.includes(currentScene.id);
-        const maxPrimaryHotspots = isClinicChapter || isMobileLandscape
+        const maxPrimaryHotspots = isClinicChapter || isBankChapter || isMobileLandscape
           ? currentScene.hotspots.length
           : viewport.width < 640
           ? 4
@@ -9962,6 +10186,10 @@
         const exploredMoreClinicCount = learnedMoreClinicWords.length;
         const currentClinicPageExploredCount = currentMoreClinicPage.words.filter((word) => learnedMoreClinicWords.includes(word.id)).length;
         const moreClinicReward = exploredMoreClinicCount === moreClinicCount ? { text: "Amazing! You discovered all more clinic words.", zh: "太厉害了！你探索了全部拓展诊所词汇。" } : currentClinicPageExploredCount === currentMoreClinicPage.words.length ? { text: "Great explorer! You completed one clinic page.", zh: "太棒了！你完成了一页诊所词汇探索。" } : exploredMoreClinicCount >= 5 ? { text: `Nice! You discovered ${exploredMoreClinicCount} more clinic words.`, zh: `不错！你又认识了 ${exploredMoreClinicCount} 个诊所词汇。` } : null;
+        const currentMoreBankPage = moreBankPages[moreBankPageIndex];
+        const exploredMoreBankCount = learnedMoreBankWords.length;
+        const currentBankPageExploredCount = currentMoreBankPage.words.filter((word) => learnedMoreBankWords.includes(word.id)).length;
+        const moreBankReward = exploredMoreBankCount === moreBankCount ? { text: "Amazing! You discovered all more bank words.", zh: "太厉害了！你探索了全部拓展银行词汇。" } : currentBankPageExploredCount === currentMoreBankPage.words.length ? { text: "Great explorer! You completed one bank page.", zh: "太棒了！你完成了一页银行词汇探索。" } : exploredMoreBankCount >= 5 ? { text: `Nice! You discovered ${exploredMoreBankCount} more bank words.`, zh: `不错！你又认识了 ${exploredMoreBankCount} 个银行词汇。` } : null;
         const wordBookFilters = [
           { id: "all", en: "All", zh: "全部" },
           { id: "zoo", en: "Zoo", zh: "动物园" },
@@ -10155,6 +10383,10 @@
           return { word: word.word, zh: word.meaning, phonetic: word.phonetic, example: word.example, exampleZh: word.translation, scene: "Clinic / More Clinic Words", type: "health", addedAt: new Date().toISOString() };
         }
 
+        function makeMoreBankWordBookEntry(word) {
+          return { word: word.word, zh: word.meaning, phonetic: word.phonetic, example: word.example, exampleZh: word.translation, scene: "Bank / More Bank Words", type: "banking", addedAt: new Date().toISOString() };
+        }
+
         function isWordSaved(word) {
           const key = getWordKey(word);
           return savedWords.some((item) => getWordKey(item.word) === key);
@@ -10189,6 +10421,7 @@
           setSelectedMoreSupermarketWord(null);
           setSelectedMoreMetroWord(null);
           setSelectedMoreClinicWord(null);
+          setSelectedMoreBankWord(null);
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
           setShowMoreFruitsChoice(false);
@@ -10209,8 +10442,10 @@
           setShowMoreSupermarketBook(false);
           setShowMoreMetroChoice(false);
           setShowMoreClinicChoice(false);
+          setShowMoreBankChoice(false);
           setShowMoreMetroBook(false);
           setShowMoreClinicBook(false);
+          setShowMoreBankBook(false);
           setIsReviewingWordBook(false);
           setReviewRevealed(false);
           setReviewIndex(0);
@@ -10392,6 +10627,13 @@
           speakEnglish(word.word, 0.9, "more-clinic-" + word.id + "-normal");
         }
 
+        function openMoreBankWord(word) {
+          setSelectedMoreBankWord(word);
+          setLearnedMoreBankWords((items) => items.includes(word.id) ? items : [...items, word.id]);
+          rememberWord(word.word);
+          speakEnglish(word.word, 0.9, "more-bank-" + word.id + "-normal");
+        }
+
         function finishZooTrip() {
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
@@ -10465,6 +10707,13 @@
           setShowMoreClinicBook(false);
           setSelectedMoreMetroWord(null);
           setSelectedMoreClinicWord(null);
+          setShowEnding(true);
+        }
+
+        function finishBankVisit() {
+          setShowMoreBankChoice(false);
+          setShowMoreBankBook(false);
+          setSelectedMoreBankWord(null);
           setShowEnding(true);
         }
 
@@ -10844,6 +11093,10 @@
 
         function finishClinicVisit() { setShowMoreClinicChoice(false); setShowMoreClinicBook(false); setSelectedMoreClinicWord(null); setShowEnding(true); }
 
+        function enterBank() {
+          setSceneSelectHint(""); setCurrentChapter("bank"); setCurrentIndex(0); setSelectedHotspot(null); setSelectedMoreBankWord(null); setDialogueReply(null); setConversationDone([]); setCompletedActions([]); setLearnedHotspotKeys([]); setLearnedWords([]); setProgressHint(""); setAnimalEffect(null); setShowEnding(false); setShowMoreBankChoice(false); setShowMoreBankBook(false); setMoreBankPageIndex(0); setShowWelcome(true); setWelcomeLeaving(false); setCurrentView("zoo");
+        }
+
         function enterClinic() { setSceneSelectHint(""); setCurrentChapter("clinic"); setCurrentIndex(0); setSelectedHotspot(null); setSelectedMoreAnimal(null); setSelectedMoreFruit(null); setSelectedMoreCampusWord(null); setSelectedMoreCafeWord(null); setSelectedMoreAirportWord(null); setSelectedMoreOfficeWord(null); setSelectedMoreHotelWord(null); setSelectedMoreRestaurantWord(null); setSelectedMoreSupermarketWord(null); setSelectedMoreMetroWord(null);
           setSelectedMoreClinicWord(null); setSelectedMoreClinicWord(null); setDialogueReply(null); setConversationDone([]); setCompletedActions([]); setLearnedHotspotKeys([]); setLearnedWords([]); setProgressHint(""); setAnimalEffect(null); setShowEnding(false); setShowMoreClinicChoice(false); setShowMoreClinicBook(false); setMoreClinicPageIndex(0); setShowWelcome(true); setWelcomeLeaving(false); setCurrentView("zoo"); }
 
@@ -10925,6 +11178,7 @@
           setSelectedMoreSupermarketWord(null);
           setSelectedMoreMetroWord(null);
           setSelectedMoreClinicWord(null);
+          setSelectedMoreBankWord(null);
           setDialogueReply(null);
           setProgressHint("");
           setShowEnding(false);
@@ -10939,6 +11193,7 @@
           setShowMoreSupermarketBook(false);
           setShowMoreMetroBook(false);
           setShowMoreClinicBook(false);
+          setShowMoreBankBook(false);
           setShowMoreAnimalsChoice(isZooChapter);
           setShowMoreFruitsChoice(isFruitShopChapter);
           setShowMoreCampusChoice(isCampusChapter);
@@ -10950,6 +11205,7 @@
           setShowMoreSupermarketChoice(isSupermarketChapter);
           setShowMoreMetroChoice(isMetroChapter);
           setShowMoreClinicChoice(isClinicChapter);
+          setShowMoreBankChoice(isBankChapter);
         }
 
         function walkForward() {
@@ -10990,6 +11246,7 @@
           setSelectedMoreSupermarketWord(null);
           setSelectedMoreMetroWord(null);
           setSelectedMoreClinicWord(null);
+          setSelectedMoreBankWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -11005,6 +11262,7 @@
           setLearnedMoreSupermarketWords([]);
           setLearnedMoreMetroWords([]);
           setLearnedMoreClinicWords([]);
+          setLearnedMoreBankWords([]);
           setLearnedWords([]);
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
@@ -11022,12 +11280,14 @@
           setShowMoreSupermarketChoice(false);
           setShowMoreMetroChoice(false);
           setShowMoreClinicChoice(false);
+          setShowMoreBankChoice(false);
           setShowMoreOfficeBook(false);
           setShowMoreHotelBook(false);
           setShowMoreRestaurantBook(false);
           setShowMoreSupermarketBook(false);
           setShowMoreMetroBook(false);
           setShowMoreClinicBook(false);
+          setShowMoreBankBook(false);
           setMoreAnimalsPageIndex(0);
           setMoreFruitsPageIndex(0);
           setMoreCampusPageIndex(0);
@@ -11039,8 +11299,9 @@
           setMoreSupermarketPageIndex(0);
           setMoreMetroPageIndex(0);
           setMoreClinicPageIndex(0);
+          setMoreBankPageIndex(0);
           setShowEnding(false);
-          setShowWelcome(isZooChapter || isCampusChapter || isCafeChapter || isAirportChapter || isOfficeChapter || isHotelChapter || isRestaurantChapter || isSupermarketChapter || isMetroChapter || isClinicChapter);
+          setShowWelcome(isZooChapter || isCampusChapter || isCafeChapter || isAirportChapter || isOfficeChapter || isHotelChapter || isRestaurantChapter || isSupermarketChapter || isMetroChapter || isClinicChapter || isBankChapter);
           setWelcomeLeaving(false);
           setAnimalEffect(null);
         }
@@ -11542,6 +11803,8 @@
                               ? enterMetro
                               : scene.chapter === "clinic"
                               ? enterClinic
+                              : scene.chapter === "bank"
+                              ? enterBank
                               : enterZoo
                             : showComingSoon
                         }
@@ -15050,6 +15313,38 @@
                     </div>
                   </aside>
                 )}
+              </div>
+            )}
+
+            {showMoreBankChoice && isBankChapter && !showEnding && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 backdrop-blur-sm">
+                <div className="dialogue-enter w-full max-w-2xl rounded-3xl border border-white/18 bg-[#12232d]/94 p-6 text-cream shadow-glow backdrop-blur-2xl">
+                  <p className="text-[11px] font-black uppercase tracking-[0.24em] text-[#8eb9cf]">More Bank Words</p>
+                  <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">Want to discover more bank words?</h2>
+                  <p className="mt-3 text-xl font-bold text-cream/82">想认识更多银行词汇吗？</p>
+                  <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                    <button onClick={() => { setShowMoreBankChoice(false); setShowMoreBankBook(true); setMoreBankPageIndex(0); }} className="rounded-2xl bg-[#8eb9cf] px-5 py-4 font-black text-[#10242e] shadow-label transition hover:-translate-y-0.5 hover:bg-[#b4d4e4] active:translate-y-0"><ButtonCopy en="Yes, show me more bank words." zh="是的，我想看看更多银行词汇。" /></button>
+                    <button onClick={finishBankVisit} className="rounded-2xl border border-white/18 bg-white/12 px-5 py-4 font-black text-white transition hover:bg-white/22 active:scale-[0.99]"><ButtonCopy en="No, finish today's bank visit." zh="不用了，结束今天的银行之旅。" /></button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {showMoreBankBook && isBankChapter && !showEnding && (
+              <div className="fixed inset-0 z-50 overflow-auto bg-[#101d25]/97 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
+                <div className="mx-auto max-w-6xl">
+                  <header className="flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
+                    <div><p className="text-[11px] font-black uppercase tracking-[0.24em] text-[#8eb9cf]">More Bank Words</p><h2 className="mt-2 text-3xl font-black text-white sm:text-5xl">More Bank Words</h2><p className="mt-2 text-lg font-bold text-cream/78">更多银行词汇</p></div>
+                    <div className="flex flex-wrap items-center gap-3"><div className="rounded-2xl border border-white/14 bg-white/10 px-4 py-3"><p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#8eb9cf]">Explored</p><p className="mt-1 text-2xl font-black text-white">{exploredMoreBankCount}/{moreBankCount}</p><p className="text-xs font-bold text-cream/70">已探索</p></div><button onClick={finishBankVisit} className="rounded-full bg-[#8eb9cf] px-5 py-3 font-black text-[#10242e] shadow-label transition hover:bg-[#b4d4e4] active:scale-[0.99]"><ButtonCopy en="Finish Bank Visit" zh="结束银行之旅" /></button></div>
+                  </header>
+                  {moreBankReward && <div className="dialogue-enter mt-4 rounded-2xl border border-[#8eb9cf]/35 bg-[#21434f]/70 px-4 py-3 shadow-label backdrop-blur-[3px]"><p className="font-black text-white">{moreBankReward.text}</p><p className="mt-1 text-sm font-bold text-cream/76">{moreBankReward.zh}</p></div>}
+                  <div className="mt-5 flex gap-2 overflow-x-auto pb-1">{moreBankPages.map((page, index) => <button key={page.id} onClick={() => { setMoreBankPageIndex(index); setSelectedMoreBankWord(null); }} className={`min-w-[210px] rounded-2xl px-4 py-3 text-left font-black shadow-label transition hover:-translate-y-0.5 active:translate-y-0 ${index === moreBankPageIndex ? "bg-[#426f85] text-white" : "border border-white/16 bg-white/10 text-cream hover:bg-white/18"}`}><span className="block text-sm">{page.title}</span><span className="mt-1 block text-xs font-bold opacity-75">{page.zh}</span></button>)}</div>
+                  <section className="mt-5 rounded-3xl border border-white/14 bg-nightglass p-4 shadow-glow backdrop-blur-xl">
+                    <div className="flex flex-wrap items-end justify-between gap-3"><div><p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#8eb9cf]">Page {moreBankPageIndex + 1}/3</p><h3 className="mt-1 text-2xl font-black text-white">{currentMoreBankPage.title}<span className="ml-2 text-[#8eb9cf]">{currentMoreBankPage.zh}</span></h3></div><p className="text-sm font-black text-cream/75">{currentBankPageExploredCount}/12 learned · 已学习</p></div>
+                    <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{currentMoreBankPage.words.map((word) => { const learned = learnedMoreBankWords.includes(word.id); return <button key={word.id} onClick={() => openMoreBankWord(word)} className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${learned ? "border-[#8eb9cf]/55 bg-[#21434f]/75" : "border-white/14 bg-white/10 hover:border-[#8eb9cf]/45 hover:bg-white/16"}`}><div className="flex items-start gap-3"><span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-[#8eb9cf]/35 bg-[#21434f]/72 text-xl font-black text-[#8eb9cf] transition group-hover:scale-105">{word.word.slice(0, 1).toUpperCase()}</span><span className="min-w-0"><span className="block text-lg font-black leading-tight text-white">{word.word}</span><span className="mt-1 block text-sm font-bold text-cream/72">{word.meaning}</span></span></div><div className="mt-3 flex items-center justify-between gap-2"><span className="text-xs font-black text-[#8eb9cf]">{word.phonetic}</span>{learned && <span className="rounded-full bg-[#8eb9cf] px-2 py-1 text-[10px] font-black uppercase text-[#10242e]">Learned · 已学习</span>}</div></button>; })}</div>
+                  </section>
+                </div>
+                {selectedMoreBankWord && <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#10242e]/96 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl"><div className="flex items-start justify-between gap-3 border-b border-white/12 p-5"><div><p className="text-[10px] font-black uppercase tracking-[0.24em] text-[#8eb9cf]">Bank Word</p><h2 className="mt-2 text-4xl font-black leading-tight text-white">{selectedMoreBankWord.word}</h2><p className="mt-2 text-2xl font-extrabold text-[#8eb9cf]">{selectedMoreBankWord.phonetic}</p></div><button onClick={() => setSelectedMoreBankWord(null)} className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/12 text-2xl font-black text-white transition hover:bg-white/22 active:scale-95" aria-label="Close 关闭" title="Close / 关闭">×</button></div><div className="flex-1 overflow-auto p-5"><div className="rounded-2xl border border-white/12 bg-white/10 p-4"><p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#8eb9cf]">中文意思</p><p className="mt-2 text-2xl font-black text-white">{selectedMoreBankWord.meaning}</p></div><div className="mt-4 rounded-2xl border border-white/12 bg-black/18 p-4"><p className="text-[10px] font-black uppercase tracking-[0.2em] text-coral">Example</p><p className="mt-2 text-2xl font-black leading-9 text-white">{selectedMoreBankWord.example}</p><p className="mt-2 text-lg font-bold leading-8 text-cream/78">{selectedMoreBankWord.translation}</p></div><div className="mt-5 grid grid-cols-2 gap-3"><button onClick={() => speakEnglish(selectedMoreBankWord.word, 0.9, `more-bank-${selectedMoreBankWord.id}-normal`)} className="rounded-2xl bg-[#8eb9cf] px-4 py-3 text-base font-black text-[#10242e] shadow-label transition hover:-translate-y-0.5 hover:bg-[#b4d4e4] active:translate-y-0"><ButtonCopy en="Normal" zh="正常语速" /></button><button onClick={() => speakEnglish(selectedMoreBankWord.word, 0.65, `more-bank-${selectedMoreBankWord.id}-slow`)} className="rounded-2xl border border-[#8eb9cf]/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"><ButtonCopy en="Slow" zh="慢速朗读" /></button></div><button onClick={() => speakEnglish(selectedMoreBankWord.example, 0.86, `more-bank-${selectedMoreBankWord.id}-sentence`)} className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"><ButtonCopy en="Play Sentence" zh="朗读例句" /></button><button onClick={() => saveWordEntry(makeMoreBankWordBookEntry(selectedMoreBankWord))} disabled={isWordSaved(selectedMoreBankWord.word)} className={`mt-3 w-full rounded-2xl px-4 py-3 text-base font-black shadow-label transition active:scale-[0.99] ${isWordSaved(selectedMoreBankWord.word) ? "bg-coral text-white" : "bg-white/12 text-white hover:bg-white/22"}`}><ButtonCopy en={isWordSaved(selectedMoreBankWord.word) ? "Added to Word Book" : "Add to Word Book"} zh={isWordSaved(selectedMoreBankWord.word) ? "已加入生词本" : "加入生词本"} /></button>{isWordSaved(selectedMoreBankWord.word) && <button onClick={() => removeWordEntry(selectedMoreBankWord.word)} className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"><ButtonCopy en="Remove from Word Book" zh="移出生词本" /></button>}<button onClick={finishBankVisit} className="mt-6 w-full rounded-2xl bg-[#8eb9cf] px-4 py-4 text-lg font-black text-[#10242e] shadow-label transition hover:-translate-y-0.5 hover:bg-[#b4d4e4] active:translate-y-0"><ButtonCopy en="Finish Bank Visit" zh="结束银行之旅" /></button></div></aside>}
               </div>
             )}
 
