@@ -6768,6 +6768,96 @@
         }
       ];
 
+      const apartmentOffset = { x: -34, y: -16, mobileX: -18, mobileY: -12 };
+      const apartmentWord = (id, word, phonetic, meaning, example, translation, x, y, zh = meaning) => ({ id, word, phonetic, meaning, example, translation, x, y, label: word, zh, offset: apartmentOffset });
+
+      const apartmentScenes = [
+        {
+          id: "apartment-entrance", npc: "apartment-entrance", title: "Apartment Entrance", zh: "公寓入口", short: "入口", bg: "assets/apartment-entrance-bg.png", bgStyle: "linear-gradient(180deg, #f1e7d9 0%, #9e8d7d 58%, #3b302b 100%)", coreWord: "building directory",
+          intro: { text: "You arrive at the apartment building and meet the concierge.", zh: "你来到公寓楼，准备与门厅工作人员会面。" },
+          hotspots: [
+            apartmentWord("building-directory", "building directory", "/ˈbɪldɪŋ dəˈrektəri/", "楼层指引牌", "The building directory is beside the entrance.", "楼层指引牌在入口旁边。", 19, 30),
+            apartmentWord("entry-buzzer", "entry buzzer", "/ˈentri ˈbʌzər/", "入口门铃", "I press the entry buzzer to let someone know I am here.", "我按入口门铃，让对方知道我到了。", 49, 28),
+            apartmentWord("unit-number", "unit number", "/ˈjuːnɪt ˈnʌmbər/", "房间号码", "The unit number identifies the apartment.", "房间号码用于标识公寓。", 78, 31),
+            apartmentWord("parcel-locker", "parcel locker", "/ˈpɑːrsəl ˈlɑːkər/", "包裹柜", "The parcel locker is near the lobby wall.", "包裹柜在门厅墙边。", 22, 59),
+            apartmentWord("security-desk", "security desk", "/sɪˈkjʊrəti desk/", "安保服务台", "The security desk is near the front door.", "安保服务台在前门附近。", 52, 58),
+            { ...apartmentWord("ring-the-buzzer", "ring the buzzer", "/rɪŋ ðə ˈbʌzər/", "按门铃", "I ring the buzzer for the viewing appointment.", "我为看房预约按门铃。", 79, 60, "按门铃"), type: "action", actionEffect: "sparkle", actionMessageEn: "The buzzer has been rung. The agent is ready to meet you.", actionMessageZh: "门铃已按响，租赁人员准备接待你。", actionDuration: 2600 }
+          ]
+        },
+        {
+          id: "apartment-viewing", npc: "apartment-viewing", title: "Viewing Appointment", zh: "看房预约", short: "预约", bg: "assets/apartment-viewing-bg.png", bgStyle: "linear-gradient(180deg, #efe8dd 0%, #978b81 58%, #352f2c 100%)", coreWord: "viewing appointment",
+          intro: { text: "You confirm the viewing and begin a calm apartment tour.", zh: "你确认看房安排，开始一次从容的公寓参观。" },
+          hotspots: [
+            apartmentWord("viewing-appointment", "viewing appointment", "/ˈvjuːɪŋ əˈpɔɪntmənt/", "看房预约", "My viewing appointment is this afternoon.", "我的看房预约在今天下午。", 19, 30),
+            apartmentWord("leasing-agent", "leasing agent", "/ˈliːsɪŋ ˈeɪdʒənt/", "租赁人员", "The leasing agent opens the apartment door.", "租赁人员打开公寓门。", 49, 28),
+            apartmentWord("visitor-badge", "visitor badge", "/ˈvɪzɪtər bædʒ/", "访客证", "The visitor badge is on the small table.", "访客证放在小桌上。", 78, 31),
+            apartmentWord("tour-schedule", "tour schedule", "/tʊr ˈskedʒuːl/", "看房安排", "The tour schedule lists the rooms to see.", "看房安排列出了要看的房间。", 22, 59),
+            apartmentWord("door-viewer", "door viewer", "/dɔːr ˈvjuːər/", "门镜", "The door viewer lets me look outside.", "门镜让我可以查看门外。", 52, 58),
+            { ...apartmentWord("confirm-the-viewing", "confirm the viewing", "/kənˈfɜːrm ðə ˈvjuːɪŋ/", "确认看房", "I confirm the viewing before the tour begins.", "参观开始前，我确认看房安排。", 79, 60, "确认看房"), type: "action", actionEffect: "sparkle", actionMessageEn: "Your viewing time is confirmed.", actionMessageZh: "你的看房时间已确认。", actionDuration: 2600 }
+          ]
+        },
+        {
+          id: "apartment-living-space", npc: "apartment-living-space", title: "Living Space", zh: "居住空间", short: "客厅", bg: "assets/apartment-living-space-bg.png", bgStyle: "linear-gradient(180deg, #f1e4cf 0%, #a28c70 58%, #41342b 100%)", coreWord: "living area",
+          intro: { text: "You look around the living space and notice how the room feels.", zh: "你查看居住空间，留意房间的整体感受。" },
+          hotspots: [
+            apartmentWord("living-area", "living area", "/ˈlɪvɪŋ ˈeriə/", "起居区", "The living area has a large window.", "起居区有一扇大窗户。", 19, 30),
+            apartmentWord("storage-nook", "storage nook", "/ˈstɔːrɪdʒ nʊk/", "收纳角", "The storage nook is built into the wall.", "收纳角嵌在墙里。", 49, 28),
+            apartmentWord("roller-blind", "roller blind", "/ˈroʊlər blaɪnd/", "卷帘", "The roller blind covers the window.", "卷帘遮住窗户。", 78, 31),
+            apartmentWord("baseboard", "baseboard", "/ˈbeɪsbɔːrd/", "踢脚线", "The baseboard runs along the bottom of the wall.", "踢脚线沿着墙底延伸。", 22, 59),
+            apartmentWord("intercom-panel", "intercom panel", "/ˈɪntərkɑːm ˈpænl/", "对讲面板", "The intercom panel is near the doorway.", "对讲面板在门口附近。", 52, 58),
+            { ...apartmentWord("check-natural-light", "check the natural light", "/tʃek ðə ˈnætʃrəl laɪt/", "查看自然采光", "I check the natural light in the living area.", "我查看起居区的自然采光。", 79, 60, "查看自然采光"), type: "action", actionEffect: "sparkle", actionMessageEn: "You check how daylight enters the living area.", actionMessageZh: "你查看了日光如何进入起居区。", actionDuration: 2600 }
+          ]
+        },
+        {
+          id: "apartment-kitchen-utilities", npc: "apartment-kitchen-utilities", title: "Kitchen & Utilities", zh: "厨房与设施", short: "厨房", bg: "assets/apartment-kitchen-utilities-bg.png", bgStyle: "linear-gradient(180deg, #eee7dc 0%, #9e8a75 58%, #40342d 100%)", coreWord: "range hood",
+          intro: { text: "You look at everyday kitchen fixtures and utility spaces.", zh: "你查看日常厨房设施和设备空间。" },
+          hotspots: [
+            apartmentWord("range-hood", "range hood", "/reɪndʒ hʊd/", "抽油烟机", "The range hood is above the cooktop.", "抽油烟机在灶台上方。", 19, 30),
+            apartmentWord("induction-cooktop", "induction cooktop", "/ɪnˈdʌkʃn ˈkʊktɑːp/", "电磁灶", "The induction cooktop has a smooth surface.", "电磁灶表面平整。", 49, 28),
+            apartmentWord("dish-rack", "dish rack", "/dɪʃ ræk/", "沥水架", "The dish rack is beside the sink.", "沥水架在水槽旁。", 78, 31),
+            apartmentWord("water-meter", "water meter", "/ˈwɔːtər ˈmiːtər/", "水表", "The water meter is inside a small cabinet.", "水表在一个小柜子里。", 22, 59),
+            apartmentWord("utility-closet", "utility closet", "/juːˈtɪləti ˈklɑːzət/", "设备储物间", "The utility closet holds building fixtures.", "设备储物间放着建筑设施。", 52, 58),
+            { ...apartmentWord("test-the-tap", "test the tap", "/test ðə tæp/", "试试水龙头", "I test the tap during the apartment viewing.", "看房时，我试试水龙头。", 79, 60, "试试水龙头"), type: "action", actionEffect: "sparkle", actionMessageEn: "You test the tap and note the fixture.", actionMessageZh: "你试了水龙头，并留意了这个设施。", actionDuration: 2600 }
+          ]
+        },
+        {
+          id: "apartment-rent-details", npc: "apartment-rent-details", title: "Rent Details", zh: "租金信息", short: "费用", bg: "assets/apartment-rent-details-bg.png", bgStyle: "linear-gradient(180deg, #ece3d7 0%, #9f8f81 58%, #403735 100%)", coreWord: "monthly rent",
+          intro: { text: "You learn everyday renting expressions from a simple overview.", zh: "你从一份简明概览中学习日常租房表达。" },
+          hotspots: [
+            apartmentWord("monthly-rent", "monthly rent", "/ˈmʌnθli rent/", "月租", "Monthly rent is a phrase used in a rental listing.", "“月租”是租房信息中使用的表达。", 19, 30),
+            apartmentWord("utility-estimate", "utility estimate", "/juːˈtɪləti ˈestɪmeɪt/", "设施费用估算", "A utility estimate is an everyday renting term.", "“设施费用估算”是日常租房用语。", 49, 28),
+            apartmentWord("billing-cycle", "billing cycle", "/ˈbɪlɪŋ ˈsaɪkl/", "账单周期", "Billing cycle describes a schedule word.", "“账单周期”描述一个时间安排用语。", 78, 31),
+            apartmentWord("parking-option", "parking option", "/ˈpɑːrkɪŋ ˈɑːpʃn/", "停车选项", "The parking option is shown on the overview.", "停车选项显示在概览上。", 22, 59),
+            apartmentWord("move-in-date", "move-in date", "/ˈmuːv ɪn deɪt/", "入住日期", "Move-in date is an important viewing phrase.", "“入住日期”是重要的看房表达。", 52, 58),
+            { ...apartmentWord("review-cost-summary", "review the cost summary", "/rɪˈvjuː ðə kɔːst ˈsʌməri/", "查看费用概览", "I review the cost summary as language practice.", "我把查看费用概览作为语言练习。", 79, 60, "查看费用概览"), type: "action", actionEffect: "sparkle", actionMessageEn: "You review a simple cost overview.", actionMessageZh: "你查看了一份简明费用概览。", actionDuration: 2600 }
+          ]
+        },
+        {
+          id: "apartment-maintenance", npc: "apartment-maintenance", title: "Maintenance Request", zh: "维修申请", short: "维修", bg: "assets/apartment-maintenance-bg.png", bgStyle: "linear-gradient(180deg, #e9dfd4 0%, #917b69 58%, #382f2b 100%)", coreWord: "dripping pipe",
+          intro: { text: "You learn neutral words for noticing fixtures and making a request.", zh: "你学习描述设施状况和提出申请的中性表达。" },
+          hotspots: [
+            apartmentWord("dripping-pipe", "dripping pipe", "/ˈdrɪpɪŋ paɪp/", "滴水管道", "The dripping pipe is below the sink.", "滴水管道在水槽下方。", 19, 30),
+            apartmentWord("loose-handle", "loose handle", "/luːs ˈhændl/", "松动把手", "The loose handle is on the cabinet door.", "松动把手在柜门上。", 49, 28),
+            apartmentWord("flickering-bulb", "flickering bulb", "/ˈflɪkərɪŋ bʌlb/", "闪烁灯泡", "The flickering bulb is near the ceiling.", "闪烁灯泡在天花板附近。", 78, 31),
+            apartmentWord("service-request", "service request", "/ˈsɜːrvɪs rɪˈkwest/", "服务申请", "A service request describes a property issue.", "“服务申请”用于描述房屋问题。", 22, 59),
+            apartmentWord("access-time", "access time", "/ˈækses taɪm/", "进入时间", "Access time is a phrase on a request form.", "“进入时间”是申请表上的表达。", 52, 58),
+            { ...apartmentWord("submit-a-request", "submit a request", "/səbˈmɪt ə rɪˈkwest/", "提交申请", "I submit a request in this learning scene.", "我在这个学习场景中提交申请。", 79, 60, "提交申请"), type: "action", actionEffect: "sparkle", actionMessageEn: "Your service request is noted for the property team.", actionMessageZh: "你的服务申请已为物业团队记录。", actionDuration: 2600 }
+          ]
+        },
+        {
+          id: "apartment-move-in", npc: "apartment-move-in", title: "Move-in Checklist", zh: "入住清单", short: "入住", bg: "assets/apartment-move-in-bg.png", bgStyle: "linear-gradient(180deg, #eee4d7 0%, #9b8875 58%, #3b322c 100%)", coreWord: "key handover",
+          intro: { text: "You review the move-in checklist and use simple next-step language.", zh: "你查看入住清单，并练习简单的下一步表达。" },
+          hotspots: [
+            apartmentWord("key-handover", "key handover", "/kiː ˈhændoʊvər/", "钥匙交接", "The key handover is part of moving in.", "钥匙交接是入住的一部分。", 19, 30),
+            apartmentWord("mailbox-label", "mailbox label", "/ˈmeɪlbɑːks ˈleɪbl/", "邮箱标签", "The mailbox label is blank in this learning scene.", "这个学习场景中的邮箱标签是空白的。", 49, 28),
+            apartmentWord("condition-report", "condition report", "/kənˈdɪʃn rɪˈpɔːrt/", "房屋状况记录", "The condition report names the apartment's starting state.", "房屋状况记录说明公寓的起始状态。", 78, 31),
+            apartmentWord("entry-code", "entry code", "/ˈentri koʊd/", "入门密码", "Entry code is a vocabulary phrase, not a real code.", "“入门密码”是词汇表达，不是真实密码。", 22, 59),
+            apartmentWord("welcome-packet", "welcome packet", "/ˈwelkəm ˈpækɪt/", "欢迎资料包", "The welcome packet has general move-in information.", "欢迎资料包含一般入住信息。", 52, 58),
+            { ...apartmentWord("confirm-next-step", "confirm the next step", "/kənˈfɜːrm ðə nekst step/", "确认下一步", "I confirm the next step before I leave.", "离开前，我确认下一步。", 79, 60, "确认下一步"), type: "action", actionEffect: "sparkle", actionMessageEn: "You confirm the move-in checklist and next step.", actionMessageZh: "你确认了入住清单和下一步。", actionDuration: 2600 }
+          ]
+        }
+      ];
+
       const clinicDialogues = {
         "clinic-entrance": {
                 id: "clinic-entrance",
@@ -6946,6 +7036,37 @@
         "bank-exit": { id: "bank-exit", speaker: "Branch Host", zh: "网点引导员", text: "Is there anything else you need before you leave?", translation: "离开前还有什么需要吗？", options: [
           { text: "No, thank you for your help.", choiceZh: "没有了，谢谢你的帮助。", reply: "You are welcome. Have a good day.", translation: "不客气。祝你今天愉快。" },
           { text: "Could you repeat the next step?", choiceZh: "你可以再说一遍下一步吗？", reply: "Please check the appointment reminder before your next visit.", translation: "下次到访前请查看预约提醒。" }
+        ] }
+      };
+
+      const apartmentDialogues = {
+        "apartment-entrance": { id: "apartment-entrance", speaker: "Building Concierge", zh: "公寓门厅工作人员", text: "Welcome. Are you here for an apartment viewing?", translation: "欢迎。你是来参观看房的吗？", options: [
+          { text: "Yes, I have a viewing appointment.", choiceZh: "是的，我有看房预约。", reply: "Great. Please ring the buzzer for the leasing agent.", translation: "很好。请按门铃联系租赁人员。" },
+          { text: "Where is the security desk?", choiceZh: "安保服务台在哪里？", reply: "It is beside the entrance doors.", translation: "它在入口门旁边。" }
+        ] },
+        "apartment-viewing": { id: "apartment-viewing", speaker: "Leasing Agent", zh: "租赁人员", text: "Thanks for arriving on time. Shall we begin the viewing?", translation: "谢谢你准时到达。我们开始看房吧？", options: [
+          { text: "Yes, I would like to see the living area.", choiceZh: "好的，我想看看起居区。", reply: "Of course. It is just through this doorway.", translation: "当然。就在这扇门里面。" },
+          { text: "Can I keep this visitor badge?", choiceZh: "我可以佩戴这张访客证吗？", reply: "Yes, please keep it during the tour.", translation: "可以，请在参观期间佩戴它。" }
+        ] },
+        "apartment-living-space": { id: "apartment-living-space", speaker: "Leasing Agent", zh: "租赁人员", text: "This room gets soft daylight through the main window.", translation: "这个房间通过主窗户获得柔和的日光。", options: [
+          { text: "Where is the intercom panel?", choiceZh: "对讲面板在哪里？", reply: "It is beside the doorway on the right.", translation: "它在右侧门口旁边。" },
+          { text: "I like the storage nook.", choiceZh: "我喜欢这个收纳角。", reply: "It is useful for everyday items.", translation: "它适合放日常用品。" }
+        ] },
+        "apartment-kitchen-utilities": { id: "apartment-kitchen-utilities", speaker: "Property Assistant", zh: "物业助理", text: "These are everyday kitchen fixtures to notice during a viewing.", translation: "这些是在看房时可以留意的日常厨房设施。", options: [
+          { text: "May I test the tap?", choiceZh: "我可以试试水龙头吗？", reply: "Yes, you can check the fixture during the viewing.", translation: "可以，你可以在看房时查看这个设施。" },
+          { text: "Where is the utility closet?", choiceZh: "设备储物间在哪里？", reply: "It is behind the narrow door beside the kitchen.", translation: "它在厨房旁边那扇窄门后面。" }
+        ] },
+        "apartment-rent-details": { id: "apartment-rent-details", speaker: "Leasing Agent", zh: "租赁人员", text: "This page is a simple overview of common rental words.", translation: "这一页是常见租房用语的简明概览。", options: [
+          { text: "Could you explain these labels?", choiceZh: "你可以解释这些标签吗？", reply: "Yes. I can explain the everyday English on the overview.", translation: "可以。我可以解释概览上的日常英语。" },
+          { text: "What does move-in date mean?", choiceZh: "“入住日期”是什么意思？", reply: "It is a phrase used when people discuss a move-in schedule.", translation: "这是人们谈论入住安排时使用的表达。" }
+        ] },
+        "apartment-maintenance": { id: "apartment-maintenance", speaker: "Property Assistant", zh: "物业助理", text: "You can use these words to describe a fixture in the apartment.", translation: "你可以用这些词来描述公寓里的设施。", options: [
+          { text: "I would like to report an issue.", choiceZh: "我想报告一个问题。", reply: "I can note the words you use on a service request.", translation: "我可以把你使用的词记在服务申请上。" },
+          { text: "The handle looks loose.", choiceZh: "这个把手看起来松了。", reply: "Thank you. That is a clear way to describe it.", translation: "谢谢。这是很清楚的描述方式。" }
+        ] },
+        "apartment-move-in": { id: "apartment-move-in", speaker: "Move-in Coordinator", zh: "入住协调员", text: "Let us review the move-in checklist together.", translation: "让我们一起查看入住清单。", options: [
+          { text: "What is in the welcome packet?", choiceZh: "欢迎资料包里有什么？", reply: "It has general move-in information for this learning visit.", translation: "它包含这次学习看房的一般入住信息。" },
+          { text: "I would like to confirm the next step.", choiceZh: "我想确认下一步。", reply: "Great. You have completed the checklist language.", translation: "很好。你已经完成了入住清单用语。" }
         ] }
       };
 
@@ -8716,6 +8837,52 @@
         (count, page) => count + page.words.length,
         0
       );
+      const apartmentMoreWord = (id, word, phonetic, meaning, example, translation) => ({ id, word, phonetic, meaning, example, translation });
+      const moreApartmentPages = [
+        { id: "apartment-spaces", title: "Apartment Spaces & Fixtures", zh: "公寓空间与固定设施", words: [
+          apartmentMoreWord("coat-hook", "coat hook", "/koʊt hʊk/", "衣帽钩", "The coat hook is near the entry.", "衣帽钩在入口附近。"),
+          apartmentMoreWord("shoe-cabinet", "shoe cabinet", "/ʃuː ˈkæbɪnət/", "鞋柜", "The shoe cabinet is beside the door.", "鞋柜在门边。"),
+          apartmentMoreWord("built-in-shelf", "built-in shelf", "/ˌbɪlt ɪn ʃelf/", "内置搁架", "The built-in shelf saves space.", "内置搁架节省空间。"),
+          apartmentMoreWord("curtain-rod", "curtain rod", "/ˈkɜːrtn rɑːd/", "窗帘杆", "The curtain rod is above the window.", "窗帘杆在窗户上方。"),
+          apartmentMoreWord("skirting-board", "skirting board", "/ˈskɜːrtɪŋ bɔːrd/", "踢脚板", "The skirting board runs along the wall.", "踢脚板沿着墙边。"),
+          apartmentMoreWord("fuse-box", "fuse box", "/fjuːz bɑːks/", "保险丝盒", "The fuse box is inside a small panel.", "保险丝盒在一个小面板里。"),
+          apartmentMoreWord("smoke-alarm", "smoke alarm", "/smoʊk əˈlɑːrm/", "烟雾报警器", "The smoke alarm is on the ceiling.", "烟雾报警器在天花板上。"),
+          apartmentMoreWord("radiator-valve", "radiator valve", "/ˈreɪdieɪtər vælv/", "暖气阀", "The radiator valve is near the floor.", "暖气阀在地面附近。"),
+          apartmentMoreWord("doorstop", "doorstop", "/ˈdɔːrstɑːp/", "门挡", "The doorstop keeps the door in place.", "门挡让门保持位置。"),
+          apartmentMoreWord("air-vent", "air vent", "/er vent/", "通风口", "The air vent is high on the wall.", "通风口在墙壁高处。"),
+          apartmentMoreWord("storage-cabinet", "storage cabinet", "/ˈstɔːrɪdʒ ˈkæbɪnət/", "储物柜", "The storage cabinet has extra shelves.", "储物柜有额外的搁板。"),
+          apartmentMoreWord("ceiling-fan", "ceiling fan", "/ˈsiːlɪŋ fæn/", "吊扇", "The ceiling fan is above the living area.", "吊扇在起居区上方。")
+        ] },
+        { id: "apartment-terms", title: "Renting Terms & Payments", zh: "租房条款与费用表达", words: [
+          apartmentMoreWord("rental-listing", "rental listing", "/ˈrentl ˈlɪstɪŋ/", "租房信息", "The rental listing describes the apartment.", "租房信息描述这套公寓。"),
+          apartmentMoreWord("available-date", "available date", "/əˈveɪləbl deɪt/", "可入住日期", "Available date is a phrase on a listing.", "“可入住日期”是租房信息上的表达。"),
+          apartmentMoreWord("viewing-slot", "viewing slot", "/ˈvjuːɪŋ slɑːt/", "看房时段", "I choose a viewing slot for the tour.", "我为看房选择一个时段。"),
+          apartmentMoreWord("monthly-charge", "monthly charge", "/ˈmʌnθli tʃɑːrdʒ/", "月度费用", "Monthly charge is an everyday renting phrase.", "“月度费用”是日常租房表达。"),
+          apartmentMoreWord("utility-allowance", "utility allowance", "/juːˈtɪləti əˈlaʊəns/", "设施费用额度", "Utility allowance is a phrase to recognize in a listing.", "“设施费用额度”是需要认识的租房信息表达。"),
+          apartmentMoreWord("parking-space", "parking space", "/ˈpɑːrkɪŋ speɪs/", "停车位", "The parking space is near the building.", "停车位在楼房附近。"),
+          apartmentMoreWord("payment-portal", "payment portal", "/ˈpeɪmənt ˈpɔːrtl/", "付款入口", "Payment portal is a vocabulary phrase in this lesson.", "“付款入口”是本课中的词汇表达。"),
+          apartmentMoreWord("billing-statement", "billing statement", "/ˈbɪlɪŋ ˈsteɪtmənt/", "账单明细", "Billing statement is a document name to recognize.", "“账单明细”是需要认识的文件名称。"),
+          apartmentMoreWord("fee-notice", "fee notice", "/fiː ˈnoʊtɪs/", "费用通知", "The fee notice is a phrase on a sample page.", "“费用通知”是示例页面上的表达。"),
+          apartmentMoreWord("renewal-reminder", "renewal reminder", "/rɪˈnuːəl rɪˈmaɪndər/", "续约提醒", "Renewal reminder is a general renting phrase.", "“续约提醒”是一般租房表达。"),
+          apartmentMoreWord("cost-overview", "cost overview", "/kɔːst ˈoʊvərvjuː/", "费用概览", "The cost overview uses simple labels.", "费用概览使用简单标签。"),
+          apartmentMoreWord("price-range", "price range", "/praɪs reɪndʒ/", "价格范围", "Price range is a term in a rental search.", "“价格范围”是租房搜索中的术语。")
+        ] },
+        { id: "apartment-maintenance-words", title: "Maintenance & Move-in Phrases", zh: "维修与入住表达", words: [
+          apartmentMoreWord("water-stain", "water stain", "/ˈwɔːtər steɪn/", "水渍", "The water stain is on the wall.", "水渍在墙上。"),
+          apartmentMoreWord("drain-cover", "drain cover", "/dreɪn ˈkʌvər/", "下水口盖", "The drain cover is in the sink.", "下水口盖在水槽里。"),
+          apartmentMoreWord("cabinet-hinge", "cabinet hinge", "/ˈkæbɪnət hɪndʒ/", "柜门铰链", "The cabinet hinge is inside the door.", "柜门铰链在柜门内侧。"),
+          apartmentMoreWord("service-visit", "service visit", "/ˈsɜːrvɪs ˈvɪzɪt/", "上门服务", "Service visit is a useful maintenance phrase.", "“上门服务”是实用的维修表达。"),
+          apartmentMoreWord("access-period", "access period", "/ˈækses ˈpɪriəd/", "进入时段", "Access period describes a time window.", "“进入时段”描述一个时间范围。"),
+          apartmentMoreWord("repair-update", "repair update", "/rɪˈper ˈʌpdeɪt/", "维修更新", "Repair update is a status phrase.", "“维修更新”是状态表达。"),
+          apartmentMoreWord("move-in-walkthrough", "move-in walkthrough", "/ˈmuːv ɪn ˈwɔːkθruː/", "入住验看", "The move-in walkthrough visits each room.", "入住验看会查看每个房间。"),
+          apartmentMoreWord("condition-notes", "condition notes", "/kənˈdɪʃn noʊts/", "状况备注", "Condition notes describe what you see.", "状况备注描述你看到的内容。"),
+          apartmentMoreWord("handover-time", "handover time", "/ˈhændoʊvər taɪm/", "交接时间", "Handover time is part of the checklist.", "交接时间是清单的一部分。"),
+          apartmentMoreWord("welcome-guide", "welcome guide", "/ˈwelkəm ɡaɪd/", "欢迎指南", "The welcome guide has general building words.", "欢迎指南包含一般楼宇词汇。"),
+          apartmentMoreWord("building-manager", "building manager", "/ˈbɪldɪŋ ˈmænɪdʒər/", "楼宇管理员", "The building manager works in the property office.", "楼宇管理员在物业办公室工作。"),
+          apartmentMoreWord("report-an-issue", "report an issue", "/rɪˈpɔːrt ən ˈɪʃuː/", "报告问题", "I can report an issue using clear words.", "我可以用清楚的词报告问题。")
+        ] }
+      ];
+      const moreApartmentCount = moreApartmentPages.reduce((count, page) => count + page.words.length, 0);
 
       const sceneCards = [
         {
@@ -8933,6 +9100,24 @@
           visualZh: "日常银行服务",
           image: "linear-gradient(180deg, rgba(9, 18, 25, 0.04), rgba(9, 18, 25, 0.72)), url('assets/bank-cover.png')",
           imagePosition: "center 52%",
+        },
+        {
+          id: "apartment",
+          title: "Apartment",
+          zh: "公寓租房",
+          status: "Available",
+          statusZh: "可进入",
+          description: "Visit an apartment, explore living spaces, and learn everyday renting English.",
+          descriptionZh: "参观公寓、探索居住空间，并学习日常租房英语。",
+          button: "Enter Apartment",
+          buttonZh: "进入公寓",
+          available: true,
+          chapter: "apartment",
+          accent: "#d9ad74",
+          visual: "Everyday Home",
+          visualZh: "日常居住空间",
+          image: "linear-gradient(180deg, rgba(29, 18, 10, 0.03), rgba(29, 18, 10, 0.72)), url('assets/apartment-cover.png')",
+          imagePosition: "center 54%",
         },
       ];
 
@@ -9453,6 +9638,7 @@
         const [selectedMoreMetroWord, setSelectedMoreMetroWord] = useState(null);
         const [selectedMoreClinicWord, setSelectedMoreClinicWord] = useState(null);
         const [selectedMoreBankWord, setSelectedMoreBankWord] = useState(null);
+        const [selectedMoreApartmentWord, setSelectedMoreApartmentWord] = useState(null);
         const [dialogueReply, setDialogueReply] = useState(null);
         const [conversationDone, setConversationDone] = useState([]);
         const [completedActions, setCompletedActions] = useState([]);
@@ -9469,6 +9655,7 @@
         const [learnedMoreMetroWords, setLearnedMoreMetroWords] = useState([]);
         const [learnedMoreClinicWords, setLearnedMoreClinicWords] = useState([]);
         const [learnedMoreBankWords, setLearnedMoreBankWords] = useState([]);
+        const [learnedMoreApartmentWords, setLearnedMoreApartmentWords] = useState([]);
         const [learnedWords, setLearnedWords] = useState([]);
         const [savedWords, setSavedWords] = useState(loadWordBookEntries);
         const [playingKey, setPlayingKey] = useState(null);
@@ -9503,6 +9690,8 @@
         const [showMoreClinicBook, setShowMoreClinicBook] = useState(false);
         const [showMoreBankChoice, setShowMoreBankChoice] = useState(false);
         const [showMoreBankBook, setShowMoreBankBook] = useState(false);
+        const [showMoreApartmentChoice, setShowMoreApartmentChoice] = useState(false);
+        const [showMoreApartmentBook, setShowMoreApartmentBook] = useState(false);
         const [showMobileObserve, setShowMobileObserve] = useState(false);
         const [showMobileDialogue, setShowMobileDialogue] = useState(false);
         const [showMobileTripMap, setShowMobileTripMap] = useState(false);
@@ -9518,6 +9707,7 @@
         const [moreMetroPageIndex, setMoreMetroPageIndex] = useState(0);
         const [moreClinicPageIndex, setMoreClinicPageIndex] = useState(0);
         const [moreBankPageIndex, setMoreBankPageIndex] = useState(0);
+        const [moreApartmentPageIndex, setMoreApartmentPageIndex] = useState(0);
         const [showEnding, setShowEnding] = useState(false);
         const [isWalking, setIsWalking] = useState(false);
         const [animalEffect, setAnimalEffect] = useState(null);
@@ -9570,6 +9760,7 @@
         const isMetroChapter = currentChapter === "metro";
         const isClinicChapter = currentChapter === "clinic";
         const isBankChapter = currentChapter === "bank";
+        const isApartmentChapter = currentChapter === "apartment";
         const activeScenes = isZooChapter
           ? scenes
           : isFruitShopChapter
@@ -9592,7 +9783,9 @@
           ? metroScenes
           : isClinicChapter
           ? clinicScenes
-          : bankScenes;
+          : isBankChapter
+          ? bankScenes
+          : apartmentScenes;
         const activeDialogues = isZooChapter
           ? dialogues
           : isFruitShopChapter
@@ -9615,7 +9808,9 @@
           ? metroDialogues
           : isClinicChapter
           ? clinicDialogues
-          : bankDialogues;
+          : isBankChapter
+          ? bankDialogues
+          : apartmentDialogues;
         const chapterTitle = isZooChapter
           ? "Zoo Trip"
           : isFruitShopChapter
@@ -9638,7 +9833,9 @@
           ? "Metro Trip"
           : isClinicChapter
           ? "Clinic Visit"
-          : "Bank Visit";
+          : isBankChapter
+          ? "Bank Visit"
+          : "Apartment Visit";
         const chapterTitleZh = isZooChapter
           ? "动物园之旅"
           : isFruitShopChapter
@@ -9661,7 +9858,9 @@
           ? "地铁之旅"
           : isClinicChapter
           ? "诊所之行"
-          : "银行之旅";
+          : isBankChapter
+          ? "银行之旅"
+          : "公寓看房之旅";
         const chapterWordBookScene = isZooChapter
           ? "Zoo"
           : isFruitShopChapter
@@ -9684,7 +9883,9 @@
           ? "Metro"
           : isClinicChapter
           ? "Clinic"
-          : "Bank";
+          : isBankChapter
+          ? "Bank"
+          : "Apartment";
         const endingTitle = isZooChapter
           ? "Great job! Your zoo trip is finished."
           : isFruitShopChapter
@@ -9707,7 +9908,9 @@
           ? "Great job! Your metro trip is finished."
           : isClinicChapter
           ? "Great job! Your clinic visit is finished."
-          : "Great job! Your bank visit is finished.";
+          : isBankChapter
+          ? "Great job! Your bank visit is finished."
+          : "Great job! Your apartment visit is finished.";
         const endingZh = isZooChapter
           ? "太棒了！今天的动物园之旅到此结束啦。"
           : isFruitShopChapter
@@ -9730,7 +9933,9 @@
           ? "太棒了！你的地铁之旅完成了。"
           : isClinicChapter
           ? "太棒了！你的诊所之行完成了。"
-          : "太棒了！你的银行之旅完成了。";
+          : isBankChapter
+          ? "太棒了！你的银行之旅完成了。"
+          : "太棒了！你的公寓看房之旅完成了。";
         const restartLabel = isZooChapter
           ? "Restart Trip"
           : isFruitShopChapter
@@ -9753,7 +9958,9 @@
           ? "Restart Metro"
           : isClinicChapter
           ? "Restart Clinic"
-          : "Restart Bank";
+          : isBankChapter
+          ? "Restart Bank"
+          : "Restart Apartment";
         const restartZh = isZooChapter
           ? "重新开始旅程"
           : isFruitShopChapter
@@ -9776,7 +9983,9 @@
           ? "重新开始地铁"
           : isClinicChapter
           ? "重新开始诊所"
-          : "重新开始银行";
+          : isBankChapter
+          ? "重新开始银行"
+          : "重新开始公寓";
         const welcomeIntro = isZooChapter
           ? {
               label: "Zoo Trip",
@@ -9898,7 +10107,8 @@
               action: "Start Clinic Visit",
               actionZh: "开始诊所之行",
             }
-          : {
+          : isBankChapter
+          ? {
               label: "Bank Visit",
               labelZh: "银行之旅",
               title: "Welcome to the bank!",
@@ -9907,6 +10117,16 @@
               zh: "今天你会走进银行网点、寻求帮助、领取排队号码、与柜员沟通、使用自助服务设备，并学习日常银行英语。",
               action: "Start Bank Visit",
               actionZh: "开始银行之旅",
+            }
+          : {
+              label: "Apartment Visit",
+              labelZh: "",
+              title: "Welcome to the apartment!",
+              titleZh: "欢迎来到公寓！",
+              text: "Today, you will visit an apartment, talk with a leasing agent, check the living space, review basic rental details, ask about utilities and maintenance, and learn real apartment English.",
+              zh: "今天你会参观公寓、与租赁人员沟通、查看居住空间、了解基础租房信息、询问设施与维修，并学习真实公寓租房英语。",
+              action: "Start Apartment Visit",
+              actionZh: "开始公寓看房之旅",
             };
         const currentScene = activeScenes[currentIndex];
         const currentDialogue = currentScene.npc ? activeDialogues[currentScene.npc] : null;
@@ -9920,7 +10140,7 @@
           setShowMobileTripMap(false);
         }, [isMobileLandscape, currentScene.id]);
         const isHotspotExpanded = expandedHotspotScenes.includes(currentScene.id);
-        const maxPrimaryHotspots = isClinicChapter || isBankChapter || isMobileLandscape
+        const maxPrimaryHotspots = isClinicChapter || isBankChapter || isApartmentChapter || isMobileLandscape
           ? currentScene.hotspots.length
           : viewport.width < 640
           ? 4
@@ -10190,6 +10410,10 @@
         const exploredMoreBankCount = learnedMoreBankWords.length;
         const currentBankPageExploredCount = currentMoreBankPage.words.filter((word) => learnedMoreBankWords.includes(word.id)).length;
         const moreBankReward = exploredMoreBankCount === moreBankCount ? { text: "Amazing! You discovered all more bank words.", zh: "太厉害了！你探索了全部拓展银行词汇。" } : currentBankPageExploredCount === currentMoreBankPage.words.length ? { text: "Great explorer! You completed one bank page.", zh: "太棒了！你完成了一页银行词汇探索。" } : exploredMoreBankCount >= 5 ? { text: `Nice! You discovered ${exploredMoreBankCount} more bank words.`, zh: `不错！你又认识了 ${exploredMoreBankCount} 个银行词汇。` } : null;
+        const currentMoreApartmentPage = moreApartmentPages[moreApartmentPageIndex];
+        const exploredMoreApartmentCount = learnedMoreApartmentWords.length;
+        const currentApartmentPageExploredCount = currentMoreApartmentPage.words.filter((word) => learnedMoreApartmentWords.includes(word.id)).length;
+        const moreApartmentReward = exploredMoreApartmentCount === moreApartmentCount ? { text: "Amazing! You discovered all more apartment words.", zh: "太厉害了！你探索了全部拓展公寓词汇。" } : currentApartmentPageExploredCount === currentMoreApartmentPage.words.length ? { text: "Great explorer! You completed one apartment page.", zh: "太棒了！你完成了一页公寓词汇探索。" } : exploredMoreApartmentCount >= 5 ? { text: `Nice! You discovered ${exploredMoreApartmentCount} more apartment words.`, zh: `不错！你又认识了 ${exploredMoreApartmentCount} 个公寓词汇。` } : null;
         const wordBookFilters = [
           { id: "all", en: "All", zh: "全部" },
           { id: "zoo", en: "Zoo", zh: "动物园" },
@@ -10387,6 +10611,10 @@
           return { word: word.word, zh: word.meaning, phonetic: word.phonetic, example: word.example, exampleZh: word.translation, scene: "Bank / More Bank Words", type: "banking", addedAt: new Date().toISOString() };
         }
 
+        function makeMoreApartmentWordBookEntry(word) {
+          return { word: word.word, zh: word.meaning, phonetic: word.phonetic, example: word.example, exampleZh: word.translation, scene: "Apartment / More Apartment Words", type: "housing", addedAt: new Date().toISOString() };
+        }
+
         function isWordSaved(word) {
           const key = getWordKey(word);
           return savedWords.some((item) => getWordKey(item.word) === key);
@@ -10422,6 +10650,7 @@
           setSelectedMoreMetroWord(null);
           setSelectedMoreClinicWord(null);
           setSelectedMoreBankWord(null);
+          setSelectedMoreApartmentWord(null);
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
           setShowMoreFruitsChoice(false);
@@ -10443,9 +10672,11 @@
           setShowMoreMetroChoice(false);
           setShowMoreClinicChoice(false);
           setShowMoreBankChoice(false);
+          setShowMoreApartmentChoice(false);
           setShowMoreMetroBook(false);
           setShowMoreClinicBook(false);
           setShowMoreBankBook(false);
+          setShowMoreApartmentBook(false);
           setIsReviewingWordBook(false);
           setReviewRevealed(false);
           setReviewIndex(0);
@@ -10634,6 +10865,13 @@
           speakEnglish(word.word, 0.9, "more-bank-" + word.id + "-normal");
         }
 
+        function openMoreApartmentWord(word) {
+          setSelectedMoreApartmentWord(word);
+          setLearnedMoreApartmentWords((items) => items.includes(word.id) ? items : [...items, word.id]);
+          rememberWord(word.word);
+          speakEnglish(word.word, 0.9, "more-apartment-" + word.id + "-normal");
+        }
+
         function finishZooTrip() {
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
@@ -10714,6 +10952,13 @@
           setShowMoreBankChoice(false);
           setShowMoreBankBook(false);
           setSelectedMoreBankWord(null);
+          setShowEnding(true);
+        }
+
+        function finishApartmentVisit() {
+          setShowMoreApartmentChoice(false);
+          setShowMoreApartmentBook(false);
+          setSelectedMoreApartmentWord(null);
           setShowEnding(true);
         }
 
@@ -11097,6 +11342,10 @@
           setSceneSelectHint(""); setCurrentChapter("bank"); setCurrentIndex(0); setSelectedHotspot(null); setSelectedMoreBankWord(null); setDialogueReply(null); setConversationDone([]); setCompletedActions([]); setLearnedHotspotKeys([]); setLearnedWords([]); setProgressHint(""); setAnimalEffect(null); setShowEnding(false); setShowMoreBankChoice(false); setShowMoreBankBook(false); setMoreBankPageIndex(0); setShowWelcome(true); setWelcomeLeaving(false); setCurrentView("zoo");
         }
 
+        function enterApartment() {
+          setSceneSelectHint(""); setCurrentChapter("apartment"); setCurrentIndex(0); setSelectedHotspot(null); setSelectedMoreApartmentWord(null); setDialogueReply(null); setConversationDone([]); setCompletedActions([]); setLearnedHotspotKeys([]); setLearnedWords([]); setProgressHint(""); setAnimalEffect(null); setShowEnding(false); setShowMoreApartmentChoice(false); setShowMoreApartmentBook(false); setMoreApartmentPageIndex(0); setShowWelcome(true); setWelcomeLeaving(false); setCurrentView("zoo");
+        }
+
         function enterClinic() { setSceneSelectHint(""); setCurrentChapter("clinic"); setCurrentIndex(0); setSelectedHotspot(null); setSelectedMoreAnimal(null); setSelectedMoreFruit(null); setSelectedMoreCampusWord(null); setSelectedMoreCafeWord(null); setSelectedMoreAirportWord(null); setSelectedMoreOfficeWord(null); setSelectedMoreHotelWord(null); setSelectedMoreRestaurantWord(null); setSelectedMoreSupermarketWord(null); setSelectedMoreMetroWord(null);
           setSelectedMoreClinicWord(null); setSelectedMoreClinicWord(null); setDialogueReply(null); setConversationDone([]); setCompletedActions([]); setLearnedHotspotKeys([]); setLearnedWords([]); setProgressHint(""); setAnimalEffect(null); setShowEnding(false); setShowMoreClinicChoice(false); setShowMoreClinicBook(false); setMoreClinicPageIndex(0); setShowWelcome(true); setWelcomeLeaving(false); setCurrentView("zoo"); }
 
@@ -11179,6 +11428,7 @@
           setSelectedMoreMetroWord(null);
           setSelectedMoreClinicWord(null);
           setSelectedMoreBankWord(null);
+          setSelectedMoreApartmentWord(null);
           setDialogueReply(null);
           setProgressHint("");
           setShowEnding(false);
@@ -11194,6 +11444,7 @@
           setShowMoreMetroBook(false);
           setShowMoreClinicBook(false);
           setShowMoreBankBook(false);
+          setShowMoreApartmentBook(false);
           setShowMoreAnimalsChoice(isZooChapter);
           setShowMoreFruitsChoice(isFruitShopChapter);
           setShowMoreCampusChoice(isCampusChapter);
@@ -11206,6 +11457,7 @@
           setShowMoreMetroChoice(isMetroChapter);
           setShowMoreClinicChoice(isClinicChapter);
           setShowMoreBankChoice(isBankChapter);
+          setShowMoreApartmentChoice(isApartmentChapter);
         }
 
         function walkForward() {
@@ -11247,6 +11499,7 @@
           setSelectedMoreMetroWord(null);
           setSelectedMoreClinicWord(null);
           setSelectedMoreBankWord(null);
+          setSelectedMoreApartmentWord(null);
           setDialogueReply(null);
           setConversationDone([]);
           setCompletedActions([]);
@@ -11263,6 +11516,7 @@
           setLearnedMoreMetroWords([]);
           setLearnedMoreClinicWords([]);
           setLearnedMoreBankWords([]);
+          setLearnedMoreApartmentWords([]);
           setLearnedWords([]);
           setShowMoreAnimalsChoice(false);
           setShowMoreAnimalsBook(false);
@@ -11281,6 +11535,7 @@
           setShowMoreMetroChoice(false);
           setShowMoreClinicChoice(false);
           setShowMoreBankChoice(false);
+          setShowMoreApartmentChoice(false);
           setShowMoreOfficeBook(false);
           setShowMoreHotelBook(false);
           setShowMoreRestaurantBook(false);
@@ -11288,6 +11543,7 @@
           setShowMoreMetroBook(false);
           setShowMoreClinicBook(false);
           setShowMoreBankBook(false);
+          setShowMoreApartmentBook(false);
           setMoreAnimalsPageIndex(0);
           setMoreFruitsPageIndex(0);
           setMoreCampusPageIndex(0);
@@ -11300,8 +11556,9 @@
           setMoreMetroPageIndex(0);
           setMoreClinicPageIndex(0);
           setMoreBankPageIndex(0);
+          setMoreApartmentPageIndex(0);
           setShowEnding(false);
-          setShowWelcome(isZooChapter || isCampusChapter || isCafeChapter || isAirportChapter || isOfficeChapter || isHotelChapter || isRestaurantChapter || isSupermarketChapter || isMetroChapter || isClinicChapter || isBankChapter);
+          setShowWelcome(isZooChapter || isCampusChapter || isCafeChapter || isAirportChapter || isOfficeChapter || isHotelChapter || isRestaurantChapter || isSupermarketChapter || isMetroChapter || isClinicChapter || isBankChapter || isApartmentChapter);
           setWelcomeLeaving(false);
           setAnimalEffect(null);
         }
@@ -11805,6 +12062,8 @@
                               ? enterClinic
                               : scene.chapter === "bank"
                               ? enterBank
+                              : scene.chapter === "apartment"
+                              ? enterApartment
                               : enterZoo
                             : showComingSoon
                         }
@@ -15345,6 +15604,38 @@
                   </section>
                 </div>
                 {selectedMoreBankWord && <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#10242e]/96 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl"><div className="flex items-start justify-between gap-3 border-b border-white/12 p-5"><div><p className="text-[10px] font-black uppercase tracking-[0.24em] text-[#8eb9cf]">Bank Word</p><h2 className="mt-2 text-4xl font-black leading-tight text-white">{selectedMoreBankWord.word}</h2><p className="mt-2 text-2xl font-extrabold text-[#8eb9cf]">{selectedMoreBankWord.phonetic}</p></div><button onClick={() => setSelectedMoreBankWord(null)} className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/12 text-2xl font-black text-white transition hover:bg-white/22 active:scale-95" aria-label="Close 关闭" title="Close / 关闭">×</button></div><div className="flex-1 overflow-auto p-5"><div className="rounded-2xl border border-white/12 bg-white/10 p-4"><p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#8eb9cf]">中文意思</p><p className="mt-2 text-2xl font-black text-white">{selectedMoreBankWord.meaning}</p></div><div className="mt-4 rounded-2xl border border-white/12 bg-black/18 p-4"><p className="text-[10px] font-black uppercase tracking-[0.2em] text-coral">Example</p><p className="mt-2 text-2xl font-black leading-9 text-white">{selectedMoreBankWord.example}</p><p className="mt-2 text-lg font-bold leading-8 text-cream/78">{selectedMoreBankWord.translation}</p></div><div className="mt-5 grid grid-cols-2 gap-3"><button onClick={() => speakEnglish(selectedMoreBankWord.word, 0.9, `more-bank-${selectedMoreBankWord.id}-normal`)} className="rounded-2xl bg-[#8eb9cf] px-4 py-3 text-base font-black text-[#10242e] shadow-label transition hover:-translate-y-0.5 hover:bg-[#b4d4e4] active:translate-y-0"><ButtonCopy en="Normal" zh="正常语速" /></button><button onClick={() => speakEnglish(selectedMoreBankWord.word, 0.65, `more-bank-${selectedMoreBankWord.id}-slow`)} className="rounded-2xl border border-[#8eb9cf]/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"><ButtonCopy en="Slow" zh="慢速朗读" /></button></div><button onClick={() => speakEnglish(selectedMoreBankWord.example, 0.86, `more-bank-${selectedMoreBankWord.id}-sentence`)} className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"><ButtonCopy en="Play Sentence" zh="朗读例句" /></button><button onClick={() => saveWordEntry(makeMoreBankWordBookEntry(selectedMoreBankWord))} disabled={isWordSaved(selectedMoreBankWord.word)} className={`mt-3 w-full rounded-2xl px-4 py-3 text-base font-black shadow-label transition active:scale-[0.99] ${isWordSaved(selectedMoreBankWord.word) ? "bg-coral text-white" : "bg-white/12 text-white hover:bg-white/22"}`}><ButtonCopy en={isWordSaved(selectedMoreBankWord.word) ? "Added to Word Book" : "Add to Word Book"} zh={isWordSaved(selectedMoreBankWord.word) ? "已加入生词本" : "加入生词本"} /></button>{isWordSaved(selectedMoreBankWord.word) && <button onClick={() => removeWordEntry(selectedMoreBankWord.word)} className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"><ButtonCopy en="Remove from Word Book" zh="移出生词本" /></button>}<button onClick={finishBankVisit} className="mt-6 w-full rounded-2xl bg-[#8eb9cf] px-4 py-4 text-lg font-black text-[#10242e] shadow-label transition hover:-translate-y-0.5 hover:bg-[#b4d4e4] active:translate-y-0"><ButtonCopy en="Finish Bank Visit" zh="结束银行之旅" /></button></div></aside>}
+              </div>
+            )}
+
+            {showMoreApartmentChoice && isApartmentChapter && !showEnding && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 backdrop-blur-sm">
+                <div className="dialogue-enter w-full max-w-2xl rounded-3xl border border-white/18 bg-[#33251e]/94 p-6 text-cream shadow-glow backdrop-blur-2xl">
+                  <p className="text-[11px] font-black uppercase tracking-[0.24em] text-[#e3b77d]">More Apartment Words</p>
+                  <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">Want to discover more apartment words?</h2>
+                  <p className="mt-3 text-xl font-bold text-cream/82">想认识更多公寓租房词汇吗？</p>
+                  <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                    <button onClick={() => { setShowMoreApartmentChoice(false); setShowMoreApartmentBook(true); setMoreApartmentPageIndex(0); }} className="rounded-2xl bg-[#e3b77d] px-5 py-4 font-black text-[#342319] shadow-label transition hover:-translate-y-0.5 hover:bg-[#f2ce9d] active:translate-y-0"><ButtonCopy en="Yes, show me more apartment words." zh="是的，我想看看更多公寓词汇。" /></button>
+                    <button onClick={finishApartmentVisit} className="rounded-2xl border border-white/18 bg-white/12 px-5 py-4 font-black text-white transition hover:bg-white/22 active:scale-[0.99]"><ButtonCopy en="No, finish today's apartment visit." zh="不用了，结束今天的公寓看房之旅。" /></button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {showMoreApartmentBook && isApartmentChapter && !showEnding && (
+              <div className="fixed inset-0 z-50 overflow-auto bg-[#241b17]/97 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
+                <div className="mx-auto max-w-6xl">
+                  <header className="flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
+                    <div><p className="text-[11px] font-black uppercase tracking-[0.24em] text-[#e3b77d]">More Apartment Words</p><h2 className="mt-2 text-3xl font-black text-white sm:text-5xl">More Apartment Words</h2><p className="mt-2 text-lg font-bold text-cream/78">更多公寓租房词汇</p></div>
+                    <div className="flex flex-wrap items-center gap-3"><div className="rounded-2xl border border-white/14 bg-white/10 px-4 py-3"><p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#e3b77d]">Explored</p><p className="mt-1 text-2xl font-black text-white">{exploredMoreApartmentCount}/{moreApartmentCount}</p><p className="text-xs font-bold text-cream/70">已探索</p></div><button onClick={finishApartmentVisit} className="rounded-full bg-[#e3b77d] px-5 py-3 font-black text-[#342319] shadow-label transition hover:bg-[#f2ce9d] active:scale-[0.99]"><ButtonCopy en="Finish Apartment Visit" zh="结束公寓看房之旅" /></button></div>
+                  </header>
+                  {moreApartmentReward && <div className="dialogue-enter mt-4 rounded-2xl border border-[#e3b77d]/35 bg-[#5a4030]/70 px-4 py-3 shadow-label backdrop-blur-[3px]"><p className="font-black text-white">{moreApartmentReward.text}</p><p className="mt-1 text-sm font-bold text-cream/76">{moreApartmentReward.zh}</p></div>}
+                  <div className="mt-5 flex gap-2 overflow-x-auto pb-1">{moreApartmentPages.map((page, index) => <button key={page.id} onClick={() => { setMoreApartmentPageIndex(index); setSelectedMoreApartmentWord(null); }} className={`min-w-[210px] rounded-2xl px-4 py-3 text-left font-black shadow-label transition hover:-translate-y-0.5 active:translate-y-0 ${index === moreApartmentPageIndex ? "bg-[#916745] text-white" : "border border-white/16 bg-white/10 text-cream hover:bg-white/18"}`}><span className="block text-sm">{page.title}</span><span className="mt-1 block text-xs font-bold opacity-75">{page.zh}</span></button>)}</div>
+                  <section className="mt-5 rounded-3xl border border-white/14 bg-nightglass p-4 shadow-glow backdrop-blur-xl">
+                    <div className="flex flex-wrap items-end justify-between gap-3"><div><p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#e3b77d]">Page {moreApartmentPageIndex + 1}/3</p><h3 className="mt-1 text-2xl font-black text-white">{currentMoreApartmentPage.title}<span className="ml-2 text-[#e3b77d]">{currentMoreApartmentPage.zh}</span></h3></div><p className="text-sm font-black text-cream/75">{currentApartmentPageExploredCount}/12 learned · 已学习</p></div>
+                    <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{currentMoreApartmentPage.words.map((word) => { const learned = learnedMoreApartmentWords.includes(word.id); return <button key={word.id} onClick={() => openMoreApartmentWord(word)} className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${learned ? "border-[#e3b77d]/55 bg-[#5a4030]/75" : "border-white/14 bg-white/10 hover:border-[#e3b77d]/45 hover:bg-white/16"}`}><div className="flex items-start gap-3"><span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-[#e3b77d]/35 bg-[#5a4030]/72 text-xl font-black text-[#e3b77d] transition group-hover:scale-105">{word.word.slice(0, 1).toUpperCase()}</span><span className="min-w-0"><span className="block text-lg font-black leading-tight text-white">{word.word}</span><span className="mt-1 block text-sm font-bold text-cream/72">{word.meaning}</span></span></div><div className="mt-3 flex items-center justify-between gap-2"><span className="text-xs font-black text-[#e3b77d]">{word.phonetic}</span>{learned && <span className="rounded-full bg-[#e3b77d] px-2 py-1 text-[10px] font-black uppercase text-[#342319]">Learned · 已学习</span>}</div></button>; })}</div>
+                  </section>
+                </div>
+                {selectedMoreApartmentWord && <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#342319]/96 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl"><div className="flex items-start justify-between gap-3 border-b border-white/12 p-5"><div><p className="text-[10px] font-black uppercase tracking-[0.24em] text-[#e3b77d]">Apartment Word</p><h2 className="mt-2 text-4xl font-black leading-tight text-white">{selectedMoreApartmentWord.word}</h2><p className="mt-2 text-2xl font-extrabold text-[#e3b77d]">{selectedMoreApartmentWord.phonetic}</p></div><button onClick={() => setSelectedMoreApartmentWord(null)} className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/12 text-2xl font-black text-white transition hover:bg-white/22 active:scale-95" aria-label="Close 关闭" title="Close / 关闭">×</button></div><div className="flex-1 overflow-auto p-5"><div className="rounded-2xl border border-white/12 bg-white/10 p-4"><p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#e3b77d]">中文意思</p><p className="mt-2 text-2xl font-black text-white">{selectedMoreApartmentWord.meaning}</p></div><div className="mt-4 rounded-2xl border border-white/12 bg-black/18 p-4"><p className="text-[10px] font-black uppercase tracking-[0.2em] text-coral">Example</p><p className="mt-2 text-2xl font-black leading-9 text-white">{selectedMoreApartmentWord.example}</p><p className="mt-2 text-lg font-bold leading-8 text-cream/78">{selectedMoreApartmentWord.translation}</p></div><div className="mt-5 grid grid-cols-2 gap-3"><button onClick={() => speakEnglish(selectedMoreApartmentWord.word, 0.9, `more-apartment-${selectedMoreApartmentWord.id}-normal`)} className="rounded-2xl bg-[#e3b77d] px-4 py-3 text-base font-black text-[#342319] shadow-label transition hover:-translate-y-0.5 hover:bg-[#f2ce9d] active:translate-y-0"><ButtonCopy en="Normal" zh="正常语速" /></button><button onClick={() => speakEnglish(selectedMoreApartmentWord.word, 0.65, `more-apartment-${selectedMoreApartmentWord.id}-slow`)} className="rounded-2xl border border-[#e3b77d]/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"><ButtonCopy en="Slow" zh="慢速朗读" /></button></div><button onClick={() => speakEnglish(selectedMoreApartmentWord.example, 0.86, `more-apartment-${selectedMoreApartmentWord.id}-sentence`)} className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"><ButtonCopy en="Play Sentence" zh="朗读例句" /></button><button onClick={() => saveWordEntry(makeMoreApartmentWordBookEntry(selectedMoreApartmentWord))} disabled={isWordSaved(selectedMoreApartmentWord.word)} className={`mt-3 w-full rounded-2xl px-4 py-3 text-base font-black shadow-label transition active:scale-[0.99] ${isWordSaved(selectedMoreApartmentWord.word) ? "bg-coral text-white" : "bg-white/12 text-white hover:bg-white/22"}`}><ButtonCopy en={isWordSaved(selectedMoreApartmentWord.word) ? "Added to Word Book" : "Add to Word Book"} zh={isWordSaved(selectedMoreApartmentWord.word) ? "已加入生词本" : "加入生词本"} /></button>{isWordSaved(selectedMoreApartmentWord.word) && <button onClick={() => removeWordEntry(selectedMoreApartmentWord.word)} className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"><ButtonCopy en="Remove from Word Book" zh="移出生词本" /></button>}<button onClick={finishApartmentVisit} className="mt-6 w-full rounded-2xl bg-[#e3b77d] px-4 py-4 text-lg font-black text-[#342319] shadow-label transition hover:-translate-y-0.5 hover:bg-[#f2ce9d] active:translate-y-0"><ButtonCopy en="Finish Apartment Visit" zh="结束公寓看房之旅" /></button></div></aside>}
               </div>
             )}
 
