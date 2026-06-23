@@ -982,10 +982,22 @@
     <script type="text/babel">
       const { useEffect, useMemo, useState } = React;
 
-      const zooPilotAudio = (slug) => ({
-        audioUrl: `assets/audio/words/zoo/${slug}.m4a`,
-        sentenceAudioUrl: `assets/audio/sentences/zoo/${slug}.m4a`,
-      });
+      const audioPilotEnabled = new URLSearchParams(window.location.search).get("audioPilot") === "1";
+      const zooAudioPilotSources = {
+        "entrance:gate": {
+          word: "assets/audio/words/zoo/zoo-gate.m4a",
+          sentence: "assets/audio/sentences/zoo/zoo-gate.m4a",
+        },
+        "monkey:monkey": {
+          word: "assets/audio/words/zoo/monkey.m4a",
+          sentence: "assets/audio/sentences/zoo/monkey.m4a",
+        },
+        "elephant:elephant": {
+          word: "assets/audio/words/zoo/elephant.m4a",
+          sentence: "assets/audio/sentences/zoo/elephant.m4a",
+        },
+      };
+      let activeAudioPilot = null;
 
       const scenes = [
         {
@@ -1007,7 +1019,6 @@
               meaning: "大门，入口",
               example: "We walk through the zoo gate.",
               translation: "我们穿过动物园大门。",
-              ...zooPilotAudio("zoo-gate"),
               label: "gate",
               zh: "入口",
               x: 48,
@@ -1110,7 +1121,6 @@
               meaning: "猴子",
               example: "The monkey jumps from tree to tree.",
               translation: "猴子从一棵树跳到另一棵树。",
-              ...zooPilotAudio("monkey"),
               label: "monkey",
               zh: "猴子",
               x: 51,
@@ -1209,7 +1219,6 @@
               meaning: "大象",
               example: "The elephant walks slowly beside the water.",
               translation: "大象在水边慢慢走。",
-              ...zooPilotAudio("elephant"),
               label: "elephant",
               zh: "大象",
               x: 50,
@@ -9131,86 +9140,44 @@
 
       let cachedEnglishVoice = null;
       let activeSpeechToken = 0;
-      let activeAudio = null;
-      let activeAudioToken = 0;
-      const failedAudioUrls = new Set();
-      const availableAudioUrls = new Set([
-        "assets/audio/words/zoo/zoo-gate.m4a",
-        "assets/audio/sentences/zoo/zoo-gate.m4a",
-        "assets/audio/words/zoo/monkey.m4a",
-        "assets/audio/sentences/zoo/monkey.m4a",
-        "assets/audio/words/zoo/elephant.m4a",
-        "assets/audio/sentences/zoo/elephant.m4a",
-      ]);
-
-      function isAppleSpeechEnvironment() {
-        const userAgent = typeof navigator === "undefined" ? "" : navigator.userAgent;
-        const isApplePlatform = /(iphone|ipad|ipod|macintosh)/i.test(userAgent);
-        const isChromium = /(chrome|crios|edg|opr|fxios)/i.test(userAgent);
-        return isApplePlatform && /applewebkit/i.test(userAgent) && !isChromium;
-      }
-
-      function isSameEnglishVoice(firstVoice, secondVoice) {
-        if (firstVoice === secondVoice) return true;
-        if (!firstVoice || !secondVoice) return false;
-        return (
-          firstVoice.name === secondVoice.name &&
-          firstVoice.lang === secondVoice.lang &&
-          firstVoice.voiceURI === secondVoice.voiceURI
-        );
-      }
 
       function pickBestEnglishVoice(voices) {
         if (!voices.length) return cachedEnglishVoice;
-        const desktopPriorityNames = [
+        const priorityNames = [
           "Google US English",
           "Google UK English Female",
           "Microsoft Jenny",
-        ];
-        const applePriorityNames = [
-          "Samantha (Enhanced)",
           "Samantha",
-          "Ava",
-          "Allison",
-          "Zoe",
-          "Daniel",
-          "Kate",
-          "Oliver",
-          "Karen",
-          "Moira",
-          "Tessa",
           "Alex",
+          "Daniel",
         ];
-        const priorityNames = isAppleSpeechEnvironment()
-          ? [...applePriorityNames, ...desktopPriorityNames]
-          : [...desktopPriorityNames, ...applePriorityNames];
 
         const englishVoices = voices.filter((voice) =>
           voice.lang?.toLowerCase().startsWith("en")
         );
-        const usOrGbVoices = englishVoices.filter((voice) =>
-          ["en-us", "en-gb"].includes(voice.lang.toLowerCase())
-        );
-        const preferredLocaleVoices = usOrGbVoices.length ? usOrGbVoices : englishVoices;
 
         const byPriorityName = priorityNames
           .map((name) =>
-            preferredLocaleVoices.find((voice) =>
+            englishVoices.find((voice) =>
               voice.name.toLowerCase().includes(name.toLowerCase())
             )
           )
           .find(Boolean);
 
-        const naturalEnglish = preferredLocaleVoices.find((voice) => {
+        const naturalEnglish = englishVoices.find((voice) => {
           const name = voice.name.toLowerCase();
           return (
-            ["google", "microsoft", "samantha", "ava", "allison", "zoe", "daniel", "kate", "oliver", "karen", "moira", "tessa", "alex"].some((token) =>
+            ["google", "microsoft", "samantha", "alex", "daniel"].some((token) =>
               name.includes(token)
-            )
+            ) && ["en-us", "en-gb"].includes(voice.lang.toLowerCase())
           );
         });
 
-        return byPriorityName || naturalEnglish || preferredLocaleVoices[0] || voices[0] || null;
+        const usOrGb = englishVoices.find((voice) =>
+          ["en-us", "en-gb"].includes(voice.lang.toLowerCase())
+        );
+
+        return byPriorityName || naturalEnglish || usOrGb || englishVoices[0] || voices[0] || null;
       }
 
       function loadEnglishVoices() {
@@ -9218,43 +9185,6 @@
         const voices = window.speechSynthesis.getVoices();
         cachedEnglishVoice = pickBestEnglishVoice(voices);
         return cachedEnglishVoice;
-      }
-
-      function getAvailableEnglishVoice() {
-        if (!("speechSynthesis" in window)) return null;
-        const voices = window.speechSynthesis.getVoices();
-        if (!voices.length) return cachedEnglishVoice;
-        if (!cachedEnglishVoice || !voices.some((voice) => isSameEnglishVoice(voice, cachedEnglishVoice))) {
-          cachedEnglishVoice = pickBestEnglishVoice(voices);
-        }
-        return cachedEnglishVoice;
-      }
-
-      function debugEnglishVoices() {
-        if (!("speechSynthesis" in window)) {
-          console.warn("speechSynthesis is not available in this browser.");
-          return [];
-        }
-        const voices = window.speechSynthesis.getVoices();
-        const selectedVoice = pickBestEnglishVoice(voices);
-        const rows = voices
-          .filter((voice) => voice.lang?.toLowerCase().startsWith("en"))
-          .map((voice) => ({
-            name: voice.name,
-            lang: voice.lang,
-            localService: voice.localService,
-            default: voice.default,
-            voiceURI: voice.voiceURI,
-            selected: isSameEnglishVoice(voice, selectedVoice),
-          }));
-        if (typeof console.table === "function") console.table(rows);
-        else console.log(rows);
-        console.info("Selected English voice:", selectedVoice || "browser default fallback");
-        return rows;
-      }
-
-      if (typeof window !== "undefined") {
-        window.debugEnglishVoices = debugEnglishVoices;
       }
 
       function SoundBars() {
@@ -9416,8 +9346,6 @@
           phonetic: item.phonetic || "",
           example: item.example || "",
           exampleZh: item.exampleZh || item.translation || "",
-          audioUrl: item.audioUrl || "",
-          sentenceAudioUrl: item.sentenceAudioUrl || "",
           scene: item.scene || "Zoo",
           type: item.type || (animalWordSet.has(getWordKey(item.word)) ? "animal" : "object"),
           addedAt: item.addedAt || new Date().toISOString(),
@@ -9816,6 +9744,10 @@
               window.speechSynthesis.onvoiceschanged = null;
             }
           };
+        }, []);
+
+        useEffect(() => {
+          if (audioPilotEnabled) console.info("[audioPilot] enabled");
         }, []);
 
         useEffect(() => {
@@ -10517,34 +10449,14 @@
         });
         const currentReviewWord = filteredSavedWords[reviewIndex] || null;
 
-        function stopActivePlayback() {
-          activeAudioToken += 1;
-          activeSpeechToken += 1;
-          if (activeAudio) {
-            activeAudio.onended = null;
-            activeAudio.onerror = null;
-            activeAudio.pause();
-            activeAudio.removeAttribute("src");
-            activeAudio.load();
-            activeAudio = null;
-          }
-          if ("speechSynthesis" in window) window.speechSynthesis.cancel();
-        }
-
-        function resolveAudioSource(audioUrl) {
-          if (!audioUrl || !availableAudioUrls.has(audioUrl) || failedAudioUrls.has(audioUrl)) return null;
-          return audioUrl;
-        }
-
-        function speakWithSystemVoice(text, rate = 0.9, key = text) {
+        function speakEnglish(text, rate = 0.9, key = text) {
           if (!("speechSynthesis" in window)) return;
-          stopActivePlayback();
-          const englishVoice = getAvailableEnglishVoice();
           const speechToken = activeSpeechToken + 1;
           activeSpeechToken = speechToken;
+          window.speechSynthesis.cancel();
           const utterance = new SpeechSynthesisUtterance(text);
-          utterance.lang = englishVoice?.lang || "en-US";
-          if (englishVoice) utterance.voice = englishVoice;
+          utterance.lang = cachedEnglishVoice?.lang || "en-US";
+          if (cachedEnglishVoice) utterance.voice = cachedEnglishVoice;
           utterance.rate = rate;
           utterance.pitch = 1;
           utterance.volume = 1;
@@ -10558,49 +10470,67 @@
           window.speechSynthesis.speak(utterance);
         }
 
-        function playLearningAudio({ text, audioUrl, rate = 0.9, key = text }) {
-          const source = resolveAudioSource(audioUrl);
-          if (!source || typeof Audio !== "function") {
-            speakWithSystemVoice(text, rate, key);
+        function stopAudioPilot() {
+          if (!activeAudioPilot) return;
+          activeAudioPilot.onended = null;
+          activeAudioPilot.onerror = null;
+          activeAudioPilot.pause();
+          activeAudioPilot.removeAttribute("src");
+          activeAudioPilot.load();
+          activeAudioPilot = null;
+        }
+
+        function getZooAudioPilotSource(hotspot) {
+          if (!audioPilotEnabled) return null;
+          return zooAudioPilotSources[`${currentScene.id}:${hotspot.id}`] || null;
+        }
+
+        function playAudioPilot({ text, audioUrl, rate = 0.9, key = text }) {
+          if (!audioPilotEnabled || !audioUrl || typeof Audio !== "function") {
+            stopAudioPilot();
+            speakEnglish(text, rate, key);
             return;
           }
 
-          stopActivePlayback();
-          const audioToken = activeAudioToken;
-          const audio = new Audio(source);
+          stopAudioPilot();
+          window.speechSynthesis.cancel();
+          const audio = new Audio(audioUrl);
           let hasFallenBack = false;
-          activeAudio = audio;
+          activeAudioPilot = audio;
           audio.preload = "auto";
           audio.playbackRate = rate <= 0.7 ? 0.85 : 1;
+          console.info("[audioPilot] using audio file", audioUrl);
 
-          const fallBackToSpeech = (rememberFailure = false) => {
-            if (hasFallenBack || activeAudioToken !== audioToken || activeAudio !== audio) return;
+          const fallBackToSpeech = () => {
+            if (hasFallenBack || activeAudioPilot !== audio) return;
             hasFallenBack = true;
-            if (rememberFailure) failedAudioUrls.add(source);
-            activeAudio = null;
-            speakWithSystemVoice(text, rate, key);
+            activeAudioPilot = null;
+            console.info("[audioPilot] fallback speechSynthesis", text);
+            speakEnglish(text, rate, key);
           };
 
           audio.onended = () => {
-            if (activeAudioToken === audioToken && activeAudio === audio) {
-              activeAudio = null;
+            if (activeAudioPilot === audio) {
+              activeAudioPilot = null;
               setPlayingKey(null);
             }
           };
-          audio.onerror = () => fallBackToSpeech(true);
+          audio.onerror = fallBackToSpeech;
           setPlayingKey(key);
           const playPromise = audio.play();
           if (playPromise && typeof playPromise.catch === "function") {
-            playPromise.catch(() => fallBackToSpeech());
+            playPromise.catch(fallBackToSpeech);
           }
         }
 
-        function playSentenceAudio({ text, sentenceAudioUrl, rate = 0.86, key = text }) {
-          playLearningAudio({ text, audioUrl: sentenceAudioUrl, rate, key });
+        function playHotspotWord(hotspot, rate, key) {
+          const pilotSource = getZooAudioPilotSource(hotspot);
+          playAudioPilot({ text: hotspot.word, audioUrl: pilotSource?.word, rate, key });
         }
 
-        function speakEnglish(text, rate = 0.9, key = text, audioUrl = null) {
-          playLearningAudio({ text, audioUrl, rate, key });
+        function playHotspotSentence(hotspot, rate, key) {
+          const pilotSource = getZooAudioPilotSource(hotspot);
+          playAudioPilot({ text: hotspot.example, audioUrl: pilotSource?.sentence, rate, key });
         }
 
         function rememberWord(word) {
@@ -10621,8 +10551,6 @@
             phonetic: hotspot.phonetic,
             example: hotspot.example,
             exampleZh: hotspot.translation,
-            audioUrl: hotspot.audioUrl || "",
-            sentenceAudioUrl: hotspot.sentenceAudioUrl || "",
             scene: `${chapterWordBookScene} / ${currentScene.title}`,
             type: inferWordType(hotspot),
             addedAt: new Date().toISOString(),
@@ -10850,7 +10778,7 @@
           setReviewIndex(0);
           setReviewRevealed(false);
           setIsReviewingWordBook(true);
-          speakEnglish(filteredSavedWords[0].word, 0.9, `review-${filteredSavedWords[0].word}`, filteredSavedWords[0].audioUrl);
+          speakEnglish(filteredSavedWords[0].word, 0.9, `review-${filteredSavedWords[0].word}`);
         }
 
         function advanceReview() {
@@ -10864,7 +10792,7 @@
           const nextWord = filteredSavedWords[nextIndex];
           setReviewIndex(nextIndex);
           setReviewRevealed(false);
-          if (nextWord) speakEnglish(nextWord.word, 0.9, `review-${nextWord.word}`, nextWord.audioUrl);
+          if (nextWord) speakEnglish(nextWord.word, 0.9, `review-${nextWord.word}`);
         }
 
         function triggerAnimalFeedback(hotspot) {
@@ -10913,7 +10841,7 @@
           });
           setSelectedHotspot(hotspot);
           setProgressHint("");
-          speakEnglish(hotspot.word, 0.9, `${hotspot.id}-normal`, hotspot.audioUrl);
+          playHotspotWord(hotspot, 0.9, `${hotspot.id}-normal`);
           triggerAnimalFeedback(hotspot);
         }
 
@@ -11876,7 +11804,7 @@
                           className="rounded-2xl border border-white/14 bg-white/10 p-4 shadow-label transition hover:border-banana/40 hover:bg-white/14"
                         >
                           <button
-                            onClick={() => speakEnglish(item.word, 0.9, `book-${item.word}`, item.audioUrl)}
+                            onClick={() => speakEnglish(item.word, 0.9, `book-${item.word}`)}
                             className="w-full text-left"
                           >
                             <div className="flex items-start justify-between gap-3">
@@ -11901,7 +11829,7 @@
                           </button>
                           <div className="mt-4 grid grid-cols-2 gap-2">
                             <button
-                              onClick={() => speakEnglish(item.word, 0.9, `book-${item.word}-normal`, item.audioUrl)}
+                              onClick={() => speakEnglish(item.word, 0.9, `book-${item.word}-normal`)}
                               className="rounded-2xl bg-banana px-3 py-3 font-black text-ink shadow-label transition hover:bg-[#ffc83f] active:scale-[0.99]"
                             >
                               <span className="inline-flex items-center justify-center gap-2">
@@ -11910,7 +11838,7 @@
                               </span>
                             </button>
                             <button
-                              onClick={() => speakEnglish(item.word, 0.65, `book-${item.word}-slow`, item.audioUrl)}
+                              onClick={() => speakEnglish(item.word, 0.65, `book-${item.word}-slow`)}
                               className="rounded-2xl border border-banana/40 bg-white/12 px-3 py-3 font-black text-white shadow-label transition hover:bg-white/22 active:scale-[0.99]"
                             >
                               <span className="inline-flex items-center justify-center gap-2">
@@ -12862,7 +12790,7 @@
 
                   <div className="mt-5 grid grid-cols-2 gap-3">
                     <button
-                      onClick={() => speakEnglish(selectedHotspot.word, 0.9, `${selectedHotspot.id}-normal`, selectedHotspot.audioUrl)}
+                      onClick={() => playHotspotWord(selectedHotspot, 0.9, `${selectedHotspot.id}-normal`)}
                       className="rounded-2xl bg-banana px-4 py-3 text-base font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
                     >
                       <span className="inline-flex items-center justify-center gap-2">
@@ -12871,7 +12799,7 @@
                       </span>
                     </button>
                     <button
-                      onClick={() => speakEnglish(selectedHotspot.word, 0.65, `${selectedHotspot.id}-slow`, selectedHotspot.audioUrl)}
+                      onClick={() => playHotspotWord(selectedHotspot, 0.65, `${selectedHotspot.id}-slow`)}
                       className="rounded-2xl border border-banana/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"
                     >
                       <span className="inline-flex items-center justify-center gap-2">
@@ -12882,7 +12810,7 @@
                   </div>
 
                   <button
-                    onClick={() => playSentenceAudio({ text: selectedHotspot.example, sentenceAudioUrl: selectedHotspot.sentenceAudioUrl, rate: 0.86, key: `${selectedHotspot.id}-sentence` })}
+                    onClick={() => playHotspotSentence(selectedHotspot, 0.86, `${selectedHotspot.id}-sentence`)}
                     className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
