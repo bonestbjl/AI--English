@@ -15674,34 +15674,22 @@
                     </p>
                   </div>
 
-                  <div className="mt-6 flex flex-wrap gap-3">
+                  <div className={`mt-6 flex flex-wrap gap-3 ${isZooChapter && isMobileLandscape ? "sticky bottom-0 z-10 mt-3 bg-[#112319]/95 py-2" : ""}`}>
                     <button
                       onClick={restartTrip}
                       className="rounded-full bg-banana px-6 py-3 font-black text-ink shadow-label transition hover:bg-[#ffc83f]"
                     >
                       <ButtonCopy en={restartLabel} zh={restartZh} />
                     </button>
-                    {isZooChapter ? (
-                      <button
-                        onClick={() => speakEnglish("Next scene coming soon.", 0.9, "nextScene")}
-                        className="rounded-full border border-white/18 bg-white/12 px-6 py-3 font-black text-white transition hover:bg-white/22"
-                      >
-                        <span className="inline-flex items-center gap-2">
-                          {playingKey === "nextScene" && <SoundBars />}
-                          <ButtonCopy en="Next Scene Coming Soon" zh="下个场景即将开放" />
-                        </span>
-                      </button>
-                    ) : (
-                      <button
-                        onClick={() => {
-                          setShowEnding(false);
-                          setCurrentView("sceneSelect");
-                        }}
-                        className="rounded-full border border-white/18 bg-white/12 px-6 py-3 font-black text-white transition hover:bg-white/22"
-                      >
-                        <ButtonCopy en="Back to Scenes" zh="返回场景选择" />
-                      </button>
-                    )}
+                    <button
+                      onClick={() => {
+                        setShowEnding(false);
+                        setCurrentView("sceneSelect");
+                      }}
+                      className="rounded-full border border-white/18 bg-white/12 px-6 py-3 font-black text-white transition hover:bg-white/22"
+                    >
+                      <ButtonCopy en="Back to Scenes" zh="返回场景选择" />
+                    </button>
                   </div>
                 </div>
               </div>
