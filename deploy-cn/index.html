@@ -997,7 +997,40 @@
           sentence: "assets/audio/sentences/zoo/elephant.mp3",
         },
       };
+      const zooMobileAudioSources = {
+        "entrance:sign": {
+          word: "assets/audio/words/zoo/entrance--sign.mp3",
+          sentence: "assets/audio/sentences/zoo/entrance--sign.mp3",
+        },
+        "entrance:ticketBooth": {
+          word: "assets/audio/words/zoo/entrance--ticketbooth.mp3",
+          sentence: "assets/audio/sentences/zoo/entrance--ticketbooth.mp3",
+        },
+        "ticket:ticket": {
+          word: "assets/audio/words/zoo/ticket--ticket.mp3",
+          sentence: "assets/audio/sentences/zoo/ticket--ticket.mp3",
+        },
+        "ticket:seller": {
+          word: "assets/audio/words/zoo/ticket--seller.mp3",
+          sentence: "assets/audio/sentences/zoo/ticket--seller.mp3",
+        },
+        "ticket:map": {
+          word: "assets/audio/words/zoo/ticket--map.mp3",
+          sentence: "assets/audio/sentences/zoo/ticket--map.mp3",
+        },
+      };
       let activeAudioPilot = null;
+
+      function isMobileAudioPreferred() {
+        const userAgent = navigator.userAgent || "";
+        if (/iPhone|iPad|iPod|Android|Mobile|IEMobile/i.test(userAgent)) return true;
+
+        const iPadDesktopUserAgent = navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
+        if (iPadDesktopUserAgent) return true;
+
+        const coarsePointer = typeof window.matchMedia === "function" && window.matchMedia("(pointer: coarse)").matches;
+        return coarsePointer && window.screen?.width <= 1024;
+      }
 
       const scenes = [
         {
@@ -10480,13 +10513,14 @@
           activeAudioPilot = null;
         }
 
-        function getZooAudioPilotSource(hotspot) {
-          if (!audioPilotEnabled) return null;
-          return zooAudioPilotSources[`${currentScene.id}:${hotspot.id}`] || null;
+        function getZooLearningAudioSource(hotspot) {
+          if (!isMobileAudioPreferred()) return null;
+          const sourceKey = `${currentScene.id}:${hotspot.id}`;
+          return zooMobileAudioSources[sourceKey] || (audioPilotEnabled ? zooAudioPilotSources[sourceKey] : null);
         }
 
         function playAudioPilot({ text, audioUrl, rate = 0.9, key = text }) {
-          if (!audioPilotEnabled || !audioUrl || typeof Audio !== "function") {
+          if (!audioUrl || typeof Audio !== "function") {
             stopAudioPilot();
             speakEnglish(text, rate, key);
             return;
@@ -10499,13 +10533,13 @@
           activeAudioPilot = audio;
           audio.preload = "auto";
           audio.playbackRate = rate <= 0.7 ? 0.85 : 1;
-          console.info("[audioPilot] using audio file", audioUrl);
+          if (audioPilotEnabled) console.info("[audioPilot] using audio file", audioUrl);
 
           const fallBackToSpeech = () => {
             if (hasFallenBack || activeAudioPilot !== audio) return;
             hasFallenBack = true;
             activeAudioPilot = null;
-            console.info("[audioPilot] fallback speechSynthesis", text);
+            if (audioPilotEnabled) console.info("[audioPilot] fallback speechSynthesis", text);
             speakEnglish(text, rate, key);
           };
 
@@ -10524,13 +10558,13 @@
         }
 
         function playHotspotWord(hotspot, rate, key) {
-          const pilotSource = getZooAudioPilotSource(hotspot);
-          playAudioPilot({ text: hotspot.word, audioUrl: pilotSource?.word, rate, key });
+          const audioSource = getZooLearningAudioSource(hotspot);
+          playAudioPilot({ text: hotspot.word, audioUrl: audioSource?.word, rate, key });
         }
 
         function playHotspotSentence(hotspot, rate, key) {
-          const pilotSource = getZooAudioPilotSource(hotspot);
-          playAudioPilot({ text: hotspot.example, audioUrl: pilotSource?.sentence, rate, key });
+          const audioSource = getZooLearningAudioSource(hotspot);
+          playAudioPilot({ text: hotspot.example, audioUrl: audioSource?.sentence, rate, key });
         }
 
         function rememberWord(word) {
