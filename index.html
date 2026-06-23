@@ -9124,43 +9124,74 @@
       let cachedEnglishVoice = null;
       let activeSpeechToken = 0;
 
+      function isAppleSpeechEnvironment() {
+        const userAgent = typeof navigator === "undefined" ? "" : navigator.userAgent;
+        const isApplePlatform = /(iphone|ipad|ipod|macintosh)/i.test(userAgent);
+        const isChromium = /(chrome|crios|edg|opr|fxios)/i.test(userAgent);
+        return isApplePlatform && /applewebkit/i.test(userAgent) && !isChromium;
+      }
+
+      function isSameEnglishVoice(firstVoice, secondVoice) {
+        if (firstVoice === secondVoice) return true;
+        if (!firstVoice || !secondVoice) return false;
+        return (
+          firstVoice.name === secondVoice.name &&
+          firstVoice.lang === secondVoice.lang &&
+          firstVoice.voiceURI === secondVoice.voiceURI
+        );
+      }
+
       function pickBestEnglishVoice(voices) {
         if (!voices.length) return cachedEnglishVoice;
-        const priorityNames = [
+        const desktopPriorityNames = [
           "Google US English",
           "Google UK English Female",
           "Microsoft Jenny",
-          "Samantha",
-          "Alex",
-          "Daniel",
         ];
+        const applePriorityNames = [
+          "Samantha (Enhanced)",
+          "Samantha",
+          "Ava",
+          "Allison",
+          "Zoe",
+          "Daniel",
+          "Kate",
+          "Oliver",
+          "Karen",
+          "Moira",
+          "Tessa",
+          "Alex",
+        ];
+        const priorityNames = isAppleSpeechEnvironment()
+          ? [...applePriorityNames, ...desktopPriorityNames]
+          : [...desktopPriorityNames, ...applePriorityNames];
 
         const englishVoices = voices.filter((voice) =>
           voice.lang?.toLowerCase().startsWith("en")
         );
+        const usOrGbVoices = englishVoices.filter((voice) =>
+          ["en-us", "en-gb"].includes(voice.lang.toLowerCase())
+        );
+        const preferredLocaleVoices = usOrGbVoices.length ? usOrGbVoices : englishVoices;
 
         const byPriorityName = priorityNames
           .map((name) =>
-            englishVoices.find((voice) =>
+            preferredLocaleVoices.find((voice) =>
               voice.name.toLowerCase().includes(name.toLowerCase())
             )
           )
           .find(Boolean);
 
-        const naturalEnglish = englishVoices.find((voice) => {
+        const naturalEnglish = preferredLocaleVoices.find((voice) => {
           const name = voice.name.toLowerCase();
           return (
-            ["google", "microsoft", "samantha", "alex", "daniel"].some((token) =>
+            ["google", "microsoft", "samantha", "ava", "allison", "zoe", "daniel", "kate", "oliver", "karen", "moira", "tessa", "alex"].some((token) =>
               name.includes(token)
-            ) && ["en-us", "en-gb"].includes(voice.lang.toLowerCase())
+            )
           );
         });
 
-        const usOrGb = englishVoices.find((voice) =>
-          ["en-us", "en-gb"].includes(voice.lang.toLowerCase())
-        );
-
-        return byPriorityName || naturalEnglish || usOrGb || englishVoices[0] || voices[0] || null;
+        return byPriorityName || naturalEnglish || preferredLocaleVoices[0] || voices[0] || null;
       }
 
       function loadEnglishVoices() {
@@ -9168,6 +9199,43 @@
         const voices = window.speechSynthesis.getVoices();
         cachedEnglishVoice = pickBestEnglishVoice(voices);
         return cachedEnglishVoice;
+      }
+
+      function getAvailableEnglishVoice() {
+        if (!("speechSynthesis" in window)) return null;
+        const voices = window.speechSynthesis.getVoices();
+        if (!voices.length) return cachedEnglishVoice;
+        if (!cachedEnglishVoice || !voices.some((voice) => isSameEnglishVoice(voice, cachedEnglishVoice))) {
+          cachedEnglishVoice = pickBestEnglishVoice(voices);
+        }
+        return cachedEnglishVoice;
+      }
+
+      function debugEnglishVoices() {
+        if (!("speechSynthesis" in window)) {
+          console.warn("speechSynthesis is not available in this browser.");
+          return [];
+        }
+        const voices = window.speechSynthesis.getVoices();
+        const selectedVoice = pickBestEnglishVoice(voices);
+        const rows = voices
+          .filter((voice) => voice.lang?.toLowerCase().startsWith("en"))
+          .map((voice) => ({
+            name: voice.name,
+            lang: voice.lang,
+            localService: voice.localService,
+            default: voice.default,
+            voiceURI: voice.voiceURI,
+            selected: isSameEnglishVoice(voice, selectedVoice),
+          }));
+        if (typeof console.table === "function") console.table(rows);
+        else console.log(rows);
+        console.info("Selected English voice:", selectedVoice || "browser default fallback");
+        return rows;
+      }
+
+      if (typeof window !== "undefined") {
+        window.debugEnglishVoices = debugEnglishVoices;
       }
 
       function SoundBars() {
@@ -10430,12 +10498,13 @@
 
         function speakEnglish(text, rate = 0.9, key = text) {
           if (!("speechSynthesis" in window)) return;
+          const englishVoice = getAvailableEnglishVoice();
           const speechToken = activeSpeechToken + 1;
           activeSpeechToken = speechToken;
           window.speechSynthesis.cancel();
           const utterance = new SpeechSynthesisUtterance(text);
-          utterance.lang = cachedEnglishVoice?.lang || "en-US";
-          if (cachedEnglishVoice) utterance.voice = cachedEnglishVoice;
+          utterance.lang = englishVoice?.lang || "en-US";
+          if (englishVoice) utterance.voice = englishVoice;
           utterance.rate = rate;
           utterance.pitch = 1;
           utterance.volume = 1;
