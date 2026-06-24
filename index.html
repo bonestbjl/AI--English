@@ -974,7 +974,7 @@
     </style>
     <script src="vendor/react.production.min.js"></script>
     <script src="vendor/react-dom.production.min.js"></script>
-    <script src="assets/audio/p0-mobile-audio.js"></script>
+    <script src="assets/audio/full-mobile-audio.js"></script>
     <script src="vendor/babel.min.js"></script>
   </head>
   <body class="bg-[#17251c] text-cream">
@@ -996,9 +996,9 @@
         return coarsePointer && window.screen?.width <= 1024;
       }
 
-      function getP0MobileAudioUrl(text) {
+      function getMobileAudioUrl(text) {
         if (!isMobileAudioPreferred()) return null;
-        return window.P0MobileAudioUrls?.[text] || null;
+        return window.FullMobileAudioUrls?.[text] || null;
       }
 
       const scenes = [
@@ -10448,7 +10448,7 @@
         const currentReviewWord = filteredSavedWords[reviewIndex] || null;
 
         function speakEnglish(text, rate = 0.9, key = text, skipMobileAudio = false) {
-          const audioUrl = !skipMobileAudio && getP0MobileAudioUrl(text);
+          const audioUrl = !skipMobileAudio && getMobileAudioUrl(text);
           if (audioUrl) {
             playLearningAudio({ text, audioUrl, rate, key });
             return;
