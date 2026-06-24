@@ -9446,6 +9446,103 @@
         return getUserRole() === "developer";
       }
 
+      const LEARNING_DATA_GUEST_KEY = "realSceneEnglishData_guest";
+      const LEARNING_DATA_PHONE_PREFIX = "realSceneEnglishData_phone_";
+      const LEARNING_DATA_MIGRATION_KEY = "realSceneEnglishDataMigrated_v1";
+
+      function createEmptyLearningData() {
+        return {
+          version: 1,
+          completedHotspots: [],
+          completedDialogs: [],
+          completedActions: [],
+          completedScenes: [],
+          learnedWords: [],
+          moreWords: {
+            zoo: [],
+            fruitShop: [],
+            campus: [],
+            cafe: [],
+            airport: [],
+            office: [],
+            hotel: [],
+            restaurant: [],
+            supermarket: [],
+            metro: [],
+            clinic: [],
+            bank: [],
+            apartment: [],
+          },
+          wordBook: [],
+          lastScene: { chapterId: "zoo", sceneIndex: 0 },
+          updatedAt: null,
+        };
+      }
+
+      function normalizeStringList(value) {
+        return Array.isArray(value)
+          ? [...new Set(value.filter((item) => typeof item === "string" && item.trim()))]
+          : [];
+      }
+
+      function getActiveUserDataKey(user = getCurrentUser()) {
+        const phone = String(user?.phone || "").trim();
+        return phone ? `${LEARNING_DATA_PHONE_PREFIX}${phone}` : LEARNING_DATA_GUEST_KEY;
+      }
+
+      function normalizeLearningData(value) {
+        const defaults = createEmptyLearningData();
+        const saved = value && typeof value === "object" ? value : {};
+        const savedMoreWords = saved.moreWords && typeof saved.moreWords === "object" ? saved.moreWords : {};
+        const chapterId = typeof saved.lastScene?.chapterId === "string" ? saved.lastScene.chapterId : defaults.lastScene.chapterId;
+        const sceneIndex = Number.isInteger(saved.lastScene?.sceneIndex) && saved.lastScene.sceneIndex >= 0
+          ? saved.lastScene.sceneIndex
+          : defaults.lastScene.sceneIndex;
+        return {
+          ...defaults,
+          completedHotspots: normalizeStringList(saved.completedHotspots),
+          completedDialogs: normalizeStringList(saved.completedDialogs),
+          completedActions: normalizeStringList(saved.completedActions),
+          completedScenes: normalizeStringList(saved.completedScenes),
+          learnedWords: normalizeStringList(saved.learnedWords),
+          moreWords: Object.fromEntries(
+            Object.keys(defaults.moreWords).map((chapter) => [chapter, normalizeStringList(savedMoreWords[chapter])])
+          ),
+          wordBook: Array.isArray(saved.wordBook) ? saved.wordBook.map(normalizeWordBookEntry).filter(Boolean) : [],
+          lastScene: { chapterId, sceneIndex },
+          updatedAt: saved.updatedAt || null,
+        };
+      }
+
+      function getActiveLearningData(user = getCurrentUser()) {
+        if (typeof window === "undefined") return createEmptyLearningData();
+        const key = getActiveUserDataKey(user);
+        try {
+          const saved = JSON.parse(window.localStorage.getItem(key) || "null");
+          if (saved) return normalizeLearningData(saved);
+          if (key !== LEARNING_DATA_GUEST_KEY || window.localStorage.getItem(LEARNING_DATA_MIGRATION_KEY)) {
+            return createEmptyLearningData();
+          }
+          const migratedData = normalizeLearningData({ wordBook: loadWordBookEntries() });
+          const savedMigration = saveActiveLearningData(migratedData, user);
+          if (savedMigration) window.localStorage.setItem(LEARNING_DATA_MIGRATION_KEY, "1");
+          return savedMigration || migratedData;
+        } catch (error) {
+          return createEmptyLearningData();
+        }
+      }
+
+      function saveActiveLearningData(data, user = getCurrentUser()) {
+        if (typeof window === "undefined") return null;
+        const nextData = normalizeLearningData({ ...data, updatedAt: Date.now() });
+        try {
+          window.localStorage.setItem(getActiveUserDataKey(user), JSON.stringify(nextData));
+          return nextData;
+        } catch (error) {
+          return null;
+        }
+      }
+
       const AUTH_MODAL_ID = "real-scene-auth-modal";
 
       function closeAuthModal() {
@@ -9825,7 +9922,9 @@
 
       function App() {
         const [currentView, setCurrentView] = useState("home");
-        const [currentChapter, setCurrentChapter] = useState("zoo");
+        const [currentUser, setAuthenticatedUser] = useState(() => getCurrentUser());
+        const initialLearningData = useMemo(() => getActiveLearningData(currentUser), []);
+        const [currentChapter, setCurrentChapter] = useState(() => initialLearningData.lastScene.chapterId);
         const [sceneSelectHint, setSceneSelectHint] = useState("");
         const [sceneSelectNotice, setSceneSelectNotice] = useState(null);
         const [wordBookReturnView, setWordBookReturnView] = useState("sceneSelect");
@@ -9833,10 +9932,9 @@
         const [isReviewingWordBook, setIsReviewingWordBook] = useState(false);
         const [reviewIndex, setReviewIndex] = useState(0);
         const [reviewRevealed, setReviewRevealed] = useState(false);
-        const [currentUser, setAuthenticatedUser] = useState(() => getCurrentUser());
         const [showAccountMenu, setShowAccountMenu] = useState(false);
         const [authToast, setAuthToast] = useState("");
-        const [currentIndex, setCurrentIndex] = useState(0);
+        const [currentIndex, setCurrentIndex] = useState(() => initialLearningData.lastScene.sceneIndex);
         const [selectedHotspot, setSelectedHotspot] = useState(null);
         const [selectedMoreAnimal, setSelectedMoreAnimal] = useState(null);
         const [selectedMoreFruit, setSelectedMoreFruit] = useState(null);
@@ -9852,24 +9950,25 @@
         const [selectedMoreBankWord, setSelectedMoreBankWord] = useState(null);
         const [selectedMoreApartmentWord, setSelectedMoreApartmentWord] = useState(null);
         const [dialogueReply, setDialogueReply] = useState(null);
-        const [conversationDone, setConversationDone] = useState([]);
-        const [completedActions, setCompletedActions] = useState([]);
-        const [learnedHotspotKeys, setLearnedHotspotKeys] = useState([]);
-        const [learnedMoreAnimals, setLearnedMoreAnimals] = useState([]);
-        const [learnedMoreFruits, setLearnedMoreFruits] = useState([]);
-        const [learnedMoreCampusWords, setLearnedMoreCampusWords] = useState([]);
-        const [learnedMoreCafeWords, setLearnedMoreCafeWords] = useState([]);
-        const [learnedMoreAirportWords, setLearnedMoreAirportWords] = useState([]);
-        const [learnedMoreOfficeWords, setLearnedMoreOfficeWords] = useState([]);
-        const [learnedMoreHotelWords, setLearnedMoreHotelWords] = useState([]);
-        const [learnedMoreRestaurantWords, setLearnedMoreRestaurantWords] = useState([]);
-        const [learnedMoreSupermarketWords, setLearnedMoreSupermarketWords] = useState([]);
-        const [learnedMoreMetroWords, setLearnedMoreMetroWords] = useState([]);
-        const [learnedMoreClinicWords, setLearnedMoreClinicWords] = useState([]);
-        const [learnedMoreBankWords, setLearnedMoreBankWords] = useState([]);
-        const [learnedMoreApartmentWords, setLearnedMoreApartmentWords] = useState([]);
-        const [learnedWords, setLearnedWords] = useState([]);
-        const [savedWords, setSavedWords] = useState(loadWordBookEntries);
+        const [conversationDone, setConversationDone] = useState(() => initialLearningData.completedDialogs);
+        const [completedActions, setCompletedActions] = useState(() => initialLearningData.completedActions);
+        const [completedSceneIds, setCompletedSceneIds] = useState(() => initialLearningData.completedScenes);
+        const [learnedHotspotKeys, setLearnedHotspotKeys] = useState(() => initialLearningData.completedHotspots);
+        const [learnedMoreAnimals, setLearnedMoreAnimals] = useState(() => initialLearningData.moreWords.zoo);
+        const [learnedMoreFruits, setLearnedMoreFruits] = useState(() => initialLearningData.moreWords.fruitShop);
+        const [learnedMoreCampusWords, setLearnedMoreCampusWords] = useState(() => initialLearningData.moreWords.campus);
+        const [learnedMoreCafeWords, setLearnedMoreCafeWords] = useState(() => initialLearningData.moreWords.cafe);
+        const [learnedMoreAirportWords, setLearnedMoreAirportWords] = useState(() => initialLearningData.moreWords.airport);
+        const [learnedMoreOfficeWords, setLearnedMoreOfficeWords] = useState(() => initialLearningData.moreWords.office);
+        const [learnedMoreHotelWords, setLearnedMoreHotelWords] = useState(() => initialLearningData.moreWords.hotel);
+        const [learnedMoreRestaurantWords, setLearnedMoreRestaurantWords] = useState(() => initialLearningData.moreWords.restaurant);
+        const [learnedMoreSupermarketWords, setLearnedMoreSupermarketWords] = useState(() => initialLearningData.moreWords.supermarket);
+        const [learnedMoreMetroWords, setLearnedMoreMetroWords] = useState(() => initialLearningData.moreWords.metro);
+        const [learnedMoreClinicWords, setLearnedMoreClinicWords] = useState(() => initialLearningData.moreWords.clinic);
+        const [learnedMoreBankWords, setLearnedMoreBankWords] = useState(() => initialLearningData.moreWords.bank);
+        const [learnedMoreApartmentWords, setLearnedMoreApartmentWords] = useState(() => initialLearningData.moreWords.apartment);
+        const [learnedWords, setLearnedWords] = useState(() => initialLearningData.learnedWords);
+        const [savedWords, setSavedWords] = useState(() => initialLearningData.wordBook);
         const [playingKey, setPlayingKey] = useState(null);
         const [tappedHotspot, setTappedHotspot] = useState(null);
         const [clickedChoice, setClickedChoice] = useState(null);
@@ -9942,12 +10041,31 @@
         }, []);
 
         useEffect(() => {
-          try {
-            window.localStorage.setItem(WORD_BOOK_STORAGE_KEY, JSON.stringify(savedWords));
-          } catch (error) {
-            // Keep the in-memory word book usable if browser storage is unavailable.
-          }
-        }, [savedWords]);
+          saveActiveLearningData(buildLearningData(), currentUser);
+        }, [
+          currentUser,
+          currentChapter,
+          currentIndex,
+          conversationDone,
+          completedActions,
+          completedSceneIds,
+          learnedHotspotKeys,
+          learnedMoreAnimals,
+          learnedMoreFruits,
+          learnedMoreCampusWords,
+          learnedMoreCafeWords,
+          learnedMoreAirportWords,
+          learnedMoreOfficeWords,
+          learnedMoreHotelWords,
+          learnedMoreRestaurantWords,
+          learnedMoreSupermarketWords,
+          learnedMoreMetroWords,
+          learnedMoreClinicWords,
+          learnedMoreBankWords,
+          learnedMoreApartmentWords,
+          learnedWords,
+          savedWords,
+        ]);
 
         useEffect(() => {
           if (currentView !== "zoo" || !showWelcome) return;
@@ -11236,7 +11354,7 @@
         function enterZoo() {
           setSceneSelectHint("");
           setCurrentChapter("zoo");
-          setCurrentIndex(0);
+          setCurrentIndex(currentChapter === "zoo" ? currentIndex : 0);
           setSelectedHotspot(null);
           setSelectedMoreAnimal(null);
           setSelectedMoreFruit(null);
@@ -11247,10 +11365,6 @@
           setSelectedMoreHotelWord(null);
           setSelectedMoreRestaurantWord(null);
           setDialogueReply(null);
-          setConversationDone([]);
-          setCompletedActions([]);
-          setLearnedHotspotKeys([]);
-          setLearnedWords([]);
           setProgressHint("");
           setAnimalEffect(null);
           setShowEnding(false);
@@ -11278,7 +11392,7 @@
         function enterFruitShop() {
           setSceneSelectHint("");
           setCurrentChapter("fruitShop");
-          setCurrentIndex(0);
+          setCurrentIndex(currentChapter === "fruitShop" ? currentIndex : 0);
           setSelectedHotspot(null);
           setSelectedMoreAnimal(null);
           setSelectedMoreFruit(null);
@@ -11289,10 +11403,6 @@
           setSelectedMoreHotelWord(null);
           setSelectedMoreRestaurantWord(null);
           setDialogueReply(null);
-          setConversationDone([]);
-          setCompletedActions([]);
-          setLearnedHotspotKeys([]);
-          setLearnedWords([]);
           setProgressHint("");
           setAnimalEffect(null);
           setShowEnding(false);
@@ -11673,6 +11783,83 @@
           );
         }
 
+        function buildLearningData() {
+          return {
+            completedHotspots: learnedHotspotKeys,
+            completedDialogs: conversationDone,
+            completedActions,
+            completedScenes: completedSceneIds,
+            learnedWords,
+            moreWords: {
+              zoo: learnedMoreAnimals,
+              fruitShop: learnedMoreFruits,
+              campus: learnedMoreCampusWords,
+              cafe: learnedMoreCafeWords,
+              airport: learnedMoreAirportWords,
+              office: learnedMoreOfficeWords,
+              hotel: learnedMoreHotelWords,
+              restaurant: learnedMoreRestaurantWords,
+              supermarket: learnedMoreSupermarketWords,
+              metro: learnedMoreMetroWords,
+              clinic: learnedMoreClinicWords,
+              bank: learnedMoreBankWords,
+              apartment: learnedMoreApartmentWords,
+            },
+            wordBook: savedWords,
+            lastScene: { chapterId: currentChapter, sceneIndex: currentIndex },
+          };
+        }
+
+        function applyLearningData(data) {
+          const nextData = normalizeLearningData(data);
+          setCurrentChapter(nextData.lastScene.chapterId);
+          setCurrentIndex(nextData.lastScene.sceneIndex);
+          setConversationDone(nextData.completedDialogs);
+          setCompletedActions(nextData.completedActions);
+          setCompletedSceneIds(nextData.completedScenes);
+          setLearnedHotspotKeys(nextData.completedHotspots);
+          setLearnedMoreAnimals(nextData.moreWords.zoo);
+          setLearnedMoreFruits(nextData.moreWords.fruitShop);
+          setLearnedMoreCampusWords(nextData.moreWords.campus);
+          setLearnedMoreCafeWords(nextData.moreWords.cafe);
+          setLearnedMoreAirportWords(nextData.moreWords.airport);
+          setLearnedMoreOfficeWords(nextData.moreWords.office);
+          setLearnedMoreHotelWords(nextData.moreWords.hotel);
+          setLearnedMoreRestaurantWords(nextData.moreWords.restaurant);
+          setLearnedMoreSupermarketWords(nextData.moreWords.supermarket);
+          setLearnedMoreMetroWords(nextData.moreWords.metro);
+          setLearnedMoreClinicWords(nextData.moreWords.clinic);
+          setLearnedMoreBankWords(nextData.moreWords.bank);
+          setLearnedMoreApartmentWords(nextData.moreWords.apartment);
+          setLearnedWords(nextData.learnedWords);
+          setSavedWords(nextData.wordBook);
+          setSelectedHotspot(null);
+          setDialogueReply(null);
+          setProgressHint("");
+          setShowEnding(false);
+          setShowMoreAnimalsChoice(false);
+          setShowMoreFruitsChoice(false);
+          setShowMoreCampusChoice(false);
+          setShowMoreCafeChoice(false);
+          setShowMoreAirportChoice(false);
+          setShowMoreOfficeChoice(false);
+          setShowMoreHotelChoice(false);
+          setShowMoreRestaurantChoice(false);
+          setShowMoreSupermarketChoice(false);
+          setShowMoreMetroChoice(false);
+          setShowMoreClinicChoice(false);
+          setShowMoreBankChoice(false);
+          setShowMoreApartmentChoice(false);
+          setShowWelcome(true);
+          setWelcomeLeaving(false);
+          setCurrentView("sceneSelect");
+        }
+
+        function switchLearningProfile(nextUser) {
+          saveActiveLearningData(buildLearningData(), currentUser);
+          applyLearningData(getActiveLearningData(nextUser));
+        }
+
         function showAuthToast(message) {
           setAuthToast(message);
           window.setTimeout(() => setAuthToast(""), 2600);
@@ -11682,17 +11869,19 @@
           setShowAccountMenu(false);
           openAuthModal({
             onLogin: (user) => {
+              switchLearningProfile(user);
               setAuthenticatedUser(user);
-              showAuthToast("登录成功，已保存当前本地账号状态。");
+              showAuthToast("已切换到你的学习记录。");
             },
           });
         }
 
         function handleLogout() {
+          switchLearningProfile(null);
           logoutUser();
           setAuthenticatedUser(null);
           setShowAccountMenu(false);
-          showAuthToast("已退出登录。");
+          showAuthToast("已退出，当前为游客模式。");
         }
 
         function renderAuthControl() {
@@ -11724,6 +11913,7 @@
                   <p className="text-[10px] font-black uppercase tracking-[0.18em] text-banana">Current Account</p>
                   <p className="mt-2 break-all text-sm font-black text-white">{currentUser.phone}</p>
                   <p className="mt-1 text-xs font-bold text-cream/68">当前身份：Free 用户</p>
+                  <p className="mt-1 text-xs font-bold text-cream/52">数据状态：本机保存</p>
                   <button
                     onClick={handleLogout}
                     className="mt-3 w-full rounded-xl border border-white/16 bg-white/10 px-3 py-2.5 text-sm font-black text-white transition hover:bg-white/18 active:scale-[0.99]"
@@ -11826,6 +12016,11 @@
             window.setTimeout(() => setProgressHint(""), 4200);
             return;
           }
+
+          setCompletedSceneIds((items) => {
+            const sceneKey = `${currentChapter}:${currentScene.id}`;
+            return items.includes(sceneKey) ? items : [...items, sceneKey];
+          });
 
           if (currentIndex < activeScenes.length - 1) {
             moveTo(currentIndex + 1);
@@ -11955,12 +12150,12 @@
 
                 <section className="mt-5 rounded-3xl border border-white/14 bg-nightglass p-4 shadow-glow backdrop-blur-xl">
                   <div className="mb-4 rounded-2xl border border-white/12 bg-white/8 px-4 py-3">
-                    <p className="text-sm font-black text-white">Guest Mode</p>
+                    <p className="text-sm font-black text-white">{currentUser ? `User ${currentUser.phone.slice(-4)}` : "Guest Mode"}</p>
                     <p className="mt-1 text-sm font-bold leading-6 text-cream/68">
-                      Your data is saved in this browser. 登录同步功能即将开放。
+                      {currentUser ? "This account's data is saved on this device." : "Your data is saved in this browser."}
                     </p>
                     <p className="mt-1 text-xs font-bold leading-5 text-cream/52">
-                      游客模式：你的学习数据会保存在当前浏览器。
+                      {currentUser ? "当前账号数据保存在本机，切换账号后会自动分开。" : "游客模式：你的学习数据会保存在当前浏览器。"}
                     </p>
                   </div>
                   <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
