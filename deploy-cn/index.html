@@ -10013,8 +10013,8 @@
               titleZh: "",
               text: "Today, you will explore the zoo, meet animals, and learn real English.",
               zh: "欢迎来到动物园！今天你会逛动物园、遇见动物，并学习真实场景英语。",
-              action: "",
-              actionZh: "",
+              action: "Start Zoo Trip",
+              actionZh: "开始探索",
             }
           : isFruitShopChapter
           ? {
@@ -12632,9 +12632,6 @@
                         setConversationDone((items) =>
                           items.includes(currentDialogue.id) ? items : [...items, currentDialogue.id]
                         );
-                        if (isMobileLandscape) {
-                          window.setTimeout(() => setShowMobileDialogue(false), 900);
-                        }
                         window.setTimeout(() => setClickedChoice(null), 280);
                       }}
                       className={`rounded-xl border border-white/20 bg-white/12 px-3 py-2 text-left text-sm font-black text-white transition hover:border-banana/50 hover:bg-white/22 active:scale-[0.98] ${
