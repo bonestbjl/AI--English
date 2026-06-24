@@ -9389,16 +9389,31 @@
 
       const AUTH_STORAGE_KEY = "realSceneEnglishUser";
       const TEST_AUTH_CODE = "123456";
+      const LOCAL_TEST_ACCOUNT_PROFILES = {
+        "13111111111": { role: "free", plan: "free" },
+        "18888888888": { role: "free", plan: "free" },
+        "19999999999": { role: "premium", plan: "premium" },
+        "16666666666": { role: "developer", plan: "developer" },
+      };
+
+      function getLocalTestAccountProfile(phone) {
+        return LOCAL_TEST_ACCOUNT_PROFILES[String(phone || "").trim()] || null;
+      }
+
+      function getUserAccessProfile(phone, role = "free", plan = "free") {
+        return getLocalTestAccountProfile(phone) || { role, plan };
+      }
 
       function getCurrentUser() {
         if (typeof window === "undefined") return null;
         try {
           const saved = JSON.parse(window.localStorage.getItem(AUTH_STORAGE_KEY) || "null");
           if (!saved?.phone || saved.isLoggedIn !== true) return null;
+          const access = getUserAccessProfile(saved.phone, saved.role || "free", saved.plan || "free");
           return {
             phone: String(saved.phone),
-            role: saved.role || "free",
-            plan: saved.plan || "free",
+            role: access.role,
+            plan: access.plan,
             isLoggedIn: true,
             loginAt: saved.loginAt || Date.now(),
           };
@@ -9409,10 +9424,12 @@
 
       function setCurrentUser(user) {
         if (typeof window === "undefined" || !user?.phone) return null;
+        const phone = String(user.phone).trim();
+        const access = getUserAccessProfile(phone, user.role || "free", user.plan || "free");
         const nextUser = {
-          phone: String(user.phone).trim(),
-          role: user.role || "free",
-          plan: user.plan || "free",
+          phone,
+          role: access.role,
+          plan: access.plan,
           isLoggedIn: true,
           loginAt: user.loginAt || Date.now(),
         };
@@ -9437,13 +9454,23 @@
         return getCurrentUser()?.role || "guest";
       }
 
+      function getUserPlan() {
+        return getCurrentUser()?.plan || "guest";
+      }
+
       function isPremiumUser() {
         const user = getCurrentUser();
         return Boolean(user && (user.role === "premium" || user.plan === "premium"));
       }
 
       function isDeveloperUser() {
-        return getUserRole() === "developer";
+        const user = getCurrentUser();
+        return Boolean(user && (user.role === "developer" || user.plan === "developer"));
+      }
+
+      function canAccessTheme(themeId) {
+        if (themeId === "zoo" || themeId === "fruitShop") return true;
+        return isPremiumUser() || isDeveloperUser();
       }
 
       const LEARNING_DATA_GUEST_KEY = "realSceneEnglishData_guest";
@@ -11767,13 +11794,35 @@
           setCurrentView("zoo");
         }
 
+        function enterTheme(chapter) {
+          const enterByChapter = {
+            zoo: enterZoo,
+            fruitShop: enterFruitShop,
+            campus: enterCampus,
+            cafe: enterCafe,
+            airport: enterAirport,
+            office: enterOffice,
+            hotel: enterHotel,
+            restaurant: enterRestaurant,
+            supermarket: enterSupermarket,
+            metro: enterMetro,
+            clinic: enterClinic,
+            bank: enterBank,
+            apartment: enterApartment,
+          };
+          enterByChapter[chapter]?.();
+        }
+
         function showSubscriptionNotice(isUpdateCard = false) {
+          const hasFullAccess = isPremiumUser() || isDeveloperUser();
           setSceneSelectNotice(
             isUpdateCard
               ? {
                   title: "持续更新中",
                   en: "Weekly Updates",
-                  text: "我们会持续加入更多真实生活场景。订阅用户将优先体验完整内容。",
+                  text: hasFullAccess
+                    ? "更多真实生活场景会持续加入，你将优先体验完整内容。"
+                    : "我们会持续加入更多真实生活场景。订阅用户将优先体验完整内容。",
                 }
               : {
                   title: "订阅后解锁",
@@ -11897,6 +11946,11 @@
           }
 
           const phoneSuffix = currentUser.phone.slice(-4);
+          const roleMeta = currentUser.role === "developer"
+            ? { badge: "DEV", identity: "Developer", plan: "Developer" }
+            : currentUser.role === "premium" || currentUser.plan === "premium"
+            ? { badge: "Premium", identity: "Premium 用户", plan: "Premium" }
+            : { badge: "Free", identity: "Free 用户", plan: "Free" };
           return (
             <div className="relative">
               <button
@@ -11906,13 +11960,14 @@
                 className="flex items-center gap-2 rounded-full border border-banana/35 bg-[#182f25]/88 px-3 py-2 text-xs font-black text-white shadow-[0_12px_28px_rgba(0,0,0,0.2)] backdrop-blur-xl transition hover:bg-[#214333] active:scale-[0.99]"
               >
                 <span>User {phoneSuffix}</span>
-                <span className="rounded-full bg-banana px-2 py-0.5 text-[10px] uppercase tracking-[0.12em] text-ink">Free</span>
+                <span className="rounded-full bg-banana px-2 py-0.5 text-[10px] uppercase tracking-[0.12em] text-ink">{roleMeta.badge}</span>
               </button>
               {showAccountMenu && (
                 <div role="menu" className="dialogue-enter absolute right-0 top-full z-[70] mt-2 w-60 rounded-2xl border border-white/16 bg-[#12251d]/98 p-3 text-left text-cream shadow-glow backdrop-blur-xl">
                   <p className="text-[10px] font-black uppercase tracking-[0.18em] text-banana">Current Account</p>
                   <p className="mt-2 break-all text-sm font-black text-white">{currentUser.phone}</p>
-                  <p className="mt-1 text-xs font-bold text-cream/68">当前身份：Free 用户</p>
+                  <p className="mt-1 text-xs font-bold text-cream/68">当前身份：{roleMeta.identity}</p>
+                  <p className="mt-1 text-xs font-bold text-cream/52">当前计划：{roleMeta.plan}</p>
                   <p className="mt-1 text-xs font-bold text-cream/52">数据状态：本机保存</p>
                   <button
                     onClick={handleLogout}
@@ -12454,9 +12509,27 @@
                 <section className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                   {sceneSelectCards.map((scene) => {
                     const isUpdateCard = scene.updateCard === true;
-                    const isAvailable = !isUpdateCard && (scene.chapter === "zoo" || scene.chapter === "fruitShop");
-                    const status = isAvailable ? scene.status : isUpdateCard ? "Weekly Updates" : "PRO";
-                    const statusZh = isAvailable ? scene.statusZh : isUpdateCard ? "持续更新中" : "订阅解锁";
+                    const hasDeveloperAccess = isDeveloperUser();
+                    const hasPremiumAccess = isPremiumUser();
+                    const isAvailable = !isUpdateCard && canAccessTheme(scene.chapter);
+                    const status = isAvailable
+                      ? hasDeveloperAccess
+                        ? "DEV ACCESS"
+                        : hasPremiumAccess
+                        ? "Premium Access"
+                        : scene.status
+                      : isUpdateCard
+                      ? "Weekly Updates"
+                      : "PRO";
+                    const statusZh = isAvailable
+                      ? hasDeveloperAccess
+                        ? "开发者"
+                        : hasPremiumAccess
+                        ? "已解锁"
+                        : scene.statusZh
+                      : isUpdateCard
+                      ? "持续更新中"
+                      : "订阅解锁";
                     const button = isAvailable ? scene.button : isUpdateCard ? "Learn More" : "Subscribe to Unlock";
                     const buttonZh = isAvailable ? scene.buttonZh : isUpdateCard ? "了解更新" : "订阅解锁";
                     return (
@@ -12520,7 +12593,7 @@
                             showSubscriptionNotice(isUpdateCard);
                             return;
                           }
-                          (scene.chapter === "fruitShop" ? enterFruitShop : enterZoo)();
+                          enterTheme(scene.chapter);
                         }}
                         className={`mt-6 w-full rounded-2xl px-4 py-3 font-black shadow-label transition active:scale-[0.99] ${
                           isAvailable
