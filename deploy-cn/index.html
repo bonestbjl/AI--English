@@ -9140,6 +9140,28 @@
         },
       ];
 
+      const sceneSelectCards = [
+        ...sceneCards,
+        {
+          id: "weekly-updates",
+          title: "Weekly Updates",
+          zh: "每周持续更新",
+          status: "Weekly Updates",
+          statusZh: "持续更新中",
+          description: "Subscribe to unlock more real-life English scenes.",
+          descriptionZh: "订阅后可持续解锁更多真实生活场景。",
+          button: "Learn More",
+          buttonZh: "了解更新",
+          available: false,
+          updateCard: true,
+          accent: "#8bd3e6",
+          visual: "Fresh Scenes",
+          visualZh: "新场景预告",
+          image: "linear-gradient(135deg, #204d4d 0%, #285972 48%, #394f82 100%)",
+          imagePosition: "center",
+        },
+      ];
+
       let cachedEnglishVoice = null;
       let activeSpeechToken = 0;
 
@@ -9363,6 +9385,174 @@
         } catch (error) {
           return [];
         }
+      }
+
+      const AUTH_STORAGE_KEY = "realSceneEnglishUser";
+      const TEST_AUTH_CODE = "123456";
+
+      function getCurrentUser() {
+        if (typeof window === "undefined") return null;
+        try {
+          const saved = JSON.parse(window.localStorage.getItem(AUTH_STORAGE_KEY) || "null");
+          if (!saved?.phone || saved.isLoggedIn !== true) return null;
+          return {
+            phone: String(saved.phone),
+            role: saved.role || "free",
+            plan: saved.plan || "free",
+            isLoggedIn: true,
+            loginAt: saved.loginAt || Date.now(),
+          };
+        } catch (error) {
+          return null;
+        }
+      }
+
+      function setCurrentUser(user) {
+        if (typeof window === "undefined" || !user?.phone) return null;
+        const nextUser = {
+          phone: String(user.phone).trim(),
+          role: user.role || "free",
+          plan: user.plan || "free",
+          isLoggedIn: true,
+          loginAt: user.loginAt || Date.now(),
+        };
+        try {
+          window.localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(nextUser));
+          return nextUser;
+        } catch (error) {
+          return null;
+        }
+      }
+
+      function logoutUser() {
+        if (typeof window === "undefined") return;
+        window.localStorage.removeItem(AUTH_STORAGE_KEY);
+      }
+
+      function isLoggedIn() {
+        return Boolean(getCurrentUser()?.isLoggedIn);
+      }
+
+      function getUserRole() {
+        return getCurrentUser()?.role || "guest";
+      }
+
+      function isPremiumUser() {
+        const user = getCurrentUser();
+        return Boolean(user && (user.role === "premium" || user.plan === "premium"));
+      }
+
+      function isDeveloperUser() {
+        return getUserRole() === "developer";
+      }
+
+      const AUTH_MODAL_ID = "real-scene-auth-modal";
+
+      function closeAuthModal() {
+        document.getElementById(AUTH_MODAL_ID)?.remove();
+      }
+
+      function createAuthElement(tagName, className, text) {
+        const element = document.createElement(tagName);
+        if (className) element.className = className;
+        if (text) element.textContent = text;
+        return element;
+      }
+
+      function openAuthModal({ onLogin }) {
+        const existingModal = document.getElementById(AUTH_MODAL_ID);
+        if (existingModal) {
+          existingModal.querySelector("input")?.focus();
+          return;
+        }
+
+        const overlay = createAuthElement("div", "fixed inset-0 z-[110] flex items-center justify-center bg-black/60 px-4 py-[max(1rem,env(safe-area-inset-top))] backdrop-blur-sm");
+        overlay.id = AUTH_MODAL_ID;
+        const panel = createAuthElement("div", "dialogue-enter max-h-[calc(100dvh-2rem)] w-full max-w-md overflow-y-auto rounded-3xl border border-white/16 bg-[#111f19]/96 p-5 text-left text-cream shadow-glow backdrop-blur-2xl sm:p-6");
+        const header = createAuthElement("div", "flex items-start justify-between gap-4");
+        const headingGroup = createAuthElement("div");
+        headingGroup.append(
+          createAuthElement("p", "text-[10px] font-black uppercase tracking-[0.22em] text-banana", "Sign in to save your progress"),
+          createAuthElement("h2", "mt-3 text-3xl font-black text-white", "登录账号"),
+          createAuthElement("p", "mt-3 text-sm font-bold leading-6 text-cream/72", "登录后可保存学习进度、生词本和后续订阅状态。")
+        );
+        const closeButton = createAuthElement("button", "grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/10 text-2xl font-black text-white transition hover:bg-white/18 active:scale-95", "×");
+        closeButton.type = "button";
+        closeButton.setAttribute("aria-label", "Close 登录弹窗");
+        closeButton.title = "Close / 关闭";
+        closeButton.addEventListener("click", closeAuthModal);
+        header.append(headingGroup, closeButton);
+
+        const form = createAuthElement("form", "mt-5 space-y-4");
+        const phoneLabel = createAuthElement("label", "block");
+        const phoneText = createAuthElement("span", "text-sm font-black text-white", "手机号");
+        const phoneInput = createAuthElement("input", "mt-2 min-h-12 w-full rounded-2xl border border-white/16 bg-black/20 px-4 text-base font-bold text-white outline-none transition placeholder:text-cream/38 focus:border-banana/70 focus:bg-black/28");
+        phoneInput.type = "tel";
+        phoneInput.inputMode = "tel";
+        phoneInput.autocomplete = "tel";
+        phoneInput.placeholder = "输入手机号";
+        phoneLabel.append(phoneText, phoneInput);
+
+        const codeLabel = createAuthElement("label", "block");
+        const codeText = createAuthElement("span", "text-sm font-black text-white", "验证码");
+        const codeRow = createAuthElement("div", "mt-2 flex gap-2");
+        const codeInput = createAuthElement("input", "min-h-12 min-w-0 flex-1 rounded-2xl border border-white/16 bg-black/20 px-4 text-base font-bold text-white outline-none transition placeholder:text-cream/38 focus:border-banana/70 focus:bg-black/28");
+        codeInput.type = "text";
+        codeInput.inputMode = "numeric";
+        codeInput.autocomplete = "one-time-code";
+        codeInput.maxLength = 6;
+        codeInput.placeholder = "输入验证码";
+        const sendCodeButton = createAuthElement("button", "min-h-12 shrink-0 rounded-2xl border border-banana/45 bg-banana/12 px-3 text-sm font-black text-banana transition hover:bg-banana/20 active:scale-[0.99]", "获取验证码");
+        sendCodeButton.type = "button";
+        codeRow.append(codeInput, sendCodeButton);
+        codeLabel.append(codeText, codeRow);
+
+        const feedback = createAuthElement("p", "hidden");
+        function showFeedback(text, isError = false) {
+          feedback.textContent = text;
+          feedback.className = isError
+            ? "rounded-xl border border-coral/35 bg-coral/10 px-3 py-2 text-sm font-bold text-[#ffd2ca]"
+            : "rounded-xl border border-banana/30 bg-banana/10 px-3 py-2 text-sm font-bold text-banana";
+        }
+
+        sendCodeButton.addEventListener("click", () => {
+          if (!phoneInput.value.trim()) {
+            showFeedback("请输入手机号后再获取验证码。", true);
+            phoneInput.focus();
+            return;
+          }
+          showFeedback("当前测试验证码：123456");
+        });
+
+        const submitButton = createAuthElement("button", "min-h-12 w-full rounded-2xl bg-banana px-4 py-3 text-base font-black text-ink shadow-label transition hover:bg-[#ffc83f] active:scale-[0.99]", "Log in / 登录");
+        submitButton.type = "submit";
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+          const phone = phoneInput.value.trim();
+          if (!phone) {
+            showFeedback("请输入手机号。", true);
+            phoneInput.focus();
+            return;
+          }
+          if (codeInput.value.trim() !== TEST_AUTH_CODE) {
+            showFeedback("验证码不正确，请输入 123456。", true);
+            codeInput.focus();
+            return;
+          }
+          const user = setCurrentUser({ phone, role: "free", plan: "free", isLoggedIn: true, loginAt: Date.now() });
+          if (!user) {
+            showFeedback("当前浏览器无法保存登录状态，请检查本地存储设置。", true);
+            return;
+          }
+          closeAuthModal();
+          onLogin(user);
+        });
+
+        form.append(phoneLabel, codeLabel, feedback, submitButton);
+        panel.append(header, form);
+        overlay.append(panel);
+        document.body.append(overlay);
+        window.requestAnimationFrame(() => phoneInput.focus());
       }
 
       function useViewportSize() {
@@ -9637,12 +9827,15 @@
         const [currentView, setCurrentView] = useState("home");
         const [currentChapter, setCurrentChapter] = useState("zoo");
         const [sceneSelectHint, setSceneSelectHint] = useState("");
+        const [sceneSelectNotice, setSceneSelectNotice] = useState(null);
         const [wordBookReturnView, setWordBookReturnView] = useState("sceneSelect");
         const [wordBookFilter, setWordBookFilter] = useState("all");
         const [isReviewingWordBook, setIsReviewingWordBook] = useState(false);
         const [reviewIndex, setReviewIndex] = useState(0);
         const [reviewRevealed, setReviewRevealed] = useState(false);
-        const [showLoginModal, setShowLoginModal] = useState(false);
+        const [currentUser, setAuthenticatedUser] = useState(() => getCurrentUser());
+        const [showAccountMenu, setShowAccountMenu] = useState(false);
+        const [authToast, setAuthToast] = useState("");
         const [currentIndex, setCurrentIndex] = useState(0);
         const [selectedHotspot, setSelectedHotspot] = useState(null);
         const [selectedMoreAnimal, setSelectedMoreAnimal] = useState(null);
@@ -11464,9 +11657,88 @@
           setCurrentView("zoo");
         }
 
-        function showComingSoon() {
-          setSceneSelectHint("Coming soon! 即将开放");
-          window.setTimeout(() => setSceneSelectHint(""), 1800);
+        function showSubscriptionNotice(isUpdateCard = false) {
+          setSceneSelectNotice(
+            isUpdateCard
+              ? {
+                  title: "持续更新中",
+                  en: "Weekly Updates",
+                  text: "我们会持续加入更多真实生活场景。订阅用户将优先体验完整内容。",
+                }
+              : {
+                  title: "订阅后解锁",
+                  en: "PRO",
+                  text: "该真实场景属于完整版内容。订阅后可解锁更多生活、校园、出行、职场等真实英语场景。",
+                }
+          );
+        }
+
+        function showAuthToast(message) {
+          setAuthToast(message);
+          window.setTimeout(() => setAuthToast(""), 2600);
+        }
+
+        function openLoginModal() {
+          setShowAccountMenu(false);
+          openAuthModal({
+            onLogin: (user) => {
+              setAuthenticatedUser(user);
+              showAuthToast("登录成功，已保存当前本地账号状态。");
+            },
+          });
+        }
+
+        function handleLogout() {
+          logoutUser();
+          setAuthenticatedUser(null);
+          setShowAccountMenu(false);
+          showAuthToast("已退出登录。");
+        }
+
+        function renderAuthControl() {
+          if (!currentUser) {
+            return (
+              <button
+                onClick={openLoginModal}
+                className="rounded-full border border-white/14 bg-white/[0.07] px-4 py-2 text-xs font-black text-white/76 shadow-[0_12px_28px_rgba(0,0,0,0.2)] backdrop-blur-xl transition hover:bg-white/13 hover:text-white active:scale-[0.99]"
+              >
+                <ButtonCopy en="Login" zh="登录" size="small" />
+              </button>
+            );
+          }
+
+          const phoneSuffix = currentUser.phone.slice(-4);
+          return (
+            <div className="relative">
+              <button
+                onClick={() => setShowAccountMenu((value) => !value)}
+                aria-expanded={showAccountMenu}
+                aria-haspopup="menu"
+                className="flex items-center gap-2 rounded-full border border-banana/35 bg-[#182f25]/88 px-3 py-2 text-xs font-black text-white shadow-[0_12px_28px_rgba(0,0,0,0.2)] backdrop-blur-xl transition hover:bg-[#214333] active:scale-[0.99]"
+              >
+                <span>User {phoneSuffix}</span>
+                <span className="rounded-full bg-banana px-2 py-0.5 text-[10px] uppercase tracking-[0.12em] text-ink">Free</span>
+              </button>
+              {showAccountMenu && (
+                <div role="menu" className="dialogue-enter absolute right-0 top-full z-[70] mt-2 w-60 rounded-2xl border border-white/16 bg-[#12251d]/98 p-3 text-left text-cream shadow-glow backdrop-blur-xl">
+                  <p className="text-[10px] font-black uppercase tracking-[0.18em] text-banana">Current Account</p>
+                  <p className="mt-2 break-all text-sm font-black text-white">{currentUser.phone}</p>
+                  <p className="mt-1 text-xs font-bold text-cream/68">当前身份：Free 用户</p>
+                  <button
+                    onClick={handleLogout}
+                    className="mt-3 w-full rounded-xl border border-white/16 bg-white/10 px-3 py-2.5 text-sm font-black text-white transition hover:bg-white/18 active:scale-[0.99]"
+                  >
+                    <ButtonCopy en="Log out" zh="退出登录" size="small" />
+                  </button>
+                </div>
+              )}
+            </div>
+          );
+        }
+
+        function renderAuthToast() {
+          if (!authToast) return null;
+          return <div className="dialogue-enter fixed left-1/2 top-[calc(env(safe-area-inset-top)+1rem)] z-[100] w-[min(92vw,420px)] -translate-x-1/2 rounded-2xl border border-banana/35 bg-[#183326]/96 px-4 py-3 text-center text-sm font-black text-white shadow-glow backdrop-blur-xl">{authToast}</div>;
         }
 
         function showMoreWords() {
@@ -11885,12 +12157,7 @@
                 >
                   <ButtonCopy en="Word Book" zh="生词本" size="small" />
                 </button>
-                <button
-                  onClick={() => setShowLoginModal(true)}
-                  className="rounded-full border border-white/14 bg-white/[0.07] px-4 py-2 text-xs font-black text-white/76 shadow-[0_12px_28px_rgba(0,0,0,0.2)] backdrop-blur-xl transition hover:bg-white/13 hover:text-white active:scale-[0.99]"
-                >
-                  <ButtonCopy en="Login" zh="登录" size="small" />
-                </button>
+                {renderAuthControl()}
               </nav>
               <section className="relative z-10 flex min-h-screen items-center justify-center px-6 pb-16 pt-10 text-center sm:px-8">
                 <div className="dialogue-enter mx-auto max-w-[46rem] -translate-y-3 sm:-translate-y-6">
@@ -11935,78 +12202,7 @@
                   </p>
                 </div>
               </section>
-              {showLoginModal && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/56 px-4 backdrop-blur-sm">
-                  <div className="dialogue-enter w-full max-w-xl rounded-3xl border border-white/16 bg-[#111b17]/92 p-6 text-left text-cream shadow-glow backdrop-blur-2xl">
-                    <div className="flex items-start justify-between gap-4">
-                      <div>
-                        <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
-                          Guest Mode
-                        </p>
-                        <h2 className="mt-3 text-4xl font-black text-white">Log in</h2>
-                        <p className="mt-1 text-2xl font-black text-banana">登录</p>
-                      </div>
-                      <button
-                        onClick={() => setShowLoginModal(false)}
-                        className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/10 text-2xl font-black text-white transition hover:bg-white/18 active:scale-95"
-                        aria-label="Close 关闭"
-                        title="Close / 关闭"
-                      >
-                        ×
-                      </button>
-                    </div>
-
-                    <div className="mt-5 rounded-2xl border border-white/12 bg-white/10 p-4">
-                      <p className="text-xl font-black leading-8 text-white">
-                        Phone login is coming soon.
-                      </p>
-                      <p className="mt-1 text-base font-bold leading-7 text-cream/72">
-                        手机号登录即将开放。
-                      </p>
-                      <p className="mt-4 text-base font-black leading-7 text-white">
-                        In guest mode, your words are saved on this browser only.
-                      </p>
-                      <p className="mt-1 text-sm font-bold leading-6 text-cream/66">
-                        游客模式下，你的生词只会保存在当前浏览器。
-                      </p>
-                    </div>
-
-                    <div className="mt-4 rounded-2xl border border-white/12 bg-black/18 p-4">
-                      <p className="text-[10px] font-black uppercase tracking-[0.2em] text-banana">
-                        Future update
-                      </p>
-                      <p className="mt-1 text-sm font-bold text-cream/70">未来将支持：</p>
-                      <div className="mt-3 grid gap-2">
-                        {[
-                          ["Phone number login", "手机号登录"],
-                          ["Cloud word book", "云端生词本"],
-                          ["Cloud learning progress", "云端学习进度"],
-                        ].map(([en, zh]) => (
-                          <div key={en} className="rounded-2xl border border-white/10 bg-white/8 px-4 py-3">
-                            <p className="font-black text-white">{en}</p>
-                            <p className="mt-1 text-sm font-bold text-cream/64">{zh}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="mt-5 flex flex-wrap gap-3">
-                      <button
-                        onClick={() => setShowLoginModal(false)}
-                        className="rounded-full bg-banana px-5 py-3 font-black text-ink shadow-label transition hover:bg-[#ffc83f] active:scale-[0.99]"
-                      >
-                        <ButtonCopy en="Continue as Guest" zh="继续游客模式" />
-                      </button>
-                      <button
-                        onClick={() => setShowLoginModal(false)}
-                        className="rounded-full border border-white/16 bg-white/10 px-5 py-3 font-black text-white transition hover:bg-white/18 active:scale-[0.99]"
-                      >
-                        <ButtonCopy en="Close" zh="关闭" />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              )}
+              {renderAuthToast()}
               {showLandscapePrompt && <LandscapePrompt />}
             </main>
           );
@@ -12035,6 +12231,7 @@
                       >
                         <ButtonCopy en="Word Book" zh="生词本" size="small" />
                       </button>
+                      {renderAuthControl()}
                     </div>
                     <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">
                       Real Scene English
@@ -12060,18 +12257,25 @@
                 </header>
 
                 <section className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-                  {sceneCards.map((scene) => (
+                  {sceneSelectCards.map((scene) => {
+                    const isUpdateCard = scene.updateCard === true;
+                    const isAvailable = !isUpdateCard && (scene.chapter === "zoo" || scene.chapter === "fruitShop");
+                    const status = isAvailable ? scene.status : isUpdateCard ? "Weekly Updates" : "PRO";
+                    const statusZh = isAvailable ? scene.statusZh : isUpdateCard ? "持续更新中" : "订阅解锁";
+                    const button = isAvailable ? scene.button : isUpdateCard ? "Learn More" : "Subscribe to Unlock";
+                    const buttonZh = isAvailable ? scene.buttonZh : isUpdateCard ? "了解更新" : "订阅解锁";
+                    return (
                     <article
                       key={scene.id}
                       className={`dialogue-enter rounded-3xl border p-5 shadow-glow backdrop-blur-xl transition ${
-                        scene.available
+                        isAvailable
                           ? "border-banana/50 bg-[#12351f]/86"
-                          : "border-white/12 bg-white/10 opacity-72"
+                          : "border-white/18 bg-white/10"
                       }`}
                     >
                       <div
                         className={`relative mb-5 h-32 overflow-hidden rounded-2xl border border-white/12 bg-cover shadow-[inset_0_-42px_70px_rgba(0,0,0,0.38)] ${
-                          scene.available ? "" : "opacity-[0.86] saturate-[0.78]"
+                          isAvailable ? "" : "saturate-[0.72]"
                         }`}
                         style={{
                           backgroundImage: scene.image,
@@ -12094,19 +12298,26 @@
                             {scene.visualZh}
                           </span>
                         </div>
+                        {!isAvailable && (
+                          <div className="pointer-events-none absolute inset-0 grid place-items-center bg-[#07130f]/46 p-3">
+                            <span className="rounded-full border border-white/24 bg-[#101d19]/82 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.16em] text-white shadow-label backdrop-blur-sm">
+                              {isUpdateCard ? "WEEKLY UPDATES" : "PRO"}
+                            </span>
+                          </div>
+                        )}
                       </div>
                       <div className="flex items-start justify-between gap-3">
                         <div>
-                          <h2 className="text-3xl font-black text-white">{scene.title}</h2>
-                          <p className="mt-1 text-xl font-black text-banana">{scene.zh}</p>
+                          <h2 className="text-3xl font-black text-white">{isUpdateCard ? scene.zh : scene.title}</h2>
+                          <p className="mt-1 text-xl font-black text-banana">{isUpdateCard ? scene.title : scene.zh}</p>
                         </div>
                         <span
                           className={`rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-[0.12em] ${
-                            scene.available ? "bg-banana text-ink" : "bg-white/12 text-cream/70"
+                            isAvailable ? "bg-banana text-ink" : "bg-white/14 text-cream/88"
                           }`}
                         >
-                          {scene.status}
-                          <span className="ml-1 opacity-75">{scene.statusZh}</span>
+                          {status}
+                          <span className="ml-1 opacity-75">{statusZh}</span>
                         </span>
                       </div>
                       <p className="mt-5 text-base font-black leading-7 text-white">
@@ -12116,47 +12327,42 @@
                         {scene.descriptionZh}
                       </p>
                       <button
-                        onClick={
-                          scene.available
-                            ? scene.chapter === "fruitShop"
-                              ? enterFruitShop
-                              : scene.chapter === "campus"
-                              ? enterCampus
-                              : scene.chapter === "cafe"
-                              ? enterCafe
-                              : scene.chapter === "airport"
-                              ? enterAirport
-                              : scene.chapter === "office"
-                              ? enterOffice
-                              : scene.chapter === "hotel"
-                              ? enterHotel
-                              : scene.chapter === "restaurant"
-                              ? enterRestaurant
-                              : scene.chapter === "supermarket"
-                              ? enterSupermarket
-                              : scene.chapter === "metro"
-                              ? enterMetro
-                              : scene.chapter === "clinic"
-                              ? enterClinic
-                              : scene.chapter === "bank"
-                              ? enterBank
-                              : scene.chapter === "apartment"
-                              ? enterApartment
-                              : enterZoo
-                            : showComingSoon
-                        }
+                        onClick={() => {
+                          if (!isAvailable) {
+                            showSubscriptionNotice(isUpdateCard);
+                            return;
+                          }
+                          (scene.chapter === "fruitShop" ? enterFruitShop : enterZoo)();
+                        }}
                         className={`mt-6 w-full rounded-2xl px-4 py-3 font-black shadow-label transition active:scale-[0.99] ${
-                          scene.available
+                          isAvailable
                             ? "bg-banana text-ink hover:bg-[#ffc83f]"
-                            : "border border-white/14 bg-white/10 text-cream/72 hover:bg-white/16"
+                            : "border border-white/18 bg-white/12 text-cream/90 hover:bg-white/18"
                         }`}
                       >
-                        <ButtonCopy en={scene.button} zh={scene.buttonZh} />
+                        <ButtonCopy en={button} zh={buttonZh} />
                       </button>
                     </article>
-                  ))}
+                    );
+                  })}
                 </section>
               </div>
+              {sceneSelectNotice && (
+                <div className="fixed inset-0 z-[80] grid place-items-center bg-black/56 px-4 backdrop-blur-sm">
+                  <div className="dialogue-enter w-full max-w-sm rounded-3xl border border-white/16 bg-[#13241e]/96 p-6 text-center text-cream shadow-glow">
+                    <p className="text-[10px] font-black uppercase tracking-[0.22em] text-banana">{sceneSelectNotice.en}</p>
+                    <h2 className="mt-3 text-3xl font-black text-white">{sceneSelectNotice.title}</h2>
+                    <p className="mt-4 text-base font-bold leading-7 text-cream/78">{sceneSelectNotice.text}</p>
+                    <button
+                      onClick={() => setSceneSelectNotice(null)}
+                      className="mt-6 w-full rounded-2xl bg-banana px-4 py-3 font-black text-ink shadow-label transition hover:bg-[#ffc83f] active:scale-[0.99]"
+                    >
+                      <ButtonCopy en="Got it" zh="我知道了" />
+                    </button>
+                  </div>
+                </div>
+              )}
+              {renderAuthToast()}
               {showLandscapePrompt && <LandscapePrompt />}
             </main>
           );
@@ -12522,6 +12728,9 @@
               >
                 <ButtonCopy en={isMobileLandscape ? "Book" : "Word Book"} zh="生词本" size="small" />
               </button>
+              <div className="hidden shrink-0 sm:block">
+                {renderAuthControl()}
+              </div>
               <button
                 onClick={walkForward}
                 className={`shrink-0 rounded-full px-4 py-2 text-sm font-black shadow-label transition hover:-translate-y-0.5 active:translate-y-0 ${
@@ -15769,6 +15978,7 @@
                 </div>
               </div>
             )}
+            {renderAuthToast()}
             {showLandscapePrompt && <LandscapePrompt />}
           </main>
         );
