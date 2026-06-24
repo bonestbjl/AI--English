@@ -974,6 +974,7 @@
     </style>
     <script src="vendor/react.production.min.js"></script>
     <script src="vendor/react-dom.production.min.js"></script>
+    <script src="assets/audio/p0-mobile-audio.js"></script>
     <script src="vendor/babel.min.js"></script>
   </head>
   <body class="bg-[#17251c] text-cream">
@@ -982,44 +983,7 @@
     <script type="text/babel">
       const { useEffect, useMemo, useState } = React;
 
-      const audioPilotEnabled = new URLSearchParams(window.location.search).get("audioPilot") === "1";
-      const zooAudioPilotSources = {
-        "entrance:gate": {
-          word: "assets/audio/words/zoo/zoo-gate.mp3",
-          sentence: "assets/audio/sentences/zoo/zoo-gate.mp3",
-        },
-        "monkey:monkey": {
-          word: "assets/audio/words/zoo/monkey.mp3",
-          sentence: "assets/audio/sentences/zoo/monkey.mp3",
-        },
-        "elephant:elephant": {
-          word: "assets/audio/words/zoo/elephant.mp3",
-          sentence: "assets/audio/sentences/zoo/elephant.mp3",
-        },
-      };
-      const zooMobileAudioSources = {
-        "entrance:sign": {
-          word: "assets/audio/words/zoo/entrance--sign.mp3",
-          sentence: "assets/audio/sentences/zoo/entrance--sign.mp3",
-        },
-        "entrance:ticketBooth": {
-          word: "assets/audio/words/zoo/entrance--ticketbooth.mp3",
-          sentence: "assets/audio/sentences/zoo/entrance--ticketbooth.mp3",
-        },
-        "ticket:ticket": {
-          word: "assets/audio/words/zoo/ticket--ticket.mp3",
-          sentence: "assets/audio/sentences/zoo/ticket--ticket.mp3",
-        },
-        "ticket:seller": {
-          word: "assets/audio/words/zoo/ticket--seller.mp3",
-          sentence: "assets/audio/sentences/zoo/ticket--seller.mp3",
-        },
-        "ticket:map": {
-          word: "assets/audio/words/zoo/ticket--map.mp3",
-          sentence: "assets/audio/sentences/zoo/ticket--map.mp3",
-        },
-      };
-      let activeAudioPilot = null;
+      let activeLearningAudio = null;
 
       function isMobileAudioPreferred() {
         const userAgent = navigator.userAgent || "";
@@ -1030,6 +994,11 @@
 
         const coarsePointer = typeof window.matchMedia === "function" && window.matchMedia("(pointer: coarse)").matches;
         return coarsePointer && window.screen?.width <= 1024;
+      }
+
+      function getP0MobileAudioUrl(text) {
+        if (!isMobileAudioPreferred()) return null;
+        return window.P0MobileAudioUrls?.[text] || null;
       }
 
       const scenes = [
@@ -9780,10 +9749,6 @@
         }, []);
 
         useEffect(() => {
-          if (audioPilotEnabled) console.info("[audioPilot] enabled");
-        }, []);
-
-        useEffect(() => {
           try {
             window.localStorage.setItem(WORD_BOOK_STORAGE_KEY, JSON.stringify(savedWords));
           } catch (error) {
@@ -10482,7 +10447,12 @@
         });
         const currentReviewWord = filteredSavedWords[reviewIndex] || null;
 
-        function speakEnglish(text, rate = 0.9, key = text) {
+        function speakEnglish(text, rate = 0.9, key = text, skipMobileAudio = false) {
+          const audioUrl = !skipMobileAudio && getP0MobileAudioUrl(text);
+          if (audioUrl) {
+            playLearningAudio({ text, audioUrl, rate, key });
+            return;
+          }
           if (!("speechSynthesis" in window)) return;
           const speechToken = activeSpeechToken + 1;
           activeSpeechToken = speechToken;
@@ -10503,49 +10473,41 @@
           window.speechSynthesis.speak(utterance);
         }
 
-        function stopAudioPilot() {
-          if (!activeAudioPilot) return;
-          activeAudioPilot.onended = null;
-          activeAudioPilot.onerror = null;
-          activeAudioPilot.pause();
-          activeAudioPilot.removeAttribute("src");
-          activeAudioPilot.load();
-          activeAudioPilot = null;
+        function stopLearningAudio() {
+          if (!activeLearningAudio) return;
+          activeLearningAudio.onended = null;
+          activeLearningAudio.onerror = null;
+          activeLearningAudio.pause();
+          activeLearningAudio.removeAttribute("src");
+          activeLearningAudio.load();
+          activeLearningAudio = null;
         }
 
-        function getZooLearningAudioSource(hotspot) {
-          if (!isMobileAudioPreferred()) return null;
-          const sourceKey = `${currentScene.id}:${hotspot.id}`;
-          return zooMobileAudioSources[sourceKey] || (audioPilotEnabled ? zooAudioPilotSources[sourceKey] : null);
-        }
-
-        function playAudioPilot({ text, audioUrl, rate = 0.9, key = text }) {
+        function playLearningAudio({ text, audioUrl, rate = 0.9, key = text }) {
           if (!audioUrl || typeof Audio !== "function") {
-            stopAudioPilot();
-            speakEnglish(text, rate, key);
+            stopLearningAudio();
+            speakEnglish(text, rate, key, true);
             return;
           }
 
-          stopAudioPilot();
+          stopLearningAudio();
           window.speechSynthesis.cancel();
           const audio = new Audio(audioUrl);
           let hasFallenBack = false;
-          activeAudioPilot = audio;
+          activeLearningAudio = audio;
           audio.preload = "auto";
           audio.playbackRate = rate <= 0.7 ? 0.85 : 1;
-          if (audioPilotEnabled) console.info("[audioPilot] using audio file", audioUrl);
 
           const fallBackToSpeech = () => {
-            if (hasFallenBack || activeAudioPilot !== audio) return;
+            if (hasFallenBack || activeLearningAudio !== audio) return;
             hasFallenBack = true;
-            activeAudioPilot = null;
-            if (audioPilotEnabled) console.info("[audioPilot] fallback speechSynthesis", text);
-            speakEnglish(text, rate, key);
+            activeLearningAudio = null;
+            speakEnglish(text, rate, key, true);
           };
 
           audio.onended = () => {
-            if (activeAudioPilot === audio) {
-              activeAudioPilot = null;
+            if (activeLearningAudio === audio) {
+              activeLearningAudio = null;
               setPlayingKey(null);
             }
           };
@@ -10558,13 +10520,11 @@
         }
 
         function playHotspotWord(hotspot, rate, key) {
-          const audioSource = getZooLearningAudioSource(hotspot);
-          playAudioPilot({ text: hotspot.word, audioUrl: audioSource?.word, rate, key });
+          speakEnglish(hotspot.word, rate, key);
         }
 
         function playHotspotSentence(hotspot, rate, key) {
-          const audioSource = getZooLearningAudioSource(hotspot);
-          playAudioPilot({ text: hotspot.example, audioUrl: audioSource?.sentence, rate, key });
+          speakEnglish(hotspot.example, rate, key);
         }
 
         function rememberWord(word) {
