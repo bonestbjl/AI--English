@@ -9465,6 +9465,26 @@
         return data.user;
       }
 
+      async function createFullVersionOrder(phone) {
+        const response = await fetch("/api/create-order", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ phone, productCode: "real_scene_english_full" }),
+        });
+        let data = null;
+        try {
+          data = await response.json();
+        } catch (error) {
+          data = null;
+        }
+        if (!response.ok || data?.ok !== true || !data.order) {
+          const orderError = new Error(data?.error || "create_order_failed");
+          orderError.status = response.status;
+          throw orderError;
+        }
+        return data.order;
+      }
+
       function logoutUser() {
         if (typeof window === "undefined") return;
         window.localStorage.removeItem(AUTH_STORAGE_KEY);
@@ -9985,6 +10005,7 @@
         const [reviewRevealed, setReviewRevealed] = useState(false);
         const [showAccountMenu, setShowAccountMenu] = useState(false);
         const [authToast, setAuthToast] = useState("");
+        const [subscriptionOrder, setSubscriptionOrder] = useState({ status: "idle" });
         const [currentIndex, setCurrentIndex] = useState(() => initialLearningData.lastScene.sceneIndex);
         const [selectedHotspot, setSelectedHotspot] = useState(null);
         const [selectedMoreAnimal, setSelectedMoreAnimal] = useState(null);
@@ -11844,6 +11865,7 @@
 
         function showSubscriptionNotice(isUpdateCard = false) {
           const hasFullAccess = isPremiumUser() || isDeveloperUser();
+          setSubscriptionOrder({ status: "idle" });
           setSceneSelectNotice(
             isUpdateCard
               ? {
@@ -11976,6 +11998,31 @@
             return fallbackUser;
           }
           return null;
+        }
+
+        async function handleCreateSubscriptionOrder() {
+          if (!currentUser) {
+            setSubscriptionOrder({ status: "error", message: "请先登录手机号，再开通完整版。" });
+            return;
+          }
+          if (isDeveloperUser()) {
+            setSubscriptionOrder({ status: "info", message: "开发者账号已拥有完整访问权限。" });
+            return;
+          }
+          if (isPremiumUser()) {
+            setSubscriptionOrder({ status: "info", message: "你已解锁完整版。" });
+            return;
+          }
+          setSubscriptionOrder({ status: "loading", message: "正在创建订单…" });
+          try {
+            const order = await createFullVersionOrder(currentUser.phone);
+            setSubscriptionOrder({ status: "created", order });
+          } catch (error) {
+            setSubscriptionOrder({
+              status: "error",
+              message: "订单接口仅在线上环境可用，请部署后测试。",
+            });
+          }
         }
 
         function openLoginModal() {
@@ -12729,22 +12776,73 @@
                     </div>
 
                     {sceneSelectNotice.kind === "subscription" && (
-                      <div className="mt-5 rounded-3xl border border-banana/35 bg-gradient-to-br from-banana/16 to-white/[0.06] p-4">
-                        <p className="text-sm font-black text-banana">早鸟体验价</p>
-                        <div className="mt-2 flex flex-wrap items-end gap-x-3 gap-y-1">
-                          <p className="text-5xl font-black leading-none text-white">¥19.9</p>
-                          <p className="pb-1 text-sm font-bold text-cream/58 line-through">原价 ¥39.9</p>
+                      <>
+                        <div className="mt-5 rounded-3xl border border-banana/35 bg-gradient-to-br from-banana/16 to-white/[0.06] p-4">
+                          <p className="text-sm font-black text-banana">早鸟体验价</p>
+                          <div className="mt-2 flex flex-wrap items-end gap-x-3 gap-y-1">
+                            <p className="text-5xl font-black leading-none text-white">¥19.9</p>
+                            <p className="pb-1 text-sm font-bold text-cream/58 line-through">原价 ¥39.9</p>
+                          </div>
+                          <p className="mt-2 text-sm font-bold text-cream/72">一次解锁完整版</p>
+                          <p className="mt-1 text-xs font-bold text-cream/52">支付接口接入中</p>
                         </div>
-                        <p className="mt-2 text-sm font-bold text-cream/72">一次解锁完整版</p>
-                      </div>
+
+                        <div className="mt-4 rounded-3xl border border-white/14 bg-white/[0.07] p-4">
+                          {subscriptionOrder.status === "created" ? (
+                            <div>
+                              <p className="text-xl font-black text-white">订单已创建</p>
+                              <div className="mt-3 grid gap-2 text-sm font-bold text-cream/78">
+                                <p><span className="text-cream/52">订单号：</span>{subscriptionOrder.order.orderNo}</p>
+                                <p><span className="text-cream/52">金额：</span>¥19.9</p>
+                                <p><span className="text-cream/52">状态：</span>待支付</p>
+                              </div>
+                              <p className="mt-3 text-sm font-bold leading-6 text-cream/62">
+                                支付接口正在接入中，下一步将支持支付宝/微信网页支付。
+                              </p>
+                            </div>
+                          ) : subscriptionOrder.status === "loading" ? (
+                            <p className="text-sm font-black text-banana">正在创建订单…</p>
+                          ) : subscriptionOrder.status === "error" ? (
+                            <p className="rounded-xl border border-coral/35 bg-coral/10 px-3 py-2 text-sm font-bold text-[#ffd2ca]">
+                              {subscriptionOrder.message}
+                            </p>
+                          ) : subscriptionOrder.status === "info" ? (
+                            <p className="rounded-xl border border-banana/30 bg-banana/10 px-3 py-2 text-sm font-bold text-banana">
+                              {subscriptionOrder.message}
+                            </p>
+                          ) : (
+                            <p className="text-sm font-bold leading-6 text-cream/62">
+                              点击立即解锁后会创建一笔待支付订单；本阶段不会自动升级 Premium。
+                            </p>
+                          )}
+                        </div>
+                      </>
                     )}
 
                     <div className="mt-5 grid gap-3 sm:grid-cols-[1fr_auto]">
                       <button
-                        onClick={() => showAuthToast("支付功能即将开放，当前为测试版。")}
-                        className="rounded-2xl bg-banana px-4 py-3 font-black text-ink shadow-label transition hover:bg-[#ffc83f] active:scale-[0.99]"
+                        onClick={() => {
+                          if (sceneSelectNotice.kind === "subscription") {
+                            if (subscriptionOrder.status === "created") {
+                              setSceneSelectNotice(null);
+                              return;
+                            }
+                            handleCreateSubscriptionOrder();
+                          } else {
+                            setSceneSelectNotice(null);
+                          }
+                        }}
+                        disabled={subscriptionOrder.status === "loading"}
+                        className={`rounded-2xl px-4 py-3 font-black shadow-label transition active:scale-[0.99] ${
+                          subscriptionOrder.status === "loading"
+                            ? "bg-banana/45 text-ink/60"
+                            : "bg-banana text-ink hover:bg-[#ffc83f]"
+                        }`}
                       >
-                        <ButtonCopy en="Unlock Now" zh="立即解锁" />
+                        <ButtonCopy
+                          en={sceneSelectNotice.kind !== "subscription" || subscriptionOrder.status === "created" ? "Got it" : "Unlock Now"}
+                          zh={sceneSelectNotice.kind !== "subscription" || subscriptionOrder.status === "created" ? "我知道了" : "立即解锁"}
+                        />
                       </button>
                       <button
                         onClick={() => setSceneSelectNotice(null)}
@@ -12753,7 +12851,11 @@
                         <ButtonCopy en="Maybe Later" zh="稍后再说" />
                       </button>
                     </div>
-                    <p className="mt-3 text-center text-xs font-bold text-cream/50">支付功能即将开放，当前为测试版。</p>
+                    <p className="mt-3 text-center text-xs font-bold text-cream/50">
+                      {sceneSelectNotice.kind === "subscription"
+                        ? "支付宝/微信支付接口接入中。"
+                        : "更多真实生活场景会持续加入。"}
+                    </p>
                   </div>
                 </div>
               )}
