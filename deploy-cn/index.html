@@ -9486,6 +9486,27 @@
         return data.order;
       }
 
+      async function queryAlipayOrderStatus(orderNo) {
+        const response = await fetch("/api/alipay-query-order", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ orderNo }),
+        });
+        let data = null;
+        try {
+          data = await response.json();
+        } catch (error) {
+          data = null;
+        }
+        if (!response.ok || data?.ok !== true) {
+          const queryError = new Error(data?.error || "alipay_query_order_failed");
+          queryError.status = response.status;
+          queryError.detail = data?.detail || "";
+          throw queryError;
+        }
+        return data;
+      }
+
       function logoutUser() {
         if (typeof window === "undefined") return;
         window.localStorage.removeItem(AUTH_STORAGE_KEY);
@@ -10116,6 +10137,24 @@
         useEffect(() => {
           const savedUser = getCurrentUser();
           if (savedUser) syncUserPlan(savedUser, { silent: true });
+        }, []);
+
+        useEffect(() => {
+          const params = new URLSearchParams(window.location.search);
+          const orderNo = String(params.get("out_trade_no") || params.get("orderNo") || "").trim();
+          const isPaymentReturn = params.get("payment_return") === "1" || Boolean(params.get("out_trade_no"));
+          if (!isPaymentReturn || !/^RSE\d{10,40}$/.test(orderNo)) return;
+
+          setCurrentView("sceneSelect");
+          setSceneSelectNotice({
+            kind: "subscription",
+            title: "解锁完整版",
+            en: "Unlock the Full Real Scene English Experience",
+            text: "订阅后可解锁更多真实生活、校园、出行、职场等英语场景，保存学习进度，并持续获得后续更新。",
+            detail: "正在确认支付宝沙箱支付结果，请稍候。",
+          });
+          setSubscriptionOrder({ status: "confirming", order: { orderNo }, message: "正在确认支付结果…" });
+          handleCheckPaymentStatus(orderNo, { fromReturn: true });
         }, []);
 
         useEffect(() => {
@@ -12037,6 +12076,54 @@
           window.location.href = `/api/alipay-create-payment?orderNo=${encodeURIComponent(orderNo)}`;
         }
 
+        async function handleCheckPaymentStatus(orderNo = subscriptionOrder.order?.orderNo, { fromReturn = false } = {}) {
+          if (!orderNo) {
+            setSubscriptionOrder({ status: "error", message: "请先创建订单，再检查开通状态。" });
+            return;
+          }
+          setSubscriptionOrder({
+            status: "confirming",
+            order: { orderNo },
+            message: "正在确认支付结果…",
+          });
+          try {
+            const result = await queryAlipayOrderStatus(orderNo);
+            if (result.paid) {
+              if (currentUser) {
+                const upgradedUser = setCurrentUser({
+                  ...currentUser,
+                  role: "premium",
+                  plan: result.plan || "premium",
+                  planSource: "alipay_query_paid",
+                });
+                if (upgradedUser) setAuthenticatedUser(upgradedUser);
+              }
+              setSubscriptionOrder({
+                status: "paid",
+                order: { orderNo, status: "paid" },
+                user: { phone: result.phone || currentUser?.phone, role: "premium", plan: "premium" },
+                message: "支付成功，完整版已解锁。当前账号已升级为 Premium。",
+              });
+              showAuthToast("支付成功，完整版已解锁。");
+            } else {
+              setSubscriptionOrder({
+                status: "created",
+                order: { orderNo },
+                message: "支付还在确认中，请稍后刷新或重新检查。",
+              });
+            }
+          } catch (error) {
+            setSubscriptionOrder({
+              status: "error",
+              message: "支付结果确认失败，请稍后重试或联系客服。",
+            });
+          } finally {
+            if (fromReturn && window.history?.replaceState) {
+              window.history.replaceState({}, document.title, window.location.pathname);
+            }
+          }
+        }
+
         function openLoginModal() {
           setShowAccountMenu(false);
           openAuthModal({
@@ -12830,9 +12917,20 @@
                               <p className="mt-2 text-center text-xs font-bold text-cream/48">
                                 测试环境，不会真实扣款。支付完成后请返回网站查看开通状态。
                               </p>
+                              <button
+                                onClick={() => handleCheckPaymentStatus(subscriptionOrder.order.orderNo)}
+                                className="mt-3 w-full rounded-2xl border border-banana/45 bg-banana/12 px-4 py-3 text-sm font-black text-banana transition hover:bg-banana/20 active:scale-[0.99]"
+                              >
+                                我已付款，检查开通状态
+                              </button>
+                              {subscriptionOrder.message && (
+                                <p className="mt-2 rounded-xl border border-white/12 bg-white/[0.06] px-3 py-2 text-center text-xs font-bold text-cream/62">
+                                  {subscriptionOrder.message}
+                                </p>
+                              )}
                             </div>
                           ) : subscriptionOrder.status === "confirming" ? (
-                            <p className="text-sm font-black text-banana">正在确认支付…</p>
+                            <p className="text-sm font-black text-banana">{subscriptionOrder.message || "正在确认支付…"}</p>
                           ) : subscriptionOrder.status === "loading" ? (
                             <p className="text-sm font-black text-banana">正在创建订单…</p>
                           ) : subscriptionOrder.status === "error" ? (
