@@ -12129,6 +12129,41 @@
             : currentUser.role === "premium" || currentUser.plan === "premium"
             ? { badge: "Premium", identity: "Premium 用户", plan: "Premium" }
             : { badge: "Free", identity: "Free 用户", plan: "Free" };
+          const accountMenu = showAccountMenu ? ReactDOM.createPortal(
+            <div role="menu" className="dialogue-enter fixed right-3 top-[calc(env(safe-area-inset-top)+4.75rem)] z-[99999] w-[min(17rem,calc(100vw-24px))] max-w-[calc(100vw-24px)] rounded-2xl border border-white/16 bg-[#12251d]/98 p-3 text-left text-cream shadow-glow backdrop-blur-xl pointer-events-auto sm:right-6 sm:top-[calc(env(safe-area-inset-top)+4.25rem)]">
+              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-banana">Current Account</p>
+              <p className="mt-2 break-all text-sm font-black text-white">{currentUser.phone}</p>
+              <p className="mt-1 text-xs font-bold text-cream/68">当前身份：{roleMeta.identity}</p>
+              <p className="mt-1 text-xs font-bold text-cream/52">当前计划：{roleMeta.plan}</p>
+              <p className="mt-1 text-xs font-bold text-cream/52">数据状态：本机保存</p>
+              {currentUser.role === "premium" || currentUser.plan === "premium" ? (
+                <div className="mt-3 rounded-xl border border-banana/30 bg-banana/10 px-3 py-2 text-sm font-black text-banana">
+                  Premium 已解锁
+                </div>
+              ) : currentUser.role === "developer" || currentUser.plan === "developer" ? (
+                <div className="mt-3 rounded-xl border border-sky-300/30 bg-sky-300/10 px-3 py-2 text-sm font-black text-sky-100">
+                  Developer Access
+                </div>
+              ) : (
+                <button
+                  onClick={() => {
+                    setShowAccountMenu(false);
+                    showSubscriptionNotice(false);
+                  }}
+                  className="mt-3 flex min-h-[44px] w-full items-center justify-center rounded-xl border border-banana/35 bg-banana/12 px-4 py-3 text-sm font-black text-banana transition hover:bg-banana/20 active:scale-[0.99]"
+                >
+                  <ButtonCopy en="Unlock Full Version" zh="解锁完整版" size="small" />
+                </button>
+              )}
+              <button
+                onClick={handleLogout}
+                className="mt-3 flex min-h-[44px] w-full items-center justify-center rounded-xl border border-white/16 bg-white/10 px-4 py-3 text-sm font-black text-white transition hover:bg-white/18 active:scale-[0.99]"
+              >
+                <ButtonCopy en="Log out" zh="退出登录" size="small" />
+              </button>
+            </div>,
+            document.body
+          ) : null;
           return (
             <div className="relative">
               <button
@@ -12140,40 +12175,7 @@
                 <span>User {phoneSuffix}</span>
                 <span className="rounded-full bg-banana px-2 py-0.5 text-[10px] uppercase tracking-[0.12em] text-ink">{roleMeta.badge}</span>
               </button>
-              {showAccountMenu && (
-                <div role="menu" className="dialogue-enter absolute right-0 top-full z-[70] mt-2 w-60 rounded-2xl border border-white/16 bg-[#12251d]/98 p-3 text-left text-cream shadow-glow backdrop-blur-xl">
-                  <p className="text-[10px] font-black uppercase tracking-[0.18em] text-banana">Current Account</p>
-                  <p className="mt-2 break-all text-sm font-black text-white">{currentUser.phone}</p>
-                  <p className="mt-1 text-xs font-bold text-cream/68">当前身份：{roleMeta.identity}</p>
-                  <p className="mt-1 text-xs font-bold text-cream/52">当前计划：{roleMeta.plan}</p>
-                  <p className="mt-1 text-xs font-bold text-cream/52">数据状态：本机保存</p>
-                  {currentUser.role === "premium" || currentUser.plan === "premium" ? (
-                    <div className="mt-3 rounded-xl border border-banana/30 bg-banana/10 px-3 py-2 text-sm font-black text-banana">
-                      Premium 已解锁
-                    </div>
-                  ) : currentUser.role === "developer" || currentUser.plan === "developer" ? (
-                    <div className="mt-3 rounded-xl border border-sky-300/30 bg-sky-300/10 px-3 py-2 text-sm font-black text-sky-100">
-                      Developer Access
-                    </div>
-                  ) : (
-                    <button
-                      onClick={() => {
-                        setShowAccountMenu(false);
-                        showSubscriptionNotice(false);
-                      }}
-                      className="mt-3 w-full rounded-xl border border-banana/35 bg-banana/12 px-3 py-2.5 text-sm font-black text-banana transition hover:bg-banana/20 active:scale-[0.99]"
-                    >
-                      <ButtonCopy en="Unlock Full Version" zh="解锁完整版" size="small" />
-                    </button>
-                  )}
-                  <button
-                    onClick={handleLogout}
-                    className="mt-3 w-full rounded-xl border border-white/16 bg-white/10 px-3 py-2.5 text-sm font-black text-white transition hover:bg-white/18 active:scale-[0.99]"
-                  >
-                    <ButtonCopy en="Log out" zh="退出登录" size="small" />
-                  </button>
-                </div>
-              )}
+              {accountMenu}
             </div>
           );
         }
