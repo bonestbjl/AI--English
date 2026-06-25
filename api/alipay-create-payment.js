@@ -4,6 +4,7 @@ const ORDER_NO_PATTERN = /^RSE\d{10,40}$/;
 const AMOUNT_CENTS = 1990;
 const ALIPAY_METHOD = "alipay.trade.wap.pay";
 const ALIPAY_PRODUCT_CODE = "QUICK_WAP_WAY";
+const REQUIRED_PAYMENT_HOST = "ai-english-sooty-pi.vercel.app";
 
 function sendJson(res, status, body) {
   res.setHeader("Content-Type", "application/json; charset=utf-8");
@@ -92,6 +93,41 @@ function getPrivateKeyInfo(privateKey) {
   };
 }
 
+function normalizeUrlEnv(value) {
+  return String(value || "").trim().replace(/^['"]|['"]$/g, "");
+}
+
+function getUrlInfo(value) {
+  try {
+    const url = new URL(value);
+    return {
+      valid: true,
+      protocol: url.protocol,
+      host: url.host,
+      hostname: url.hostname,
+      href: url.href,
+    };
+  } catch (error) {
+    return { valid: false, protocol: "", host: "", hostname: "", href: "" };
+  }
+}
+
+function isProductionPaymentUrl(value, options = {}) {
+  const info = getUrlInfo(value);
+  if (!info.valid) return false;
+  if (info.protocol !== "https:") return false;
+  if (info.hostname !== REQUIRED_PAYMENT_HOST) return false;
+  if (info.hostname === "localhost" || info.hostname === "127.0.0.1") return false;
+  if (options.requireNotifyPath) {
+    try {
+      return new URL(value).pathname === "/api/alipay-notify";
+    } catch (error) {
+      return false;
+    }
+  }
+  return true;
+}
+
 function createSignContent(params) {
   return Object.keys(params)
     .filter((key) => params[key] !== undefined && params[key] !== null && params[key] !== "")
@@ -105,6 +141,14 @@ function signAlipayContent(signContent, privateKey) {
   signer.update(signContent, "utf8");
   signer.end();
   return signer.sign(privateKey, "base64");
+}
+
+function createSafeSignPreview(signContent) {
+  return signContent
+    .replace(/app_id=[^&]+/, "app_id=[present]")
+    .replace(/notify_url=[^&]+/, "notify_url=[present]")
+    .replace(/return_url=[^&]+/, "return_url=[present]")
+    .slice(0, 200);
 }
 
 function appendCharsetToGateway(gateway) {
@@ -208,10 +252,26 @@ module.exports = async function handler(req, res) {
   const appId = process.env.ALIPAY_APP_ID;
   const gateway = process.env.ALIPAY_GATEWAY;
   const privateKey = normalizePrivateKey(process.env.ALIPAY_APP_PRIVATE_KEY);
-  const returnUrl = process.env.ALIPAY_RETURN_URL;
-  const notifyUrl = process.env.ALIPAY_NOTIFY_URL;
-  if (!appId || !gateway || !privateKey || !returnUrl || !notifyUrl) {
+  const returnUrl = normalizeUrlEnv(process.env.ALIPAY_RETURN_URL);
+  const notifyUrl = normalizeUrlEnv(process.env.ALIPAY_NOTIFY_URL);
+  if (!appId || !gateway || !privateKey) {
     sendJson(res, 500, { ok: false, error: "missing_alipay_env" });
+    return;
+  }
+  if (!notifyUrl) {
+    sendJson(res, 500, { ok: false, error: "missing_alipay_notify_url" });
+    return;
+  }
+  if (!returnUrl) {
+    sendJson(res, 500, { ok: false, error: "missing_alipay_return_url" });
+    return;
+  }
+  if (!isProductionPaymentUrl(notifyUrl, { requireNotifyPath: true })) {
+    sendJson(res, 500, { ok: false, error: "invalid_alipay_notify_url" });
+    return;
+  }
+  if (!isProductionPaymentUrl(returnUrl)) {
+    sendJson(res, 500, { ok: false, error: "invalid_alipay_return_url" });
     return;
   }
 
@@ -264,6 +324,8 @@ module.exports = async function handler(req, res) {
 
     if (isDebug) {
       const privateKeyInfo = getPrivateKeyInfo(privateKey);
+      const returnUrlInfo = getUrlInfo(returnUrl);
+      const notifyUrlInfo = getUrlInfo(notifyUrl);
       sendJson(res, 200, {
         ok: true,
         gateway,
@@ -273,11 +335,15 @@ module.exports = async function handler(req, res) {
         privateKeyPresent: privateKeyInfo.present,
         privateKeyLooksPkcs8: privateKeyInfo.looksPkcs8,
         privateKeyHasPemHeader: privateKeyInfo.hasPemHeader,
+        returnUrlPresent: Boolean(returnUrl),
+        notifyUrlPresent: Boolean(notifyUrl),
+        returnUrlHost: returnUrlInfo.host,
+        notifyUrlHost: notifyUrlInfo.host,
         paramKeys: Object.keys(params).sort(),
+        hasNotifyUrlInParams: Object.prototype.hasOwnProperty.call(params, "notify_url"),
+        hasReturnUrlInParams: Object.prototype.hasOwnProperty.call(params, "return_url"),
         signContentLength: signContent.length,
-        signPreview: signContent
-          .replace(/app_id=[^&]+/, "app_id=[present]")
-          .slice(0, 200),
+        signPreview: createSafeSignPreview(signContent),
         hasSign: Boolean(sign),
       });
       return;
