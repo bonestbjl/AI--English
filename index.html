@@ -9486,27 +9486,6 @@
         return data.order;
       }
 
-      async function confirmMockPayment(orderNo) {
-        const response = await fetch("/api/mock-pay-success", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ orderNo }),
-        });
-        let data = null;
-        try {
-          data = await response.json();
-        } catch (error) {
-          data = null;
-        }
-        if (!response.ok || data?.ok !== true || !data.user) {
-          const paymentError = new Error(data?.error || "mock_payment_failed");
-          paymentError.status = response.status;
-          paymentError.detail = data?.detail || "";
-          throw paymentError;
-        }
-        return data;
-      }
-
       function logoutUser() {
         if (typeof window === "undefined") return;
         window.localStorage.removeItem(AUTH_STORAGE_KEY);
@@ -12049,39 +12028,6 @@
           }
         }
 
-        async function handleMockPaymentSuccess() {
-          const orderNo = subscriptionOrder.order?.orderNo;
-          if (!orderNo || !currentUser) {
-            setSubscriptionOrder({ status: "error", message: "请先创建订单，再模拟支付成功。" });
-            return;
-          }
-          setSubscriptionOrder({ ...subscriptionOrder, status: "confirming", message: "正在确认支付…" });
-          try {
-            const result = await confirmMockPayment(orderNo);
-            const upgradedUser = setCurrentUser({
-              ...currentUser,
-              role: result.user.role || "premium",
-              plan: result.user.plan || "premium",
-              planSource: "supabase_mock_paid",
-            });
-            if (upgradedUser) setAuthenticatedUser(upgradedUser);
-            setSubscriptionOrder({
-              status: "paid",
-              order: result.order,
-              user: result.user,
-              message: "支付成功，完整版已解锁。当前账号已升级为 Premium。",
-            });
-            showAuthToast("支付成功，完整版已解锁。");
-          } catch (error) {
-            setSubscriptionOrder({
-              status: "error",
-              message: error.detail
-                ? `模拟支付失败：${error.detail}`
-                : "模拟支付接口仅在线上环境可用，请部署后测试。",
-            });
-          }
-        }
-
         function handleAlipaySandboxPayment() {
           const orderNo = subscriptionOrder.order?.orderNo;
           if (!orderNo) {
@@ -12882,16 +12828,7 @@
                                 支付宝沙箱支付
                               </button>
                               <p className="mt-2 text-center text-xs font-bold text-cream/48">
-                                测试环境，不会真实扣款；本阶段支付完成后暂不自动开通。
-                              </p>
-                              <button
-                                onClick={handleMockPaymentSuccess}
-                                className="mt-3 w-full rounded-2xl border border-banana/45 bg-banana/12 px-4 py-3 text-sm font-black text-banana transition hover:bg-banana/20 active:scale-[0.99]"
-                              >
-                                模拟支付成功
-                              </button>
-                              <p className="mt-2 text-center text-xs font-bold text-cream/48">
-                                测试按钮：模拟支付宝/微信支付回调成功
+                                测试环境，不会真实扣款。支付完成后请返回网站查看开通状态。
                               </p>
                             </div>
                           ) : subscriptionOrder.status === "confirming" ? (

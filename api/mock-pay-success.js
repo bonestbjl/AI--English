@@ -126,6 +126,11 @@ module.exports = async function handler(req, res) {
     return;
   }
 
+  if (process.env.ENABLE_MOCK_PAYMENT !== "true") {
+    sendJson(res, 403, { ok: false, error: "mock_payment_disabled" });
+    return;
+  }
+
   const body = readRequestBody(req);
   const orderNo = String(body.orderNo || "").trim();
   if (!ORDER_NO_PATTERN.test(orderNo)) {
