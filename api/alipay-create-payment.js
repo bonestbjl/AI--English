@@ -84,6 +84,14 @@ function normalizePrivateKey(rawKey) {
   return ["-----BEGIN PRIVATE KEY-----", ...lines, "-----END PRIVATE KEY-----"].join("\n");
 }
 
+function getPrivateKeyInfo(privateKey) {
+  return {
+    present: Boolean(privateKey),
+    looksPkcs8: /-----BEGIN PRIVATE KEY-----/.test(privateKey),
+    hasPemHeader: /-----BEGIN [A-Z ]*PRIVATE KEY-----/.test(privateKey),
+  };
+}
+
 function createSignContent(params) {
   return Object.keys(params)
     .filter((key) => params[key] !== undefined && params[key] !== null && params[key] !== "")
@@ -92,11 +100,16 @@ function createSignContent(params) {
     .join("&");
 }
 
-function signAlipayParams(params, privateKey) {
+function signAlipayContent(signContent, privateKey) {
   const signer = crypto.createSign("RSA-SHA256");
-  signer.update(createSignContent(params), "utf8");
+  signer.update(signContent, "utf8");
   signer.end();
   return signer.sign(privateKey, "base64");
+}
+
+function appendCharsetToGateway(gateway) {
+  const separator = gateway.includes("?") ? "&" : "?";
+  return `${gateway}${separator}charset=utf-8`;
 }
 
 function escapeHtml(value) {
@@ -157,7 +170,7 @@ function renderAutoSubmitForm({ gateway, params }) {
     <main>
       <h1>正在跳转支付宝沙箱支付…</h1>
       <p>如果页面没有自动跳转，请点击下方按钮继续前往支付宝沙箱收银台。</p>
-      <form id="alipayForm" method="POST" action="${escapeHtml(gateway)}">
+      <form id="alipayForm" accept-charset="utf-8" method="POST" action="${escapeHtml(appendCharsetToGateway(gateway))}">
         ${inputs}
         <button type="submit">继续前往支付宝沙箱支付</button>
       </form>
@@ -179,6 +192,7 @@ module.exports = async function handler(req, res) {
   }
 
   const orderNo = String(req.query?.orderNo || "").trim();
+  const isDebug = String(req.query?.debug || "") === "1";
   if (!ORDER_NO_PATTERN.test(orderNo)) {
     sendJson(res, 400, { ok: false, error: "invalid_order_no" });
     return;
@@ -223,9 +237,9 @@ module.exports = async function handler(req, res) {
     const bizContent = JSON.stringify({
       out_trade_no: orderNo,
       total_amount: "19.90",
-      subject: "Real Scene English 完整版",
+      subject: "Real Scene English Full Access",
       product_code: ALIPAY_PRODUCT_CODE,
-      body: "Real Scene English 13个真实场景完整版解锁",
+      body: "Real Scene English premium unlock",
     });
     const params = {
       app_id: appId,
@@ -238,12 +252,34 @@ module.exports = async function handler(req, res) {
       return_url: returnUrl,
       biz_content: bizContent,
     };
+    const signContent = createSignContent(params);
 
     let sign = "";
     try {
-      sign = signAlipayParams(params, privateKey);
+      sign = signAlipayContent(signContent, privateKey);
     } catch (error) {
       sendJson(res, 500, { ok: false, error: "alipay_sign_failed" });
+      return;
+    }
+
+    if (isDebug) {
+      const privateKeyInfo = getPrivateKeyInfo(privateKey);
+      sendJson(res, 200, {
+        ok: true,
+        gateway,
+        formAction: appendCharsetToGateway(gateway),
+        method: ALIPAY_METHOD,
+        appIdPresent: Boolean(appId),
+        privateKeyPresent: privateKeyInfo.present,
+        privateKeyLooksPkcs8: privateKeyInfo.looksPkcs8,
+        privateKeyHasPemHeader: privateKeyInfo.hasPemHeader,
+        paramKeys: Object.keys(params).sort(),
+        signContentLength: signContent.length,
+        signPreview: signContent
+          .replace(/app_id=[^&]+/, "app_id=[present]")
+          .slice(0, 200),
+        hasSign: Boolean(sign),
+      });
       return;
     }
 
