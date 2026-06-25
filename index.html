@@ -10151,9 +10151,14 @@
             title: "解锁完整版",
             en: "Unlock the Full Real Scene English Experience",
             text: "订阅后可解锁更多真实生活、校园、出行、职场等英语场景，保存学习进度，并持续获得后续更新。",
-            detail: "正在确认支付宝沙箱支付结果，请稍候。",
+            detail: "正在确认支付结果…请不要关闭页面，系统正在向支付宝确认订单状态。",
           });
-          setSubscriptionOrder({ status: "confirming", order: { orderNo }, message: "正在确认支付结果…" });
+          setSubscriptionOrder({
+            status: "confirming",
+            order: { orderNo },
+            message: "正在确认支付结果…",
+            detail: "请不要关闭页面，系统正在向支付宝确认订单状态。",
+          });
           handleCheckPaymentStatus(orderNo, { fromReturn: true });
         }, []);
 
@@ -12085,6 +12090,7 @@
             status: "confirming",
             order: { orderNo },
             message: "正在确认支付结果…",
+            detail: "请不要关闭页面，系统正在向支付宝确认订单状态。",
           });
           try {
             const result = await queryAlipayOrderStatus(orderNo);
@@ -12102,20 +12108,24 @@
                 status: "paid",
                 order: { orderNo, status: "paid" },
                 user: { phone: result.phone || currentUser?.phone, role: "premium", plan: "premium" },
-                message: "支付成功，完整版已解锁。当前账号已升级为 Premium。",
+                message: "当前账号已升级为 Premium，全部真实英语场景已开放。",
               });
               showAuthToast("支付成功，完整版已解锁。");
             } else {
               setSubscriptionOrder({
                 status: "created",
                 order: { orderNo },
-                message: "支付还在确认中，请稍后刷新或重新检查。",
+                tradeStatus: result.tradeStatus || "",
+                message: result.tradeStatus === "WAIT_BUYER_PAY"
+                  ? "如果你已经完成支付，请稍等几秒后点击重新检查。"
+                  : "支付还在确认中，请稍后点击重新检查。",
               });
             }
           } catch (error) {
             setSubscriptionOrder({
               status: "error",
-              message: "支付结果确认失败，请稍后重试或联系客服。",
+              order: { orderNo },
+              message: "请稍后点击重新检查。如果你已经付款但仍未开通，请联系客服并提供订单号。",
             });
           } finally {
             if (fromReturn && window.history?.replaceState) {
@@ -12894,19 +12904,26 @@
                               <p className="text-xl font-black text-white">支付成功</p>
                               <p className="mt-2 text-base font-black text-banana">完整版已解锁</p>
                               <p className="mt-2 text-sm font-bold leading-6 text-cream/70">
-                                当前账号已升级为 Premium，全部真实场景已开放。
+                                {subscriptionOrder.message || "当前账号已升级为 Premium，全部真实英语场景已开放。"}
                               </p>
+                              {subscriptionOrder.order?.orderNo && (
+                                <p className="mt-3 rounded-xl border border-white/12 bg-white/[0.06] px-3 py-2 text-xs font-bold text-cream/62">
+                                  订单号：{subscriptionOrder.order.orderNo}
+                                </p>
+                              )}
                             </div>
                           ) : subscriptionOrder.status === "created" ? (
                             <div>
-                              <p className="text-xl font-black text-white">订单已创建</p>
+                              <p className="text-xl font-black text-white">
+                                {subscriptionOrder.tradeStatus === "WAIT_BUYER_PAY" ? "暂未确认付款" : "订单已创建"}
+                              </p>
                               <div className="mt-3 grid gap-2 text-sm font-bold text-cream/78">
                                 <p><span className="text-cream/52">订单号：</span>{subscriptionOrder.order.orderNo}</p>
                                 <p><span className="text-cream/52">金额：</span>¥19.9</p>
-                                <p><span className="text-cream/52">状态：</span>待支付</p>
+                                <p><span className="text-cream/52">状态：</span>{subscriptionOrder.tradeStatus === "WAIT_BUYER_PAY" ? "等待付款确认" : "待支付"}</p>
                               </div>
                               <p className="mt-3 text-sm font-bold leading-6 text-cream/62">
-                                支付接口正在接入中，下一步将支持支付宝/微信网页支付。
+                                支付完成后请回到网站，系统会向支付宝确认订单状态。
                               </p>
                               <button
                                 onClick={handleAlipaySandboxPayment}
@@ -12921,7 +12938,7 @@
                                 onClick={() => handleCheckPaymentStatus(subscriptionOrder.order.orderNo)}
                                 className="mt-3 w-full rounded-2xl border border-banana/45 bg-banana/12 px-4 py-3 text-sm font-black text-banana transition hover:bg-banana/20 active:scale-[0.99]"
                               >
-                                我已付款，检查开通状态
+                                {subscriptionOrder.tradeStatus === "WAIT_BUYER_PAY" ? "我已付款，重新检查" : "我已付款，检查开通状态"}
                               </button>
                               {subscriptionOrder.message && (
                                 <p className="mt-2 rounded-xl border border-white/12 bg-white/[0.06] px-3 py-2 text-center text-xs font-bold text-cream/62">
@@ -12930,13 +12947,35 @@
                               )}
                             </div>
                           ) : subscriptionOrder.status === "confirming" ? (
-                            <p className="text-sm font-black text-banana">{subscriptionOrder.message || "正在确认支付…"}</p>
+                            <div className="rounded-2xl border border-banana/25 bg-banana/10 px-4 py-3">
+                              <p className="text-base font-black text-banana">{subscriptionOrder.message || "正在确认支付结果…"}</p>
+                              <p className="mt-2 text-sm font-bold leading-6 text-cream/70">
+                                {subscriptionOrder.detail || "请不要关闭页面，系统正在向支付宝确认订单状态。"}
+                              </p>
+                              {subscriptionOrder.order?.orderNo && (
+                                <p className="mt-2 text-xs font-bold text-cream/52">订单号：{subscriptionOrder.order.orderNo}</p>
+                              )}
+                            </div>
                           ) : subscriptionOrder.status === "loading" ? (
                             <p className="text-sm font-black text-banana">正在创建订单…</p>
                           ) : subscriptionOrder.status === "error" ? (
-                            <p className="rounded-xl border border-coral/35 bg-coral/10 px-3 py-2 text-sm font-bold text-[#ffd2ca]">
-                              {subscriptionOrder.message}
-                            </p>
+                            <div className="rounded-2xl border border-coral/35 bg-coral/10 px-3 py-3">
+                              <p className="text-base font-black text-[#ffd2ca]">支付结果确认失败</p>
+                              <p className="mt-2 text-sm font-bold leading-6 text-[#ffd2ca]/90">
+                                {subscriptionOrder.message}
+                              </p>
+                              {subscriptionOrder.order?.orderNo && (
+                                <p className="mt-2 text-xs font-bold text-[#ffd2ca]/72">订单号：{subscriptionOrder.order.orderNo}</p>
+                              )}
+                              {subscriptionOrder.order?.orderNo && (
+                                <button
+                                  onClick={() => handleCheckPaymentStatus(subscriptionOrder.order.orderNo)}
+                                  className="mt-3 w-full rounded-2xl border border-[#ffd2ca]/35 bg-white/10 px-4 py-3 text-sm font-black text-white transition hover:bg-white/16 active:scale-[0.99]"
+                                >
+                                  重新检查开通状态
+                                </button>
+                              )}
+                            </div>
                           ) : subscriptionOrder.status === "info" ? (
                             <p className="rounded-xl border border-banana/30 bg-banana/10 px-3 py-2 text-sm font-bold text-banana">
                               {subscriptionOrder.message}
@@ -12971,8 +13010,8 @@
                         }`}
                       >
                         <ButtonCopy
-                          en={sceneSelectNotice.kind !== "subscription" || subscriptionOrder.status === "created" || subscriptionOrder.status === "paid" ? "Got it" : "Unlock Now"}
-                          zh={sceneSelectNotice.kind !== "subscription" || subscriptionOrder.status === "created" || subscriptionOrder.status === "paid" ? "我知道了" : "立即解锁"}
+                          en={subscriptionOrder.status === "paid" ? "Start Full Version" : sceneSelectNotice.kind !== "subscription" || subscriptionOrder.status === "created" ? "Got it" : "Unlock Now"}
+                          zh={subscriptionOrder.status === "paid" ? "开始学习完整版" : sceneSelectNotice.kind !== "subscription" || subscriptionOrder.status === "created" ? "我知道了" : "立即解锁"}
                         />
                       </button>
                       <button
