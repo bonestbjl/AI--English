@@ -4,7 +4,6 @@ const ORDER_NO_PATTERN = /^RSE\d{10,40}$/;
 const AMOUNT_CENTS = 1990;
 const ALIPAY_METHOD = "alipay.trade.wap.pay";
 const ALIPAY_PRODUCT_CODE = "QUICK_WAP_WAY";
-const REQUIRED_PAYMENT_HOST = "ai-english-sooty-pi.vercel.app";
 
 function sendJson(res, status, body) {
   res.setHeader("Content-Type", "application/json; charset=utf-8");
@@ -110,22 +109,6 @@ function getUrlInfo(value) {
   } catch (error) {
     return { valid: false, protocol: "", host: "", hostname: "", href: "" };
   }
-}
-
-function isProductionPaymentUrl(value, options = {}) {
-  const info = getUrlInfo(value);
-  if (!info.valid) return false;
-  if (info.protocol !== "https:") return false;
-  if (info.hostname !== REQUIRED_PAYMENT_HOST) return false;
-  if (info.hostname === "localhost" || info.hostname === "127.0.0.1") return false;
-  if (options.requireNotifyPath) {
-    try {
-      return new URL(value).pathname === "/api/alipay-notify";
-    } catch (error) {
-      return false;
-    }
-  }
-  return true;
 }
 
 function createSignContent(params) {
@@ -266,14 +249,6 @@ module.exports = async function handler(req, res) {
     sendJson(res, 500, { ok: false, error: "missing_alipay_return_url" });
     return;
   }
-  if (!isProductionPaymentUrl(notifyUrl, { requireNotifyPath: true })) {
-    sendJson(res, 500, { ok: false, error: "invalid_alipay_notify_url" });
-    return;
-  }
-  if (!isProductionPaymentUrl(returnUrl)) {
-    sendJson(res, 500, { ok: false, error: "invalid_alipay_return_url" });
-    return;
-  }
 
   try {
     const order = await fetchOrder({
@@ -304,6 +279,7 @@ module.exports = async function handler(req, res) {
     const params = {
       app_id: appId,
       method: ALIPAY_METHOD,
+      format: "JSON",
       charset: "utf-8",
       sign_type: "RSA2",
       timestamp: formatAlipayTimestamp(),
@@ -324,12 +300,12 @@ module.exports = async function handler(req, res) {
 
     if (isDebug) {
       const privateKeyInfo = getPrivateKeyInfo(privateKey);
+      const gatewayInfo = getUrlInfo(gateway);
       const returnUrlInfo = getUrlInfo(returnUrl);
       const notifyUrlInfo = getUrlInfo(notifyUrl);
       sendJson(res, 200, {
         ok: true,
-        gateway,
-        formAction: appendCharsetToGateway(gateway),
+        gatewayHost: gatewayInfo.host,
         method: ALIPAY_METHOD,
         appIdPresent: Boolean(appId),
         privateKeyPresent: privateKeyInfo.present,
