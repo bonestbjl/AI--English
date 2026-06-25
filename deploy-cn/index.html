@@ -9480,6 +9480,7 @@
         if (!response.ok || data?.ok !== true || !data.order) {
           const orderError = new Error(data?.error || "create_order_failed");
           orderError.status = response.status;
+          orderError.detail = data?.detail || "";
           throw orderError;
         }
         return data.order;
@@ -12020,7 +12021,9 @@
           } catch (error) {
             setSubscriptionOrder({
               status: "error",
-              message: "订单接口仅在线上环境可用，请部署后测试。",
+              message: error.detail
+                ? `订单创建失败：${error.detail}`
+                : "订单接口仅在线上环境可用，请部署后测试。",
             });
           }
         }

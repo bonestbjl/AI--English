@@ -26,13 +26,27 @@ function readRequestBody(req) {
   return req.body;
 }
 
+function sanitizeDetail(value) {
+  let detail = "";
+  if (typeof value === "string") {
+    detail = value;
+  } else if (value && typeof value === "object") {
+    detail = value.message || value.error || value.details || value.hint || JSON.stringify(value);
+  }
+  return String(detail)
+    .replace(/Bearer\s+[A-Za-z0-9._~+/-]+/gi, "Bearer [redacted]")
+    .replace(/("?(?:apikey|authorization|token|key)"?\s*[:=]\s*")([^"]+)(")/gi, "$1[redacted]$3")
+    .replace(/(service_role[\\w.-]*)/gi, "[redacted]")
+    .slice(0, 500);
+}
+
 async function readSupabaseJson(response) {
   const text = await response.text();
-  if (!text) return null;
+  if (!text) return { rawText: "" };
   try {
     return JSON.parse(text);
   } catch (error) {
-    return { raw: text };
+    return { rawText: text };
   }
 }
 
@@ -51,6 +65,7 @@ async function fetchExistingUser({ supabaseUrl, serviceRoleKey, phone }) {
     const error = new Error("supabase_query_failed");
     error.status = response.status;
     error.body = body;
+    error.detail = sanitizeDetail(body);
     throw error;
   }
   return Array.isArray(body) ? body[0] || null : null;
@@ -73,6 +88,7 @@ async function createFreeUser({ supabaseUrl, serviceRoleKey, phone }) {
     const error = new Error("supabase_create_failed");
     error.status = response.status;
     error.body = body;
+    error.detail = sanitizeDetail(body);
     throw error;
   }
   return Array.isArray(body) ? body[0] || { phone, role: "free", plan: "free" } : body;
@@ -126,6 +142,7 @@ module.exports = async function handler(req, res) {
           ok: false,
           error: retryError.message || "supabase_retry_failed",
           status: retryError.status || 500,
+          detail: sanitizeDetail(retryError.detail || retryError.body || retryError.message),
         });
         return;
       }
@@ -135,6 +152,7 @@ module.exports = async function handler(req, res) {
       ok: false,
       error: error.message || "supabase_request_failed",
       status: error.status || 500,
+      detail: sanitizeDetail(error.detail || error.body || error.message),
     });
   }
 };

@@ -20,6 +20,20 @@ function readRequestBody(req) {
   return req.body;
 }
 
+function sanitizeDetail(value) {
+  let detail = "";
+  if (typeof value === "string") {
+    detail = value;
+  } else if (value && typeof value === "object") {
+    detail = value.message || value.error || value.details || value.hint || JSON.stringify(value);
+  }
+  return String(detail)
+    .replace(/Bearer\s+[A-Za-z0-9._~+/-]+/gi, "Bearer [redacted]")
+    .replace(/("?(?:apikey|authorization|token|key)"?\s*[:=]\s*")([^"]+)(")/gi, "$1[redacted]$3")
+    .replace(/(service_role[\\w.-]*)/gi, "[redacted]")
+    .slice(0, 500);
+}
+
 function createOrderNo() {
   const now = new Date();
   const timestamp = [
@@ -47,11 +61,11 @@ function normalizeOrder(row, fallback) {
 
 async function readSupabaseJson(response) {
   const text = await response.text();
-  if (!text) return null;
+  if (!text) return { rawText: "" };
   try {
     return JSON.parse(text);
   } catch (error) {
-    return { raw: text };
+    return { rawText: text };
   }
 }
 
@@ -80,6 +94,7 @@ async function createPendingOrder({ supabaseUrl, serviceRoleKey, order }) {
     const error = new Error("create_order_failed");
     error.status = response.status;
     error.body = body;
+    error.detail = sanitizeDetail(body);
     throw error;
   }
   return Array.isArray(body) ? body[0] || null : body;
@@ -123,6 +138,11 @@ module.exports = async function handler(req, res) {
     });
     sendJson(res, 200, { ok: true, order: normalizeOrder(row, order) });
   } catch (error) {
-    sendJson(res, 500, { ok: false, error: "create_order_failed" });
+    sendJson(res, 500, {
+      ok: false,
+      error: "create_order_failed",
+      status: error.status || 500,
+      detail: sanitizeDetail(error.detail || error.body || error.message),
+    });
   }
 };
