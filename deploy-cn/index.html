@@ -12082,6 +12082,15 @@
           }
         }
 
+        function handleAlipaySandboxPayment() {
+          const orderNo = subscriptionOrder.order?.orderNo;
+          if (!orderNo) {
+            setSubscriptionOrder({ status: "error", message: "请先创建订单，再前往支付宝沙箱支付。" });
+            return;
+          }
+          window.location.href = `/api/alipay-create-payment?orderNo=${encodeURIComponent(orderNo)}`;
+        }
+
         function openLoginModal() {
           setShowAccountMenu(false);
           openAuthModal({
@@ -12865,8 +12874,17 @@
                                 支付接口正在接入中，下一步将支持支付宝/微信网页支付。
                               </p>
                               <button
+                                onClick={handleAlipaySandboxPayment}
+                                className="mt-4 w-full rounded-2xl bg-banana px-4 py-3 text-sm font-black text-ink shadow-label transition hover:bg-[#ffc83f] active:scale-[0.99]"
+                              >
+                                支付宝沙箱支付
+                              </button>
+                              <p className="mt-2 text-center text-xs font-bold text-cream/48">
+                                测试环境，不会真实扣款；本阶段支付完成后暂不自动开通。
+                              </p>
+                              <button
                                 onClick={handleMockPaymentSuccess}
-                                className="mt-4 w-full rounded-2xl border border-banana/45 bg-banana/12 px-4 py-3 text-sm font-black text-banana transition hover:bg-banana/20 active:scale-[0.99]"
+                                className="mt-3 w-full rounded-2xl border border-banana/45 bg-banana/12 px-4 py-3 text-sm font-black text-banana transition hover:bg-banana/20 active:scale-[0.99]"
                               >
                                 模拟支付成功
                               </button>
