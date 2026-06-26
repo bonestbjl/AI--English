@@ -12078,7 +12078,15 @@
             setSubscriptionOrder({ status: "error", message: "请先创建订单，再前往支付宝沙箱支付。" });
             return;
           }
-          window.location.href = `/api/alipay-create-payment?orderNo=${encodeURIComponent(orderNo)}`;
+          setSubscriptionOrder((current) => ({
+            ...current,
+            status: "created",
+            order: current.order || { orderNo },
+            message: "已打开支付宝沙箱支付页面。如果页面空白，请返回并重新点击“支付宝沙箱支付”或使用“我已付款，重新检查”。",
+          }));
+          window.setTimeout(() => {
+            window.location.href = `/api/alipay-create-payment?orderNo=${encodeURIComponent(orderNo)}`;
+          }, 300);
         }
 
         async function handleCheckPaymentStatus(orderNo = subscriptionOrder.order?.orderNo, { fromReturn = false } = {}) {
@@ -12405,6 +12413,276 @@
           setAnimalEffect(null);
         }
 
+        const legalPages = {
+          privacy: {
+            title: "Privacy Policy",
+            titleZh: "隐私政策",
+            intro: "This policy explains how Real Scene English collects and uses information needed to provide learning, account, membership, and payment confirmation features.",
+            introZh: "本政策说明 Real Scene English 如何收集和使用用于学习、账号、会员权限和支付确认所需的信息。",
+            effectiveDate: "Effective Date: 2026-06-26",
+            sections: [
+              {
+                enTitle: "1. Information We Collect",
+                zhTitle: "我们收集的信息",
+                items: [
+                  ["Mobile phone number or login account information.", "手机号码或登录账号信息。"],
+                  ["Learning progress, completed scenes, and interaction records.", "学习进度、已完成场景和互动记录。"],
+                  ["Word book entries saved by the user.", "用户保存的生词本内容。"],
+                  ["Order and payment status, including order number, amount, and payment result.", "订单与支付状态，包括订单号、金额和支付结果。"],
+                  ["Basic device, browser, access log, and troubleshooting information.", "基础设备、浏览器、访问日志和故障排查信息。"],
+                ],
+              },
+              {
+                enTitle: "2. How We Use Information",
+                zhTitle: "我们如何使用信息",
+                items: [
+                  ["Save learning progress and word book records.", "保存学习进度和生词本。"],
+                  ["Provide membership access and unlocked content.", "提供会员权限和已解锁内容。"],
+                  ["Process orders and confirm payment results.", "处理订单和支付确认。"],
+                  ["Improve the product experience and learning flow.", "改善产品体验和学习流程。"],
+                  ["Support necessary security, debugging, and service reliability work.", "用于必要的安全、故障排查和服务稳定性维护。"],
+                ],
+              },
+              {
+                enTitle: "3. Payment Information",
+                zhTitle: "支付信息说明",
+                items: [
+                  ["Payments are processed by third-party payment platforms.", "支付由第三方支付平台处理。"],
+                  ["We do not store sensitive payment credentials such as bank card numbers or payment passwords.", "本站不保存银行卡号、支付密码等敏感支付信息。"],
+                  ["We only keep necessary order information such as order status, amount, order number, and payment result.", "本站仅保存订单状态、金额、订单号和支付结果等必要信息。"],
+                ],
+              },
+              {
+                enTitle: "4. Data Storage",
+                zhTitle: "数据存储",
+                items: [
+                  ["Learning data and order data may be stored in our database.", "学习数据和订单数据会被保存到我们的数据库中。"],
+                  ["We use reasonable measures to protect user data.", "我们会尽力采取合理措施保护用户数据。"],
+                ],
+              },
+              {
+                enTitle: "5. User Rights",
+                zhTitle: "用户权利",
+                items: [
+                  ["You may contact us to request access, correction, or deletion of relevant account data.", "用户可以联系我们请求查询、修改或删除相关账号数据。"],
+                ],
+              },
+              {
+                enTitle: "6. Minors",
+                zhTitle: "未成年人说明",
+                items: [
+                  ["Minors should use this product with the consent and guidance of a parent or guardian.", "如果未成年人使用本产品，应在监护人同意和指导下使用。"],
+                ],
+              },
+              {
+                enTitle: "7. Contact",
+                zhTitle: "联系方式",
+                items: [
+                  ["Email: support@realsceneenglish.com", "邮箱：support@realsceneenglish.com"],
+                ],
+              },
+            ],
+          },
+          terms: {
+            title: "Terms of Service",
+            titleZh: "用户协议",
+            intro: "These terms describe the rules for using Real Scene English and its learning, account, membership, and payment-related features.",
+            introZh: "本协议说明使用 Real Scene English 及其学习、账号、会员和支付相关功能的规则。",
+            effectiveDate: "Effective Date: 2026-06-26",
+            sections: [
+              {
+                enTitle: "1. Service Description",
+                zhTitle: "服务说明",
+                items: [
+                  ["Real Scene English is a real-life scene English learning product.", "Real Scene English 是一个真实场景英语学习产品。"],
+                  ["We provide scene vocabulary, sentence audio, dialogue practice, word book, and learning progress features.", "产品提供场景词汇、句子朗读、对话练习、生词本和学习进度保存。"],
+                ],
+              },
+              {
+                enTitle: "2. Account Use",
+                zhTitle: "账号使用",
+                items: [
+                  ["Users should keep their login information safe.", "用户应妥善保管登录信息。"],
+                  ["Users must not attack, scrape, disrupt, or interfere with the service.", "用户不得恶意攻击、爬取、干扰服务。"],
+                ],
+              },
+              {
+                enTitle: "3. Membership and Payment",
+                zhTitle: "会员与支付",
+                items: [
+                  ["Some content requires paid access.", "部分内容需要付费解锁。"],
+                  ["After successful payment, access is granted according to the order status.", "支付成功后，系统会根据订单状态开通对应权限。"],
+                  ["Specific benefits are subject to the payment page shown at the time of purchase.", "具体权益以支付页面展示为准。"],
+                ],
+              },
+              {
+                enTitle: "4. Refunds and Support",
+                zhTitle: "退款与售后说明",
+                items: [
+                  ["Once virtual learning content is unlocked, refunds without reason are generally not supported.", "虚拟学习内容一经解锁，原则上不支持无理由退款。"],
+                  ["If duplicate charges, successful payment without access, or access failures occur, users may contact us for support.", "如果出现重复扣款、支付成功但未开通、无法访问等异常情况，用户可以联系我们处理。"],
+                ],
+              },
+              {
+                enTitle: "5. Content Use Restrictions",
+                zhTitle: "内容使用限制",
+                items: [
+                  ["Users may not copy, resell, or bulk redistribute website content.", "用户不得复制、转售、批量搬运网站内容。"],
+                  ["The content is for personal learning use only.", "本站内容仅供个人学习使用。"],
+                ],
+              },
+              {
+                enTitle: "6. Service Changes",
+                zhTitle: "服务变更",
+                items: [
+                  ["We may continue to update, adjust, add, or reduce scene content.", "我们可能会持续更新、调整、增加或减少场景内容。"],
+                ],
+              },
+              {
+                enTitle: "7. Disclaimer",
+                zhTitle: "免责声明",
+                items: [
+                  ["This product is an auxiliary learning tool and does not guarantee specific exam scores or learning results.", "本产品是辅助学习工具，不保证特定考试成绩或学习结果。"],
+                ],
+              },
+              {
+                enTitle: "8. Contact",
+                zhTitle: "联系方式",
+                items: [
+                  ["Email: support@realsceneenglish.com", "邮箱：support@realsceneenglish.com"],
+                ],
+              },
+            ],
+          },
+          contact: {
+            title: "Contact Us",
+            titleZh: "联系我们",
+            intro: "For account, payment, learning progress, feedback, and cooperation questions, please contact us by email.",
+            introZh: "如有账号、支付、学习进度、反馈或合作问题，请通过邮箱联系我们。",
+            effectiveDate: "",
+            sections: [
+              {
+                enTitle: "Product",
+                zhTitle: "产品名称",
+                items: [
+                  ["Real Scene English", "真实场景英语"],
+                ],
+              },
+              {
+                enTitle: "Email",
+                zhTitle: "联系邮箱",
+                items: [
+                  ["support@realsceneenglish.com", "support@realsceneenglish.com"],
+                ],
+              },
+              {
+                enTitle: "What We Can Help With",
+                zhTitle: "用户可以联系我们处理",
+                items: [
+                  ["Payment succeeded but membership was not activated.", "支付成功但没有开通会员。"],
+                  ["Duplicate charge issues.", "重复扣款。"],
+                  ["Account or learning progress problems.", "账号或学习进度问题。"],
+                  ["Product suggestions.", "产品建议。"],
+                  ["Content error reports.", "内容错误反馈。"],
+                  ["Cooperation inquiries.", "合作咨询。"],
+                ],
+              },
+              {
+                enTitle: "Response Time",
+                zhTitle: "回复时间说明",
+                items: [
+                  ["We usually reply within 1–3 business days.", "我们通常会在 1–3 个工作日内回复。"],
+                ],
+              },
+              {
+                enTitle: "Please Include",
+                zhTitle: "联系时建议提供",
+                items: [
+                  ["Login phone number or account.", "登录手机号或账号。"],
+                  ["Order number.", "订单号。"],
+                  ["Problem screenshot.", "问题截图。"],
+                  ["A short description of the issue.", "简短问题描述。"],
+                ],
+              },
+            ],
+          },
+        };
+
+        function openLegalPage(pageId) {
+          setCurrentView(pageId);
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        function renderHomeFooter() {
+          return (
+            <footer className="absolute inset-x-0 bottom-4 z-10 px-4 pb-[max(0px,env(safe-area-inset-bottom))] text-center sm:bottom-6">
+              <div className="mx-auto flex w-full max-w-3xl flex-col items-center justify-center gap-3 rounded-3xl border border-white/12 bg-white/[0.06] px-4 py-4 text-xs font-bold text-white/48 shadow-[0_14px_42px_rgba(0,0,0,0.2)] backdrop-blur-xl sm:flex-row sm:flex-wrap sm:gap-x-5">
+                <button onClick={() => openLegalPage("privacy")} className="transition hover:text-banana">
+                  Privacy Policy / 隐私政策
+                </button>
+                <button onClick={() => openLegalPage("terms")} className="transition hover:text-banana">
+                  Terms of Service / 用户协议
+                </button>
+                <button onClick={() => openLegalPage("contact")} className="transition hover:text-banana">
+                  Contact Us / 联系我们
+                </button>
+                <span className="text-white/32">© 2026 Real Scene English</span>
+              </div>
+            </footer>
+          );
+        }
+
+        const legalPage = legalPages[currentView];
+        if (legalPage) {
+          return (
+            <main className="legal-page relative min-h-screen overflow-hidden bg-[#111614] px-4 py-5 text-cream sm:px-6">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_10%,rgba(255,216,107,0.13),transparent_30%),radial-gradient(circle_at_80%_18%,rgba(139,211,230,0.1),transparent_32%),linear-gradient(155deg,#0f1814_0%,#17251c_55%,#0b0f0e_100%)]"></div>
+              <div className="absolute inset-0 opacity-[0.08] [background-image:radial-gradient(rgba(255,255,255,0.13)_1px,transparent_1px)] [background-size:24px_24px]"></div>
+              <div className="relative z-10 mx-auto max-w-5xl">
+                <header className="dialogue-enter rounded-3xl border border-white/16 bg-nightglass p-5 shadow-glow backdrop-blur-xl sm:p-7">
+                  <button
+                    onClick={() => setCurrentView("home")}
+                    className="rounded-full border border-white/18 bg-white/10 px-4 py-2 text-sm font-black text-white transition hover:bg-white/20"
+                  >
+                    <ButtonCopy en="Back to Home" zh="返回首页" size="small" />
+                  </button>
+                  <p className="mt-7 text-[10px] font-black uppercase tracking-[0.22em] text-banana">Real Scene English</p>
+                  <h1 className="mt-3 text-4xl font-black text-white sm:text-6xl">{legalPage.title}</h1>
+                  <p className="mt-2 text-2xl font-black text-banana">{legalPage.titleZh}</p>
+                  <p className="mt-5 max-w-3xl text-base font-bold leading-7 text-cream/76">{legalPage.intro}</p>
+                  <p className="mt-2 max-w-3xl text-sm font-bold leading-6 text-cream/60">{legalPage.introZh}</p>
+                  {legalPage.effectiveDate && (
+                    <p className="mt-5 inline-flex rounded-full border border-banana/30 bg-banana/10 px-3 py-1 text-xs font-black text-banana">
+                      {legalPage.effectiveDate}
+                    </p>
+                  )}
+                </header>
+                <section className="mt-5 grid gap-4">
+                  {legalPage.sections.map((section) => (
+                    <article key={section.enTitle} className="dialogue-enter rounded-3xl border border-white/14 bg-white/[0.07] p-5 shadow-glow backdrop-blur-xl sm:p-6">
+                      <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+                        <h2 className="text-xl font-black text-white">{section.enTitle}</h2>
+                        <p className="text-base font-black text-banana">{section.zhTitle}</p>
+                      </div>
+                      <div className="mt-4 grid gap-3">
+                        {section.items.map(([en, zh]) => (
+                          <div key={`${section.enTitle}-${en}`} className="rounded-2xl border border-white/10 bg-black/10 px-4 py-3">
+                            <p className="text-sm font-bold leading-6 text-cream/82">{en}</p>
+                            <p className="mt-1 text-sm font-bold leading-6 text-cream/58">{zh}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </article>
+                  ))}
+                </section>
+                <footer className="py-8 text-center text-xs font-bold text-cream/44">© 2026 Real Scene English</footer>
+              </div>
+              {renderAuthToast()}
+              {showLandscapePrompt && <LandscapePrompt />}
+            </main>
+          );
+        }
+
         if (currentView === "wordBook") {
           return (
             <main className="word-book-page relative min-h-screen overflow-hidden bg-[#111614] px-4 py-5 text-cream sm:px-6">
@@ -12651,7 +12929,7 @@
                 </button>
                 {renderAuthControl()}
               </nav>
-              <section className="relative z-10 flex min-h-screen items-center justify-center px-6 pb-16 pt-10 text-center sm:px-8">
+              <section className="relative z-10 flex min-h-screen items-center justify-center px-6 pb-44 pt-10 text-center sm:px-8">
                 <div className="dialogue-enter mx-auto max-w-[46rem] -translate-y-3 sm:-translate-y-6">
                   <p className="text-[10px] font-black uppercase text-white/50 sm:text-[11px]">
                     REAL-LIFE ENGLISH PLATFORM
@@ -12694,6 +12972,7 @@
                   </p>
                 </div>
               </section>
+              {renderHomeFooter()}
               {renderAuthToast()}
               {showLandscapePrompt && <LandscapePrompt />}
             </main>
@@ -12924,6 +13203,9 @@
                               </div>
                               <p className="mt-3 text-sm font-bold leading-6 text-cream/62">
                                 支付完成后请回到网站，系统会向支付宝确认订单状态。
+                              </p>
+                              <p className="mt-2 rounded-xl border border-white/12 bg-white/[0.06] px-3 py-2 text-xs font-bold leading-5 text-cream/62">
+                                电脑端可继续浏览器付款；手机端会尝试唤起支付宝 App，如果没有跳转，请选择继续浏览器付款。
                               </p>
                               <button
                                 onClick={handleAlipaySandboxPayment}
