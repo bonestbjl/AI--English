@@ -1,0 +1,169 @@
+terminal
+
+departures
+
+trolley
+
+passport
+
+itinerary
+
+information desk
+
+proceed
+
+airline
+
+kiosk
+
+boarding pass
+
+confirmation
+
+destination
+
+surname
+
+check in
+
+suitcase
+
+carry-on
+
+checked luggage
+
+conveyor belt
+
+weight limit
+
+fragile
+
+drop off
+
+security tray
+
+scanner
+
+metal detector
+
+liquids
+
+laptop
+
+jacket
+
+screen
+
+departure board
+
+flight number
+
+delay
+
+lounge
+
+escalator
+
+restroom
+
+locate
+
+announcement
+
+boarding group
+
+final call
+
+jet bridge
+
+priority lane
+
+boarding zone
+
+board
+
+aircraft
+
+cabin
+
+row
+
+overhead bin
+
+travel document
+
+boarding time
+
+prepare
+
+arrivals hall
+
+baggage claim
+
+customs
+
+immigration
+
+passport control
+
+duty-free shop
+
+currency exchange
+
+lost and found
+
+shuttle stop
+
+taxi stand
+
+rental car desk
+
+transfer desk
+
+visa
+
+luggage strap
+
+neck pillow
+
+travel adapter
+
+power bank
+
+travel wallet
+
+luggage scale
+
+packing cube
+
+earplugs
+
+eye mask
+
+travel insurance
+
+boarding tag
+
+one-way ticket
+
+round-trip ticket
+
+connecting flight
+
+direct flight
+
+layover
+
+boarding deadline
+
+arrival time
+
+departure time
+
+delayed flight
+
+cancelled flight
+
+seat upgrade
+
+aisle access

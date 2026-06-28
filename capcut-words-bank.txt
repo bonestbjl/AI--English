@@ -1,0 +1,155 @@
+bank branch
+
+entrance canopy
+
+service hours
+
+queue ticket
+
+security guard
+
+take a ticket
+
+welcome counter
+
+service guide
+
+appointment desk
+
+counter map
+
+customer advisor
+
+choose a service
+
+waiting number
+
+queue display
+
+counter number
+
+seating row
+
+turn indicator
+
+wait for your number
+
+bank teller
+
+counter screen
+
+cash envelope
+
+service token
+
+form tray
+
+speak to the teller
+
+self-service kiosk
+
+touchscreen menu
+
+cash dispenser
+
+help button
+
+printed notice
+
+follow the screen
+
+statement request
+
+document tray
+
+branch stamp
+
+information leaflet
+
+service confirmation
+
+request a statement
+
+feedback card
+
+service survey
+
+branch doorway
+
+appointment reminder
+
+help line
+
+confirm the next steps
+
+branch lobby
+
+queue barrier
+
+service booth
+
+customer lounge
+
+teller station
+
+security camera
+
+digital notice panel
+
+brochure rack
+
+consultation booth
+
+cash counter
+
+private desk
+
+waiting zone
+
+account statement
+
+cash withdrawal
+
+foreign currency desk
+
+exchange counter
+
+bank draft
+
+cheque book
+
+confirmation slip
+
+document copy
+
+processing fee
+
+reference number
+
+branch notice
+
+account summary
+
+join the queue
+
+ask for assistance
+
+wait in line
+
+take a seat
+
+show the notice
+
+browse the guide
+
+speak clearly
+
+check the counter
+
+return later
+
+ask about hours
+
+follow the sign
+
+finish my visit

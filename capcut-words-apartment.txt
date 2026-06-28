@@ -1,0 +1,155 @@
+building directory
+
+entry buzzer
+
+unit number
+
+parcel locker
+
+security desk
+
+ring the buzzer
+
+viewing appointment
+
+leasing agent
+
+visitor badge
+
+tour schedule
+
+door viewer
+
+confirm the viewing
+
+living area
+
+storage nook
+
+roller blind
+
+baseboard
+
+intercom panel
+
+check the natural light
+
+range hood
+
+induction cooktop
+
+dish rack
+
+water meter
+
+utility closet
+
+test the tap
+
+monthly rent
+
+utility estimate
+
+billing cycle
+
+parking option
+
+move-in date
+
+review the cost summary
+
+dripping pipe
+
+loose handle
+
+flickering bulb
+
+service request
+
+access time
+
+submit a request
+
+key handover
+
+mailbox label
+
+condition report
+
+entry code
+
+welcome packet
+
+confirm the next step
+
+coat hook
+
+shoe cabinet
+
+built-in shelf
+
+curtain rod
+
+skirting board
+
+fuse box
+
+smoke alarm
+
+radiator valve
+
+doorstop
+
+air vent
+
+storage cabinet
+
+ceiling fan
+
+rental listing
+
+available date
+
+viewing slot
+
+monthly charge
+
+utility allowance
+
+parking space
+
+payment portal
+
+billing statement
+
+fee notice
+
+renewal reminder
+
+cost overview
+
+price range
+
+water stain
+
+drain cover
+
+cabinet hinge
+
+service visit
+
+access period
+
+repair update
+
+move-in walkthrough
+
+condition notes
+
+handover time
+
+welcome guide
+
+building manager
+
+report an issue

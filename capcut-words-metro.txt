@@ -1,0 +1,155 @@
+metro station
+
+metro symbol
+
+concourse
+
+commuter
+
+underpass
+
+descend
+
+fare machine
+
+travel pass
+
+fare zone
+
+stored value
+
+balance
+
+validate
+
+turnstile
+
+card reader
+
+barrier flap
+
+entry lane
+
+status light
+
+tap in
+
+platform
+
+tactile paving
+
+yellow line
+
+track
+
+train indicator
+
+stand clear
+
+carriage
+
+handrail
+
+grab pole
+
+route diagram
+
+priority area
+
+move inside
+
+interchange
+
+passageway
+
+junction
+
+directional arrow
+
+line color
+
+make a connection
+
+way out
+
+landmark
+
+neighborhood
+
+ground level
+
+station plaza
+
+emerge
+
+help point
+
+fare chart
+
+station clock
+
+platform bench
+
+public toilet
+
+bicycle rack
+
+emergency intercom
+
+ventilation grille
+
+standing area
+
+station artwork
+
+station office
+
+accessible ramp
+
+carriage number
+
+ceiling strap
+
+driver cab
+
+door chime
+
+emergency handle
+
+carriage display
+
+floor marking
+
+next-stop indicator
+
+audible alert
+
+courtesy zone
+
+train operator
+
+train doors
+
+inbound service
+
+outbound service
+
+next stop
+
+service update
+
+temporary closure
+
+replacement bus
+
+last service
+
+peak hours
+
+off-peak fare
+
+mind the gap
+
+alight here
+
+connect here

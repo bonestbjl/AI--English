@@ -1,0 +1,155 @@
+lobby
+
+reception
+
+name badge
+
+appointment
+
+directory
+
+register
+
+receptionist
+
+visitor log
+
+appointment slip
+
+waiting area
+
+badge clip
+
+confirm
+
+workstation
+
+monitor
+
+keyboard
+
+mouse
+
+inbox
+
+prioritize
+
+conference room
+
+agenda
+
+projector
+
+briefing
+
+minutes
+
+present
+
+copier
+
+printout
+
+paper stack
+
+paper jam
+
+shredder
+
+copy
+
+break room
+
+coffee machine
+
+mug
+
+microwave
+
+kettle
+
+recharge
+
+handoff
+
+status update
+
+approval
+
+deadline
+
+timesheet
+
+sign out
+
+open office
+
+huddle room
+
+mailroom
+
+archive room
+
+server room
+
+training room
+
+focus room
+
+pantry
+
+rooftop terrace
+
+executive suite
+
+quiet zone
+
+project hub
+
+headset
+
+webcam
+
+docking station
+
+trackpad
+
+lamp
+
+sticky note
+
+binder clip
+
+clipboard
+
+paper clip
+
+badge holder
+
+extension cord
+
+calendar app
+
+kickoff
+
+follow-up
+
+milestone
+
+deliverable
+
+feedback
+
+brainstorm
+
+alignment
+
+escalation
+
+handover note
+
+sync-up
+
+one-on-one
+
+wrap-up

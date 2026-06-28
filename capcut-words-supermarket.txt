@@ -1,0 +1,155 @@
+storefront
+
+automatic doors
+
+cart corral
+
+store directory
+
+shopping list
+
+retrieve
+
+pantry staple
+
+cereal box
+
+canned goods
+
+pasta packet
+
+unit price
+
+track down
+
+produce mister
+
+deli case
+
+bakery loaf
+
+egg carton
+
+use-by date
+
+examine
+
+freezer cabinet
+
+freezer door
+
+frozen meal
+
+ice cream tub
+
+cold chain
+
+pick out
+
+store associate
+
+product locator
+
+out of stock
+
+restocking trolley
+
+substitute item
+
+inquire
+
+scanner bed
+
+lane divider
+
+self-checkout kiosk
+
+loyalty points
+
+contactless payment
+
+unload
+
+bagging station
+
+reusable tote
+
+cooler pouch
+
+fragile item
+
+shopping haul
+
+arrange
+
+bulk bins
+
+dairy case
+
+meat department
+
+bakery department
+
+deli department
+
+household goods
+
+personal care
+
+pet supplies
+
+baby products
+
+floral department
+
+organic section
+
+recycling station
+
+family pack
+
+multipack
+
+value size
+
+shrink wrap
+
+blister pack
+
+glass jar
+
+screw cap
+
+tamper seal
+
+nutrition facts
+
+serving size
+
+allergen warning
+
+bottle deposit
+
+buy one get one free
+
+clearance rack
+
+rain check
+
+price match
+
+member offer
+
+limited stock
+
+express lane
+
+coupon code
+
+redeem points
+
+return policy
+
+exchange policy
+
+per-customer limit

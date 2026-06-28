@@ -134,11 +134,6 @@ function createSafeSignPreview(signContent) {
     .slice(0, 200);
 }
 
-function appendCharsetToGateway(gateway) {
-  const separator = gateway.includes("?") ? "&" : "?";
-  return `${gateway}${separator}charset=utf-8`;
-}
-
 function escapeHtml(value) {
   return String(value)
     .replace(/&/g, "&amp;")
@@ -157,7 +152,7 @@ function renderAutoSubmitForm({ gateway, params }) {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>正在跳转支付宝沙箱支付</title>
+    <title>正在跳转支付宝沙箱支付…</title>
     <style>
       body {
         min-height: 100vh;
@@ -181,6 +176,7 @@ function renderAutoSubmitForm({ gateway, params }) {
         margin-top: 18px;
         border: 0;
         border-radius: 18px;
+        min-height: 48px;
         padding: 13px 18px;
         background: #f8c846;
         color: #172033;
@@ -196,8 +192,9 @@ function renderAutoSubmitForm({ gateway, params }) {
   <body>
     <main>
       <h1>正在跳转支付宝沙箱支付…</h1>
+      <p>正在跳转支付宝沙箱支付，请稍候。</p>
       <p>如果页面没有自动跳转，请点击下方按钮继续前往支付宝沙箱收银台。</p>
-      <form id="alipayForm" accept-charset="utf-8" method="POST" action="${escapeHtml(appendCharsetToGateway(gateway))}">
+      <form id="alipayForm" accept-charset="utf-8" method="POST" action="${escapeHtml(gateway)}">
         ${inputs}
         <button type="submit">继续前往支付宝沙箱支付</button>
       </form>
@@ -205,7 +202,7 @@ function renderAutoSubmitForm({ gateway, params }) {
     <script>
       setTimeout(function () {
         document.getElementById("alipayForm").submit();
-      }, 80);
+      }, 500);
     </script>
   </body>
 </html>`;

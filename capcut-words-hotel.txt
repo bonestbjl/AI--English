@@ -1,0 +1,155 @@
+hotel
+
+canopy
+
+bell cart
+
+concierge
+
+atrium
+
+approach
+
+booking reference
+
+vacancy
+
+deposit
+
+signature
+
+room number
+
+verify
+
+keycard
+
+elevator
+
+floor guide
+
+bellhop
+
+corridor
+
+ride
+
+guest room
+
+thermostat
+
+minibar
+
+safe
+
+bedside lamp
+
+unlock
+
+pillow
+
+blanket
+
+bathrobe
+
+toiletries
+
+shower
+
+inspect
+
+housekeeping
+
+housekeeper
+
+linen
+
+extra towel
+
+maintenance
+
+contact
+
+folio
+
+charge
+
+refund
+
+departure
+
+porter
+
+check out
+
+drop-off zone
+
+vestibule
+
+mezzanine
+
+ballroom
+
+banquet hall
+
+conference suite
+
+executive floor
+
+rooftop pool
+
+wellness center
+
+luggage room
+
+service corridor
+
+garden terrace
+
+headboard
+
+mattress
+
+duvet
+
+bedsheet
+
+pillowcase
+
+bath mat
+
+vanity mirror
+
+blackout curtain
+
+bedside table
+
+wardrobe
+
+ironing board
+
+luggage rack
+
+late checkout
+
+early arrival
+
+wake-up call
+
+turndown service
+
+laundry service
+
+dry cleaning
+
+breakfast buffet
+
+shuttle service
+
+valet parking
+
+security deposit
+
+incidental charge
+
+occupancy limit

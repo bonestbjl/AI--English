@@ -1,0 +1,155 @@
+restaurant facade
+
+entryway
+
+ambience
+
+dress code
+
+coat check
+
+greet
+
+maître d’
+
+waiting list
+
+party size
+
+booth request
+
+high chair
+
+follow
+
+place setting
+
+placemat
+
+centerpiece
+
+condiment
+
+wine list
+
+compare
+
+entrée
+
+appetizer
+
+dietary restriction
+
+doneness
+
+ingredient
+
+select
+
+course
+
+portion
+
+side dish
+
+seasoning
+
+server station
+
+assist
+
+itemized check
+
+service charge
+
+gratuity
+
+payment terminal
+
+split payment
+
+settle up
+
+coat rack
+
+exit sign
+
+leftovers
+
+to-go box
+
+farewell
+
+depart
+
+banquette
+
+wine cellar
+
+open kitchen
+
+salad bar
+
+dessert station
+
+service pass
+
+dish return
+
+warming station
+
+host podium
+
+private dining room
+
+alfresco area
+
+kitchen hatch
+
+prix fixe
+
+house salad
+
+roasted chicken
+
+steak
+
+seafood platter
+
+vegetarian dish
+
+gluten-free dish
+
+spicy sauce
+
+gravy
+
+mashed potatoes
+
+risotto
+
+sorbet
+
+walk-in
+
+fully booked
+
+under my name
+
+no onions
+
+less spicy
+
+on the side
+
+share a dish
+
+box it up
+
+separate checks
+
+corkage fee
+
+minimum spend
+
+compliments to the chef

@@ -1,0 +1,153 @@
+cafe
+
+awning
+
+window
+
+queue
+
+aroma
+
+door handle
+
+step inside
+
+chalkboard
+
+specials
+
+latte
+
+espresso
+
+mocha
+
+brew
+
+scan
+
+barista
+
+greeting
+
+preference
+
+medium
+
+dairy-free
+
+request
+
+iced
+
+hot
+
+size
+
+milk
+
+foam
+
+syrup
+
+customize
+
+pickup
+
+pickup name
+
+lid
+
+sleeve
+
+stirrer
+
+napkin
+
+collect
+
+table
+
+chair
+
+corner
+
+socket
+
+wifi
+
+takeaway
+
+settle
+
+cappuccino
+
+americano
+
+macchiato
+
+flat white
+
+cold brew
+
+matcha latte
+
+chai latte
+
+herbal tea
+
+lemonade
+
+smoothie
+
+frappe
+
+sparkling coffee
+
+croissant
+
+muffin
+
+bagel
+
+brownie
+
+cheesecake
+
+tiramisu
+
+cookie
+
+scone
+
+sandwich
+
+quiche
+
+yogurt parfait
+
+granola bowl
+
+reservation
+
+refill
+
+straw
+
+coaster
+
+ceramic cup
+
+paper cup
+
+loyalty card
+
+tip jar
+
+display case
+
+booth
+
+patio
+
+receipt printer
