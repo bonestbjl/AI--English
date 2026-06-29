@@ -12554,6 +12554,82 @@
               },
             ],
           },
+          paymentRefund: {
+            title: "Payment & Refund",
+            titleZh: "支付与售后",
+            intro: "This page explains membership benefits, payment confirmation, refund rules, and support options for Real Scene English.",
+            introZh: "本页面说明 Real Scene English 的会员权益、支付确认、退款规则与售后处理方式。",
+            effectiveDate: "Effective Date: 2026-06-26",
+            sections: [
+              {
+                enTitle: "1. Membership Benefits",
+                zhTitle: "会员权益",
+                items: [
+                  ["After unlocking the full version, users can access all available real-life English scenes, including locked Premium scenes.", "解锁完整版后，用户可以访问所有已上线的真实英语场景，包括原本锁定的 Premium 场景。"],
+                  ["The full version includes scene vocabulary, sentence audio, NPC dialogue practice, word book, and learning progress features.", "完整版包含场景词汇、句子朗读、NPC 对话练习、生词本和学习进度功能。"],
+                  ["Future scene updates may also be added to the product.", "后续新增场景可能会持续加入产品中。"],
+                ],
+              },
+              {
+                enTitle: "2. Payment Method",
+                zhTitle: "支付方式",
+                items: [
+                  ["Payments are processed by third-party payment platforms such as Alipay.", "支付由支付宝等第三方支付平台处理。"],
+                  ["Real Scene English does not store bank card numbers, payment passwords, or other sensitive payment credentials.", "Real Scene English 不保存银行卡号、支付密码等敏感支付凭证。"],
+                  ["We only keep necessary order information such as order number, amount, payment status, and payment result.", "我们仅保存订单号、金额、支付状态和支付结果等必要订单信息。"],
+                ],
+              },
+              {
+                enTitle: "3. Activation After Payment",
+                zhTitle: "支付后开通",
+                items: [
+                  ["After successful payment, the system will confirm the order status and activate Premium access for the corresponding account.", "支付成功后，系统会确认订单状态，并为对应账号开通 Premium 权限。"],
+                  ["In most cases, activation is automatic. Please keep the payment page open for a few seconds after payment.", "大多数情况下会自动开通。支付完成后，请保留页面几秒钟等待系统确认。"],
+                  ["If activation is delayed, users can click the recheck button if available, or contact us with the order number.", "如果开通存在延迟，用户可以点击页面上的重新检查按钮，或携带订单号联系我们处理。"],
+                ],
+              },
+              {
+                enTitle: "4. Refund Policy",
+                zhTitle: "退款规则",
+                items: [
+                  ["Because this is a virtual learning product, refunds without reason are generally not supported after the full version has been unlocked.", "由于本产品属于虚拟学习内容，完整版一经解锁，原则上不支持无理由退款。"],
+                  ["If there is a duplicate charge, successful payment without activation, or a technical access issue, users may contact us for review and support.", "如果出现重复扣款、支付成功但未开通会员、或技术原因导致无法访问等情况，用户可以联系我们核实处理。"],
+                  ["Refund or support decisions will be based on the actual order status and issue details.", "退款或售后处理将根据实际订单状态和具体问题情况判断。"],
+                ],
+              },
+              {
+                enTitle: "5. Support Cases",
+                zhTitle: "售后处理范围",
+                items: [
+                  ["Users may contact us for the following issues:", "用户可以因以下问题联系我们："],
+                  ["Payment succeeded but membership was not activated.", "支付成功但会员没有开通。"],
+                  ["Duplicate charge.", "重复扣款。"],
+                  ["Order status error.", "订单状态异常。"],
+                  ["Account or learning progress problem.", "账号或学习进度问题。"],
+                  ["Product access problem.", "产品无法访问问题。"],
+                ],
+              },
+              {
+                enTitle: "6. What to Include",
+                zhTitle: "联系时请提供",
+                items: [
+                  ["To help us process your request faster, please include:", "为了帮助我们更快处理问题，请提供："],
+                  ["Login phone number or account.", "登录手机号或账号。"],
+                  ["Order number.", "订单号。"],
+                  ["Payment screenshot if available.", "支付截图，如有。"],
+                  ["A short description of the issue.", "简短问题描述。"],
+                ],
+              },
+              {
+                enTitle: "7. Contact",
+                zhTitle: "联系方式",
+                items: [
+                  ["Email: bonestbjl@gmail.com", "邮箱：bonestbjl@gmail.com"],
+                  ["We usually reply within 1–3 business days.", "我们通常会在 1–3 个工作日内回复。"],
+                ],
+              },
+            ],
+          },
           contact: {
             title: "Contact Us",
             titleZh: "联系我们",
@@ -12622,6 +12698,9 @@
                 </button>
                 <button onClick={() => openLegalPage("terms")} className="transition hover:text-banana">
                   Terms of Service / 用户协议
+                </button>
+                <button onClick={() => openLegalPage("paymentRefund")} className="transition hover:text-banana">
+                  Payment & Refund / 支付与售后
                 </button>
                 <button onClick={() => openLegalPage("contact")} className="transition hover:text-banana">
                   Contact Us / 联系我们
