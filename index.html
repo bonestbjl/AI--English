@@ -333,6 +333,63 @@
         .hotspot-label {
           max-width: 124px;
         }
+
+        .home-page .home-hero-section {
+          padding-bottom: 9rem !important;
+        }
+
+        .home-legal-footer {
+          bottom: max(8px, env(safe-area-inset-bottom)) !important;
+          left: 0 !important;
+          right: 0 !important;
+          padding: 0 !important;
+          pointer-events: none !important;
+          text-align: center !important;
+          z-index: 10 !important;
+        }
+
+        .home-legal-footer-panel {
+          align-items: center !important;
+          background: rgba(0, 0, 0, 0.08) !important;
+          border: none !important;
+          border-radius: 16px !important;
+          box-shadow: none !important;
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 6px !important;
+          grid-template-columns: 1fr !important;
+          justify-content: center !important;
+          margin: 18px auto 0 !important;
+          max-width: 420px !important;
+          min-height: unset !important;
+          padding: 10px 12px !important;
+          pointer-events: auto !important;
+          width: calc(100% - 32px) !important;
+        }
+
+        .home-legal-footer-link {
+          background: transparent !important;
+          border: none !important;
+          color: rgba(255, 255, 255, 0.44) !important;
+          display: block !important;
+          font-size: 12px !important;
+          line-height: 1.25 !important;
+          margin: 0 !important;
+          min-height: unset !important;
+          padding: 0 !important;
+          white-space: normal !important;
+        }
+
+        .home-legal-footer-copy {
+          color: rgba(255, 255, 255, 0.32) !important;
+          display: block !important;
+          flex-basis: auto !important;
+          font-size: 11px !important;
+          line-height: 1.2 !important;
+          margin-top: 4px !important;
+          opacity: 0.55 !important;
+          padding: 0 !important;
+        }
       }
 
       @media (orientation: landscape) and (max-height: 520px) and (max-width: 950px) and (hover: none) and (pointer: coarse) {
@@ -12691,21 +12748,21 @@
 
         function renderHomeFooter() {
           return (
-            <footer className="absolute inset-x-0 bottom-2 z-10 px-4 pb-[max(0px,env(safe-area-inset-bottom))] text-center sm:bottom-6">
-              <div className="mx-auto flex w-full max-w-[calc(100vw-24px)] flex-row flex-wrap items-center justify-center gap-x-2.5 gap-y-1 rounded-lg px-2 py-1.5 text-[11px] font-bold leading-4 text-white/36 sm:max-w-3xl sm:gap-x-5 sm:gap-y-2 sm:rounded-3xl sm:border sm:border-white/12 sm:bg-white/[0.06] sm:px-4 sm:py-4 sm:text-xs sm:text-white/48 sm:shadow-[0_14px_42px_rgba(0,0,0,0.2)] sm:backdrop-blur-xl">
-                <button onClick={() => openLegalPage("privacy")} className="whitespace-nowrap transition hover:text-banana">
+            <footer className="home-legal-footer absolute inset-x-0 bottom-2 z-10 px-4 pb-[max(0px,env(safe-area-inset-bottom))] text-center sm:bottom-6">
+              <div className="home-legal-footer-panel mx-auto flex w-full max-w-[calc(100vw-24px)] flex-row flex-wrap items-center justify-center gap-x-2.5 gap-y-1 rounded-lg px-2 py-1.5 text-[11px] font-bold leading-4 text-white/36 sm:max-w-3xl sm:gap-x-5 sm:gap-y-2 sm:rounded-3xl sm:border sm:border-white/12 sm:bg-white/[0.06] sm:px-4 sm:py-4 sm:text-xs sm:text-white/48 sm:shadow-[0_14px_42px_rgba(0,0,0,0.2)] sm:backdrop-blur-xl">
+                <button onClick={() => openLegalPage("privacy")} className="home-legal-footer-link whitespace-nowrap transition hover:text-banana">
                   Privacy Policy / 隐私政策
                 </button>
-                <button onClick={() => openLegalPage("terms")} className="whitespace-nowrap transition hover:text-banana">
+                <button onClick={() => openLegalPage("terms")} className="home-legal-footer-link whitespace-nowrap transition hover:text-banana">
                   Terms of Service / 用户协议
                 </button>
-                <button onClick={() => openLegalPage("paymentRefund")} className="whitespace-nowrap transition hover:text-banana">
+                <button onClick={() => openLegalPage("paymentRefund")} className="home-legal-footer-link whitespace-nowrap transition hover:text-banana">
                   Payment & Refund / 支付与售后
                 </button>
-                <button onClick={() => openLegalPage("contact")} className="whitespace-nowrap transition hover:text-banana">
+                <button onClick={() => openLegalPage("contact")} className="home-legal-footer-link whitespace-nowrap transition hover:text-banana">
                   Contact Us / 联系我们
                 </button>
-                <span className="basis-full text-[11px] text-white/22 sm:basis-auto sm:text-xs sm:text-white/32">© 2026 Real Scene English</span>
+                <span className="home-legal-footer-copy basis-full text-[11px] text-white/22 sm:basis-auto sm:text-xs sm:text-white/32">© 2026 Real Scene English</span>
               </div>
             </footer>
           );
@@ -13008,7 +13065,7 @@
                 </button>
                 {renderAuthControl()}
               </nav>
-              <section className="relative z-10 flex min-h-screen items-center justify-center px-6 pb-32 pt-10 text-center sm:px-8 sm:pb-44">
+              <section className="home-hero-section relative z-10 flex min-h-screen items-center justify-center px-6 pb-32 pt-10 text-center sm:px-8 sm:pb-44">
                 <div className="dialogue-enter mx-auto max-w-[46rem] -translate-y-3 sm:-translate-y-6">
                   <p className="text-[10px] font-black uppercase text-white/50 sm:text-[11px]">
                     REAL-LIFE ENGLISH PLATFORM
