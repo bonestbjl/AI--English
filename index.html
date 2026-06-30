@@ -12283,7 +12283,7 @@
             ...current,
             status: "created",
             order: current.order || { orderNo },
-            message: "已打开支付宝沙箱支付页面。如果页面空白，请返回并重新点击“支付宝沙箱支付”或使用“我已付款，重新检查”。",
+            message: "正在打开支付宝支付页面... 如果页面没有跳转，请稍后重试。",
           }));
           window.setTimeout(() => {
             window.location.href = `/api/alipay-create-payment?orderNo=${encodeURIComponent(orderNo)}`;

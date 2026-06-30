@@ -143,7 +143,7 @@ function escapeHtml(value) {
     .replace(/'/g, "&#39;");
 }
 
-function renderAutoSubmitForm({ gateway, params }) {
+function renderAutoSubmitForm({ gateway, params, orderNo }) {
   const inputs = Object.entries(params)
     .map(([key, value]) => `<input type="hidden" name="${escapeHtml(key)}" value="${escapeHtml(value)}">`)
     .join("\n");
@@ -152,7 +152,7 @@ function renderAutoSubmitForm({ gateway, params }) {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>正在跳转支付宝沙箱支付…</title>
+    <title>正在前往支付宝支付</title>
     <style>
       body {
         min-height: 100vh;
@@ -182,27 +182,60 @@ function renderAutoSubmitForm({ gateway, params }) {
         color: #172033;
         font-weight: 900;
         cursor: pointer;
+        transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+      }
+      button.is-ready {
+        background: #ffd45e;
+        box-shadow: 0 0 0 4px rgba(248,200,70,.2), 0 16px 36px rgba(248,200,70,.18);
+        transform: translateY(-1px);
       }
       p {
         color: rgba(255,247,223,.72);
         line-height: 1.7;
       }
+      .order {
+        margin: 16px 0;
+        border: 1px solid rgba(255,255,255,.12);
+        border-radius: 18px;
+        background: rgba(255,255,255,.06);
+        padding: 12px;
+        color: rgba(255,247,223,.82);
+        font-weight: 800;
+        line-height: 1.8;
+      }
+      .hint {
+        font-size: 13px;
+      }
     </style>
   </head>
   <body>
     <main>
-      <h1>正在跳转支付宝沙箱支付…</h1>
-      <p>正在跳转支付宝沙箱支付，请稍候。</p>
-      <p>如果页面没有自动跳转，请点击下方按钮继续前往支付宝沙箱收银台。</p>
+      <h1>正在前往支付宝支付</h1>
+      <div class="order">
+        <div>订单号：${escapeHtml(orderNo)}</div>
+        <div>金额：¥19.90</div>
+      </div>
+      <p>正在跳转支付宝沙箱支付页面，请稍候。</p>
+      <p class="hint" id="fallbackHint">如果页面长时间没有跳转，请点击按钮继续。沙箱环境偶尔不稳定，正式环境会更稳定。</p>
       <form id="alipayForm" accept-charset="utf-8" method="POST" action="${escapeHtml(gateway)}">
         ${inputs}
-        <button type="submit">继续前往支付宝沙箱支付</button>
+        <button id="continueButton" type="submit">继续前往支付宝</button>
       </form>
     </main>
     <script>
-      setTimeout(function () {
-        document.getElementById("alipayForm").submit();
-      }, 500);
+      document.addEventListener("DOMContentLoaded", function () {
+        var form = document.getElementById("alipayForm");
+        var button = document.getElementById("continueButton");
+        window.setTimeout(function () {
+          if (form) form.submit();
+        }, 800);
+        window.setTimeout(function () {
+          if (button) {
+            button.classList.add("is-ready");
+            button.focus({ preventScroll: true });
+          }
+        }, 3000);
+      });
     </script>
   </body>
 </html>`;
@@ -234,6 +267,13 @@ module.exports = async function handler(req, res) {
   const privateKey = normalizePrivateKey(process.env.ALIPAY_APP_PRIVATE_KEY);
   const returnUrl = normalizeUrlEnv(process.env.ALIPAY_RETURN_URL);
   const notifyUrl = normalizeUrlEnv(process.env.ALIPAY_NOTIFY_URL);
+  const gatewayInfo = getUrlInfo(gateway);
+  console.log("alipay create payment start", {
+    orderNo,
+    gatewayHost: gatewayInfo.host,
+    hasNotifyUrl: Boolean(notifyUrl),
+    hasReturnUrl: Boolean(returnUrl),
+  });
   if (!appId || !gateway || !privateKey) {
     sendJson(res, 500, { ok: false, error: "missing_alipay_env" });
     return;
@@ -297,33 +337,32 @@ module.exports = async function handler(req, res) {
 
     if (isDebug) {
       const privateKeyInfo = getPrivateKeyInfo(privateKey);
-      const gatewayInfo = getUrlInfo(gateway);
       const returnUrlInfo = getUrlInfo(returnUrl);
       const notifyUrlInfo = getUrlInfo(notifyUrl);
       sendJson(res, 200, {
         ok: true,
+        orderNo,
         gatewayHost: gatewayInfo.host,
-        method: ALIPAY_METHOD,
-        appIdPresent: Boolean(appId),
+        hasNotifyUrl: Boolean(notifyUrl),
+        hasReturnUrl: Boolean(returnUrl),
+        notifyUrlHost: notifyUrlInfo.host,
+        returnUrlHost: returnUrlInfo.host,
+        hasSign: Boolean(sign),
+        paramKeys: Object.keys(params).sort(),
         privateKeyPresent: privateKeyInfo.present,
         privateKeyLooksPkcs8: privateKeyInfo.looksPkcs8,
-        privateKeyHasPemHeader: privateKeyInfo.hasPemHeader,
-        returnUrlPresent: Boolean(returnUrl),
-        notifyUrlPresent: Boolean(notifyUrl),
-        returnUrlHost: returnUrlInfo.host,
-        notifyUrlHost: notifyUrlInfo.host,
-        paramKeys: Object.keys(params).sort(),
-        hasNotifyUrlInParams: Object.prototype.hasOwnProperty.call(params, "notify_url"),
-        hasReturnUrlInParams: Object.prototype.hasOwnProperty.call(params, "return_url"),
-        signContentLength: signContent.length,
-        signPreview: createSafeSignPreview(signContent),
-        hasSign: Boolean(sign),
       });
       return;
     }
 
+    console.log("alipay create payment html generated ok", {
+      orderNo,
+      gatewayHost: gatewayInfo.host,
+      hasNotifyUrl: Object.prototype.hasOwnProperty.call(params, "notify_url"),
+      hasReturnUrl: Object.prototype.hasOwnProperty.call(params, "return_url"),
+    });
     res.setHeader("Content-Type", "text/html; charset=utf-8");
-    res.status(200).send(renderAutoSubmitForm({ gateway, params: { ...params, sign } }));
+    res.status(200).send(renderAutoSubmitForm({ gateway, params: { ...params, sign }, orderNo }));
   } catch (error) {
     sendJson(res, 500, {
       ok: false,
