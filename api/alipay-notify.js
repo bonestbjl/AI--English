@@ -5,6 +5,7 @@ const SUCCESS_TRADE_STATUSES = new Set(["TRADE_SUCCESS", "TRADE_FINISHED"]);
 const AMOUNT_CENTS = 1990;
 const TOTAL_AMOUNT = "19.90";
 const CURRENCY = "CNY";
+const MEMBERSHIP_DAYS = 30;
 
 function sendText(res, status, text) {
   res.setHeader("Content-Type", "text/plain; charset=utf-8");
@@ -157,7 +158,24 @@ async function updateOrderPaid({ supabaseUrl, serviceRoleKey, orderNo, paidAt, t
   return Array.isArray(body) ? body[0] || null : body;
 }
 
-async function updateUserPremium({ supabaseUrl, serviceRoleKey, phone, activatedAt }) {
+async function fetchUser({ supabaseUrl, serviceRoleKey, phone }) {
+  const endpoint = `${supabaseUrl}/rest/v1/users?phone=eq.${encodeURIComponent(phone)}&select=phone,role,plan,premium_until`;
+  const response = await fetch(endpoint, {
+    method: "GET",
+    headers: supabaseHeaders(serviceRoleKey),
+  });
+  const body = await readSupabaseJson(response);
+  if (!response.ok) throw createSupabaseError("fetch_user_failed", response, body);
+  return Array.isArray(body) ? body[0] || null : null;
+}
+
+function calculatePremiumUntil(currentPremiumUntil, now = new Date()) {
+  const currentMs = currentPremiumUntil ? new Date(currentPremiumUntil).getTime() : 0;
+  const baseMs = Number.isFinite(currentMs) && currentMs > now.getTime() ? currentMs : now.getTime();
+  return new Date(baseMs + MEMBERSHIP_DAYS * 24 * 60 * 60 * 1000).toISOString();
+}
+
+async function updateUserPremium({ supabaseUrl, serviceRoleKey, phone, activatedAt, premiumUntil }) {
   const endpoint = `${supabaseUrl}/rest/v1/users?phone=eq.${encodeURIComponent(phone)}`;
   const response = await fetch(endpoint, {
     method: "PATCH",
@@ -166,6 +184,7 @@ async function updateUserPremium({ supabaseUrl, serviceRoleKey, phone, activated
       role: "premium",
       plan: "premium",
       premium_activated_at: activatedAt,
+      premium_until: premiumUntil,
     }),
   });
   const body = await readSupabaseJson(response);
@@ -173,7 +192,7 @@ async function updateUserPremium({ supabaseUrl, serviceRoleKey, phone, activated
   return Array.isArray(body) ? body[0] || null : body;
 }
 
-async function createPremiumUser({ supabaseUrl, serviceRoleKey, phone, activatedAt }) {
+async function createPremiumUser({ supabaseUrl, serviceRoleKey, phone, activatedAt, premiumUntil }) {
   const endpoint = `${supabaseUrl}/rest/v1/users`;
   const response = await fetch(endpoint, {
     method: "POST",
@@ -183,6 +202,7 @@ async function createPremiumUser({ supabaseUrl, serviceRoleKey, phone, activated
       role: "premium",
       plan: "premium",
       premium_activated_at: activatedAt,
+      premium_until: premiumUntil,
     }),
   });
   const body = await readSupabaseJson(response);
@@ -285,11 +305,18 @@ module.exports = async function handler(req, res) {
       tradeNo: String(params.trade_no || ""),
     });
     const phone = paidOrder?.phone || existingOrder.phone;
+    const existingUser = await fetchUser({
+      supabaseUrl: requestContext.supabaseUrl,
+      serviceRoleKey,
+      phone,
+    });
+    const premiumUntil = calculatePremiumUntil(existingUser?.premium_until, new Date(paidAt));
     const premiumUser = await updateUserPremium({
       supabaseUrl: requestContext.supabaseUrl,
       serviceRoleKey,
       phone,
       activatedAt: paidAt,
+      premiumUntil,
     });
     if (!premiumUser) {
       await createPremiumUser({
@@ -297,6 +324,7 @@ module.exports = async function handler(req, res) {
         serviceRoleKey,
         phone,
         activatedAt: paidAt,
+        premiumUntil,
       });
     }
 

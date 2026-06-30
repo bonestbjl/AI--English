@@ -1,5 +1,5 @@
 const PHONE_PATTERN = /^\d{6,20}$/;
-const PRODUCT_CODE = "real_scene_english_full";
+const PRODUCT_CODE = "real_scene_english_monthly";
 const AMOUNT_CENTS = 1990;
 const CURRENCY = "CNY";
 

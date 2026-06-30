@@ -309,9 +309,9 @@ module.exports = async function handler(req, res) {
     const bizContent = JSON.stringify({
       out_trade_no: orderNo,
       total_amount: "19.90",
-      subject: "Real Scene English Full Access",
+      subject: "Real Scene English Monthly Pass",
       product_code: ALIPAY_PRODUCT_CODE,
-      body: "Real Scene English premium unlock",
+      body: "Real Scene English monthly pass",
     });
     const params = {
       app_id: appId,
