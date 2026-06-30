@@ -333,6 +333,50 @@
         display: none;
       }
 
+      .home-access-summary {
+        margin: 1rem auto 0;
+        max-width: 40rem;
+      }
+
+      .home-access-summary-grid {
+        display: grid;
+        gap: 0.5rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .home-access-summary-card {
+        border: 1px solid rgba(255, 255, 255, 0.11);
+        border-radius: 1.25rem;
+        background: rgba(255, 255, 255, 0.055);
+        padding: 0.65rem 0.75rem;
+        text-align: left;
+        backdrop-filter: blur(18px);
+      }
+
+      .home-access-summary-card strong {
+        display: block;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 0.72rem;
+        line-height: 1.15;
+      }
+
+      .home-access-summary-card span {
+        display: block;
+        margin-top: 0.16rem;
+        color: rgba(255, 216, 107, 0.82);
+        font-size: 0.68rem;
+        font-weight: 900;
+        line-height: 1.15;
+      }
+
+      .home-access-summary-card p {
+        margin-top: 0.45rem !important;
+        color: rgba(255, 255, 255, 0.5) !important;
+        font-size: 0.68rem !important;
+        font-weight: 800 !important;
+        line-height: 1.35 !important;
+      }
+
       @media (max-width: 640px) {
         .hotspot-label {
           max-width: 124px;
@@ -403,6 +447,20 @@
           margin-top: 3px !important;
           opacity: 0.55 !important;
           padding: 0 !important;
+          text-align: center !important;
+        }
+
+        .home-access-summary {
+          margin-top: 0.9rem !important;
+          max-width: min(38rem, calc(100vw - 2rem)) !important;
+        }
+
+        .home-access-summary-grid {
+          grid-template-columns: 1fr !important;
+        }
+
+        .home-access-summary-card {
+          padding: 0.55rem 0.7rem !important;
           text-align: center !important;
         }
       }
@@ -1058,6 +1116,10 @@
           font-size: 0.62rem !important;
           line-height: 1.15 !important;
           margin-top: 0.5rem !important;
+        }
+
+        .home-page .home-access-summary {
+          display: none !important;
         }
 
         .home-page .home-legal-footer {
@@ -10351,7 +10413,7 @@
             kind: "subscription",
             title: "解锁完整版",
             en: "Unlock the Full Real Scene English Experience",
-            text: "订阅后可解锁更多真实生活、校园、出行、职场等英语场景，保存学习进度，并持续获得后续更新。",
+            text: "¥19.9 一次性解锁完整版，开通 Premium / Full Access 后可学习更多真实生活、校园、出行、职场等英语场景。",
             detail: "正在确认支付结果…请不要关闭页面，系统正在向支付宝确认订单状态。",
           });
           setSubscriptionOrder({
@@ -12120,17 +12182,17 @@
                   en: "Weekly Updates",
                   text: hasFullAccess
                     ? "更多真实生活场景会持续加入，你将优先体验完整内容。"
-                    : "我们会持续加入更多真实生活场景。订阅用户将优先体验完整内容。",
+                    : "我们会持续加入更多真实生活场景。完整版用户将优先体验完整内容。",
                   detail: hasFullAccess
                     ? "你已经拥有完整访问权限，后续新增主题上线后会优先开放。"
-                    : "订阅后可持续解锁更多真实生活、校园、出行、职场等英语场景。",
+                    : "解锁完整版后可持续获得更多真实生活、校园、出行、职场等英语场景。",
                 }
               : {
                   kind: "subscription",
                   title: "解锁完整版",
                   en: "Unlock the Full Real Scene English Experience",
-                  text: "订阅后可解锁更多真实生活、校园、出行、职场等英语场景，保存学习进度，并持续获得后续更新。",
-                  detail: "该真实场景属于完整版内容。订阅后可解锁更多生活、校园、出行、职场等真实英语场景。",
+                  text: "¥19.9 一次性解锁完整版，开通 Premium / Full Access 后可学习更多真实生活、校园、出行、职场等英语场景。",
+                  detail: "该真实场景属于完整版内容。解锁后可访问全部 13 个场景，并持续获得后续更新。",
                 }
           );
         }
@@ -13264,6 +13326,29 @@
                   >
                     <ButtonCopy en="Start Journey" zh="开始旅程" />
                   </button>
+                  <section className="home-access-summary" aria-label="Full Version Access">
+                    <p className="text-[10px] font-black uppercase tracking-[0.18em] text-banana/82">
+                      Full Version Access
+                    </p>
+                    <p className="mt-1 text-xs font-black text-white/42">完整版权益</p>
+                    <div className="home-access-summary-grid mt-3">
+                      <div className="home-access-summary-card">
+                        <strong>Free Trial</strong>
+                        <span>免费体验</span>
+                        <p>Zoo and Fruit Shop are available for free.<br />动物园和水果店可免费体验。</p>
+                      </div>
+                      <div className="home-access-summary-card">
+                        <strong>Full Version</strong>
+                        <span>完整版</span>
+                        <p>Unlock all 13 real-life English scenes, word book, progress saving, and future updates.<br />解锁全部 13 个真实生活英语场景，包含生词本、学习进度保存和后续更新。</p>
+                      </div>
+                      <div className="home-access-summary-card">
+                        <strong>Early Access Price</strong>
+                        <span>早鸟价</span>
+                        <p>¥19.9 one-time unlock.<br />¥19.9 一次性解锁。</p>
+                      </div>
+                    </div>
+                  </section>
                   <p className="mt-7 text-sm font-bold text-white/28">
                     First scene available: <span className="text-white/58">Zoo</span>
                     <span className="mx-2 text-white/20">/</span>
@@ -13350,9 +13435,9 @@
                         : scene.statusZh
                       : isUpdateCard
                       ? "持续更新中"
-                      : "订阅解锁";
-                    const button = isAvailable ? scene.button : isUpdateCard ? "Learn More" : "Subscribe to Unlock";
-                    const buttonZh = isAvailable ? scene.buttonZh : isUpdateCard ? "了解更新" : "订阅解锁";
+                      : "解锁完整版";
+                    const button = isAvailable ? scene.button : isUpdateCard ? "Learn More" : "Unlock Full Version";
+                    const buttonZh = isAvailable ? scene.buttonZh : isUpdateCard ? "了解更新" : "解锁完整版";
                     return (
                     <article
                       key={scene.id}
@@ -13474,7 +13559,25 @@
                             <p className="pb-1 text-sm font-bold text-cream/58 line-through">原价 ¥39.9</p>
                           </div>
                           <p className="mt-2 text-sm font-bold text-cream/72">一次解锁完整版</p>
-                          <p className="mt-1 text-xs font-bold text-cream/52">支付接口接入中</p>
+                          <div className="mt-4 rounded-2xl border border-white/12 bg-white/[0.06] px-3 py-3">
+                            <p className="text-sm font-black text-white">Full Access includes:</p>
+                            <ul className="mt-2 space-y-1 text-xs font-bold leading-5 text-cream/68">
+                              <li>All 13 real-life English scenes</li>
+                              <li>Word book and progress saving</li>
+                              <li>Future scene updates</li>
+                            </ul>
+                            <p className="mt-3 text-sm font-black text-banana">完整版包含：</p>
+                            <ul className="mt-2 space-y-1 text-xs font-bold leading-5 text-cream/68">
+                              <li>全部 13 个真实场景</li>
+                              <li>生词本和学习进度保存</li>
+                              <li>后续场景持续更新</li>
+                            </ul>
+                            <p className="mt-3 text-xs font-black text-white/72">
+                              One-time unlock. No recurring subscription.<br />
+                              一次性解锁，不是自动续费订阅。
+                            </p>
+                          </div>
+                          <p className="mt-2 text-xs font-bold text-cream/58">支付成功后开通 Premium / Full Access</p>
                         </div>
 
                         <div className="mt-4 rounded-3xl border border-white/14 bg-white/[0.07] p-4">
@@ -13605,7 +13708,7 @@
                     </div>
                     <p className="mt-3 text-center text-xs font-bold text-cream/50">
                       {sceneSelectNotice.kind === "subscription"
-                        ? "支付宝/微信支付接口接入中。"
+                        ? "支付成功后会自动确认并开通 Premium / Full Access。"
                         : "更多真实生活场景会持续加入。"}
                     </p>
                   </div>
