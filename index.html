@@ -377,6 +377,44 @@
         line-height: 1.35 !important;
       }
 
+      .scene-legal-footer {
+        margin: 1.5rem auto 0;
+        max-width: 56rem;
+        padding-bottom: max(1rem, env(safe-area-inset-bottom));
+        text-align: center;
+      }
+
+      .scene-legal-footer-panel {
+        align-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 1.5rem;
+        background: rgba(255, 255, 255, 0.055);
+        box-shadow: 0 14px 42px rgba(0, 0, 0, 0.18);
+        color: rgba(255, 255, 255, 0.46);
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 0.75rem;
+        font-weight: 800;
+        gap: 0.5rem 1.25rem;
+        justify-content: center;
+        line-height: 1.35;
+        margin: 0 auto;
+        padding: 0.9rem 1rem;
+        backdrop-filter: blur(18px);
+      }
+
+      .scene-legal-footer-link {
+        transition: color 160ms ease;
+      }
+
+      .scene-legal-footer-link:hover {
+        color: #ffd86b;
+      }
+
+      .scene-legal-footer-copy {
+        color: rgba(255, 255, 255, 0.28);
+      }
+
       @media (max-width: 640px) {
         .hotspot-label {
           max-width: 124px;
@@ -462,6 +500,32 @@
         .home-access-summary-card {
           padding: 0.55rem 0.7rem !important;
           text-align: center !important;
+        }
+
+        .scene-legal-footer {
+          margin-top: 1rem !important;
+          max-width: min(420px, calc(100vw - 32px)) !important;
+        }
+
+        .scene-legal-footer-panel {
+          border: none !important;
+          border-radius: 16px !important;
+          box-shadow: none !important;
+          flex-direction: column !important;
+          gap: 6px !important;
+          padding: 10px 12px !important;
+        }
+
+        .scene-legal-footer-link {
+          font-size: 12px !important;
+          line-height: 1.25 !important;
+        }
+
+        .scene-legal-footer-copy {
+          font-size: 11px !important;
+          line-height: 1.2 !important;
+          margin-top: 4px !important;
+          opacity: 0.55 !important;
         }
       }
 
@@ -12993,6 +13057,56 @@
           );
         }
 
+        function renderFullVersionAccessSummary() {
+          return (
+            <section className="home-access-summary" aria-label="Full Version Access">
+              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-banana/82">
+                Full Version Access
+              </p>
+              <p className="mt-1 text-xs font-black text-white/42">完整版权益</p>
+              <div className="home-access-summary-grid mt-3">
+                <div className="home-access-summary-card">
+                  <strong>Free Trial</strong>
+                  <span>免费体验</span>
+                  <p>Zoo and Fruit Shop are available for free.<br />动物园和水果店可免费体验。</p>
+                </div>
+                <div className="home-access-summary-card">
+                  <strong>Full Version</strong>
+                  <span>完整版</span>
+                  <p>Unlock all 13 real-life English scenes, word book, progress saving, and future updates.<br />解锁全部 13 个真实生活英语场景，包含生词本、学习进度保存和后续更新。</p>
+                </div>
+                <div className="home-access-summary-card">
+                  <strong>Early Access Price</strong>
+                  <span>早鸟价</span>
+                  <p>¥19.9 one-time unlock.<br />¥19.9 一次性解锁。</p>
+                </div>
+              </div>
+            </section>
+          );
+        }
+
+        function renderSceneLegalFooter() {
+          return (
+            <footer className="scene-legal-footer">
+              <div className="scene-legal-footer-panel">
+                <button onClick={() => openLegalPage("privacy")} className="scene-legal-footer-link">
+                  Privacy Policy / 隐私政策
+                </button>
+                <button onClick={() => openLegalPage("terms")} className="scene-legal-footer-link">
+                  Terms of Service / 用户协议
+                </button>
+                <button onClick={() => openLegalPage("paymentRefund")} className="scene-legal-footer-link">
+                  Payment & Refund / 支付与售后
+                </button>
+                <button onClick={() => openLegalPage("contact")} className="scene-legal-footer-link">
+                  Contact Us / 联系我们
+                </button>
+                <span className="scene-legal-footer-copy">© 2026 Real Scene English</span>
+              </div>
+            </footer>
+          );
+        }
+
         const legalPage = legalPages[currentView];
         if (legalPage) {
           return (
@@ -13326,29 +13440,6 @@
                   >
                     <ButtonCopy en="Start Journey" zh="开始旅程" />
                   </button>
-                  <section className="home-access-summary" aria-label="Full Version Access">
-                    <p className="text-[10px] font-black uppercase tracking-[0.18em] text-banana/82">
-                      Full Version Access
-                    </p>
-                    <p className="mt-1 text-xs font-black text-white/42">完整版权益</p>
-                    <div className="home-access-summary-grid mt-3">
-                      <div className="home-access-summary-card">
-                        <strong>Free Trial</strong>
-                        <span>免费体验</span>
-                        <p>Zoo and Fruit Shop are available for free.<br />动物园和水果店可免费体验。</p>
-                      </div>
-                      <div className="home-access-summary-card">
-                        <strong>Full Version</strong>
-                        <span>完整版</span>
-                        <p>Unlock all 13 real-life English scenes, word book, progress saving, and future updates.<br />解锁全部 13 个真实生活英语场景，包含生词本、学习进度保存和后续更新。</p>
-                      </div>
-                      <div className="home-access-summary-card">
-                        <strong>Early Access Price</strong>
-                        <span>早鸟价</span>
-                        <p>¥19.9 one-time unlock.<br />¥19.9 一次性解锁。</p>
-                      </div>
-                    </div>
-                  </section>
                   <p className="mt-7 text-sm font-bold text-white/28">
                     First scene available: <span className="text-white/58">Zoo</span>
                     <span className="mx-2 text-white/20">/</span>
@@ -13513,6 +13604,8 @@
                     );
                   })}
                 </section>
+                {renderFullVersionAccessSummary()}
+                {renderSceneLegalFooter()}
               </div>
               {sceneSelectNotice && (
                 <div className="fixed inset-0 z-[80] flex items-center justify-center bg-black/60 px-4 py-[max(1rem,env(safe-area-inset-top))] backdrop-blur-sm">
