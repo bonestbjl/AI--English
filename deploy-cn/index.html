@@ -329,6 +329,10 @@
         color: #ffffff;
       }
 
+      .home-mobile-landscape-legal {
+        display: none;
+      }
+
       @media (max-width: 640px) {
         .hotspot-label {
           max-width: 124px;
@@ -336,6 +340,10 @@
       }
 
       @media (max-width: 1024px) {
+        .home-mobile-landscape-legal {
+          display: none !important;
+        }
+
         .home-page .home-hero-section {
           padding-bottom: 9rem !important;
         }
@@ -1053,6 +1061,7 @@
         }
 
         .home-page .home-legal-footer {
+          display: none !important;
           bottom: max(6px, env(safe-area-inset-bottom)) !important;
           margin-top: 8px !important;
         }
@@ -1071,6 +1080,53 @@
           font-size: 8px !important;
           line-height: 1 !important;
           margin-top: 2px !important;
+        }
+
+        .scene-select-page .scene-select-hero-card {
+          align-items: flex-start !important;
+          display: flex !important;
+          flex-direction: row !important;
+          gap: 1rem !important;
+          justify-content: space-between !important;
+        }
+
+        .scene-select-page .scene-select-hero-copy {
+          flex: 1 1 auto !important;
+          min-width: 0 !important;
+        }
+
+        .scene-select-page .home-mobile-landscape-legal {
+          align-items: flex-end !important;
+          background: transparent !important;
+          border: none !important;
+          box-shadow: none !important;
+          color: rgba(255, 255, 255, 0.78) !important;
+          display: flex !important;
+          flex: 0 0 180px !important;
+          flex-direction: column !important;
+          gap: 5px !important;
+          line-height: 1.2 !important;
+          margin-left: auto !important;
+          max-width: 180px !important;
+          opacity: 0.75 !important;
+          padding: 0 !important;
+          text-align: right !important;
+          width: 180px !important;
+        }
+
+        .scene-select-page .home-mobile-landscape-legal button {
+          background: transparent !important;
+          border: none !important;
+          color: rgba(255, 255, 255, 0.82) !important;
+          display: block !important;
+          font-size: 10px !important;
+          font-weight: 800 !important;
+          line-height: 1.2 !important;
+          margin: 0 !important;
+          min-height: unset !important;
+          padding: 2px 0 !important;
+          text-align: right !important;
+          white-space: normal !important;
         }
       }
 
@@ -12856,6 +12912,25 @@
           );
         }
 
+        function renderLandscapeLegalLinks() {
+          return (
+            <div className="home-mobile-landscape-legal" aria-label="Legal links">
+              <button onClick={() => openLegalPage("privacy")}>
+                Privacy Policy / 隐私政策
+              </button>
+              <button onClick={() => openLegalPage("terms")}>
+                Terms of Service / 用户协议
+              </button>
+              <button onClick={() => openLegalPage("paymentRefund")}>
+                Payment & Refund / 支付与售后
+              </button>
+              <button onClick={() => openLegalPage("contact")}>
+                Contact Us / 联系我们
+              </button>
+            </div>
+          );
+        }
+
         const legalPage = legalPages[currentView];
         if (legalPage) {
           return (
@@ -13211,8 +13286,8 @@
               <div className="light-breath pointer-events-none absolute -left-20 top-4 h-[46vh] w-[46vh] rounded-full bg-banana/20 blur-3xl"></div>
               <div className="leaf-drift pointer-events-none absolute right-0 top-10 h-48 w-72 rounded-full bg-[#8bd3e6]/12 blur-2xl"></div>
               <div className="relative z-10 mx-auto max-w-6xl">
-                <header className="dialogue-enter flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-5 shadow-glow backdrop-blur-xl sm:flex-row sm:items-end sm:justify-between">
-                  <div>
+                <header className="scene-select-hero-card dialogue-enter flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-5 shadow-glow backdrop-blur-xl sm:flex-row sm:items-end sm:justify-between">
+                  <div className="scene-select-hero-copy">
                     <div className="mb-4 flex flex-wrap gap-2">
                       <button
                         onClick={() => setCurrentView("home")}
@@ -13244,6 +13319,7 @@
                       今天你想在哪里学习英语？
                     </p>
                   </div>
+                  {renderLandscapeLegalLinks()}
                   {sceneSelectHint && (
                     <div className="dialogue-enter rounded-2xl border border-banana/35 bg-[#5c3a20]/72 px-4 py-3 text-sm font-black text-white shadow-label">
                       {sceneSelectHint}
