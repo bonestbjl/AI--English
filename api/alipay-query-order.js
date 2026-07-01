@@ -3,10 +3,20 @@ const crypto = require("crypto");
 const ORDER_NO_PATTERN = /^RSE\d{20,}$/;
 const ALIPAY_METHOD = "alipay.trade.query";
 const SUCCESS_TRADE_STATUSES = new Set(["TRADE_SUCCESS", "TRADE_FINISHED"]);
-const AMOUNT_CENTS = 1990;
-const TOTAL_AMOUNT = "19.90";
 const CURRENCY = "CNY";
 const MEMBERSHIP_DAYS = 30;
+const PRODUCTS = {
+  real_scene_english_monthly: {
+    plan: "monthly",
+    amountCents: 1990,
+    totalAmount: "19.90",
+  },
+  real_scene_english_lifetime: {
+    plan: "lifetime",
+    amountCents: 19900,
+    totalAmount: "199.00",
+  },
+};
 
 function sendJson(res, status, body) {
   res.setHeader("Content-Type", "application/json; charset=utf-8");
@@ -96,7 +106,7 @@ async function updateOrderPaid({ supabaseUrl, serviceRoleKey, orderNo, paidAt, t
 }
 
 async function fetchUser({ supabaseUrl, serviceRoleKey, phone }) {
-  const endpoint = `${supabaseUrl}/rest/v1/users?phone=eq.${encodeURIComponent(phone)}&select=phone,role,plan,premium_until`;
+  const endpoint = `${supabaseUrl}/rest/v1/users?phone=eq.${encodeURIComponent(phone)}&select=phone,role,plan,premium_until,lifetime_access`;
   const response = await fetch(endpoint, {
     method: "GET",
     headers: supabaseHeaders(serviceRoleKey),
@@ -112,14 +122,28 @@ function calculatePremiumUntil(currentPremiumUntil, now = new Date()) {
   return new Date(baseMs + MEMBERSHIP_DAYS * 24 * 60 * 60 * 1000).toISOString();
 }
 
-async function updateUserPremium({ supabaseUrl, serviceRoleKey, phone, activatedAt, premiumUntil }) {
+function getProductByOrder(order) {
+  return PRODUCTS[order?.product_code] || null;
+}
+
+function isActivePremium(user) {
+  return Boolean(user?.lifetime_access) || Boolean(user?.premium_until && new Date(user.premium_until).getTime() > Date.now());
+}
+
+function getEffectivePlan(user) {
+  if (user?.lifetime_access) return "lifetime";
+  if (user?.premium_until && new Date(user.premium_until).getTime() > Date.now()) return "monthly";
+  return "free";
+}
+
+async function updateUserMonthly({ supabaseUrl, serviceRoleKey, phone, activatedAt, premiumUntil }) {
   const endpoint = `${supabaseUrl}/rest/v1/users?phone=eq.${encodeURIComponent(phone)}`;
   const response = await fetch(endpoint, {
     method: "PATCH",
     headers: supabaseHeaders(serviceRoleKey),
     body: JSON.stringify({
       role: "premium",
-      plan: "premium",
+      plan: "monthly",
       premium_activated_at: activatedAt,
       premium_until: premiumUntil,
     }),
@@ -129,7 +153,7 @@ async function updateUserPremium({ supabaseUrl, serviceRoleKey, phone, activated
   return Array.isArray(body) ? body[0] || null : body;
 }
 
-async function createPremiumUser({ supabaseUrl, serviceRoleKey, phone, activatedAt, premiumUntil }) {
+async function createMonthlyUser({ supabaseUrl, serviceRoleKey, phone, activatedAt, premiumUntil }) {
   const endpoint = `${supabaseUrl}/rest/v1/users`;
   const response = await fetch(endpoint, {
     method: "POST",
@@ -137,9 +161,46 @@ async function createPremiumUser({ supabaseUrl, serviceRoleKey, phone, activated
     body: JSON.stringify({
       phone,
       role: "premium",
-      plan: "premium",
+      plan: "monthly",
       premium_activated_at: activatedAt,
       premium_until: premiumUntil,
+      lifetime_access: false,
+    }),
+  });
+  const body = await readSupabaseJson(response);
+  if (!response.ok) throw createSupabaseError("create_user_failed", response, body);
+  return Array.isArray(body) ? body[0] || null : body;
+}
+
+async function updateUserLifetime({ supabaseUrl, serviceRoleKey, phone, activatedAt }) {
+  const endpoint = `${supabaseUrl}/rest/v1/users?phone=eq.${encodeURIComponent(phone)}`;
+  const response = await fetch(endpoint, {
+    method: "PATCH",
+    headers: supabaseHeaders(serviceRoleKey),
+    body: JSON.stringify({
+      role: "premium",
+      plan: "lifetime",
+      premium_activated_at: activatedAt,
+      lifetime_access: true,
+    }),
+  });
+  const body = await readSupabaseJson(response);
+  if (!response.ok) throw createSupabaseError("update_user_failed", response, body);
+  return Array.isArray(body) ? body[0] || null : body;
+}
+
+async function createLifetimeUser({ supabaseUrl, serviceRoleKey, phone, activatedAt }) {
+  const endpoint = `${supabaseUrl}/rest/v1/users`;
+  const response = await fetch(endpoint, {
+    method: "POST",
+    headers: supabaseHeaders(serviceRoleKey),
+    body: JSON.stringify({
+      phone,
+      role: "premium",
+      plan: "lifetime",
+      premium_activated_at: activatedAt,
+      premium_until: null,
+      lifetime_access: true,
     }),
   });
   const body = await readSupabaseJson(response);
@@ -222,9 +283,9 @@ async function queryAlipayTrade({ gateway, appId, privateKey, orderNo }) {
   return body?.alipay_trade_query_response || {};
 }
 
-function isExpectedAmount(totalAmount) {
+function isExpectedAmount(totalAmount, product) {
   if (totalAmount == null || totalAmount === "") return true;
-  return Number(totalAmount).toFixed(2) === TOTAL_AMOUNT;
+  return Number(totalAmount).toFixed(2) === product.totalAmount;
 }
 
 module.exports = async function handler(req, res) {
@@ -276,12 +337,13 @@ module.exports = async function handler(req, res) {
       const premiumUntil = existingUser?.premium_until || null;
       sendJson(res, 200, {
         ok: true,
-        paid: Boolean(premiumUntil && new Date(premiumUntil).getTime() > Date.now()),
+        paid: isActivePremium(existingUser),
         alreadyPaid: true,
         orderNo,
         phone: existingOrder.phone,
-        plan: premiumUntil && new Date(premiumUntil).getTime() > Date.now() ? "premium" : "free",
+        plan: getEffectivePlan(existingUser),
         premiumUntil,
+        lifetimeAccess: Boolean(existingUser?.lifetime_access),
       });
       return;
     }
@@ -289,14 +351,15 @@ module.exports = async function handler(req, res) {
       sendJson(res, 200, { ok: true, paid: false, orderNo, orderStatus: existingOrder.status });
       return;
     }
-    if (Number(existingOrder.amount_cents) !== AMOUNT_CENTS || existingOrder.currency !== CURRENCY) {
+    const product = getProductByOrder(existingOrder);
+    if (!product || Number(existingOrder.amount_cents) !== product.amountCents || existingOrder.currency !== CURRENCY) {
       sendJson(res, 200, { ok: true, paid: false, orderNo, error: "order_amount_or_currency_mismatch" });
       return;
     }
 
     const alipayResult = await queryAlipayTrade({ gateway, appId, privateKey, orderNo });
     const tradeStatus = alipayResult.trade_status || "";
-    if (!SUCCESS_TRADE_STATUSES.has(tradeStatus) || !isExpectedAmount(alipayResult.total_amount)) {
+    if (!SUCCESS_TRADE_STATUSES.has(tradeStatus) || !isExpectedAmount(alipayResult.total_amount, product)) {
       sendJson(res, 200, {
         ok: true,
         paid: false,
@@ -318,22 +381,43 @@ module.exports = async function handler(req, res) {
       serviceRoleKey,
       phone,
     });
-    const premiumUntil = calculatePremiumUntil(existingUser?.premium_until, new Date(paidAt));
-    const premiumUser = await updateUserPremium({
-      supabaseUrl: requestContext.supabaseUrl,
-      serviceRoleKey,
-      phone,
-      activatedAt: paidAt,
-      premiumUntil,
-    });
-    if (!premiumUser) {
-      await createPremiumUser({
+    let premiumUntil = existingUser?.premium_until || null;
+    let lifetimeAccess = Boolean(existingUser?.lifetime_access);
+    let premiumUser = null;
+    if (product.plan === "lifetime") {
+      lifetimeAccess = true;
+      premiumUser = await updateUserLifetime({
+        supabaseUrl: requestContext.supabaseUrl,
+        serviceRoleKey,
+        phone,
+        activatedAt: paidAt,
+      });
+      if (!premiumUser) {
+        await createLifetimeUser({
+          supabaseUrl: requestContext.supabaseUrl,
+          serviceRoleKey,
+          phone,
+          activatedAt: paidAt,
+        });
+      }
+    } else {
+      premiumUntil = calculatePremiumUntil(existingUser?.premium_until, new Date(paidAt));
+      premiumUser = await updateUserMonthly({
         supabaseUrl: requestContext.supabaseUrl,
         serviceRoleKey,
         phone,
         activatedAt: paidAt,
         premiumUntil,
       });
+      if (!premiumUser) {
+        await createMonthlyUser({
+          supabaseUrl: requestContext.supabaseUrl,
+          serviceRoleKey,
+          phone,
+          activatedAt: paidAt,
+          premiumUntil,
+        });
+      }
     }
 
     sendJson(res, 200, {
@@ -341,8 +425,9 @@ module.exports = async function handler(req, res) {
       paid: true,
       orderNo,
       phone,
-      plan: "premium",
+      plan: product.plan,
       premiumUntil,
+      lifetimeAccess,
       tradeStatus,
     });
   } catch (error) {

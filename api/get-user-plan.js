@@ -8,14 +8,16 @@ function sendJson(res, status, body) {
 function normalizeUser(row, source = "supabase") {
   const premiumUntil = row?.premium_until || null;
   const hasActivePremium = premiumUntil && new Date(premiumUntil).getTime() > Date.now();
+  const hasLifetimeAccess = row?.lifetime_access === true;
   const isDeveloper = row?.role === "developer" || row?.plan === "developer";
-  const role = isDeveloper ? "developer" : hasActivePremium ? "premium" : "free";
-  const plan = isDeveloper ? "developer" : hasActivePremium ? "premium" : "free";
+  const role = isDeveloper ? "developer" : hasLifetimeAccess || hasActivePremium ? "premium" : "free";
+  const plan = isDeveloper ? "developer" : hasLifetimeAccess ? "lifetime" : hasActivePremium ? "monthly" : "free";
   return {
     phone: String(row?.phone || ""),
     role,
     plan,
     premiumUntil,
+    lifetimeAccess: hasLifetimeAccess,
     source,
   };
 }
@@ -57,7 +59,7 @@ async function readSupabaseJson(response) {
 }
 
 async function fetchExistingUser({ supabaseUrl, serviceRoleKey, phone }) {
-  const endpoint = `${supabaseUrl}/rest/v1/users?phone=eq.${encodeURIComponent(phone)}&select=phone,role,plan,premium_until`;
+  const endpoint = `${supabaseUrl}/rest/v1/users?phone=eq.${encodeURIComponent(phone)}&select=phone,role,plan,premium_until,lifetime_access`;
   const response = await fetch(endpoint, {
     method: "GET",
     headers: {
@@ -97,7 +99,7 @@ async function createFreeUser({ supabaseUrl, serviceRoleKey, phone }) {
     error.detail = sanitizeDetail(body);
     throw error;
   }
-  return Array.isArray(body) ? body[0] || { phone, role: "free", plan: "free", premium_until: null } : body;
+  return Array.isArray(body) ? body[0] || { phone, role: "free", plan: "free", premium_until: null, lifetime_access: false } : body;
 }
 
 module.exports = async function handler(req, res) {

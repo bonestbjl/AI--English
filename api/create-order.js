@@ -1,7 +1,19 @@
 const PHONE_PATTERN = /^\d{6,20}$/;
-const PRODUCT_CODE = "real_scene_english_monthly";
-const AMOUNT_CENTS = 1990;
 const CURRENCY = "CNY";
+const PRODUCTS = {
+  monthly: {
+    plan: "monthly",
+    productCode: "real_scene_english_monthly",
+    productName: "Real Scene English Monthly Pass",
+    amountCents: 1990,
+  },
+  lifetime: {
+    plan: "lifetime",
+    productCode: "real_scene_english_lifetime",
+    productName: "Real Scene English Lifetime Access",
+    amountCents: 19900,
+  },
+};
 
 function sendJson(res, status, body) {
   res.setHeader("Content-Type", "application/json; charset=utf-8");
@@ -49,12 +61,16 @@ function createOrderNo() {
 }
 
 function normalizeOrder(row, fallback) {
+  const productCode = row?.product_code || fallback.productCode;
+  const product = Object.values(PRODUCTS).find((item) => item.productCode === productCode) || fallback;
   return {
     orderNo: row?.order_no || fallback.orderNo,
     phone: row?.phone || fallback.phone,
     amountCents: row?.amount_cents ?? fallback.amountCents,
     currency: row?.currency || fallback.currency,
-    productCode: row?.product_code || fallback.productCode,
+    productCode,
+    productName: product.productName || fallback.productName,
+    plan: product.plan || fallback.plan,
     status: row?.status || fallback.status,
   };
 }
@@ -120,13 +136,21 @@ module.exports = async function handler(req, res) {
     sendJson(res, 400, { ok: false, error: "invalid_phone" });
     return;
   }
+  const plan = String(body.plan || "monthly").trim();
+  const product = PRODUCTS[plan];
+  if (!product) {
+    sendJson(res, 400, { ok: false, error: "invalid_plan" });
+    return;
+  }
 
   const order = {
     orderNo: createOrderNo(),
     phone,
-    amountCents: AMOUNT_CENTS,
+    amountCents: product.amountCents,
     currency: CURRENCY,
-    productCode: PRODUCT_CODE,
+    productCode: product.productCode,
+    productName: product.productName,
+    plan: product.plan,
     status: "pending",
   };
 

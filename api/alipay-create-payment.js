@@ -1,9 +1,26 @@
 const crypto = require("crypto");
 
 const ORDER_NO_PATTERN = /^RSE\d{10,40}$/;
-const AMOUNT_CENTS = 1990;
 const ALIPAY_METHOD = "alipay.trade.wap.pay";
 const ALIPAY_PRODUCT_CODE = "QUICK_WAP_WAY";
+const PRODUCTS = {
+  real_scene_english_monthly: {
+    plan: "monthly",
+    productName: "Real Scene English Monthly Pass",
+    productLabel: "月卡",
+    amountCents: 1990,
+    totalAmount: "19.90",
+    body: "Real Scene English monthly pass",
+  },
+  real_scene_english_lifetime: {
+    plan: "lifetime",
+    productName: "Real Scene English Lifetime Access",
+    productLabel: "终身版",
+    amountCents: 19900,
+    totalAmount: "199.00",
+    body: "Real Scene English lifetime access",
+  },
+};
 
 function sendJson(res, status, body) {
   res.setHeader("Content-Type", "application/json; charset=utf-8");
@@ -143,7 +160,11 @@ function escapeHtml(value) {
     .replace(/'/g, "&#39;");
 }
 
-function renderAutoSubmitForm({ gateway, params, orderNo }) {
+function getProductByOrder(order) {
+  return PRODUCTS[order?.product_code] || null;
+}
+
+function renderAutoSubmitForm({ gateway, params, orderNo, product }) {
   const inputs = Object.entries(params)
     .map(([key, value]) => `<input type="hidden" name="${escapeHtml(key)}" value="${escapeHtml(value)}">`)
     .join("\n");
@@ -213,7 +234,8 @@ function renderAutoSubmitForm({ gateway, params, orderNo }) {
       <h1>正在前往支付宝支付</h1>
       <div class="order">
         <div>订单号：${escapeHtml(orderNo)}</div>
-        <div>金额：¥19.90</div>
+        <div>套餐：${escapeHtml(product.productLabel)}</div>
+        <div>金额：¥${escapeHtml(product.totalAmount)}</div>
       </div>
       <p>正在跳转支付宝沙箱支付页面，请稍候。</p>
       <p class="hint" id="fallbackHint">如果页面长时间没有跳转，请点击按钮继续。沙箱环境偶尔不稳定，正式环境会更稳定。</p>
@@ -301,17 +323,22 @@ module.exports = async function handler(req, res) {
       sendJson(res, 409, { ok: false, error: "order_not_pending", status: order.status });
       return;
     }
-    if (Number(order.amount_cents) !== AMOUNT_CENTS) {
+    const product = getProductByOrder(order);
+    if (!product) {
+      sendJson(res, 409, { ok: false, error: "invalid_order_product" });
+      return;
+    }
+    if (Number(order.amount_cents) !== product.amountCents) {
       sendJson(res, 409, { ok: false, error: "invalid_order_amount" });
       return;
     }
 
     const bizContent = JSON.stringify({
       out_trade_no: orderNo,
-      total_amount: "19.90",
-      subject: "Real Scene English Monthly Pass",
+      total_amount: product.totalAmount,
+      subject: product.productName,
       product_code: ALIPAY_PRODUCT_CODE,
-      body: "Real Scene English monthly pass",
+      body: product.body,
     });
     const params = {
       app_id: appId,
@@ -362,7 +389,7 @@ module.exports = async function handler(req, res) {
       hasReturnUrl: Object.prototype.hasOwnProperty.call(params, "return_url"),
     });
     res.setHeader("Content-Type", "text/html; charset=utf-8");
-    res.status(200).send(renderAutoSubmitForm({ gateway, params: { ...params, sign }, orderNo }));
+    res.status(200).send(renderAutoSubmitForm({ gateway, params: { ...params, sign }, orderNo, product }));
   } catch (error) {
     sendJson(res, 500, {
       ok: false,

@@ -9475,8 +9475,8 @@
           zh: "每周持续更新",
           status: "Weekly Updates",
           statusZh: "持续更新中",
-          description: "Subscribe to unlock more real-life English scenes.",
-          descriptionZh: "订阅后可持续解锁更多真实生活场景。",
+          description: "Monthly or lifetime members get more real-life English scenes.",
+          descriptionZh: "月卡或终身版用户可持续体验更多真实生活场景。",
           button: "Learn More",
           buttonZh: "了解更新",
           available: false,
@@ -9716,6 +9716,34 @@
 
       const AUTH_STORAGE_KEY = "realSceneEnglishUser";
       const TEST_AUTH_CODE = "123456";
+      const PAYMENT_PLANS = {
+        monthly: {
+          plan: "monthly",
+          title: "Monthly Pass",
+          titleZh: "月卡",
+          price: "¥19.9",
+          amountLabel: "¥19.9",
+          priceDetail: "¥19.9 / month",
+          priceDetailZh: "¥19.9 / 月",
+          description: "30-day access. No auto-renewal.",
+          descriptionZh: "30 天有效，不自动续费。",
+          buttonEn: "Buy Monthly Pass",
+          buttonZh: "购买月卡 ¥19.9",
+        },
+        lifetime: {
+          plan: "lifetime",
+          title: "Lifetime Access",
+          titleZh: "终身版",
+          price: "¥199",
+          amountLabel: "¥199",
+          priceDetail: "¥199 lifetime",
+          priceDetailZh: "¥199 终身版",
+          description: "One-time purchase. Lifetime full access.",
+          descriptionZh: "一次性购买，永久完整访问。",
+          buttonEn: "Buy Lifetime Access",
+          buttonZh: "购买终身版 ¥199",
+        },
+      };
       const LOCAL_TEST_ACCOUNT_PROFILES = {
         "13111111111": { role: "free", plan: "free" },
         "18888888888": { role: "free", plan: "free" },
@@ -9740,8 +9768,15 @@
         return date.toISOString().slice(0, 10);
       }
 
-      function getUserAccessProfile(phone, role = "free", plan = "free", premiumUntil = null) {
+      function formatPriceFromCents(amountCents) {
+        const amount = Number(amountCents || 0) / 100;
+        if (!Number.isFinite(amount)) return "¥0";
+        return Number.isInteger(amount) ? `¥${amount}` : `¥${amount.toFixed(1)}`;
+      }
+
+      function getUserAccessProfile(phone, role = "free", plan = "free", premiumUntil = null, lifetimeAccess = false) {
         if (role === "developer" || plan === "developer") return { role: "developer", plan: "developer" };
+        if (lifetimeAccess === true || plan === "lifetime") return { role: "premium", plan: "lifetime" };
         if (isFutureDate(premiumUntil)) return { role: "premium", plan: "premium" };
         const localProfile = getLocalTestAccountProfile(phone);
         if (localProfile) return localProfile;
@@ -9755,12 +9790,14 @@
           const saved = JSON.parse(window.localStorage.getItem(AUTH_STORAGE_KEY) || "null");
           if (!saved?.phone || saved.isLoggedIn !== true) return null;
           const premiumUntil = saved.premiumUntil || saved.premium_until || null;
-          const access = getUserAccessProfile(saved.phone, saved.role || "free", saved.plan || "free", premiumUntil);
+          const lifetimeAccess = saved.lifetimeAccess === true || saved.lifetime_access === true;
+          const access = getUserAccessProfile(saved.phone, saved.role || "free", saved.plan || "free", premiumUntil, lifetimeAccess);
           return {
             phone: String(saved.phone),
             role: access.role,
             plan: access.plan,
             premiumUntil,
+            lifetimeAccess,
             isLoggedIn: true,
             loginAt: saved.loginAt || Date.now(),
             planSource: saved.planSource || "local_fallback",
@@ -9774,12 +9811,14 @@
         if (typeof window === "undefined" || !user?.phone) return null;
         const phone = String(user.phone).trim();
         const premiumUntil = user.premiumUntil || user.premium_until || null;
-        const access = getUserAccessProfile(phone, user.role || "free", user.plan || "free", premiumUntil);
+        const lifetimeAccess = user.lifetimeAccess === true || user.lifetime_access === true || user.plan === "lifetime";
+        const access = getUserAccessProfile(phone, user.role || "free", user.plan || "free", premiumUntil, lifetimeAccess);
         const nextUser = {
           phone,
           role: access.role,
           plan: access.plan,
           premiumUntil,
+          lifetimeAccess,
           isLoggedIn: true,
           loginAt: user.loginAt || Date.now(),
           planSource: user.planSource || "local_fallback",
@@ -9812,11 +9851,11 @@
         return data.user;
       }
 
-      async function createFullVersionOrder(phone) {
+      async function createFullVersionOrder(phone, plan = "monthly") {
         const response = await fetch("/api/create-order", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ phone, productCode: "real_scene_english_monthly" }),
+          body: JSON.stringify({ phone, plan }),
         });
         let data = null;
         try {
@@ -9874,6 +9913,7 @@
       function isPremiumUser() {
         const user = getCurrentUser();
         if (!user) return false;
+        if (user.lifetimeAccess === true || user.plan === "lifetime") return true;
         if (isFutureDate(user.premiumUntil)) return true;
         const localProfile = getLocalTestAccountProfile(user.phone);
         return Boolean(localProfile && (localProfile.role === "premium" || localProfile.plan === "premium"));
@@ -10378,6 +10418,7 @@
         const [showAccountMenu, setShowAccountMenu] = useState(false);
         const [authToast, setAuthToast] = useState("");
         const [subscriptionOrder, setSubscriptionOrder] = useState({ status: "idle" });
+        const [selectedPaymentPlan, setSelectedPaymentPlan] = useState("monthly");
         const [currentIndex, setCurrentIndex] = useState(() => initialLearningData.lastScene.sceneIndex);
         const [selectedHotspot, setSelectedHotspot] = useState(null);
         const [selectedMoreAnimal, setSelectedMoreAnimal] = useState(null);
@@ -10500,7 +10541,7 @@
             kind: "subscription",
             title: "解锁完整版",
             en: "Unlock the Full Real Scene English Experience",
-            text: "¥19.9 / 月，开通 30 天 Premium / Full Access，可学习更多真实生活、校园、出行、职场等英语场景。",
+            text: "可选择 ¥19.9 月卡或 ¥199 终身版，开通 Premium / Full Access 后可学习更多真实生活、校园、出行、职场等英语场景。",
             detail: "正在确认支付结果…请不要关闭页面，系统正在向支付宝确认订单状态。",
           });
           setSubscriptionOrder({
@@ -12260,6 +12301,7 @@
 
         function showSubscriptionNotice(isUpdateCard = false) {
           const hasFullAccess = isPremiumUser() || isDeveloperUser();
+          setSelectedPaymentPlan("monthly");
           setSubscriptionOrder({ status: "idle" });
           setSceneSelectNotice(
             isUpdateCard
@@ -12278,8 +12320,8 @@
                   kind: "subscription",
                   title: "解锁完整版",
                   en: "Unlock the Full Real Scene English Experience",
-                  text: "¥19.9 / 月，开通 30 天 Premium / Full Access，可学习更多真实生活、校园、出行、职场等英语场景。",
-                  detail: "该真实场景属于月卡内容。购买后可获得 30 天完整版权限，不自动续费。",
+                  text: "可选择 ¥19.9 月卡或 ¥199 终身版，开通 Premium / Full Access 后可学习更多真实生活、校园、出行、职场等英语场景。",
+                  detail: "该真实场景属于完整版内容。购买月卡可获得 30 天权限；购买终身版可永久访问。",
                 }
           );
         }
@@ -12375,6 +12417,7 @@
               role: remoteUser.role || "free",
               plan: remoteUser.plan || "free",
               premiumUntil: remoteUser.premiumUntil || remoteUser.premium_until || null,
+              lifetimeAccess: remoteUser.lifetimeAccess === true || remoteUser.lifetime_access === true,
               planSource: remoteUser.source || "supabase",
             });
             if (syncedUser) {
@@ -12382,12 +12425,13 @@
               return syncedUser;
             }
           } catch (error) {
-            const fallbackAccess = getUserAccessProfile(user.phone, user.role || "free", user.plan || "free", user.premiumUntil);
+            const fallbackAccess = getUserAccessProfile(user.phone, user.role || "free", user.plan || "free", user.premiumUntil, user.lifetimeAccess);
             const fallbackUser = setCurrentUser({
               ...user,
               role: fallbackAccess.role,
               plan: fallbackAccess.plan,
               premiumUntil: user.premiumUntil || null,
+              lifetimeAccess: user.lifetimeAccess === true,
               planSource: "local_fallback",
             });
             if (fallbackUser) setAuthenticatedUser(fallbackUser);
@@ -12399,7 +12443,7 @@
 
         async function handleCreateSubscriptionOrder() {
           if (!currentUser) {
-            setSubscriptionOrder({ status: "error", message: "请先登录手机号，再购买月卡。" });
+            setSubscriptionOrder({ status: "error", message: "请先登录手机号，再选择套餐。" });
             return;
           }
           if (isDeveloperUser()) {
@@ -12407,12 +12451,17 @@
             return;
           }
           if (isPremiumUser()) {
-            setSubscriptionOrder({ status: "info", message: "你已开通月卡，当前拥有完整访问权限。" });
+            setSubscriptionOrder({
+              status: "info",
+              message: currentUser?.lifetimeAccess || currentUser?.plan === "lifetime"
+                ? "你已拥有终身版权限。"
+                : "你已开通月卡，当前拥有完整访问权限。",
+            });
             return;
           }
           setSubscriptionOrder({ status: "loading", message: "正在创建订单…" });
           try {
-            const order = await createFullVersionOrder(currentUser.phone);
+            const order = await createFullVersionOrder(currentUser.phone, selectedPaymentPlan);
             setSubscriptionOrder({ status: "created", order });
           } catch (error) {
             setSubscriptionOrder({
@@ -12456,12 +12505,14 @@
             const result = await queryAlipayOrderStatus(orderNo);
             if (result.paid) {
               const premiumUntil = result.premiumUntil || result.premium_until || null;
+              const lifetimeAccess = result.lifetimeAccess === true || result.lifetime_access === true || result.plan === "lifetime";
               if (currentUser) {
                 const upgradedUser = setCurrentUser({
                   ...currentUser,
                   role: "premium",
-                  plan: result.plan || "premium",
+                  plan: lifetimeAccess ? "lifetime" : result.plan || "monthly",
                   premiumUntil,
+                  lifetimeAccess,
                   planSource: "alipay_query_paid",
                 });
                 if (upgradedUser) setAuthenticatedUser(upgradedUser);
@@ -12469,13 +12520,16 @@
               setSubscriptionOrder({
                 status: "paid",
                 order: { orderNo, status: "paid" },
-                user: { phone: result.phone || currentUser?.phone, role: "premium", plan: "premium" },
+                user: { phone: result.phone || currentUser?.phone, role: "premium", plan: lifetimeAccess ? "lifetime" : "monthly" },
                 premiumUntil,
-                message: premiumUntil
+                lifetimeAccess,
+                message: lifetimeAccess
+                  ? "当前账号已升级为 LIFETIME，终身版权限已开放。"
+                  : premiumUntil
                   ? `当前账号已升级为 Premium，会员有效至 ${formatMembershipDate(premiumUntil)}。`
                   : "当前账号已升级为 Premium，30 天完整版权限已开放。",
               });
-              showAuthToast("支付成功，月卡已开通。");
+              showAuthToast(lifetimeAccess ? "支付成功，终身版已开通。" : "支付成功，月卡已开通。");
             } else {
               setSubscriptionOrder({
                 status: "created",
@@ -12533,9 +12587,12 @@
 
           const phoneSuffix = currentUser.phone.slice(-4);
           const premiumValidUntil = formatMembershipDate(currentUser.premiumUntil);
+          const hasLifetimeAccess = currentUser.lifetimeAccess === true || currentUser.plan === "lifetime";
           const roleMeta = currentUser.role === "developer"
             ? { badge: "DEV", identity: "Developer", plan: "Developer" }
-            : currentUser.role === "premium" || currentUser.plan === "premium"
+            : hasLifetimeAccess
+            ? { badge: "LIFETIME", identity: "终身版", plan: "Lifetime Access" }
+            : currentUser.role === "premium" || currentUser.plan === "premium" || currentUser.plan === "monthly"
             ? { badge: "Premium", identity: "Premium 用户", plan: "Monthly Pass" }
             : { badge: "Free", identity: "Free 用户", plan: "Free" };
           const accountMenu = showAccountMenu ? ReactDOM.createPortal(
@@ -12544,11 +12601,17 @@
               <p className="mt-2 break-all text-sm font-black text-white">{currentUser.phone}</p>
               <p className="mt-1 text-xs font-bold text-cream/68">当前身份：{roleMeta.identity}</p>
               <p className="mt-1 text-xs font-bold text-cream/52">当前计划：{roleMeta.plan}</p>
-              {premiumValidUntil && (
+              {hasLifetimeAccess ? (
+                <p className="mt-1 text-xs font-bold text-banana/80">终身版</p>
+              ) : premiumValidUntil && (
                 <p className="mt-1 text-xs font-bold text-banana/80">会员有效至：{premiumValidUntil}</p>
               )}
               <p className="mt-1 text-xs font-bold text-cream/52">数据状态：本机保存</p>
-              {currentUser.role === "premium" || currentUser.plan === "premium" ? (
+              {hasLifetimeAccess ? (
+                <div className="mt-3 rounded-xl border border-banana/30 bg-banana/10 px-3 py-2 text-sm font-black text-banana">
+                  LIFETIME · 终身版
+                </div>
+              ) : currentUser.role === "premium" || currentUser.plan === "premium" || currentUser.plan === "monthly" ? (
                 <div className="mt-3 rounded-xl border border-banana/30 bg-banana/10 px-3 py-2 text-sm font-black text-banana">
                   Premium 已开通{premiumValidUntil ? ` · 有效至 ${premiumValidUntil}` : ""}
                 </div>
@@ -12564,7 +12627,7 @@
                   }}
                   className="mt-3 flex min-h-[44px] w-full items-center justify-center rounded-xl border border-banana/35 bg-banana/12 px-4 py-3 text-sm font-black text-banana transition hover:bg-banana/20 active:scale-[0.99]"
                 >
-                  <ButtonCopy en="Buy Monthly Pass" zh="购买月卡" size="small" />
+                  <ButtonCopy en="Unlock Full Version" zh="解锁完整版" size="small" />
                 </button>
               )}
               <button
@@ -13105,14 +13168,14 @@
                   <p>Zoo and Fruit Shop are available for free.<br />动物园和水果店可免费体验。</p>
                 </div>
                 <div className="home-access-summary-card">
-                  <strong>Full Version</strong>
-                  <span>完整版</span>
-                  <p>Unlock all 13 real-life English scenes, word book, progress saving, and future updates.<br />解锁全部 13 个真实生活英语场景，包含生词本、学习进度保存和后续更新。</p>
-                </div>
-                <div className="home-access-summary-card">
                   <strong>Monthly Pass</strong>
                   <span>月卡</span>
-                  <p>¥19.9 / month. 30-day access. No auto-renewal.<br />¥19.9 / 月。30 天有效，不自动续费。</p>
+                  <p>¥19.9. 30 days access. No auto-renewal.<br />¥19.9。30 天有效，不自动续费。</p>
+                </div>
+                <div className="home-access-summary-card">
+                  <strong>Lifetime Access</strong>
+                  <span>终身版</span>
+                  <p>¥199. One-time purchase. Lifetime full access and future scene updates.<br />¥199。一次性购买，永久完整访问和后续场景更新。</p>
                 </div>
               </div>
             </section>
@@ -13561,8 +13624,8 @@
                       : isUpdateCard
                       ? "持续更新中"
                       : "解锁完整版";
-                    const button = isAvailable ? scene.button : isUpdateCard ? "Learn More" : "Buy Monthly Pass";
-                    const buttonZh = isAvailable ? scene.buttonZh : isUpdateCard ? "了解更新" : "购买月卡";
+                    const button = isAvailable ? scene.button : isUpdateCard ? "Learn More" : "Unlock Full Version";
+                    const buttonZh = isAvailable ? scene.buttonZh : isUpdateCard ? "了解更新" : "解锁完整版";
                     return (
                     <article
                       key={scene.id}
@@ -13680,39 +13743,75 @@
                     {sceneSelectNotice.kind === "subscription" && (
                       <>
                         <div className="mt-5 rounded-3xl border border-banana/35 bg-gradient-to-br from-banana/16 to-white/[0.06] p-4">
-                          <p className="text-sm font-black text-banana">Monthly Pass / 月卡</p>
-                          <div className="mt-2 flex flex-wrap items-end gap-x-3 gap-y-1">
-                            <p className="text-5xl font-black leading-none text-white">¥19.9</p>
-                            <p className="pb-1 text-sm font-bold text-cream/72">/ month · / 月</p>
+                          <p className="text-sm font-black text-banana">Choose Your Access / 选择套餐</p>
+                          <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                            {Object.values(PAYMENT_PLANS).map((plan) => {
+                              const selected = selectedPaymentPlan === plan.plan;
+                              const locked = subscriptionOrder.status === "created" || subscriptionOrder.status === "paid" || subscriptionOrder.status === "confirming";
+                              return (
+                                <button
+                                  key={plan.plan}
+                                  type="button"
+                                  disabled={locked}
+                                  onClick={() => {
+                                    if (!locked) setSelectedPaymentPlan(plan.plan);
+                                  }}
+                                  className={`rounded-2xl border px-3 py-3 text-left transition active:scale-[0.99] ${
+                                    selected
+                                      ? "border-banana bg-banana/16 shadow-label"
+                                      : "border-white/14 bg-white/[0.06] hover:bg-white/[0.1]"
+                                  } ${locked ? "cursor-default opacity-80" : ""}`}
+                                >
+                                  <span className="block text-base font-black text-white">{plan.title}</span>
+                                  <span className="mt-1 block text-sm font-black text-banana">{plan.titleZh}</span>
+                                  <span className="mt-2 block text-3xl font-black text-white">{plan.price}</span>
+                                  <span className="mt-2 block text-xs font-bold leading-5 text-cream/68">{plan.description}</span>
+                                  <span className="mt-1 block text-xs font-bold leading-5 text-cream/58">{plan.descriptionZh}</span>
+                                </button>
+                              );
+                            })}
                           </div>
-                          <p className="mt-2 text-sm font-bold text-cream/72">30-day access. No auto-renewal.</p>
-                          <p className="mt-1 text-sm font-bold text-cream/58">30 天有效，不自动续费。</p>
+                          <p className="mt-4 text-sm font-black text-banana">{PAYMENT_PLANS[selectedPaymentPlan].title} / {PAYMENT_PLANS[selectedPaymentPlan].titleZh}</p>
+                          <div className="mt-2 flex flex-wrap items-end gap-x-3 gap-y-1">
+                            <p className="text-5xl font-black leading-none text-white">{PAYMENT_PLANS[selectedPaymentPlan].price}</p>
+                            <p className="pb-1 text-sm font-bold text-cream/72">{PAYMENT_PLANS[selectedPaymentPlan].priceDetail.replace(PAYMENT_PLANS[selectedPaymentPlan].price, "")} · {PAYMENT_PLANS[selectedPaymentPlan].priceDetailZh.replace(PAYMENT_PLANS[selectedPaymentPlan].price, "")}</p>
+                          </div>
+                          <p className="mt-2 text-sm font-bold text-cream/72">{PAYMENT_PLANS[selectedPaymentPlan].description}</p>
+                          <p className="mt-1 text-sm font-bold text-cream/58">{PAYMENT_PLANS[selectedPaymentPlan].descriptionZh}</p>
                           <div className="mt-4 rounded-2xl border border-white/12 bg-white/[0.06] px-3 py-3">
                             <p className="text-sm font-black text-white">Includes:</p>
                             <ul className="mt-2 space-y-1 text-xs font-bold leading-5 text-cream/68">
                               <li>All 13 real-life English scenes</li>
                               <li>Word book and progress saving</li>
-                              <li>Future scene updates during active membership</li>
+                              <li>Future scene updates</li>
                             </ul>
                             <p className="mt-3 text-sm font-black text-banana">包含：</p>
                             <ul className="mt-2 space-y-1 text-xs font-bold leading-5 text-cream/68">
                               <li>全部 13 个真实场景</li>
                               <li>生词本和学习进度保存</li>
-                              <li>会员有效期内的后续场景更新</li>
+                              <li>后续场景持续更新</li>
                             </ul>
                             <p className="mt-3 text-xs font-black text-white/72">
-                              Full Access for 30 days. No auto-renewal.<br />
-                              30 天完整版权限，不自动续费。
+                              {selectedPaymentPlan === "lifetime"
+                                ? "One-time purchase. Lifetime access."
+                                : "30-day access. No auto-renewal."}<br />
+                              {selectedPaymentPlan === "lifetime"
+                                ? "一次性购买，永久访问。"
+                                : "30 天有效，不自动续费。"}
                             </p>
                           </div>
-                          <p className="mt-2 text-xs font-bold text-cream/58">支付成功后开通 30 天 Premium / Full Access</p>
+                          <p className="mt-2 text-xs font-bold text-cream/58">
+                            支付成功后开通{selectedPaymentPlan === "lifetime" ? "终身版" : " 30 天"} Premium / Full Access
+                          </p>
                         </div>
 
                         <div className="mt-4 rounded-3xl border border-white/14 bg-white/[0.07] p-4">
                           {subscriptionOrder.status === "paid" ? (
                             <div>
                               <p className="text-xl font-black text-white">支付成功</p>
-                              <p className="mt-2 text-base font-black text-banana">完整版已解锁</p>
+                              <p className="mt-2 text-base font-black text-banana">
+                                {subscriptionOrder.lifetimeAccess ? "终身版已解锁" : "月卡已开通"}
+                              </p>
                               <p className="mt-2 text-sm font-bold leading-6 text-cream/70">
                                 {subscriptionOrder.message || "当前账号已升级为 Premium，30 天完整版权限已开放。"}
                               </p>
@@ -13729,7 +13828,8 @@
                               </p>
                               <div className="mt-3 grid gap-2 text-sm font-bold text-cream/78">
                                 <p><span className="text-cream/52">订单号：</span>{subscriptionOrder.order.orderNo}</p>
-                                <p><span className="text-cream/52">金额：</span>¥19.9</p>
+                                <p><span className="text-cream/52">套餐：</span>{subscriptionOrder.order.plan === "lifetime" ? "终身版" : "月卡"}</p>
+                                <p><span className="text-cream/52">金额：</span>{formatPriceFromCents(subscriptionOrder.order.amountCents)}</p>
                                 <p><span className="text-cream/52">状态：</span>{subscriptionOrder.tradeStatus === "WAIT_BUYER_PAY" ? "等待付款确认" : "待支付"}</p>
                               </div>
                               <p className="mt-3 text-sm font-bold leading-6 text-cream/62">
@@ -13823,8 +13923,8 @@
                         }`}
                       >
                         <ButtonCopy
-                          en={subscriptionOrder.status === "paid" ? "Start Full Version" : sceneSelectNotice.kind !== "subscription" || subscriptionOrder.status === "created" ? "Got it" : "Buy Monthly Pass"}
-                          zh={subscriptionOrder.status === "paid" ? "开始学习完整版" : sceneSelectNotice.kind !== "subscription" || subscriptionOrder.status === "created" ? "我知道了" : "购买月卡"}
+                          en={subscriptionOrder.status === "paid" ? "Start Full Version" : sceneSelectNotice.kind !== "subscription" || subscriptionOrder.status === "created" ? "Got it" : PAYMENT_PLANS[selectedPaymentPlan].buttonEn}
+                          zh={subscriptionOrder.status === "paid" ? "开始学习完整版" : sceneSelectNotice.kind !== "subscription" || subscriptionOrder.status === "created" ? "我知道了" : PAYMENT_PLANS[selectedPaymentPlan].buttonZh}
                         />
                       </button>
                       <button
