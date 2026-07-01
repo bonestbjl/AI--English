@@ -16,6 +16,7 @@ function normalizeUser(row, source = "supabase") {
     phone: String(row?.phone || ""),
     role,
     plan,
+    isPremium: role === "premium" || role === "developer",
     premiumUntil,
     lifetimeAccess: hasLifetimeAccess,
     source,

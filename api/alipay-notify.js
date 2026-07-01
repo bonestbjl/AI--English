@@ -7,15 +7,21 @@ const MEMBERSHIP_DAYS = 30;
 const PRODUCTS = {
   real_scene_english_monthly: {
     plan: "monthly",
+    productCode: "real_scene_english_monthly",
+    productName: "Real Scene English Monthly Pass",
     amountCents: 1990,
     totalAmount: "19.90",
   },
   real_scene_english_lifetime: {
     plan: "lifetime",
+    productCode: "real_scene_english_lifetime",
+    productName: "Real Scene English Lifetime Access",
     amountCents: 19900,
     totalAmount: "199.00",
   },
 };
+const MONTHLY_PRODUCT = PRODUCTS.real_scene_english_monthly;
+const LIFETIME_PRODUCT = PRODUCTS.real_scene_english_lifetime;
 
 function sendText(res, status, text) {
   res.setHeader("Content-Type", "text/plain; charset=utf-8");
@@ -140,8 +146,8 @@ function createSupabaseError(message, response, body) {
   return error;
 }
 
-async function fetchOrder({ supabaseUrl, serviceRoleKey, orderNo }) {
-  const endpoint = `${supabaseUrl}/rest/v1/orders?order_no=eq.${encodeURIComponent(orderNo)}&select=order_no,phone,status,amount_cents,currency,product_code`;
+async function fetchOrderWithSelect({ supabaseUrl, serviceRoleKey, orderNo }, select) {
+  const endpoint = `${supabaseUrl}/rest/v1/orders?order_no=eq.${encodeURIComponent(orderNo)}&select=${select}`;
   const response = await fetch(endpoint, {
     method: "GET",
     headers: supabaseHeaders(serviceRoleKey),
@@ -149,6 +155,17 @@ async function fetchOrder({ supabaseUrl, serviceRoleKey, orderNo }) {
   const body = await readSupabaseJson(response);
   if (!response.ok) throw createSupabaseError("fetch_order_failed", response, body);
   return Array.isArray(body) ? body[0] || null : null;
+}
+
+async function fetchOrder(context) {
+  const baseSelect = "order_no,phone,status,amount_cents,currency,product_code";
+  const extendedSelect = `${baseSelect},plan,product_name`;
+  try {
+    return await fetchOrderWithSelect(context, extendedSelect);
+  } catch (error) {
+    if (error.status !== 400) throw error;
+    return fetchOrderWithSelect(context, baseSelect);
+  }
 }
 
 async function updateOrderPaid({ supabaseUrl, serviceRoleKey, orderNo, paidAt, tradeNo }) {
@@ -186,7 +203,23 @@ function calculatePremiumUntil(currentPremiumUntil, now = new Date()) {
 }
 
 function getProductByOrder(order) {
-  return PRODUCTS[order?.product_code] || null;
+  const plan = String(order?.plan || "").trim().toLowerCase();
+  if (plan === "lifetime") return LIFETIME_PRODUCT;
+  if (plan === "monthly") return MONTHLY_PRODUCT;
+
+  const productCode = String(order?.product_code || "").trim();
+  if (productCode === LIFETIME_PRODUCT.productCode) return LIFETIME_PRODUCT;
+  if (productCode === MONTHLY_PRODUCT.productCode) return MONTHLY_PRODUCT;
+
+  const productName = String(order?.product_name || "").trim().toLowerCase();
+  if (productName.includes("lifetime")) return LIFETIME_PRODUCT;
+  if (productName.includes("monthly")) return MONTHLY_PRODUCT;
+
+  const amountCents = Number(order?.amount_cents);
+  if (amountCents === LIFETIME_PRODUCT.amountCents) return LIFETIME_PRODUCT;
+  if (amountCents === MONTHLY_PRODUCT.amountCents) return MONTHLY_PRODUCT;
+
+  return null;
 }
 
 async function updateUserMonthly({ supabaseUrl, serviceRoleKey, phone, activatedAt, premiumUntil }) {
@@ -261,6 +294,16 @@ async function createLifetimeUser({ supabaseUrl, serviceRoleKey, phone, activate
   return Array.isArray(body) ? body[0] || null : body;
 }
 
+async function activateLifetimeUser({ supabaseUrl, serviceRoleKey, phone, activatedAt }) {
+  safeLog("alipay notify lifetime activation", {
+    phone,
+    activationType: "lifetime",
+  });
+  const premiumUser = await updateUserLifetime({ supabaseUrl, serviceRoleKey, phone, activatedAt });
+  if (premiumUser) return premiumUser;
+  return createLifetimeUser({ supabaseUrl, serviceRoleKey, phone, activatedAt });
+}
+
 function isExpectedAmount(totalAmount, product) {
   return Number(totalAmount).toFixed(2) === product.totalAmount;
 }
@@ -329,6 +372,22 @@ module.exports = async function handler(req, res) {
       return;
     }
     if (existingOrder.status === "paid") {
+      const product = getProductByOrder(existingOrder);
+      if (product?.plan === "lifetime" && Number(existingOrder.amount_cents) === product.amountCents && existingOrder.currency === CURRENCY) {
+        const existingUser = await fetchUser({
+          supabaseUrl: requestContext.supabaseUrl,
+          serviceRoleKey,
+          phone: existingOrder.phone,
+        });
+        if (!existingUser?.lifetime_access) {
+          await activateLifetimeUser({
+            supabaseUrl: requestContext.supabaseUrl,
+            serviceRoleKey,
+            phone: existingOrder.phone,
+            activatedAt: new Date().toISOString(),
+          });
+        }
+      }
       sendText(res, 200, "success");
       return;
     }
@@ -363,20 +422,12 @@ module.exports = async function handler(req, res) {
     });
     let premiumUser = null;
     if (product.plan === "lifetime") {
-      premiumUser = await updateUserLifetime({
+      premiumUser = await activateLifetimeUser({
         supabaseUrl: requestContext.supabaseUrl,
         serviceRoleKey,
         phone,
         activatedAt: paidAt,
       });
-      if (!premiumUser) {
-        await createLifetimeUser({
-          supabaseUrl: requestContext.supabaseUrl,
-          serviceRoleKey,
-          phone,
-          activatedAt: paidAt,
-        });
-      }
     } else {
       const premiumUntil = calculatePremiumUntil(existingUser?.premium_until, new Date(paidAt));
       premiumUser = await updateUserMonthly({
