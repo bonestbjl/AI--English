@@ -9872,11 +9872,12 @@
         return data.order;
       }
 
-      async function queryAlipayOrderStatus(orderNo) {
+      async function queryAlipayOrderStatus(request) {
+        const payload = typeof request === "string" ? { orderNo: request } : request || {};
         const response = await fetch("/api/alipay-query-order", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ orderNo }),
+          body: JSON.stringify(payload),
         });
         let data = null;
         try {
@@ -9884,10 +9885,11 @@
         } catch (error) {
           data = null;
         }
-        if (!response.ok || data?.ok !== true) {
+        if (!response.ok) {
           const queryError = new Error(data?.error || "alipay_query_order_failed");
           queryError.status = response.status;
           queryError.detail = data?.detail || "";
+          queryError.data = data;
           throw queryError;
         }
         return data;
@@ -12490,19 +12492,32 @@
           }, 300);
         }
 
+        function isValidOrderNo(value) {
+          return /^RSE\d{10,}$/.test(String(value || "").trim());
+        }
+
         async function handleCheckPaymentStatus(orderNo = subscriptionOrder.order?.orderNo, { fromReturn = false } = {}) {
-          if (!orderNo) {
-            setSubscriptionOrder({ status: "error", message: "请先创建订单，再检查开通状态。" });
+          const cleanOrderNo = String(orderNo || "").trim();
+          const hasValidOrderNo = isValidOrderNo(cleanOrderNo);
+          if (!hasValidOrderNo && !currentUser?.phone) {
+            setSubscriptionOrder({
+              status: "not_confirmed",
+              message: "请先登录手机号，再检查开通状态。",
+            });
             return;
           }
           setSubscriptionOrder({
             status: "confirming",
-            order: { orderNo },
-            message: "正在确认支付结果…",
+            order: hasValidOrderNo ? { orderNo: cleanOrderNo } : null,
+            message: "正在检查支付结果...",
             detail: "请不要关闭页面，系统正在向支付宝确认订单状态。",
           });
           try {
-            const result = await queryAlipayOrderStatus(orderNo);
+            const result = await queryAlipayOrderStatus(
+              hasValidOrderNo
+                ? { orderNo: cleanOrderNo }
+                : { phone: currentUser.phone, repairLatestPaid: 1 }
+            );
             if (result.paid) {
               const premiumUntil = result.premiumUntil || result.premium_until || null;
               const lifetimeAccess = result.lifetimeAccess === true || result.lifetime_access === true || result.plan === "lifetime";
@@ -12519,7 +12534,7 @@
               }
               setSubscriptionOrder({
                 status: "paid",
-                order: { orderNo, status: "paid" },
+                order: { orderNo: result.orderNo || cleanOrderNo, status: "paid" },
                 user: { phone: result.phone || currentUser?.phone, role: "premium", plan: lifetimeAccess ? "lifetime" : "monthly" },
                 premiumUntil,
                 lifetimeAccess,
@@ -12532,19 +12547,19 @@
               showAuthToast(lifetimeAccess ? "支付成功，终身版已开通。" : "支付成功，月卡已开通。");
             } else {
               setSubscriptionOrder({
-                status: "created",
-                order: { orderNo },
+                status: "not_confirmed",
+                order: result.orderNo || cleanOrderNo ? { orderNo: result.orderNo || cleanOrderNo } : null,
                 tradeStatus: result.tradeStatus || "",
-                message: result.tradeStatus === "WAIT_BUYER_PAY"
+                message: result.message || (result.tradeStatus === "WAIT_BUYER_PAY"
                   ? "如果你已经完成支付，请稍等几秒后点击重新检查。"
-                  : "支付还在确认中，请稍后点击重新检查。",
+                  : "支付还在确认中，请稍后点击重新检查。"),
               });
             }
           } catch (error) {
             setSubscriptionOrder({
-              status: "error",
-              order: { orderNo },
-              message: "请稍后点击重新检查。如果你已经付款但仍未开通，请联系客服并提供订单号。",
+              status: "not_confirmed",
+              order: cleanOrderNo ? { orderNo: cleanOrderNo } : null,
+              message: error.data?.message || "支付还在确认中，请稍后点击重新检查。",
             });
           } finally {
             if (fromReturn && window.history?.replaceState) {
@@ -13821,6 +13836,22 @@
                                 </p>
                               )}
                             </div>
+                          ) : subscriptionOrder.status === "not_confirmed" ? (
+                            <div className="rounded-2xl border border-banana/25 bg-banana/10 px-4 py-3">
+                              <p className="text-base font-black text-banana">暂未确认付款</p>
+                              <p className="mt-2 text-sm font-bold leading-6 text-cream/70">
+                                {subscriptionOrder.message || "支付还在确认中，请稍后点击重新检查。"}
+                              </p>
+                              {subscriptionOrder.order?.orderNo && (
+                                <p className="mt-2 text-xs font-bold text-cream/52">订单号：{subscriptionOrder.order.orderNo}</p>
+                              )}
+                              <button
+                                onClick={() => handleCheckPaymentStatus(subscriptionOrder.order?.orderNo)}
+                                className="mt-3 w-full rounded-2xl border border-banana/45 bg-banana/12 px-4 py-3 text-sm font-black text-banana transition hover:bg-banana/20 active:scale-[0.99]"
+                              >
+                                我已付款，重新检查
+                              </button>
+                            </div>
                           ) : subscriptionOrder.status === "created" ? (
                             <div>
                               <p className="text-xl font-black text-white">
@@ -13828,8 +13859,12 @@
                               </p>
                               <div className="mt-3 grid gap-2 text-sm font-bold text-cream/78">
                                 <p><span className="text-cream/52">订单号：</span>{subscriptionOrder.order.orderNo}</p>
-                                <p><span className="text-cream/52">套餐：</span>{subscriptionOrder.order.plan === "lifetime" ? "终身版" : "月卡"}</p>
-                                <p><span className="text-cream/52">金额：</span>{formatPriceFromCents(subscriptionOrder.order.amountCents)}</p>
+                                {subscriptionOrder.order.plan && (
+                                  <p><span className="text-cream/52">套餐：</span>{subscriptionOrder.order.plan === "lifetime" ? "终身版" : "月卡"}</p>
+                                )}
+                                {Number(subscriptionOrder.order.amountCents) > 0 && (
+                                  <p><span className="text-cream/52">金额：</span>{formatPriceFromCents(subscriptionOrder.order.amountCents)}</p>
+                                )}
                                 <p><span className="text-cream/52">状态：</span>{subscriptionOrder.tradeStatus === "WAIT_BUYER_PAY" ? "等待付款确认" : "待支付"}</p>
                               </div>
                               <p className="mt-3 text-sm font-bold leading-6 text-cream/62">

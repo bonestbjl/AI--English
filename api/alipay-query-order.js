@@ -1,6 +1,7 @@
 const crypto = require("crypto");
 
 const ORDER_NO_PATTERN = /^RSE\d{20,}$/;
+const PHONE_PATTERN = /^\d{6,20}$/;
 const ALIPAY_METHOD = "alipay.trade.query";
 const SUCCESS_TRADE_STATUSES = new Set(["TRADE_SUCCESS", "TRADE_FINISHED"]);
 const CURRENCY = "CNY";
@@ -96,12 +97,34 @@ async function fetchOrderWithSelect({ supabaseUrl, serviceRoleKey, orderNo }, se
 
 async function fetchOrder(context) {
   const baseSelect = "order_no,phone,status,amount_cents,currency,product_code";
-  const extendedSelect = `${baseSelect},plan,product_name`;
+  const extendedSelect = `${baseSelect},paid_at,plan,product_name`;
   try {
     return await fetchOrderWithSelect(context, extendedSelect);
   } catch (error) {
     if (error.status !== 400) throw error;
-    return fetchOrderWithSelect(context, baseSelect);
+    return fetchOrderWithSelect(context, `${baseSelect},paid_at`);
+  }
+}
+
+async function fetchLatestPaidOrderWithSelect({ supabaseUrl, serviceRoleKey, phone }, select) {
+  const endpoint = `${supabaseUrl}/rest/v1/orders?phone=eq.${encodeURIComponent(phone)}&status=eq.paid&select=${select}&order=paid_at.desc.nullslast&limit=1`;
+  const response = await fetch(endpoint, {
+    method: "GET",
+    headers: supabaseHeaders(serviceRoleKey),
+  });
+  const body = await readSupabaseJson(response);
+  if (!response.ok) throw createSupabaseError("fetch_latest_paid_order_failed", response, body);
+  return Array.isArray(body) ? body[0] || null : null;
+}
+
+async function fetchLatestPaidOrder(context) {
+  const baseSelect = "order_no,phone,status,amount_cents,currency,product_code,paid_at";
+  const extendedSelect = `${baseSelect},plan,product_name`;
+  try {
+    return await fetchLatestPaidOrderWithSelect(context, extendedSelect);
+  } catch (error) {
+    if (error.status !== 400) throw error;
+    return fetchLatestPaidOrderWithSelect(context, baseSelect);
   }
 }
 
@@ -251,6 +274,79 @@ async function activateLifetimeUser({ supabaseUrl, serviceRoleKey, phone, activa
   return createLifetimeUser({ supabaseUrl, serviceRoleKey, phone, activatedAt });
 }
 
+async function activateMonthlyUserIfNeeded({ supabaseUrl, serviceRoleKey, phone, activatedAt, existingUser }) {
+  if (isActivePremium(existingUser)) return existingUser;
+  const premiumUntil = calculatePremiumUntil(existingUser?.premium_until, new Date(activatedAt));
+  console.log("alipay query monthly activation repair", {
+    phone,
+    activationType: "monthly",
+  });
+  const premiumUser = await updateUserMonthly({ supabaseUrl, serviceRoleKey, phone, activatedAt, premiumUntil });
+  if (premiumUser) return premiumUser;
+  return createMonthlyUser({ supabaseUrl, serviceRoleKey, phone, activatedAt, premiumUntil });
+}
+
+async function ensurePaidOrderAccess({ supabaseUrl, serviceRoleKey, order, activatedAt }) {
+  const product = getProductByOrder(order);
+  if (!product || Number(order.amount_cents) !== product.amountCents || order.currency !== CURRENCY) {
+    return {
+      ok: false,
+      error: "order_amount_or_currency_mismatch",
+      orderNo: order.order_no,
+    };
+  }
+
+  const phone = order.phone;
+  const existingUser = await fetchUser({ supabaseUrl, serviceRoleKey, phone });
+  let premiumUntil = existingUser?.premium_until || null;
+  let lifetimeAccess = Boolean(existingUser?.lifetime_access);
+
+  console.log("alipay query paid order access repair", {
+    orderNo: order.order_no,
+    phone,
+    amountCents: Number(order.amount_cents),
+    plan: product.plan,
+    activationType: product.plan,
+  });
+
+  if (product.plan === "lifetime") {
+    if (!lifetimeAccess) {
+      await activateLifetimeUser({ supabaseUrl, serviceRoleKey, phone, activatedAt });
+      lifetimeAccess = true;
+    }
+    return {
+      ok: true,
+      paid: true,
+      orderNo: order.order_no,
+      phone,
+      plan: "lifetime",
+      isPremium: true,
+      premiumUntil,
+      premium_until: premiumUntil,
+      lifetimeAccess: true,
+      lifetime_access: true,
+    };
+  }
+
+  let effectiveUser = existingUser;
+  if (!isActivePremium(existingUser)) {
+    effectiveUser = await activateMonthlyUserIfNeeded({ supabaseUrl, serviceRoleKey, phone, activatedAt, existingUser });
+  }
+  premiumUntil = effectiveUser?.premium_until || premiumUntil;
+  return {
+    ok: true,
+    paid: true,
+    orderNo: order.order_no,
+    phone,
+    plan: "monthly",
+    isPremium: true,
+    premiumUntil,
+    premium_until: premiumUntil,
+    lifetimeAccess: false,
+    lifetime_access: false,
+  };
+}
+
 function formatAlipayTimestamp(date = new Date()) {
   const parts = new Intl.DateTimeFormat("en-CA", {
     timeZone: "Asia/Shanghai",
@@ -332,22 +428,16 @@ function isExpectedAmount(totalAmount, product) {
 }
 
 module.exports = async function handler(req, res) {
-  if (req.method !== "POST") {
-    res.setHeader("Allow", "POST");
+  if (req.method !== "POST" && req.method !== "GET") {
+    res.setHeader("Allow", "POST, GET");
     sendJson(res, 405, { ok: false, error: "method_not_allowed" });
     return;
   }
 
-  const body = readRequestBody(req);
-  const orderNo = String(body.orderNo || "").trim();
-  if (!orderNo) {
-    sendJson(res, 400, { ok: false, error: "missing_order_no" });
-    return;
-  }
-  if (!ORDER_NO_PATTERN.test(orderNo)) {
-    sendJson(res, 400, { ok: false, error: "invalid_order_no" });
-    return;
-  }
+  const body = req.method === "GET" ? req.query || {} : readRequestBody(req);
+  const orderNo = String(body.orderNo || body.order_no || "").trim();
+  const phone = String(body.phone || "").trim();
+  const repairLatestPaid = String(body.repairLatestPaid || body.repair_latest_paid || "") === "1" || body.repairLatestPaid === true;
 
   const supabaseUrl = process.env.SUPABASE_URL;
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -366,43 +456,57 @@ module.exports = async function handler(req, res) {
   const requestContext = { supabaseUrl: supabaseUrl.replace(/\/+$/, ""), serviceRoleKey, orderNo };
 
   try {
+    if (repairLatestPaid) {
+      if (!PHONE_PATTERN.test(phone)) {
+        sendJson(res, 400, { ok: false, error: "invalid_phone" });
+        return;
+      }
+      const latestPaidOrder = await fetchLatestPaidOrder({
+        supabaseUrl: requestContext.supabaseUrl,
+        serviceRoleKey,
+        phone,
+      });
+      if (!latestPaidOrder) {
+        sendJson(res, 200, {
+          ok: false,
+          paid: false,
+          error: "paid_order_not_found",
+          message: "支付还在确认中，请稍后点击重新检查",
+        });
+        return;
+      }
+      const result = await ensurePaidOrderAccess({
+        supabaseUrl: requestContext.supabaseUrl,
+        serviceRoleKey,
+        order: latestPaidOrder,
+        activatedAt: new Date().toISOString(),
+      });
+      sendJson(res, 200, result);
+      return;
+    }
+
+    if (!orderNo) {
+      sendJson(res, 400, { ok: false, error: "missing_order_no" });
+      return;
+    }
+    if (!ORDER_NO_PATTERN.test(orderNo)) {
+      sendJson(res, 400, { ok: false, error: "invalid_order_no" });
+      return;
+    }
+
     const existingOrder = await fetchOrder(requestContext);
     if (!existingOrder) {
       sendJson(res, 404, { ok: false, error: "order_not_found" });
       return;
     }
     if (existingOrder.status === "paid") {
-      const product = getProductByOrder(existingOrder);
-      if (!product || Number(existingOrder.amount_cents) !== product.amountCents || existingOrder.currency !== CURRENCY) {
-        sendJson(res, 200, { ok: true, paid: false, orderNo, error: "order_amount_or_currency_mismatch" });
-        return;
-      }
-      const existingUser = await fetchUser({
+      const result = await ensurePaidOrderAccess({
         supabaseUrl: requestContext.supabaseUrl,
         serviceRoleKey,
-        phone: existingOrder.phone,
+        order: existingOrder,
+        activatedAt: new Date().toISOString(),
       });
-      let premiumUntil = existingUser?.premium_until || null;
-      let lifetimeAccess = Boolean(existingUser?.lifetime_access);
-      if (product.plan === "lifetime" && !lifetimeAccess) {
-        await activateLifetimeUser({
-          supabaseUrl: requestContext.supabaseUrl,
-          serviceRoleKey,
-          phone: existingOrder.phone,
-          activatedAt: new Date().toISOString(),
-        });
-        lifetimeAccess = true;
-      }
-      sendJson(res, 200, {
-        ok: true,
-        paid: lifetimeAccess || isActivePremium(existingUser),
-        alreadyPaid: true,
-        orderNo,
-        phone: existingOrder.phone,
-        plan: lifetimeAccess ? "lifetime" : getEffectivePlan(existingUser),
-        premiumUntil,
-        lifetimeAccess,
-      });
+      sendJson(res, 200, { ...result, alreadyPaid: true });
       return;
     }
     if (existingOrder.status !== "pending") {
