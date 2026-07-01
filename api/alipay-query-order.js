@@ -42,6 +42,13 @@ function readRequestBody(req) {
   return req.body;
 }
 
+function readRequestInput(req) {
+  const url = new URL(req.url || "/", `http://${req.headers?.host || "localhost"}`);
+  const query = Object.fromEntries(url.searchParams.entries());
+  if (req.method === "GET") return query;
+  return { ...query, ...readRequestBody(req) };
+}
+
 function sanitizeDetail(value) {
   let detail = "";
   if (typeof value === "string") {
@@ -106,26 +113,31 @@ async function fetchOrder(context) {
   }
 }
 
-async function fetchLatestPaidOrderWithSelect({ supabaseUrl, serviceRoleKey, phone }, select) {
-  const endpoint = `${supabaseUrl}/rest/v1/orders?phone=eq.${encodeURIComponent(phone)}&status=eq.paid&select=${select}&order=paid_at.desc.nullslast&limit=1`;
+async function fetchLatestPaidOrdersWithSelect({ supabaseUrl, serviceRoleKey, phone }, select) {
+  const endpoint = `${supabaseUrl}/rest/v1/orders?phone=eq.${encodeURIComponent(phone)}&status=eq.paid&select=${select}&order=paid_at.desc.nullslast&limit=10`;
   const response = await fetch(endpoint, {
     method: "GET",
     headers: supabaseHeaders(serviceRoleKey),
   });
   const body = await readSupabaseJson(response);
   if (!response.ok) throw createSupabaseError("fetch_latest_paid_order_failed", response, body);
-  return Array.isArray(body) ? body[0] || null : null;
+  return Array.isArray(body) ? body : [];
 }
 
-async function fetchLatestPaidOrder(context) {
+async function fetchLatestPaidOrders(context) {
   const baseSelect = "order_no,phone,status,amount_cents,currency,product_code,paid_at";
   const extendedSelect = `${baseSelect},plan,product_name`;
   try {
-    return await fetchLatestPaidOrderWithSelect(context, extendedSelect);
+    return await fetchLatestPaidOrdersWithSelect(context, extendedSelect);
   } catch (error) {
     if (error.status !== 400) throw error;
-    return fetchLatestPaidOrderWithSelect(context, baseSelect);
+    return fetchLatestPaidOrdersWithSelect(context, baseSelect);
   }
+}
+
+async function fetchLatestPaidOrder(context) {
+  const orders = await fetchLatestPaidOrders(context);
+  return orders.find((order) => getProductByOrder(order)?.plan === "lifetime") || orders[0] || null;
 }
 
 async function updateOrderPaid({ supabaseUrl, serviceRoleKey, orderNo, paidAt, tradeNo }) {
@@ -434,10 +446,19 @@ module.exports = async function handler(req, res) {
     return;
   }
 
-  const body = req.method === "GET" ? req.query || {} : readRequestBody(req);
+  const body = readRequestInput(req);
   const orderNo = String(body.orderNo || body.order_no || "").trim();
   const phone = String(body.phone || "").trim();
   const repairLatestPaid = String(body.repairLatestPaid || body.repair_latest_paid || "") === "1" || body.repairLatestPaid === true;
+
+  if (repairLatestPaid && !phone) {
+    sendJson(res, 400, { ok: false, error: "missing_phone" });
+    return;
+  }
+  if (repairLatestPaid && !PHONE_PATTERN.test(phone)) {
+    sendJson(res, 400, { ok: false, error: "invalid_phone" });
+    return;
+  }
 
   const supabaseUrl = process.env.SUPABASE_URL;
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -457,10 +478,6 @@ module.exports = async function handler(req, res) {
 
   try {
     if (repairLatestPaid) {
-      if (!PHONE_PATTERN.test(phone)) {
-        sendJson(res, 400, { ok: false, error: "invalid_phone" });
-        return;
-      }
       const latestPaidOrder = await fetchLatestPaidOrder({
         supabaseUrl: requestContext.supabaseUrl,
         serviceRoleKey,
@@ -537,11 +554,11 @@ module.exports = async function handler(req, res) {
       paidAt,
       tradeNo: String(alipayResult.trade_no || ""),
     });
-    const phone = paidOrder?.phone || existingOrder.phone;
+    const paidPhone = paidOrder?.phone || existingOrder.phone;
     const existingUser = await fetchUser({
       supabaseUrl: requestContext.supabaseUrl,
       serviceRoleKey,
-      phone,
+      phone: paidPhone,
     });
     let premiumUntil = existingUser?.premium_until || null;
     let lifetimeAccess = Boolean(existingUser?.lifetime_access);
@@ -551,7 +568,7 @@ module.exports = async function handler(req, res) {
       premiumUser = await activateLifetimeUser({
         supabaseUrl: requestContext.supabaseUrl,
         serviceRoleKey,
-        phone,
+        phone: paidPhone,
         activatedAt: paidAt,
       });
     } else {
@@ -559,7 +576,7 @@ module.exports = async function handler(req, res) {
       premiumUser = await updateUserMonthly({
         supabaseUrl: requestContext.supabaseUrl,
         serviceRoleKey,
-        phone,
+        phone: paidPhone,
         activatedAt: paidAt,
         premiumUntil,
       });
@@ -567,7 +584,7 @@ module.exports = async function handler(req, res) {
         await createMonthlyUser({
           supabaseUrl: requestContext.supabaseUrl,
           serviceRoleKey,
-          phone,
+          phone: paidPhone,
           activatedAt: paidAt,
           premiumUntil,
         });
@@ -578,7 +595,7 @@ module.exports = async function handler(req, res) {
       ok: true,
       paid: true,
       orderNo,
-      phone,
+      phone: paidPhone,
       plan: product.plan,
       premiumUntil,
       lifetimeAccess,
