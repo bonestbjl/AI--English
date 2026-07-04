@@ -9715,7 +9715,6 @@
       }
 
       const AUTH_STORAGE_KEY = "realSceneEnglishUser";
-      const TEST_AUTH_CODE = "123456";
       const PAYMENT_PLANS = {
         monthly: {
           plan: "monthly",
@@ -9849,6 +9848,63 @@
           throw syncError;
         }
         return data.user;
+      }
+
+      async function sendLoginCode(phone) {
+        const response = await fetch("/api/send-login-code", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ phone }),
+        });
+        let data = null;
+        try {
+          data = await response.json();
+        } catch (error) {
+          data = null;
+        }
+        if (!response.ok || data?.ok !== true) {
+          const sendError = new Error(data?.error || "server_error");
+          sendError.status = response.status;
+          sendError.data = data;
+          throw sendError;
+        }
+        return data;
+      }
+
+      async function verifyLoginCode(phone, code) {
+        const response = await fetch("/api/verify-login-code", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ phone, code }),
+        });
+        let data = null;
+        try {
+          data = await response.json();
+        } catch (error) {
+          data = null;
+        }
+        if (!response.ok || data?.ok !== true) {
+          const verifyError = new Error(data?.error || "server_error");
+          verifyError.status = response.status;
+          verifyError.data = data;
+          throw verifyError;
+        }
+        return data;
+      }
+
+      function getAuthErrorMessage(errorCode) {
+        const messages = {
+          invalid_phone: "请输入正确的手机号",
+          cooldown: "请稍后再获取验证码",
+          invalid_code: "验证码错误",
+          code_expired: "验证码已过期，请重新获取",
+          too_many_attempts: "验证码错误次数过多，请重新获取",
+          code_not_found: "请先获取验证码",
+          server_error: "服务暂时不可用，请稍后重试",
+          missing_supabase_env: "服务暂时不可用，请稍后重试",
+          missing_sms_code_secret: "服务暂时不可用，请稍后重试",
+        };
+        return messages[errorCode] || messages.server_error;
       }
 
       async function createFullVersionOrder(phone, plan = "monthly") {
@@ -10062,7 +10118,6 @@
         closeButton.type = "button";
         closeButton.setAttribute("aria-label", "Close 登录弹窗");
         closeButton.title = "Close / 关闭";
-        closeButton.addEventListener("click", closeAuthModal);
         header.append(headingGroup, closeButton);
 
         const form = createAuthElement("form", "mt-5 space-y-4");
@@ -10090,6 +10145,8 @@
         codeLabel.append(codeText, codeRow);
 
         const feedback = createAuthElement("p", "hidden");
+        let cooldownTimer = null;
+        let cooldownLeft = 0;
         function showFeedback(text, isError = false) {
           feedback.textContent = text;
           feedback.className = isError
@@ -10097,37 +10154,105 @@
             : "rounded-xl border border-banana/30 bg-banana/10 px-3 py-2 text-sm font-bold text-banana";
         }
 
-        sendCodeButton.addEventListener("click", () => {
-          if (!phoneInput.value.trim()) {
+        function stopCooldown() {
+          if (cooldownTimer) window.clearInterval(cooldownTimer);
+          cooldownTimer = null;
+          cooldownLeft = 0;
+          sendCodeButton.disabled = false;
+          sendCodeButton.textContent = "获取验证码";
+          sendCodeButton.classList.remove("opacity-65", "cursor-not-allowed");
+        }
+
+        function startCooldown(seconds = 60) {
+          if (cooldownTimer) window.clearInterval(cooldownTimer);
+          cooldownLeft = seconds;
+          sendCodeButton.disabled = true;
+          sendCodeButton.classList.add("opacity-65", "cursor-not-allowed");
+          sendCodeButton.textContent = `${cooldownLeft}s`;
+          cooldownTimer = window.setInterval(() => {
+            cooldownLeft -= 1;
+            if (cooldownLeft <= 0) {
+              stopCooldown();
+              return;
+            }
+            sendCodeButton.textContent = `${cooldownLeft}s`;
+          }, 1000);
+        }
+
+        function closeModalWithCleanup() {
+          if (cooldownTimer) window.clearInterval(cooldownTimer);
+          closeAuthModal();
+        }
+
+        closeButton.addEventListener("click", closeModalWithCleanup);
+
+        sendCodeButton.addEventListener("click", async () => {
+          const phone = phoneInput.value.trim();
+          if (!phone) {
             showFeedback("请输入手机号后再获取验证码。", true);
             phoneInput.focus();
             return;
           }
-          showFeedback("当前测试验证码：123456");
+          sendCodeButton.disabled = true;
+          sendCodeButton.textContent = "发送中";
+          try {
+            const result = await sendLoginCode(phone);
+            startCooldown(60);
+            showFeedback(result.mock && result.devCode
+              ? `当前测试验证码：${result.devCode}`
+              : "验证码已发送");
+            codeInput.focus();
+          } catch (error) {
+            stopCooldown();
+            const errorCode = error.data?.error || error.message;
+            showFeedback(getAuthErrorMessage(errorCode), true);
+          }
         });
 
         const submitButton = createAuthElement("button", "min-h-12 w-full rounded-2xl bg-banana px-4 py-3 text-base font-black text-ink shadow-label transition hover:bg-[#ffc83f] active:scale-[0.99]", "Log in / 登录");
         submitButton.type = "submit";
-        form.addEventListener("submit", (event) => {
+        form.addEventListener("submit", async (event) => {
           event.preventDefault();
           const phone = phoneInput.value.trim();
+          const code = codeInput.value.trim();
           if (!phone) {
             showFeedback("请输入手机号。", true);
             phoneInput.focus();
             return;
           }
-          if (codeInput.value.trim() !== TEST_AUTH_CODE) {
-            showFeedback("验证码不正确，请输入 123456。", true);
+          if (!code) {
+            showFeedback("请输入验证码。", true);
             codeInput.focus();
             return;
           }
-          const user = setCurrentUser({ phone, role: "free", plan: "free", isLoggedIn: true, loginAt: Date.now() });
-          if (!user) {
-            showFeedback("当前浏览器无法保存登录状态，请检查本地存储设置。", true);
-            return;
+          submitButton.disabled = true;
+          submitButton.textContent = "登录中...";
+          try {
+            const verifiedUser = await verifyLoginCode(phone, code);
+            const user = setCurrentUser({
+              phone: verifiedUser.phone || phone,
+              role: verifiedUser.role || "free",
+              plan: verifiedUser.plan || "free",
+              premiumUntil: verifiedUser.premiumUntil || verifiedUser.premium_until || null,
+              lifetimeAccess: verifiedUser.lifetimeAccess === true || verifiedUser.lifetime_access === true,
+              isLoggedIn: true,
+              loginAt: Date.now(),
+              planSource: verifiedUser.source || "sms_verify",
+            });
+            if (!user) {
+              showFeedback("当前浏览器无法保存登录状态，请检查本地存储设置。", true);
+              return;
+            }
+            closeModalWithCleanup();
+            onLogin(user);
+          } catch (error) {
+            const errorCode = error.data?.error || error.message;
+            showFeedback(getAuthErrorMessage(errorCode), true);
+            codeInput.focus();
+          } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = "Log in / 登录";
           }
-          closeAuthModal();
-          onLogin(user);
         });
 
         form.append(phoneLabel, codeLabel, feedback, submitButton);
