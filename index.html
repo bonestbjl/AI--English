@@ -1308,7 +1308,7 @@
     <div id="root"></div>
 
     <script type="text/babel">
-      const { useEffect, useMemo, useState } = React;
+      const { useEffect, useMemo, useRef, useState } = React;
 
       let activeLearningAudio = null;
 
@@ -9797,6 +9797,7 @@
             plan: access.plan,
             premiumUntil,
             lifetimeAccess,
+            authToken: saved.authToken || saved.auth_token || "",
             isLoggedIn: true,
             loginAt: saved.loginAt || Date.now(),
             planSource: saved.planSource || "local_fallback",
@@ -9818,6 +9819,7 @@
           plan: access.plan,
           premiumUntil,
           lifetimeAccess,
+          authToken: user.authToken || user.auth_token || "",
           isLoggedIn: true,
           loginAt: user.loginAt || Date.now(),
           planSource: user.planSource || "local_fallback",
@@ -9990,6 +9992,22 @@
       const LEARNING_DATA_GUEST_KEY = "realSceneEnglishData_guest";
       const LEARNING_DATA_PHONE_PREFIX = "realSceneEnglishData_phone_";
       const LEARNING_DATA_MIGRATION_KEY = "realSceneEnglishDataMigrated_v1";
+      const LEARNING_SYNC_DEBOUNCE_MS = 1200;
+      const CHAPTER_SCENE_COUNTS = {
+        zoo: scenes.length,
+        fruitShop: fruitShopScenes.length,
+        campus: campusScenes.length,
+        cafe: cafeScenes.length,
+        airport: airportScenes.length,
+        office: officeScenes.length,
+        hotel: hotelScenes.length,
+        restaurant: restaurantScenes.length,
+        supermarket: supermarketScenes.length,
+        metro: metroScenes.length,
+        clinic: clinicScenes.length,
+        bank: bankScenes.length,
+        apartment: apartmentScenes.length,
+      };
 
       function createEmptyLearningData() {
         return {
@@ -10035,10 +10053,13 @@
         const defaults = createEmptyLearningData();
         const saved = value && typeof value === "object" ? value : {};
         const savedMoreWords = saved.moreWords && typeof saved.moreWords === "object" ? saved.moreWords : {};
-        const chapterId = typeof saved.lastScene?.chapterId === "string" ? saved.lastScene.chapterId : defaults.lastScene.chapterId;
-        const sceneIndex = Number.isInteger(saved.lastScene?.sceneIndex) && saved.lastScene.sceneIndex >= 0
+        const rawChapterId = typeof saved.lastScene?.chapterId === "string" ? saved.lastScene.chapterId : defaults.lastScene.chapterId;
+        const chapterId = CHAPTER_SCENE_COUNTS[rawChapterId] ? rawChapterId : defaults.lastScene.chapterId;
+        const sceneCount = CHAPTER_SCENE_COUNTS[chapterId] || 1;
+        const sceneIndex = Number.isInteger(saved.lastScene?.sceneIndex) && saved.lastScene.sceneIndex >= 0 && saved.lastScene.sceneIndex < sceneCount
           ? saved.lastScene.sceneIndex
           : defaults.lastScene.sceneIndex;
+        const moreWordKeys = [...new Set([...Object.keys(defaults.moreWords), ...Object.keys(savedMoreWords)])];
         return {
           ...defaults,
           completedHotspots: normalizeStringList(saved.completedHotspots),
@@ -10047,7 +10068,7 @@
           completedScenes: normalizeStringList(saved.completedScenes),
           learnedWords: normalizeStringList(saved.learnedWords),
           moreWords: Object.fromEntries(
-            Object.keys(defaults.moreWords).map((chapter) => [chapter, normalizeStringList(savedMoreWords[chapter])])
+            moreWordKeys.map((chapter) => [chapter, normalizeStringList(savedMoreWords[chapter])])
           ),
           wordBook: Array.isArray(saved.wordBook) ? saved.wordBook.map(normalizeWordBookEntry).filter(Boolean) : [],
           lastScene: { chapterId, sceneIndex },
@@ -10082,6 +10103,107 @@
         } catch (error) {
           return null;
         }
+      }
+
+      function getLearningAuthToken(user = getCurrentUser()) {
+        return String(user?.authToken || user?.auth_token || "").trim();
+      }
+
+      function getLearningDataTime(value) {
+        const time = value ? new Date(value).getTime() : 0;
+        return Number.isFinite(time) ? time : 0;
+      }
+
+      function mergeStringLists(...lists) {
+        const merged = [];
+        const seen = new Set();
+        lists.flat().forEach((item) => {
+          if (typeof item !== "string") return;
+          const clean = item.trim();
+          if (!clean || seen.has(clean)) return;
+          seen.add(clean);
+          merged.push(clean);
+        });
+        return merged;
+      }
+
+      function mergeWordBookEntries(...lists) {
+        const map = new Map();
+        lists.flat().forEach((item) => {
+          const normalized = normalizeWordBookEntry(item);
+          if (!normalized) return;
+          const key = getWordKey(normalized.word);
+          const existing = map.get(key);
+          if (!existing || getLearningDataTime(normalized.addedAt) > getLearningDataTime(existing.addedAt)) {
+            map.set(key, normalized);
+          }
+        });
+        return [...map.values()].sort((left, right) => getLearningDataTime(right.addedAt) - getLearningDataTime(left.addedAt));
+      }
+
+      function pickLaterLastScene(left, right) {
+        const fallback = createEmptyLearningData().lastScene;
+        const a = normalizeLearningData(left).lastScene || fallback;
+        const b = normalizeLearningData(right).lastScene || fallback;
+        if (a.chapterId === b.chapterId) {
+          return { chapterId: a.chapterId, sceneIndex: Math.max(a.sceneIndex || 0, b.sceneIndex || 0) };
+        }
+        return getLearningDataTime(right?.updatedAt) >= getLearningDataTime(left?.updatedAt) ? b : a;
+      }
+
+      function mergeLearningData(localData, cloudData) {
+        const local = normalizeLearningData(localData);
+        const cloud = normalizeLearningData(cloudData);
+        const moreWordKeys = [...new Set([...Object.keys(local.moreWords || {}), ...Object.keys(cloud.moreWords || {})])];
+        return normalizeLearningData({
+          version: Math.max(Number(local.version || 1), Number(cloud.version || 1)),
+          completedHotspots: mergeStringLists(local.completedHotspots, cloud.completedHotspots),
+          completedDialogs: mergeStringLists(local.completedDialogs, cloud.completedDialogs),
+          completedActions: mergeStringLists(local.completedActions, cloud.completedActions),
+          completedScenes: mergeStringLists(local.completedScenes, cloud.completedScenes),
+          learnedWords: mergeStringLists(local.learnedWords, cloud.learnedWords),
+          moreWords: Object.fromEntries(
+            moreWordKeys.map((chapter) => [
+              chapter,
+              mergeStringLists(local.moreWords?.[chapter], cloud.moreWords?.[chapter]),
+            ])
+          ),
+          wordBook: mergeWordBookEntries(local.wordBook, cloud.wordBook),
+          lastScene: pickLaterLastScene(local, cloud),
+          updatedAt: Math.max(getLearningDataTime(local.updatedAt), getLearningDataTime(cloud.updatedAt), Date.now()),
+        });
+      }
+
+      async function requestCloudLearningData(action, user, data) {
+        const phone = String(user?.phone || "").trim();
+        const authToken = getLearningAuthToken(user);
+        if (!phone || !authToken) throw new Error("missing_learning_auth");
+        const response = await fetch("/api/learning-data", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ action, phone, authToken, data }),
+        });
+        let payload = null;
+        try {
+          payload = await response.json();
+        } catch (error) {
+          payload = null;
+        }
+        if (!response.ok || payload?.ok !== true) {
+          const cloudError = new Error(payload?.error || "learning_data_sync_failed");
+          cloudError.status = response.status;
+          cloudError.data = payload;
+          throw cloudError;
+        }
+        return payload;
+      }
+
+      function loadCloudLearningData(user) {
+        return requestCloudLearningData("load", user);
+      }
+
+      function saveCloudLearningData(user, data) {
+        return requestCloudLearningData("save", user, normalizeLearningData(data));
       }
 
       const AUTH_MODAL_ID = "real-scene-auth-modal";
@@ -10235,6 +10357,7 @@
               plan: verifiedUser.plan || "free",
               premiumUntil: verifiedUser.premiumUntil || verifiedUser.premium_until || null,
               lifetimeAccess: verifiedUser.lifetimeAccess === true || verifiedUser.lifetime_access === true,
+              authToken: verifiedUser.authToken || verifiedUser.auth_token || "",
               isLoggedIn: true,
               loginAt: Date.now(),
               planSource: verifiedUser.source || "sms_verify",
@@ -10534,6 +10657,9 @@
         const [currentView, setCurrentView] = useState("home");
         const [currentUser, setAuthenticatedUser] = useState(() => getCurrentUser());
         const initialLearningData = useMemo(() => getActiveLearningData(currentUser), []);
+        const cloudSyncTimerRef = useRef(null);
+        const latestLearningDataRef = useRef(initialLearningData);
+        const currentUserRef = useRef(currentUser);
         const [currentChapter, setCurrentChapter] = useState(() => initialLearningData.lastScene.chapterId);
         const [sceneSelectHint, setSceneSelectHint] = useState("");
         const [sceneSelectNotice, setSceneSelectNotice] = useState(null);
@@ -10654,8 +10780,15 @@
 
         useEffect(() => {
           const savedUser = getCurrentUser();
-          if (savedUser) syncUserPlan(savedUser, { silent: true });
+          if (savedUser) {
+            syncUserPlan(savedUser, { silent: true });
+            hydrateLearningDataFromCloud(savedUser, getActiveLearningData(savedUser), { preserveView: true, silent: true });
+          }
         }, []);
+
+        useEffect(() => {
+          currentUserRef.current = currentUser;
+        }, [currentUser]);
 
         useEffect(() => {
           const params = new URLSearchParams(window.location.search);
@@ -10681,7 +10814,9 @@
         }, []);
 
         useEffect(() => {
-          saveActiveLearningData(buildLearningData(), currentUser);
+          const localData = saveActiveLearningData(buildLearningData(), currentUser) || buildLearningData();
+          latestLearningDataRef.current = normalizeLearningData(localData);
+          scheduleCloudLearningDataSync(latestLearningDataRef.current, currentUser);
         }, [
           currentUser,
           currentChapter,
@@ -10706,6 +10841,32 @@
           learnedWords,
           savedWords,
         ]);
+
+        useEffect(() => {
+          function handlePageHide() {
+            const user = currentUserRef.current;
+            if (!user || !getLearningAuthToken(user)) return;
+            const payload = JSON.stringify({
+              action: "save",
+              phone: user.phone,
+              authToken: getLearningAuthToken(user),
+              data: latestLearningDataRef.current,
+            });
+            const blob = new Blob([payload], { type: "application/json" });
+            if (navigator.sendBeacon) {
+              navigator.sendBeacon("/api/learning-data", blob);
+              return;
+            }
+            fetch("/api/learning-data", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: payload,
+              keepalive: true,
+            }).catch(() => {});
+          }
+          window.addEventListener("pagehide", handlePageHide);
+          return () => window.removeEventListener("pagehide", handlePageHide);
+        }, []);
 
         useEffect(() => {
           if (currentView !== "zoo" || !showWelcome) return;
@@ -12480,7 +12641,7 @@
           };
         }
 
-        function applyLearningData(data) {
+        function applyLearningData(data, { preserveView = false } = {}) {
           const nextData = normalizeLearningData(data);
           setCurrentChapter(nextData.lastScene.chapterId);
           setCurrentIndex(nextData.lastScene.sceneIndex);
@@ -12522,12 +12683,66 @@
           setShowMoreApartmentChoice(false);
           setShowWelcome(true);
           setWelcomeLeaving(false);
-          setCurrentView("sceneSelect");
+          if (!preserveView) setCurrentView("sceneSelect");
         }
 
-        function switchLearningProfile(nextUser) {
-          saveActiveLearningData(buildLearningData(), currentUser);
-          applyLearningData(getActiveLearningData(nextUser));
+        function scheduleCloudLearningDataSync(data, user = currentUser) {
+          if (!user || !getLearningAuthToken(user)) return;
+          if (cloudSyncTimerRef.current) window.clearTimeout(cloudSyncTimerRef.current);
+          cloudSyncTimerRef.current = window.setTimeout(() => {
+            cloudSyncTimerRef.current = null;
+            saveCloudLearningData(user, data).catch(() => {});
+          }, LEARNING_SYNC_DEBOUNCE_MS);
+        }
+
+        async function flushCloudLearningDataSync(user = currentUser, data = latestLearningDataRef.current) {
+          if (cloudSyncTimerRef.current) {
+            window.clearTimeout(cloudSyncTimerRef.current);
+            cloudSyncTimerRef.current = null;
+          }
+          if (!user || !getLearningAuthToken(user)) return null;
+          try {
+            return await saveCloudLearningData(user, data);
+          } catch (error) {
+            return null;
+          }
+        }
+
+        async function hydrateLearningDataFromCloud(user, localData = getActiveLearningData(user), { preserveView = false, silent = false } = {}) {
+          if (!user || !getLearningAuthToken(user)) {
+            applyLearningData(localData, { preserveView });
+            return normalizeLearningData(localData);
+          }
+          const normalizedLocal = normalizeLearningData(localData);
+          try {
+            const cloudPayload = await loadCloudLearningData(user);
+            const hasCloudData = cloudPayload.hasCloudData === true;
+            const cloudData = hasCloudData ? normalizeLearningData(cloudPayload.data) : null;
+            const mergedData = hasCloudData ? mergeLearningData(normalizedLocal, cloudData) : normalizedLocal;
+            const cachedData = saveActiveLearningData(mergedData, user) || mergedData;
+            latestLearningDataRef.current = cachedData;
+            applyLearningData(cachedData, { preserveView });
+            await saveCloudLearningData(user, cachedData);
+            if (!silent) {
+              showAuthToast(hasCloudData ? "已同步云端学习记录。" : "已把本机学习记录同步到云端。");
+            }
+            return cachedData;
+          } catch (error) {
+            applyLearningData(normalizedLocal, { preserveView });
+            if (!silent) showAuthToast("云端学习记录同步失败，已使用本机缓存。");
+            return normalizedLocal;
+          }
+        }
+
+        async function switchLearningProfile(nextUser, { commitUser = null } = {}) {
+          const currentData = saveActiveLearningData(buildLearningData(), currentUser) || buildLearningData();
+          await flushCloudLearningDataSync(currentUser, currentData);
+          const localNextData = getActiveLearningData(nextUser);
+          if (typeof commitUser === "function") commitUser();
+          applyLearningData(localNextData);
+          if (nextUser) {
+            await hydrateLearningDataFromCloud(nextUser, localNextData);
+          }
         }
 
         function showAuthToast(message) {
@@ -12696,20 +12911,24 @@
         function openLoginModal() {
           setShowAccountMenu(false);
           openAuthModal({
-            onLogin: (user) => {
-              switchLearningProfile(user);
-              setAuthenticatedUser(user);
+            onLogin: async (user) => {
+              await switchLearningProfile(user, {
+                commitUser: () => setAuthenticatedUser(user),
+              });
               showAuthToast("已切换到你的学习记录。");
               syncUserPlan(user);
             },
           });
         }
 
-        function handleLogout() {
-          switchLearningProfile(null);
-          logoutUser();
-          setAuthenticatedUser(null);
-          setShowAccountMenu(false);
+        async function handleLogout() {
+          await switchLearningProfile(null, {
+            commitUser: () => {
+              logoutUser();
+              setAuthenticatedUser(null);
+              setShowAccountMenu(false);
+            },
+          });
           showAuthToast("已退出，当前为游客模式。");
         }
 

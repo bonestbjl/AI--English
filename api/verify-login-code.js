@@ -3,6 +3,7 @@ const crypto = require("crypto");
 const PHONE_PATTERN = /^1[3-9]\d{9}$/;
 const CODE_PATTERN = /^\d{6}$/;
 const MAX_ATTEMPTS = 5;
+const AUTH_TOKEN_TTL_SECONDS = 60 * 60 * 24 * 30;
 
 function sendJson(res, status, body) {
   res.setHeader("Content-Type", "application/json; charset=utf-8");
@@ -79,8 +80,23 @@ function getSmsSecret() {
   return "";
 }
 
+function getAuthSecret(smsSecret) {
+  return String(process.env.AUTH_TOKEN_SECRET || smsSecret || "").trim();
+}
+
 function hashCode(phone, code, secret) {
   return crypto.createHash("sha256").update(`${phone}:${code}:${secret}`, "utf8").digest("hex");
+}
+
+function createAuthToken(phone, secret) {
+  const now = Math.floor(Date.now() / 1000);
+  const payload = Buffer.from(JSON.stringify({
+    phone,
+    iat: now,
+    exp: now + AUTH_TOKEN_TTL_SECONDS,
+  })).toString("base64url");
+  const signature = crypto.createHmac("sha256", secret).update(payload).digest("base64url");
+  return `${payload}.${signature}`;
 }
 
 function safeEqualHex(left, right) {
@@ -240,6 +256,7 @@ module.exports = async function handler(req, res) {
       patch: { consumed_at: new Date().toISOString() },
     });
     const user = normalizeUser(await getOrCreateUser(requestContext));
+    const authToken = createAuthToken(phone, getAuthSecret(secret));
     sendJson(res, 200, {
       ok: true,
       phone: user.phone,
@@ -250,6 +267,7 @@ module.exports = async function handler(req, res) {
       premium_until: user.premium_until,
       lifetimeAccess: user.lifetimeAccess,
       lifetime_access: user.lifetime_access,
+      authToken,
       source: user.source,
     });
   } catch (error) {
