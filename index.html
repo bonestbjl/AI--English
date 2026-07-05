@@ -7204,6 +7204,116 @@
         }
       ];
 
+      const laundryOffset = { x: -34, y: -16, mobileX: -18, mobileY: -12 };
+      const laundryWord = (id, word, phonetic, meaning, example, translation, x, y, zh = meaning) => ({ id, word, phonetic, meaning, example, translation, x, y, label: word, zh, offset: laundryOffset });
+
+      const laundryScenes = [
+        {
+          id: "laundry-entrance", npc: "laundry-entrance", title: "Entrance", zh: "洗衣房入口", short: "入口", bgStyle: "radial-gradient(circle at 24% 28%, rgba(177, 224, 235, 0.28), transparent 24%), radial-gradient(circle at 76% 38%, rgba(255, 221, 142, 0.18), transparent 20%), linear-gradient(180deg, #dce9ea 0%, #708b8e 58%, #17292d 100%)", coreWord: "laundromat",
+          intro: { text: "You arrive at a neighborhood laundromat and check the basic signs before you start.", zh: "你来到社区自助洗衣房，开始前先查看基本标识。" },
+          hotspots: [
+            laundryWord("laundromat", "laundromat", "/ˈlɔːndrəmæt/", "自助洗衣房", "The laundromat is open this evening.", "这家自助洗衣房今晚营业。", 18, 31),
+            laundryWord("laundry-attendant", "laundry attendant", "/ˈlɔːndri əˈtendənt/", "洗衣房工作人员", "The laundry attendant helps new customers.", "洗衣房工作人员帮助新顾客。", 46, 30),
+            laundryWord("service-bell", "service bell", "/ˈsɜːrvɪs bel/", "服务铃", "The service bell is on the front counter.", "服务铃在前台柜面上。", 75, 32),
+            laundryWord("last-wash-time", "last wash time", "/læst wɑːʃ taɪm/", "最后洗衣时间", "The last wash time is written near the door.", "最后洗衣时间写在门边。", 20, 59),
+            laundryWord("laundry-rules", "laundry rules", "/ˈlɔːndri ruːlz/", "洗衣房规则", "The laundry rules are posted on the wall.", "洗衣房规则贴在墙上。", 49, 58),
+            laundryWord("token-machine", "token machine", "/ˈtoʊkən məˈʃiːn/", "代币机", "The token machine is beside the entrance.", "代币机在入口旁边。", 77, 58),
+            { ...laundryWord("wash-token", "wash token", "/wɑːʃ ˈtoʊkən/", "洗衣代币", "I use a wash token to start the machine.", "我用洗衣代币启动机器。", 50, 72, "洗衣代币"), type: "action", actionEffect: "sparkle", actionMessageEn: "You get a wash token and are ready to choose a machine.", actionMessageZh: "你拿到了洗衣代币，准备选择机器。", actionDuration: 2600 }
+          ]
+        },
+        {
+          id: "laundry-machine-area", npc: "laundry-machine-area", title: "Machine Area", zh: "机器区", short: "机器", bgStyle: "radial-gradient(ellipse at 32% 52%, rgba(230, 244, 247, 0.52), transparent 20%), radial-gradient(ellipse at 68% 52%, rgba(230, 244, 247, 0.42), transparent 20%), linear-gradient(180deg, #d8e4e6 0%, #657f86 58%, #15252b 100%)", coreWord: "washing machine",
+          intro: { text: "You look across the machine area and choose a washer that is ready to use.", zh: "你查看机器区，选择一台可用的洗衣机。" },
+          hotspots: [
+            laundryWord("washing-machine", "washing machine", "/ˈwɑːʃɪŋ məˈʃiːn/", "洗衣机", "This washing machine is ready for a small load.", "这台洗衣机适合一小筐衣物。", 18, 31),
+            laundryWord("available-washer", "available washer", "/əˈveɪləbəl ˈwɑːʃər/", "可用洗衣机", "An available washer has a clear display.", "可用洗衣机的显示屏是空闲状态。", 40, 30),
+            laundryWord("front-loading-washer", "front-loading washer", "/frʌnt ˈloʊdɪŋ ˈwɑːʃər/", "前开门洗衣机", "A front-loading washer opens from the front.", "前开门洗衣机从前方打开。", 64, 30),
+            laundryWord("top-loading-washer", "top-loading washer", "/tɑːp ˈloʊdɪŋ ˈwɑːʃər/", "上开盖洗衣机", "A top-loading washer opens from above.", "上开盖洗衣机从上方打开。", 82, 36),
+            laundryWord("glass-porthole", "glass porthole", "/ɡlæs ˈpɔːrthoʊl/", "圆形玻璃窗", "The glass porthole lets me see the clothes.", "圆形玻璃窗让我看到衣物。", 24, 61),
+            laundryWord("drum-door", "drum door", "/drʌm dɔːr/", "滚筒门", "The drum door must close firmly.", "滚筒门必须关紧。", 48, 61),
+            laundryWord("rubber-gasket", "rubber gasket", "/ˈrʌbər ˈɡæskɪt/", "橡胶密封圈", "The rubber gasket seals the washer door.", "橡胶密封圈密封洗衣机门。", 70, 61),
+            { ...laundryWord("soap-dispenser", "soap dispenser", "/soʊp dɪˈspensər/", "洗涤剂投放盒", "The soap dispenser holds detergent for the wash.", "洗涤剂投放盒用于放洗衣液。", 50, 75, "洗涤剂投放盒"), type: "action", actionEffect: "sparkle", actionMessageEn: "You open the dispenser and prepare the washer.", actionMessageZh: "你打开投放盒，准备设置洗衣机。", actionDuration: 2600 }
+          ]
+        },
+        {
+          id: "laundry-detergent-station", npc: "laundry-detergent-station", title: "Detergent Station", zh: "洗涤用品区", short: "洗涤剂", bgStyle: "radial-gradient(circle at 28% 50%, rgba(255, 255, 255, 0.32), transparent 18%), radial-gradient(circle at 72% 47%, rgba(136, 205, 214, 0.26), transparent 20%), linear-gradient(180deg, #e6e8dd 0%, #8a8f72 58%, #24271f 100%)", coreWord: "detergent",
+          intro: { text: "You compare common laundry products before adding anything to the washer.", zh: "你在加入洗衣机前，先辨认常见洗衣用品。" },
+          hotspots: [
+            laundryWord("detergent", "detergent", "/dɪˈtɜːrdʒənt/", "洗衣液，洗涤剂", "Detergent cleans the clothes during the wash.", "洗衣液在洗涤过程中清洁衣物。", 17, 30),
+            laundryWord("fabric-softener", "fabric softener", "/ˈfæbrɪk ˈsɔːfnər/", "衣物柔顺剂", "Fabric softener makes clothes feel softer.", "衣物柔顺剂让衣物摸起来更柔软。", 39, 31),
+            laundryWord("bleach-bottle", "bleach bottle", "/bliːtʃ ˈbɑːtl/", "漂白剂瓶", "The bleach bottle is marked with a warning label.", "漂白剂瓶上有警示标签。", 61, 31),
+            laundryWord("laundry-pod", "laundry pod", "/ˈlɔːndri pɑːd/", "洗衣凝珠", "A laundry pod goes into the washer drum.", "洗衣凝珠放进洗衣机滚筒里。", 80, 34),
+            laundryWord("powder-scoop", "powder scoop", "/ˈpaʊdər skuːp/", "洗衣粉量勺", "The powder scoop helps measure the amount.", "洗衣粉量勺帮助测量用量。", 22, 61),
+            laundryWord("measuring-cap", "measuring cap", "/ˈmeʒərɪŋ kæp/", "量杯盖", "The measuring cap shows how much to use.", "量杯盖显示应该用多少。", 47, 61),
+            laundryWord("stain-remover", "stain remover", "/steɪn rɪˈmuːvər/", "去渍剂", "Stain remover helps with a small mark.", "去渍剂有助于处理小污渍。", 70, 61),
+            { ...laundryWord("prewash-spray", "prewash spray", "/ˈpriːwɑːʃ spreɪ/", "预洗喷雾", "I use prewash spray before the wash cycle.", "我在洗涤程序前使用预洗喷雾。", 49, 75, "预洗喷雾"), type: "action", actionEffect: "sparkle", actionMessageEn: "You spray a small stain before starting the washer.", actionMessageZh: "你在启动洗衣机前喷了一点污渍。", actionDuration: 2600 }
+          ]
+        },
+        {
+          id: "laundry-washer-setup", npc: "laundry-washer-setup", title: "Washer Setup", zh: "洗衣机设置", short: "设置", bgStyle: "radial-gradient(circle at 38% 38%, rgba(255, 255, 255, 0.28), transparent 18%), radial-gradient(circle at 66% 54%, rgba(255, 222, 146, 0.18), transparent 20%), linear-gradient(180deg, #dbe9ec 0%, #6c8186 58%, #15262b 100%)", coreWord: "sort colors",
+          intro: { text: "You sort the clothes and choose a simple washer setting.", zh: "你给衣物分类，并选择一个简单的洗衣机设置。" },
+          hotspots: [
+            laundryWord("sort-colors", "sort colors", "/sɔːrt ˈkʌlərz/", "按颜色分类", "I sort colors before I load the washer.", "我在装洗衣机前按颜色分类。", 17, 30),
+            laundryWord("whites", "whites", "/waɪts/", "白色衣物", "Whites often need a separate load.", "白色衣物通常需要单独一筐。", 39, 31),
+            laundryWord("darks", "darks", "/dɑːrks/", "深色衣物", "Darks go into another load.", "深色衣物放进另一筐。", 61, 31),
+            laundryWord("pocket-check", "pocket check", "/ˈpɑːkɪt tʃek/", "口袋检查", "A pocket check keeps tissues out of the washer.", "口袋检查可以避免纸巾进洗衣机。", 80, 34),
+            laundryWord("garment-tag", "garment tag", "/ˈɡɑːrmənt tæɡ/", "衣物标签", "The garment tag shows care instructions.", "衣物标签显示护理说明。", 22, 61),
+            laundryWord("load-size", "load size", "/loʊd saɪz/", "洗衣量", "Load size changes how much water the washer uses.", "洗衣量会影响洗衣机用水量。", 47, 61),
+            laundryWord("water-temperature", "water temperature", "/ˈwɔːtər ˈtemprətʃər/", "水温", "Water temperature is part of the washer setting.", "水温是洗衣机设置的一部分。", 70, 61),
+            { ...laundryWord("wash-cycle", "wash cycle", "/wɑːʃ ˈsaɪkl/", "洗涤程序", "I choose a normal wash cycle.", "我选择普通洗涤程序。", 49, 75, "洗涤程序"), type: "action", actionEffect: "sparkle", actionMessageEn: "You choose the wash cycle and start the load.", actionMessageZh: "你选择洗涤程序并启动这一筐衣物。", actionDuration: 2600 }
+          ]
+        },
+        {
+          id: "laundry-dryer-area", npc: "laundry-dryer-area", title: "Dryer Area", zh: "烘干区", short: "烘干", bgStyle: "radial-gradient(ellipse at 35% 53%, rgba(255, 238, 190, 0.34), transparent 18%), radial-gradient(ellipse at 66% 53%, rgba(255, 238, 190, 0.25), transparent 18%), linear-gradient(180deg, #e1d7c2 0%, #856f54 58%, #241c16 100%)", coreWord: "dryer",
+          intro: { text: "After washing, you move the clothes to the dryer and choose a safe setting.", zh: "洗完后，你把衣物移到烘干机，并选择安全设置。" },
+          hotspots: [
+            laundryWord("dryer", "dryer", "/ˈdraɪər/", "烘干机", "The dryer is beside the washer.", "烘干机在洗衣机旁边。", 17, 30),
+            laundryWord("dryer-drum", "dryer drum", "/ˈdraɪər drʌm/", "烘干机滚筒", "The dryer drum turns slowly.", "烘干机滚筒慢慢转动。", 39, 31),
+            laundryWord("lint-trap", "lint trap", "/lɪnt træp/", "绒毛过滤网", "The lint trap should be cleaned before drying.", "烘干前应该清理绒毛过滤网。", 61, 31),
+            laundryWord("dryer-sheet", "dryer sheet", "/ˈdraɪər ʃiːt/", "烘干纸", "A dryer sheet can reduce static.", "烘干纸可以减少静电。", 80, 34),
+            laundryWord("heat-setting", "heat setting", "/hiːt ˈsetɪŋ/", "热度设置", "The heat setting controls how warm the dryer gets.", "热度设置控制烘干机温度。", 22, 61),
+            laundryWord("cool-down-cycle", "cool-down cycle", "/kuːl daʊn ˈsaɪkl/", "冷却程序", "The cool-down cycle helps clothes feel less hot.", "冷却程序让衣物不会太烫。", 47, 61),
+            laundryWord("tumble-dry", "tumble dry", "/ˈtʌmbl draɪ/", "滚筒烘干", "Some clothes say tumble dry on the tag.", "有些衣物标签上写着可滚筒烘干。", 70, 61),
+            { ...laundryWord("drying-time", "drying time", "/ˈdraɪɪŋ taɪm/", "烘干时间", "Drying time depends on the load size.", "烘干时间取决于衣物量。", 49, 75, "烘干时间"), type: "action", actionEffect: "sparkle", actionMessageEn: "You set the drying time and start the dryer.", actionMessageZh: "你设置烘干时间并启动烘干机。", actionDuration: 2600 }
+          ]
+        },
+        {
+          id: "laundry-folding-table", npc: "laundry-folding-table", title: "Folding Table", zh: "折叠台", short: "折叠", bgStyle: "radial-gradient(ellipse at 50% 70%, rgba(255, 255, 255, 0.2), transparent 24%), radial-gradient(circle at 72% 35%, rgba(123, 182, 195, 0.2), transparent 18%), linear-gradient(180deg, #e8e1d2 0%, #847762 58%, #25221d 100%)", coreWord: "folding station",
+          intro: { text: "You use the folding area to organize clean clothes before pickup.", zh: "你使用折叠区，在取走前整理干净衣物。" },
+          hotspots: [
+            laundryWord("folding-station", "folding station", "/ˈfoʊldɪŋ ˈsteɪʃn/", "折叠区", "The folding station is clean and wide.", "折叠区干净又宽敞。", 18, 31),
+            laundryWord("folding-board", "folding board", "/ˈfoʊldɪŋ bɔːrd/", "叠衣板", "A folding board helps make neat shirts.", "叠衣板帮助把衬衫叠整齐。", 46, 30),
+            laundryWord("hanger", "hanger", "/ˈhæŋər/", "衣架", "A hanger keeps the shirt from wrinkling.", "衣架可以避免衬衫起皱。", 75, 32),
+            laundryWord("garment-bag", "garment bag", "/ˈɡɑːrmənt bæɡ/", "衣物袋", "The garment bag protects clean clothes.", "衣物袋保护干净衣物。", 22, 59),
+            laundryWord("folded-clothes", "folded clothes", "/ˈfoʊldɪd kloʊðz/", "叠好的衣物", "The folded clothes are ready to take home.", "叠好的衣物可以带回家了。", 49, 58),
+            laundryWord("missing-sock", "missing sock", "/ˈmɪsɪŋ sɑːk/", "丢失的袜子", "A missing sock may be near the dryer.", "丢失的袜子可能在烘干机附近。", 77, 58),
+            { ...laundryWord("lost-and-found-bin", "lost-and-found bin", "/lɔːst ænd faʊnd bɪn/", "失物招领箱", "The lost-and-found bin holds forgotten items.", "失物招领箱里放着遗忘物品。", 50, 72, "失物招领箱"), type: "action", actionEffect: "sparkle", actionMessageEn: "You check the lost-and-found bin for the missing sock.", actionMessageZh: "你在失物招领箱里查看那只丢失的袜子。", actionDuration: 2600 }
+          ]
+        },
+        {
+          id: "laundry-pickup-exit", npc: "laundry-pickup-exit", title: "Pickup / Exit", zh: "取衣离开", short: "取衣", bgStyle: "radial-gradient(circle at 28% 42%, rgba(255, 255, 255, 0.24), transparent 18%), radial-gradient(circle at 76% 36%, rgba(255, 228, 152, 0.2), transparent 20%), linear-gradient(180deg, #e5e7dd 0%, #78826f 58%, #20261d 100%)", coreWord: "claim ticket",
+          intro: { text: "You confirm your pickup details and prepare to leave with clean laundry.", zh: "你确认取衣信息，准备带着干净衣物离开。" },
+          hotspots: [
+            laundryWord("claim-ticket", "claim ticket", "/kleɪm ˈtɪkɪt/", "取衣票", "The claim ticket matches my laundry bag.", "取衣票和我的洗衣袋对应。", 20, 34),
+            laundryWord("laundry-hamper", "laundry hamper", "/ˈlɔːndri ˈhæmpər/", "洗衣篮", "The laundry hamper holds the clean load.", "洗衣篮里放着干净衣物。", 44, 36),
+            laundryWord("laundry-cart", "laundry cart", "/ˈlɔːndri kɑːrt/", "洗衣推车", "The laundry cart helps move heavy clothes.", "洗衣推车帮助移动较重的衣物。", 68, 36),
+            { ...laundryWord("fresh-laundry", "fresh laundry", "/freʃ ˈlɔːndri/", "清新的干净衣物", "Fresh laundry smells clean.", "清新的干净衣物闻起来很干净。", 50, 66, "清新的干净衣物"), type: "action", actionEffect: "sparkle", actionMessageEn: "You collect the fresh laundry and get ready to leave.", actionMessageZh: "你取到清新的干净衣物，准备离开。", actionDuration: 2600 }
+          ]
+        },
+        {
+          id: "laundry-summary", npc: "laundry-summary", title: "Summary", zh: "洗衣总结", short: "总结", bgStyle: "radial-gradient(circle at 34% 36%, rgba(174, 226, 230, 0.24), transparent 20%), radial-gradient(circle at 72% 46%, rgba(255, 230, 163, 0.22), transparent 22%), linear-gradient(180deg, #dfe8e6 0%, #6d8280 58%, #182826 100%)", coreWord: "drawstring bag",
+          intro: { text: "Before you finish, you review the final items and pack everything neatly.", zh: "结束前，你复习最后几件物品，并把衣物整理好。" },
+          hotspots: [
+            laundryWord("drawstring-bag", "drawstring bag", "/ˈdrɔːstrɪŋ bæɡ/", "抽绳袋", "A drawstring bag closes with a cord.", "抽绳袋用绳子收口。", 18, 34),
+            laundryWord("garment-cover", "garment cover", "/ˈɡɑːrmənt ˈkʌvər/", "衣物防尘套", "The garment cover protects a clean coat.", "衣物防尘套保护干净外套。", 41, 35),
+            laundryWord("collection-shelf", "collection shelf", "/kəˈlekʃn ʃelf/", "领取架", "The collection shelf holds finished laundry.", "领取架放着洗好的衣物。", 65, 35),
+            { ...laundryWord("bag-tie", "bag tie", "/bæɡ taɪ/", "袋口扎带", "The bag tie keeps the laundry bag closed.", "袋口扎带让洗衣袋保持闭合。", 50, 66, "袋口扎带"), type: "action", actionEffect: "sparkle", actionMessageEn: "You tie the bag and finish the laundromat visit.", actionMessageZh: "你系好袋口，完成洗衣房之旅。", actionDuration: 2600 }
+          ],
+          completeText: "Great! You reviewed the laundry visit and packed everything neatly.",
+          completeZh: "太棒了！你复习了洗衣流程，并把衣物整理好了。",
+        }
+      ];
+
       const clinicDialogues = {
         "clinic-entrance": {
                 id: "clinic-entrance",
@@ -7413,6 +7523,41 @@
         "apartment-move-in": { id: "apartment-move-in", speaker: "Move-in Coordinator", zh: "入住协调员", text: "Let us review the move-in checklist together.", translation: "让我们一起查看入住清单。", options: [
           { text: "What is in the welcome packet?", choiceZh: "欢迎资料包里有什么？", reply: "It has general move-in information for this learning visit.", translation: "它包含这次学习看房的一般入住信息。" },
           { text: "I would like to confirm the next step.", choiceZh: "我想确认下一步。", reply: "Great. You have completed the checklist language.", translation: "很好。你已经完成了入住清单用语。" }
+        ] }
+      };
+
+      const laundryDialogues = {
+        "laundry-entrance": { id: "laundry-entrance", speaker: "Laundry Attendant", zh: "洗衣房工作人员", text: "Welcome. Is this your first time using this laundromat?", translation: "欢迎。这是你第一次使用这家自助洗衣房吗？", options: [
+          { text: "Yes, I need a wash token.", choiceZh: "是的，我需要一个洗衣代币。", reply: "The token machine is near the entrance.", translation: "代币机在入口附近。" },
+          { text: "Where can I read the laundry rules?", choiceZh: "我在哪里可以看洗衣房规则？", reply: "The laundry rules are posted on the wall.", translation: "洗衣房规则贴在墙上。" }
+        ] },
+        "laundry-machine-area": { id: "laundry-machine-area", speaker: "Regular Customer", zh: "常来顾客", text: "That washer looks available if the display is clear.", translation: "如果显示屏是空闲状态，那台洗衣机看起来可以用。", options: [
+          { text: "Is this a front-loading washer?", choiceZh: "这是前开门洗衣机吗？", reply: "Yes. Open the drum door from the front.", translation: "是的。从前方打开滚筒门。" },
+          { text: "Should I check the rubber gasket?", choiceZh: "我应该检查橡胶密封圈吗？", reply: "Yes, it is a useful habit before loading clothes.", translation: "是的，装衣物前检查一下是个好习惯。" }
+        ] },
+        "laundry-detergent-station": { id: "laundry-detergent-station", speaker: "Laundry Attendant", zh: "洗衣房工作人员", text: "Use a small amount of product and follow the label.", translation: "少量使用洗涤用品，并按照标签说明操作。", options: [
+          { text: "What is fabric softener for?", choiceZh: "衣物柔顺剂是做什么用的？", reply: "It helps clothes feel softer after washing.", translation: "它让衣物洗后摸起来更柔软。" },
+          { text: "Can I use stain remover first?", choiceZh: "我可以先使用去渍剂吗？", reply: "Yes. Use it before the wash cycle for a small stain.", translation: "可以。小污渍可以在洗涤程序前使用。" }
+        ] },
+        "laundry-washer-setup": { id: "laundry-washer-setup", speaker: "Helpful Neighbor", zh: "热心邻居", text: "Sorting clothes first keeps colors safer.", translation: "先给衣物分类，可以更好地保护颜色。", options: [
+          { text: "I will sort colors before washing.", choiceZh: "我会在洗前按颜色分类。", reply: "Good idea. Keep whites and darks apart.", translation: "好主意。把白色衣物和深色衣物分开。" },
+          { text: "Which water temperature should I choose?", choiceZh: "我应该选择什么水温？", reply: "Check the garment tag before you choose.", translation: "选择前先查看衣物标签。" }
+        ] },
+        "laundry-dryer-area": { id: "laundry-dryer-area", speaker: "Staff Member", zh: "工作人员", text: "Please clean the lint trap before using the dryer.", translation: "使用烘干机前请清理绒毛过滤网。", options: [
+          { text: "Where is the lint trap?", choiceZh: "绒毛过滤网在哪里？", reply: "It is inside the dryer door area.", translation: "它在烘干机门内侧区域。" },
+          { text: "How long is the drying time?", choiceZh: "烘干时间要多久？", reply: "It depends on the load size and heat setting.", translation: "这取决于衣物量和热度设置。" }
+        ] },
+        "laundry-folding-table": { id: "laundry-folding-table", speaker: "Another Customer", zh: "另一位顾客", text: "This folding station is free if you need space.", translation: "如果你需要空间，这个折叠区可以用。", options: [
+          { text: "Thank you, I will fold my clothes here.", choiceZh: "谢谢，我会在这里叠衣服。", reply: "No problem. The folding board is on the side.", translation: "没问题。叠衣板在旁边。" },
+          { text: "I found a missing sock.", choiceZh: "我发现了一只丢失的袜子。", reply: "You can put it in the lost-and-found bin.", translation: "你可以把它放进失物招领箱。" }
+        ] },
+        "laundry-pickup-exit": { id: "laundry-pickup-exit", speaker: "Laundry Attendant", zh: "洗衣房工作人员", text: "Please match your claim ticket with the laundry bag.", translation: "请把取衣票和洗衣袋对应起来。", options: [
+          { text: "This claim ticket is mine.", choiceZh: "这张取衣票是我的。", reply: "Great. Your fresh laundry is ready.", translation: "很好。你的干净衣物已经好了。" },
+          { text: "May I use the laundry cart?", choiceZh: "我可以用洗衣推车吗？", reply: "Yes. Please return it near the exit when you finish.", translation: "可以。用完后请放回出口附近。" }
+        ] },
+        "laundry-summary": { id: "laundry-summary", speaker: "Laundry Attendant", zh: "洗衣房工作人员", text: "Before you go, please make sure your bag is closed.", translation: "离开前，请确认你的袋子已经系好。", options: [
+          { text: "I will use the bag tie.", choiceZh: "我会使用袋口扎带。", reply: "Great. Your laundry is packed neatly.", translation: "很好。你的衣物已经整理好了。" },
+          { text: "Where is the collection shelf?", choiceZh: "领取架在哪里？", reply: "It is beside the exit counter.", translation: "它在出口柜台旁边。" }
         ] }
       };
 
@@ -9465,6 +9610,24 @@
           image: "linear-gradient(180deg, rgba(29, 18, 10, 0.03), rgba(29, 18, 10, 0.72)), url('assets/apartment-cover.png')",
           imagePosition: "center 54%",
         },
+        {
+          id: "laundry",
+          title: "Laundry",
+          zh: "洗衣房",
+          status: "Available",
+          statusZh: "可进入",
+          description: "Use washers, dryers, detergent, folding tables, and learn real laundromat English.",
+          descriptionZh: "使用洗衣机、烘干机、洗涤用品和折叠台，学习真实洗衣房英语。",
+          button: "Enter Laundry",
+          buttonZh: "进入洗衣房",
+          available: true,
+          chapter: "laundry",
+          accent: "#8ccfd8",
+          visual: "Laundromat Flow",
+          visualZh: "自助洗衣流程",
+          image: "linear-gradient(180deg, rgba(8, 18, 20, 0.03), rgba(8, 18, 20, 0.72)), radial-gradient(circle at 30% 48%, rgba(235,250,252,0.36) 0 12%, transparent 13%), radial-gradient(circle at 67% 48%, rgba(235,250,252,0.28) 0 12%, transparent 13%), linear-gradient(135deg, #dce9ea 0%, #708b8e 52%, #17292d 100%)",
+          imagePosition: "center 54%",
+        },
       ];
 
       const sceneSelectCards = [
@@ -10100,6 +10263,7 @@
         clinic: clinicScenes.length,
         bank: bankScenes.length,
         apartment: apartmentScenes.length,
+        laundry: laundryScenes.length,
       };
 
       function createEmptyLearningData() {
@@ -10124,6 +10288,7 @@
             clinic: [],
             bank: [],
             apartment: [],
+            laundry: [],
           },
           wordBook: [],
           lastScene: { chapterId: "zoo", sceneIndex: 0 },
@@ -10985,6 +11150,7 @@
         const isClinicChapter = currentChapter === "clinic";
         const isBankChapter = currentChapter === "bank";
         const isApartmentChapter = currentChapter === "apartment";
+        const isLaundryChapter = currentChapter === "laundry";
         const activeScenes = isZooChapter
           ? scenes
           : isFruitShopChapter
@@ -11009,7 +11175,9 @@
           ? clinicScenes
           : isBankChapter
           ? bankScenes
-          : apartmentScenes;
+          : isApartmentChapter
+          ? apartmentScenes
+          : laundryScenes;
         const activeDialogues = isZooChapter
           ? dialogues
           : isFruitShopChapter
@@ -11034,7 +11202,9 @@
           ? clinicDialogues
           : isBankChapter
           ? bankDialogues
-          : apartmentDialogues;
+          : isApartmentChapter
+          ? apartmentDialogues
+          : laundryDialogues;
         const chapterTitle = isZooChapter
           ? "Zoo Trip"
           : isFruitShopChapter
@@ -11059,7 +11229,9 @@
           ? "Clinic Visit"
           : isBankChapter
           ? "Bank Visit"
-          : "Apartment Visit";
+          : isApartmentChapter
+          ? "Apartment Visit"
+          : "Laundry Visit";
         const chapterTitleZh = isZooChapter
           ? "动物园之旅"
           : isFruitShopChapter
@@ -11084,7 +11256,9 @@
           ? "诊所之行"
           : isBankChapter
           ? "银行之旅"
-          : "公寓看房之旅";
+          : isApartmentChapter
+          ? "公寓看房之旅"
+          : "洗衣房之旅";
         const chapterWordBookScene = isZooChapter
           ? "Zoo"
           : isFruitShopChapter
@@ -11109,7 +11283,9 @@
           ? "Clinic"
           : isBankChapter
           ? "Bank"
-          : "Apartment";
+          : isApartmentChapter
+          ? "Apartment"
+          : "Laundry";
         const endingTitle = isZooChapter
           ? "Great job! Your zoo trip is finished."
           : isFruitShopChapter
@@ -11134,7 +11310,9 @@
           ? "Great job! Your clinic visit is finished."
           : isBankChapter
           ? "Great job! Your bank visit is finished."
-          : "Great job! Your apartment visit is finished.";
+          : isApartmentChapter
+          ? "Great job! Your apartment visit is finished."
+          : "Great job! Your laundry visit is finished.";
         const endingZh = isZooChapter
           ? "太棒了！今天的动物园之旅到此结束啦。"
           : isFruitShopChapter
@@ -11159,7 +11337,9 @@
           ? "太棒了！你的诊所之行完成了。"
           : isBankChapter
           ? "太棒了！你的银行之旅完成了。"
-          : "太棒了！你的公寓看房之旅完成了。";
+          : isApartmentChapter
+          ? "太棒了！你的公寓看房之旅完成了。"
+          : "太棒了！你的洗衣房之旅完成了。";
         const restartLabel = isZooChapter
           ? "Restart Trip"
           : isFruitShopChapter
@@ -11184,7 +11364,9 @@
           ? "Restart Clinic"
           : isBankChapter
           ? "Restart Bank"
-          : "Restart Apartment";
+          : isApartmentChapter
+          ? "Restart Apartment"
+          : "Restart Laundry";
         const restartZh = isZooChapter
           ? "重新开始旅程"
           : isFruitShopChapter
@@ -11209,7 +11391,9 @@
           ? "重新开始诊所"
           : isBankChapter
           ? "重新开始银行"
-          : "重新开始公寓";
+          : isApartmentChapter
+          ? "重新开始公寓"
+          : "重新开始洗衣房";
         const welcomeIntro = isZooChapter
           ? {
               label: "Zoo Trip",
@@ -11342,7 +11526,8 @@
               action: "Start Bank Visit",
               actionZh: "开始银行之旅",
             }
-          : {
+          : isApartmentChapter
+          ? {
               label: "Apartment Visit",
               labelZh: "",
               title: "Welcome to the apartment!",
@@ -11351,6 +11536,16 @@
               zh: "今天你会参观公寓、与租赁人员沟通、查看居住空间、了解基础租房信息、询问设施与维修，并学习真实公寓租房英语。",
               action: "Start Apartment Visit",
               actionZh: "开始公寓看房之旅",
+            }
+          : {
+              label: "Laundry Visit",
+              labelZh: "洗衣房之旅",
+              title: "Welcome to the laundromat!",
+              titleZh: "欢迎来到洗衣房！",
+              text: "Today, you will use washers, choose detergent, set a wash cycle, dry and fold clothes, and learn real laundromat English.",
+              zh: "今天你会使用洗衣机、选择洗涤用品、设置洗涤程序、烘干并折叠衣物，学习真实洗衣房英语。",
+              action: "Start Laundry Visit",
+              actionZh: "开始洗衣房之旅",
             };
         const currentScene = activeScenes[currentIndex];
         const currentDialogue = currentScene.npc ? activeDialogues[currentScene.npc] : null;
@@ -11364,7 +11559,7 @@
           setShowMobileTripMap(false);
         }, [isMobileLandscape, currentScene.id]);
         const isHotspotExpanded = expandedHotspotScenes.includes(currentScene.id);
-        const maxPrimaryHotspots = isClinicChapter || isBankChapter || isApartmentChapter || isMobileLandscape
+        const maxPrimaryHotspots = isClinicChapter || isBankChapter || isApartmentChapter || isLaundryChapter || isMobileLandscape
           ? currentScene.hotspots.length
           : viewport.width < 640
           ? 4
@@ -11651,6 +11846,22 @@
           return true;
         });
         const currentReviewWord = filteredSavedWords[reviewIndex] || null;
+        const laundryEndingWords = isLaundryChapter
+          ? activeScenes.flatMap((scene) =>
+              scene.hotspots
+                .filter((hotspot) => learnedHotspotKeys.includes(`${scene.id}:${hotspot.id}`))
+                .map((hotspot) => hotspot.word)
+            )
+          : [];
+        const laundryEndingDialogs = isLaundryChapter
+          ? activeScenes.filter((scene) => scene.npc && conversationDone.includes(scene.npc)).length
+          : 0;
+        const laundryEndingSavedWords = isLaundryChapter
+          ? savedWords.filter((item) => typeof item.scene === "string" && item.scene.startsWith("Laundry /"))
+          : [];
+        const endingWordCount = isLaundryChapter ? laundryEndingWords.length : learnedWords.length;
+        const endingDialogueCount = isLaundryChapter ? laundryEndingDialogs : conversationDone.length;
+        const endingSavedWords = isLaundryChapter ? laundryEndingSavedWords : savedWords;
 
         async function speakEnglish(text, rate = 0.9, key = text, skipMobileAudio = false) {
           const audioUrl = !skipMobileAudio && getMobileAudioUrl(text);
@@ -12626,6 +12837,46 @@
           setSceneSelectHint(""); setCurrentChapter("apartment"); setCurrentIndex(0); setSelectedHotspot(null); setSelectedMoreApartmentWord(null); setDialogueReply(null); setConversationDone([]); setCompletedActions([]); setLearnedHotspotKeys([]); setLearnedWords([]); setProgressHint(""); setAnimalEffect(null); setShowEnding(false); setShowMoreApartmentChoice(false); setShowMoreApartmentBook(false); setMoreApartmentPageIndex(0); setShowWelcome(true); setWelcomeLeaving(false); setCurrentView("zoo");
         }
 
+        function enterLaundry() {
+          setSceneSelectHint("");
+          setCurrentChapter("laundry");
+          setCurrentIndex(0);
+          setSelectedHotspot(null);
+          setDialogueReply(null);
+          setProgressHint("");
+          setAnimalEffect(null);
+          setShowEnding(false);
+          setShowMoreAnimalsChoice(false);
+          setShowMoreAnimalsBook(false);
+          setShowMoreFruitsChoice(false);
+          setShowMoreFruitsBook(false);
+          setShowMoreCampusChoice(false);
+          setShowMoreCampusBook(false);
+          setShowMoreCafeChoice(false);
+          setShowMoreCafeBook(false);
+          setShowMoreAirportChoice(false);
+          setShowMoreAirportBook(false);
+          setShowMoreOfficeChoice(false);
+          setShowMoreOfficeBook(false);
+          setShowMoreHotelChoice(false);
+          setShowMoreHotelBook(false);
+          setShowMoreRestaurantChoice(false);
+          setShowMoreRestaurantBook(false);
+          setShowMoreSupermarketChoice(false);
+          setShowMoreSupermarketBook(false);
+          setShowMoreMetroChoice(false);
+          setShowMoreMetroBook(false);
+          setShowMoreClinicChoice(false);
+          setShowMoreClinicBook(false);
+          setShowMoreBankChoice(false);
+          setShowMoreBankBook(false);
+          setShowMoreApartmentChoice(false);
+          setShowMoreApartmentBook(false);
+          setShowWelcome(true);
+          setWelcomeLeaving(false);
+          setCurrentView("zoo");
+        }
+
         function enterClinic() { setSceneSelectHint(""); setCurrentChapter("clinic"); setCurrentIndex(0); setSelectedHotspot(null); setSelectedMoreAnimal(null); setSelectedMoreFruit(null); setSelectedMoreCampusWord(null); setSelectedMoreCafeWord(null); setSelectedMoreAirportWord(null); setSelectedMoreOfficeWord(null); setSelectedMoreHotelWord(null); setSelectedMoreRestaurantWord(null); setSelectedMoreSupermarketWord(null); setSelectedMoreMetroWord(null);
           setSelectedMoreClinicWord(null); setSelectedMoreClinicWord(null); setDialogueReply(null); setConversationDone([]); setCompletedActions([]); setLearnedHotspotKeys([]); setLearnedWords([]); setProgressHint(""); setAnimalEffect(null); setShowEnding(false); setShowMoreClinicChoice(false); setShowMoreClinicBook(false); setMoreClinicPageIndex(0); setShowWelcome(true); setWelcomeLeaving(false); setCurrentView("zoo"); }
 
@@ -12681,6 +12932,7 @@
             clinic: enterClinic,
             bank: enterBank,
             apartment: enterApartment,
+            laundry: enterLaundry,
           };
           enterByChapter[chapter]?.();
         }
@@ -12733,6 +12985,7 @@
               clinic: learnedMoreClinicWords,
               bank: learnedMoreBankWords,
               apartment: learnedMoreApartmentWords,
+              laundry: [],
             },
             wordBook: savedWords,
             lastScene: { chapterId: currentChapter, sceneIndex: currentIndex },
@@ -13210,6 +13463,11 @@
 
           if (currentIndex < activeScenes.length - 1) {
             moveTo(currentIndex + 1);
+          } else if (isLaundryChapter) {
+            setSelectedHotspot(null);
+            setDialogueReply(null);
+            setProgressHint("");
+            setShowEnding(true);
           } else {
             openChapterMoreChoice();
           }
@@ -13289,7 +13547,7 @@
           setMoreBankPageIndex(0);
           setMoreApartmentPageIndex(0);
           setShowEnding(false);
-          setShowWelcome(isZooChapter || isCampusChapter || isCafeChapter || isAirportChapter || isOfficeChapter || isHotelChapter || isRestaurantChapter || isSupermarketChapter || isMetroChapter || isClinicChapter || isBankChapter || isApartmentChapter);
+          setShowWelcome(isZooChapter || isCampusChapter || isCafeChapter || isAirportChapter || isOfficeChapter || isHotelChapter || isRestaurantChapter || isSupermarketChapter || isMetroChapter || isClinicChapter || isBankChapter || isApartmentChapter || isLaundryChapter);
           setWelcomeLeaving(false);
           setAnimalEffect(null);
         }
@@ -14183,7 +14441,7 @@
 
                     <div className="mt-5 grid gap-2 sm:grid-cols-2">
                       {[
-                        ["Unlock all 13 real-life scenes", "解锁全部 13 个真实场景"],
+                        ["Unlock all 14 real-life scenes", "解锁全部 14 个真实场景"],
                         ["Learn 1000+ practical scene words", "1000+ 高频场景词汇"],
                         ["Practice sentences and dialogues", "完整句子朗读与跟读"],
                         ["NPC dialogue practice", "NPC 对话练习"],
@@ -14238,13 +14496,13 @@
                           <div className="mt-4 rounded-2xl border border-white/12 bg-white/[0.06] px-3 py-3">
                             <p className="text-sm font-black text-white">Includes:</p>
                             <ul className="mt-2 space-y-1 text-xs font-bold leading-5 text-cream/68">
-                              <li>All 13 real-life English scenes</li>
+                              <li>All 14 real-life English scenes</li>
                               <li>Word book and progress saving</li>
                               <li>Future scene updates</li>
                             </ul>
                             <p className="mt-3 text-sm font-black text-banana">包含：</p>
                             <ul className="mt-2 space-y-1 text-xs font-bold leading-5 text-cream/68">
-                              <li>全部 13 个真实场景</li>
+                              <li>全部 14 个真实场景</li>
                               <li>生词本和学习进度保存</li>
                               <li>后续场景持续更新</li>
                             </ul>
@@ -17994,15 +18252,15 @@
                   <div className="mt-6 grid gap-3 sm:grid-cols-3">
                     <div className="rounded-2xl border border-white/12 bg-white/10 p-4">
                       <p className="text-[10px] font-black uppercase tracking-[0.18em] text-banana">Words</p>
-                      <p className="mt-2 text-3xl font-black text-white">{learnedWords.length}</p>
+                      <p className="mt-2 text-3xl font-black text-white">{endingWordCount}</p>
                     </div>
                     <div className="rounded-2xl border border-white/12 bg-white/10 p-4">
                       <p className="text-[10px] font-black uppercase tracking-[0.18em] text-banana">Dialogues</p>
-                      <p className="mt-2 text-3xl font-black text-white">{conversationDone.length}</p>
+                      <p className="mt-2 text-3xl font-black text-white">{endingDialogueCount}</p>
                     </div>
                     <div className="rounded-2xl border border-white/12 bg-white/10 p-4">
                       <p className="text-[10px] font-black uppercase tracking-[0.18em] text-banana">Saved</p>
-                      <p className="mt-2 text-3xl font-black text-white">{savedWords.length}</p>
+                      <p className="mt-2 text-3xl font-black text-white">{endingSavedWords.length}</p>
                     </div>
                   </div>
 
@@ -18011,7 +18269,7 @@
                       Word Book
                     </p>
                     <p className="mt-2 text-lg font-black leading-8 text-white">
-                      {savedWords.length ? savedWords.map((item) => item.word).join(", ") : "No saved words yet."}
+                      {endingSavedWords.length ? endingSavedWords.map((item) => item.word).join(", ") : "No saved words yet."}
                     </p>
                   </div>
 
