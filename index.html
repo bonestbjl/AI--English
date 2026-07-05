@@ -9490,52 +9490,143 @@
       ];
 
       let cachedEnglishVoice = null;
+      let englishVoicesReady = false;
+      let englishVoiceLoadPromise = null;
+      let englishVoiceDebugSignature = "";
       let activeSpeechToken = 0;
+
+      function detectSpeechBrowser() {
+        const ua = navigator.userAgent || "";
+        if (/Chrome|CriOS|Chromium/i.test(ua) && !/Edg|OPR|Opera/i.test(ua)) return "Chrome";
+        if (/Safari/i.test(ua) && !/Chrome|CriOS|Chromium|Android/i.test(ua)) return "Safari";
+        if (/Edg/i.test(ua)) return "Edge";
+        if (/Firefox/i.test(ua)) return "Firefox";
+        return "Unknown";
+      }
+
+      function normalizeVoiceText(value) {
+        return String(value || "").toLowerCase();
+      }
 
       function pickBestEnglishVoice(voices) {
         if (!voices.length) return cachedEnglishVoice;
-        const priorityNames = [
-          "Google US English",
-          "Google UK English Female",
-          "Microsoft Jenny",
-          "Samantha",
-          "Alex",
-          "Daniel",
+        const englishVoices = voices.filter((voice) =>
+          normalizeVoiceText(voice.lang).startsWith("en")
+        );
+        if (!englishVoices.length) return voices[0] || cachedEnglishVoice || null;
+
+        const preferredNameTokens = [
+          "google us english",
+          "google uk english female",
+          "microsoft jenny",
+          "microsoft aria",
+          "samantha",
+          "ava",
+          "allison",
+          "susan",
+          "victoria",
+          "alex",
+          "daniel",
+          "serena",
+          "karen",
+          "moira",
+          "tessa",
+          "siri",
         ];
 
-        const englishVoices = voices.filter((voice) =>
-          voice.lang?.toLowerCase().startsWith("en")
-        );
-
-        const byPriorityName = priorityNames
-          .map((name) =>
-            englishVoices.find((voice) =>
-              voice.name.toLowerCase().includes(name.toLowerCase())
-            )
-          )
-          .find(Boolean);
-
-        const naturalEnglish = englishVoices.find((voice) => {
-          const name = voice.name.toLowerCase();
-          return (
-            ["google", "microsoft", "samantha", "alex", "daniel"].some((token) =>
-              name.includes(token)
-            ) && ["en-us", "en-gb"].includes(voice.lang.toLowerCase())
+        const scoreVoice = (voice) => {
+          const name = normalizeVoiceText(voice.name);
+          const uri = normalizeVoiceText(voice.voiceURI);
+          const lang = normalizeVoiceText(voice.lang);
+          let score = 0;
+          const priorityIndex = preferredNameTokens.findIndex((token) =>
+            name.includes(token) || uri.includes(token)
           );
-        });
+          if (priorityIndex >= 0) score += 1000 - priorityIndex * 20;
+          if (lang === "en-us") score += 500;
+          else if (lang === "en-gb") score += 420;
+          else if (lang.startsWith("en-")) score += 260;
+          if (/premium|enhanced|natural|neural|siri/.test(name + " " + uri)) score += 120;
+          if (voice.default) score += 30;
+          if (voice.localService) score += 10;
+          return score;
+        };
 
-        const usOrGb = englishVoices.find((voice) =>
-          ["en-us", "en-gb"].includes(voice.lang.toLowerCase())
+        return englishVoices
+          .slice()
+          .sort((a, b) => scoreVoice(b) - scoreVoice(a))[0] || null;
+      }
+
+      function logEnglishVoiceDebug(voices, selectedVoice) {
+        const englishVoices = voices.filter((voice) =>
+          normalizeVoiceText(voice.lang).startsWith("en")
         );
-
-        return byPriorityName || naturalEnglish || usOrGb || englishVoices[0] || voices[0] || null;
+        const signature = `${voices.length}|${selectedVoice?.name || "none"}|${selectedVoice?.lang || "none"}`;
+        if (signature === englishVoiceDebugSignature) return;
+        englishVoiceDebugSignature = signature;
+        console.info("[RSE speech] voice loader", {
+          browser: detectSpeechBrowser(),
+          voiceCount: voices.length,
+          englishVoices: englishVoices.map((voice) => ({
+            name: voice.name,
+            lang: voice.lang,
+            localService: voice.localService,
+            voiceURI: voice.voiceURI,
+            default: voice.default,
+          })),
+          selectedVoice: selectedVoice
+            ? {
+                name: selectedVoice.name,
+                lang: selectedVoice.lang,
+                localService: selectedVoice.localService,
+                voiceURI: selectedVoice.voiceURI,
+              }
+            : null,
+        });
       }
 
       function loadEnglishVoices() {
         if (!("speechSynthesis" in window)) return null;
         const voices = window.speechSynthesis.getVoices();
-        cachedEnglishVoice = pickBestEnglishVoice(voices);
+        if (voices.length) {
+          englishVoicesReady = true;
+          cachedEnglishVoice = pickBestEnglishVoice(voices);
+        } else {
+          englishVoicesReady = false;
+        }
+        logEnglishVoiceDebug(voices, cachedEnglishVoice);
         return cachedEnglishVoice;
+      }
+
+      function waitForEnglishVoice(timeoutMs = 1200) {
+        if (!("speechSynthesis" in window)) return Promise.resolve(null);
+        const immediateVoice = loadEnglishVoices();
+        if (immediateVoice || englishVoicesReady) return Promise.resolve(immediateVoice);
+        if (englishVoiceLoadPromise) return englishVoiceLoadPromise;
+
+        englishVoiceLoadPromise = new Promise((resolve) => {
+          let resolved = false;
+          const finish = () => {
+            if (resolved) return;
+            resolved = true;
+            if (typeof window.speechSynthesis.removeEventListener === "function") {
+              window.speechSynthesis.removeEventListener("voiceschanged", handleVoicesChanged);
+            } else if (window.speechSynthesis.onvoiceschanged === handleVoicesChanged) {
+              window.speechSynthesis.onvoiceschanged = null;
+            }
+            englishVoiceLoadPromise = null;
+            resolve(loadEnglishVoices());
+          };
+          const handleVoicesChanged = () => finish();
+          if (typeof window.speechSynthesis.addEventListener === "function") {
+            window.speechSynthesis.addEventListener("voiceschanged", handleVoicesChanged, { once: true });
+          } else {
+            window.speechSynthesis.onvoiceschanged = handleVoicesChanged;
+          }
+          window.setTimeout(finish, timeoutMs);
+        });
+
+        return englishVoiceLoadPromise;
       }
 
       function SoundBars() {
@@ -11559,7 +11650,7 @@
         });
         const currentReviewWord = filteredSavedWords[reviewIndex] || null;
 
-        function speakEnglish(text, rate = 0.9, key = text, skipMobileAudio = false) {
+        async function speakEnglish(text, rate = 0.9, key = text, skipMobileAudio = false) {
           const audioUrl = !skipMobileAudio && getMobileAudioUrl(text);
           if (audioUrl) {
             playLearningAudio({ text, audioUrl, rate, key });
@@ -11568,10 +11659,16 @@
           if (!("speechSynthesis" in window)) return;
           const speechToken = activeSpeechToken + 1;
           activeSpeechToken = speechToken;
+          setPlayingKey(key);
           window.speechSynthesis.cancel();
+          let selectedVoice = loadEnglishVoices();
+          if (!selectedVoice && !englishVoicesReady) {
+            selectedVoice = await waitForEnglishVoice();
+          }
+          if (activeSpeechToken !== speechToken) return;
           const utterance = new SpeechSynthesisUtterance(text);
-          utterance.lang = cachedEnglishVoice?.lang || "en-US";
-          if (cachedEnglishVoice) utterance.voice = cachedEnglishVoice;
+          utterance.lang = "en-US";
+          if (selectedVoice) utterance.voice = selectedVoice;
           utterance.rate = rate;
           utterance.pitch = 1;
           utterance.volume = 1;
@@ -11581,7 +11678,6 @@
           utterance.onerror = () => {
             if (activeSpeechToken === speechToken) setPlayingKey(null);
           };
-          setPlayingKey(key);
           window.speechSynthesis.speak(utterance);
         }
 
