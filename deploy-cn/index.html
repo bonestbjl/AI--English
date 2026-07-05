@@ -9510,6 +9510,7 @@
 
       function pickBestEnglishVoice(voices) {
         if (!voices.length) return cachedEnglishVoice;
+        const speechBrowser = detectSpeechBrowser();
         const englishVoices = voices.filter((voice) =>
           normalizeVoiceText(voice.lang).startsWith("en")
         );
@@ -9539,6 +9540,7 @@
           const uri = normalizeVoiceText(voice.voiceURI);
           const lang = normalizeVoiceText(voice.lang);
           let score = 0;
+          if (speechBrowser === "Safari" && (name.includes("karen") || uri.includes("karen"))) score += 2000;
           const priorityIndex = preferredNameTokens.findIndex((token) =>
             name.includes(token) || uri.includes(token)
           );
