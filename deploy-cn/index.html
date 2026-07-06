@@ -7209,105 +7209,105 @@
 
       const laundryScenes = [
         {
-          id: "laundry-entrance", npc: "laundry-entrance", title: "Entrance", zh: "洗衣房入口", short: "入口", bgStyle: "radial-gradient(circle at 24% 28%, rgba(177, 224, 235, 0.28), transparent 24%), radial-gradient(circle at 76% 38%, rgba(255, 221, 142, 0.18), transparent 20%), linear-gradient(180deg, #dce9ea 0%, #708b8e 58%, #17292d 100%)", coreWord: "laundromat",
+          id: "laundry-entrance", npc: "laundry-entrance", title: "Entrance", zh: "洗衣房入口", short: "入口", bg: "assets/laundry-entrance-bg.png", bgStyle: "radial-gradient(circle at 24% 28%, rgba(177, 224, 235, 0.28), transparent 24%), radial-gradient(circle at 76% 38%, rgba(255, 221, 142, 0.18), transparent 20%), linear-gradient(180deg, #dce9ea 0%, #708b8e 58%, #17292d 100%)", coreWord: "laundromat",
           intro: { text: "You arrive at a neighborhood laundromat and check the basic signs before you start.", zh: "你来到社区自助洗衣房，开始前先查看基本标识。" },
           hotspots: [
-            laundryWord("laundromat", "laundromat", "/ˈlɔːndrəmæt/", "自助洗衣房", "The laundromat is open this evening.", "这家自助洗衣房今晚营业。", 18, 31),
-            laundryWord("laundry-attendant", "laundry attendant", "/ˈlɔːndri əˈtendənt/", "洗衣房工作人员", "The laundry attendant helps new customers.", "洗衣房工作人员帮助新顾客。", 46, 30),
-            laundryWord("service-bell", "service bell", "/ˈsɜːrvɪs bel/", "服务铃", "The service bell is on the front counter.", "服务铃在前台柜面上。", 75, 32),
-            laundryWord("last-wash-time", "last wash time", "/læst wɑːʃ taɪm/", "最后洗衣时间", "The last wash time is written near the door.", "最后洗衣时间写在门边。", 20, 59),
-            laundryWord("laundry-rules", "laundry rules", "/ˈlɔːndri ruːlz/", "洗衣房规则", "The laundry rules are posted on the wall.", "洗衣房规则贴在墙上。", 49, 58),
-            laundryWord("token-machine", "token machine", "/ˈtoʊkən məˈʃiːn/", "代币机", "The token machine is beside the entrance.", "代币机在入口旁边。", 77, 58),
-            { ...laundryWord("wash-token", "wash token", "/wɑːʃ ˈtoʊkən/", "洗衣代币", "I use a wash token to start the machine.", "我用洗衣代币启动机器。", 50, 72, "洗衣代币"), type: "action", actionEffect: "sparkle", actionMessageEn: "You get a wash token and are ready to choose a machine.", actionMessageZh: "你拿到了洗衣代币，准备选择机器。", actionDuration: 2600 }
+            laundryWord("laundromat", "laundromat", "/ˈlɔːndrəmæt/", "自助洗衣房", "The laundromat is open this evening.", "这家自助洗衣房今晚营业。", 31, 42),
+            laundryWord("laundry-attendant", "laundry attendant", "/ˈlɔːndri əˈtendənt/", "洗衣房工作人员", "The laundry attendant helps new customers.", "洗衣房工作人员帮助新顾客。", 82, 40),
+            laundryWord("service-bell", "service bell", "/ˈsɜːrvɪs bel/", "服务铃", "The service bell is on the front counter.", "服务铃在前台柜面上。", 72, 56),
+            laundryWord("last-wash-time", "last wash time", "/læst wɑːʃ taɪm/", "最后洗衣时间", "The last wash time is written near the door.", "最后洗衣时间写在门边。", 10, 23),
+            laundryWord("laundry-rules", "laundry rules", "/ˈlɔːndri ruːlz/", "洗衣房规则", "The laundry rules are posted on the wall.", "洗衣房规则贴在墙上。", 15, 43),
+            laundryWord("token-machine", "token machine", "/ˈtoʊkən məˈʃiːn/", "代币机", "The token machine is beside the entrance.", "代币机在入口旁边。", 60, 48),
+            { ...laundryWord("wash-token", "wash token", "/wɑːʃ ˈtoʊkən/", "洗衣代币", "I use a wash token to start the machine.", "我用洗衣代币启动机器。", 74, 78, "洗衣代币"), type: "action", actionEffect: "sparkle", actionMessageEn: "You get a wash token and are ready to choose a machine.", actionMessageZh: "你拿到了洗衣代币，准备选择机器。", actionDuration: 2600 }
           ]
         },
         {
-          id: "laundry-machine-area", npc: "laundry-machine-area", title: "Machine Area", zh: "机器区", short: "机器", bgStyle: "radial-gradient(ellipse at 32% 52%, rgba(230, 244, 247, 0.52), transparent 20%), radial-gradient(ellipse at 68% 52%, rgba(230, 244, 247, 0.42), transparent 20%), linear-gradient(180deg, #d8e4e6 0%, #657f86 58%, #15252b 100%)", coreWord: "washing machine",
+          id: "laundry-machine-area", npc: "laundry-machine-area", title: "Machine Area", zh: "机器区", short: "机器", bg: "assets/laundry-machine-area-bg.png", bgStyle: "radial-gradient(ellipse at 32% 52%, rgba(230, 244, 247, 0.52), transparent 20%), radial-gradient(ellipse at 68% 52%, rgba(230, 244, 247, 0.42), transparent 20%), linear-gradient(180deg, #d8e4e6 0%, #657f86 58%, #15252b 100%)", coreWord: "washing machine",
           intro: { text: "You look across the machine area and choose a washer that is ready to use.", zh: "你查看机器区，选择一台可用的洗衣机。" },
           hotspots: [
-            laundryWord("washing-machine", "washing machine", "/ˈwɑːʃɪŋ məˈʃiːn/", "洗衣机", "This washing machine is ready for a small load.", "这台洗衣机适合一小筐衣物。", 18, 31),
-            laundryWord("available-washer", "available washer", "/əˈveɪləbəl ˈwɑːʃər/", "可用洗衣机", "An available washer has a clear display.", "可用洗衣机的显示屏是空闲状态。", 40, 30),
-            laundryWord("front-loading-washer", "front-loading washer", "/frʌnt ˈloʊdɪŋ ˈwɑːʃər/", "前开门洗衣机", "A front-loading washer opens from the front.", "前开门洗衣机从前方打开。", 64, 30),
-            laundryWord("top-loading-washer", "top-loading washer", "/tɑːp ˈloʊdɪŋ ˈwɑːʃər/", "上开盖洗衣机", "A top-loading washer opens from above.", "上开盖洗衣机从上方打开。", 82, 36),
-            laundryWord("glass-porthole", "glass porthole", "/ɡlæs ˈpɔːrthoʊl/", "圆形玻璃窗", "The glass porthole lets me see the clothes.", "圆形玻璃窗让我看到衣物。", 24, 61),
-            laundryWord("drum-door", "drum door", "/drʌm dɔːr/", "滚筒门", "The drum door must close firmly.", "滚筒门必须关紧。", 48, 61),
-            laundryWord("rubber-gasket", "rubber gasket", "/ˈrʌbər ˈɡæskɪt/", "橡胶密封圈", "The rubber gasket seals the washer door.", "橡胶密封圈密封洗衣机门。", 70, 61),
-            { ...laundryWord("soap-dispenser", "soap dispenser", "/soʊp dɪˈspensər/", "洗涤剂投放盒", "The soap dispenser holds detergent for the wash.", "洗涤剂投放盒用于放洗衣液。", 50, 75, "洗涤剂投放盒"), type: "action", actionEffect: "sparkle", actionMessageEn: "You open the dispenser and prepare the washer.", actionMessageZh: "你打开投放盒，准备设置洗衣机。", actionDuration: 2600 }
+            laundryWord("washing-machine", "washing machine", "/ˈwɑːʃɪŋ məˈʃiːn/", "洗衣机", "This washing machine is ready for a small load.", "这台洗衣机适合一小筐衣物。", 21, 49),
+            laundryWord("available-washer", "available washer", "/əˈveɪləbəl ˈwɑːʃər/", "可用洗衣机", "An available washer has a clear display.", "可用洗衣机的显示屏是空闲状态。", 20, 31),
+            laundryWord("front-loading-washer", "front-loading washer", "/frʌnt ˈloʊdɪŋ ˈwɑːʃər/", "前开门洗衣机", "A front-loading washer opens from the front.", "前开门洗衣机从前方打开。", 41, 49),
+            laundryWord("top-loading-washer", "top-loading washer", "/tɑːp ˈloʊdɪŋ ˈwɑːʃər/", "上开盖洗衣机", "A top-loading washer opens from above.", "上开盖洗衣机从上方打开。", 68, 43),
+            laundryWord("glass-porthole", "glass porthole", "/ɡlæs ˈpɔːrthoʊl/", "圆形玻璃窗", "The glass porthole lets me see the clothes.", "圆形玻璃窗让我看到衣物。", 27, 54),
+            laundryWord("drum-door", "drum door", "/drʌm dɔːr/", "滚筒门", "The drum door must close firmly.", "滚筒门必须关紧。", 43, 60),
+            laundryWord("rubber-gasket", "rubber gasket", "/ˈrʌbər ˈɡæskɪt/", "橡胶密封圈", "The rubber gasket seals the washer door.", "橡胶密封圈密封洗衣机门。", 34, 66),
+            { ...laundryWord("soap-dispenser", "soap dispenser", "/soʊp dɪˈspensər/", "洗涤剂投放盒", "The soap dispenser holds detergent for the wash.", "洗涤剂投放盒用于放洗衣液。", 34, 34, "洗涤剂投放盒"), type: "action", actionEffect: "sparkle", actionMessageEn: "You open the dispenser and prepare the washer.", actionMessageZh: "你打开投放盒，准备设置洗衣机。", actionDuration: 2600 }
           ]
         },
         {
-          id: "laundry-detergent-station", npc: "laundry-detergent-station", title: "Detergent Station", zh: "洗涤用品区", short: "洗涤剂", bgStyle: "radial-gradient(circle at 28% 50%, rgba(255, 255, 255, 0.32), transparent 18%), radial-gradient(circle at 72% 47%, rgba(136, 205, 214, 0.26), transparent 20%), linear-gradient(180deg, #e6e8dd 0%, #8a8f72 58%, #24271f 100%)", coreWord: "detergent",
+          id: "laundry-detergent-station", npc: "laundry-detergent-station", title: "Detergent Station", zh: "洗涤用品区", short: "洗涤剂", bg: "assets/laundry-detergent-station-bg.png", bgStyle: "radial-gradient(circle at 28% 50%, rgba(255, 255, 255, 0.32), transparent 18%), radial-gradient(circle at 72% 47%, rgba(136, 205, 214, 0.26), transparent 20%), linear-gradient(180deg, #e6e8dd 0%, #8a8f72 58%, #24271f 100%)", coreWord: "detergent",
           intro: { text: "You compare common laundry products before adding anything to the washer.", zh: "你在加入洗衣机前，先辨认常见洗衣用品。" },
           hotspots: [
-            laundryWord("detergent", "detergent", "/dɪˈtɜːrdʒənt/", "洗衣液，洗涤剂", "Detergent cleans the clothes during the wash.", "洗衣液在洗涤过程中清洁衣物。", 17, 30),
-            laundryWord("fabric-softener", "fabric softener", "/ˈfæbrɪk ˈsɔːfnər/", "衣物柔顺剂", "Fabric softener makes clothes feel softer.", "衣物柔顺剂让衣物摸起来更柔软。", 39, 31),
-            laundryWord("bleach-bottle", "bleach bottle", "/bliːtʃ ˈbɑːtl/", "漂白剂瓶", "The bleach bottle is marked with a warning label.", "漂白剂瓶上有警示标签。", 61, 31),
-            laundryWord("laundry-pod", "laundry pod", "/ˈlɔːndri pɑːd/", "洗衣凝珠", "A laundry pod goes into the washer drum.", "洗衣凝珠放进洗衣机滚筒里。", 80, 34),
-            laundryWord("powder-scoop", "powder scoop", "/ˈpaʊdər skuːp/", "洗衣粉量勺", "The powder scoop helps measure the amount.", "洗衣粉量勺帮助测量用量。", 22, 61),
-            laundryWord("measuring-cap", "measuring cap", "/ˈmeʒərɪŋ kæp/", "量杯盖", "The measuring cap shows how much to use.", "量杯盖显示应该用多少。", 47, 61),
-            laundryWord("stain-remover", "stain remover", "/steɪn rɪˈmuːvər/", "去渍剂", "Stain remover helps with a small mark.", "去渍剂有助于处理小污渍。", 70, 61),
-            { ...laundryWord("prewash-spray", "prewash spray", "/ˈpriːwɑːʃ spreɪ/", "预洗喷雾", "I use prewash spray before the wash cycle.", "我在洗涤程序前使用预洗喷雾。", 49, 75, "预洗喷雾"), type: "action", actionEffect: "sparkle", actionMessageEn: "You spray a small stain before starting the washer.", actionMessageZh: "你在启动洗衣机前喷了一点污渍。", actionDuration: 2600 }
+            laundryWord("detergent", "detergent", "/dɪˈtɜːrdʒənt/", "洗衣液，洗涤剂", "Detergent cleans the clothes during the wash.", "洗衣液在洗涤过程中清洁衣物。", 31, 58),
+            laundryWord("fabric-softener", "fabric softener", "/ˈfæbrɪk ˈsɔːfnər/", "衣物柔顺剂", "Fabric softener makes clothes feel softer.", "衣物柔顺剂让衣物摸起来更柔软。", 45, 61),
+            laundryWord("bleach-bottle", "bleach bottle", "/bliːtʃ ˈbɑːtl/", "漂白剂瓶", "The bleach bottle is marked with a warning label.", "漂白剂瓶上有警示标签。", 59, 62),
+            laundryWord("laundry-pod", "laundry pod", "/ˈlɔːndri pɑːd/", "洗衣凝珠", "A laundry pod goes into the washer drum.", "洗衣凝珠放进洗衣机滚筒里。", 67, 75),
+            laundryWord("powder-scoop", "powder scoop", "/ˈpaʊdər skuːp/", "洗衣粉量勺", "The powder scoop helps measure the amount.", "洗衣粉量勺帮助测量用量。", 16, 75),
+            laundryWord("measuring-cap", "measuring cap", "/ˈmeʒərɪŋ kæp/", "量杯盖", "The measuring cap shows how much to use.", "量杯盖显示应该用多少。", 30, 83),
+            laundryWord("stain-remover", "stain remover", "/steɪn rɪˈmuːvər/", "去渍剂", "Stain remover helps with a small mark.", "去渍剂有助于处理小污渍。", 75, 61),
+            { ...laundryWord("prewash-spray", "prewash spray", "/ˈpriːwɑːʃ spreɪ/", "预洗喷雾", "I use prewash spray before the wash cycle.", "我在洗涤程序前使用预洗喷雾。", 90, 66, "预洗喷雾"), type: "action", actionEffect: "sparkle", actionMessageEn: "You spray a small stain before starting the washer.", actionMessageZh: "你在启动洗衣机前喷了一点污渍。", actionDuration: 2600 }
           ]
         },
         {
-          id: "laundry-washer-setup", npc: "laundry-washer-setup", title: "Washer Setup", zh: "洗衣机设置", short: "设置", bgStyle: "radial-gradient(circle at 38% 38%, rgba(255, 255, 255, 0.28), transparent 18%), radial-gradient(circle at 66% 54%, rgba(255, 222, 146, 0.18), transparent 20%), linear-gradient(180deg, #dbe9ec 0%, #6c8186 58%, #15262b 100%)", coreWord: "sort colors",
+          id: "laundry-washer-setup", npc: "laundry-washer-setup", title: "Washer Setup", zh: "洗衣机设置", short: "设置", bg: "assets/laundry-washer-setup-bg.png", bgStyle: "radial-gradient(circle at 38% 38%, rgba(255, 255, 255, 0.28), transparent 18%), radial-gradient(circle at 66% 54%, rgba(255, 222, 146, 0.18), transparent 20%), linear-gradient(180deg, #dbe9ec 0%, #6c8186 58%, #15262b 100%)", coreWord: "sort colors",
           intro: { text: "You sort the clothes and choose a simple washer setting.", zh: "你给衣物分类，并选择一个简单的洗衣机设置。" },
           hotspots: [
-            laundryWord("sort-colors", "sort colors", "/sɔːrt ˈkʌlərz/", "按颜色分类", "I sort colors before I load the washer.", "我在装洗衣机前按颜色分类。", 17, 30),
-            laundryWord("whites", "whites", "/waɪts/", "白色衣物", "Whites often need a separate load.", "白色衣物通常需要单独一筐。", 39, 31),
-            laundryWord("darks", "darks", "/dɑːrks/", "深色衣物", "Darks go into another load.", "深色衣物放进另一筐。", 61, 31),
-            laundryWord("pocket-check", "pocket check", "/ˈpɑːkɪt tʃek/", "口袋检查", "A pocket check keeps tissues out of the washer.", "口袋检查可以避免纸巾进洗衣机。", 80, 34),
-            laundryWord("garment-tag", "garment tag", "/ˈɡɑːrmənt tæɡ/", "衣物标签", "The garment tag shows care instructions.", "衣物标签显示护理说明。", 22, 61),
-            laundryWord("load-size", "load size", "/loʊd saɪz/", "洗衣量", "Load size changes how much water the washer uses.", "洗衣量会影响洗衣机用水量。", 47, 61),
-            laundryWord("water-temperature", "water temperature", "/ˈwɔːtər ˈtemprətʃər/", "水温", "Water temperature is part of the washer setting.", "水温是洗衣机设置的一部分。", 70, 61),
-            { ...laundryWord("wash-cycle", "wash cycle", "/wɑːʃ ˈsaɪkl/", "洗涤程序", "I choose a normal wash cycle.", "我选择普通洗涤程序。", 49, 75, "洗涤程序"), type: "action", actionEffect: "sparkle", actionMessageEn: "You choose the wash cycle and start the load.", actionMessageZh: "你选择洗涤程序并启动这一筐衣物。", actionDuration: 2600 }
+            laundryWord("sort-colors", "sort colors", "/sɔːrt ˈkʌlərz/", "按颜色分类", "I sort colors before I load the washer.", "我在装洗衣机前按颜色分类。", 21, 80),
+            laundryWord("whites", "whites", "/waɪts/", "白色衣物", "Whites often need a separate load.", "白色衣物通常需要单独一筐。", 14, 49),
+            laundryWord("darks", "darks", "/dɑːrks/", "深色衣物", "Darks go into another load.", "深色衣物放进另一筐。", 45, 75),
+            laundryWord("pocket-check", "pocket check", "/ˈpɑːkɪt tʃek/", "口袋检查", "A pocket check keeps tissues out of the washer.", "口袋检查可以避免纸巾进洗衣机。", 25, 64),
+            laundryWord("garment-tag", "garment tag", "/ˈɡɑːrmənt tæɡ/", "衣物标签", "The garment tag shows care instructions.", "衣物标签显示护理说明。", 34, 67),
+            laundryWord("load-size", "load size", "/loʊd saɪz/", "洗衣量", "Load size changes how much water the washer uses.", "洗衣量会影响洗衣机用水量。", 64, 18),
+            laundryWord("water-temperature", "water temperature", "/ˈwɔːtər ˈtemprətʃər/", "水温", "Water temperature is part of the washer setting.", "水温是洗衣机设置的一部分。", 75, 17),
+            { ...laundryWord("wash-cycle", "wash cycle", "/wɑːʃ ˈsaɪkl/", "洗涤程序", "I choose a normal wash cycle.", "我选择普通洗涤程序。", 86, 18, "洗涤程序"), type: "action", actionEffect: "sparkle", actionMessageEn: "You choose the wash cycle and start the load.", actionMessageZh: "你选择洗涤程序并启动这一筐衣物。", actionDuration: 2600 }
           ]
         },
         {
-          id: "laundry-dryer-area", npc: "laundry-dryer-area", title: "Dryer Area", zh: "烘干区", short: "烘干", bgStyle: "radial-gradient(ellipse at 35% 53%, rgba(255, 238, 190, 0.34), transparent 18%), radial-gradient(ellipse at 66% 53%, rgba(255, 238, 190, 0.25), transparent 18%), linear-gradient(180deg, #e1d7c2 0%, #856f54 58%, #241c16 100%)", coreWord: "dryer",
+          id: "laundry-dryer-area", npc: "laundry-dryer-area", title: "Dryer Area", zh: "烘干区", short: "烘干", bg: "assets/laundry-dryer-area-bg.png", bgStyle: "radial-gradient(ellipse at 35% 53%, rgba(255, 238, 190, 0.34), transparent 18%), radial-gradient(ellipse at 66% 53%, rgba(255, 238, 190, 0.25), transparent 18%), linear-gradient(180deg, #e1d7c2 0%, #856f54 58%, #241c16 100%)", coreWord: "dryer",
           intro: { text: "After washing, you move the clothes to the dryer and choose a safe setting.", zh: "洗完后，你把衣物移到烘干机，并选择安全设置。" },
           hotspots: [
-            laundryWord("dryer", "dryer", "/ˈdraɪər/", "烘干机", "The dryer is beside the washer.", "烘干机在洗衣机旁边。", 17, 30),
-            laundryWord("dryer-drum", "dryer drum", "/ˈdraɪər drʌm/", "烘干机滚筒", "The dryer drum turns slowly.", "烘干机滚筒慢慢转动。", 39, 31),
-            laundryWord("lint-trap", "lint trap", "/lɪnt træp/", "绒毛过滤网", "The lint trap should be cleaned before drying.", "烘干前应该清理绒毛过滤网。", 61, 31),
-            laundryWord("dryer-sheet", "dryer sheet", "/ˈdraɪər ʃiːt/", "烘干纸", "A dryer sheet can reduce static.", "烘干纸可以减少静电。", 80, 34),
-            laundryWord("heat-setting", "heat setting", "/hiːt ˈsetɪŋ/", "热度设置", "The heat setting controls how warm the dryer gets.", "热度设置控制烘干机温度。", 22, 61),
-            laundryWord("cool-down-cycle", "cool-down cycle", "/kuːl daʊn ˈsaɪkl/", "冷却程序", "The cool-down cycle helps clothes feel less hot.", "冷却程序让衣物不会太烫。", 47, 61),
-            laundryWord("tumble-dry", "tumble dry", "/ˈtʌmbl draɪ/", "滚筒烘干", "Some clothes say tumble dry on the tag.", "有些衣物标签上写着可滚筒烘干。", 70, 61),
-            { ...laundryWord("drying-time", "drying time", "/ˈdraɪɪŋ taɪm/", "烘干时间", "Drying time depends on the load size.", "烘干时间取决于衣物量。", 49, 75, "烘干时间"), type: "action", actionEffect: "sparkle", actionMessageEn: "You set the drying time and start the dryer.", actionMessageZh: "你设置烘干时间并启动烘干机。", actionDuration: 2600 }
+            laundryWord("dryer", "dryer", "/ˈdraɪər/", "烘干机", "The dryer is beside the washer.", "烘干机在洗衣机旁边。", 55, 31),
+            laundryWord("dryer-drum", "dryer drum", "/ˈdraɪər drʌm/", "烘干机滚筒", "The dryer drum turns slowly.", "烘干机滚筒慢慢转动。", 65, 34),
+            laundryWord("lint-trap", "lint trap", "/lɪnt træp/", "绒毛过滤网", "The lint trap should be cleaned before drying.", "烘干前应该清理绒毛过滤网。", 48, 78),
+            laundryWord("dryer-sheet", "dryer sheet", "/ˈdraɪər ʃiːt/", "烘干纸", "A dryer sheet can reduce static.", "烘干纸可以减少静电。", 13, 82),
+            laundryWord("heat-setting", "heat setting", "/hiːt ˈsetɪŋ/", "热度设置", "The heat setting controls how warm the dryer gets.", "热度设置控制烘干机温度。", 64, 77),
+            laundryWord("cool-down-cycle", "cool-down cycle", "/kuːl daʊn ˈsaɪkl/", "冷却程序", "The cool-down cycle helps clothes feel less hot.", "冷却程序让衣物不会太烫。", 77, 82),
+            laundryWord("tumble-dry", "tumble dry", "/ˈtʌmbl draɪ/", "滚筒烘干", "Some clothes say tumble dry on the tag.", "有些衣物标签上写着可滚筒烘干。", 59, 49),
+            { ...laundryWord("drying-time", "drying time", "/ˈdraɪɪŋ taɪm/", "烘干时间", "Drying time depends on the load size.", "烘干时间取决于衣物量。", 87, 79, "烘干时间"), type: "action", actionEffect: "sparkle", actionMessageEn: "You set the drying time and start the dryer.", actionMessageZh: "你设置烘干时间并启动烘干机。", actionDuration: 2600 }
           ]
         },
         {
-          id: "laundry-folding-table", npc: "laundry-folding-table", title: "Folding Table", zh: "折叠台", short: "折叠", bgStyle: "radial-gradient(ellipse at 50% 70%, rgba(255, 255, 255, 0.2), transparent 24%), radial-gradient(circle at 72% 35%, rgba(123, 182, 195, 0.2), transparent 18%), linear-gradient(180deg, #e8e1d2 0%, #847762 58%, #25221d 100%)", coreWord: "folding station",
+          id: "laundry-folding-table", npc: "laundry-folding-table", title: "Folding Table", zh: "折叠台", short: "折叠", bg: "assets/laundry-folding-table-bg.png", bgStyle: "radial-gradient(ellipse at 50% 70%, rgba(255, 255, 255, 0.2), transparent 24%), radial-gradient(circle at 72% 35%, rgba(123, 182, 195, 0.2), transparent 18%), linear-gradient(180deg, #e8e1d2 0%, #847762 58%, #25221d 100%)", coreWord: "folding station",
           intro: { text: "You use the folding area to organize clean clothes before pickup.", zh: "你使用折叠区，在取走前整理干净衣物。" },
           hotspots: [
-            laundryWord("folding-station", "folding station", "/ˈfoʊldɪŋ ˈsteɪʃn/", "折叠区", "The folding station is clean and wide.", "折叠区干净又宽敞。", 18, 31),
-            laundryWord("folding-board", "folding board", "/ˈfoʊldɪŋ bɔːrd/", "叠衣板", "A folding board helps make neat shirts.", "叠衣板帮助把衬衫叠整齐。", 46, 30),
-            laundryWord("hanger", "hanger", "/ˈhæŋər/", "衣架", "A hanger keeps the shirt from wrinkling.", "衣架可以避免衬衫起皱。", 75, 32),
-            laundryWord("garment-bag", "garment bag", "/ˈɡɑːrmənt bæɡ/", "衣物袋", "The garment bag protects clean clothes.", "衣物袋保护干净衣物。", 22, 59),
-            laundryWord("folded-clothes", "folded clothes", "/ˈfoʊldɪd kloʊðz/", "叠好的衣物", "The folded clothes are ready to take home.", "叠好的衣物可以带回家了。", 49, 58),
-            laundryWord("missing-sock", "missing sock", "/ˈmɪsɪŋ sɑːk/", "丢失的袜子", "A missing sock may be near the dryer.", "丢失的袜子可能在烘干机附近。", 77, 58),
-            { ...laundryWord("lost-and-found-bin", "lost-and-found bin", "/lɔːst ænd faʊnd bɪn/", "失物招领箱", "The lost-and-found bin holds forgotten items.", "失物招领箱里放着遗忘物品。", 50, 72, "失物招领箱"), type: "action", actionEffect: "sparkle", actionMessageEn: "You check the lost-and-found bin for the missing sock.", actionMessageZh: "你在失物招领箱里查看那只丢失的袜子。", actionDuration: 2600 }
+            laundryWord("folding-station", "folding station", "/ˈfoʊldɪŋ ˈsteɪʃn/", "折叠区", "The folding station is clean and wide.", "折叠区干净又宽敞。", 35, 74),
+            laundryWord("folding-board", "folding board", "/ˈfoʊldɪŋ bɔːrd/", "叠衣板", "A folding board helps make neat shirts.", "叠衣板帮助把衬衫叠整齐。", 49, 66),
+            laundryWord("hanger", "hanger", "/ˈhæŋər/", "衣架", "A hanger keeps the shirt from wrinkling.", "衣架可以避免衬衫起皱。", 73, 17),
+            laundryWord("garment-bag", "garment bag", "/ˈɡɑːrmənt bæɡ/", "衣物袋", "The garment bag protects clean clothes.", "衣物袋保护干净衣物。", 75, 33),
+            laundryWord("folded-clothes", "folded clothes", "/ˈfoʊldɪd kloʊðz/", "叠好的衣物", "The folded clothes are ready to take home.", "叠好的衣物可以带回家了。", 21, 60),
+            laundryWord("missing-sock", "missing sock", "/ˈmɪsɪŋ sɑːk/", "丢失的袜子", "A missing sock may be near the dryer.", "丢失的袜子可能在烘干机附近。", 67, 76),
+            { ...laundryWord("lost-and-found-bin", "lost-and-found bin", "/lɔːst ænd faʊnd bɪn/", "失物招领箱", "The lost-and-found bin holds forgotten items.", "失物招领箱里放着遗忘物品。", 52, 90, "失物招领箱"), type: "action", actionEffect: "sparkle", actionMessageEn: "You check the lost-and-found bin for the missing sock.", actionMessageZh: "你在失物招领箱里查看那只丢失的袜子。", actionDuration: 2600 }
           ]
         },
         {
-          id: "laundry-pickup-exit", npc: "laundry-pickup-exit", title: "Pickup / Exit", zh: "取衣离开", short: "取衣", bgStyle: "radial-gradient(circle at 28% 42%, rgba(255, 255, 255, 0.24), transparent 18%), radial-gradient(circle at 76% 36%, rgba(255, 228, 152, 0.2), transparent 20%), linear-gradient(180deg, #e5e7dd 0%, #78826f 58%, #20261d 100%)", coreWord: "claim ticket",
+          id: "laundry-pickup-exit", npc: "laundry-pickup-exit", title: "Pickup / Exit", zh: "取衣离开", short: "取衣", bg: "assets/laundry-pickup-exit-bg.png", bgStyle: "radial-gradient(circle at 28% 42%, rgba(255, 255, 255, 0.24), transparent 18%), radial-gradient(circle at 76% 36%, rgba(255, 228, 152, 0.2), transparent 20%), linear-gradient(180deg, #e5e7dd 0%, #78826f 58%, #20261d 100%)", coreWord: "claim ticket",
           intro: { text: "You confirm your pickup details and prepare to leave with clean laundry.", zh: "你确认取衣信息，准备带着干净衣物离开。" },
           hotspots: [
-            laundryWord("claim-ticket", "claim ticket", "/kleɪm ˈtɪkɪt/", "取衣票", "The claim ticket matches my laundry bag.", "取衣票和我的洗衣袋对应。", 20, 34),
-            laundryWord("laundry-hamper", "laundry hamper", "/ˈlɔːndri ˈhæmpər/", "洗衣篮", "The laundry hamper holds the clean load.", "洗衣篮里放着干净衣物。", 44, 36),
-            laundryWord("laundry-cart", "laundry cart", "/ˈlɔːndri kɑːrt/", "洗衣推车", "The laundry cart helps move heavy clothes.", "洗衣推车帮助移动较重的衣物。", 68, 36),
-            { ...laundryWord("fresh-laundry", "fresh laundry", "/freʃ ˈlɔːndri/", "清新的干净衣物", "Fresh laundry smells clean.", "清新的干净衣物闻起来很干净。", 50, 66, "清新的干净衣物"), type: "action", actionEffect: "sparkle", actionMessageEn: "You collect the fresh laundry and get ready to leave.", actionMessageZh: "你取到清新的干净衣物，准备离开。", actionDuration: 2600 }
+            laundryWord("claim-ticket", "claim ticket", "/kleɪm ˈtɪkɪt/", "取衣票", "The claim ticket matches my laundry bag.", "取衣票和我的洗衣袋对应。", 34, 69),
+            laundryWord("laundry-hamper", "laundry hamper", "/ˈlɔːndri ˈhæmpər/", "洗衣篮", "The laundry hamper holds the clean load.", "洗衣篮里放着干净衣物。", 43, 61),
+            laundryWord("laundry-cart", "laundry cart", "/ˈlɔːndri kɑːrt/", "洗衣推车", "The laundry cart helps move heavy clothes.", "洗衣推车帮助移动较重的衣物。", 68, 70),
+            { ...laundryWord("fresh-laundry", "fresh laundry", "/freʃ ˈlɔːndri/", "清新的干净衣物", "Fresh laundry smells clean.", "清新的干净衣物闻起来很干净。", 54, 47, "清新的干净衣物"), type: "action", actionEffect: "sparkle", actionMessageEn: "You collect the fresh laundry and get ready to leave.", actionMessageZh: "你取到清新的干净衣物，准备离开。", actionDuration: 2600 }
           ]
         },
         {
-          id: "laundry-summary", npc: "laundry-summary", title: "Summary", zh: "洗衣总结", short: "总结", bgStyle: "radial-gradient(circle at 34% 36%, rgba(174, 226, 230, 0.24), transparent 20%), radial-gradient(circle at 72% 46%, rgba(255, 230, 163, 0.22), transparent 22%), linear-gradient(180deg, #dfe8e6 0%, #6d8280 58%, #182826 100%)", coreWord: "drawstring bag",
+          id: "laundry-summary", npc: "laundry-summary", title: "Summary", zh: "洗衣总结", short: "总结", bg: "assets/laundry-summary-bg.png", bgStyle: "radial-gradient(circle at 34% 36%, rgba(174, 226, 230, 0.24), transparent 20%), radial-gradient(circle at 72% 46%, rgba(255, 230, 163, 0.22), transparent 22%), linear-gradient(180deg, #dfe8e6 0%, #6d8280 58%, #182826 100%)", coreWord: "drawstring bag",
           intro: { text: "Before you finish, you review the final items and pack everything neatly.", zh: "结束前，你复习最后几件物品，并把衣物整理好。" },
           hotspots: [
-            laundryWord("drawstring-bag", "drawstring bag", "/ˈdrɔːstrɪŋ bæɡ/", "抽绳袋", "A drawstring bag closes with a cord.", "抽绳袋用绳子收口。", 18, 34),
-            laundryWord("garment-cover", "garment cover", "/ˈɡɑːrmənt ˈkʌvər/", "衣物防尘套", "The garment cover protects a clean coat.", "衣物防尘套保护干净外套。", 41, 35),
-            laundryWord("collection-shelf", "collection shelf", "/kəˈlekʃn ʃelf/", "领取架", "The collection shelf holds finished laundry.", "领取架放着洗好的衣物。", 65, 35),
-            { ...laundryWord("bag-tie", "bag tie", "/bæɡ taɪ/", "袋口扎带", "The bag tie keeps the laundry bag closed.", "袋口扎带让洗衣袋保持闭合。", 50, 66, "袋口扎带"), type: "action", actionEffect: "sparkle", actionMessageEn: "You tie the bag and finish the laundromat visit.", actionMessageZh: "你系好袋口，完成洗衣房之旅。", actionDuration: 2600 }
+            laundryWord("drawstring-bag", "drawstring bag", "/ˈdrɔːstrɪŋ bæɡ/", "抽绳袋", "A drawstring bag closes with a cord.", "抽绳袋用绳子收口。", 36, 55),
+            laundryWord("garment-cover", "garment cover", "/ˈɡɑːrmənt ˈkʌvər/", "衣物防尘套", "The garment cover protects a clean coat.", "衣物防尘套保护干净外套。", 67, 37),
+            laundryWord("collection-shelf", "collection shelf", "/kəˈlekʃn ʃelf/", "领取架", "The collection shelf holds finished laundry.", "领取架放着洗好的衣物。", 20, 35),
+            { ...laundryWord("bag-tie", "bag tie", "/bæɡ taɪ/", "袋口扎带", "The bag tie keeps the laundry bag closed.", "袋口扎带让洗衣袋保持闭合。", 52, 72, "袋口扎带"), type: "action", actionEffect: "sparkle", actionMessageEn: "You tie the bag and finish the laundromat visit.", actionMessageZh: "你系好袋口，完成洗衣房之旅。", actionDuration: 2600 }
           ],
           completeText: "Great! You reviewed the laundry visit and packed everything neatly.",
           completeZh: "太棒了！你复习了洗衣流程，并把衣物整理好了。",
@@ -9625,7 +9625,7 @@
           accent: "#8ccfd8",
           visual: "Laundromat Flow",
           visualZh: "自助洗衣流程",
-          image: "linear-gradient(180deg, rgba(8, 18, 20, 0.03), rgba(8, 18, 20, 0.72)), radial-gradient(circle at 30% 48%, rgba(235,250,252,0.36) 0 12%, transparent 13%), radial-gradient(circle at 67% 48%, rgba(235,250,252,0.28) 0 12%, transparent 13%), linear-gradient(135deg, #dce9ea 0%, #708b8e 52%, #17292d 100%)",
+          image: "linear-gradient(180deg, rgba(8, 18, 20, 0.03), rgba(8, 18, 20, 0.72)), url('assets/laundry-cover.png')",
           imagePosition: "center 54%",
         },
       ];
