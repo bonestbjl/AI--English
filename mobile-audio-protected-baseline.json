@@ -1,0 +1,2611 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Protect the approved Zoo and Fruit Shop mobile audio from accidental deletion, regeneration, or degradation.",
+  "files": [
+    {
+      "path": "assets/audio/dialogues/fruitShop/ask-for-help--ask-for-help--intro-1.mp3",
+      "bytes": 43821,
+      "sha256": "e96bb2e71441c74ec146ed361bb94cb256c25f3d0196fd238b118328fddbe2d6"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/ask-for-help--help-shopkeeper--npc-1.mp3",
+      "bytes": 30957,
+      "sha256": "8bc0b7bc6ddec7d43477c7244d11f75c63c570e406f32fbcc2485324c7b4abc1"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/ask-for-help--help-shopkeeper--option-1.mp3",
+      "bytes": 16365,
+      "sha256": "6a19f600f3b62afdbe5834e1eb56072542d8d55420c27ddba9d53489d183fa54"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/ask-for-help--help-shopkeeper--option-2.mp3",
+      "bytes": 19629,
+      "sha256": "ac1f0c7a7c5b192f056d3b78c9c3224c360832d7b0e90c3355e3413d07182f4c"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/ask-for-help--help-shopkeeper--option-3.mp3",
+      "bytes": 15021,
+      "sha256": "af5f680d8bb82e9b2f91625f1669b2a42da8e7a680d92d8092d829a7233f79e8"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/ask-for-help--help-shopkeeper--reply-1.mp3",
+      "bytes": 25965,
+      "sha256": "cc23a0013e064af95694e27b39bc64c76e4119d0343fe988db8194f778a92044"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/ask-for-help--help-shopkeeper--reply-2.mp3",
+      "bytes": 22701,
+      "sha256": "34dab317d3bc9e9dadedd1c96a6a162bc5e5b61ff666fbe523a11f2012ec62ea"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/ask-for-help--help-shopkeeper--reply-3.mp3",
+      "bytes": 27693,
+      "sha256": "3fe4b0b925bb1a67ef282f76866d709f5550c9296d25a545784b7d2e1d1346d4"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/ask-for-help--recommend--action-1.mp3",
+      "bytes": 25965,
+      "sha256": "d3c03b1c32b9a479c4e0c1c39d0956ef9d1891699b6899a8b0c2ce52695f0720"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/cashier--cashier--intro-1.mp3",
+      "bytes": 32301,
+      "sha256": "3279ba29a4c7b4c73e521a67d6deaa6122d177be7cdc1a557dfaf6f51262163d"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/cashier--cashier--npc-1.mp3",
+      "bytes": 19629,
+      "sha256": "43d815944504b1a6787b0bb6b1b27f154f61bb754fa12df8d856a159db357356"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/cashier--cashier--option-1.mp3",
+      "bytes": 10029,
+      "sha256": "6b1928d68615d44db4f309b2f2fd8a91c337de02c380a5710c2cac3153f91e28"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/cashier--cashier--option-2.mp3",
+      "bytes": 13101,
+      "sha256": "b0fd7138e22c2c33d43a415370d4b808578aa516e7128fee1d14755b98403046"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/cashier--cashier--option-3.mp3",
+      "bytes": 11757,
+      "sha256": "68fda7d40754a19939e0d095e23405f453d7680eca44054b6d4b05cd82a222e1"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/cashier--cashier--reply-1.mp3",
+      "bytes": 16365,
+      "sha256": "50fd657b20da6151189cfcb6fe7f1a82950cbb8738106d1c43061be0e50c7629"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/cashier--cashier--reply-2.mp3",
+      "bytes": 19629,
+      "sha256": "4682cb050431f678cb8667d7e2799bbb3f60917bfaf6eecb2e2f38cb533e70a6"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/cashier--cashier--reply-3.mp3",
+      "bytes": 16365,
+      "sha256": "78475ae8e516c327cae03876fa7702b6e845a6cfbcb9f72a2b00b66aa7b0c075"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/cashier--pay--action-1.mp3",
+      "bytes": 18285,
+      "sha256": "c1d679b5817aa7081547e339222c1c4f812490999dff39c1cf29324389e803a7"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/choose-fruits--choose-fruits--intro-1.mp3",
+      "bytes": 40557,
+      "sha256": "20a46deb4f7800b02621397871a591fc02cb05c4942e04bfd067ef277e509e37"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/choose-fruits--sample-shopkeeper--npc-1.mp3",
+      "bytes": 16365,
+      "sha256": "0dfa036c555f57c2eff51538afb0988a63c80eded7087df293d617eb7cc4b26a"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/choose-fruits--sample-shopkeeper--option-1.mp3",
+      "bytes": 11565,
+      "sha256": "159b202dbff488d55372d09f3bcd870e00b806737850472fd1d355118c91c265"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/choose-fruits--sample-shopkeeper--option-2.mp3",
+      "bytes": 13101,
+      "sha256": "414ddc601f263d90b5b0ae1e7dc506a92a888242dce29ff224d12a6d9569264a"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/choose-fruits--sample-shopkeeper--option-3.mp3",
+      "bytes": 16365,
+      "sha256": "e633a2faa21475dd32ea656e919fd118aaa8c9fd54cdc87d717e57632df5b242"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/choose-fruits--sample-shopkeeper--reply-1.mp3",
+      "bytes": 24621,
+      "sha256": "796155093ab3880a48236b79f32a1ccf1e18639d4ccce51d23462726fe0a73e7"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/choose-fruits--sample-shopkeeper--reply-2.mp3",
+      "bytes": 21357,
+      "sha256": "14b14a99722c464ffc10884eb4b719cda596086f565eb1be648c8f5c27ca48b0"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/choose-fruits--sample-shopkeeper--reply-3.mp3",
+      "bytes": 19437,
+      "sha256": "9cbee3ba47c2585bb0842fab38c389d044250e92a16edfabff986827879db3fa"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/choose-fruits--taste--action-1.mp3",
+      "bytes": 24621,
+      "sha256": "022b2692e9f62d2703b7cc1a700e588916a7ea17c26eea0d6bf09a5f5df3d2fe"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/fruit-entrance--browse--action-1.mp3",
+      "bytes": 19629,
+      "sha256": "1eaa96ac1e4c58f5e1264351236d16246da3410610ebd4b4b6c4113f4c3186ad"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/fruit-entrance--fruit-entrance--intro-1.mp3",
+      "bytes": 43629,
+      "sha256": "a453c458d34ce8a4dd9c6f255d8c3ce9c97c31ff4e2db9a9b3a2d0ffbaaeb60a"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/fruit-entrance--fruit-entrance-shopkeeper--npc-1.mp3",
+      "bytes": 19629,
+      "sha256": "abc1651319089f2f68b594d64332219db0a8173b575ffed4d4e071d623468762"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/fruit-entrance--fruit-entrance-shopkeeper--option-1.mp3",
+      "bytes": 18093,
+      "sha256": "7e796ba5794465ae3de69a5a4594f487c8766048de830bac4c761e543b770ec6"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/fruit-entrance--fruit-entrance-shopkeeper--option-2.mp3",
+      "bytes": 18093,
+      "sha256": "9572ee32826eee5610da0d86bc84142e7a2e64a44da9ef29240f1374fd5d5265"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/fruit-entrance--fruit-entrance-shopkeeper--option-3.mp3",
+      "bytes": 19629,
+      "sha256": "97e0cb343a2ca7c928efa8cde7b91b3d250460242536a39edf545c6534a85737"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/fruit-entrance--fruit-entrance-shopkeeper--reply-1.mp3",
+      "bytes": 22893,
+      "sha256": "61aa6c92ed487a64057b7692580ec4183d7003bda53795a01adb7c6b1b082e50"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/fruit-entrance--fruit-entrance-shopkeeper--reply-2.mp3",
+      "bytes": 32301,
+      "sha256": "a33461c946f7382333b879c8b967d4a3639223cc9e4df139c9ffc14a4fc67fee"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/fruit-entrance--fruit-entrance-shopkeeper--reply-3.mp3",
+      "bytes": 21357,
+      "sha256": "3cd8501eea8e1f041acc6ca2114336fb5689f6ab2942a48089cda987be8f81d1"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/fruit-stand--fruit-stand--intro-1.mp3",
+      "bytes": 50349,
+      "sha256": "2642d96ba1e32913343edd50c1e647702e5233aa4caf0a3b2439161a993b3f79"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/fruit-stand--fruit-stand-shopkeeper--npc-1.mp3",
+      "bytes": 19437,
+      "sha256": "d6e8fa57ecd613b71b3eca7b308f05eafaa54be82afecea9610ee9caa198c39d"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/fruit-stand--fruit-stand-shopkeeper--option-1.mp3",
+      "bytes": 15021,
+      "sha256": "c32bf476c3751c4911c6d227d61482458c8ef7da91031c7b59045ea5d68becb6"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/fruit-stand--fruit-stand-shopkeeper--option-2.mp3",
+      "bytes": 15021,
+      "sha256": "76be243b673d7c36b04f9fe387715e074116de2ccd2b78ba7d620dfff81eacfc"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/fruit-stand--fruit-stand-shopkeeper--option-3.mp3",
+      "bytes": 15021,
+      "sha256": "54efd837009c9732c5a4a35d17380636a5757aba67713ab43bb4a576fcf5d228"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/fruit-stand--fruit-stand-shopkeeper--reply-1.mp3",
+      "bytes": 21549,
+      "sha256": "2c476efa84b337cc69444b4622aa33e93965a946dea9c0eb249fdc3432463551"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/fruit-stand--fruit-stand-shopkeeper--reply-2.mp3",
+      "bytes": 29229,
+      "sha256": "7f71de46fc8e29eff0aa201076878c3faffb844fe30850ed9842dc60be00e00b"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/fruit-stand--fruit-stand-shopkeeper--reply-3.mp3",
+      "bytes": 21357,
+      "sha256": "220f34ca11f5f461c669a48cbdd1fd559081b812e1b4a9cd8be5c7bdb375e5ea"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/fruit-stand--pick--action-1.mp3",
+      "bytes": 24429,
+      "sha256": "1d1730243dff8e6d8498220eecca37e453962734c8148ab5f9597be8216be1a9"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/leaving-fruit--leave--action-1.mp3",
+      "bytes": 24621,
+      "sha256": "027cd090f0919173128bb0dc79ca49f82b045e2ba76e3b709e63952ef921acc0"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/leaving-fruit--leaving-fruit--intro-1.mp3",
+      "bytes": 32301,
+      "sha256": "7216a94bb5c3eae6865bd786f2eaa85659f9899d92ed8c76bcabe3df05cd580b"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/leaving-fruit--leaving-shopkeeper--npc-1.mp3",
+      "bytes": 18285,
+      "sha256": "8435cceee44a6075f78e4a5c18567e8daa2f4694ecc86d883a887b26511eb5d1"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/leaving-fruit--leaving-shopkeeper--option-1.mp3",
+      "bytes": 16365,
+      "sha256": "e581520d27de6453bc225407563f262d04a18360426a13745cfddc6222dc7157"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/leaving-fruit--leaving-shopkeeper--option-2.mp3",
+      "bytes": 16365,
+      "sha256": "cda17754adde8f1234820744c427c06387561d56f2dffc732f5b41c7e36999d9"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/leaving-fruit--leaving-shopkeeper--option-3.mp3",
+      "bytes": 14829,
+      "sha256": "ff09b446820a75e5b965e0e67d2260cc57065c21c03f67d980dfe6cec8fbf0d9"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/leaving-fruit--leaving-shopkeeper--reply-1.mp3",
+      "bytes": 16365,
+      "sha256": "bfd2f8c2479c19dec160b0394aabfe9cd279f662cf1b1586a28a5223316ab5f2"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/leaving-fruit--leaving-shopkeeper--reply-2.mp3",
+      "bytes": 13101,
+      "sha256": "a6b45c688c49cb726addfb044195055f58e45d367e3dbbdfd121eed9e3dd5d05"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/leaving-fruit--leaving-shopkeeper--reply-3.mp3",
+      "bytes": 18093,
+      "sha256": "9c3961a9863c565065ee34c8f086c16e8338a83d094d5d14947ba7e8ba5b3b2a"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/weighing-counter--weigh--action-1.mp3",
+      "bytes": 18093,
+      "sha256": "81c85fb90678ff2f931d53b19ce48f645194291b569b91a12bf3c850f50c864c"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/weighing-counter--weighing-counter--intro-1.mp3",
+      "bytes": 34221,
+      "sha256": "3fd5104f4bae267e41facf0770133dd0cc9411e5ed8c41f3eb38b207de989995"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/weighing-counter--weighing-shopkeeper--npc-1.mp3",
+      "bytes": 18285,
+      "sha256": "190d2eb81a10f609be2c7aaf7b712464854149cb3aa200c9754d064e07f45ada"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/weighing-counter--weighing-shopkeeper--option-1.mp3",
+      "bytes": 10029,
+      "sha256": "09d727dfee01b3480ec89cce959d582624f1cdf6a55ee46995a41f4f0e7ad0ea"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/weighing-counter--weighing-shopkeeper--option-2.mp3",
+      "bytes": 19629,
+      "sha256": "801e4c069f9d3ae4ce3138819c4aa3aa44f1ceac8b0d1e9fec29f1d8d7a46908"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/weighing-counter--weighing-shopkeeper--option-3.mp3",
+      "bytes": 15021,
+      "sha256": "dfbbda3d557884896084f73c311e4afeab4e9ae71366fc71f7ee977e20d731f7"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/weighing-counter--weighing-shopkeeper--reply-1.mp3",
+      "bytes": 19629,
+      "sha256": "edb3d6e5b958f4bfa009591860d95dc98be05f69d4794d82af5fcf8496935adc"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/weighing-counter--weighing-shopkeeper--reply-2.mp3",
+      "bytes": 27693,
+      "sha256": "97e13a9c7a736f05396a8b1762c5e9fc34d1f175a6cee5e7650ef99e57294b8c"
+    },
+    {
+      "path": "assets/audio/dialogues/fruitShop/weighing-counter--weighing-shopkeeper--reply-3.mp3",
+      "bytes": 22701,
+      "sha256": "2d0bcb883d30f3320b10e13903ff45337eb337c8296888844ab6dab09e18a719"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/dialogue-visitor--visitor--npc-1.mp3",
+      "bytes": 24621,
+      "sha256": "5032bbd19ab08fd7d7ea7a18f9216b027711a937e10217f12f336fe821bd6c16"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/dialogue-visitor--visitor--option-1.mp3",
+      "bytes": 9837,
+      "sha256": "9f9406e6b90e1fff45ddc1a93c1ca0f84df7118c063402fbe28bd599ce5de23e"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/dialogue-visitor--visitor--option-2.mp3",
+      "bytes": 16365,
+      "sha256": "83d4e94dfa3968575f4c063094a5d3b2e3ab236737802dd5c87393f48e765914"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/dialogue-visitor--visitor--option-3.mp3",
+      "bytes": 13101,
+      "sha256": "9055d2431e02a20fe12025bc86b2206cf2496c8b1d550ba852745a5793475db4"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/dialogue-visitor--visitor--reply-1.mp3",
+      "bytes": 19629,
+      "sha256": "b3cce1b2c8b6d5db53ed3c076c52ed5bf58cc82f26b6e7d698220ba939179699"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/dialogue-visitor--visitor--reply-2.mp3",
+      "bytes": 22701,
+      "sha256": "e494dec370ea82b7778fd84524b28a1b25d63e82d5379c17a4ea6c3757992dcf"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/dialogue-visitor--visitor--reply-3.mp3",
+      "bytes": 21357,
+      "sha256": "b4ea7629cf7667de19713fb51c402c92edb970d9f0923b590cff2f91c12af314"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/elephant--elephant--intro-1.mp3",
+      "bytes": 43821,
+      "sha256": "db6c29cba7fece1f971d14c55f329f54843435769ba263cd1962c8d384eac5df"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/elephant--elephant-keeper--npc-1.mp3",
+      "bytes": 24621,
+      "sha256": "51603f4b713f4a39e89d2ce740ee5880f02e0daa83b55e83da6514d460bd7741"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/elephant--elephant-keeper--option-1.mp3",
+      "bytes": 16365,
+      "sha256": "eb88d4aa69ffe09ca73c0669b9666fb742ba67621d6560e8574c2338c3998dca"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/elephant--elephant-keeper--option-2.mp3",
+      "bytes": 15021,
+      "sha256": "653b43c327c89c334ec89a264e346bb4f1aaf860180a6d802589b3e5653ffc68"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/elephant--elephant-keeper--reply-1.mp3",
+      "bytes": 21357,
+      "sha256": "2a7d3d5694c1fcc252652414ece502572c3ff0fb46e04b7b13298982f05a16f8"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/elephant--elephant-keeper--reply-2.mp3",
+      "bytes": 45165,
+      "sha256": "34698b08cc801e6d561c593a7016502076aa0d8ca074389d95aef5e350bf3f0b"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/elephant--spray--action-1.mp3",
+      "bytes": 27693,
+      "sha256": "e28b9918d8f514de77c0d20631057a45430f01a33bce7aeeede94abff8253c59"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/entrance--entrance--intro-1.mp3",
+      "bytes": 47085,
+      "sha256": "ee5322e88754bf71779e64928975703cb1de003cbe8282e6608b23fa43c96b95"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/exit--exit--intro-1.mp3",
+      "bytes": 51309,
+      "sha256": "7dbfb7058ec72c3c8d834d2e83cc45ad9de60483673cd946937965c2dab0bb78"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/exit--exit-staff--npc-1.mp3",
+      "bytes": 27885,
+      "sha256": "fa6f4e9b9581d5486f12eefade4bc7d408d587514ff572ad5b128b4bf8fcf058"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/exit--exit-staff--option-1.mp3",
+      "bytes": 16365,
+      "sha256": "fbba19c39e2fd60546ad05a60b55b14a0fe393b94bd2d5a80bb8de3fba02b9ef"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/exit--exit-staff--option-2.mp3",
+      "bytes": 15021,
+      "sha256": "639b0476c8f37e28b1d3918de3cf444ee9bce645baf5dabcd73159ec6d684051"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/exit--exit-staff--option-3.mp3",
+      "bytes": 15021,
+      "sha256": "7fd437b14a80edb2fdf7a9f5b81c5ffd23df42618d008a5f3bb96a494df9a9b1"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/exit--exit-staff--reply-1.mp3",
+      "bytes": 21357,
+      "sha256": "69d1ec388f14672926cab8ad2996c83fe80e9e72464a7c4f6ce85730a2372dc6"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/exit--exit-staff--reply-2.mp3",
+      "bytes": 19437,
+      "sha256": "2dd70affce73a4abf57f52eab1fdffae91bb522aa1205ef4da094d893c8f979f"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/exit--exit-staff--reply-3.mp3",
+      "bytes": 24621,
+      "sha256": "5990eae2980948a77664a81e0d2c711354a672ffa7164626977e6a692c53002e"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/giraffe--giraffe--intro-1.mp3",
+      "bytes": 46893,
+      "sha256": "30c9611deafc802746fd8b77f38a69f3a222d62ea20f6f8a974c856f797f07fb"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/giraffe--giraffe-visitor--npc-1.mp3",
+      "bytes": 22701,
+      "sha256": "2aab942b6aa91e9621e284fdf1c9724db983fa9e3b1c695cdf5922288d91d208"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/giraffe--giraffe-visitor--option-1.mp3",
+      "bytes": 13101,
+      "sha256": "36c6b36a8f2558a7e151778c665409153833a016bcfc24f62205a968809c68ea"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/giraffe--giraffe-visitor--option-2.mp3",
+      "bytes": 13101,
+      "sha256": "769874dd9e4e09b0b39f830fc609cdaae784ef879b8fdf29310d0f6012ca0631"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/giraffe--giraffe-visitor--option-3.mp3",
+      "bytes": 11757,
+      "sha256": "58604c1fc34d8abca7fcf28c8538913f35176c3e76238c93c271f8c71587c1df"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/giraffe--giraffe-visitor--reply-1.mp3",
+      "bytes": 32301,
+      "sha256": "5e7cb4d608d050a6054f58e6e8b03e073d17d14997c76664ad106e4d563db1f2"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/giraffe--giraffe-visitor--reply-2.mp3",
+      "bytes": 25965,
+      "sha256": "62d5817bca7cbc6ba5ff8fe96d4764681792b88536b2e958fbbc611b78e220bd"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/giraffe--giraffe-visitor--reply-3.mp3",
+      "bytes": 25965,
+      "sha256": "2421349e294b0b4dc5e59f58da2463d86626ed85c8ce751db496a2b62e4ca03d"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/giraffe--reach--action-1.mp3",
+      "bytes": 25965,
+      "sha256": "e7f8a16879ee35cf39998480571b8273f09f7d80d64cae169c8d00a424a92e9c"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/hippo--hippo--intro-1.mp3",
+      "bytes": 47085,
+      "sha256": "de62b7e369fcacecb4708582998c6af9ae25c3d0e79bed479c4a5c1326a7899d"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/hippo--hippo-visitor--npc-1.mp3",
+      "bytes": 19629,
+      "sha256": "5f983aad8f5e348f4d05ead0bf6a8f4599055536eff7f1b24e01463ebe572a2c"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/hippo--hippo-visitor--option-1.mp3",
+      "bytes": 14829,
+      "sha256": "5b4fa9d576f365be6df5834e0d970941922b9e43f9c3e765be2eef4223b3ad47"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/hippo--hippo-visitor--option-2.mp3",
+      "bytes": 15021,
+      "sha256": "a7b140f6b665ebf8a9afe2128212619d96ea40cb85d74a9a1f79cbc830c88c73"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/hippo--hippo-visitor--option-3.mp3",
+      "bytes": 21357,
+      "sha256": "72b4d4b0cb175dfffbc3f6968cc284d07ae5d2ed739d01524b43c0930cefa79f"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/hippo--hippo-visitor--reply-1.mp3",
+      "bytes": 22893,
+      "sha256": "f59b2b44c20cc5c7acd8734e7a4f1b34cf772ee28c57349d44a433e8e936ba41"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/hippo--hippo-visitor--reply-2.mp3",
+      "bytes": 21357,
+      "sha256": "3d73fc47fffce46708b6cf3e18ed3d67a17ae532a59ec66d96d1c58efb4c79e5"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/hippo--hippo-visitor--reply-3.mp3",
+      "bytes": 34221,
+      "sha256": "bb635a0e9c1e74c2c50690085dfd6c2e9ee725cbaeaa0f5d27f6ed141eec7361"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/hippo--yawn--action-1.mp3",
+      "bytes": 25965,
+      "sha256": "a9d9d0cc3fda2c5b19d2f1a026573140c6a19e433f036f150b538fc4e8a90664"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/lion--lion--intro-1.mp3",
+      "bytes": 53421,
+      "sha256": "4c19ecb5a6d18b623d93830537fe51ca27df057f336fb08bbd18bbd79d2b326d"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/lion--lion-visitor--npc-1.mp3",
+      "bytes": 19629,
+      "sha256": "57b261149348853ed2600e2dd629df5b1bbf4f618483ff2cc4c18c8d42992f63"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/lion--lion-visitor--option-1.mp3",
+      "bytes": 13101,
+      "sha256": "0b6f1777d70ac958c1e60067d5ba7d5fb6cc2e45c583c3924e5501cb1b8a1d87"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/lion--lion-visitor--option-2.mp3",
+      "bytes": 13101,
+      "sha256": "c244bd81be3ffc84ad86d95a656ee4001a548e6d7306a054c6a1b97761fafb13"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/lion--lion-visitor--reply-1.mp3",
+      "bytes": 25965,
+      "sha256": "bea574284ee21f78b7887140f348ef1b5868c9226e1b705d17f24ab1e1365f17"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/lion--lion-visitor--reply-2.mp3",
+      "bytes": 19629,
+      "sha256": "0c543ba8abe368eeb55ce8c745804138921f9c1ea2d6ccde9e5307cb217ba74f"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/lion--roar--action-1.mp3",
+      "bytes": 24621,
+      "sha256": "3277c29795571601e1d72893f2d41e365cfef1f63cf1a25018286e1ebb6e8f47"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/monkey--climb--action-1.mp3",
+      "bytes": 22701,
+      "sha256": "41e0ec5c24549670ad1c7e875da81a327dd2520af392c2278480ebfc25c17bae"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/monkey--monkey--intro-1.mp3",
+      "bytes": 42093,
+      "sha256": "b0b282dd1a140c913ad7dbee8e94f9843c252ba09d437776d62901499a066494"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/monkey--monkey-visitor--npc-1.mp3",
+      "bytes": 21357,
+      "sha256": "9051416321732f88662b3a5049f1b062d01e8aff4b00b68448a3b07aee8ffb29"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/monkey--monkey-visitor--option-1.mp3",
+      "bytes": 15021,
+      "sha256": "f372e4d27d45ea2e1530ea645b27fbf47fcd8d975ac1b5d68bc0558ec54b89e9"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/monkey--monkey-visitor--option-2.mp3",
+      "bytes": 13101,
+      "sha256": "c2808425daa6a95eb78fbb45df46eb1e89ec2cbc3567f6a45e84aa09bcc3db27"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/monkey--monkey-visitor--reply-1.mp3",
+      "bytes": 25965,
+      "sha256": "95c89c2191d2eb525901e8b400e6c5bc9be2125e649892dbb6280677998e683b"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/monkey--monkey-visitor--reply-2.mp3",
+      "bytes": 29229,
+      "sha256": "35c07c75809df164ce1145447d49116fba4a0623c58babc6a9429b4aeb776655"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/panda--eat--action-1.mp3",
+      "bytes": 26157,
+      "sha256": "203c7027c168bc2f04d9878ae4c1b124a4c32e204761f41f55145cbc73ef22d3"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/panda--panda--intro-1.mp3",
+      "bytes": 54957,
+      "sha256": "7b20e0fac17b0956e53ebdbc34868ea677bb27f90158a5c905afd6a9cb8f7b22"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/panda--panda-visitor--npc-1.mp3",
+      "bytes": 19629,
+      "sha256": "519968e8efb4772e65bee0f185fe9580ae57a58d4aebfec4743212ded0390002"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/panda--panda-visitor--option-1.mp3",
+      "bytes": 13101,
+      "sha256": "c165de775af490194e41a94daaae5eccb1f8b3f1724e34f583b4d3feb8c09b33"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/panda--panda-visitor--option-2.mp3",
+      "bytes": 14829,
+      "sha256": "32e6c81ed1d0c4aee0a11cca707d59b9172e4a29a04aefe70e798ccd5a4696e4"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/panda--panda-visitor--option-3.mp3",
+      "bytes": 13293,
+      "sha256": "7b923a627a6ab4ae69145cd70b06015f2223dd170653684ce9eb659e531213f0"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/panda--panda-visitor--reply-1.mp3",
+      "bytes": 25965,
+      "sha256": "e547c06544b3b78efe1ac456286244c0539a6d08a20afc7823b6ab033c9a2725"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/panda--panda-visitor--reply-2.mp3",
+      "bytes": 38637,
+      "sha256": "7ed4a27086f858df81fb51929054bdd25d27735e0bcdefc0d5f395b248ff22cd"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/panda--panda-visitor--reply-3.mp3",
+      "bytes": 27693,
+      "sha256": "749b1a29ed71ef4288bf9080869aac2d11389070bae66820fb1d9030fce1afca"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/ticket--ticket--intro-1.mp3",
+      "bytes": 40557,
+      "sha256": "5bcfe652308c8c726163264316e054917737b07d77ef72ca60421902f74c9e98"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/ticket--ticket-seller--npc-1.mp3",
+      "bytes": 29229,
+      "sha256": "6b96125d7d283cb44e66cdebea88d81129eb658b17c9faacd7da129c2327b1d5"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/ticket--ticket-seller--option-1.mp3",
+      "bytes": 13101,
+      "sha256": "09c931478c05de44b7c4baca6527049a8db882bfa908befdddfe9822707bbb4e"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/ticket--ticket-seller--option-2.mp3",
+      "bytes": 11757,
+      "sha256": "840d6aeb61e8002de36a1a18a3c41f581fa57c6e702f4e6cfde36d97bea55c99"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/ticket--ticket-seller--option-3.mp3",
+      "bytes": 16365,
+      "sha256": "f04ef15631c2d178b94cc91b560e55a0c9835d56e64781b7383aa87b57c784a9"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/ticket--ticket-seller--reply-1.mp3",
+      "bytes": 25965,
+      "sha256": "0a4114c993b3a2208d2e17b86feeac274d3eb8a268e4dc7e5c418cfa5e7167ed"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/ticket--ticket-seller--reply-2.mp3",
+      "bytes": 22893,
+      "sha256": "8755f1eb5e2621da5c9a9964598793d2dfb1251f9d84133f2c5b93e9e4449bd7"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/ticket--ticket-seller--reply-3.mp3",
+      "bytes": 32493,
+      "sha256": "ee01afcc90b10d248feeb7d92949e979f6de19e8d2617aba4a2e67fd2c38b4dc"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/tiger--stalk--action-1.mp3",
+      "bytes": 29229,
+      "sha256": "9b1a1dd0b4f0da94cb974cacc9561269700b39c60986ed1d8c71b60c965944e1"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/tiger--tiger--intro-1.mp3",
+      "bytes": 50349,
+      "sha256": "a09d753c7a91c9f84b6d459cc79ceca9c470c87e94c4c94b0fb56bc500d9db01"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/tiger--tiger-visitor--npc-1.mp3",
+      "bytes": 35565,
+      "sha256": "e044ff9bb948ffa65d94852a823584b2d3457af27306e1b35f751d79c2d013ff"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/tiger--tiger-visitor--option-1.mp3",
+      "bytes": 19437,
+      "sha256": "561d795d6eb3707c3511c47381fe214854571e336f0872c3f58b673b7a46d06b"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/tiger--tiger-visitor--option-2.mp3",
+      "bytes": 16365,
+      "sha256": "ab38f69ce1a06b519bb4135d031f5042a453c00ddbcd57408ac5274355a4bee8"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/tiger--tiger-visitor--option-3.mp3",
+      "bytes": 13101,
+      "sha256": "14ac71acec37d248a49d3f9e441d883b38e4561651ac3da97fe81636671e749a"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/tiger--tiger-visitor--reply-1.mp3",
+      "bytes": 25965,
+      "sha256": "e383de15b0cd55743688c82ad557db593ae08e111198cf0440ca205f3d2fd5be"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/tiger--tiger-visitor--reply-2.mp3",
+      "bytes": 25773,
+      "sha256": "20a0a30afc248c7a7dd8d85dcd152828b876b26035e3b73962fe88558938c56b"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/tiger--tiger-visitor--reply-3.mp3",
+      "bytes": 25965,
+      "sha256": "cc34203967efa6ca80d407991076fa42fb606a4ed7f9c2dfcd954c5df920ddf2"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/zebra--gallop--action-1.mp3",
+      "bytes": 29229,
+      "sha256": "8d3fa1ef25eaf07225ed5e2ce14bfdcb756d0c7c787c9681aebca6ea4c53172f"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/zebra--zebra--intro-1.mp3",
+      "bytes": 45165,
+      "sha256": "ce6b60928186111411aa9008c2119e9bd14ea5b41712e8bc54ca6d5d4b6780e5"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/zebra--zebra-visitor--npc-1.mp3",
+      "bytes": 31149,
+      "sha256": "9f3e4328dfdb46f6c169c8d232b4acbe3d8fe9dd8b302ffc54eca2ec5024794e"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/zebra--zebra-visitor--option-1.mp3",
+      "bytes": 22701,
+      "sha256": "7cbf891e250de6bb9d30f8b68d6d3510fbe62fe1ddb7a018a2fed7f8cbd03726"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/zebra--zebra-visitor--option-2.mp3",
+      "bytes": 11757,
+      "sha256": "ad09c504206575c273d8830e7cd9058357e7d06e1a115db240396d6f58e36035"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/zebra--zebra-visitor--option-3.mp3",
+      "bytes": 18093,
+      "sha256": "f8fdae8e56922547b5dcac290a4dba2259ae5c83bcc8f2b4be13cfe0520e6526"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/zebra--zebra-visitor--reply-1.mp3",
+      "bytes": 19629,
+      "sha256": "a8ff2b0a9883ce332576782ae81302304ba609862a6c7d25cd2f598d4ab1e250"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/zebra--zebra-visitor--reply-2.mp3",
+      "bytes": 27693,
+      "sha256": "831b0d4df449f3728e37931aab3f9a8065faf3b3eadd904da832f820a658f1a7"
+    },
+    {
+      "path": "assets/audio/dialogues/zoo/zebra--zebra-visitor--reply-3.mp3",
+      "bytes": 24429,
+      "sha256": "e7be02e20ccda027553ed595007c0770e3fac6c07990d9b58f15ae4c54e63334"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/askforhelp--choice.mp3",
+      "bytes": 16365,
+      "sha256": "885a7c094eae4e53652e325d02523077346b6416a012c225fb6429069360f5ff"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/askforhelp--popular.mp3",
+      "bytes": 18093,
+      "sha256": "0d21b77179a4ca61ec8cea4c16410e8d4c33685bd040545760fd42a961b2a219"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/askforhelp--recommend.mp3",
+      "bytes": 19437,
+      "sha256": "0b61ee072d80317a0e2b2b23747318b0f9513820203faeee04f1684bd76e2f1c"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/askforhelp--recommendation.mp3",
+      "bytes": 22701,
+      "sha256": "fa07d29c0739e1d04dd07a8a29b109ec2bca83637ce6e986df7e872e11041bf3"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/askforhelp--seasonal.mp3",
+      "bytes": 24621,
+      "sha256": "121985df67f7672e7370494c2389af49cf16dedcf9994cfd269618a337410b6d"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/askforhelp--sour.mp3",
+      "bytes": 18093,
+      "sha256": "3f88862167d2613d17c7fdbb35cdbcc5d28ffb44ce39f9a5fe99e14117fbfe0f"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/askforhelp--sweet.mp3",
+      "bytes": 22701,
+      "sha256": "54a133448906536ceec40bca496d3dec2a8500e01394eb1cd79a3221dcabc27e"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/cashier--bill.mp3",
+      "bytes": 19629,
+      "sha256": "bcb85e186efaf2509fcffb213017546782e92e21e0d40e8de3549519f0d820f1"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/cashier--cashier.mp3",
+      "bytes": 15021,
+      "sha256": "83bc5f7b1091460d22f05c9e899a5213aacb7f78bd5c150af1bc594f038d6072"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/cashier--change.mp3",
+      "bytes": 13101,
+      "sha256": "4d60b8e52614145afe9f2e90ed0dc61fa4670d131b0a2c178c0b6e4a457158a3"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/cashier--coin.mp3",
+      "bytes": 13101,
+      "sha256": "f3fa2440a7e0b35035e9fe2e20aacdedd13eda0f4b5670bbc235cdaad3def750"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/cashier--counter.mp3",
+      "bytes": 16365,
+      "sha256": "bf7255f311cbebc4b30aae46a4202122b21c7ea583a893f62a931504db510b48"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/cashier--pay.mp3",
+      "bytes": 13101,
+      "sha256": "40e9c73416de8a76b45a469b89af6b7b9572e5cc50694c4a7fa790503330dde0"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/cashier--receipt.mp3",
+      "bytes": 14829,
+      "sha256": "17dfd3e6bfcdff76d4dac3e5199ce4b345d19dccc1da5f2f989a98db44f22750"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/choosefruits--mango.mp3",
+      "bytes": 19629,
+      "sha256": "aa33c40bd61d3c736502cd243f4a1a8c99599981aff10fce7c7fd2c69cef1bf2"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/choosefruits--melon.mp3",
+      "bytes": 25965,
+      "sha256": "f5354a483a33cbfab538993fa6c7387501843d67f5c773dd97754ae5c06df039"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/choosefruits--pineapple.mp3",
+      "bytes": 21357,
+      "sha256": "169c419a3244fac9c6224bff7a4b2ddf673b7d5846bf8e8b00c0b8fa005a0366"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/choosefruits--ripe.mp3",
+      "bytes": 21357,
+      "sha256": "cc983d403ee5378768a8ece3ce1ecae30425405580e6a31c86610f8db26bb0c6"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/choosefruits--sample.mp3",
+      "bytes": 19629,
+      "sha256": "2af6c9d3b7b5ca0e308d3d9231b0bf096431df9d2978ffce14b417bbf5ad504a"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/choosefruits--strawberry.mp3",
+      "bytes": 21357,
+      "sha256": "667f3f2dce11a8fce4be4aa138dad359015834e71a6ba441e5225fbbab3ae715"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/choosefruits--taste.mp3",
+      "bytes": 19629,
+      "sha256": "50773a667f5aeffca38d53954e003f3a5482f38c6f773da08788380a1bf49a18"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/fruitentrance--aisle.mp3",
+      "bytes": 24429,
+      "sha256": "9f8c79dd175c49fcb4a51b37301d3b0580a1038196738bdb5a214b51ab52c7e2"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/fruitentrance--basket.mp3",
+      "bytes": 16365,
+      "sha256": "30b4812768aa89fab26b3b40accb40859eec0ef39fea28fb1e9fa17afa7ae0b1"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/fruitentrance--browse.mp3",
+      "bytes": 13101,
+      "sha256": "24b1ba412c796f35ab6b8a080fb796e26a5af75811788780fd8f2dd273ef0901"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/fruitentrance--fresh.mp3",
+      "bytes": 15021,
+      "sha256": "fa7be862fd0b75001374c7cdbe080f9a575e2cb68eb42b3d7366489b84d302f0"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/fruitentrance--fruitshop.mp3",
+      "bytes": 19629,
+      "sha256": "ba17c87bcbbb47d3ab5ebafa78d3e3a1caca6fc7679c6afee52d1e188ff7a3b7"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/fruitentrance--signboard.mp3",
+      "bytes": 24429,
+      "sha256": "0c7fe09bd904932bb033246e9943202b567347ed994b0cef11295c948748490f"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/fruitstand--apple.mp3",
+      "bytes": 29229,
+      "sha256": "349d8a8815179e00f04a4a9a1e092b924ba37a6a52fac3f07bc0cc39a1c8e62b"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/fruitstand--crate.mp3",
+      "bytes": 21357,
+      "sha256": "6017ad96d6933e27c718cc7f8322a0218cdf1aa3cc61eb1a0b98e13821af0a6c"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/fruitstand--display.mp3",
+      "bytes": 19437,
+      "sha256": "63541d811495d79a0cf2c482beed2f878eaafac50bcf7f1acbb9e1d88e2461ea"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/fruitstand--grapes.mp3",
+      "bytes": 21357,
+      "sha256": "a798c615e903e8ed666cdce4175109be47de43a78c192629740ca7e89a763592"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/fruitstand--orange.mp3",
+      "bytes": 18093,
+      "sha256": "59a761386feb190f59007cc4d2c226b80a2e0c1b38c0d63a9a9c465bdddde8ca"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/fruitstand--pear.mp3",
+      "bytes": 19629,
+      "sha256": "11778d8137627e36b5730cdd1aa9f4ae3846810f47c24debcd9c659774b4cd0a"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/fruitstand--pick.mp3",
+      "bytes": 16365,
+      "sha256": "a366a2d0fde4d1262813a82efbb777b4888725891b88a021bd1f7267bd2746ed"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/leavingfruit--carry.mp3",
+      "bytes": 18093,
+      "sha256": "8efd0d315cea5d9df8acf930d48bd672b0aaf6ad72bcc9cfbf9824c36fdd55d2"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/leavingfruit--doorway.mp3",
+      "bytes": 19629,
+      "sha256": "7eb27632a1404027ea1487c16a20290d753cbd70e3066de5547408bd682e48a7"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/leavingfruit--leave.mp3",
+      "bytes": 13293,
+      "sha256": "59abe3e0d99f7fb06b6dbe9b24d6253da306d580c3cf45f7ed696aa70d22dfbb"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/leavingfruit--street.mp3",
+      "bytes": 19437,
+      "sha256": "4a3c955a6791bb810b9a8831aa8c2a50ae3e2656fb2f06b66a64bd833c21f370"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--berries-special--avocado.mp3",
+      "bytes": 22893,
+      "sha256": "6f844471697c31c244d3f5ea9aa5c2ddb53d944c23f69a22e6d228c603b55855"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--berries-special--blackberry.mp3",
+      "bytes": 22701,
+      "sha256": "9f31909912664be8e7715e25d7ddb17c222998f376fa9039a9d228a7600445d8"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--berries-special--blueberry.mp3",
+      "bytes": 19629,
+      "sha256": "72ee1781245f7503b17fdaccf901b97d8fcd94fec68f92e5215260749f6901c0"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--berries-special--cantaloupe.mp3",
+      "bytes": 24621,
+      "sha256": "ff52b4b8885bc9bf482a935080585f4b8b6bac285ceee8eac0586d882dfcdf24"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--berries-special--cranberry.mp3",
+      "bytes": 19629,
+      "sha256": "4dafff78e45b44e5c6a6c3ec170bd7bc398c63786bc04cbe6c53aea16dcb0756"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--berries-special--gooseberry.mp3",
+      "bytes": 24429,
+      "sha256": "9be607f708c3a169ceff3f52c3e6f9ab76c2c8bfe8b8549a1c9186e7ad9264fd"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--berries-special--honeydew.mp3",
+      "bytes": 21165,
+      "sha256": "f9b3a6a8bee7e0833c53ba591f06ed61d6af77bc90a169861c09cce840f681d9"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--berries-special--mulberry.mp3",
+      "bytes": 22893,
+      "sha256": "2fb724fcf91e1a426d9d5fccddae23e60fc1a36cd78f468cf541464763b9054e"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--berries-special--nectarine.mp3",
+      "bytes": 19629,
+      "sha256": "1e9d810094def78b5f143f5bb7b58b17a6b2b2290e033a09836560c27cda7340"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--berries-special--plantain.mp3",
+      "bytes": 27693,
+      "sha256": "4f382852ea16a6a734e9c34d9d8626e2e783d1cc746a992caaf5bceaa2863864"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--berries-special--quince.mp3",
+      "bytes": 19437,
+      "sha256": "1371555e51c2fdb27caefde63f38a34ae7c64cac42f2f6fc787b6ca7658d21ec"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--berries-special--raspberry.mp3",
+      "bytes": 19629,
+      "sha256": "372be84f1617aa55a4b60e9b801da0c28f22e5812400b0e79397cef308b26dc1"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--common-fruits--apricot.mp3",
+      "bytes": 27693,
+      "sha256": "515303fb815e1f7e15a1766363a90c446c5609566048e4302096659ae3b4c4e4"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--common-fruits--cherry.mp3",
+      "bytes": 21165,
+      "sha256": "de56c9d377b650efe40eb24e3e244543ca29247790354dc9f0134a6efb853e3c"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--common-fruits--date.mp3",
+      "bytes": 21549,
+      "sha256": "05769cf250d2f51f13dfd5114c151e1326a740b74cb25a091cfa2581c3034dfa"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--common-fruits--fig.mp3",
+      "bytes": 19629,
+      "sha256": "bc35b773ccc45ac61c7db250778f668f659d0313998a899b6196abbd66017a55"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--common-fruits--guava.mp3",
+      "bytes": 19629,
+      "sha256": "ac6eb9ea5787b3580df73845b92a028d8b1c5583ba494a242449efacef4b3c8f"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--common-fruits--kiwi.mp3",
+      "bytes": 22701,
+      "sha256": "91f5979e7513ddb4d03987e7849dece0b2fdd6948e87e4a72a4b00a677e2701f"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--common-fruits--lemon.mp3",
+      "bytes": 16365,
+      "sha256": "49b6da278bcad1614108a9cc5b3b1fd3f996817f1d721d9a4df4aa5205aed3fd"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--common-fruits--lime.mp3",
+      "bytes": 19629,
+      "sha256": "095f6cbc5e54588be9e037e7806c76db2de73be7c09178f26b59e390c849663c"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--common-fruits--peach.mp3",
+      "bytes": 21357,
+      "sha256": "aade9554ab7f4dbcea52d6fea9d3024c0a5bc122602c7f54260ce61380417ae1"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--common-fruits--persimmon.mp3",
+      "bytes": 19629,
+      "sha256": "2513dfc2f86b7064bd28a212180d8a9d74080292e0f452cc8768ab4ee2e77f70"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--common-fruits--plum.mp3",
+      "bytes": 19437,
+      "sha256": "10d8794c3fef4c9a1e16432c13d1fcc3d318df783e306c3dcbef591371d6b9c0"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--common-fruits--pomegranate.mp3",
+      "bytes": 25965,
+      "sha256": "b2b8dd7506ac90e02766486c03b990774162a0503afc29220d3f3b8c5df4d213"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--tropical-fruits--coconut.mp3",
+      "bytes": 21357,
+      "sha256": "ac6be85ba30b2b70c4686b677a99269352857e53cb50e6971592d64b0acb8fd5"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--tropical-fruits--dragon-fruit.mp3",
+      "bytes": 25965,
+      "sha256": "d04d1d6532847b002c93e7f550031226fc07a2d2aeaf7773095cd99c154511b2"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--tropical-fruits--durian.mp3",
+      "bytes": 18093,
+      "sha256": "394e9c0a0a013a16f51e341b61bd2df15a6d09c0ae2f70f99ac45ea42566495c"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--tropical-fruits--jackfruit.mp3",
+      "bytes": 27885,
+      "sha256": "45a3c76e3a97b18e1a90fc42d532a01605402fa75fd04023f819be17d9770295"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--tropical-fruits--longan.mp3",
+      "bytes": 21357,
+      "sha256": "9847b0bea559d58887ef4369287ae3d843463b7131e8a107aa517b9790e31f63"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--tropical-fruits--lychee.mp3",
+      "bytes": 22701,
+      "sha256": "456b9fa5374ac4ec161cb09646c5558827bf89ff9bb7c0db20fd0e49210886df"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--tropical-fruits--mangosteen.mp3",
+      "bytes": 24621,
+      "sha256": "cf5c16b52a8261367956c666ba61953f3b1d366e4107c9267803224fb7950c08"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--tropical-fruits--papaya.mp3",
+      "bytes": 22509,
+      "sha256": "27dee8c5544c992d4513264adb0b7763064f3110fc3691586f748b3b2b84ad54"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--tropical-fruits--passion-fruit.mp3",
+      "bytes": 24621,
+      "sha256": "87c4f71444363b9b145b51df9bbca9efda40ad4abdd298daa8a71334000024b9"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--tropical-fruits--pomelo.mp3",
+      "bytes": 22701,
+      "sha256": "88c9d070f485e09f1a3c8905901d26580543e37bc6ea8935bb0375bbe6dd2591"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--tropical-fruits--rambutan.mp3",
+      "bytes": 24621,
+      "sha256": "f8de33e586affa88e1767c0f655daab6bb6ade508af0aa3d1ed5c40b4e215172"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/more--tropical-fruits--starfruit.mp3",
+      "bytes": 18093,
+      "sha256": "7560ac67d155be4d9c9afec24b3c1ef919301c1df235b0fefad9fbdbf947a545"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/weighingcounter--bag.mp3",
+      "bytes": 14829,
+      "sha256": "28826674743c9c06991f38be3cd780b94bbff0002b0fccff18d10f4a7e8d0fe9"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/weighingcounter--kilogram.mp3",
+      "bytes": 25965,
+      "sha256": "1910226d55a0260bed32ce323026e7ad8297268d14c0f517a921b2020c3d67eb"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/weighingcounter--label.mp3",
+      "bytes": 16365,
+      "sha256": "a76ae1b7839bb96a6a26e5b0a3ca9386fc5de9e9d3123ff0c4007a52b43fd853"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/weighingcounter--price.mp3",
+      "bytes": 19629,
+      "sha256": "137a2f756ee8050e3479d6793e5b9da364f0ab9ea55e8fac9f1b575927f0f133"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/weighingcounter--scale.mp3",
+      "bytes": 18093,
+      "sha256": "9a040148a4732f4b6b107cbee8c4d4d6556e25a7e1c8ae3a72672b2613ace9fc"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/weighingcounter--total.mp3",
+      "bytes": 19437,
+      "sha256": "91d5026b42728c49ff3ef9fd496d0c2bd0f04bd9578b2d0fd88e2b65b56448dc"
+    },
+    {
+      "path": "assets/audio/sentences/fruitShop/weighingcounter--weigh.mp3",
+      "bytes": 15021,
+      "sha256": "0d0bdea14495fd0e8a4f5190921bbe9cf5549de334fc324abec88512cd14bad9"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/elephant--huge.mp3",
+      "bytes": 25965,
+      "sha256": "e4bf4ec1b2cc1e2c421829e0345e11a52e2dd9a979fa221e63965fa60be166db"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/elephant--keeper.mp3",
+      "bytes": 21357,
+      "sha256": "e65e5f80785093ab1a6c5b6a525daf5a2d5956743a824a147550aaabb363beec"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/elephant--spray.mp3",
+      "bytes": 22701,
+      "sha256": "4d526e00bb13e806920f4b179bcd53be1a6ffded623e891501315e551e7508c2"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/elephant--trunk.mp3",
+      "bytes": 24621,
+      "sha256": "cae87ac24bfb8d6446a69d2245ed378f41c7c4c50605166b99c56aee2fad3899"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/elephant--water.mp3",
+      "bytes": 22701,
+      "sha256": "978de8842eff5d0c06ba11f570722f35df6e93f21bd552d645089d04e34b2500"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/elephant.m4a",
+      "bytes": 15826,
+      "sha256": "528772758c20c23a8ee5c1779bfda8bcacf536419b358a01a95ee4f3071bdda0"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/elephant.mp3",
+      "bytes": 30957,
+      "sha256": "f17bd1b85a3a4b84df340a6969cdd91cc54e88a2ed55196e82a844ce49a19e27"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/entrance--sign.mp3",
+      "bytes": 21357,
+      "sha256": "dfdabb2362cf6b80f61088f91b416c36a4f2d3803490a2443934c292dbadca51"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/entrance--ticketbooth.mp3",
+      "bytes": 19629,
+      "sha256": "8f6490fc9490df351589f00b09866c726c598573c191daeabeb70f2a879a2d1b"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/exit--exit.mp3",
+      "bytes": 24621,
+      "sha256": "16180508c5cd10ad0d573b48e16a42a61895cb04e82a8521efc40930c7125db4"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/exit--giftshop.mp3",
+      "bytes": 18285,
+      "sha256": "0a1e39649434d74e319184e6862ad5a7b5293a268cf2f659936f31e07ab782cf"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/exit--goodbye.mp3",
+      "bytes": 16365,
+      "sha256": "16437ee82f441b74677a46493bf46c11937a91413c2d64c8ff8728f54b416427"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/exit--souvenir.mp3",
+      "bytes": 22701,
+      "sha256": "f4ab06a44b86d9d84abf3895c156875eaec48d283003eaa3b1a7b352e03a4920"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/giraffe--giraffe.mp3",
+      "bytes": 21357,
+      "sha256": "55792bfc2860bca06e88fb57ec1a0cd8b10391f63e9c8633f1425e7b0c4be6f9"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/giraffe--leaves.mp3",
+      "bytes": 19437,
+      "sha256": "0789c1e00a15810cb4858ecf52d8d7ce7db13ace9e6594d73d61d0d9bfa1a44b"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/giraffe--neck.mp3",
+      "bytes": 19629,
+      "sha256": "e3bfc66ed584c461f7b72ffad206b523b5beae26b94fcbd744b56abb76524d42"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/giraffe--reach.mp3",
+      "bytes": 18093,
+      "sha256": "50c3688cd8da1775dce8c380d8f35620a74deb7ec30d4eaf5b46e9011681a034"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/giraffe--spots.mp3",
+      "bytes": 22701,
+      "sha256": "bee18809c3c45eb10c22633eecce9dfbbab7c7602c904d22ed2d6c82a0fdc5af"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/giraffe--tall.mp3",
+      "bytes": 21549,
+      "sha256": "ef2c72a5994b48b063bf33fdf0c3cbb7b722c6597d161eee600b42a08e80a73a"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/giraffe--tree.mp3",
+      "bytes": 19437,
+      "sha256": "9e64b9a5e88a3ba16b43439a0ddcb14767e549ccc46ac342d4317b2688d7d4f9"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/hippo--heavy.mp3",
+      "bytes": 19629,
+      "sha256": "549f596a7fd12f43782f53b195c0c0e4754b28a67ecae6086aac13d3de8b2731"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/hippo--hippo.mp3",
+      "bytes": 18093,
+      "sha256": "638b56cb4756df8618c4b2d99eec564a8bb53f7e07cbe07631fbc45d288f851c"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/hippo--mouth.mp3",
+      "bytes": 18093,
+      "sha256": "1d709c62cfd3f9ab788c129ec3df80c60003ef7077286f1f088e597aa51f060e"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/hippo--mud.mp3",
+      "bytes": 18093,
+      "sha256": "3b4fdb6bd833eef75c3cc934d374210dff0a2e84a45a6a94b147fdb1d734f42a"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/hippo--pond.mp3",
+      "bytes": 19437,
+      "sha256": "7ff7876a9a7dbd68e98010034de2e5e8535d14402539dafdfe2f52923a6c2dc0"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/hippo--reeds.mp3",
+      "bytes": 18093,
+      "sha256": "1879359fd74e419abd4f276b383aa17bfc0c5c715bb5e3f4b821a2401dbf8cc1"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/hippo--splash.mp3",
+      "bytes": 24621,
+      "sha256": "199c0177bf94fb99008c3c87cc965fc725cef152d87e28667058ea43dab7c261"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/hippo--yawn.mp3",
+      "bytes": 22701,
+      "sha256": "a778169c2a2954f05c744d9d67d6ea7910de795bba01dde796a25eb64c7959dd"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/lion--fence.mp3",
+      "bytes": 18093,
+      "sha256": "a6ace8a2df826ac48e18a27094e37e97cfeaed64aaa40bd61dde8d4137f19797"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/lion--lion.mp3",
+      "bytes": 22701,
+      "sha256": "e312bdff0a54db789b4482be9221f943119babfbe990d44b2f582170d8b103fc"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/lion--rest.mp3",
+      "bytes": 22893,
+      "sha256": "91cdcd1227a928d19f99db0b702e4d5e4cbf5a42e7b66bf23e7a4d16e85f9a80"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/lion--roar.mp3",
+      "bytes": 21357,
+      "sha256": "092d2d64926923b5e83f09d23bb70b635c5fdc2aaed3a301a69f3881bb50c3dc"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/lion--rock.mp3",
+      "bytes": 21549,
+      "sha256": "28f504a6911c1433148d84a85f4d4e9c8b1c09f94fbbfc7fbb1ea11d2e5600e3"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/lion--shade.mp3",
+      "bytes": 19437,
+      "sha256": "8986df7ad416be521a3890647a6f6f47718b91493752c245123aa57ff3abf29e"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/monkey--banana.mp3",
+      "bytes": 18093,
+      "sha256": "e6ee3e4a3461b46d6b73c38df4443a4bee115507e99e62fad74d2aa274233aa2"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/monkey--cage.mp3",
+      "bytes": 22701,
+      "sha256": "3bed4fbc4ead07eae93d36040f1646e7985055fc91075b7372b485a5532e30c4"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/monkey--climb.mp3",
+      "bytes": 15021,
+      "sha256": "1673cfef6c33216dda63b16a39b69c6a527554a5a24e218863910d828ddb778d"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/monkey--tail.mp3",
+      "bytes": 22893,
+      "sha256": "b4c61288ea197a7cefd8f36dda7aeb34a2ad0d264ffb3f7797dd898c63b46d30"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/monkey--visitor.mp3",
+      "bytes": 18093,
+      "sha256": "5e9e6b141f7b0503cc65e4e6a6c0d6396a538f18617bb099232124e8d4a15102"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/monkey.m4a",
+      "bytes": 12593,
+      "sha256": "9f1b9ae3fbb794e072effa404ebcdb178b4586a28e0f5aca9cb875c729e04e01"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/monkey.mp3",
+      "bytes": 22701,
+      "sha256": "c9f4500e6d160cb612eb050e14237ef3a3b5532722c7d3155266611b76118d33"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--birds--crane.mp3",
+      "bytes": 22701,
+      "sha256": "854e867d14c1b052c4755e98295ced78d256e25b4d64f101d6a926a30855dbc9"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--birds--eagle.mp3",
+      "bytes": 22701,
+      "sha256": "4ca2b28a1d37c9cffaa8e66905536ca8aa9a0e89ec9655c2438bcd6189e68a2d"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--birds--flamingo.mp3",
+      "bytes": 21357,
+      "sha256": "a216fcf665fb53e2d3d46bddc85f886d7b354c8887d48786cb3b227fc781edfe"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--birds--ostrich.mp3",
+      "bytes": 22701,
+      "sha256": "71010c28cf0a2c19d92bdb02fa90bc951edea3eefee030e1e2c6078c76f0cb99"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--birds--owl.mp3",
+      "bytes": 19437,
+      "sha256": "f54be4fc68c6c09efb7af36395ac8268d0fb27e6923e52553f15e6cc7591db89"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--birds--parrot.mp3",
+      "bytes": 19629,
+      "sha256": "e8aa4346e637c619074a3780d143bb68e163d1ab77ad880351318d5f068e3521"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--birds--peacock.mp3",
+      "bytes": 24621,
+      "sha256": "5036ab77e7a25e02f32d2d5eb84386aebb8c5f6e0eb656b025997a3b96686e4c"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--birds--pelican.mp3",
+      "bytes": 25965,
+      "sha256": "dd219ac996a32fc8e627083b593ca2172be5b6b833faf2369d10a3482a975d37"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--birds--sparrow.mp3",
+      "bytes": 18093,
+      "sha256": "2be48f7df47c57c7e4c84d2a9688386fb988d4fde6c58d8fb88b2840d1006b96"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--birds--swan.mp3",
+      "bytes": 18093,
+      "sha256": "b67cb226aea0a4178317670bf41021c37b69c79aded8687eaaaed7948fc8df41"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--birds--toucan.mp3",
+      "bytes": 24429,
+      "sha256": "a870be7eaf652fcb912e8782ac02bb6099a413f3bf379904296af359b6445a73"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--birds--woodpecker.mp3",
+      "bytes": 19629,
+      "sha256": "de26fad6898ffebb6eadc0058617a402f311f4688bd1d6bf2d68f7620fa84437"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--mammals--camel.mp3",
+      "bytes": 19629,
+      "sha256": "a2670396f58f5f22488ceffade6f3e9feb71f4ca33b2b638aaf0fe460fca9fab"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--mammals--deer.mp3",
+      "bytes": 19629,
+      "sha256": "4b1eaaac2294ab4aa65e66f2dcc609491109fcbd7932feea02b17da532c05c20"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--mammals--fox.mp3",
+      "bytes": 22701,
+      "sha256": "de1172b376aad08d830c7eaa681b3482f54d1f4795a7f3bd6803468a070654f9"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--mammals--kangaroo.mp3",
+      "bytes": 18093,
+      "sha256": "cdfa80fcab966a14becaa7066683cdb44e06f0fdb21748a1a9abc3e91c10d253"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--mammals--koala.mp3",
+      "bytes": 19437,
+      "sha256": "e7a98446852c57826183aad0f1c07ab3994b2433c746fe1ba525f4e944d86494"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--mammals--leopard.mp3",
+      "bytes": 19629,
+      "sha256": "b9afd3d4e20d610b86a37bc8fbc31c605ef388302bca90667294bd1cf5887023"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--mammals--meerkat.mp3",
+      "bytes": 21165,
+      "sha256": "5efde29ee9b264f2ac94ab563738bcac8c59bad755d32b88c305de7896abd165"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--mammals--otter.mp3",
+      "bytes": 21357,
+      "sha256": "c1c6717ba69f815b235b0815e4c82d3395b1fdd56b1968ff0ffc98e9ece1775d"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--mammals--raccoon.mp3",
+      "bytes": 21357,
+      "sha256": "e52d33c57b156150d6b85690ace4c39df3bf02390b9fe09586f0a6857f6b4241"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--mammals--sloth.mp3",
+      "bytes": 21357,
+      "sha256": "dda8f141cb0e79f172baafd1c741a2770353b6243072ba07a5bf38119f144d63"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--mammals--squirrel.mp3",
+      "bytes": 19437,
+      "sha256": "68b55ea414961c560dde27256a279e2dff7f0e5d9dee2cf7e5a8a2b84914752b"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--mammals--wolf.mp3",
+      "bytes": 18285,
+      "sha256": "2cbb9fc6d5b3b3ce2e9a66267a3a9e7c4e1c5b4686bc68205e15190d74ce4761"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--rare--anteater.mp3",
+      "bytes": 21357,
+      "sha256": "9efbe46d8493ec3fc4cd64d82e72d27c393f5c44354fb2ae430d477a049cbfc5"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--rare--armadillo.mp3",
+      "bytes": 19629,
+      "sha256": "08ffc9aa631ba7da9f62aeca49d93e5c8f1eaf27050fd294088ff8b6d7943e6c"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--rare--chameleon.mp3",
+      "bytes": 18285,
+      "sha256": "a305b3d666a1a96e3808da96b6faa7ec3bd7a8056921b17f67c9412049895a01"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--rare--crocodile.mp3",
+      "bytes": 21357,
+      "sha256": "76a519e983de0c57af7f2fc355d4308e19e0c340f6b61354fcc976a756630b93"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--rare--golden-snub-nosed-monkey.mp3",
+      "bytes": 27885,
+      "sha256": "070a39b281f1ab35a10178701f686c3421c455166a777a5b7e00208cfa1f5d96"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--rare--iguana.mp3",
+      "bytes": 19629,
+      "sha256": "889c3bd4f83ec2334b4fef2f55eeb3eeabf2c1bc47490b3e0568bfc9f2488b54"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--rare--lemur.mp3",
+      "bytes": 21357,
+      "sha256": "f39743a1384bc3d8cead4b6559756fb0958ca0907ac9ebef656937bd9fa1a338"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--rare--lizard.mp3",
+      "bytes": 19629,
+      "sha256": "a57444112285635485082b4609db7ffc66c0f8772ee8e20fb2f6d0a2b6ee0b38"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--rare--red-panda.mp3",
+      "bytes": 25965,
+      "sha256": "42551152e137ca12cab68f5f8f960e9573604938f0230192cecc7e05c2967347"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--rare--snake.mp3",
+      "bytes": 19437,
+      "sha256": "77119f980ac6bdce9b5390061eb75bde8ee7e658f28b24185eb5536c60ab45ae"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--rare--tapir.mp3",
+      "bytes": 25965,
+      "sha256": "41c3ff83a13d5e82e2e8c25f8e4f1a9fe25f16a36fe803cea34a6a03db55b9de"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/more--rare--turtle.mp3",
+      "bytes": 21357,
+      "sha256": "a9981c6fe1e0ad13a4c1ed518a539a3146f354e35b0924ed5c600b04d11b250d"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/panda--bamboo.mp3",
+      "bytes": 22893,
+      "sha256": "ae868e11c61ae275bc7fafb123bc6be2f9ee0328a7c328fdfdf80ed99dcb122c"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/panda--climb.mp3",
+      "bytes": 18285,
+      "sha256": "23468fce7d0603f87942e3102ef770610e127723cbb287a9d930d2dad4a67f3c"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/panda--cute.mp3",
+      "bytes": 18093,
+      "sha256": "dea8279325bd9829849a247b82c73dc36595d58f581a18a01b2a0a1bb548075b"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/panda--eat.mp3",
+      "bytes": 24429,
+      "sha256": "ee23b7ba01cdeea884affa6cc800e602dc0d3c84f1b5a168673f723cb0d705c9"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/panda--fur.mp3",
+      "bytes": 21357,
+      "sha256": "514084e736afebab01d16d9e302b5fc3caf5c58029800a15a351a6bc5d586f33"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/panda--panda.mp3",
+      "bytes": 18093,
+      "sha256": "58ccc900b8749b7e275bb92bd20fdcd1a43b523bd42391a47a61d139b95bdf22"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/panda--sleepy.mp3",
+      "bytes": 21357,
+      "sha256": "961418057e5977d78a7db9fd65e1db23dd2770fb093102b476afbee70515fa3e"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/ticket--map.mp3",
+      "bytes": 11757,
+      "sha256": "aa022baff053524efe4720f51d09c5e4e4bbe74e3edba4a7769b49907a507e2b"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/ticket--seller.mp3",
+      "bytes": 18093,
+      "sha256": "d92f608c64d46733c18f5f176affb6d5635162b6186384deee132f6b9c97c4b3"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/ticket--ticket.mp3",
+      "bytes": 16365,
+      "sha256": "6cab3a052741bf12b9116f03f0974e4daf932db9251fb0f9b02096c8befe7323"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/tiger--claw.mp3",
+      "bytes": 21357,
+      "sha256": "48f1b96bbb35a3395212d0a3b7e21268e842f0dfd8df29498c27ca4a230f1425"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/tiger--forest.mp3",
+      "bytes": 19629,
+      "sha256": "58ffe6170c1bb51c64c7ecdd9a96abbf892880946489ba7dc0fd3e7722d24f1a"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/tiger--hunter.mp3",
+      "bytes": 21357,
+      "sha256": "452a2ca4d1c3815a0ae5e73531142824befbf93d34678dd8f3ed059228edd808"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/tiger--quiet.mp3",
+      "bytes": 25965,
+      "sha256": "e35c7e9fe18ca2c27c94bd9bb072fc39ba395c1cc0eb2005ad394dfe7cf2ee85"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/tiger--stalk.mp3",
+      "bytes": 21357,
+      "sha256": "e980e788fb6c8bd61fe4e8f69edbc746d6fb952dbf7020c4395b5b2be3caf4f6"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/tiger--stripes.mp3",
+      "bytes": 27693,
+      "sha256": "d6e8445c479d1d08a061ac481f3aa4c89fa49dbe5e45e4acbf37858892e54060"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/tiger--tiger.mp3",
+      "bytes": 27693,
+      "sha256": "a9a2ed8f1ce287c7bdab2b1fcfe15a2c5c9e0552fa393d1ca7cfdcce02ef419a"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/zebra--gallop.mp3",
+      "bytes": 24621,
+      "sha256": "024a310b313a985af589a1c91fefe836d31e3dc786cc1e7984d132b5ee0bd86b"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/zebra--herd.mp3",
+      "bytes": 27885,
+      "sha256": "ecac714990490a6dd457166c226043eaebfee9122b4f2008b18f79573f92ed93"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/zebra--hoof.mp3",
+      "bytes": 22701,
+      "sha256": "b7f8bf32315a58f990190d9a0c37a05d99561ba2d2c6b5292bc2981059fea678"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/zebra--mane.mp3",
+      "bytes": 18093,
+      "sha256": "3da4da3824db2d6822658674176790462eb7b00a51c7b1e120c46096464b2036"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/zebra--pattern.mp3",
+      "bytes": 18093,
+      "sha256": "cc89fe9914baf060d9028f387ede7d50218c1b9a485db5fc6dc33d416262843b"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/zebra--savanna.mp3",
+      "bytes": 19629,
+      "sha256": "39a8c55e067fd5c66e8d421deef156b3dac9fceec55a8c1ad05cc8cc6a9ad49d"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/zebra--zebra.mp3",
+      "bytes": 21357,
+      "sha256": "ed26807f9abb91f8c0b3b172d82ae1b813bcc3dcfe8b922d287529e4f09f6768"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/zoo-gate.m4a",
+      "bytes": 10093,
+      "sha256": "4ca70adc35eb4b3826bc668c1b522e693fe9cc96d799565d9660cddff146aab7"
+    },
+    {
+      "path": "assets/audio/sentences/zoo/zoo-gate.mp3",
+      "bytes": 16365,
+      "sha256": "a9a401df4f28750799fc28245b1dafcc844ce44953d1eeadd805b8bd02369b48"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/askforhelp--choice.mp3",
+      "bytes": 19694,
+      "sha256": "ebe6ec8ce1f258b900ae4852e299b6a5004ccf97f651f7f2eef26b3e7f8e0a1a"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/askforhelp--popular.mp3",
+      "bytes": 19694,
+      "sha256": "02c89fb3184a9dd6e3fa5edf3202ccce1762bad462f744f077ef9cc00ab4a5d2"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/askforhelp--recommend.mp3",
+      "bytes": 19276,
+      "sha256": "578eeed4a6b6fd14e49b743d1dbcd5a71d5364c9a95eb7385b6d0edba7211703"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/askforhelp--recommendation.mp3",
+      "bytes": 19694,
+      "sha256": "de37ba52645261d40843d671c1bd9d3880b724b7cfb38c12ad633b9fa1b83fa9"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/askforhelp--seasonal.mp3",
+      "bytes": 19694,
+      "sha256": "6db474645e8cea5c10098d51c641251b1b956547edc32007179a146426d34150"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/askforhelp--sour.mp3",
+      "bytes": 19694,
+      "sha256": "d1f26d2f3df0637d4891c3613f62294a1c0b826f1c302db519b90348a6faf10c"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/askforhelp--sweet.mp3",
+      "bytes": 19694,
+      "sha256": "b67cc4e48f779acffb24d38872f3264de156c0c89eb547ba4648f2f07b6e1f3e"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/cashier--bill.mp3",
+      "bytes": 19277,
+      "sha256": "a3c91e79e30a25d7ba045bdd0089c809a8d11e47dc1466cedff51503c0d2876d"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/cashier--cashier.mp3",
+      "bytes": 19694,
+      "sha256": "05e3071ba4a08770aedd23b1e8ec15e7f6cb38f4f8ff3fbb05dbedf34e617bcc"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/cashier--change.mp3",
+      "bytes": 19694,
+      "sha256": "9b791df881a947c4984d8fe2f7d652db7f500710dd6c413fc4ca4af4a66918cd"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/cashier--coin.mp3",
+      "bytes": 19694,
+      "sha256": "9e56db38e8252127618793f1a21a6bb863f9e6f238187259638253bee2a057e2"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/cashier--counter.mp3",
+      "bytes": 19694,
+      "sha256": "5975eb43f1d60570410f8fe3cb4e3489137468688f0c7b41f39f2e9bad16164e"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/cashier--pay.mp3",
+      "bytes": 19694,
+      "sha256": "5b40e289761b5bc15425d8aabc1066768779447cdd5e8470ebe0fe480e529869"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/cashier--receipt.mp3",
+      "bytes": 19694,
+      "sha256": "89cccf4e565addc032367a2cc9b7019a2f5a443a8327131645df8df149b5f9e7"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/choosefruits--mango.mp3",
+      "bytes": 19694,
+      "sha256": "d5556ca0fc79b428d2caf85daf169ab136307c553208829f34e256a7570142d1"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/choosefruits--melon.mp3",
+      "bytes": 19694,
+      "sha256": "156d01a02b9fc398b3c6fd3c06475709930a044513f560c5024736fc39601ce0"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/choosefruits--pineapple.mp3",
+      "bytes": 19694,
+      "sha256": "0ab02b7c2d2f835c0c95c5307a1452e67d7966e616213825933e8c9d369b2620"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/choosefruits--ripe.mp3",
+      "bytes": 19694,
+      "sha256": "b18929d878c382e2999f2bbd44415fab507d9c4d9aa0001b0fd79a47f6a35cd0"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/choosefruits--sample.mp3",
+      "bytes": 19694,
+      "sha256": "f018aeb7db183f5843ef349afb736af1ce487d33ae0a07c9d353e2fab0e1d270"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/choosefruits--strawberry.mp3",
+      "bytes": 19694,
+      "sha256": "6026903c8b1313649a58d1d480f4ba5c40363e05c112e5b14f3253ffcb65050c"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/choosefruits--taste.mp3",
+      "bytes": 19694,
+      "sha256": "9292631fc9e643c675860763a839f4e110abd5d47b0a20cef99385e3c6154e92"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/fruitentrance--aisle.mp3",
+      "bytes": 19694,
+      "sha256": "8c2319c4dbc726a84d4662409d487ea0512303f32be2a4a292a8ed42fd9847b2"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/fruitentrance--basket.mp3",
+      "bytes": 19694,
+      "sha256": "62498b0c4f5a557e7a6860b8e01c1527d860eb01a7dacd4272e398b1513034bb"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/fruitentrance--browse.mp3",
+      "bytes": 19694,
+      "sha256": "5a6567857bd8d70488270e1e05c641903ba0cfba1745e26f2c0e5fada3baccf6"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/fruitentrance--fresh.mp3",
+      "bytes": 19694,
+      "sha256": "b92214318f8b81936ac3801519134ef30e5289ca1fd4ad35dbfa9d2c6f71caae"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/fruitentrance--fruitshop.mp3",
+      "bytes": 19276,
+      "sha256": "defc6e46bb16e081ff35d9cac0c64db6b5c9612e946acf73c281fd189882f4ce"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/fruitentrance--signboard.mp3",
+      "bytes": 19694,
+      "sha256": "94a246e01cae29aa1fdd83ddaf90b4d03625a1b81a5f0c8271f3cee9405d80f3"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/fruitstand--apple.mp3",
+      "bytes": 19695,
+      "sha256": "3fd700e2b0abbfb505125b3354c31efc1df74a67bb7418fe906dc9527439b1ca"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/fruitstand--crate.mp3",
+      "bytes": 19694,
+      "sha256": "047d17d5ceea59d5d2b57aade80997d40f9d3fcd771906585a2799d602609c3b"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/fruitstand--display.mp3",
+      "bytes": 19694,
+      "sha256": "a2903cf919726d25652c40401d49feb97578fed48259cf62638279564453cc99"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/fruitstand--grapes.mp3",
+      "bytes": 19695,
+      "sha256": "b8fa18233c9e42e9e8620e0a26b972db4b6e26098ea37ff34a6b64cde8bfd6da"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/fruitstand--orange.mp3",
+      "bytes": 19694,
+      "sha256": "67249e479f172f77c47946d91427ef5dcf461bd2805a367d4b6f8f8a7612024e"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/fruitstand--pear.mp3",
+      "bytes": 19694,
+      "sha256": "2f8fa9e46d01a894a0007c8bdb3b0994dbd4731dcd638f1093bce732701afd4f"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/fruitstand--pick.mp3",
+      "bytes": 19277,
+      "sha256": "d3310174bbccd5b06b7f840a4e0cb8dd8f1dca3ce52643f2754597e6c20ae60c"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/leavingfruit--carry.mp3",
+      "bytes": 19694,
+      "sha256": "5e627410a0a9756f26ed57bab2f304f4639c18355743b3067095b037e24b9ff8"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/leavingfruit--doorway.mp3",
+      "bytes": 19695,
+      "sha256": "6f7361ea5bb550c06187da96c352ce09ec2d7de0e41aacbadb260634bd3a5d32"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/leavingfruit--leave.mp3",
+      "bytes": 19695,
+      "sha256": "aa4953f24d4cbf28eb5ecf8dce49f56c36dbe0be8c9abcb731d3273a0ac75d14"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/leavingfruit--street.mp3",
+      "bytes": 19694,
+      "sha256": "4626f1e49b5dc7e138ee9b0203a1076f65103dd9a2ee47d115c4b1c6b4bc2f59"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--berries-special--avocado.mp3",
+      "bytes": 19694,
+      "sha256": "345c4d63689d402416021b1384308563463ee89105ed44b093bb9fe0cb8ab70a"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--berries-special--blackberry.mp3",
+      "bytes": 19694,
+      "sha256": "06aba4796eed4ae58d0b5bfd79778d11a15957c82e59c51f5ec0240ad46300e8"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--berries-special--blueberry.mp3",
+      "bytes": 19694,
+      "sha256": "6e8f7084207f0ab4c79ade5936a46970284b2d398ee2e33dd4561e1fe2983762"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--berries-special--cantaloupe.mp3",
+      "bytes": 19277,
+      "sha256": "a4a5b80d1ecf0dea63c0ba7fcee9651c32b1a26ed3e76f5736a5536b72ed16f1"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--berries-special--cranberry.mp3",
+      "bytes": 19694,
+      "sha256": "de516d5e254e9a31d3083ca34ebd3e8bb4bd283af580a6b4252e8e0190dbf291"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--berries-special--gooseberry.mp3",
+      "bytes": 19694,
+      "sha256": "51ba11553fa4a82e287ce4dc2edbd5ecaa8c7cac9d8dc53dd66acde47b30d982"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--berries-special--honeydew.mp3",
+      "bytes": 19694,
+      "sha256": "8fe4b50f71d94dbfae1121b4b66f1b8033c1b02c5ac9893a368929a10054ad5f"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--berries-special--mulberry.mp3",
+      "bytes": 19695,
+      "sha256": "b0bde74768b792dbfa1be8782867d2aec0460c2974b06b7678bdf0389216b11c"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--berries-special--nectarine.mp3",
+      "bytes": 19694,
+      "sha256": "31ae5f58bc87e08f3cbafccd8b6f3b35fa7e8913f7a6704247b0694c05922584"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--berries-special--plantain.mp3",
+      "bytes": 19694,
+      "sha256": "6b8abd8cc80a1cf6a7bc1ab12693896f900fe760540296ce1f604a06dae6b566"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--berries-special--quince.mp3",
+      "bytes": 19694,
+      "sha256": "fd5827b691d94f4ab96cbe3066f1e2967eaa42ab6b8135f70afc3a9619a1ce16"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--berries-special--raspberry.mp3",
+      "bytes": 19695,
+      "sha256": "0abba3187b4c25c0066be24acda44395f5197b87977589028f15fb1eff64427f"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--common-fruits--apricot.mp3",
+      "bytes": 19694,
+      "sha256": "3676d46b34285cf27c1e79bce6e96cc90aa27e9d9fe6c5211deebfce92c8fafd"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--common-fruits--cherry.mp3",
+      "bytes": 19694,
+      "sha256": "8d37c339f8a005849249b89c038522f7c7ae13f660073faf1a8b45fe761d9fa2"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--common-fruits--date.mp3",
+      "bytes": 19694,
+      "sha256": "57309fb23a1b36351e3adb8d6dcdb41a94704e3ac1c40945d2f08ecb0f64d52a"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--common-fruits--fig.mp3",
+      "bytes": 19694,
+      "sha256": "b4beba4628038c8a4da59bb205d0109379867bf85227a69d8c64646406aaf7eb"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--common-fruits--guava.mp3",
+      "bytes": 19694,
+      "sha256": "09bd1d81160d81d687e981b6d0d060cd67fb841b49f5da4d96acd2d065641b5c"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--common-fruits--kiwi.mp3",
+      "bytes": 19694,
+      "sha256": "969e4bc1810ab62bc1463068cdb30b9eeabd05071a44bc87841ecf2e13ab572e"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--common-fruits--lemon.mp3",
+      "bytes": 19694,
+      "sha256": "6fc79aeecdff5e2cb0d255fb47d5258b7e4a6db9fe08a14e91d0b5dbcf517898"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--common-fruits--lime.mp3",
+      "bytes": 19694,
+      "sha256": "896b79cd95aa5e7268a3c4bc58437a98af1b7942182ac798995fe9061a8e2731"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--common-fruits--peach.mp3",
+      "bytes": 19694,
+      "sha256": "2a3ec488a3b360fa55a47bd642f6a099d4709a2250fce5b715b8368c29ce43b5"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--common-fruits--persimmon.mp3",
+      "bytes": 19694,
+      "sha256": "ed08fd2a7fdea1027728167e29118a530819b4e7b10de784af0cd937ed99287b"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--common-fruits--plum.mp3",
+      "bytes": 19694,
+      "sha256": "1193da7115ae538a78ead9f13e03062c0c097b8f5d32dd787fe3e55785a3fccf"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--common-fruits--pomegranate.mp3",
+      "bytes": 19694,
+      "sha256": "72cd7553a4634dab747dd615c28833932a4dfede111c30a451bae337f9ceea85"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--tropical-fruits--coconut.mp3",
+      "bytes": 19276,
+      "sha256": "dd2cf5a50677c2e02168529087c09de8be629a2f8afc8d12069ab588de7a7f9d"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--tropical-fruits--dragon-fruit.mp3",
+      "bytes": 19694,
+      "sha256": "0158537b62d93e106f7ef1751fc22752aa2e1782526fb7380292a68fd06816fc"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--tropical-fruits--durian.mp3",
+      "bytes": 19694,
+      "sha256": "60fc448c698e0b2013af7e90cd8abe4649184623b01b1fce712df9f239c9f15c"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--tropical-fruits--jackfruit.mp3",
+      "bytes": 19694,
+      "sha256": "7b003d7a64a268f3c60205d1fb9fef9915991c032fec764082467031474dee9a"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--tropical-fruits--longan.mp3",
+      "bytes": 19694,
+      "sha256": "7167b1dd1f6ef1c5b33acab0f64587ef4b81cbc08c0fd76cf2876144be60cb6f"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--tropical-fruits--lychee.mp3",
+      "bytes": 19694,
+      "sha256": "cd902e270a362cc3bc116645aac14e470e089d792af3e2dbc3ae7862e14a593b"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--tropical-fruits--mangosteen.mp3",
+      "bytes": 19694,
+      "sha256": "dd7f2866cda0b512be881c080a386c8ea5899a06e7a56d362f4470dbe866f2df"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--tropical-fruits--papaya.mp3",
+      "bytes": 19694,
+      "sha256": "2d8a0adbf779230d7a076aa5d52910d2eaa6889100a1d4bdb4dbea633ea0c374"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--tropical-fruits--passion-fruit.mp3",
+      "bytes": 19694,
+      "sha256": "1935a209579216fed1e67e1e0ae4344d3d17b83efc1dae7026ccc3858739675b"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--tropical-fruits--pomelo.mp3",
+      "bytes": 19694,
+      "sha256": "dfb83e1ccdb1940442446af8cd8e529cfb5a5011bfe0f02a9404bf9624fb4c57"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--tropical-fruits--rambutan.mp3",
+      "bytes": 19694,
+      "sha256": "cf2f9beb74eb822b9dfc2a3b96e0858ab30b3d4a9fde604c4850c0f02778f348"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/more--tropical-fruits--starfruit.mp3",
+      "bytes": 19276,
+      "sha256": "15e39de77ded8c298cd9e427120cd11b9214fe6342e0306ebc4145f11b50fe93"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/weighingcounter--bag.mp3",
+      "bytes": 19694,
+      "sha256": "810f48c90f7b20a092b54c4f3a57f8f770849ec791b75b8f9ea5813b5e4c3476"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/weighingcounter--kilogram.mp3",
+      "bytes": 19694,
+      "sha256": "bdee6923225b45341bd5a8637e016afefb7a9d8b73eb63ee7dde249595ad6f65"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/weighingcounter--label.mp3",
+      "bytes": 19694,
+      "sha256": "f5122c0f80804215199a46670a992d56036f16226b96e3ef50482fa56cfff917"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/weighingcounter--price.mp3",
+      "bytes": 19694,
+      "sha256": "a6692a82a26358590f5ce1a653b47d85156f5ecf71041ac76f22f836470045c5"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/weighingcounter--scale.mp3",
+      "bytes": 19694,
+      "sha256": "4ceb8cfebdb0e63b402086838d3174573a5e9110c541c45a6e5c4e2e2c79228d"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/weighingcounter--total.mp3",
+      "bytes": 19694,
+      "sha256": "fb2d9410274e06a62eb088229555789d459474be6fa45e9db279d5b7d0f2ab48"
+    },
+    {
+      "path": "assets/audio/words/fruitShop/weighingcounter--weigh.mp3",
+      "bytes": 19694,
+      "sha256": "f33fd67aaefc228529e9a4d01854bb9bbc0a542cf5efcf603b57330f61134bab"
+    },
+    {
+      "path": "assets/audio/words/zoo/elephant--huge.mp3",
+      "bytes": 15096,
+      "sha256": "397bb1d4fa8c7a0a58d5810f13fcb4812d53d7ac426efddbabbe8eb11863a5df"
+    },
+    {
+      "path": "assets/audio/words/zoo/elephant--keeper.mp3",
+      "bytes": 13006,
+      "sha256": "27e8f9f6f38998710d5df70b74f94a1dafea683307c2ab08abe44820d82853bb"
+    },
+    {
+      "path": "assets/audio/words/zoo/elephant--spray.mp3",
+      "bytes": 15097,
+      "sha256": "004f78b0fd3277bd95fba50edbed5db2c0f2d79fbe2a89f6c1a01c5e1f6d5c03"
+    },
+    {
+      "path": "assets/audio/words/zoo/elephant--trunk.mp3",
+      "bytes": 13007,
+      "sha256": "22a580f488d38d0b35427554623f17cbfff37d0aaa399b4da40a07f0ca996b62"
+    },
+    {
+      "path": "assets/audio/words/zoo/elephant--water.mp3",
+      "bytes": 13006,
+      "sha256": "f87f4ce1f79cf8708b5c4e5753e248509899af543081faaf949869b4a54631a0"
+    },
+    {
+      "path": "assets/audio/words/zoo/elephant.m4a",
+      "bytes": 6501,
+      "sha256": "c5a86865dbaa423478dd07a2bb0b1c15aedec2abea7eec5ed25e89663f796c06"
+    },
+    {
+      "path": "assets/audio/words/zoo/elephant.mp3",
+      "bytes": 13425,
+      "sha256": "5fdd711eb55dcf22aaa955e5d7c5bc99043da31a70a1e5c47f15bc29aa81fbfc"
+    },
+    {
+      "path": "assets/audio/words/zoo/entrance--sign.mp3",
+      "bytes": 16768,
+      "sha256": "f017dc5f27411db31e03acf1a11fce77444d43580e4103af00c52f5fe1dc9627"
+    },
+    {
+      "path": "assets/audio/words/zoo/entrance--ticketbooth.mp3",
+      "bytes": 16350,
+      "sha256": "11c1d38d9871a6a44b143ed09ebf2526a8fe4f2cd05158710936c054838f8e59"
+    },
+    {
+      "path": "assets/audio/words/zoo/exit--exit.mp3",
+      "bytes": 14260,
+      "sha256": "08037bf031ab1ef915e5e76058197078bf2f548fdd23342be0e8230c64b5d4e3"
+    },
+    {
+      "path": "assets/audio/words/zoo/exit--giftshop.mp3",
+      "bytes": 18859,
+      "sha256": "1ff36e3b1143f182b6fb8a5c666817e59c735d43f8b782a27a805286c8e57d61"
+    },
+    {
+      "path": "assets/audio/words/zoo/exit--goodbye.mp3",
+      "bytes": 18858,
+      "sha256": "d264dc83dcf11a109593718d23991c6d23f20d127b1200b3059e4fd88f3df797"
+    },
+    {
+      "path": "assets/audio/words/zoo/exit--souvenir.mp3",
+      "bytes": 18858,
+      "sha256": "f7283663ebd2d9459a5b14bc7f7cd945db4db600672d29a0d4ebd3afee321474"
+    },
+    {
+      "path": "assets/audio/words/zoo/giraffe--giraffe.mp3",
+      "bytes": 11753,
+      "sha256": "570466fafbc18c6583d1981fbc0c560caf51abac6735f1f300cd4d4ae5cb8e6a"
+    },
+    {
+      "path": "assets/audio/words/zoo/giraffe--leaves.mp3",
+      "bytes": 15097,
+      "sha256": "fd2d064ce8bcf03a039d34055be724cadcfd7e5b5d6a132dd4a07126439ee064"
+    },
+    {
+      "path": "assets/audio/words/zoo/giraffe--neck.mp3",
+      "bytes": 13007,
+      "sha256": "a275446c8f3a0e610af835b2a46146aaf11a5723503232b2b25044a5903300b6"
+    },
+    {
+      "path": "assets/audio/words/zoo/giraffe--reach.mp3",
+      "bytes": 13006,
+      "sha256": "7f417c45ff967f589822a4a0f20aabda991cb782d76e70dc956e6b494f1c7408"
+    },
+    {
+      "path": "assets/audio/words/zoo/giraffe--spots.mp3",
+      "bytes": 16351,
+      "sha256": "0142aca0863612ffe705e766f15117ec9eff821526a7c1307457d00422d7827e"
+    },
+    {
+      "path": "assets/audio/words/zoo/giraffe--tall.mp3",
+      "bytes": 11335,
+      "sha256": "cd58d5e9a292258530747699809ada5e32633b8b2abf6037d3f619a72181f12e"
+    },
+    {
+      "path": "assets/audio/words/zoo/giraffe--tree.mp3",
+      "bytes": 10081,
+      "sha256": "ce1832680a54086fd41ce53928f89b21c15eb40402e16d120e5cb0913f0e74df"
+    },
+    {
+      "path": "assets/audio/words/zoo/hippo--heavy.mp3",
+      "bytes": 13007,
+      "sha256": "cbbdc302945fb45e7677ed504999abc0ac374e0bd629b8de04d368ddda98c751"
+    },
+    {
+      "path": "assets/audio/words/zoo/hippo--hippo.mp3",
+      "bytes": 11334,
+      "sha256": "4d599de3918d4f132647510a85051e60a5852dbf12dc7e0c7537af08e63f1cad"
+    },
+    {
+      "path": "assets/audio/words/zoo/hippo--mouth.mp3",
+      "bytes": 10499,
+      "sha256": "73e7997d48a21164b85db18e659d4be679f3b129352e1ce026604a899994c715"
+    },
+    {
+      "path": "assets/audio/words/zoo/hippo--mud.mp3",
+      "bytes": 13007,
+      "sha256": "868052ab858247fdf7353e9296f3025fc7875c93219811b4188a09e6b9584307"
+    },
+    {
+      "path": "assets/audio/words/zoo/hippo--pond.mp3",
+      "bytes": 13425,
+      "sha256": "5cb520eef23b95dae15df1189cab8996216c3191d3fb5f50c44f01bcfbd817c3"
+    },
+    {
+      "path": "assets/audio/words/zoo/hippo--reeds.mp3",
+      "bytes": 14261,
+      "sha256": "0458e4a78888c5c077a450c73267f5a4de33abbc74f30de8e368a2545683f431"
+    },
+    {
+      "path": "assets/audio/words/zoo/hippo--splash.mp3",
+      "bytes": 15933,
+      "sha256": "45dd14a99c30c3d6ec9f9e0a4e7e63f39bc867dac1809024dfaee267944046b3"
+    },
+    {
+      "path": "assets/audio/words/zoo/hippo--yawn.mp3",
+      "bytes": 12589,
+      "sha256": "33ae9f87855571ae3a6a411c925f5bd574ac437d1a7e2904ab96b623b0954296"
+    },
+    {
+      "path": "assets/audio/words/zoo/lion--fence.mp3",
+      "bytes": 12171,
+      "sha256": "e126f184dbcb57e57da4db327c42a598cda9ac6aaac332c3328c0277f82b1c4d"
+    },
+    {
+      "path": "assets/audio/words/zoo/lion--lion.mp3",
+      "bytes": 13843,
+      "sha256": "f30b00b687921b2f09c383dcb7d9f5672d9865ebf3704b8c143d432af1f853b5"
+    },
+    {
+      "path": "assets/audio/words/zoo/lion--rest.mp3",
+      "bytes": 13007,
+      "sha256": "a150f84ede26d2519746705a8131fa2ea96d5a88bbed5a56f41b3d87ff54f0ca"
+    },
+    {
+      "path": "assets/audio/words/zoo/lion--roar.mp3",
+      "bytes": 13007,
+      "sha256": "6eb47f8fb63b7259823f13e526e28afc76b9c406f68595fbff0347ecc42044aa"
+    },
+    {
+      "path": "assets/audio/words/zoo/lion--rock.mp3",
+      "bytes": 13425,
+      "sha256": "f497c3c8b92810d45eed3928bbeb674af83ddc1659eb524c9448222699f6996f"
+    },
+    {
+      "path": "assets/audio/words/zoo/lion--shade.mp3",
+      "bytes": 14678,
+      "sha256": "3d2e2e79c902be9c9250d7ea0080d659057da8849aba6b73f4ee9b8fd7e8a4d7"
+    },
+    {
+      "path": "assets/audio/words/zoo/monkey--banana.mp3",
+      "bytes": 15932,
+      "sha256": "10fcd06401fefbaea0353fe7456028d074946e1a6e2b96d7cc7d5422c4f305c4"
+    },
+    {
+      "path": "assets/audio/words/zoo/monkey--cage.mp3",
+      "bytes": 18440,
+      "sha256": "f0085f6d58083740be680835c92acb1d16af35a98338478f01810eb1390fa0ad"
+    },
+    {
+      "path": "assets/audio/words/zoo/monkey--climb.mp3",
+      "bytes": 13425,
+      "sha256": "376a4b8a260861abcb00e55e545fac54d45b3815e518827574e2f3f3b61aa1fd"
+    },
+    {
+      "path": "assets/audio/words/zoo/monkey--tail.mp3",
+      "bytes": 12589,
+      "sha256": "6ee4f347e409286904bcc93a640684c77bb9ec59f3daf3c827357b64fe0252fa"
+    },
+    {
+      "path": "assets/audio/words/zoo/monkey--visitor.mp3",
+      "bytes": 14678,
+      "sha256": "cb4fd1f3e0760d3d3d7de2debf6f1716f9a6315e714cfd3d6e7b8d98cef38c16"
+    },
+    {
+      "path": "assets/audio/words/zoo/monkey.m4a",
+      "bytes": 6585,
+      "sha256": "5e5fe67fb1ca7bb865cf6b5c115102c2f674dc5a198b1f2810f00eff6078f569"
+    },
+    {
+      "path": "assets/audio/words/zoo/monkey.mp3",
+      "bytes": 16351,
+      "sha256": "1a32dbc4a54d57bbe8c1b5119cb65f1aa1fed0172c15c7b47558c5fd69a85823"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--birds--crane.mp3",
+      "bytes": 13425,
+      "sha256": "36a6bd24fca9010bfcf7509aa45d78a324ec77fdfbff53a8f523d7170a82a4fc"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--birds--eagle.mp3",
+      "bytes": 13007,
+      "sha256": "529de69c51013ac60442797ef71388ee6fd5af23ae85b0baaa3091b7dc154c8c"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--birds--flamingo.mp3",
+      "bytes": 15933,
+      "sha256": "7ec201e1b0c9597c47c2431b66f78bd6bcc84826b7942a4fe1c3ffa79c916003"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--birds--ostrich.mp3",
+      "bytes": 18022,
+      "sha256": "29b30c164ec7610edaaed331d72898c509bd9ced8fcb311daa820782059dbc09"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--birds--owl.mp3",
+      "bytes": 11335,
+      "sha256": "d82a031f8201654b53e6981c21f7b8ac62da8c34cb694bf3286ac6d49f5224c3"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--birds--parrot.mp3",
+      "bytes": 11753,
+      "sha256": "c0e8c45e60b7dfe9c0a69d5e5afe8703b18fcf28d8d6b6930b88d7ad805275bc"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--birds--peacock.mp3",
+      "bytes": 18022,
+      "sha256": "620a69b5df9cd2a7c96fa9f10ce9366297d09929456fe8caf278719d7b721520"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--birds--pelican.mp3",
+      "bytes": 14679,
+      "sha256": "ab040957fd63f142066048a6a2782250993e2f92b409907cc29f440c9eedca19"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--birds--sparrow.mp3",
+      "bytes": 16768,
+      "sha256": "d4e737f040b2b1dc1318d2d4e0c0a11d33ea41d2ac9f1094610059d931c16b2d"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--birds--swan.mp3",
+      "bytes": 16350,
+      "sha256": "fc5024c7492cb8a62d62e7c19cf916b2a6eca2e12afadd87a984dea572e5c365"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--birds--toucan.mp3",
+      "bytes": 13843,
+      "sha256": "601e8069eb2b9f79480017f0b91b907466b519b8db25a334c769a9d4d13fada0"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--birds--woodpecker.mp3",
+      "bytes": 16768,
+      "sha256": "ccd475f20ba835d95267c57bfc068e2cbc15f0b29035d319ae9a59ec0331ea34"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--mammals--camel.mp3",
+      "bytes": 13007,
+      "sha256": "10bfd3c5e31dafe2ab2e9fd75605baf517b233bc6b17b4848f60ab6a336052f7"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--mammals--deer.mp3",
+      "bytes": 14678,
+      "sha256": "34007b5eb2b470c454141dd77a03dc6e0ab10c53b36770a4d46124d7b5c64c54"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--mammals--fox.mp3",
+      "bytes": 14679,
+      "sha256": "50870d68daa57f3473a6968ac4a4cee563503f9a7eb9f1c7e17b75e5baaff3d7"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--mammals--kangaroo.mp3",
+      "bytes": 16350,
+      "sha256": "59b679d20511eed4a03fbfa969b8f65924ada2cc717c029d7dee008a5344f041"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--mammals--koala.mp3",
+      "bytes": 16768,
+      "sha256": "f7ada810e65277be4b7155251573a253da9ec80e6740a97e896ef2ec99e35fc6"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--mammals--leopard.mp3",
+      "bytes": 13842,
+      "sha256": "330d469cc534065384f5349f9d2e14c3eb3665bedba6583772775917a2292d92"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--mammals--meerkat.mp3",
+      "bytes": 17187,
+      "sha256": "583836f34a96fb2d6034fe4b597d877f5eda459ce9cf8411d91a74afe7e2f307"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--mammals--otter.mp3",
+      "bytes": 10917,
+      "sha256": "aef63af2f2250a1bea8aba8cc88ef8b174b3a208752a438c89aedab35f312327"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--mammals--raccoon.mp3",
+      "bytes": 19276,
+      "sha256": "f57f99f36e2f346083217505fa7cf2a142f52438af7d3c5acfd8d0ba730f9b41"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--mammals--sloth.mp3",
+      "bytes": 14260,
+      "sha256": "b1ccea4623dea36d4a28598530e5f06191b1d7111acc855f19d13b7e1221cf68"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--mammals--squirrel.mp3",
+      "bytes": 17186,
+      "sha256": "f7861357ade41c4152fe57232b86ef97b9f7b655015dd9b70b264fd5b53f9e6a"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--mammals--wolf.mp3",
+      "bytes": 10499,
+      "sha256": "5c04bdf32be52b694e68026a7e1651f6f32a02a218970b19bfa482d3070ea974"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--rare--anteater.mp3",
+      "bytes": 15515,
+      "sha256": "865f9f0b269d98f84314461147c5f2662f8a3f257e5c32cd9734ec8674011087"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--rare--armadillo.mp3",
+      "bytes": 20112,
+      "sha256": "07b9260e3db1bb7b636c330e6c5213618024fc601fcb0466162e31393ae252f5"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--rare--chameleon.mp3",
+      "bytes": 18022,
+      "sha256": "e697eeb05ba3f22395e0677f9b12660be445cc2687a328585ac66d75ee537c39"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--rare--crocodile.mp3",
+      "bytes": 19276,
+      "sha256": "4807b0d7ab2baf57310cb5dc9861dfa77b381c9c39f9063c0c5d671062188d71"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--rare--golden-snub-nosed-monkey.mp3",
+      "bytes": 36412,
+      "sha256": "2a424e2137ecb22177e31cae077767dbb9efc8e4aaf1d8c1447bba1b65301a83"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--rare--iguana.mp3",
+      "bytes": 18023,
+      "sha256": "38699ecaed4e6364e6843f3d13920d9a99e1d9925c17f77655c176616e9bfcbe"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--rare--lemur.mp3",
+      "bytes": 13424,
+      "sha256": "09b4e95285048185891887dea9c9ec9e03974ed1201d866a036cf33ae89ed87e"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--rare--lizard.mp3",
+      "bytes": 14679,
+      "sha256": "10312ac7c8f356d052bdb47aea00e4a04eb2eb36f60937bc7605ef6bfc99033a"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--rare--red-panda.mp3",
+      "bytes": 20112,
+      "sha256": "3961115fd69e962e18a6001ce0607f8089f17d0cb7b7e59bc1077689ee0f4c45"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--rare--snake.mp3",
+      "bytes": 15514,
+      "sha256": "3a6c8d9abbf37f3d4c4ecd32f8b02419e2da98319c6dc53a0077190b2192b3e8"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--rare--tapir.mp3",
+      "bytes": 15932,
+      "sha256": "4b60ed7c2cc28333032467d84f836933e5e126032d2a93dacb49b013a813ea79"
+    },
+    {
+      "path": "assets/audio/words/zoo/more--rare--turtle.mp3",
+      "bytes": 12589,
+      "sha256": "07f1e98b199a64150afdc50748f5b04c8a8e6ff843334bfaeabd9972852c6eb4"
+    },
+    {
+      "path": "assets/audio/words/zoo/panda--bamboo.mp3",
+      "bytes": 13842,
+      "sha256": "b145672cbef0cc06daf3bda48fc70e8c4d7db21b25a64448aa7f5993063e53ef"
+    },
+    {
+      "path": "assets/audio/words/zoo/panda--climb.mp3",
+      "bytes": 13425,
+      "sha256": "57e0842a414f0c54983e6526ef95dfefe686cc717d0a2db11239f5075e8d4775"
+    },
+    {
+      "path": "assets/audio/words/zoo/panda--cute.mp3",
+      "bytes": 11335,
+      "sha256": "f3f0bccb1117c15fc0e797690d43354db876b2f2aebd5cdcc808e6eb4d15725e"
+    },
+    {
+      "path": "assets/audio/words/zoo/panda--eat.mp3",
+      "bytes": 10081,
+      "sha256": "949846a61fd6412e31ab623d10de0ab6be700a9c3b56d260b4317df140dd083c"
+    },
+    {
+      "path": "assets/audio/words/zoo/panda--fur.mp3",
+      "bytes": 10917,
+      "sha256": "70ef3d7fe3b2e548f777c060f1f855936d440c9001d4c84c4e71c5bbdf689398"
+    },
+    {
+      "path": "assets/audio/words/zoo/panda--panda.mp3",
+      "bytes": 13843,
+      "sha256": "241d36b9c1a3816aa316b3a536c731e891b8fbb827a6dc800114348ff9959fdb"
+    },
+    {
+      "path": "assets/audio/words/zoo/panda--sleepy.mp3",
+      "bytes": 13842,
+      "sha256": "5d9e6479b8a9860e8024f960c0716a5aafbaa65dd8221db4f58a0ac1f450995b"
+    },
+    {
+      "path": "assets/audio/words/zoo/ticket--map.mp3",
+      "bytes": 10499,
+      "sha256": "c34d6315f12ac515a76fb7e7a0dc52be586474c52feddbd80ae4089eab68a109"
+    },
+    {
+      "path": "assets/audio/words/zoo/ticket--seller.mp3",
+      "bytes": 20530,
+      "sha256": "8ae71fa9c6c6426d5554818a07347818fc9f64b29ec73d425d12d320da6f5b53"
+    },
+    {
+      "path": "assets/audio/words/zoo/ticket--ticket.mp3",
+      "bytes": 11753,
+      "sha256": "32f323141919c1a6b17afe7ab93de586960fb9b4d38d6f2aa6df43a1b5d2e3e9"
+    },
+    {
+      "path": "assets/audio/words/zoo/tiger--claw.mp3",
+      "bytes": 9663,
+      "sha256": "f8adca0616517ee50cc26cd6b13bd2115d392c5cbb783af614cc3a05cff49fda"
+    },
+    {
+      "path": "assets/audio/words/zoo/tiger--forest.mp3",
+      "bytes": 13007,
+      "sha256": "9c892535c0fde053697ecb0a87cf21d42cb79a6fde018282a78917587eda1554"
+    },
+    {
+      "path": "assets/audio/words/zoo/tiger--hunter.mp3",
+      "bytes": 14260,
+      "sha256": "d4aebc958edf4b6433d761cbf14ee96dcfdf0374e7b0f857fa99abc1f43f87ae"
+    },
+    {
+      "path": "assets/audio/words/zoo/tiger--quiet.mp3",
+      "bytes": 13007,
+      "sha256": "0753a6c7cfb4c4410addd8a830604bfeff1830241f62c84edab0ce03e3f755d6"
+    },
+    {
+      "path": "assets/audio/words/zoo/tiger--stalk.mp3",
+      "bytes": 10917,
+      "sha256": "0c1642f73f12ccfbcc3ee0a8a7e025989f5fd84bea59a520df1658013ff7a7af"
+    },
+    {
+      "path": "assets/audio/words/zoo/tiger--stripes.mp3",
+      "bytes": 17604,
+      "sha256": "0205df5c1a5b16ef409b963002a31c570846eb13e25c8205274cbe3a76bce913"
+    },
+    {
+      "path": "assets/audio/words/zoo/tiger--tiger.mp3",
+      "bytes": 13425,
+      "sha256": "3938f417c2cb421c9b4b7ee878917e359bf61d4c225dbe12b5b4b0de1878a810"
+    },
+    {
+      "path": "assets/audio/words/zoo/zebra--gallop.mp3",
+      "bytes": 12171,
+      "sha256": "98b8a7d18d488bb5fe758288ac0b769075f11fd7b2890dfd858a618efe05772d"
+    },
+    {
+      "path": "assets/audio/words/zoo/zebra--herd.mp3",
+      "bytes": 12170,
+      "sha256": "22a00d8df1905d8117abba86b6819af73442e625b05876fd3aa649826453ae42"
+    },
+    {
+      "path": "assets/audio/words/zoo/zebra--hoof.mp3",
+      "bytes": 9663,
+      "sha256": "e7923975f0e57382a748a0ab37d6d3190dab6dfd10eead9163160779a37ada20"
+    },
+    {
+      "path": "assets/audio/words/zoo/zebra--mane.mp3",
+      "bytes": 13425,
+      "sha256": "0627f8795c5607978d32e0abb4ebba69ce96b3d1fae11154b075a01a6ab6a5ba"
+    },
+    {
+      "path": "assets/audio/words/zoo/zebra--pattern.mp3",
+      "bytes": 13425,
+      "sha256": "8d57f24cd41d307371d29b3f0f06b094d9722a65de585741578d009e91526eac"
+    },
+    {
+      "path": "assets/audio/words/zoo/zebra--savanna.mp3",
+      "bytes": 16769,
+      "sha256": "5b78917ffa55b67fc63699b0d43729705d758651f33197c5f44938c0886b7d37"
+    },
+    {
+      "path": "assets/audio/words/zoo/zebra--zebra.mp3",
+      "bytes": 13425,
+      "sha256": "83b4f5fda12846002bdf524ee01d8634937c0ba679c2ae6c1fa577e563640dc9"
+    },
+    {
+      "path": "assets/audio/words/zoo/zoo-gate.m4a",
+      "bytes": 6715,
+      "sha256": "b9df1a5e80a871e9c65de0577b8cd729b6eca858a362ad3637e2f8ee59f9c40d"
+    },
+    {
+      "path": "assets/audio/words/zoo/zoo-gate.mp3",
+      "bytes": 12589,
+      "sha256": "0e4723165144a40caecd42610f506eea63b0798ea6c3978012f32e9b73fa0045"
+    }
+  ]
+}

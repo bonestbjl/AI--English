@@ -1,0 +1,29 @@
+{
+  "ok": true,
+  "releaseReady": true,
+  "mode": "deep",
+  "scope": "all",
+  "allowMissing": false,
+  "summary": {
+    "themes": 14,
+    "usages": 3031,
+    "uniqueAudio": 3013,
+    "ready": 3013,
+    "missing": 0,
+    "missingCharacters": 0
+  },
+  "checkedReady": 3013,
+  "formats": {
+    "24000Hz/1ch/64kbps": 2833,
+    "44100Hz/2ch/128kbps": 180
+  },
+  "missing": 0,
+  "orphanMp3": 0,
+  "retainedLegacyMp3": 24,
+  "legacyM4a": 6,
+  "issues": [],
+  "warnings": [
+    "24 pre-workflow orphan MP3 files are retained by the explicit legacy allowlist.",
+    "6 legacy M4A pilot files are outside the current MP3 runtime map."
+  ]
+}

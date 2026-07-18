@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Laundry Mobile Audio Review</title>
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; background: #132219; color: #f7f2df; font: 15px/1.45 system-ui, sans-serif; }
+      main { width: min(780px, calc(100% - 28px)); margin: 28px auto; }
+      h1 { margin: 0 0 6px; color: #f6c850; font-size: 26px; }
+      .intro, .status { color: rgba(247, 242, 223, 0.72); }
+      .status { position: sticky; top: 0; z-index: 2; margin: 16px 0; padding: 9px 12px; background: #1b2d21; border: 1px solid rgba(255,255,255,.12); border-radius: 8px; }
+      ol { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+      li { padding: 14px; border: 1px solid rgba(255,255,255,.12); border-radius: 8px; background: rgba(255,255,255,.07); }
+      .meta { color: #f6c850; font-size: 11px; font-weight: 700; text-transform: uppercase; }
+      p { margin: 4px 0 10px; font-weight: 650; }
+      audio { display: block; width: 100%; height: 40px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Laundry Mobile Audio Review</h1>
+      <p class="intro">All final Laundry mobile MP3 files · 24 kHz mono · 64 kbps</p>
+      <p class="status" id="status">Loading manifest…</p>
+      <ol id="list"></ol>
+    </main>
+    <script>
+      const status = document.getElementById("status");
+      const list = document.getElementById("list");
+
+      fetch("../../mobile-audio-manifest.json")
+        .then((response) => {
+          if (!response.ok) throw new Error(`Manifest HTTP ${response.status}`);
+          return response.json();
+        })
+        .then((manifest) => {
+          const assets = manifest.assets.filter((asset) =>
+            asset.usages.some((usage) => usage.themeId === "laundry")
+          );
+          status.textContent = `${assets.length} / 163 Laundry audio files ready for review`;
+          assets.forEach((asset, index) => {
+            const usage = asset.usages.find((entry) => entry.themeId === "laundry");
+            const item = document.createElement("li");
+            const meta = document.createElement("span");
+            const text = document.createElement("p");
+            const audio = document.createElement("audio");
+            meta.className = "meta";
+            meta.textContent = `${String(index + 1).padStart(3, "0")} · ${usage.sceneId} · ${usage.type}`;
+            text.textContent = asset.originalText;
+            audio.controls = true;
+            audio.preload = "none";
+            audio.src = `../../${asset.expectedFile}`;
+            audio.addEventListener("play", () => {
+              document.querySelectorAll("audio").forEach((other) => {
+                if (other !== audio) other.pause();
+              });
+            });
+            item.append(meta, text, audio);
+            list.append(item);
+          });
+        })
+        .catch((error) => {
+          status.textContent = `Unable to load review list: ${error.message}`;
+        });
+    </script>
+  </body>
+</html>

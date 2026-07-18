@@ -1,0 +1,325 @@
+[0001] You get a wash token and are ready to choose a machine.
+
+[0002] Sorting clothes first keeps colors safer.
+
+[0003] service bell
+
+[0004] You open the dispenser and prepare the washer.
+
+[0005] Whites often need a separate load.
+
+[0006] The claim ticket matches my laundry bag.
+
+[0007] The glass porthole lets me see the clothes.
+
+[0008] Check the garment tag before you choose.
+
+[0009] A pocket check keeps tissues out of the washer.
+
+[0010] last wash time
+
+[0011] You tie the bag and finish the laundromat visit.
+
+[0012] A missing sock may be near the dryer.
+
+[0013] Good idea. Keep whites and darks apart.
+
+[0014] The garment tag shows care instructions.
+
+[0015] bleach bottle
+
+[0016] Welcome. Is this your first time using this laundromat?
+
+[0017] You look across the machine area and choose a washer that is ready to use.
+
+[0018] prewash spray
+
+[0019] You choose the wash cycle and start the load.
+
+[0020] Is this a front-loading washer?
+
+[0021] The token machine is beside the entrance.
+
+[0022] I sort colors before I load the washer.
+
+[0023] Some clothes say tumble dry on the tag.
+
+[0024] The cool-down cycle helps clothes feel less hot.
+
+[0025] Before you finish, you review the final items and pack everything neatly.
+
+[0026] How long is the drying time?
+
+[0027] You arrive at a neighborhood laundromat and check the basic signs before you start.
+
+[0028] The soap dispenser holds detergent for the wash.
+
+[0029] pocket check
+
+[0030] The folding station is clean and wide.
+
+[0031] The laundry hamper holds the clean load.
+
+[0032] The lost-and-found bin holds forgotten items.
+
+[0033] The heat setting controls how warm the dryer gets.
+
+[0034] laundry hamper
+
+[0035] Before you go, please make sure your bag is closed.
+
+[0036] measuring cap
+
+[0037] I use a wash token to start the machine.
+
+[0038] The collection shelf holds finished laundry.
+
+[0039] A hanger keeps the shirt from wrinkling.
+
+[0040] No problem. The folding board is on the side.
+
+[0041] It is inside the dryer door area.
+
+[0042] I will sort colors before washing.
+
+[0043] A drawstring bag closes with a cord.
+
+[0044] Where is the collection shelf?
+
+[0045] washing machine
+
+[0046] laundry rules
+
+[0047] fresh laundry
+
+[0048] You can put it in the lost-and-found bin.
+
+[0049] Thank you, I will fold my clothes here.
+
+[0050] garment cover
+
+[0051] top-loading washer
+
+[0052] The laundry rules are posted on the wall.
+
+[0053] What is fabric softener for?
+
+[0054] front-loading washer
+
+[0055] tumble dry
+
+[0056] drying time
+
+[0057] lint trap
+
+[0058] You collect the fresh laundry and get ready to leave.
+
+[0059] The measuring cap shows how much to use.
+
+[0060] powder scoop
+
+[0061] soap dispenser
+
+[0062] I found a missing sock.
+
+[0063] The rubber gasket seals the washer door.
+
+[0064] Can I use stain remover first?
+
+[0065] Fresh laundry smells clean.
+
+[0066] I choose a normal wash cycle.
+
+[0067] dryer
+
+[0068] A front-loading washer opens from the front.
+
+[0069] You spray a small stain before starting the washer.
+
+[0070] cool-down cycle
+
+[0071] A dryer sheet can reduce static.
+
+[0072] stain remover
+
+[0073] Please clean the lint trap before using the dryer.
+
+[0074] You set the drying time and start the dryer.
+
+[0075] laundry cart
+
+[0076] Should I check the rubber gasket?
+
+[0077] drum door
+
+[0078] Yes, I need a wash token.
+
+[0079] A laundry pod goes into the washer drum.
+
+[0080] You compare common laundry products before adding anything to the washer.
+
+[0081] collection shelf
+
+[0082] This washing machine is ready for a small load.
+
+[0083] bag tie
+
+[0084] rubber gasket
+
+[0085] The garment cover protects a clean coat.
+
+[0086] Detergent cleans the clothes during the wash.
+
+[0087] The token machine is near the entrance.
+
+[0088] Darks go into another load.
+
+[0089] laundromat
+
+[0090] claim ticket
+
+[0091] You use the folding area to organize clean clothes before pickup.
+
+[0092] An available washer has a clear display.
+
+[0093] laundry pod
+
+[0094] You check the lost-and-found bin for the missing sock.
+
+[0095] Water temperature is part of the washer setting.
+
+[0096] The bag tie keeps the laundry bag closed.
+
+[0097] After washing, you move the clothes to the dryer and choose a safe setting.
+
+[0098] folded clothes
+
+[0099] garment tag
+
+[0100] glass porthole
+
+[0101] It helps clothes feel softer after washing.
+
+[0102] Yes. Use it before the wash cycle for a small stain.
+
+[0103] The powder scoop helps measure the amount.
+
+[0104] I will use the bag tie.
+
+[0105] Yes. Please return it near the exit when you finish.
+
+[0106] Yes, it is a useful habit before loading clothes.
+
+[0107] Where is the lint trap?
+
+[0108] garment bag
+
+[0109] Stain remover helps with a small mark.
+
+[0110] The laundry attendant helps new customers.
+
+[0111] This folding station is free if you need space.
+
+[0112] Drying time depends on the load size.
+
+[0113] It is beside the exit counter.
+
+[0114] dryer drum
+
+[0115] Use a small amount of product and follow the label.
+
+[0116] water temperature
+
+[0117] The laundry cart helps move heavy clothes.
+
+[0118] Load size changes how much water the washer uses.
+
+[0119] Please match your claim ticket with the laundry bag.
+
+[0120] Great. Your laundry is packed neatly.
+
+[0121] Where can I read the laundry rules?
+
+[0122] The lint trap should be cleaned before drying.
+
+[0123] The last wash time is written near the door.
+
+[0124] laundry attendant
+
+[0125] load size
+
+[0126] The garment bag protects clean clothes.
+
+[0127] fabric softener
+
+[0128] wash cycle
+
+[0129] detergent
+
+[0130] whites
+
+[0131] The drum door must close firmly.
+
+[0132] The laundromat is open this evening.
+
+[0133] folding board
+
+[0134] dryer sheet
+
+[0135] available washer
+
+[0136] The bleach bottle is marked with a warning label.
+
+[0137] Great. Your fresh laundry is ready.
+
+[0138] The dryer drum turns slowly.
+
+[0139] The folded clothes are ready to take home.
+
+[0140] hanger
+
+[0141] token machine
+
+[0142] Fabric softener makes clothes feel softer.
+
+[0143] Yes. Open the drum door from the front.
+
+[0144] sort colors
+
+[0145] wash token
+
+[0146] You sort the clothes and choose a simple washer setting.
+
+[0147] I use prewash spray before the wash cycle.
+
+[0148] lost-and-found bin
+
+[0149] folding station
+
+[0150] missing sock
+
+[0151] That washer looks available if the display is clear.
+
+[0152] drawstring bag
+
+[0153] heat setting
+
+[0154] The dryer is beside the washer.
+
+[0155] darks
+
+[0156] May I use the laundry cart?
+
+[0157] Which water temperature should I choose?
+
+[0158] This claim ticket is mine.
+
+[0159] You confirm your pickup details and prepare to leave with clean laundry.
+
+[0160] A folding board helps make neat shirts.
+
+[0161] It depends on the load size and heat setting.
+
+[0162] The service bell is on the front counter.
+
+[0163] A top-loading washer opens from above.

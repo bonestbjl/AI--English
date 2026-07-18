@@ -1,0 +1,40 @@
+1
+00:00:00,000 --> 00:00:01,333
+laundromat
+
+2
+00:00:08,000 --> 00:00:09,466
+powder scoop
+
+3
+00:00:16,000 --> 00:00:19,700
+Welcome. Is this your first time using this laundromat?
+
+4
+00:00:24,000 --> 00:00:27,733
+Use a small amount of product and follow the label.
+
+5
+00:00:32,000 --> 00:00:33,800
+Where is the lint trap?
+
+6
+00:00:40,000 --> 00:00:42,500
+Which water temperature should I choose?
+
+7
+00:00:48,000 --> 00:00:51,200
+It depends on the load size and heat setting.
+
+8
+00:00:56,000 --> 00:00:58,933
+You can put it in the lost-and-found bin.
+
+9
+00:01:04,000 --> 00:01:07,800
+You get a wash token and are ready to choose a machine.
+
+10
+00:01:12,000 --> 00:01:15,700
+You collect the fresh laundry and get ready to leave.
+

@@ -1,0 +1,611 @@
+1
+00:00:00,000 --> 00:00:08,000
+Sorting clothes first keeps colors safer.
+
+2
+00:00:08,000 --> 00:00:16,000
+service bell
+
+3
+00:00:16,000 --> 00:00:24,000
+You open the dispenser and prepare the washer.
+
+4
+00:00:24,000 --> 00:00:32,000
+Whites often need a separate load.
+
+5
+00:00:32,000 --> 00:00:40,000
+The claim ticket matches my laundry bag.
+
+6
+00:00:40,000 --> 00:00:48,000
+The glass porthole lets me see the clothes.
+
+7
+00:00:48,000 --> 00:00:56,000
+Check the garment tag before you choose.
+
+8
+00:00:56,000 --> 00:01:04,000
+A pocket check keeps tissues out of the washer.
+
+9
+00:01:04,000 --> 00:01:12,000
+last wash time
+
+10
+00:01:12,000 --> 00:01:20,000
+You tie the bag and finish the laundromat visit.
+
+11
+00:01:20,000 --> 00:01:28,000
+A missing sock may be near the dryer.
+
+12
+00:01:28,000 --> 00:01:36,000
+Good idea. Keep whites and darks apart.
+
+13
+00:01:36,000 --> 00:01:44,000
+The garment tag shows care instructions.
+
+14
+00:01:44,000 --> 00:01:52,000
+bleach bottle
+
+15
+00:01:52,000 --> 00:02:00,000
+You look across the machine area and choose a washer that is ready to use.
+
+16
+00:02:00,000 --> 00:02:08,000
+prewash spray
+
+17
+00:02:08,000 --> 00:02:16,000
+You choose the wash cycle and start the load.
+
+18
+00:02:16,000 --> 00:02:24,000
+Is this a front-loading washer?
+
+19
+00:02:24,000 --> 00:02:32,000
+The token machine is beside the entrance.
+
+20
+00:02:32,000 --> 00:02:40,000
+I sort colors before I load the washer.
+
+21
+00:02:40,000 --> 00:02:48,000
+Some clothes say tumble dry on the tag.
+
+22
+00:02:48,000 --> 00:02:56,000
+The cool-down cycle helps clothes feel less hot.
+
+23
+00:02:56,000 --> 00:03:04,000
+Before you finish, you review the final items and pack everything neatly.
+
+24
+00:03:04,000 --> 00:03:12,000
+How long is the drying time?
+
+25
+00:03:12,000 --> 00:03:20,000
+You arrive at a neighborhood laundromat and check the basic signs before you start.
+
+26
+00:03:20,000 --> 00:03:28,000
+The soap dispenser holds detergent for the wash.
+
+27
+00:03:28,000 --> 00:03:36,000
+pocket check
+
+28
+00:03:36,000 --> 00:03:44,000
+The folding station is clean and wide.
+
+29
+00:03:44,000 --> 00:03:52,000
+The laundry hamper holds the clean load.
+
+30
+00:03:52,000 --> 00:04:00,000
+The lost-and-found bin holds forgotten items.
+
+31
+00:04:00,000 --> 00:04:08,000
+The heat setting controls how warm the dryer gets.
+
+32
+00:04:08,000 --> 00:04:16,000
+laundry hamper
+
+33
+00:04:16,000 --> 00:04:24,000
+Before you go, please make sure your bag is closed.
+
+34
+00:04:24,000 --> 00:04:32,000
+measuring cap
+
+35
+00:04:32,000 --> 00:04:40,000
+I use a wash token to start the machine.
+
+36
+00:04:40,000 --> 00:04:48,000
+The collection shelf holds finished laundry.
+
+37
+00:04:48,000 --> 00:04:56,000
+A hanger keeps the shirt from wrinkling.
+
+38
+00:04:56,000 --> 00:05:04,000
+No problem. The folding board is on the side.
+
+39
+00:05:04,000 --> 00:05:12,000
+It is inside the dryer door area.
+
+40
+00:05:12,000 --> 00:05:20,000
+I will sort colors before washing.
+
+41
+00:05:20,000 --> 00:05:28,000
+A drawstring bag closes with a cord.
+
+42
+00:05:28,000 --> 00:05:36,000
+Where is the collection shelf?
+
+43
+00:05:36,000 --> 00:05:44,000
+washing machine
+
+44
+00:05:44,000 --> 00:05:52,000
+laundry rules
+
+45
+00:05:52,000 --> 00:06:00,000
+fresh laundry
+
+46
+00:06:00,000 --> 00:06:08,000
+Thank you, I will fold my clothes here.
+
+47
+00:06:08,000 --> 00:06:16,000
+garment cover
+
+48
+00:06:16,000 --> 00:06:24,000
+top-loading washer
+
+49
+00:06:24,000 --> 00:06:32,000
+The laundry rules are posted on the wall.
+
+50
+00:06:32,000 --> 00:06:40,000
+What is fabric softener for?
+
+51
+00:06:40,000 --> 00:06:48,000
+front-loading washer
+
+52
+00:06:48,000 --> 00:06:56,000
+tumble dry
+
+53
+00:06:56,000 --> 00:07:04,000
+drying time
+
+54
+00:07:04,000 --> 00:07:12,000
+lint trap
+
+55
+00:07:12,000 --> 00:07:20,000
+The measuring cap shows how much to use.
+
+56
+00:07:20,000 --> 00:07:28,000
+soap dispenser
+
+57
+00:07:28,000 --> 00:07:36,000
+I found a missing sock.
+
+58
+00:07:36,000 --> 00:07:44,000
+The rubber gasket seals the washer door.
+
+59
+00:07:44,000 --> 00:07:52,000
+Can I use stain remover first?
+
+60
+00:07:52,000 --> 00:08:00,000
+Fresh laundry smells clean.
+
+61
+00:08:00,000 --> 00:08:08,000
+I choose a normal wash cycle.
+
+62
+00:08:08,000 --> 00:08:16,000
+dryer
+
+63
+00:08:16,000 --> 00:08:24,000
+A front-loading washer opens from the front.
+
+64
+00:08:24,000 --> 00:08:32,000
+You spray a small stain before starting the washer.
+
+65
+00:08:32,000 --> 00:08:40,000
+cool-down cycle
+
+66
+00:08:40,000 --> 00:08:48,000
+A dryer sheet can reduce static.
+
+67
+00:08:48,000 --> 00:08:56,000
+stain remover
+
+68
+00:08:56,000 --> 00:09:04,000
+Please clean the lint trap before using the dryer.
+
+69
+00:09:04,000 --> 00:09:12,000
+You set the drying time and start the dryer.
+
+70
+00:09:12,000 --> 00:09:20,000
+laundry cart
+
+71
+00:09:20,000 --> 00:09:28,000
+Should I check the rubber gasket?
+
+72
+00:09:28,000 --> 00:09:36,000
+drum door
+
+73
+00:09:36,000 --> 00:09:44,000
+Yes, I need a wash token.
+
+74
+00:09:44,000 --> 00:09:52,000
+A laundry pod goes into the washer drum.
+
+75
+00:09:52,000 --> 00:10:00,000
+You compare common laundry products before adding anything to the washer.
+
+76
+00:10:00,000 --> 00:10:08,000
+collection shelf
+
+77
+00:10:08,000 --> 00:10:16,000
+This washing machine is ready for a small load.
+
+78
+00:10:16,000 --> 00:10:24,000
+bag tie
+
+79
+00:10:24,000 --> 00:10:32,000
+rubber gasket
+
+80
+00:10:32,000 --> 00:10:40,000
+The garment cover protects a clean coat.
+
+81
+00:10:40,000 --> 00:10:48,000
+Detergent cleans the clothes during the wash.
+
+82
+00:10:48,000 --> 00:10:56,000
+The token machine is near the entrance.
+
+83
+00:10:56,000 --> 00:11:04,000
+Darks go into another load.
+
+84
+00:11:04,000 --> 00:11:12,000
+claim ticket
+
+85
+00:11:12,000 --> 00:11:20,000
+You use the folding area to organize clean clothes before pickup.
+
+86
+00:11:20,000 --> 00:11:28,000
+An available washer has a clear display.
+
+87
+00:11:28,000 --> 00:11:36,000
+laundry pod
+
+88
+00:11:36,000 --> 00:11:44,000
+You check the lost-and-found bin for the missing sock.
+
+89
+00:11:44,000 --> 00:11:52,000
+Water temperature is part of the washer setting.
+
+90
+00:11:52,000 --> 00:12:00,000
+The bag tie keeps the laundry bag closed.
+
+91
+00:12:00,000 --> 00:12:08,000
+After washing, you move the clothes to the dryer and choose a safe setting.
+
+92
+00:12:08,000 --> 00:12:16,000
+folded clothes
+
+93
+00:12:16,000 --> 00:12:24,000
+garment tag
+
+94
+00:12:24,000 --> 00:12:32,000
+glass porthole
+
+95
+00:12:32,000 --> 00:12:40,000
+It helps clothes feel softer after washing.
+
+96
+00:12:40,000 --> 00:12:48,000
+Yes. Use it before the wash cycle for a small stain.
+
+97
+00:12:48,000 --> 00:12:56,000
+The powder scoop helps measure the amount.
+
+98
+00:12:56,000 --> 00:13:04,000
+I will use the bag tie.
+
+99
+00:13:04,000 --> 00:13:12,000
+Yes. Please return it near the exit when you finish.
+
+100
+00:13:12,000 --> 00:13:20,000
+Yes, it is a useful habit before loading clothes.
+
+101
+00:13:20,000 --> 00:13:28,000
+garment bag
+
+102
+00:13:28,000 --> 00:13:36,000
+Stain remover helps with a small mark.
+
+103
+00:13:36,000 --> 00:13:44,000
+The laundry attendant helps new customers.
+
+104
+00:13:44,000 --> 00:13:52,000
+This folding station is free if you need space.
+
+105
+00:13:52,000 --> 00:14:00,000
+Drying time depends on the load size.
+
+106
+00:14:00,000 --> 00:14:08,000
+It is beside the exit counter.
+
+107
+00:14:08,000 --> 00:14:16,000
+dryer drum
+
+108
+00:14:16,000 --> 00:14:24,000
+water temperature
+
+109
+00:14:24,000 --> 00:14:32,000
+The laundry cart helps move heavy clothes.
+
+110
+00:14:32,000 --> 00:14:40,000
+Load size changes how much water the washer uses.
+
+111
+00:14:40,000 --> 00:14:48,000
+Please match your claim ticket with the laundry bag.
+
+112
+00:14:48,000 --> 00:14:56,000
+Great. Your laundry is packed neatly.
+
+113
+00:14:56,000 --> 00:15:04,000
+Where can I read the laundry rules?
+
+114
+00:15:04,000 --> 00:15:12,000
+The lint trap should be cleaned before drying.
+
+115
+00:15:12,000 --> 00:15:20,000
+The last wash time is written near the door.
+
+116
+00:15:20,000 --> 00:15:28,000
+laundry attendant
+
+117
+00:15:28,000 --> 00:15:36,000
+load size
+
+118
+00:15:36,000 --> 00:15:44,000
+The garment bag protects clean clothes.
+
+119
+00:15:44,000 --> 00:15:52,000
+fabric softener
+
+120
+00:15:52,000 --> 00:16:00,000
+wash cycle
+
+121
+00:16:00,000 --> 00:16:08,000
+detergent
+
+122
+00:16:08,000 --> 00:16:16,000
+whites
+
+123
+00:16:16,000 --> 00:16:24,000
+The drum door must close firmly.
+
+124
+00:16:24,000 --> 00:16:32,000
+The laundromat is open this evening.
+
+125
+00:16:32,000 --> 00:16:40,000
+folding board
+
+126
+00:16:40,000 --> 00:16:48,000
+dryer sheet
+
+127
+00:16:48,000 --> 00:16:56,000
+available washer
+
+128
+00:16:56,000 --> 00:17:04,000
+The bleach bottle is marked with a warning label.
+
+129
+00:17:04,000 --> 00:17:12,000
+Great. Your fresh laundry is ready.
+
+130
+00:17:12,000 --> 00:17:20,000
+The dryer drum turns slowly.
+
+131
+00:17:20,000 --> 00:17:28,000
+The folded clothes are ready to take home.
+
+132
+00:17:28,000 --> 00:17:36,000
+hanger
+
+133
+00:17:36,000 --> 00:17:44,000
+token machine
+
+134
+00:17:44,000 --> 00:17:52,000
+Fabric softener makes clothes feel softer.
+
+135
+00:17:52,000 --> 00:18:00,000
+Yes. Open the drum door from the front.
+
+136
+00:18:00,000 --> 00:18:08,000
+sort colors
+
+137
+00:18:08,000 --> 00:18:16,000
+wash token
+
+138
+00:18:16,000 --> 00:18:24,000
+You sort the clothes and choose a simple washer setting.
+
+139
+00:18:24,000 --> 00:18:32,000
+I use prewash spray before the wash cycle.
+
+140
+00:18:32,000 --> 00:18:40,000
+lost-and-found bin
+
+141
+00:18:40,000 --> 00:18:48,000
+folding station
+
+142
+00:18:48,000 --> 00:18:56,000
+missing sock
+
+143
+00:18:56,000 --> 00:19:04,000
+That washer looks available if the display is clear.
+
+144
+00:19:04,000 --> 00:19:12,000
+drawstring bag
+
+145
+00:19:12,000 --> 00:19:20,000
+heat setting
+
+146
+00:19:20,000 --> 00:19:28,000
+The dryer is beside the washer.
+
+147
+00:19:28,000 --> 00:19:36,000
+darks
+
+148
+00:19:36,000 --> 00:19:44,000
+May I use the laundry cart?
+
+149
+00:19:44,000 --> 00:19:52,000
+This claim ticket is mine.
+
+150
+00:19:52,000 --> 00:20:00,000
+You confirm your pickup details and prepare to leave with clean laundry.
+
+151
+00:20:00,000 --> 00:20:08,000
+A folding board helps make neat shirts.
+
+152
+00:20:08,000 --> 00:20:16,000
+The service bell is on the front counter.
+
+153
+00:20:16,000 --> 00:20:24,000
+A top-loading washer opens from above.

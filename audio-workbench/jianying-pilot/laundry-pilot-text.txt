@@ -1,0 +1,19 @@
+[0001] laundromat
+
+[0002] powder scoop
+
+[0003] Welcome. Is this your first time using this laundromat?
+
+[0004] Use a small amount of product and follow the label.
+
+[0005] Where is the lint trap?
+
+[0006] Which water temperature should I choose?
+
+[0007] It depends on the load size and heat setting.
+
+[0008] You can put it in the lost-and-found bin.
+
+[0009] You get a wash token and are ready to choose a machine.
+
+[0010] You collect the fresh laundry and get ready to leave.

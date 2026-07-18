@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Pre-workflow static audio retained for rollback/history. New unreferenced MP3 files are still release-blocking.",
+  "files": [
+    "assets/audio/dialogues/airport/check-in-counter--airline-staff--option-2.mp3",
+    "assets/audio/dialogues/cafe/menu-board--cafe-menu-customer--option-1.mp3",
+    "assets/audio/dialogues/fruitShop/cashier--cashier--option-2.mp3",
+    "assets/audio/dialogues/fruitShop/weighing-counter--weighing-shopkeeper--reply-1.mp3",
+    "assets/audio/dialogues/hotel/hotel-housekeeping--hotel-housekeeping-staff--option-1.mp3",
+    "assets/audio/dialogues/restaurant/restaurant-dining-table--restaurant-server-table--option-2.mp3",
+    "assets/audio/dialogues/restaurant/restaurant-leaving--restaurant-greeter-leaving--option-3.mp3",
+    "assets/audio/dialogues/zoo/dialogue-visitor--visitor--npc-1.mp3",
+    "assets/audio/dialogues/zoo/dialogue-visitor--visitor--option-1.mp3",
+    "assets/audio/dialogues/zoo/dialogue-visitor--visitor--option-2.mp3",
+    "assets/audio/dialogues/zoo/dialogue-visitor--visitor--option-3.mp3",
+    "assets/audio/dialogues/zoo/dialogue-visitor--visitor--reply-1.mp3",
+    "assets/audio/dialogues/zoo/dialogue-visitor--visitor--reply-2.mp3",
+    "assets/audio/dialogues/zoo/dialogue-visitor--visitor--reply-3.mp3",
+    "assets/audio/dialogues/zoo/elephant--elephant-keeper--npc-1.mp3",
+    "assets/audio/dialogues/zoo/giraffe--giraffe-visitor--option-2.mp3",
+    "assets/audio/dialogues/zoo/lion--lion-visitor--npc-1.mp3",
+    "assets/audio/dialogues/zoo/monkey--monkey-visitor--npc-1.mp3",
+    "assets/audio/dialogues/zoo/panda--panda-visitor--npc-1.mp3",
+    "assets/audio/dialogues/zoo/panda--panda-visitor--option-1.mp3",
+    "assets/audio/sentences/clinic/more--clinic-symptoms-signals--dizziness.mp3",
+    "assets/audio/sentences/clinic/more--clinic-symptoms-signals--swollen-ankle.mp3",
+    "assets/audio/sentences/zoo/panda--eat.mp3",
+    "assets/audio/words/zoo/panda--climb.mp3"
+  ]
+}
