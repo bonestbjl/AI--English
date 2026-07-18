@@ -746,6 +746,13 @@
           z-index: 55 !important;
         }
 
+        .mobile-landscape-mode .observe-panel,
+        .mobile-landscape-mode .npc-dialogue,
+        .mobile-landscape-mode .trip-map {
+          overscroll-behavior: contain;
+          scrollbar-gutter: stable;
+        }
+
         .mobile-landscape-toggle {
           min-width: 4.8rem;
           border: 1px solid rgba(255, 255, 255, 0.18);
@@ -814,10 +821,12 @@
         }
 
         .mobile-landscape-mode .npc-dialogue {
+          top: calc(env(safe-area-inset-top) + 4.25rem) !important;
           bottom: calc(env(safe-area-inset-bottom) + 3.4rem) !important;
           left: calc(env(safe-area-inset-left) + 0.6rem) !important;
-          max-height: calc(100dvh - 4.4rem) !important;
+          max-height: none !important;
           max-width: min(20rem, calc(100vw - 1.2rem)) !important;
+          overflow-y: auto !important;
           padding: 0.75rem !important;
           padding-top: 2.25rem !important;
         }
@@ -10740,6 +10749,73 @@
         return point;
       }
 
+      function isHotspotPlacementAvailable(point, blockedRects, placedPoints, gap, viewport) {
+        const pointRect = rectFromPoint(point);
+        const withinViewport =
+          pointRect.left >= gap &&
+          pointRect.right <= viewport.width - gap &&
+          pointRect.top >= gap &&
+          pointRect.bottom <= viewport.height - gap;
+
+        if (!withinViewport) return false;
+        if (blockedRects.some((rect) => rectsOverlap(pointRect, rect, gap))) return false;
+        return !placedPoints.some((placedPoint) =>
+          rectsOverlap(pointRect, rectFromPoint(placedPoint), gap)
+        );
+      }
+
+      function findNearestHotspotPlacement(point, blockedRects, placedPoints, gap, viewport) {
+        const minX = point.width / 2 + gap;
+        const maxX = viewport.width - point.width / 2 - gap;
+        const minY = point.height / 2 + gap;
+        const maxY = viewport.height - point.height / 2 - gap;
+        const origin = {
+          ...point,
+          x: clamp(point.x, minX, maxX),
+          y: clamp(point.y, minY, maxY),
+        };
+
+        if (isHotspotPlacementAvailable(origin, blockedRects, placedPoints, gap, viewport)) {
+          return origin;
+        }
+
+        const maxRadius = Math.hypot(viewport.width, viewport.height);
+        for (let radius = 16; radius <= maxRadius; radius += 16) {
+          const steps = Math.max(16, Math.ceil((Math.PI * 2 * radius) / 28));
+          for (let step = 0; step < steps; step++) {
+            const angle = (Math.PI * 2 * step) / steps;
+            const candidate = {
+              ...point,
+              x: clamp(origin.x + Math.cos(angle) * radius, minX, maxX),
+              y: clamp(origin.y + Math.sin(angle) * radius, minY, maxY),
+            };
+            if (isHotspotPlacementAvailable(candidate, blockedRects, placedPoints, gap, viewport)) {
+              return candidate;
+            }
+          }
+        }
+
+        let nearestGridCandidate = null;
+        let nearestGridDistance = Number.POSITIVE_INFINITY;
+        for (let y = minY; y <= maxY; y += 8) {
+          for (let x = minX; x <= maxX; x += 8) {
+            const candidate = { ...point, x, y };
+            if (!isHotspotPlacementAvailable(candidate, blockedRects, placedPoints, gap, viewport)) {
+              continue;
+            }
+            const distance = Math.hypot(candidate.x - origin.x, candidate.y - origin.y);
+            if (distance < nearestGridDistance) {
+              nearestGridCandidate = candidate;
+              nearestGridDistance = distance;
+            }
+          }
+        }
+
+        if (nearestGridCandidate) return nearestGridCandidate;
+
+        return origin;
+      }
+
       function getBlockedRects({ width, height, hasDialogue, hasAnimalEffect, hasProgressHint, hasLearningPanel, isMobile, isMobileLandscape }) {
         const side = isMobile ? 14 : 20;
         const headerHeight = isMobileLandscape ? 78 : isMobile ? 90 : 86;
@@ -10812,19 +10888,23 @@
       function layoutHotspots(hotspots, viewport, options) {
         const isMobile = viewport.width < 640 || options.isMobileLandscape;
         const safeRadius = isMobile ? 16 : 24;
-        const blockedRects = getBlockedRects({
-          width: viewport.width,
-          height: viewport.height,
-          hasDialogue: options.hasDialogue,
-          hasAnimalEffect: options.hasAnimalEffect,
-          hasProgressHint: options.hasProgressHint,
-          hasLearningPanel: options.hasLearningPanel,
-          isMobile,
-          isMobileLandscape: options.isMobileLandscape,
-        });
+        const measuredBlockedRects = options.measuredBlockedRects || [];
+        const blockedRects = measuredBlockedRects.length
+          ? measuredBlockedRects
+          : getBlockedRects({
+              width: viewport.width,
+              height: viewport.height,
+              hasDialogue: options.hasDialogue,
+              hasAnimalEffect: options.hasAnimalEffect,
+              hasProgressHint: options.hasProgressHint,
+              hasLearningPanel: options.hasLearningPanel,
+              isMobile,
+              isMobileLandscape: options.isMobileLandscape,
+            });
 
         const points = hotspots.map((hotspot, index) => {
-          const size = estimateHotspotSize(hotspot, isMobile, options.isMobileLandscape);
+          const measuredSize = options.measuredHotspotSizes?.[hotspot.id];
+          const size = measuredSize || estimateHotspotSize(hotspot, isMobile, options.isMobileLandscape);
           const offset = hotspot.offset || {};
           const dx = isMobile ? offset.mobileX ?? offset.x ?? 0 : offset.desktopX ?? offset.x ?? 0;
           const dy = isMobile ? offset.mobileY ?? offset.y ?? 0 : offset.desktopY ?? offset.y ?? 0;
@@ -10898,9 +10978,17 @@
           }
         }
 
-        for (const point of points) {
-          point.x = clamp(point.x, point.width / 2 + safeRadius, viewport.width - point.width / 2 - safeRadius);
-          point.y = clamp(point.y, point.height / 2 + safeRadius, viewport.height - point.height / 2 - safeRadius);
+        const placedPoints = [];
+        for (let index = 0; index < points.length; index++) {
+          const placedPoint = findNearestHotspotPlacement(
+            points[index],
+            blockedRects,
+            placedPoints,
+            safeRadius,
+            viewport
+          );
+          points[index] = placedPoint;
+          placedPoints.push(placedPoint);
         }
 
         return points.map((point) => ({
@@ -10918,6 +11006,12 @@
         const cloudSyncTimerRef = useRef(null);
         const latestLearningDataRef = useRef(initialLearningData);
         const currentUserRef = useRef(currentUser);
+        const scenePageRef = useRef(null);
+        const [sceneLayoutMetrics, setSceneLayoutMetrics] = useState({
+          fingerprint: "",
+          blockedRects: [],
+          hotspotSizes: {},
+        });
         const [currentChapter, setCurrentChapter] = useState(() => initialLearningData.lastScene.chapterId);
         const [sceneSelectHint, setSceneSelectHint] = useState("");
         const [sceneSelectNotice, setSceneSelectNotice] = useState(null);
@@ -11552,6 +11646,106 @@
         const viewport = useViewportSize();
         const showLandscapePrompt = shouldShowLandscapePrompt(viewport);
         const isMobileLandscape = shouldUseMobileLandscapeMode(viewport);
+
+        useEffect(() => {
+          const scenePage = scenePageRef.current;
+          if (!scenePage || currentView !== "zoo") return undefined;
+
+          let animationFrame = 0;
+          let settleTimer = 0;
+          const resizeObserver = typeof ResizeObserver === "function"
+            ? new ResizeObserver(() => scheduleMeasure())
+            : null;
+
+          function measureSceneLayout() {
+            const sceneCanvas = scenePage.querySelector(".scene-reveal") || scenePage;
+            const sceneRect = sceneCanvas.getBoundingClientRect();
+            const blockedRects = Array.from(scenePage.querySelectorAll("[data-hotspot-blocker]"))
+              .map((element) => {
+                const rect = element.getBoundingClientRect();
+                if (!rect.width || !rect.height) return null;
+                return {
+                  left: clamp(rect.left - sceneRect.left, 0, sceneRect.width),
+                  right: clamp(rect.right - sceneRect.left, 0, sceneRect.width),
+                  top: clamp(rect.top - sceneRect.top, 0, sceneRect.height),
+                  bottom: clamp(rect.bottom - sceneRect.top, 0, sceneRect.height),
+                };
+              })
+              .filter(Boolean);
+
+            const hotspotSizes = {};
+            Array.from(scenePage.querySelectorAll("[data-scene-hotspot]"))
+              .forEach((element) => {
+                const id = element.dataset.sceneHotspot;
+                const rect = element.getBoundingClientRect();
+                if (id && rect.width && rect.height) {
+                  hotspotSizes[id] = { width: rect.width, height: rect.height };
+                }
+              });
+
+            const fingerprint = JSON.stringify({
+              blockedRects: blockedRects.map((rect) =>
+                Object.fromEntries(Object.entries(rect).map(([key, value]) => [key, Math.round(value)]))
+              ),
+              hotspotSizes: Object.fromEntries(
+                Object.entries(hotspotSizes).map(([id, size]) => [
+                  id,
+                  { width: Math.round(size.width), height: Math.round(size.height) },
+                ])
+              ),
+            });
+
+            setSceneLayoutMetrics((current) =>
+              current.fingerprint === fingerprint
+                ? current
+                : { fingerprint, blockedRects, hotspotSizes }
+            );
+          }
+
+          function scheduleMeasure() {
+            window.cancelAnimationFrame(animationFrame);
+            animationFrame = window.requestAnimationFrame(measureSceneLayout);
+          }
+
+          const observeLayoutElements = () => {
+            resizeObserver?.disconnect();
+            resizeObserver?.observe(scenePage);
+            const sceneCanvas = scenePage.querySelector(".scene-reveal");
+            if (sceneCanvas) resizeObserver?.observe(sceneCanvas);
+            scenePage.querySelectorAll("[data-hotspot-blocker], [data-scene-hotspot]")
+              .forEach((element) => resizeObserver?.observe(element));
+            scheduleMeasure();
+          };
+
+          const mutationObserver = new MutationObserver(observeLayoutElements);
+          mutationObserver.observe(scenePage, { childList: true, subtree: true });
+          window.addEventListener("resize", scheduleMeasure);
+          observeLayoutElements();
+          settleTimer = window.setTimeout(scheduleMeasure, 850);
+
+          return () => {
+            window.cancelAnimationFrame(animationFrame);
+            window.clearTimeout(settleTimer);
+            window.removeEventListener("resize", scheduleMeasure);
+            mutationObserver.disconnect();
+            resizeObserver?.disconnect();
+          };
+        }, [
+          currentView,
+          currentScene.id,
+          isMobileLandscape,
+          showMobileObserve,
+          showMobileDialogue,
+          showMobileTripMap,
+          sceneComplete,
+          progressHint,
+          animalEffect,
+          selectedHotspot,
+          dialogueReply,
+          viewport.width,
+          viewport.height,
+        ]);
+
         useEffect(() => {
           if (!isMobileLandscape) return;
           setShowMobileObserve(false);
@@ -11585,6 +11779,8 @@
           hasProgressHint: Boolean(progressHint && isMobileLandscape),
           hasLearningPanel: Boolean(selectedHotspot && !isMobileLandscape),
           isMobileLandscape,
+          measuredBlockedRects: sceneLayoutMetrics.blockedRects,
+          measuredHotspotSizes: sceneLayoutMetrics.hotspotSizes,
         });
         const learnedInScene = currentScene.hotspots.filter((hotspot) =>
           isHotspotCompleted(hotspot.id)
@@ -14685,6 +14881,7 @@
 
         return (
           <main
+            ref={scenePageRef}
             className={`scene-page relative h-screen w-screen overflow-hidden bg-[#17251c] ${
               isClinicChapter ? "clinic-chapter" : ""
             } ${
@@ -14903,6 +15100,7 @@
 
               {animalEffect && (
                 <div
+                  data-hotspot-blocker="action-feedback"
                   className="animal-action-toast action-toast pointer-events-none absolute left-1/2 top-[calc(env(safe-area-inset-top)+6.5rem)] z-20 w-[calc(100vw-2rem)] max-w-[420px] rounded-2xl border border-[#ffe8a2]/50 bg-[#5c3a20]/72 px-4 py-3 text-center text-cream shadow-label backdrop-blur-[3px]"
                   style={{ "--action-duration": `${animalEffect.duration || 2600}ms` }}
                 >
@@ -14926,6 +15124,7 @@
                 return (
                   <button
                     key={hotspot.id}
+                    data-scene-hotspot={hotspot.id}
                     onClick={() => openHotspot(hotspot)}
                     className={`hotspot-sign group absolute z-30 -translate-x-1/2 -translate-y-1/2 rounded-2xl border px-3 py-2 text-left shadow-label backdrop-blur-[2px] transition hover:z-50 active:scale-95 hotspot-active hotspot-breathe sm:px-3.5 sm:py-2.5 ${
                       hotspot.type === "action" ? "is-action" : ""
@@ -14966,6 +15165,7 @@
 
               {hiddenHotspotCount > 0 && (
                 <button
+                  data-hotspot-blocker="more-words"
                   onClick={showMoreWords}
                   className="absolute right-5 top-1/2 z-30 -translate-y-1/2 rounded-2xl border border-[#ffe8a2]/80 bg-[#6b4524]/88 px-4 py-3 text-sm font-black text-cream shadow-label backdrop-blur-[2px] transition hover:bg-[#80562d]/92 active:scale-95"
                 >
@@ -14981,7 +15181,7 @@
               </div>
             )}
 
-            <header className="scene-hud hud-float absolute left-4 right-4 top-[calc(env(safe-area-inset-top)+1rem)] z-40 mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-2xl border border-white/18 bg-nightglass px-4 py-3 shadow-glow backdrop-blur-xl sm:left-6 sm:right-6">
+            <header data-hotspot-blocker="scene-toolbar" className="scene-hud hud-float absolute left-4 right-4 top-[calc(env(safe-area-inset-top)+1rem)] z-40 mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-2xl border border-white/18 bg-nightglass px-4 py-3 shadow-glow backdrop-blur-xl sm:left-6 sm:right-6">
               <div className="min-w-0 flex-1">
                 <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
                   {chapterTitle} {currentIndex + 1}/{activeScenes.length}
@@ -15059,23 +15259,44 @@
             </header>
 
             {isMobileLandscape && !showEnding && !selectedHotspot && (
-              <div className="mobile-landscape-dock">
+              <div data-hotspot-blocker="mobile-controls" className="mobile-landscape-dock">
                 <button
-                  onClick={() => setShowMobileObserve((value) => !value)}
+                  onClick={() => {
+                    const nextValue = !showMobileObserve;
+                    setShowMobileObserve(nextValue);
+                    if (nextValue) {
+                      setShowMobileDialogue(false);
+                      setShowMobileTripMap(false);
+                    }
+                  }}
                   className="mobile-landscape-toggle"
                 >
                   <ButtonCopy en="Observe" zh="观察" size="small" />
                 </button>
                 {currentDialogue && (
                   <button
-                    onClick={() => setShowMobileDialogue((value) => !value)}
+                    onClick={() => {
+                      const nextValue = !showMobileDialogue;
+                      setShowMobileDialogue(nextValue);
+                      if (nextValue) {
+                        setShowMobileObserve(false);
+                        setShowMobileTripMap(false);
+                      }
+                    }}
                     className="mobile-landscape-toggle"
                   >
                     <ButtonCopy en="Talk" zh="对话" size="small" />
                   </button>
                 )}
                 <button
-                  onClick={() => setShowMobileTripMap((value) => !value)}
+                  onClick={() => {
+                    const nextValue = !showMobileTripMap;
+                    setShowMobileTripMap(nextValue);
+                    if (nextValue) {
+                      setShowMobileObserve(false);
+                      setShowMobileDialogue(false);
+                    }
+                  }}
                   className="mobile-landscape-toggle"
                 >
                   <ButtonCopy en={`Map ${currentIndex + 1}/${activeScenes.length}`} zh="地图" size="small" />
@@ -15085,6 +15306,7 @@
 
             {(!isMobileLandscape || showMobileObserve) && (
               <button
+                data-hotspot-blocker="observe-panel"
                 onClick={() => speakEnglish(currentScene.intro.text, 0.9, `${currentScene.id}-intro`)}
                 className="observe-panel dialogue-enter absolute left-4 top-[calc(env(safe-area-inset-top)+6.5rem)] z-20 max-h-[20vh] max-w-[340px] overflow-auto rounded-2xl border border-white/18 bg-nightglass p-3 text-left shadow-glow backdrop-blur-xl transition hover:bg-[#143423]/80 active:scale-[0.99] sm:left-6 md:max-w-[390px]"
               >
@@ -15117,13 +15339,13 @@
             )}
 
             {progressHint && (
-              <div className="progress-hint dialogue-enter absolute left-1/2 top-[25%] z-40 max-w-[calc(100vw-2rem)] -translate-x-1/2 rounded-2xl border border-banana/40 bg-[#112319]/88 px-5 py-3 text-sm font-black leading-6 text-white shadow-glow backdrop-blur-xl">
+              <div data-hotspot-blocker="progress-hint" className="progress-hint dialogue-enter absolute left-1/2 top-[25%] z-40 max-w-[calc(100vw-2rem)] -translate-x-1/2 rounded-2xl border border-banana/40 bg-[#112319]/88 px-5 py-3 text-sm font-black leading-6 text-white shadow-glow backdrop-blur-xl">
                 {progressHint}
               </div>
             )}
 
             {currentDialogue && !showEnding && (!isMobileLandscape || showMobileDialogue) && (
-              <div className="npc-dialogue dialogue-enter absolute bottom-[calc(env(safe-area-inset-bottom)+8.75rem)] left-4 z-20 max-h-[30vh] w-[calc(100vw-2rem)] max-w-[340px] overflow-auto rounded-2xl border border-white/22 bg-nightglass p-3 shadow-glow backdrop-blur-xl sm:left-6 md:max-w-[360px] md:p-4">
+              <div data-hotspot-blocker="dialogue-panel" className="npc-dialogue dialogue-enter absolute bottom-[calc(env(safe-area-inset-bottom)+8.75rem)] left-4 z-20 max-h-[30vh] w-[calc(100vw-2rem)] max-w-[340px] overflow-auto overscroll-contain rounded-2xl border border-white/22 bg-nightglass p-3 shadow-glow backdrop-blur-xl sm:left-6 md:max-w-[360px] md:p-4">
                 {isMobileLandscape && (
                   <button
                     onClick={() => setShowMobileDialogue(false)}
@@ -15197,7 +15419,7 @@
             )}
 
             {sceneComplete && !showEnding && !isMobileLandscape && (
-              <div className="complete-card dialogue-enter absolute right-4 top-[calc(env(safe-area-inset-top)+6.5rem)] z-30 hidden max-h-[24vh] max-w-[330px] overflow-auto rounded-2xl border border-banana/35 bg-[#112319]/78 p-4 text-right shadow-glow backdrop-blur-xl md:block">
+              <div data-hotspot-blocker="completion-card" className="complete-card dialogue-enter absolute right-4 top-[calc(env(safe-area-inset-top)+6.5rem)] z-30 hidden max-h-[24vh] max-w-[330px] overflow-auto rounded-2xl border border-banana/35 bg-[#112319]/78 p-4 text-right shadow-glow backdrop-blur-xl md:block">
                 <p className="text-lg font-black text-white">
                   {currentScene.completeText || "Great! Let's keep walking."}
                 </p>
@@ -15207,7 +15429,7 @@
               </div>
             )}
 
-            {!isMobileLandscape && <div className="now-card pointer-events-none absolute bottom-[calc(env(safe-area-inset-bottom)+8.25rem)] right-6 z-30 hidden max-w-[320px] rounded-2xl border border-white/16 bg-nightglass px-4 py-3 text-right shadow-glow backdrop-blur-xl md:block">
+            {!isMobileLandscape && <div data-hotspot-blocker="scene-status" className="now-card pointer-events-none absolute bottom-[calc(env(safe-area-inset-bottom)+8.25rem)] right-6 z-30 hidden max-w-[320px] rounded-2xl border border-white/16 bg-nightglass px-4 py-3 text-right shadow-glow backdrop-blur-xl md:block">
               <p className="text-[10px] font-black uppercase tracking-[0.22em] text-banana">Now</p>
               <p className="text-xl font-black text-white">
                 {currentScene.title} <span className="text-banana">{currentScene.zh}</span>
@@ -15218,7 +15440,7 @@
               </p>
             </div>}
 
-            {(!isMobileLandscape || showMobileTripMap) && <nav className="trip-map absolute bottom-[calc(env(safe-area-inset-bottom)+1rem)] left-4 right-4 z-40 mx-auto max-w-5xl rounded-2xl border border-white/18 bg-nightglass p-3 shadow-glow backdrop-blur-xl sm:left-6 sm:right-6">
+            {(!isMobileLandscape || showMobileTripMap) && <nav data-hotspot-blocker="trip-map" className="trip-map absolute bottom-[calc(env(safe-area-inset-bottom)+1rem)] left-4 right-4 z-40 mx-auto max-w-5xl rounded-2xl border border-white/18 bg-nightglass p-3 shadow-glow backdrop-blur-xl sm:left-6 sm:right-6">
               {isMobileLandscape && (
                 <button
                   onClick={() => setShowMobileTripMap(false)}
@@ -15262,7 +15484,7 @@
             </nav>}
 
             {selectedHotspot && (
-              <aside className="learning-panel card-slide-in fixed bottom-0 right-0 top-0 z-40 flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/88 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
+              <aside data-hotspot-blocker="learning-panel" className="learning-panel card-slide-in fixed bottom-0 right-0 top-0 z-40 flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/88 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
                 <div className="flex items-start justify-between gap-3 border-b border-white/12 p-5">
                   <div>
                     <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
