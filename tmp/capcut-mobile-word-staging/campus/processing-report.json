@@ -1,0 +1,5780 @@
+{
+  "schemaVersion": 1,
+  "processedAt": "2026-07-21T09:50:37.997Z",
+  "scope": "Campus mobile standalone vocabulary staging only",
+  "source": {
+    "audioPath": "tmp/capcut-mobile-word-exports/01-campus-77-capcut-export.mp3",
+    "srtPath": "tmp/capcut-mobile-word-exports/01-campus-77-capcut-export.srt",
+    "mapPath": "tmp/capcut-mobile-word-batches/01-campus-77.json",
+    "codec": "mp3",
+    "sampleRateHz": 44100,
+    "channels": 2,
+    "streamBitrate": 192000,
+    "durationSeconds": 616.02,
+    "sizeBytes": 14784520,
+    "formatBitrate": 192000
+  },
+  "parameters": {
+    "slotSeconds": 8,
+    "cutFlags": "-ss <slot start> -to <slot end>",
+    "audioFilter": "silenceremove=start_periods=1:start_duration=0.03:start_threshold=-50dB:start_silence=0.06:stop_periods=-1:stop_duration=0.08:stop_threshold=-50dB:stop_silence=0.10,loudnorm=I=-18:TP=-2:LRA=7",
+    "output": {
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "bitrate": "64k",
+      "format": "mp3"
+    },
+    "edgeSafety": {
+      "startSilencePreservedSeconds": 0.06,
+      "stopSilencePreservedSeconds": 0.1,
+      "rawLeadingMarginMinimumSeconds": 0.03,
+      "rawTrailingMarginMinimumSeconds": 0.1
+    }
+  },
+  "summary": {
+    "expected": 77,
+    "generated": 77,
+    "passed": 77,
+    "failed": 0,
+    "byteDuplicateOutputs": 0,
+    "stagingDirectory": "tmp/capcut-mobile-word-staging/campus",
+    "qcDirectory": "tmp/capcut-mobile-word-staging/campus-qc-samples",
+    "qcSamples": 12,
+    "pcmPotentialStartClips": 0,
+    "pcmPotentialEndClips": 0,
+    "pcmEdgeMaxima": {
+      "firstSampleRatio": 0.002062141033626861,
+      "first10msPeakRatio": 0.016769819353905254,
+      "first10msRmsRatio": 0.0038190947915659247,
+      "lastSampleRatio": 3.8200864541752376e-19,
+      "last10msPeakRatio": 4.75367048149659e-16,
+      "last10msRmsRatio": 1.138453654625379e-16
+    }
+  },
+  "results": [
+    {
+      "order": 1,
+      "text": "campus",
+      "normalizedText": "campus",
+      "srtStart": "00:00:00,000",
+      "srtEnd": "00:00:08,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.127,
+        "voiceEndSeconds": 0.823,
+        "leadingSilenceSeconds": 0.127,
+        "trailingSilenceSeconds": 7.177,
+        "silenceStarts": [
+          0,
+          0.822585
+        ],
+        "silenceEnds": [
+          0.127098,
+          8
+        ]
+      },
+      "expectedOutputFile": "campus-entrance--campus.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/campus-entrance--campus.mp3",
+      "formalTargetPath": "assets/audio/words/campus/campus-entrance--campus.mp3",
+      "sha256": "c3587aef3acb2151f420d59bc0ae2ed66801f9f32eb3f226bc2768830b9bba70",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.88,
+      "sizeBytes": 7725,
+      "formatBitrate": 70207,
+      "integratedLufs": -18.3,
+      "truePeakDbfs": -5.1,
+      "meanVolumeDb": -19,
+      "maxVolumeDb": -5.1,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.724,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.156,
+        "silenceStarts": [
+          0.723875
+        ],
+        "silenceEnds": [
+          0.88
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0019176807089674093,
+        "first10msPeakRatio": 0.0028931722312975044,
+        "first10msRmsRatio": 0.0019139922985943311,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 2,
+      "text": "entrance",
+      "normalizedText": "entrance",
+      "srtStart": "00:00:08,000",
+      "srtEnd": "00:00:16,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.132,
+        "voiceEndSeconds": 0.853,
+        "leadingSilenceSeconds": 0.132,
+        "trailingSilenceSeconds": 7.147,
+        "silenceStarts": [
+          0,
+          0.852971
+        ],
+        "silenceEnds": [
+          0.132472,
+          8
+        ]
+      },
+      "expectedOutputFile": "campus-entrance--entrance.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/campus-entrance--entrance.mp3",
+      "formalTargetPath": "assets/audio/words/campus/campus-entrance--entrance.mp3",
+      "sha256": "8da1d10cc6ec95c6bc598e4d38880b0fb4457a20790585ebf09b025ad5eb4351",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.935,
+      "sizeBytes": 8109,
+      "formatBitrate": 69372,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -3.8,
+      "meanVolumeDb": -18.7,
+      "maxVolumeDb": -3.8,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.779,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.156,
+        "silenceStarts": [
+          0.779458
+        ],
+        "silenceEnds": [
+          0.935
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.000125896326668237,
+        "first10msPeakRatio": 0.0007461727636343522,
+        "first10msRmsRatio": 0.00038166926897406856,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 3,
+      "text": "courtyard",
+      "normalizedText": "courtyard",
+      "srtStart": "00:00:16,000",
+      "srtEnd": "00:00:24,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.125,
+        "voiceEndSeconds": 0.861,
+        "leadingSilenceSeconds": 0.125,
+        "trailingSilenceSeconds": 7.139,
+        "silenceStarts": [
+          0,
+          0.86127
+        ],
+        "silenceEnds": [
+          0.125125,
+          8
+        ]
+      },
+      "expectedOutputFile": "campus-entrance--courtyard.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/campus-entrance--courtyard.mp3",
+      "formalTargetPath": "assets/audio/words/campus/campus-entrance--courtyard.mp3",
+      "sha256": "10e2c4fd25967bf92344be2b894ffce2509ab8bb3c75c9feb536c4c2e2443c89",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.956,
+      "sizeBytes": 8301,
+      "formatBitrate": 69473,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -6.3,
+      "meanVolumeDb": -19.3,
+      "maxVolumeDb": -6.3,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.765,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.191,
+        "silenceStarts": [
+          0.765375
+        ],
+        "silenceEnds": [
+          0.955875
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0005686480440468245,
+        "first10msPeakRatio": 0.002490271290340834,
+        "first10msRmsRatio": 0.0017722273335536724,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 4,
+      "text": "schedule",
+      "normalizedText": "schedule",
+      "srtStart": "00:00:24,000",
+      "srtEnd": "00:00:32,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.123,
+        "voiceEndSeconds": 0.895,
+        "leadingSilenceSeconds": 0.123,
+        "trailingSilenceSeconds": 7.105,
+        "silenceStarts": [
+          0,
+          0.894535
+        ],
+        "silenceEnds": [
+          0.123424,
+          8
+        ]
+      },
+      "expectedOutputFile": "campus-entrance--schedule.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/campus-entrance--schedule.mp3",
+      "formalTargetPath": "assets/audio/words/campus/campus-entrance--schedule.mp3",
+      "sha256": "4567006efe95aa03de88cd2ce71a9b615c6091a3847ad19ae53b14dc561a8d1d",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.962,
+      "sizeBytes": 8493,
+      "formatBitrate": 70630,
+      "integratedLufs": -18.3,
+      "truePeakDbfs": -6.3,
+      "meanVolumeDb": -19.5,
+      "maxVolumeDb": -6.4,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.779,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.183,
+        "silenceStarts": [
+          0.779083
+        ],
+        "silenceEnds": [
+          0.961958
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0003444959611794467,
+        "first10msPeakRatio": 0.003359589705726973,
+        "first10msRmsRatio": 0.0010818227259527388,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 5,
+      "text": "notice board",
+      "normalizedText": "notice board",
+      "srtStart": "00:00:32,000",
+      "srtEnd": "00:00:40,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.116,
+        "voiceEndSeconds": 1.158,
+        "leadingSilenceSeconds": 0.116,
+        "trailingSilenceSeconds": 6.842,
+        "silenceStarts": [
+          0,
+          1.157823
+        ],
+        "silenceEnds": [
+          0.115556,
+          8
+        ]
+      },
+      "expectedOutputFile": "campus-entrance--notice-board.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/campus-entrance--notice-board.mp3",
+      "formalTargetPath": "assets/audio/words/campus/campus-entrance--notice-board.mp3",
+      "sha256": "7555d52fd86e3e3a260fb8020e2e1ed70693c4a8f5b1b057ad4affa146b3e296",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.231,
+      "sizeBytes": 10605,
+      "formatBitrate": 68898,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -5.3,
+      "meanVolumeDb": -18.7,
+      "maxVolumeDb": -5.3,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.065,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.166,
+        "silenceStarts": [
+          1.064958
+        ],
+        "silenceEnds": [
+          1.231
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.000020520473493181604,
+        "first10msPeakRatio": 0.0009447493689649021,
+        "first10msRmsRatio": 0.00032545677396363695,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 6,
+      "text": "uniform",
+      "normalizedText": "uniform",
+      "srtStart": "00:00:40,000",
+      "srtEnd": "00:00:48,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.121,
+        "voiceEndSeconds": 1.027,
+        "leadingSilenceSeconds": 0.121,
+        "trailingSilenceSeconds": 6.973,
+        "silenceStarts": [
+          0,
+          1.026984
+        ],
+        "silenceEnds": [
+          0.12127,
+          8
+        ]
+      },
+      "expectedOutputFile": "campus-entrance--uniform.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/campus-entrance--uniform.mp3",
+      "formalTargetPath": "assets/audio/words/campus/campus-entrance--uniform.mp3",
+      "sha256": "1b1750acfec4eacf73a62e4ba6dde2bc1a2b4dc911d88bca509c8af5f83f2125",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.113,
+      "sizeBytes": 9645,
+      "formatBitrate": 69320,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -4.5,
+      "meanVolumeDb": -18.7,
+      "maxVolumeDb": -4.5,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.926,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.187,
+        "silenceStarts": [
+          0.926375
+        ],
+        "silenceEnds": [
+          1.113
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00018782139003561464,
+        "first10msPeakRatio": 0.0015680090250626863,
+        "first10msRmsRatio": 0.0006718568033354045,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 7,
+      "text": "enter",
+      "normalizedText": "enter",
+      "srtStart": "00:00:48,000",
+      "srtEnd": "00:00:56,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.127,
+        "voiceEndSeconds": 0.677,
+        "leadingSilenceSeconds": 0.127,
+        "trailingSilenceSeconds": 7.323,
+        "silenceStarts": [
+          0,
+          0.677098
+        ],
+        "silenceEnds": [
+          0.127007,
+          8
+        ]
+      },
+      "expectedOutputFile": "campus-entrance--enter.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/campus-entrance--enter.mp3",
+      "formalTargetPath": "assets/audio/words/campus/campus-entrance--enter.mp3",
+      "sha256": "a83fe8aba0eecf1a7dfc3f2241adfc620cf356612da857f41cf6d4e6590fc21b",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.742,
+      "sizeBytes": 6573,
+      "formatBitrate": 70851,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -5.6,
+      "meanVolumeDb": -19.2,
+      "maxVolumeDb": -5.6,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.579,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.163,
+        "silenceStarts": [
+          0.578708
+        ],
+        "silenceEnds": [
+          0.742
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0007708438966499236,
+        "first10msPeakRatio": 0.00160939900593185,
+        "first10msRmsRatio": 0.0007295450454742184,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 8,
+      "text": "classroom",
+      "normalizedText": "classroom",
+      "srtStart": "00:00:56,000",
+      "srtEnd": "00:01:04,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.123,
+        "voiceEndSeconds": 0.922,
+        "leadingSilenceSeconds": 0.123,
+        "trailingSilenceSeconds": 7.078,
+        "silenceStarts": [
+          0,
+          0.922449
+        ],
+        "silenceEnds": [
+          0.123356,
+          8
+        ]
+      },
+      "expectedOutputFile": "classroom--classroom.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/classroom--classroom.mp3",
+      "formalTargetPath": "assets/audio/words/campus/classroom--classroom.mp3",
+      "sha256": "736f2c075bc5076add2df9ba2b1b5f00250be26540a39226e2ee847b17db6390",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.998,
+      "sizeBytes": 8685,
+      "formatBitrate": 69596,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -4.1,
+      "meanVolumeDb": -19,
+      "maxVolumeDb": -4.1,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.826,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.172,
+        "silenceStarts": [
+          0.826083
+        ],
+        "silenceEnds": [
+          0.998
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0006296411941208073,
+        "first10msPeakRatio": 0.0018917919417603512,
+        "first10msRmsRatio": 0.0011510833447407616,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 9,
+      "text": "desk",
+      "normalizedText": "desk",
+      "srtStart": "00:01:04,000",
+      "srtEnd": "00:01:12,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.136,
+        "voiceEndSeconds": 0.63,
+        "leadingSilenceSeconds": 0.136,
+        "trailingSilenceSeconds": 7.37,
+        "silenceStarts": [
+          0,
+          0.486735,
+          0.630181
+        ],
+        "silenceEnds": [
+          0.13644,
+          0.536735,
+          8
+        ]
+      },
+      "expectedOutputFile": "classroom--desk.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/classroom--desk.mp3",
+      "formalTargetPath": "assets/audio/words/campus/classroom--desk.mp3",
+      "sha256": "17047ad3fa70f947454bf82db2faf267dda53a7a05cefb8ea3edcc2ad0281537",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.681,
+      "sizeBytes": 6189,
+      "formatBitrate": 72704,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -3.8,
+      "meanVolumeDb": -18.9,
+      "maxVolumeDb": -3.8,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.526,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.155,
+        "silenceStarts": [
+          0.526417
+        ],
+        "silenceEnds": [
+          0.681
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0008834855236102797,
+        "first10msPeakRatio": 0.0009573968789140652,
+        "first10msRmsRatio": 0.0004816406052364079,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 10,
+      "text": "whiteboard",
+      "normalizedText": "whiteboard",
+      "srtStart": "00:01:12,000",
+      "srtEnd": "00:01:20,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.127,
+        "voiceEndSeconds": 0.982,
+        "leadingSilenceSeconds": 0.127,
+        "trailingSilenceSeconds": 7.018,
+        "silenceStarts": [
+          0,
+          0.467619,
+          0.981633
+        ],
+        "silenceEnds": [
+          0.126871,
+          0.533356,
+          8
+        ]
+      },
+      "expectedOutputFile": "classroom--whiteboard.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/classroom--whiteboard.mp3",
+      "formalTargetPath": "assets/audio/words/campus/classroom--whiteboard.mp3",
+      "sha256": "8fd7841db2521e31ba468fe59c532e93f5fe35582c0085c77b356cef533cf2f6",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.058,
+      "sizeBytes": 9261,
+      "formatBitrate": 70029,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -4.7,
+      "meanVolumeDb": -18.7,
+      "maxVolumeDb": -4.7,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.879,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.179,
+        "silenceStarts": [
+          0.364792,
+          0.878792
+        ],
+        "silenceEnds": [
+          0.430542,
+          1.057958
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0002560287612469664,
+        "first10msPeakRatio": 0.0015790666892090965,
+        "first10msRmsRatio": 0.000708265624790788,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 11,
+      "text": "notebook",
+      "normalizedText": "notebook",
+      "srtStart": "00:01:20,000",
+      "srtEnd": "00:01:28,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.111,
+        "voiceEndSeconds": 0.865,
+        "leadingSilenceSeconds": 0.111,
+        "trailingSilenceSeconds": 7.135,
+        "silenceStarts": [
+          0,
+          0.453129,
+          0.864921
+        ],
+        "silenceEnds": [
+          0.111406,
+          0.510862,
+          8
+        ]
+      },
+      "expectedOutputFile": "classroom--notebook.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/classroom--notebook.mp3",
+      "formalTargetPath": "assets/audio/words/campus/classroom--notebook.mp3",
+      "sha256": "6ce1208777e311f0d2250bddf3f80c5af025bf60a8649588f1cd6a60c35d89d3",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.97,
+      "sizeBytes": 8493,
+      "formatBitrate": 70024,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -4.3,
+      "meanVolumeDb": -18.8,
+      "maxVolumeDb": -4.3,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.777,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.193,
+        "silenceStarts": [
+          0.365,
+          0.776792
+        ],
+        "silenceEnds": [
+          0.422708,
+          0.97
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00011126104592332789,
+        "first10msPeakRatio": 0.0006656857655849444,
+        "first10msRmsRatio": 0.0001803134928259361,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 12,
+      "text": "lesson",
+      "normalizedText": "lesson",
+      "srtStart": "00:01:28,000",
+      "srtEnd": "00:01:36,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.118,
+        "voiceEndSeconds": 0.805,
+        "leadingSilenceSeconds": 0.118,
+        "trailingSilenceSeconds": 7.195,
+        "silenceStarts": [
+          0,
+          0.804898
+        ],
+        "silenceEnds": [
+          0.118367,
+          8
+        ]
+      },
+      "expectedOutputFile": "classroom--lesson.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/classroom--lesson.mp3",
+      "formalTargetPath": "assets/audio/words/campus/classroom--lesson.mp3",
+      "sha256": "83cd185f66cbf062f94412962c1249dcdbd565c7939f3c19bbba00890ca541d3",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.858,
+      "sizeBytes": 7533,
+      "formatBitrate": 70200,
+      "integratedLufs": -18.3,
+      "truePeakDbfs": -5.3,
+      "meanVolumeDb": -19.1,
+      "maxVolumeDb": -5.3,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.709,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.149,
+        "silenceStarts": [
+          0.708792
+        ],
+        "silenceEnds": [
+          0.858
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00003805648523647366,
+        "first10msPeakRatio": 0.0011886238222876147,
+        "first10msRmsRatio": 0.0005461520143460302,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 13,
+      "text": "question",
+      "normalizedText": "question",
+      "srtStart": "00:01:36,000",
+      "srtEnd": "00:01:44,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.117,
+        "voiceEndSeconds": 0.803,
+        "leadingSilenceSeconds": 0.117,
+        "trailingSilenceSeconds": 7.197,
+        "silenceStarts": [
+          0,
+          0.803243
+        ],
+        "silenceEnds": [
+          0.116735,
+          8
+        ]
+      },
+      "expectedOutputFile": "classroom--question.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/classroom--question.mp3",
+      "formalTargetPath": "assets/audio/words/campus/classroom--question.mp3",
+      "sha256": "cc457421ad5f5c12395988a4593bc172ad7bf44293046b8bc2f9e5624b37682e",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.866,
+      "sizeBytes": 7725,
+      "formatBitrate": 71366,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -3,
+      "meanVolumeDb": -18.6,
+      "maxVolumeDb": -3.1,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.716,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.15,
+        "silenceStarts": [
+          0.716375
+        ],
+        "silenceEnds": [
+          0.865958
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00003658987416616729,
+        "first10msPeakRatio": 0.0006430132864822648,
+        "first10msRmsRatio": 0.00020014540032278793,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 14,
+      "text": "answer",
+      "normalizedText": "answer",
+      "srtStart": "00:01:44,000",
+      "srtEnd": "00:01:52,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.133,
+        "voiceEndSeconds": 0.758,
+        "leadingSilenceSeconds": 0.133,
+        "trailingSilenceSeconds": 7.242,
+        "silenceStarts": [
+          0,
+          0.758254
+        ],
+        "silenceEnds": [
+          0.132721,
+          8
+        ]
+      },
+      "expectedOutputFile": "classroom--answer.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/classroom--answer.mp3",
+      "formalTargetPath": "assets/audio/words/campus/classroom--answer.mp3",
+      "sha256": "c48dcd232baa6c08b1e11e3d12c384a1bd32e77d5a5c4353cfc85931219c11b8",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.825,
+      "sizeBytes": 7341,
+      "formatBitrate": 71167,
+      "integratedLufs": -18.3,
+      "truePeakDbfs": -4.8,
+      "meanVolumeDb": -19,
+      "maxVolumeDb": -4.8,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.655,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.17,
+        "silenceStarts": [
+          0.65475
+        ],
+        "silenceEnds": [
+          0.825
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0002879896554207873,
+        "first10msPeakRatio": 0.0008456422198570933,
+        "first10msRmsRatio": 0.00039701052526751687,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 15,
+      "text": "library",
+      "normalizedText": "library",
+      "srtStart": "00:01:52,000",
+      "srtEnd": "00:02:00,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.118,
+        "voiceEndSeconds": 0.958,
+        "leadingSilenceSeconds": 0.118,
+        "trailingSilenceSeconds": 7.042,
+        "silenceStarts": [
+          0,
+          0.958141
+        ],
+        "silenceEnds": [
+          0.117755,
+          8
+        ]
+      },
+      "expectedOutputFile": "library--library.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/library--library.mp3",
+      "formalTargetPath": "assets/audio/words/campus/library--library.mp3",
+      "sha256": "b59c8ed03fcd660588e847ef981b464259f4aa856dab8f9e8913386619103786",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.045,
+      "sizeBytes": 9069,
+      "formatBitrate": 69400,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -5.3,
+      "meanVolumeDb": -19.1,
+      "maxVolumeDb": -5.3,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.862,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.183,
+        "silenceStarts": [
+          0.861917
+        ],
+        "silenceEnds": [
+          1.045
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00010029262878716641,
+        "first10msPeakRatio": 0.0006667011892428791,
+        "first10msRmsRatio": 0.00024368572880708794,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 16,
+      "text": "bookshelf",
+      "normalizedText": "bookshelf",
+      "srtStart": "00:02:00,000",
+      "srtEnd": "00:02:08,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.137,
+        "voiceEndSeconds": 0.924,
+        "leadingSilenceSeconds": 0.137,
+        "trailingSilenceSeconds": 7.076,
+        "silenceStarts": [
+          0,
+          0.924467
+        ],
+        "silenceEnds": [
+          0.137098,
+          8
+        ]
+      },
+      "expectedOutputFile": "library--bookshelf.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/library--bookshelf.mp3",
+      "formalTargetPath": "assets/audio/words/campus/library--bookshelf.mp3",
+      "sha256": "16a1f620a8b7c0e57a98e5c16f78fa34e3b835abf028a58bf7e94d9aa24a4050",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.006,
+      "sizeBytes": 8685,
+      "formatBitrate": 69057,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -5.1,
+      "meanVolumeDb": -19.3,
+      "maxVolumeDb": -5.1,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.817,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.189,
+        "silenceStarts": [
+          0.816917
+        ],
+        "silenceEnds": [
+          1.006
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00004548693498322924,
+        "first10msPeakRatio": 0.0005719302864620856,
+        "first10msRmsRatio": 0.0002316874213847591,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 17,
+      "text": "dictionary",
+      "normalizedText": "dictionary",
+      "srtStart": "00:02:08,000",
+      "srtEnd": "00:02:16,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.136,
+        "voiceEndSeconds": 0.936,
+        "leadingSilenceSeconds": 0.136,
+        "trailingSilenceSeconds": 7.064,
+        "silenceStarts": [
+          0,
+          0.936122
+        ],
+        "silenceEnds": [
+          0.136009,
+          8
+        ]
+      },
+      "expectedOutputFile": "library--dictionary.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/library--dictionary.mp3",
+      "formalTargetPath": "assets/audio/words/campus/library--dictionary.mp3",
+      "sha256": "dbaa8a039e86e5ccb536c23ec53a05ebb009f5f78a816178da7eeaa94c479f8e",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.019,
+      "sizeBytes": 8877,
+      "formatBitrate": 69691,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -5.8,
+      "meanVolumeDb": -19.5,
+      "maxVolumeDb": -5.8,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.83,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.189,
+        "silenceStarts": [
+          0.829708
+        ],
+        "silenceEnds": [
+          1.019
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0014691649777207056,
+        "first10msPeakRatio": 0.0025710711216381694,
+        "first10msRmsRatio": 0.0017881225148691678,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 18,
+      "text": "page",
+      "normalizedText": "page",
+      "srtStart": "00:02:16,000",
+      "srtEnd": "00:02:24,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.123,
+        "voiceEndSeconds": 0.67,
+        "leadingSilenceSeconds": 0.123,
+        "trailingSilenceSeconds": 7.33,
+        "silenceStarts": [
+          0,
+          0.670295
+        ],
+        "silenceEnds": [
+          0.12322,
+          8
+        ]
+      },
+      "expectedOutputFile": "library--page.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/library--page.mp3",
+      "formalTargetPath": "assets/audio/words/campus/library--page.mp3",
+      "sha256": "862cce62d896ca7e6ca038142cac49925612096c3c06e17c7176fce7178df030",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.75,
+      "sizeBytes": 6765,
+      "formatBitrate": 72192,
+      "integratedLufs": -18.3,
+      "truePeakDbfs": -4.4,
+      "meanVolumeDb": -18.7,
+      "maxVolumeDb": -4.4,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.579,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.171,
+        "silenceStarts": [
+          0.579125
+        ],
+        "silenceEnds": [
+          0.749667
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00010802345061209623,
+        "first10msPeakRatio": 0.0012985494774873738,
+        "first10msRmsRatio": 0.0006503564935033193,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 19,
+      "text": "title",
+      "normalizedText": "title",
+      "srtStart": "00:02:24,000",
+      "srtEnd": "00:02:32,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.133,
+        "voiceEndSeconds": 0.665,
+        "leadingSilenceSeconds": 0.133,
+        "trailingSilenceSeconds": 7.335,
+        "silenceStarts": [
+          0,
+          0.665193
+        ],
+        "silenceEnds": [
+          0.132925,
+          8
+        ]
+      },
+      "expectedOutputFile": "library--title.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/library--title.mp3",
+      "formalTargetPath": "assets/audio/words/campus/library--title.mp3",
+      "sha256": "4ab1fd1863017e00ba19f049ed9d349acf57e7ef84760fb4f87dcf3962877dde",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.74,
+      "sizeBytes": 6573,
+      "formatBitrate": 71031,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -6.1,
+      "meanVolumeDb": -19.2,
+      "maxVolumeDb": -6.1,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.557,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.183,
+        "silenceStarts": [
+          0.55725
+        ],
+        "silenceEnds": [
+          0.74
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0015051527319514852,
+        "first10msPeakRatio": 0.002005804744921038,
+        "first10msRmsRatio": 0.0009014515311635125,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 20,
+      "text": "library card",
+      "normalizedText": "library card",
+      "srtStart": "00:02:32,000",
+      "srtEnd": "00:02:40,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.122,
+        "voiceEndSeconds": 1.327,
+        "leadingSilenceSeconds": 0.122,
+        "trailingSilenceSeconds": 6.673,
+        "silenceStarts": [
+          0,
+          1.327302
+        ],
+        "silenceEnds": [
+          0.121565,
+          8
+        ]
+      },
+      "expectedOutputFile": "library--library-card.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/library--library-card.mp3",
+      "formalTargetPath": "assets/audio/words/campus/library--library-card.mp3",
+      "sha256": "6085e5f2d2f1c769fa3ff823c072509ac422e9529d424cab76d62b4529ac8a80",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.408,
+      "sizeBytes": 11949,
+      "formatBitrate": 67914,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -6.2,
+      "meanVolumeDb": -19.1,
+      "maxVolumeDb": -6.2,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.219,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.189,
+        "silenceStarts": [
+          1.218667
+        ],
+        "silenceEnds": [
+          1.407542
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0005221055586558452,
+        "first10msPeakRatio": 0.0018021786473310728,
+        "first10msRmsRatio": 0.0007856655008281747,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 21,
+      "text": "borrow",
+      "normalizedText": "borrow",
+      "srtStart": "00:02:40,000",
+      "srtEnd": "00:02:48,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.131,
+        "voiceEndSeconds": 0.735,
+        "leadingSilenceSeconds": 0.131,
+        "trailingSilenceSeconds": 7.265,
+        "silenceStarts": [
+          0,
+          0.734512
+        ],
+        "silenceEnds": [
+          0.13093,
+          8
+        ]
+      },
+      "expectedOutputFile": "library--borrow.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/library--borrow.mp3",
+      "formalTargetPath": "assets/audio/words/campus/library--borrow.mp3",
+      "sha256": "ba995cd9c53ca046feaf7b2da3cb35b0a8edca7c0729b8dd2b6bc2b5186d04dc",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.797,
+      "sizeBytes": 7149,
+      "formatBitrate": 71789,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -7.5,
+      "meanVolumeDb": -19.2,
+      "maxVolumeDb": -7.5,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.602,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.195,
+        "silenceStarts": [
+          0.601792
+        ],
+        "silenceEnds": [
+          0.796667
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00161013848657132,
+        "first10msPeakRatio": 0.001999819497619394,
+        "first10msRmsRatio": 0.0011590795772283657,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 22,
+      "text": "cafeteria",
+      "normalizedText": "cafeteria",
+      "srtStart": "00:02:48,000",
+      "srtEnd": "00:02:56,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.127,
+        "voiceEndSeconds": 1.163,
+        "leadingSilenceSeconds": 0.127,
+        "trailingSilenceSeconds": 6.837,
+        "silenceStarts": [
+          0,
+          1.163243
+        ],
+        "silenceEnds": [
+          0.126689,
+          8
+        ]
+      },
+      "expectedOutputFile": "cafeteria--cafeteria.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/cafeteria--cafeteria.mp3",
+      "formalTargetPath": "assets/audio/words/campus/cafeteria--cafeteria.mp3",
+      "sha256": "b427f49d51bcf95b0f6f5865fe7dec619ebf129073fedbc3047e4fa91cd4e228",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.218,
+      "sizeBytes": 10413,
+      "formatBitrate": 68387,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -3.7,
+      "meanVolumeDb": -19.1,
+      "maxVolumeDb": -3.7,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.066,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.152,
+        "silenceStarts": [
+          1.065875
+        ],
+        "silenceEnds": [
+          1.218
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0003498830096422715,
+        "first10msPeakRatio": 0.0013342610612223737,
+        "first10msRmsRatio": 0.00076749937757546,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 23,
+      "text": "tray",
+      "normalizedText": "tray",
+      "srtStart": "00:02:56,000",
+      "srtEnd": "00:03:04,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.125,
+        "voiceEndSeconds": 0.704,
+        "leadingSilenceSeconds": 0.125,
+        "trailingSilenceSeconds": 7.296,
+        "silenceStarts": [
+          0,
+          0.704127
+        ],
+        "silenceEnds": [
+          0.124966,
+          8
+        ]
+      },
+      "expectedOutputFile": "cafeteria--tray.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/cafeteria--tray.mp3",
+      "formalTargetPath": "assets/audio/words/campus/cafeteria--tray.mp3",
+      "sha256": "840f3f2a54e5943c332339d30b48d575bc74cc8e47366376fab72fcc0128dad3",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.757,
+      "sizeBytes": 6765,
+      "formatBitrate": 71473,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -6.7,
+      "meanVolumeDb": -19.9,
+      "maxVolumeDb": -6.7,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.593,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.164,
+        "silenceStarts": [
+          0.593167
+        ],
+        "silenceEnds": [
+          0.757
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0008559669858912239,
+        "first10msPeakRatio": 0.0012905211414524912,
+        "first10msRmsRatio": 0.0007033559562568017,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 24,
+      "text": "menu",
+      "normalizedText": "menu",
+      "srtStart": "00:03:04,000",
+      "srtEnd": "00:03:12,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.113,
+        "voiceEndSeconds": 0.899,
+        "leadingSilenceSeconds": 0.113,
+        "trailingSilenceSeconds": 7.101,
+        "silenceStarts": [
+          0,
+          0.898912
+        ],
+        "silenceEnds": [
+          0.113356,
+          8
+        ]
+      },
+      "expectedOutputFile": "cafeteria--menu.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/cafeteria--menu.mp3",
+      "formalTargetPath": "assets/audio/words/campus/cafeteria--menu.mp3",
+      "sha256": "301a8fba9d81668a77b4e85c3542dfe2c6523c1fe17c3c19df65933d964661e8",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.966,
+      "sizeBytes": 8493,
+      "formatBitrate": 70350,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -6.8,
+      "meanVolumeDb": -19,
+      "maxVolumeDb": -6.9,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.797,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.169,
+        "silenceStarts": [
+          0.797
+        ],
+        "silenceEnds": [
+          0.965792
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.000056044081280563295,
+        "first10msPeakRatio": 0.0009491169653004048,
+        "first10msRmsRatio": 0.00019914928881434505,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 25,
+      "text": "lunch",
+      "normalizedText": "lunch",
+      "srtStart": "00:03:12,000",
+      "srtEnd": "00:03:20,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.116,
+        "voiceEndSeconds": 0.725,
+        "leadingSilenceSeconds": 0.116,
+        "trailingSilenceSeconds": 7.275,
+        "silenceStarts": [
+          0,
+          0.725283
+        ],
+        "silenceEnds": [
+          0.116122,
+          8
+        ]
+      },
+      "expectedOutputFile": "cafeteria--lunch.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/cafeteria--lunch.mp3",
+      "formalTargetPath": "assets/audio/words/campus/cafeteria--lunch.mp3",
+      "sha256": "8c2c17007f68fbfee935db7804a4eade0f8df85e8bb1e59d737207fd17b8711a",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.809,
+      "sizeBytes": 7149,
+      "formatBitrate": 70734,
+      "integratedLufs": -19.2,
+      "truePeakDbfs": -4.6,
+      "meanVolumeDb": -19.4,
+      "maxVolumeDb": -4.6,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.631,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.178,
+        "silenceStarts": [
+          0.630625
+        ],
+        "silenceEnds": [
+          0.808542
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.000016349812014305367,
+        "first10msPeakRatio": 0.0007919548034920375,
+        "first10msRmsRatio": 0.00032861524545309967,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 26,
+      "text": "soup",
+      "normalizedText": "soup",
+      "srtStart": "00:03:20,000",
+      "srtEnd": "00:03:28,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.114,
+        "voiceEndSeconds": 0.665,
+        "leadingSilenceSeconds": 0.114,
+        "trailingSilenceSeconds": 7.335,
+        "silenceStarts": [
+          0,
+          0.664694
+        ],
+        "silenceEnds": [
+          0.114195,
+          8
+        ]
+      },
+      "expectedOutputFile": "cafeteria--soup.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/cafeteria--soup.mp3",
+      "formalTargetPath": "assets/audio/words/campus/cafeteria--soup.mp3",
+      "sha256": "7d46dee327d9e1404905df005d816e6c9ecc377f5ec552e0590ccce8a751201a",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.759,
+      "sizeBytes": 6765,
+      "formatBitrate": 71292,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -3.6,
+      "meanVolumeDb": -19.5,
+      "maxVolumeDb": -3.6,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.564,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.195,
+        "silenceStarts": [
+          0.563958
+        ],
+        "silenceEnds": [
+          0.759
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00014798320690342007,
+        "first10msPeakRatio": 0.001273445372889527,
+        "first10msRmsRatio": 0.000550486185499591,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 27,
+      "text": "seat",
+      "normalizedText": "seat",
+      "srtStart": "00:03:28,000",
+      "srtEnd": "00:03:36,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.114,
+        "voiceEndSeconds": 0.626,
+        "leadingSilenceSeconds": 0.114,
+        "trailingSilenceSeconds": 7.374,
+        "silenceStarts": [
+          0,
+          0.62619
+        ],
+        "silenceEnds": [
+          0.11424,
+          8
+        ]
+      },
+      "expectedOutputFile": "cafeteria--seat.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/cafeteria--seat.mp3",
+      "formalTargetPath": "assets/audio/words/campus/cafeteria--seat.mp3",
+      "sha256": "7864a4ca4d8ae64bc44165644537bc106a9b31746b2874536705ebc0b1f0cef6",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.716,
+      "sizeBytes": 6381,
+      "formatBitrate": 71275,
+      "integratedLufs": -18.3,
+      "truePeakDbfs": -4.9,
+      "meanVolumeDb": -19.5,
+      "maxVolumeDb": -5.1,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.533,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.183,
+        "silenceStarts": [
+          0.532833
+        ],
+        "silenceEnds": [
+          0.716
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00046332454720567946,
+        "first10msPeakRatio": 0.003034620916214419,
+        "first10msRmsRatio": 0.0009211395024950983,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 28,
+      "text": "order",
+      "normalizedText": "order",
+      "srtStart": "00:03:36,000",
+      "srtEnd": "00:03:44,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.132,
+        "voiceEndSeconds": 0.703,
+        "leadingSilenceSeconds": 0.132,
+        "trailingSilenceSeconds": 7.297,
+        "silenceStarts": [
+          0,
+          0.702789
+        ],
+        "silenceEnds": [
+          0.132472,
+          8
+        ]
+      },
+      "expectedOutputFile": "cafeteria--order.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/cafeteria--order.mp3",
+      "formalTargetPath": "assets/audio/words/campus/cafeteria--order.mp3",
+      "sha256": "d5a3ed865b4b63ef7c9cc6f4bf8ef6078b43227cefca48e8956d6355def38e7e",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.782,
+      "sizeBytes": 6957,
+      "formatBitrate": 71194,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -6.3,
+      "meanVolumeDb": -19.3,
+      "maxVolumeDb": -6.4,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.594,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.188,
+        "silenceStarts": [
+          0.593625
+        ],
+        "silenceEnds": [
+          0.78175
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0012341402954358647,
+        "first10msPeakRatio": 0.0013157672531258948,
+        "first10msRmsRatio": 0.0008078933457446176,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 29,
+      "text": "playground",
+      "normalizedText": "playground",
+      "srtStart": "00:03:44,000",
+      "srtEnd": "00:03:52,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.119,
+        "voiceEndSeconds": 0.942,
+        "leadingSilenceSeconds": 0.119,
+        "trailingSilenceSeconds": 7.058,
+        "silenceStarts": [
+          0,
+          0.942063
+        ],
+        "silenceEnds": [
+          0.119025,
+          8
+        ]
+      },
+      "expectedOutputFile": "playground--playground.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/playground--playground.mp3",
+      "formalTargetPath": "assets/audio/words/campus/playground--playground.mp3",
+      "sha256": "5b6212b60f6c5c3d935cad19cfe69c57cd6f546c62fda282b1d64d6c36ce9a01",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.029,
+      "sizeBytes": 8877,
+      "formatBitrate": 68983,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -4.5,
+      "meanVolumeDb": -19.5,
+      "maxVolumeDb": -4.6,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.853,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.176,
+        "silenceStarts": [
+          0.852667
+        ],
+        "silenceEnds": [
+          1.029
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.000007598271783204005,
+        "first10msPeakRatio": 0.0007937079484707554,
+        "first10msRmsRatio": 0.0001712335429569269,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 30,
+      "text": "basketball court",
+      "normalizedText": "basketball court",
+      "srtStart": "00:03:52,000",
+      "srtEnd": "00:04:00,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.139,
+        "voiceEndSeconds": 1.38,
+        "leadingSilenceSeconds": 0.139,
+        "trailingSilenceSeconds": 6.62,
+        "silenceStarts": [
+          0,
+          1.379932
+        ],
+        "silenceEnds": [
+          0.138639,
+          8
+        ]
+      },
+      "expectedOutputFile": "playground--basketball-court.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/playground--basketball-court.mp3",
+      "formalTargetPath": "assets/audio/words/campus/playground--basketball-court.mp3",
+      "sha256": "7d23dd8f772306c4ca0f4a3db79890afb97b66230db38842d9fac23f8de3d2e5",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.423,
+      "sizeBytes": 12141,
+      "formatBitrate": 68237,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -3,
+      "meanVolumeDb": -18.2,
+      "maxVolumeDb": -3.1,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.274,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.149,
+        "silenceStarts": [
+          1.273875
+        ],
+        "silenceEnds": [
+          1.423
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0003892674873854324,
+        "first10msPeakRatio": 0.001059161711221253,
+        "first10msRmsRatio": 0.0004250290355861825,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 31,
+      "text": "soccer field",
+      "normalizedText": "soccer field",
+      "srtStart": "00:04:00,000",
+      "srtEnd": "00:04:08,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.11,
+        "voiceEndSeconds": 1.073,
+        "leadingSilenceSeconds": 0.11,
+        "trailingSilenceSeconds": 6.927,
+        "silenceStarts": [
+          0,
+          1.072585
+        ],
+        "silenceEnds": [
+          0.110159,
+          8
+        ]
+      },
+      "expectedOutputFile": "playground--soccer-field.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/playground--soccer-field.mp3",
+      "formalTargetPath": "assets/audio/words/campus/playground--soccer-field.mp3",
+      "sha256": "df050d50983a2a832d27c30cac412d335b12ef3272cd98676f89b1f10df043c3",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.123,
+      "sizeBytes": 9645,
+      "formatBitrate": 68698,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -3.3,
+      "meanVolumeDb": -18.9,
+      "maxVolumeDb": -3.3,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.985,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.138,
+        "silenceStarts": [
+          0.985208
+        ],
+        "silenceEnds": [
+          1.123
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0008587698517110403,
+        "first10msPeakRatio": 0.0012483030754388987,
+        "first10msRmsRatio": 0.0005046794302435427,
+        "lastSampleRatio": 3.8200864541752376e-19,
+        "last10msPeakRatio": 4.75367048149659e-16,
+        "last10msRmsRatio": 1.138453654625379e-16,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 32,
+      "text": "whistle",
+      "normalizedText": "whistle",
+      "srtStart": "00:04:08,000",
+      "srtEnd": "00:04:16,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.116,
+        "voiceEndSeconds": 0.815,
+        "leadingSilenceSeconds": 0.116,
+        "trailingSilenceSeconds": 7.185,
+        "silenceStarts": [
+          0,
+          0.81458
+        ],
+        "silenceEnds": [
+          0.115805,
+          8
+        ]
+      },
+      "expectedOutputFile": "playground--whistle.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/playground--whistle.mp3",
+      "formalTargetPath": "assets/audio/words/campus/playground--whistle.mp3",
+      "sha256": "a2df7550986a7d72039a7816cb732eea455c409462ea51a2d69097053997302e",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.905,
+      "sizeBytes": 7917,
+      "formatBitrate": 69974,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -4.8,
+      "meanVolumeDb": -19,
+      "maxVolumeDb": -4.8,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.721,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.184,
+        "silenceStarts": [
+          0.721417
+        ],
+        "silenceEnds": [
+          0.905
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.000024513785038568013,
+        "first10msPeakRatio": 0.000696277817219464,
+        "first10msRmsRatio": 0.00024115799838062287,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 33,
+      "text": "teamwork",
+      "normalizedText": "teamwork",
+      "srtStart": "00:04:16,000",
+      "srtEnd": "00:04:24,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.13,
+        "voiceEndSeconds": 0.883,
+        "leadingSilenceSeconds": 0.13,
+        "trailingSilenceSeconds": 7.117,
+        "silenceStarts": [
+          0,
+          0.710816,
+          0.883492
+        ],
+        "silenceEnds": [
+          0.130317,
+          0.764717,
+          8
+        ]
+      },
+      "expectedOutputFile": "playground--teamwork.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/playground--teamwork.mp3",
+      "formalTargetPath": "assets/audio/words/campus/playground--teamwork.mp3",
+      "sha256": "b71559beb2b3f53a606571d0b73b6096320ec62cc196ab9491d5ca1dff436177",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.967,
+      "sizeBytes": 8493,
+      "formatBitrate": 70241,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -5.8,
+      "meanVolumeDb": -19.8,
+      "maxVolumeDb": -5.9,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.782,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.185,
+        "silenceStarts": [
+          0.61,
+          0.782458
+        ],
+        "silenceEnds": [
+          0.664042,
+          0.967
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.000781564260464493,
+        "first10msPeakRatio": 0.0015414916431952756,
+        "first10msRmsRatio": 0.0008532444039718458,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 34,
+      "text": "scoreboard",
+      "normalizedText": "scoreboard",
+      "srtStart": "00:04:24,000",
+      "srtEnd": "00:04:32,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.111,
+        "voiceEndSeconds": 1.011,
+        "leadingSilenceSeconds": 0.111,
+        "trailingSilenceSeconds": 6.989,
+        "silenceStarts": [
+          0,
+          1.010703
+        ],
+        "silenceEnds": [
+          0.110567,
+          8
+        ]
+      },
+      "expectedOutputFile": "playground--scoreboard.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/playground--scoreboard.mp3",
+      "formalTargetPath": "assets/audio/words/campus/playground--scoreboard.mp3",
+      "sha256": "cd9822ee40afc762afdd85f6b1d6176ff66d4edd272c05664241ee63c0ce254a",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.106,
+      "sizeBytes": 9645,
+      "formatBitrate": 69767,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -6.7,
+      "meanVolumeDb": -19.1,
+      "maxVolumeDb": -6.7,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.914,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.192,
+        "silenceStarts": [
+          0.913833
+        ],
+        "silenceEnds": [
+          1.105958
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0003863506525496554,
+        "first10msPeakRatio": 0.0015489306701997074,
+        "first10msRmsRatio": 0.0004232893537011266,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 35,
+      "text": "practice",
+      "normalizedText": "practice",
+      "srtStart": "00:04:32,000",
+      "srtEnd": "00:04:40,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.127,
+        "voiceEndSeconds": 0.873,
+        "leadingSilenceSeconds": 0.127,
+        "trailingSilenceSeconds": 7.127,
+        "silenceStarts": [
+          0,
+          0.873084
+        ],
+        "silenceEnds": [
+          0.126825,
+          8
+        ]
+      },
+      "expectedOutputFile": "playground--practice.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/playground--practice.mp3",
+      "formalTargetPath": "assets/audio/words/campus/playground--practice.mp3",
+      "sha256": "8289d1c8610ff54a244ae7f655028eb511d4e7b1d46fa164b0a46eb939685d67",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.956,
+      "sizeBytes": 8301,
+      "formatBitrate": 69494,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -2,
+      "meanVolumeDb": -18.9,
+      "maxVolumeDb": -2,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.78,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.176,
+        "silenceStarts": [
+          0.780208
+        ],
+        "silenceEnds": [
+          0.955583
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0007061717621938135,
+        "first10msPeakRatio": 0.0014357106042851167,
+        "first10msRmsRatio": 0.0008103891980875373,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 36,
+      "text": "hallway",
+      "normalizedText": "hallway",
+      "srtStart": "00:04:40,000",
+      "srtEnd": "00:04:48,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.096,
+        "voiceEndSeconds": 0.827,
+        "leadingSilenceSeconds": 0.096,
+        "trailingSilenceSeconds": 7.173,
+        "silenceStarts": [
+          0,
+          0.82737
+        ],
+        "silenceEnds": [
+          0.0958957,
+          8
+        ]
+      },
+      "expectedOutputFile": "hallway-lockers--hallway.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/hallway-lockers--hallway.mp3",
+      "formalTargetPath": "assets/audio/words/campus/hallway-lockers--hallway.mp3",
+      "sha256": "d345051c8abb0675dd6dcef210cfcbf08ce042b3488c94c362f01931ccecda3e",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.902,
+      "sizeBytes": 7917,
+      "formatBitrate": 70178,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -6.1,
+      "meanVolumeDb": -18.2,
+      "maxVolumeDb": -6.1,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.717,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.185,
+        "silenceStarts": [
+          0.717083
+        ],
+        "silenceEnds": [
+          0.902
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0017142217240776892,
+        "first10msPeakRatio": 0.006853827517720885,
+        "first10msRmsRatio": 0.0022127494240621443,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 37,
+      "text": "locker",
+      "normalizedText": "locker",
+      "srtStart": "00:04:48,000",
+      "srtEnd": "00:04:56,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.127,
+        "voiceEndSeconds": 0.82,
+        "leadingSilenceSeconds": 0.127,
+        "trailingSilenceSeconds": 7.18,
+        "silenceStarts": [
+          0,
+          0.819637
+        ],
+        "silenceEnds": [
+          0.127234,
+          8
+        ]
+      },
+      "expectedOutputFile": "hallway-lockers--locker.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/hallway-lockers--locker.mp3",
+      "formalTargetPath": "assets/audio/words/campus/hallway-lockers--locker.mp3",
+      "sha256": "72c62b27a6b28816ffb8d4613de522257822c7f9f841509e1409e5edf996fefe",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.866,
+      "sizeBytes": 7725,
+      "formatBitrate": 71328,
+      "integratedLufs": -18.3,
+      "truePeakDbfs": -5.1,
+      "meanVolumeDb": -19.5,
+      "maxVolumeDb": -5.1,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.714,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.152,
+        "silenceStarts": [
+          0.714375
+        ],
+        "silenceEnds": [
+          0.866
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0005690365807128476,
+        "first10msPeakRatio": 0.0008559919990612626,
+        "first10msRmsRatio": 0.00027386480651513784,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 38,
+      "text": "backpack",
+      "normalizedText": "backpack",
+      "srtStart": "00:04:56,000",
+      "srtEnd": "00:05:04,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.132,
+        "voiceEndSeconds": 0.899,
+        "leadingSilenceSeconds": 0.132,
+        "trailingSilenceSeconds": 7.101,
+        "silenceStarts": [
+          0,
+          0.388639,
+          0.898662
+        ],
+        "silenceEnds": [
+          0.131655,
+          0.456122,
+          8
+        ]
+      },
+      "expectedOutputFile": "hallway-lockers--backpack.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/hallway-lockers--backpack.mp3",
+      "formalTargetPath": "assets/audio/words/campus/hallway-lockers--backpack.mp3",
+      "sha256": "a550a72cd76533d6587891182fff67bf6d989358ba54f9fafaf3b9c98d6697c4",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.94,
+      "sizeBytes": 8301,
+      "formatBitrate": 70621,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -2.2,
+      "meanVolumeDb": -18,
+      "maxVolumeDb": -2.3,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.8,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.14,
+        "silenceStarts": [
+          0.294708,
+          0.799875
+        ],
+        "silenceEnds": [
+          0.353,
+          0.94
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0012106441946297725,
+        "first10msPeakRatio": 0.0015166448175771689,
+        "first10msRmsRatio": 0.0006524743959327794,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 2.6997755770821268e-20,
+        "last10msRmsRatio": 7.5286055271653e-21,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 39,
+      "text": "assignment",
+      "normalizedText": "assignment",
+      "srtStart": "00:05:04,000",
+      "srtEnd": "00:05:12,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.126,
+        "voiceEndSeconds": 0.959,
+        "leadingSilenceSeconds": 0.126,
+        "trailingSilenceSeconds": 7.041,
+        "silenceStarts": [
+          0,
+          0.958662
+        ],
+        "silenceEnds": [
+          0.126372,
+          8
+        ]
+      },
+      "expectedOutputFile": "hallway-lockers--assignment.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/hallway-lockers--assignment.mp3",
+      "formalTargetPath": "assets/audio/words/campus/hallway-lockers--assignment.mp3",
+      "sha256": "4a9fd507ba8d249dab17c92be9aa03859914e9a682e8b1a33ce7f2ca47f981db",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.047,
+      "sizeBytes": 9069,
+      "formatBitrate": 69267,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -4.5,
+      "meanVolumeDb": -20,
+      "maxVolumeDb": -4.5,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.862,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.185,
+        "silenceStarts": [
+          0.86175
+        ],
+        "silenceEnds": [
+          1.047
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0003112369001374739,
+        "first10msPeakRatio": 0.0009362313485268817,
+        "first10msRmsRatio": 0.0004911191706669547,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 40,
+      "text": "dismissal",
+      "normalizedText": "dismissal",
+      "srtStart": "00:05:12,000",
+      "srtEnd": "00:05:20,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.13,
+        "voiceEndSeconds": 1.001,
+        "leadingSilenceSeconds": 0.13,
+        "trailingSilenceSeconds": 6.999,
+        "silenceStarts": [
+          0,
+          1.000635
+        ],
+        "silenceEnds": [
+          0.130363,
+          8
+        ]
+      },
+      "expectedOutputFile": "hallway-lockers--dismissal.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/hallway-lockers--dismissal.mp3",
+      "formalTargetPath": "assets/audio/words/campus/hallway-lockers--dismissal.mp3",
+      "sha256": "1c99bb58a572bc5335003b20b7d68b504976b4303f71e091a2cc52fc9783357c",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.087,
+      "sizeBytes": 9453,
+      "formatBitrate": 69555,
+      "integratedLufs": -18.3,
+      "truePeakDbfs": -5.2,
+      "meanVolumeDb": -19.4,
+      "maxVolumeDb": -5.2,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.9,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.187,
+        "silenceStarts": [
+          0.900042
+        ],
+        "silenceEnds": [
+          1.087
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0003016663400794678,
+        "first10msPeakRatio": 0.0006331374209807306,
+        "first10msRmsRatio": 0.0002868310278980516,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 41,
+      "text": "review",
+      "normalizedText": "review",
+      "srtStart": "00:05:20,000",
+      "srtEnd": "00:05:28,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.117,
+        "voiceEndSeconds": 0.916,
+        "leadingSilenceSeconds": 0.117,
+        "trailingSilenceSeconds": 7.084,
+        "silenceStarts": [
+          0,
+          0.915624
+        ],
+        "silenceEnds": [
+          0.117166,
+          8
+        ]
+      },
+      "expectedOutputFile": "hallway-lockers--review.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/hallway-lockers--review.mp3",
+      "formalTargetPath": "assets/audio/words/campus/hallway-lockers--review.mp3",
+      "sha256": "a88b1fa3f0400015ceab99432ca130ed04efcc3409fef45d32724e201119c1b7",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.007,
+      "sizeBytes": 8685,
+      "formatBitrate": 68977,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -6.6,
+      "meanVolumeDb": -18.7,
+      "maxVolumeDb": -6.6,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.821,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.186,
+        "silenceStarts": [
+          0.821
+        ],
+        "silenceEnds": [
+          1.007
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00006282974550457889,
+        "first10msPeakRatio": 0.001800969469868739,
+        "first10msRmsRatio": 0.000690385852382697,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 42,
+      "text": "auditorium",
+      "normalizedText": "auditorium",
+      "srtStart": "00:05:28,000",
+      "srtEnd": "00:05:36,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.128,
+        "voiceEndSeconds": 1.135,
+        "leadingSilenceSeconds": 0.128,
+        "trailingSilenceSeconds": 6.865,
+        "silenceStarts": [
+          0,
+          1.135193
+        ],
+        "silenceEnds": [
+          0.128095,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-places--auditorium.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-places--auditorium.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-places--auditorium.mp3",
+      "sha256": "e033f243fdf491c43766d5499f6c9a217ede93c337a0c7b0ad1aaf966274b03a",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.219,
+      "sizeBytes": 10413,
+      "formatBitrate": 68328,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -5.9,
+      "meanVolumeDb": -18.9,
+      "maxVolumeDb": -6,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.034,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.185,
+        "silenceStarts": [
+          1.033875
+        ],
+        "silenceEnds": [
+          1.219
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0017724644612834308,
+        "first10msPeakRatio": 0.0017724644612834308,
+        "first10msRmsRatio": 0.0007839308580163654,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 43,
+      "text": "gymnasium",
+      "normalizedText": "gymnasium",
+      "srtStart": "00:05:36,000",
+      "srtEnd": "00:05:44,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.115,
+        "voiceEndSeconds": 1.126,
+        "leadingSilenceSeconds": 0.115,
+        "trailingSilenceSeconds": 6.874,
+        "silenceStarts": [
+          0,
+          1.126463
+        ],
+        "silenceEnds": [
+          0.114785,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-places--gymnasium.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-places--gymnasium.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-places--gymnasium.mp3",
+      "sha256": "411c9ffb7f16443c18c6f62be460237f53270a4159b7f58b086b8716e2abe2a6",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.206,
+      "sizeBytes": 10413,
+      "formatBitrate": 69055,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -6.4,
+      "meanVolumeDb": -18.8,
+      "maxVolumeDb": -6.4,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.028,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.178,
+        "silenceStarts": [
+          1.028417
+        ],
+        "silenceEnds": [
+          1.206
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00028338970359660475,
+        "first10msPeakRatio": 0.002227635726152789,
+        "first10msRmsRatio": 0.0009946358027593928,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 44,
+      "text": "laboratory",
+      "normalizedText": "laboratory",
+      "srtStart": "00:05:44,000",
+      "srtEnd": "00:05:52,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.117,
+        "voiceEndSeconds": 1.094,
+        "leadingSilenceSeconds": 0.117,
+        "trailingSilenceSeconds": 6.906,
+        "silenceStarts": [
+          0,
+          1.094036
+        ],
+        "silenceEnds": [
+          0.116916,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-places--laboratory.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-places--laboratory.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-places--laboratory.mp3",
+      "sha256": "78880449e66d12906d7f8521f41facde5bdc7c0bab8c2adf0b0a7c5f14b6e776",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.185,
+      "sizeBytes": 10221,
+      "formatBitrate": 69026,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -5.1,
+      "meanVolumeDb": -18.9,
+      "maxVolumeDb": -5.1,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.992,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.193,
+        "silenceStarts": [
+          0.992417
+        ],
+        "silenceEnds": [
+          1.184583
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.000028453451378369408,
+        "first10msPeakRatio": 0.0008124684074092857,
+        "first10msRmsRatio": 0.00032903997109963006,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 45,
+      "text": "art room",
+      "normalizedText": "art room",
+      "srtStart": "00:05:52,000",
+      "srtEnd": "00:06:00,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.12,
+        "voiceEndSeconds": 0.879,
+        "leadingSilenceSeconds": 0.12,
+        "trailingSilenceSeconds": 7.121,
+        "silenceStarts": [
+          0,
+          0.879093
+        ],
+        "silenceEnds": [
+          0.120249,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-places--art-room.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-places--art-room.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-places--art-room.mp3",
+      "sha256": "98d82df34cca09310676f70610cb0365c983c07fe20784ad297722967d5cd89a",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.981,
+      "sizeBytes": 8493,
+      "formatBitrate": 69277,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -5,
+      "meanVolumeDb": -18.6,
+      "maxVolumeDb": -5.1,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.788,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.193,
+        "silenceStarts": [
+          0.788208
+        ],
+        "silenceEnds": [
+          0.98075
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00001973524657776084,
+        "first10msPeakRatio": 0.001004022964078405,
+        "first10msRmsRatio": 0.00024517551760633565,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 46,
+      "text": "music room",
+      "normalizedText": "music room",
+      "srtStart": "00:06:00,000",
+      "srtEnd": "00:06:08,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.119,
+        "voiceEndSeconds": 1.138,
+        "leadingSilenceSeconds": 0.119,
+        "trailingSilenceSeconds": 6.862,
+        "silenceStarts": [
+          0,
+          1.138277
+        ],
+        "silenceEnds": [
+          0.119365,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-places--music-room.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-places--music-room.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-places--music-room.mp3",
+      "sha256": "fde4ddc106d854004b2188fd8ee4b4373f32ffbd9cd16fab0c0d462f2b699fd8",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.23,
+      "sizeBytes": 10605,
+      "formatBitrate": 68956,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -4.5,
+      "meanVolumeDb": -18.6,
+      "maxVolumeDb": -4.5,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.043,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.187,
+        "silenceStarts": [
+          1.042625
+        ],
+        "silenceEnds": [
+          1.23
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.000012564443479736958,
+        "first10msPeakRatio": 0.0005458760859566563,
+        "first10msRmsRatio": 0.00020584542507610018,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 47,
+      "text": "nurse's office",
+      "normalizedText": "nurse's office",
+      "srtStart": "00:06:08,000",
+      "srtEnd": "00:06:16,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.112,
+        "voiceEndSeconds": 1.252,
+        "leadingSilenceSeconds": 0.112,
+        "trailingSilenceSeconds": 6.748,
+        "silenceStarts": [
+          0,
+          1.252109
+        ],
+        "silenceEnds": [
+          0.112245,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-places--nurses-office.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-places--nurses-office.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-places--nurses-office.mp3",
+      "sha256": "3b8684db2531da6c9f22fc89426ecc3e944a57f32c638cb109b1039e1f1b4912",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.349,
+      "sizeBytes": 11565,
+      "formatBitrate": 68594,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -4.4,
+      "meanVolumeDb": -19.3,
+      "maxVolumeDb": -4.4,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.164,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.185,
+        "silenceStarts": [
+          1.163917
+        ],
+        "silenceEnds": [
+          1.348792
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00006474405546297548,
+        "first10msPeakRatio": 0.000992735822581534,
+        "first10msRmsRatio": 0.00016461473070139866,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 48,
+      "text": "principal's office",
+      "normalizedText": "principal's office",
+      "srtStart": "00:06:16,000",
+      "srtEnd": "00:06:24,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.123,
+        "voiceEndSeconds": 1.418,
+        "leadingSilenceSeconds": 0.123,
+        "trailingSilenceSeconds": 6.582,
+        "silenceStarts": [
+          0,
+          1.418367
+        ],
+        "silenceEnds": [
+          0.122676,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-places--principals-office.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-places--principals-office.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-places--principals-office.mp3",
+      "sha256": "5b3de302ad4403573ca477113519cd9c5cd3a275b3fe17531fd43257e90c239b",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.468,
+      "sizeBytes": 12525,
+      "formatBitrate": 68279,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -3.3,
+      "meanVolumeDb": -18.6,
+      "maxVolumeDb": -3.3,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.323,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.145,
+        "silenceStarts": [
+          1.323167
+        ],
+        "silenceEnds": [
+          1.4675
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00043524171261849416,
+        "first10msPeakRatio": 0.001764875895273885,
+        "first10msRmsRatio": 0.0010659898834736864,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 49,
+      "text": "dormitory",
+      "normalizedText": "dormitory",
+      "srtStart": "00:06:24,000",
+      "srtEnd": "00:06:32,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.136,
+        "voiceEndSeconds": 1.028,
+        "leadingSilenceSeconds": 0.136,
+        "trailingSilenceSeconds": 6.972,
+        "silenceStarts": [
+          0,
+          1.02839
+        ],
+        "silenceEnds": [
+          0.136327,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-places--dormitory.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-places--dormitory.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-places--dormitory.mp3",
+      "sha256": "e61425b573c03cc333abd090f968aa19b3135d668a1544fc615759004ff6de4b",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.11,
+      "sizeBytes": 9645,
+      "formatBitrate": 69505,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -6.4,
+      "meanVolumeDb": -18.4,
+      "maxVolumeDb": -6.4,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.918,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.192,
+        "silenceStarts": [
+          0.917583
+        ],
+        "silenceEnds": [
+          1.11
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0003868838065726956,
+        "first10msPeakRatio": 0.0005559080642490179,
+        "first10msRmsRatio": 0.0002822882863574368,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 50,
+      "text": "computer lab",
+      "normalizedText": "computer lab",
+      "srtStart": "00:06:32,000",
+      "srtEnd": "00:06:40,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.126,
+        "voiceEndSeconds": 1.127,
+        "leadingSilenceSeconds": 0.126,
+        "trailingSilenceSeconds": 6.873,
+        "silenceStarts": [
+          0,
+          1.126508
+        ],
+        "silenceEnds": [
+          0.126054,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-places--computer-lab.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-places--computer-lab.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-places--computer-lab.mp3",
+      "sha256": "b3f7c437b14612ad139365468aed0fc28f0daf10a6d939ca7ca2d7c697a2dff9",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.226,
+      "sizeBytes": 10605,
+      "formatBitrate": 69203,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -5.8,
+      "meanVolumeDb": -19,
+      "maxVolumeDb": -5.8,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.03,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.196,
+        "silenceStarts": [
+          1.029708
+        ],
+        "silenceEnds": [
+          1.225958
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0009206544942551753,
+        "first10msPeakRatio": 0.002626506773986624,
+        "first10msRmsRatio": 0.0018765838461142037,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 51,
+      "text": "assembly hall",
+      "normalizedText": "assembly hall",
+      "srtStart": "00:06:40,000",
+      "srtEnd": "00:06:48,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.12,
+        "voiceEndSeconds": 1.309,
+        "leadingSilenceSeconds": 0.12,
+        "trailingSilenceSeconds": 6.691,
+        "silenceStarts": [
+          0,
+          1.309365
+        ],
+        "silenceEnds": [
+          0.120317,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-places--assembly-hall.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-places--assembly-hall.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-places--assembly-hall.mp3",
+      "sha256": "7fd649155ae313cfed7305d0b28b95ac2f933a4b622e9949832325f53a933192",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.403,
+      "sizeBytes": 11949,
+      "formatBitrate": 68150,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -5.5,
+      "meanVolumeDb": -18.8,
+      "maxVolumeDb": -5.5,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.213,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.19,
+        "silenceStarts": [
+          1.212958
+        ],
+        "silenceEnds": [
+          1.402667
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00018476852505742262,
+        "first10msPeakRatio": 0.000439527217740577,
+        "first10msRmsRatio": 0.00016729374804889954,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 52,
+      "text": "staircase",
+      "normalizedText": "staircase",
+      "srtStart": "00:06:48,000",
+      "srtEnd": "00:06:56,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.114,
+        "voiceEndSeconds": 1.052,
+        "leadingSilenceSeconds": 0.114,
+        "trailingSilenceSeconds": 6.948,
+        "silenceStarts": [
+          0,
+          1.052381
+        ],
+        "silenceEnds": [
+          0.113878,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-places--staircase.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-places--staircase.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-places--staircase.mp3",
+      "sha256": "667e7bdef1049f13045bb6a61988911d54722cf6686a397f92138f26dcd733c0",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.108,
+      "sizeBytes": 9645,
+      "formatBitrate": 69644,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -4.5,
+      "meanVolumeDb": -19.2,
+      "maxVolumeDb": -4.5,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.956,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.152,
+        "silenceStarts": [
+          0.955708
+        ],
+        "silenceEnds": [
+          1.107917
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00020115166438357146,
+        "first10msPeakRatio": 0.000938244010462949,
+        "first10msRmsRatio": 0.00039892280139128586,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 53,
+      "text": "parking lot",
+      "normalizedText": "parking lot",
+      "srtStart": "00:06:56,000",
+      "srtEnd": "00:07:04,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.132,
+        "voiceEndSeconds": 1.006,
+        "leadingSilenceSeconds": 0.132,
+        "trailingSilenceSeconds": 6.994,
+        "silenceStarts": [
+          0,
+          1.006032
+        ],
+        "silenceEnds": [
+          0.13229,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-places--parking-lot.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-places--parking-lot.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-places--parking-lot.mp3",
+      "sha256": "cf4b464060898e0d9a6d81ad945cc670b6f47e73d6e0657485f425bddfc88b47",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.09,
+      "sizeBytes": 9453,
+      "formatBitrate": 69361,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -3.8,
+      "meanVolumeDb": -18.4,
+      "maxVolumeDb": -3.8,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.905,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.185,
+        "silenceStarts": [
+          0.905083
+        ],
+        "silenceEnds": [
+          1.09
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0009834731313380991,
+        "first10msPeakRatio": 0.0012447689286469242,
+        "first10msRmsRatio": 0.0005290152103452362,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 54,
+      "text": "pencil",
+      "normalizedText": "pencil",
+      "srtStart": "00:07:04,000",
+      "srtEnd": "00:07:12,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.133,
+        "voiceEndSeconds": 0.791,
+        "leadingSilenceSeconds": 0.133,
+        "trailingSilenceSeconds": 7.209,
+        "silenceStarts": [
+          0,
+          0.790522
+        ],
+        "silenceEnds": [
+          0.132812,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-objects--pencil.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-objects--pencil.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-objects--pencil.mp3",
+      "sha256": "6bb22a7e25710c8d631146520baf1440aa70374380f68540ade6854e90a2dd2d",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.874,
+      "sizeBytes": 7725,
+      "formatBitrate": 70749,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -5.8,
+      "meanVolumeDb": -19,
+      "maxVolumeDb": -5.8,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.68,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.194,
+        "silenceStarts": [
+          0.679708
+        ],
+        "silenceEnds": [
+          0.8735
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00005003522178001245,
+        "first10msPeakRatio": 0.0015373270853747169,
+        "first10msRmsRatio": 0.0008465457691924449,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 55,
+      "text": "eraser",
+      "normalizedText": "eraser",
+      "srtStart": "00:07:12,000",
+      "srtEnd": "00:07:20,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.126,
+        "voiceEndSeconds": 1.024,
+        "leadingSilenceSeconds": 0.126,
+        "trailingSilenceSeconds": 6.976,
+        "silenceStarts": [
+          0,
+          1.024263
+        ],
+        "silenceEnds": [
+          0.126054,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-objects--eraser.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-objects--eraser.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-objects--eraser.mp3",
+      "sha256": "2817ef14f5c4b5428c4de24896e2d6874b0b9f2782c560e3a9b8e76a4a11b8dd",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.121,
+      "sizeBytes": 9645,
+      "formatBitrate": 68818,
+      "integratedLufs": -18.3,
+      "truePeakDbfs": -5.8,
+      "meanVolumeDb": -19,
+      "maxVolumeDb": -5.8,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.927,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.194,
+        "silenceStarts": [
+          0.927083
+        ],
+        "silenceEnds": [
+          1.121
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0005082364115801577,
+        "first10msPeakRatio": 0.0016076215258129594,
+        "first10msRmsRatio": 0.0007735719439859722,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 56,
+      "text": "ruler",
+      "normalizedText": "ruler",
+      "srtStart": "00:07:20,000",
+      "srtEnd": "00:07:28,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.114,
+        "voiceEndSeconds": 0.787,
+        "leadingSilenceSeconds": 0.114,
+        "trailingSilenceSeconds": 7.213,
+        "silenceStarts": [
+          0,
+          0.786916
+        ],
+        "silenceEnds": [
+          0.114308,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-objects--ruler.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-objects--ruler.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-objects--ruler.mp3",
+      "sha256": "5b79b659f083736626eb36e929cf209bd664509d4ee4e251bd4bc7b617c80bde",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.872,
+      "sizeBytes": 7725,
+      "formatBitrate": 70878,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -7.1,
+      "meanVolumeDb": -19.3,
+      "maxVolumeDb": -7.1,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.691,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.181,
+        "silenceStarts": [
+          0.691208
+        ],
+        "silenceEnds": [
+          0.871917
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0002492019966011306,
+        "first10msPeakRatio": 0.0013542720293122906,
+        "first10msRmsRatio": 0.0004700920806983764,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 57,
+      "text": "marker",
+      "normalizedText": "marker",
+      "srtStart": "00:07:28,000",
+      "srtEnd": "00:07:36,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.116,
+        "voiceEndSeconds": 0.816,
+        "leadingSilenceSeconds": 0.116,
+        "trailingSilenceSeconds": 7.184,
+        "silenceStarts": [
+          0,
+          0.816122
+        ],
+        "silenceEnds": [
+          0.11619,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-objects--marker.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-objects--marker.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-objects--marker.mp3",
+      "sha256": "74d5cb985d681aa17754faa911796edf0e5569a748e8faa1348975dddff7306f",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.904,
+      "sizeBytes": 7917,
+      "formatBitrate": 70068,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -4.9,
+      "meanVolumeDb": -18.8,
+      "maxVolumeDb": -4.9,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.722,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.182,
+        "silenceStarts": [
+          0.72225
+        ],
+        "silenceEnds": [
+          0.903917
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.000005970169333616824,
+        "first10msPeakRatio": 0.0007027243208776757,
+        "first10msRmsRatio": 0.0001993707792646,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 58,
+      "text": "textbook",
+      "normalizedText": "textbook",
+      "srtStart": "00:07:36,000",
+      "srtEnd": "00:07:44,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.129,
+        "voiceEndSeconds": 0.913,
+        "leadingSilenceSeconds": 0.129,
+        "trailingSilenceSeconds": 7.087,
+        "silenceStarts": [
+          0,
+          0.913084
+        ],
+        "silenceEnds": [
+          0.128571,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-objects--textbook.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-objects--textbook.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-objects--textbook.mp3",
+      "sha256": "3c13c280d6195a0073e26983a0786854f526af8fca30fa4a68adbefacfc44133",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.997,
+      "sizeBytes": 8685,
+      "formatBitrate": 69686,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -3,
+      "meanVolumeDb": -18.4,
+      "maxVolumeDb": -3,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.814,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.183,
+        "silenceStarts": [
+          0.814458
+        ],
+        "silenceEnds": [
+          0.997
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.002062141033626861,
+        "first10msPeakRatio": 0.0026986351546627787,
+        "first10msRmsRatio": 0.001872720911585827,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 59,
+      "text": "workbook",
+      "normalizedText": "workbook",
+      "srtStart": "00:07:44,000",
+      "srtEnd": "00:07:52,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.113,
+        "voiceEndSeconds": 0.883,
+        "leadingSilenceSeconds": 0.113,
+        "trailingSilenceSeconds": 7.117,
+        "silenceStarts": [
+          0,
+          0.882562
+        ],
+        "silenceEnds": [
+          0.113084,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-objects--workbook.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-objects--workbook.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-objects--workbook.mp3",
+      "sha256": "d20a127975a50567f14870263ac716156dae13ef7f29d4da58537b67a8a5712f",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.963,
+      "sizeBytes": 8493,
+      "formatBitrate": 70572,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -5.1,
+      "meanVolumeDb": -18.8,
+      "maxVolumeDb": -5.2,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.789,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.174,
+        "silenceStarts": [
+          0.366625,
+          0.789417
+        ],
+        "silenceEnds": [
+          0.429167,
+          0.96275
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00006934313456882683,
+        "first10msPeakRatio": 0.0007716986903679514,
+        "first10msRmsRatio": 0.000361880782526794,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 60,
+      "text": "folder",
+      "normalizedText": "folder",
+      "srtStart": "00:07:52,000",
+      "srtEnd": "00:08:00,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.096,
+        "voiceEndSeconds": 0.687,
+        "leadingSilenceSeconds": 0.096,
+        "trailingSilenceSeconds": 7.313,
+        "silenceStarts": [
+          0,
+          0.686961
+        ],
+        "silenceEnds": [
+          0.0964853,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-objects--folder.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-objects--folder.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-objects--folder.mp3",
+      "sha256": "07cd4dd2a874e702c7c35233c7b6bf68e930e4f45b0797b013cbfb38dfd9e826",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.777,
+      "sizeBytes": 6957,
+      "formatBitrate": 71656,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -7.8,
+      "meanVolumeDb": -19.3,
+      "maxVolumeDb": -7.8,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.588,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.189,
+        "silenceStarts": [
+          0.58775
+        ],
+        "silenceEnds": [
+          0.776708
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00002612235636678561,
+        "first10msPeakRatio": 0.000494683236077309,
+        "first10msRmsRatio": 0.00014388457696981241,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 61,
+      "text": "calculator",
+      "normalizedText": "calculator",
+      "srtStart": "00:08:00,000",
+      "srtEnd": "00:08:08,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.129,
+        "voiceEndSeconds": 1.073,
+        "leadingSilenceSeconds": 0.129,
+        "trailingSilenceSeconds": 6.927,
+        "silenceStarts": [
+          0,
+          1.07254
+        ],
+        "silenceEnds": [
+          0.128549,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-objects--calculator.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-objects--calculator.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-objects--calculator.mp3",
+      "sha256": "6b841066a80e136704dcc3682ebddb75a5de0b204fe6fa3f2779fc13425d0bf9",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.13,
+      "sizeBytes": 9837,
+      "formatBitrate": 69645,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -4.5,
+      "meanVolumeDb": -18.5,
+      "maxVolumeDb": -4.5,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.97,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.16,
+        "silenceStarts": [
+          0.970208
+        ],
+        "silenceEnds": [
+          1.129958
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0010915796537650378,
+        "first10msPeakRatio": 0.0011133414517998203,
+        "first10msRmsRatio": 0.0005375642462363779,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 62,
+      "text": "glue",
+      "normalizedText": "glue",
+      "srtStart": "00:08:08,000",
+      "srtEnd": "00:08:16,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.128,
+        "voiceEndSeconds": 0.685,
+        "leadingSilenceSeconds": 0.128,
+        "trailingSilenceSeconds": 7.315,
+        "silenceStarts": [
+          0,
+          0.68517
+        ],
+        "silenceEnds": [
+          0.127687,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-objects--glue.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-objects--glue.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-objects--glue.mp3",
+      "sha256": "e63070843a04cbebca8195d9178dfac5a83060e721f78045be6dbe089094adf3",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.767,
+      "sizeBytes": 6765,
+      "formatBitrate": 70575,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -5.8,
+      "meanVolumeDb": -19.2,
+      "maxVolumeDb": -5.8,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.582,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.185,
+        "silenceStarts": [
+          0.581542
+        ],
+        "silenceEnds": [
+          0.766833
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00041536595099414,
+        "first10msPeakRatio": 0.0014750932977557094,
+        "first10msRmsRatio": 0.0008942467109908491,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 63,
+      "text": "scissors",
+      "normalizedText": "scissors",
+      "srtStart": "00:08:16,000",
+      "srtEnd": "00:08:24,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.116,
+        "voiceEndSeconds": 0.952,
+        "leadingSilenceSeconds": 0.116,
+        "trailingSilenceSeconds": 7.048,
+        "silenceStarts": [
+          0,
+          0.952449
+        ],
+        "silenceEnds": [
+          0.11576,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-objects--scissors.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-objects--scissors.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-objects--scissors.mp3",
+      "sha256": "28fc16f5a80a362feacaa6171d765ea8235b3f0bd1e059df75ae8bb659fbe957",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.038,
+      "sizeBytes": 9069,
+      "formatBitrate": 69904,
+      "integratedLufs": -18.3,
+      "truePeakDbfs": -3.8,
+      "meanVolumeDb": -19.9,
+      "maxVolumeDb": -3.9,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.847,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.191,
+        "silenceStarts": [
+          0.847125
+        ],
+        "silenceEnds": [
+          1.037875
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00041660707669080756,
+        "first10msPeakRatio": 0.0027029867708296233,
+        "first10msRmsRatio": 0.0010391346480617954,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 64,
+      "text": "compass",
+      "normalizedText": "compass",
+      "srtStart": "00:08:24,000",
+      "srtEnd": "00:08:32,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.132,
+        "voiceEndSeconds": 0.817,
+        "leadingSilenceSeconds": 0.132,
+        "trailingSilenceSeconds": 7.183,
+        "silenceStarts": [
+          0,
+          0.816621
+        ],
+        "silenceEnds": [
+          0.132336,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-objects--compass.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-objects--compass.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-objects--compass.mp3",
+      "sha256": "7e6f1b1228895c2567f8b2ad6fb8dde6d42d09dff59b2a86a77ca19dd829f1bb",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.872,
+      "sizeBytes": 7725,
+      "formatBitrate": 70888,
+      "integratedLufs": -18.3,
+      "truePeakDbfs": -3.6,
+      "meanVolumeDb": -18.8,
+      "maxVolumeDb": -3.7,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.716,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.156,
+        "silenceStarts": [
+          0.716
+        ],
+        "silenceEnds": [
+          0.871792
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.001011552249389209,
+        "first10msPeakRatio": 0.00154066766394716,
+        "first10msRmsRatio": 0.0008279535200615044,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 65,
+      "text": "stapler",
+      "normalizedText": "stapler",
+      "srtStart": "00:08:32,000",
+      "srtEnd": "00:08:40,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.114,
+        "voiceEndSeconds": 0.965,
+        "leadingSilenceSeconds": 0.114,
+        "trailingSilenceSeconds": 7.035,
+        "silenceStarts": [
+          0,
+          0.964989
+        ],
+        "silenceEnds": [
+          0.113605,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-objects--stapler.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-objects--stapler.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-objects--stapler.mp3",
+      "sha256": "600962ba1da7cfcd2837fe9b3fff60bb551354244ac39d1f1eadd7f555cb7642",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.028,
+      "sizeBytes": 8877,
+      "formatBitrate": 69062,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -4.1,
+      "meanVolumeDb": -19.2,
+      "maxVolumeDb": -4.1,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.867,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.161,
+        "silenceStarts": [
+          0.866958
+        ],
+        "silenceEnds": [
+          1.028
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00005251201357819762,
+        "first10msPeakRatio": 0.001014187992338801,
+        "first10msRmsRatio": 0.0004329211504603903,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 66,
+      "text": "attendance",
+      "normalizedText": "attendance",
+      "srtStart": "00:08:40,000",
+      "srtEnd": "00:08:48,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.123,
+        "voiceEndSeconds": 1.055,
+        "leadingSilenceSeconds": 0.123,
+        "trailingSilenceSeconds": 6.945,
+        "silenceStarts": [
+          0,
+          1.054558
+        ],
+        "silenceEnds": [
+          0.123243,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-life--attendance.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-life--attendance.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-life--attendance.mp3",
+      "sha256": "56c95a820e78c2b36e0b4c700daeee411d7d93c45ddb09228981610a1ba1fca6",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.124,
+      "sizeBytes": 9645,
+      "formatBitrate": 68675,
+      "integratedLufs": -18.3,
+      "truePeakDbfs": -5.3,
+      "meanVolumeDb": -19.7,
+      "maxVolumeDb": -5.3,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.961,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.163,
+        "silenceStarts": [
+          0.960833
+        ],
+        "silenceEnds": [
+          1.123542
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0007316231121328131,
+        "first10msPeakRatio": 0.0007316231121328131,
+        "first10msRmsRatio": 0.00021073436584615187,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 67,
+      "text": "homework",
+      "normalizedText": "homework",
+      "srtStart": "00:08:48,000",
+      "srtEnd": "00:08:56,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.11,
+        "voiceEndSeconds": 0.793,
+        "leadingSilenceSeconds": 0.11,
+        "trailingSilenceSeconds": 7.207,
+        "silenceStarts": [
+          0,
+          0.792971
+        ],
+        "silenceEnds": [
+          0.110204,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-life--homework.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-life--homework.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-life--homework.mp3",
+      "sha256": "9f8789a9b6926a52135db7a0efd855e8a3a389e8e6ce713af9b0faead3af4c28",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.872,
+      "sizeBytes": 7725,
+      "formatBitrate": 70861,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -5.1,
+      "meanVolumeDb": -18.6,
+      "maxVolumeDb": -5.1,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.684,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.188,
+        "silenceStarts": [
+          0.559,
+          0.684375
+        ],
+        "silenceEnds": [
+          0.61125,
+          0.872
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0011640863030947448,
+        "first10msPeakRatio": 0.016769819353905254,
+        "first10msRmsRatio": 0.0038190947915659247,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 68,
+      "text": "project",
+      "normalizedText": "project",
+      "srtStart": "00:08:56,000",
+      "srtEnd": "00:09:04,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.125,
+        "voiceEndSeconds": 0.8,
+        "leadingSilenceSeconds": 0.125,
+        "trailingSilenceSeconds": 7.2,
+        "silenceStarts": [
+          0,
+          0.637732,
+          0.799955
+        ],
+        "silenceEnds": [
+          0.125329,
+          0.717551,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-life--project.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-life--project.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-life--project.mp3",
+      "sha256": "68b605e285389c8deaf3af2169c5e3755ae5d44f06934cdb5054ab14b5de4406",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.875,
+      "sizeBytes": 7725,
+      "formatBitrate": 70645,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -4.9,
+      "meanVolumeDb": -19.2,
+      "maxVolumeDb": -4.9,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.702,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.173,
+        "silenceStarts": [
+          0.533542,
+          0.702417
+        ],
+        "silenceEnds": [
+          0.620625,
+          0.874792
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0004941289963200657,
+        "first10msPeakRatio": 0.0012442290126931425,
+        "first10msRmsRatio": 0.0006476559684006386,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 69,
+      "text": "presentation",
+      "normalizedText": "presentation",
+      "srtStart": "00:09:04,000",
+      "srtEnd": "00:09:12,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.126,
+        "voiceEndSeconds": 1.186,
+        "leadingSilenceSeconds": 0.126,
+        "trailingSilenceSeconds": 6.814,
+        "silenceStarts": [
+          0,
+          1.186077
+        ],
+        "silenceEnds": [
+          0.126327,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-life--presentation.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-life--presentation.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-life--presentation.mp3",
+      "sha256": "77aaf225a25a35ca938564d58d0540dcda175a09eeb53829c088c6c997e998c8",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.268,
+      "sizeBytes": 10797,
+      "formatBitrate": 68117,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -4,
+      "meanVolumeDb": -18.7,
+      "maxVolumeDb": -4,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.088,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.18,
+        "silenceStarts": [
+          1.088083
+        ],
+        "silenceEnds": [
+          1.268
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0008061321100856061,
+        "first10msPeakRatio": 0.001380435541598379,
+        "first10msRmsRatio": 0.0008141162019484482,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 70,
+      "text": "experiment",
+      "normalizedText": "experiment",
+      "srtStart": "00:09:12,000",
+      "srtEnd": "00:09:20,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.132,
+        "voiceEndSeconds": 1.035,
+        "leadingSilenceSeconds": 0.132,
+        "trailingSilenceSeconds": 6.965,
+        "silenceStarts": [
+          0,
+          0.38059,
+          1.034966
+        ],
+        "silenceEnds": [
+          0.131565,
+          0.441859,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-life--experiment.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-life--experiment.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-life--experiment.mp3",
+      "sha256": "04ac603d15891e6fbc0b80603caa323a94361309a00b764ea4b736e75c33775d",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.112,
+      "sizeBytes": 9645,
+      "formatBitrate": 69383,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -5.4,
+      "meanVolumeDb": -19.8,
+      "maxVolumeDb": -5.4,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.933,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.179,
+        "silenceStarts": [
+          0.932958
+        ],
+        "silenceEnds": [
+          1.112
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00022909209392988993,
+        "first10msPeakRatio": 0.000912664673688997,
+        "first10msRmsRatio": 0.00034559071731661214,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 71,
+      "text": "exam",
+      "normalizedText": "exam",
+      "srtStart": "00:09:20,000",
+      "srtEnd": "00:09:28,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.13,
+        "voiceEndSeconds": 0.885,
+        "leadingSilenceSeconds": 0.13,
+        "trailingSilenceSeconds": 7.115,
+        "silenceStarts": [
+          0,
+          0.884921
+        ],
+        "silenceEnds": [
+          0.129955,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-life--exam.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-life--exam.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-life--exam.mp3",
+      "sha256": "bfff20ffe90d3e47b2e65691042c2821fe18c089838dbf2225acc2e6f1fe3073",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.969,
+      "sizeBytes": 8493,
+      "formatBitrate": 70084,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -5.7,
+      "meanVolumeDb": -19.5,
+      "maxVolumeDb": -5.7,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.784,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.185,
+        "silenceStarts": [
+          0.784208
+        ],
+        "silenceEnds": [
+          0.969
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00015125148153178074,
+        "first10msPeakRatio": 0.00044949274888534936,
+        "first10msRmsRatio": 0.00020549959502388207,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 72,
+      "text": "grade",
+      "normalizedText": "grade",
+      "srtStart": "00:09:28,000",
+      "srtEnd": "00:09:36,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.125,
+        "voiceEndSeconds": 0.672,
+        "leadingSilenceSeconds": 0.125,
+        "trailingSilenceSeconds": 7.328,
+        "silenceStarts": [
+          0,
+          0.672404
+        ],
+        "silenceEnds": [
+          0.125351,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-life--grade.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-life--grade.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-life--grade.mp3",
+      "sha256": "1b66cf06fc64e6a1833244cf4177888c4d248b0596d941454b9d08b238317a69",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.753,
+      "sizeBytes": 6765,
+      "formatBitrate": 71908,
+      "integratedLufs": -18.3,
+      "truePeakDbfs": -5.1,
+      "meanVolumeDb": -19,
+      "maxVolumeDb": -5.1,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.575,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.178,
+        "silenceStarts": [
+          0.575167
+        ],
+        "silenceEnds": [
+          0.752625
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0016245987752540744,
+        "first10msPeakRatio": 0.004402055186179516,
+        "first10msRmsRatio": 0.0028906411792065634,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 73,
+      "text": "recess",
+      "normalizedText": "recess",
+      "srtStart": "00:09:36,000",
+      "srtEnd": "00:09:44,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.123,
+        "voiceEndSeconds": 0.971,
+        "leadingSilenceSeconds": 0.123,
+        "trailingSilenceSeconds": 7.029,
+        "silenceStarts": [
+          0,
+          0.971202
+        ],
+        "silenceEnds": [
+          0.123129,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-life--recess.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-life--recess.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-life--recess.mp3",
+      "sha256": "c8c61cdc2071cd9c086b406688fb7bc564bf9c16b165497419382f41493d97de",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.025,
+      "sizeBytes": 8877,
+      "formatBitrate": 69275,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -5,
+      "meanVolumeDb": -19.4,
+      "maxVolumeDb": -5.1,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.87,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.155,
+        "silenceStarts": [
+          0.870333
+        ],
+        "silenceEnds": [
+          1.025
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0003177661598838515,
+        "first10msPeakRatio": 0.0009894280203328126,
+        "first10msRmsRatio": 0.0004544470299925561,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 74,
+      "text": "club",
+      "normalizedText": "club",
+      "srtStart": "00:09:44,000",
+      "srtEnd": "00:09:52,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.126,
+        "voiceEndSeconds": 0.663,
+        "leadingSilenceSeconds": 0.126,
+        "trailingSilenceSeconds": 7.337,
+        "silenceStarts": [
+          0,
+          0.663243
+        ],
+        "silenceEnds": [
+          0.125782,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-life--club.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-life--club.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-life--club.mp3",
+      "sha256": "8ca99fdc7f8b26651bafd398b93fdf93ed1e7412c0e279992ead0c0030a29e74",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.756,
+      "sizeBytes": 6765,
+      "formatBitrate": 71567,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -6.1,
+      "meanVolumeDb": -19.7,
+      "maxVolumeDb": -6.1,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.566,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.19,
+        "silenceStarts": [
+          0.56575
+        ],
+        "silenceEnds": [
+          0.756
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0007582636787067532,
+        "first10msPeakRatio": 0.0013993758986961217,
+        "first10msRmsRatio": 0.0008554886700904765,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 75,
+      "text": "semester",
+      "normalizedText": "semester",
+      "srtStart": "00:09:52,000",
+      "srtEnd": "00:10:00,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.113,
+        "voiceEndSeconds": 0.964,
+        "leadingSilenceSeconds": 0.113,
+        "trailingSilenceSeconds": 7.036,
+        "silenceStarts": [
+          0,
+          0.963923
+        ],
+        "silenceEnds": [
+          0.113469,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-life--semester.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-life--semester.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-life--semester.mp3",
+      "sha256": "8755adbe215151f37d55196533f83eca4d7a886c2a1cdfa84634e436928bf0d5",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.061,
+      "sizeBytes": 9261,
+      "formatBitrate": 69820,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -5.1,
+      "meanVolumeDb": -19.7,
+      "maxVolumeDb": -5.1,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.865,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.196,
+        "silenceStarts": [
+          0.864958
+        ],
+        "silenceEnds": [
+          1.061
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00027183174511103526,
+        "first10msPeakRatio": 0.001242886064193631,
+        "first10msRmsRatio": 0.0003872911628834742,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 76,
+      "text": "timetable",
+      "normalizedText": "timetable",
+      "srtStart": "00:10:00,000",
+      "srtEnd": "00:10:08,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.124,
+        "voiceEndSeconds": 0.927,
+        "leadingSilenceSeconds": 0.124,
+        "trailingSilenceSeconds": 7.073,
+        "silenceStarts": [
+          0,
+          0.927302
+        ],
+        "silenceEnds": [
+          0.123946,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-life--timetable.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-life--timetable.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-life--timetable.mp3",
+      "sha256": "0f8f509b6b80806f19b5f026f04ab8500d5a6b9c9b617432be95c4289601142d",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.006,
+      "sizeBytes": 8685,
+      "formatBitrate": 69045,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -5.1,
+      "meanVolumeDb": -18.7,
+      "maxVolumeDb": -5.1,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.83,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.176,
+        "silenceStarts": [
+          0.830375
+        ],
+        "silenceEnds": [
+          1.006
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0009508965685560872,
+        "first10msPeakRatio": 0.0020061179474923185,
+        "first10msRmsRatio": 0.0014308009212013577,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 77,
+      "text": "graduation",
+      "normalizedText": "graduation",
+      "srtStart": "00:10:08,000",
+      "srtEnd": "00:10:16,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.122,
+        "voiceEndSeconds": 1.12,
+        "leadingSilenceSeconds": 0.122,
+        "trailingSilenceSeconds": 6.88,
+        "silenceStarts": [
+          0,
+          1.120431
+        ],
+        "silenceEnds": [
+          0.122018,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--school-life--graduation.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-life--graduation.mp3",
+      "formalTargetPath": "assets/audio/words/campus/more--school-life--graduation.mp3",
+      "sha256": "b99c71de0c2d857e9312c18863bf977ae148ec50ffc5e1b804b56f304a4c350c",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.215,
+      "sizeBytes": 10413,
+      "formatBitrate": 68572,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -5.1,
+      "meanVolumeDb": -19.2,
+      "maxVolumeDb": -5.1,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.022,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.193,
+        "silenceStarts": [
+          1.022
+        ],
+        "silenceEnds": [
+          1.214833
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true,
+        "pcmStartEdgeSafe": true,
+        "pcmEndEdgeSafe": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00038944792491568415,
+        "first10msPeakRatio": 0.002128605092480291,
+        "first10msRmsRatio": 0.0011517609093694963,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    }
+  ],
+  "qcSamples": [
+    {
+      "order": 1,
+      "text": "campus",
+      "path": "tmp/capcut-mobile-word-staging/campus-qc-samples/001-campus.mp3",
+      "sourceStagingPath": "tmp/capcut-mobile-word-staging/campus/campus-entrance--campus.mp3"
+    },
+    {
+      "order": 2,
+      "text": "entrance",
+      "path": "tmp/capcut-mobile-word-staging/campus-qc-samples/002-entrance.mp3",
+      "sourceStagingPath": "tmp/capcut-mobile-word-staging/campus/campus-entrance--entrance.mp3"
+    },
+    {
+      "order": 3,
+      "text": "courtyard",
+      "path": "tmp/capcut-mobile-word-staging/campus-qc-samples/003-courtyard.mp3",
+      "sourceStagingPath": "tmp/capcut-mobile-word-staging/campus/campus-entrance--courtyard.mp3"
+    },
+    {
+      "order": 38,
+      "text": "backpack",
+      "path": "tmp/capcut-mobile-word-staging/campus-qc-samples/038-backpack.mp3",
+      "sourceStagingPath": "tmp/capcut-mobile-word-staging/campus/hallway-lockers--backpack.mp3"
+    },
+    {
+      "order": 39,
+      "text": "assignment",
+      "path": "tmp/capcut-mobile-word-staging/campus-qc-samples/039-assignment.mp3",
+      "sourceStagingPath": "tmp/capcut-mobile-word-staging/campus/hallway-lockers--assignment.mp3"
+    },
+    {
+      "order": 40,
+      "text": "dismissal",
+      "path": "tmp/capcut-mobile-word-staging/campus-qc-samples/040-dismissal.mp3",
+      "sourceStagingPath": "tmp/capcut-mobile-word-staging/campus/hallway-lockers--dismissal.mp3"
+    },
+    {
+      "order": 75,
+      "text": "semester",
+      "path": "tmp/capcut-mobile-word-staging/campus-qc-samples/075-semester.mp3",
+      "sourceStagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-life--semester.mp3"
+    },
+    {
+      "order": 76,
+      "text": "timetable",
+      "path": "tmp/capcut-mobile-word-staging/campus-qc-samples/076-timetable.mp3",
+      "sourceStagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-life--timetable.mp3"
+    },
+    {
+      "order": 77,
+      "text": "graduation",
+      "path": "tmp/capcut-mobile-word-staging/campus-qc-samples/077-graduation.mp3",
+      "sourceStagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-life--graduation.mp3"
+    },
+    {
+      "order": 48,
+      "text": "principal's office",
+      "path": "tmp/capcut-mobile-word-staging/campus-qc-samples/048-principal-s-office.mp3",
+      "sourceStagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-places--principals-office.mp3"
+    },
+    {
+      "order": 30,
+      "text": "basketball court",
+      "path": "tmp/capcut-mobile-word-staging/campus-qc-samples/030-basketball-court.mp3",
+      "sourceStagingPath": "tmp/capcut-mobile-word-staging/campus/playground--basketball-court.mp3"
+    },
+    {
+      "order": 47,
+      "text": "nurse's office",
+      "path": "tmp/capcut-mobile-word-staging/campus-qc-samples/047-nurse-s-office.mp3",
+      "sourceStagingPath": "tmp/capcut-mobile-word-staging/campus/more--school-places--nurses-office.mp3"
+    }
+  ],
+  "failures": []
+}

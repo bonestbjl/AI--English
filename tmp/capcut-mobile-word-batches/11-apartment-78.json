@@ -1,0 +1,1503 @@
+{
+  "schemaVersion": 1,
+  "batchIndex": 11,
+  "theme": "apartment",
+  "count": 78,
+  "sourceList": "tmp/mobile-word-capcut-generation-list.json",
+  "timing": {
+    "cueDurationSeconds": 8,
+    "cueStepSeconds": 8,
+    "sourceCueGapSeconds": 0,
+    "openingReservedSilenceSeconds": 0,
+    "endingReservedSilenceSeconds": 0
+  },
+  "export": {
+    "directory": "tmp/capcut-mobile-word-batches/exports/11-apartment-78",
+    "suggestedAudioFile": "11-apartment-78-capcut-export.mp3",
+    "suggestedSrtFile": "11-apartment-78-capcut-export.srt"
+  },
+  "records": [
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 1,
+      "originalText": "building directory",
+      "normalizedText": "building directory",
+      "srtStart": "00:00:00,000",
+      "srtEnd": "00:00:08,000",
+      "expectedOutputFile": "apartment-entrance--building-directory.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-entrance--building-directory.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-entrance--building-directory.mp3",
+      "referencedBy": [
+        "Apartment/apartment-entrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 2,
+      "originalText": "entry buzzer",
+      "normalizedText": "entry buzzer",
+      "srtStart": "00:00:08,000",
+      "srtEnd": "00:00:16,000",
+      "expectedOutputFile": "apartment-entrance--entry-buzzer.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-entrance--entry-buzzer.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-entrance--entry-buzzer.mp3",
+      "referencedBy": [
+        "Apartment/apartment-entrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 3,
+      "originalText": "unit number",
+      "normalizedText": "unit number",
+      "srtStart": "00:00:16,000",
+      "srtEnd": "00:00:24,000",
+      "expectedOutputFile": "apartment-entrance--unit-number.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-entrance--unit-number.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-entrance--unit-number.mp3",
+      "referencedBy": [
+        "Apartment/apartment-entrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 4,
+      "originalText": "parcel locker",
+      "normalizedText": "parcel locker",
+      "srtStart": "00:00:24,000",
+      "srtEnd": "00:00:32,000",
+      "expectedOutputFile": "apartment-entrance--parcel-locker.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-entrance--parcel-locker.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-entrance--parcel-locker.mp3",
+      "referencedBy": [
+        "Apartment/apartment-entrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 5,
+      "originalText": "security desk",
+      "normalizedText": "security desk",
+      "srtStart": "00:00:32,000",
+      "srtEnd": "00:00:40,000",
+      "expectedOutputFile": "apartment-entrance--security-desk.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-entrance--security-desk.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-entrance--security-desk.mp3",
+      "referencedBy": [
+        "Apartment/apartment-entrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 6,
+      "originalText": "ring the buzzer",
+      "normalizedText": "ring the buzzer",
+      "srtStart": "00:00:40,000",
+      "srtEnd": "00:00:48,000",
+      "expectedOutputFile": "apartment-entrance--ring-the-buzzer.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-entrance--ring-the-buzzer.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-entrance--ring-the-buzzer.mp3",
+      "referencedBy": [
+        "Apartment/apartment-entrance (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 7,
+      "originalText": "viewing appointment",
+      "normalizedText": "viewing appointment",
+      "srtStart": "00:00:48,000",
+      "srtEnd": "00:00:56,000",
+      "expectedOutputFile": "apartment-viewing--viewing-appointment.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-viewing--viewing-appointment.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-viewing--viewing-appointment.mp3",
+      "referencedBy": [
+        "Apartment/apartment-viewing (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 8,
+      "originalText": "leasing agent",
+      "normalizedText": "leasing agent",
+      "srtStart": "00:00:56,000",
+      "srtEnd": "00:01:04,000",
+      "expectedOutputFile": "apartment-viewing--leasing-agent.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-viewing--leasing-agent.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-viewing--leasing-agent.mp3",
+      "referencedBy": [
+        "Apartment/apartment-viewing (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 9,
+      "originalText": "visitor badge",
+      "normalizedText": "visitor badge",
+      "srtStart": "00:01:04,000",
+      "srtEnd": "00:01:12,000",
+      "expectedOutputFile": "apartment-viewing--visitor-badge.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-viewing--visitor-badge.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-viewing--visitor-badge.mp3",
+      "referencedBy": [
+        "Apartment/apartment-viewing (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 10,
+      "originalText": "tour schedule",
+      "normalizedText": "tour schedule",
+      "srtStart": "00:01:12,000",
+      "srtEnd": "00:01:20,000",
+      "expectedOutputFile": "apartment-viewing--tour-schedule.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-viewing--tour-schedule.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-viewing--tour-schedule.mp3",
+      "referencedBy": [
+        "Apartment/apartment-viewing (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 11,
+      "originalText": "door viewer",
+      "normalizedText": "door viewer",
+      "srtStart": "00:01:20,000",
+      "srtEnd": "00:01:28,000",
+      "expectedOutputFile": "apartment-viewing--door-viewer.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-viewing--door-viewer.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-viewing--door-viewer.mp3",
+      "referencedBy": [
+        "Apartment/apartment-viewing (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 12,
+      "originalText": "confirm the viewing",
+      "normalizedText": "confirm the viewing",
+      "srtStart": "00:01:28,000",
+      "srtEnd": "00:01:36,000",
+      "expectedOutputFile": "apartment-viewing--confirm-the-viewing.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-viewing--confirm-the-viewing.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-viewing--confirm-the-viewing.mp3",
+      "referencedBy": [
+        "Apartment/apartment-viewing (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 13,
+      "originalText": "living area",
+      "normalizedText": "living area",
+      "srtStart": "00:01:36,000",
+      "srtEnd": "00:01:44,000",
+      "expectedOutputFile": "apartment-living-space--living-area.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-living-space--living-area.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-living-space--living-area.mp3",
+      "referencedBy": [
+        "Apartment/apartment-living-space (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 14,
+      "originalText": "storage nook",
+      "normalizedText": "storage nook",
+      "srtStart": "00:01:44,000",
+      "srtEnd": "00:01:52,000",
+      "expectedOutputFile": "apartment-living-space--storage-nook.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-living-space--storage-nook.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-living-space--storage-nook.mp3",
+      "referencedBy": [
+        "Apartment/apartment-living-space (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 15,
+      "originalText": "roller blind",
+      "normalizedText": "roller blind",
+      "srtStart": "00:01:52,000",
+      "srtEnd": "00:02:00,000",
+      "expectedOutputFile": "apartment-living-space--roller-blind.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-living-space--roller-blind.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-living-space--roller-blind.mp3",
+      "referencedBy": [
+        "Apartment/apartment-living-space (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 16,
+      "originalText": "baseboard",
+      "normalizedText": "baseboard",
+      "srtStart": "00:02:00,000",
+      "srtEnd": "00:02:08,000",
+      "expectedOutputFile": "apartment-living-space--baseboard.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-living-space--baseboard.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-living-space--baseboard.mp3",
+      "referencedBy": [
+        "Apartment/apartment-living-space (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 17,
+      "originalText": "intercom panel",
+      "normalizedText": "intercom panel",
+      "srtStart": "00:02:08,000",
+      "srtEnd": "00:02:16,000",
+      "expectedOutputFile": "apartment-living-space--intercom-panel.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-living-space--intercom-panel.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-living-space--intercom-panel.mp3",
+      "referencedBy": [
+        "Apartment/apartment-living-space (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 18,
+      "originalText": "check the natural light",
+      "normalizedText": "check the natural light",
+      "srtStart": "00:02:16,000",
+      "srtEnd": "00:02:24,000",
+      "expectedOutputFile": "apartment-living-space--check-natural-light.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-living-space--check-natural-light.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-living-space--check-natural-light.mp3",
+      "referencedBy": [
+        "Apartment/apartment-living-space (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 19,
+      "originalText": "range hood",
+      "normalizedText": "range hood",
+      "srtStart": "00:02:24,000",
+      "srtEnd": "00:02:32,000",
+      "expectedOutputFile": "apartment-kitchen-utilities--range-hood.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-kitchen-utilities--range-hood.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-kitchen-utilities--range-hood.mp3",
+      "referencedBy": [
+        "Apartment/apartment-kitchen-utilities (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 20,
+      "originalText": "induction cooktop",
+      "normalizedText": "induction cooktop",
+      "srtStart": "00:02:32,000",
+      "srtEnd": "00:02:40,000",
+      "expectedOutputFile": "apartment-kitchen-utilities--induction-cooktop.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-kitchen-utilities--induction-cooktop.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-kitchen-utilities--induction-cooktop.mp3",
+      "referencedBy": [
+        "Apartment/apartment-kitchen-utilities (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 21,
+      "originalText": "dish rack",
+      "normalizedText": "dish rack",
+      "srtStart": "00:02:40,000",
+      "srtEnd": "00:02:48,000",
+      "expectedOutputFile": "apartment-kitchen-utilities--dish-rack.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-kitchen-utilities--dish-rack.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-kitchen-utilities--dish-rack.mp3",
+      "referencedBy": [
+        "Apartment/apartment-kitchen-utilities (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 22,
+      "originalText": "water meter",
+      "normalizedText": "water meter",
+      "srtStart": "00:02:48,000",
+      "srtEnd": "00:02:56,000",
+      "expectedOutputFile": "apartment-kitchen-utilities--water-meter.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-kitchen-utilities--water-meter.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-kitchen-utilities--water-meter.mp3",
+      "referencedBy": [
+        "Apartment/apartment-kitchen-utilities (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 23,
+      "originalText": "utility closet",
+      "normalizedText": "utility closet",
+      "srtStart": "00:02:56,000",
+      "srtEnd": "00:03:04,000",
+      "expectedOutputFile": "apartment-kitchen-utilities--utility-closet.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-kitchen-utilities--utility-closet.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-kitchen-utilities--utility-closet.mp3",
+      "referencedBy": [
+        "Apartment/apartment-kitchen-utilities (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 24,
+      "originalText": "test the tap",
+      "normalizedText": "test the tap",
+      "srtStart": "00:03:04,000",
+      "srtEnd": "00:03:12,000",
+      "expectedOutputFile": "apartment-kitchen-utilities--test-the-tap.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-kitchen-utilities--test-the-tap.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-kitchen-utilities--test-the-tap.mp3",
+      "referencedBy": [
+        "Apartment/apartment-kitchen-utilities (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 25,
+      "originalText": "monthly rent",
+      "normalizedText": "monthly rent",
+      "srtStart": "00:03:12,000",
+      "srtEnd": "00:03:20,000",
+      "expectedOutputFile": "apartment-rent-details--monthly-rent.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-rent-details--monthly-rent.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-rent-details--monthly-rent.mp3",
+      "referencedBy": [
+        "Apartment/apartment-rent-details (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 26,
+      "originalText": "utility estimate",
+      "normalizedText": "utility estimate",
+      "srtStart": "00:03:20,000",
+      "srtEnd": "00:03:28,000",
+      "expectedOutputFile": "apartment-rent-details--utility-estimate.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-rent-details--utility-estimate.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-rent-details--utility-estimate.mp3",
+      "referencedBy": [
+        "Apartment/apartment-rent-details (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 27,
+      "originalText": "billing cycle",
+      "normalizedText": "billing cycle",
+      "srtStart": "00:03:28,000",
+      "srtEnd": "00:03:36,000",
+      "expectedOutputFile": "apartment-rent-details--billing-cycle.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-rent-details--billing-cycle.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-rent-details--billing-cycle.mp3",
+      "referencedBy": [
+        "Apartment/apartment-rent-details (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 28,
+      "originalText": "parking option",
+      "normalizedText": "parking option",
+      "srtStart": "00:03:36,000",
+      "srtEnd": "00:03:44,000",
+      "expectedOutputFile": "apartment-rent-details--parking-option.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-rent-details--parking-option.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-rent-details--parking-option.mp3",
+      "referencedBy": [
+        "Apartment/apartment-rent-details (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 29,
+      "originalText": "move-in date",
+      "normalizedText": "move-in date",
+      "srtStart": "00:03:44,000",
+      "srtEnd": "00:03:52,000",
+      "expectedOutputFile": "apartment-rent-details--move-in-date.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-rent-details--move-in-date.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-rent-details--move-in-date.mp3",
+      "referencedBy": [
+        "Apartment/apartment-rent-details (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 30,
+      "originalText": "review the cost summary",
+      "normalizedText": "review the cost summary",
+      "srtStart": "00:03:52,000",
+      "srtEnd": "00:04:00,000",
+      "expectedOutputFile": "apartment-rent-details--review-cost-summary.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-rent-details--review-cost-summary.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-rent-details--review-cost-summary.mp3",
+      "referencedBy": [
+        "Apartment/apartment-rent-details (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 31,
+      "originalText": "dripping pipe",
+      "normalizedText": "dripping pipe",
+      "srtStart": "00:04:00,000",
+      "srtEnd": "00:04:08,000",
+      "expectedOutputFile": "apartment-maintenance--dripping-pipe.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-maintenance--dripping-pipe.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-maintenance--dripping-pipe.mp3",
+      "referencedBy": [
+        "Apartment/apartment-maintenance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 32,
+      "originalText": "loose handle",
+      "normalizedText": "loose handle",
+      "srtStart": "00:04:08,000",
+      "srtEnd": "00:04:16,000",
+      "expectedOutputFile": "apartment-maintenance--loose-handle.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-maintenance--loose-handle.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-maintenance--loose-handle.mp3",
+      "referencedBy": [
+        "Apartment/apartment-maintenance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 33,
+      "originalText": "flickering bulb",
+      "normalizedText": "flickering bulb",
+      "srtStart": "00:04:16,000",
+      "srtEnd": "00:04:24,000",
+      "expectedOutputFile": "apartment-maintenance--flickering-bulb.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-maintenance--flickering-bulb.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-maintenance--flickering-bulb.mp3",
+      "referencedBy": [
+        "Apartment/apartment-maintenance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 34,
+      "originalText": "service request",
+      "normalizedText": "service request",
+      "srtStart": "00:04:24,000",
+      "srtEnd": "00:04:32,000",
+      "expectedOutputFile": "apartment-maintenance--service-request.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-maintenance--service-request.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-maintenance--service-request.mp3",
+      "referencedBy": [
+        "Apartment/apartment-maintenance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 35,
+      "originalText": "access time",
+      "normalizedText": "access time",
+      "srtStart": "00:04:32,000",
+      "srtEnd": "00:04:40,000",
+      "expectedOutputFile": "apartment-maintenance--access-time.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-maintenance--access-time.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-maintenance--access-time.mp3",
+      "referencedBy": [
+        "Apartment/apartment-maintenance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 36,
+      "originalText": "submit a request",
+      "normalizedText": "submit a request",
+      "srtStart": "00:04:40,000",
+      "srtEnd": "00:04:48,000",
+      "expectedOutputFile": "apartment-maintenance--submit-a-request.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-maintenance--submit-a-request.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-maintenance--submit-a-request.mp3",
+      "referencedBy": [
+        "Apartment/apartment-maintenance (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 37,
+      "originalText": "key handover",
+      "normalizedText": "key handover",
+      "srtStart": "00:04:48,000",
+      "srtEnd": "00:04:56,000",
+      "expectedOutputFile": "apartment-move-in--key-handover.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-move-in--key-handover.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-move-in--key-handover.mp3",
+      "referencedBy": [
+        "Apartment/apartment-move-in (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 38,
+      "originalText": "mailbox label",
+      "normalizedText": "mailbox label",
+      "srtStart": "00:04:56,000",
+      "srtEnd": "00:05:04,000",
+      "expectedOutputFile": "apartment-move-in--mailbox-label.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-move-in--mailbox-label.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-move-in--mailbox-label.mp3",
+      "referencedBy": [
+        "Apartment/apartment-move-in (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 39,
+      "originalText": "condition report",
+      "normalizedText": "condition report",
+      "srtStart": "00:05:04,000",
+      "srtEnd": "00:05:12,000",
+      "expectedOutputFile": "apartment-move-in--condition-report.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-move-in--condition-report.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-move-in--condition-report.mp3",
+      "referencedBy": [
+        "Apartment/apartment-move-in (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 40,
+      "originalText": "entry code",
+      "normalizedText": "entry code",
+      "srtStart": "00:05:12,000",
+      "srtEnd": "00:05:20,000",
+      "expectedOutputFile": "apartment-move-in--entry-code.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-move-in--entry-code.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-move-in--entry-code.mp3",
+      "referencedBy": [
+        "Apartment/apartment-move-in (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 41,
+      "originalText": "welcome packet",
+      "normalizedText": "welcome packet",
+      "srtStart": "00:05:20,000",
+      "srtEnd": "00:05:28,000",
+      "expectedOutputFile": "apartment-move-in--welcome-packet.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-move-in--welcome-packet.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-move-in--welcome-packet.mp3",
+      "referencedBy": [
+        "Apartment/apartment-move-in (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 42,
+      "originalText": "confirm the next step",
+      "normalizedText": "confirm the next step",
+      "srtStart": "00:05:28,000",
+      "srtEnd": "00:05:36,000",
+      "expectedOutputFile": "apartment-move-in--confirm-next-step.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/apartment-move-in--confirm-next-step.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/apartment-move-in--confirm-next-step.mp3",
+      "referencedBy": [
+        "Apartment/apartment-move-in (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 43,
+      "originalText": "coat hook",
+      "normalizedText": "coat hook",
+      "srtStart": "00:05:36,000",
+      "srtEnd": "00:05:44,000",
+      "expectedOutputFile": "more--apartment-spaces--coat-hook.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-spaces--coat-hook.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-spaces--coat-hook.mp3",
+      "referencedBy": [
+        "Apartment/apartment-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 44,
+      "originalText": "shoe cabinet",
+      "normalizedText": "shoe cabinet",
+      "srtStart": "00:05:44,000",
+      "srtEnd": "00:05:52,000",
+      "expectedOutputFile": "more--apartment-spaces--shoe-cabinet.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-spaces--shoe-cabinet.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-spaces--shoe-cabinet.mp3",
+      "referencedBy": [
+        "Apartment/apartment-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 45,
+      "originalText": "built-in shelf",
+      "normalizedText": "built-in shelf",
+      "srtStart": "00:05:52,000",
+      "srtEnd": "00:06:00,000",
+      "expectedOutputFile": "more--apartment-spaces--built-in-shelf.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-spaces--built-in-shelf.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-spaces--built-in-shelf.mp3",
+      "referencedBy": [
+        "Apartment/apartment-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 46,
+      "originalText": "curtain rod",
+      "normalizedText": "curtain rod",
+      "srtStart": "00:06:00,000",
+      "srtEnd": "00:06:08,000",
+      "expectedOutputFile": "more--apartment-spaces--curtain-rod.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-spaces--curtain-rod.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-spaces--curtain-rod.mp3",
+      "referencedBy": [
+        "Apartment/apartment-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 47,
+      "originalText": "skirting board",
+      "normalizedText": "skirting board",
+      "srtStart": "00:06:08,000",
+      "srtEnd": "00:06:16,000",
+      "expectedOutputFile": "more--apartment-spaces--skirting-board.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-spaces--skirting-board.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-spaces--skirting-board.mp3",
+      "referencedBy": [
+        "Apartment/apartment-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 48,
+      "originalText": "fuse box",
+      "normalizedText": "fuse box",
+      "srtStart": "00:06:16,000",
+      "srtEnd": "00:06:24,000",
+      "expectedOutputFile": "more--apartment-spaces--fuse-box.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-spaces--fuse-box.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-spaces--fuse-box.mp3",
+      "referencedBy": [
+        "Apartment/apartment-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 49,
+      "originalText": "smoke alarm",
+      "normalizedText": "smoke alarm",
+      "srtStart": "00:06:24,000",
+      "srtEnd": "00:06:32,000",
+      "expectedOutputFile": "more--apartment-spaces--smoke-alarm.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-spaces--smoke-alarm.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-spaces--smoke-alarm.mp3",
+      "referencedBy": [
+        "Apartment/apartment-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 50,
+      "originalText": "radiator valve",
+      "normalizedText": "radiator valve",
+      "srtStart": "00:06:32,000",
+      "srtEnd": "00:06:40,000",
+      "expectedOutputFile": "more--apartment-spaces--radiator-valve.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-spaces--radiator-valve.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-spaces--radiator-valve.mp3",
+      "referencedBy": [
+        "Apartment/apartment-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 51,
+      "originalText": "doorstop",
+      "normalizedText": "doorstop",
+      "srtStart": "00:06:40,000",
+      "srtEnd": "00:06:48,000",
+      "expectedOutputFile": "more--apartment-spaces--doorstop.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-spaces--doorstop.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-spaces--doorstop.mp3",
+      "referencedBy": [
+        "Apartment/apartment-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 52,
+      "originalText": "air vent",
+      "normalizedText": "air vent",
+      "srtStart": "00:06:48,000",
+      "srtEnd": "00:06:56,000",
+      "expectedOutputFile": "more--apartment-spaces--air-vent.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-spaces--air-vent.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-spaces--air-vent.mp3",
+      "referencedBy": [
+        "Apartment/apartment-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 53,
+      "originalText": "storage cabinet",
+      "normalizedText": "storage cabinet",
+      "srtStart": "00:06:56,000",
+      "srtEnd": "00:07:04,000",
+      "expectedOutputFile": "more--apartment-spaces--storage-cabinet.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-spaces--storage-cabinet.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-spaces--storage-cabinet.mp3",
+      "referencedBy": [
+        "Apartment/apartment-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 54,
+      "originalText": "ceiling fan",
+      "normalizedText": "ceiling fan",
+      "srtStart": "00:07:04,000",
+      "srtEnd": "00:07:12,000",
+      "expectedOutputFile": "more--apartment-spaces--ceiling-fan.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-spaces--ceiling-fan.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-spaces--ceiling-fan.mp3",
+      "referencedBy": [
+        "Apartment/apartment-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 55,
+      "originalText": "rental listing",
+      "normalizedText": "rental listing",
+      "srtStart": "00:07:12,000",
+      "srtEnd": "00:07:20,000",
+      "expectedOutputFile": "more--apartment-terms--rental-listing.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-terms--rental-listing.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-terms--rental-listing.mp3",
+      "referencedBy": [
+        "Apartment/apartment-terms (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 56,
+      "originalText": "available date",
+      "normalizedText": "available date",
+      "srtStart": "00:07:20,000",
+      "srtEnd": "00:07:28,000",
+      "expectedOutputFile": "more--apartment-terms--available-date.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-terms--available-date.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-terms--available-date.mp3",
+      "referencedBy": [
+        "Apartment/apartment-terms (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 57,
+      "originalText": "viewing slot",
+      "normalizedText": "viewing slot",
+      "srtStart": "00:07:28,000",
+      "srtEnd": "00:07:36,000",
+      "expectedOutputFile": "more--apartment-terms--viewing-slot.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-terms--viewing-slot.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-terms--viewing-slot.mp3",
+      "referencedBy": [
+        "Apartment/apartment-terms (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 58,
+      "originalText": "monthly charge",
+      "normalizedText": "monthly charge",
+      "srtStart": "00:07:36,000",
+      "srtEnd": "00:07:44,000",
+      "expectedOutputFile": "more--apartment-terms--monthly-charge.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-terms--monthly-charge.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-terms--monthly-charge.mp3",
+      "referencedBy": [
+        "Apartment/apartment-terms (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 59,
+      "originalText": "utility allowance",
+      "normalizedText": "utility allowance",
+      "srtStart": "00:07:44,000",
+      "srtEnd": "00:07:52,000",
+      "expectedOutputFile": "more--apartment-terms--utility-allowance.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-terms--utility-allowance.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-terms--utility-allowance.mp3",
+      "referencedBy": [
+        "Apartment/apartment-terms (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 60,
+      "originalText": "parking space",
+      "normalizedText": "parking space",
+      "srtStart": "00:07:52,000",
+      "srtEnd": "00:08:00,000",
+      "expectedOutputFile": "more--apartment-terms--parking-space.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-terms--parking-space.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-terms--parking-space.mp3",
+      "referencedBy": [
+        "Apartment/apartment-terms (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 61,
+      "originalText": "payment portal",
+      "normalizedText": "payment portal",
+      "srtStart": "00:08:00,000",
+      "srtEnd": "00:08:08,000",
+      "expectedOutputFile": "more--apartment-terms--payment-portal.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-terms--payment-portal.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-terms--payment-portal.mp3",
+      "referencedBy": [
+        "Apartment/apartment-terms (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 62,
+      "originalText": "billing statement",
+      "normalizedText": "billing statement",
+      "srtStart": "00:08:08,000",
+      "srtEnd": "00:08:16,000",
+      "expectedOutputFile": "more--apartment-terms--billing-statement.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-terms--billing-statement.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-terms--billing-statement.mp3",
+      "referencedBy": [
+        "Apartment/apartment-terms (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 63,
+      "originalText": "fee notice",
+      "normalizedText": "fee notice",
+      "srtStart": "00:08:16,000",
+      "srtEnd": "00:08:24,000",
+      "expectedOutputFile": "more--apartment-terms--fee-notice.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-terms--fee-notice.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-terms--fee-notice.mp3",
+      "referencedBy": [
+        "Apartment/apartment-terms (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 64,
+      "originalText": "renewal reminder",
+      "normalizedText": "renewal reminder",
+      "srtStart": "00:08:24,000",
+      "srtEnd": "00:08:32,000",
+      "expectedOutputFile": "more--apartment-terms--renewal-reminder.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-terms--renewal-reminder.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-terms--renewal-reminder.mp3",
+      "referencedBy": [
+        "Apartment/apartment-terms (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 65,
+      "originalText": "cost overview",
+      "normalizedText": "cost overview",
+      "srtStart": "00:08:32,000",
+      "srtEnd": "00:08:40,000",
+      "expectedOutputFile": "more--apartment-terms--cost-overview.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-terms--cost-overview.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-terms--cost-overview.mp3",
+      "referencedBy": [
+        "Apartment/apartment-terms (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 66,
+      "originalText": "price range",
+      "normalizedText": "price range",
+      "srtStart": "00:08:40,000",
+      "srtEnd": "00:08:48,000",
+      "expectedOutputFile": "more--apartment-terms--price-range.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-terms--price-range.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-terms--price-range.mp3",
+      "referencedBy": [
+        "Apartment/apartment-terms (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 67,
+      "originalText": "water stain",
+      "normalizedText": "water stain",
+      "srtStart": "00:08:48,000",
+      "srtEnd": "00:08:56,000",
+      "expectedOutputFile": "more--apartment-maintenance-words--water-stain.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-maintenance-words--water-stain.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-maintenance-words--water-stain.mp3",
+      "referencedBy": [
+        "Apartment/apartment-maintenance-words (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 68,
+      "originalText": "drain cover",
+      "normalizedText": "drain cover",
+      "srtStart": "00:08:56,000",
+      "srtEnd": "00:09:04,000",
+      "expectedOutputFile": "more--apartment-maintenance-words--drain-cover.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-maintenance-words--drain-cover.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-maintenance-words--drain-cover.mp3",
+      "referencedBy": [
+        "Apartment/apartment-maintenance-words (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 69,
+      "originalText": "cabinet hinge",
+      "normalizedText": "cabinet hinge",
+      "srtStart": "00:09:04,000",
+      "srtEnd": "00:09:12,000",
+      "expectedOutputFile": "more--apartment-maintenance-words--cabinet-hinge.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-maintenance-words--cabinet-hinge.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-maintenance-words--cabinet-hinge.mp3",
+      "referencedBy": [
+        "Apartment/apartment-maintenance-words (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 70,
+      "originalText": "service visit",
+      "normalizedText": "service visit",
+      "srtStart": "00:09:12,000",
+      "srtEnd": "00:09:20,000",
+      "expectedOutputFile": "more--apartment-maintenance-words--service-visit.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-maintenance-words--service-visit.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-maintenance-words--service-visit.mp3",
+      "referencedBy": [
+        "Apartment/apartment-maintenance-words (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 71,
+      "originalText": "access period",
+      "normalizedText": "access period",
+      "srtStart": "00:09:20,000",
+      "srtEnd": "00:09:28,000",
+      "expectedOutputFile": "more--apartment-maintenance-words--access-period.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-maintenance-words--access-period.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-maintenance-words--access-period.mp3",
+      "referencedBy": [
+        "Apartment/apartment-maintenance-words (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 72,
+      "originalText": "repair update",
+      "normalizedText": "repair update",
+      "srtStart": "00:09:28,000",
+      "srtEnd": "00:09:36,000",
+      "expectedOutputFile": "more--apartment-maintenance-words--repair-update.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-maintenance-words--repair-update.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-maintenance-words--repair-update.mp3",
+      "referencedBy": [
+        "Apartment/apartment-maintenance-words (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 73,
+      "originalText": "move-in walkthrough",
+      "normalizedText": "move-in walkthrough",
+      "srtStart": "00:09:36,000",
+      "srtEnd": "00:09:44,000",
+      "expectedOutputFile": "more--apartment-maintenance-words--move-in-walkthrough.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-maintenance-words--move-in-walkthrough.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-maintenance-words--move-in-walkthrough.mp3",
+      "referencedBy": [
+        "Apartment/apartment-maintenance-words (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 74,
+      "originalText": "condition notes",
+      "normalizedText": "condition notes",
+      "srtStart": "00:09:44,000",
+      "srtEnd": "00:09:52,000",
+      "expectedOutputFile": "more--apartment-maintenance-words--condition-notes.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-maintenance-words--condition-notes.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-maintenance-words--condition-notes.mp3",
+      "referencedBy": [
+        "Apartment/apartment-maintenance-words (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 75,
+      "originalText": "handover time",
+      "normalizedText": "handover time",
+      "srtStart": "00:09:52,000",
+      "srtEnd": "00:10:00,000",
+      "expectedOutputFile": "more--apartment-maintenance-words--handover-time.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-maintenance-words--handover-time.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-maintenance-words--handover-time.mp3",
+      "referencedBy": [
+        "Apartment/apartment-maintenance-words (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 76,
+      "originalText": "welcome guide",
+      "normalizedText": "welcome guide",
+      "srtStart": "00:10:00,000",
+      "srtEnd": "00:10:08,000",
+      "expectedOutputFile": "more--apartment-maintenance-words--welcome-guide.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-maintenance-words--welcome-guide.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-maintenance-words--welcome-guide.mp3",
+      "referencedBy": [
+        "Apartment/apartment-maintenance-words (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 77,
+      "originalText": "building manager",
+      "normalizedText": "building manager",
+      "srtStart": "00:10:08,000",
+      "srtEnd": "00:10:16,000",
+      "expectedOutputFile": "more--apartment-maintenance-words--building-manager.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-maintenance-words--building-manager.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-maintenance-words--building-manager.mp3",
+      "referencedBy": [
+        "Apartment/apartment-maintenance-words (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "order": 78,
+      "originalText": "report an issue",
+      "normalizedText": "report an issue",
+      "srtStart": "00:10:16,000",
+      "srtEnd": "00:10:24,000",
+      "expectedOutputFile": "more--apartment-maintenance-words--report-an-issue.mp3",
+      "currentOldAudioPath": "assets/audio/words/apartment/more--apartment-maintenance-words--report-an-issue.mp3",
+      "finalTargetAudioPath": "assets/audio/words/apartment/more--apartment-maintenance-words--report-an-issue.mp3",
+      "referencedBy": [
+        "Apartment/apartment-maintenance-words (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    }
+  ]
+}

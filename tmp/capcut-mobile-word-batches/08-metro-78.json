@@ -1,0 +1,1503 @@
+{
+  "schemaVersion": 1,
+  "batchIndex": 8,
+  "theme": "metro",
+  "count": 78,
+  "sourceList": "tmp/mobile-word-capcut-generation-list.json",
+  "timing": {
+    "cueDurationSeconds": 8,
+    "cueStepSeconds": 8,
+    "sourceCueGapSeconds": 0,
+    "openingReservedSilenceSeconds": 0,
+    "endingReservedSilenceSeconds": 0
+  },
+  "export": {
+    "directory": "tmp/capcut-mobile-word-batches/exports/08-metro-78",
+    "suggestedAudioFile": "08-metro-78-capcut-export.mp3",
+    "suggestedSrtFile": "08-metro-78-capcut-export.srt"
+  },
+  "records": [
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 1,
+      "originalText": "metro station",
+      "normalizedText": "metro station",
+      "srtStart": "00:00:00,000",
+      "srtEnd": "00:00:08,000",
+      "expectedOutputFile": "metro-entrance--metro-station.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-entrance--metro-station.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-entrance--metro-station.mp3",
+      "referencedBy": [
+        "Metro/metroEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 2,
+      "originalText": "metro symbol",
+      "normalizedText": "metro symbol",
+      "srtStart": "00:00:08,000",
+      "srtEnd": "00:00:16,000",
+      "expectedOutputFile": "metro-entrance--metro-symbol.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-entrance--metro-symbol.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-entrance--metro-symbol.mp3",
+      "referencedBy": [
+        "Metro/metroEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 3,
+      "originalText": "concourse",
+      "normalizedText": "concourse",
+      "srtStart": "00:00:16,000",
+      "srtEnd": "00:00:24,000",
+      "expectedOutputFile": "metro-entrance--concourse.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-entrance--concourse.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-entrance--concourse.mp3",
+      "referencedBy": [
+        "Metro/metroEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 4,
+      "originalText": "commuter",
+      "normalizedText": "commuter",
+      "srtStart": "00:00:24,000",
+      "srtEnd": "00:00:32,000",
+      "expectedOutputFile": "metro-entrance--commuter.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-entrance--commuter.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-entrance--commuter.mp3",
+      "referencedBy": [
+        "Metro/metroEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 5,
+      "originalText": "underpass",
+      "normalizedText": "underpass",
+      "srtStart": "00:00:32,000",
+      "srtEnd": "00:00:40,000",
+      "expectedOutputFile": "metro-entrance--underpass.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-entrance--underpass.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-entrance--underpass.mp3",
+      "referencedBy": [
+        "Metro/metroEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 6,
+      "originalText": "descend",
+      "normalizedText": "descend",
+      "srtStart": "00:00:40,000",
+      "srtEnd": "00:00:48,000",
+      "expectedOutputFile": "metro-entrance--descend.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-entrance--descend.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-entrance--descend.mp3",
+      "referencedBy": [
+        "Metro/metroEntrance (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 7,
+      "originalText": "fare machine",
+      "normalizedText": "fare machine",
+      "srtStart": "00:00:48,000",
+      "srtEnd": "00:00:56,000",
+      "expectedOutputFile": "metro-ticketing--fare-machine.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-ticketing--fare-machine.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-ticketing--fare-machine.mp3",
+      "referencedBy": [
+        "Metro/metroTicketing (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 8,
+      "originalText": "travel pass",
+      "normalizedText": "travel pass",
+      "srtStart": "00:00:56,000",
+      "srtEnd": "00:01:04,000",
+      "expectedOutputFile": "metro-ticketing--travel-pass.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-ticketing--travel-pass.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-ticketing--travel-pass.mp3",
+      "referencedBy": [
+        "Metro/metroTicketing (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 9,
+      "originalText": "fare zone",
+      "normalizedText": "fare zone",
+      "srtStart": "00:01:04,000",
+      "srtEnd": "00:01:12,000",
+      "expectedOutputFile": "metro-ticketing--fare-zone.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-ticketing--fare-zone.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-ticketing--fare-zone.mp3",
+      "referencedBy": [
+        "Metro/metroTicketing (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 10,
+      "originalText": "stored value",
+      "normalizedText": "stored value",
+      "srtStart": "00:01:12,000",
+      "srtEnd": "00:01:20,000",
+      "expectedOutputFile": "metro-ticketing--stored-value.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-ticketing--stored-value.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-ticketing--stored-value.mp3",
+      "referencedBy": [
+        "Metro/metroTicketing (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 11,
+      "originalText": "balance",
+      "normalizedText": "balance",
+      "srtStart": "00:01:20,000",
+      "srtEnd": "00:01:28,000",
+      "expectedOutputFile": "metro-ticketing--balance.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-ticketing--balance.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-ticketing--balance.mp3",
+      "referencedBy": [
+        "Metro/metroTicketing (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 12,
+      "originalText": "validate",
+      "normalizedText": "validate",
+      "srtStart": "00:01:28,000",
+      "srtEnd": "00:01:36,000",
+      "expectedOutputFile": "metro-ticketing--validate.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-ticketing--validate.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-ticketing--validate.mp3",
+      "referencedBy": [
+        "Metro/metroTicketing (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 13,
+      "originalText": "turnstile",
+      "normalizedText": "turnstile",
+      "srtStart": "00:01:36,000",
+      "srtEnd": "00:01:44,000",
+      "expectedOutputFile": "metro-fare-gates--turnstile.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-fare-gates--turnstile.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-fare-gates--turnstile.mp3",
+      "referencedBy": [
+        "Metro/metroFareGates (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 14,
+      "originalText": "card reader",
+      "normalizedText": "card reader",
+      "srtStart": "00:01:44,000",
+      "srtEnd": "00:01:52,000",
+      "expectedOutputFile": "metro-fare-gates--card-reader.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-fare-gates--card-reader.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-fare-gates--card-reader.mp3",
+      "referencedBy": [
+        "Metro/metroFareGates (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 15,
+      "originalText": "barrier flap",
+      "normalizedText": "barrier flap",
+      "srtStart": "00:01:52,000",
+      "srtEnd": "00:02:00,000",
+      "expectedOutputFile": "metro-fare-gates--barrier-flap.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-fare-gates--barrier-flap.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-fare-gates--barrier-flap.mp3",
+      "referencedBy": [
+        "Metro/metroFareGates (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 16,
+      "originalText": "entry lane",
+      "normalizedText": "entry lane",
+      "srtStart": "00:02:00,000",
+      "srtEnd": "00:02:08,000",
+      "expectedOutputFile": "metro-fare-gates--entry-lane.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-fare-gates--entry-lane.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-fare-gates--entry-lane.mp3",
+      "referencedBy": [
+        "Metro/metroFareGates (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 17,
+      "originalText": "status light",
+      "normalizedText": "status light",
+      "srtStart": "00:02:08,000",
+      "srtEnd": "00:02:16,000",
+      "expectedOutputFile": "metro-fare-gates--status-light.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-fare-gates--status-light.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-fare-gates--status-light.mp3",
+      "referencedBy": [
+        "Metro/metroFareGates (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 18,
+      "originalText": "tap in",
+      "normalizedText": "tap in",
+      "srtStart": "00:02:16,000",
+      "srtEnd": "00:02:24,000",
+      "expectedOutputFile": "metro-fare-gates--tap-in.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-fare-gates--tap-in.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-fare-gates--tap-in.mp3",
+      "referencedBy": [
+        "Metro/metroFareGates (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 19,
+      "originalText": "platform",
+      "normalizedText": "platform",
+      "srtStart": "00:02:24,000",
+      "srtEnd": "00:02:32,000",
+      "expectedOutputFile": "metro-platform--platform.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-platform--platform.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-platform--platform.mp3",
+      "referencedBy": [
+        "Metro/metroPlatform (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 20,
+      "originalText": "tactile paving",
+      "normalizedText": "tactile paving",
+      "srtStart": "00:02:32,000",
+      "srtEnd": "00:02:40,000",
+      "expectedOutputFile": "metro-platform--tactile-paving.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-platform--tactile-paving.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-platform--tactile-paving.mp3",
+      "referencedBy": [
+        "Metro/metroPlatform (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 21,
+      "originalText": "yellow line",
+      "normalizedText": "yellow line",
+      "srtStart": "00:02:40,000",
+      "srtEnd": "00:02:48,000",
+      "expectedOutputFile": "metro-platform--yellow-line.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-platform--yellow-line.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-platform--yellow-line.mp3",
+      "referencedBy": [
+        "Metro/metroPlatform (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 22,
+      "originalText": "track",
+      "normalizedText": "track",
+      "srtStart": "00:02:48,000",
+      "srtEnd": "00:02:56,000",
+      "expectedOutputFile": "metro-platform--track.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-platform--track.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-platform--track.mp3",
+      "referencedBy": [
+        "Metro/metroPlatform (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 23,
+      "originalText": "train indicator",
+      "normalizedText": "train indicator",
+      "srtStart": "00:02:56,000",
+      "srtEnd": "00:03:04,000",
+      "expectedOutputFile": "metro-platform--train-indicator.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-platform--train-indicator.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-platform--train-indicator.mp3",
+      "referencedBy": [
+        "Metro/metroPlatform (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 24,
+      "originalText": "stand clear",
+      "normalizedText": "stand clear",
+      "srtStart": "00:03:04,000",
+      "srtEnd": "00:03:12,000",
+      "expectedOutputFile": "metro-platform--stand-clear.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-platform--stand-clear.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-platform--stand-clear.mp3",
+      "referencedBy": [
+        "Metro/metroPlatform (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 25,
+      "originalText": "carriage",
+      "normalizedText": "carriage",
+      "srtStart": "00:03:12,000",
+      "srtEnd": "00:03:20,000",
+      "expectedOutputFile": "metro-carriage--carriage.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-carriage--carriage.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-carriage--carriage.mp3",
+      "referencedBy": [
+        "Metro/metroCarriage (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 26,
+      "originalText": "handrail",
+      "normalizedText": "handrail",
+      "srtStart": "00:03:20,000",
+      "srtEnd": "00:03:28,000",
+      "expectedOutputFile": "metro-carriage--handrail.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-carriage--handrail.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-carriage--handrail.mp3",
+      "referencedBy": [
+        "Metro/metroCarriage (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 27,
+      "originalText": "grab pole",
+      "normalizedText": "grab pole",
+      "srtStart": "00:03:28,000",
+      "srtEnd": "00:03:36,000",
+      "expectedOutputFile": "metro-carriage--grab-pole.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-carriage--grab-pole.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-carriage--grab-pole.mp3",
+      "referencedBy": [
+        "Metro/metroCarriage (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 28,
+      "originalText": "route diagram",
+      "normalizedText": "route diagram",
+      "srtStart": "00:03:36,000",
+      "srtEnd": "00:03:44,000",
+      "expectedOutputFile": "metro-carriage--route-diagram.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-carriage--route-diagram.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-carriage--route-diagram.mp3",
+      "referencedBy": [
+        "Metro/metroCarriage (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 29,
+      "originalText": "priority area",
+      "normalizedText": "priority area",
+      "srtStart": "00:03:44,000",
+      "srtEnd": "00:03:52,000",
+      "expectedOutputFile": "metro-carriage--priority-area.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-carriage--priority-area.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-carriage--priority-area.mp3",
+      "referencedBy": [
+        "Metro/metroCarriage (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 30,
+      "originalText": "move inside",
+      "normalizedText": "move inside",
+      "srtStart": "00:03:52,000",
+      "srtEnd": "00:04:00,000",
+      "expectedOutputFile": "metro-carriage--move-inside.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-carriage--move-inside.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-carriage--move-inside.mp3",
+      "referencedBy": [
+        "Metro/metroCarriage (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 31,
+      "originalText": "interchange",
+      "normalizedText": "interchange",
+      "srtStart": "00:04:00,000",
+      "srtEnd": "00:04:08,000",
+      "expectedOutputFile": "metro-transfer--interchange.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-transfer--interchange.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-transfer--interchange.mp3",
+      "referencedBy": [
+        "Metro/metroTransfer (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 32,
+      "originalText": "passageway",
+      "normalizedText": "passageway",
+      "srtStart": "00:04:08,000",
+      "srtEnd": "00:04:16,000",
+      "expectedOutputFile": "metro-transfer--passageway.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-transfer--passageway.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-transfer--passageway.mp3",
+      "referencedBy": [
+        "Metro/metroTransfer (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 33,
+      "originalText": "junction",
+      "normalizedText": "junction",
+      "srtStart": "00:04:16,000",
+      "srtEnd": "00:04:24,000",
+      "expectedOutputFile": "metro-transfer--junction.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-transfer--junction.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-transfer--junction.mp3",
+      "referencedBy": [
+        "Metro/metroTransfer (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 34,
+      "originalText": "directional arrow",
+      "normalizedText": "directional arrow",
+      "srtStart": "00:04:24,000",
+      "srtEnd": "00:04:32,000",
+      "expectedOutputFile": "metro-transfer--directional-arrow.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-transfer--directional-arrow.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-transfer--directional-arrow.mp3",
+      "referencedBy": [
+        "Metro/metroTransfer (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 35,
+      "originalText": "line color",
+      "normalizedText": "line color",
+      "srtStart": "00:04:32,000",
+      "srtEnd": "00:04:40,000",
+      "expectedOutputFile": "metro-transfer--line-color.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-transfer--line-color.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-transfer--line-color.mp3",
+      "referencedBy": [
+        "Metro/metroTransfer (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 36,
+      "originalText": "make a connection",
+      "normalizedText": "make a connection",
+      "srtStart": "00:04:40,000",
+      "srtEnd": "00:04:48,000",
+      "expectedOutputFile": "metro-transfer--make-connection.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-transfer--make-connection.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-transfer--make-connection.mp3",
+      "referencedBy": [
+        "Metro/metroTransfer (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 37,
+      "originalText": "way out",
+      "normalizedText": "way out",
+      "srtStart": "00:04:48,000",
+      "srtEnd": "00:04:56,000",
+      "expectedOutputFile": "metro-exit--way-out.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-exit--way-out.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-exit--way-out.mp3",
+      "referencedBy": [
+        "Metro/metroExit (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 38,
+      "originalText": "landmark",
+      "normalizedText": "landmark",
+      "srtStart": "00:04:56,000",
+      "srtEnd": "00:05:04,000",
+      "expectedOutputFile": "metro-exit--landmark.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-exit--landmark.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-exit--landmark.mp3",
+      "referencedBy": [
+        "Metro/metroExit (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 39,
+      "originalText": "neighborhood",
+      "normalizedText": "neighborhood",
+      "srtStart": "00:05:04,000",
+      "srtEnd": "00:05:12,000",
+      "expectedOutputFile": "metro-exit--neighborhood.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-exit--neighborhood.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-exit--neighborhood.mp3",
+      "referencedBy": [
+        "Metro/metroExit (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 40,
+      "originalText": "ground level",
+      "normalizedText": "ground level",
+      "srtStart": "00:05:12,000",
+      "srtEnd": "00:05:20,000",
+      "expectedOutputFile": "metro-exit--ground-level.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-exit--ground-level.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-exit--ground-level.mp3",
+      "referencedBy": [
+        "Metro/metroExit (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 41,
+      "originalText": "station plaza",
+      "normalizedText": "station plaza",
+      "srtStart": "00:05:20,000",
+      "srtEnd": "00:05:28,000",
+      "expectedOutputFile": "metro-exit--station-plaza.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-exit--station-plaza.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-exit--station-plaza.mp3",
+      "referencedBy": [
+        "Metro/metroExit (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 42,
+      "originalText": "emerge",
+      "normalizedText": "emerge",
+      "srtStart": "00:05:28,000",
+      "srtEnd": "00:05:36,000",
+      "expectedOutputFile": "metro-exit--emerge.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/metro-exit--emerge.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/metro-exit--emerge.mp3",
+      "referencedBy": [
+        "Metro/metroExit (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 43,
+      "originalText": "help point",
+      "normalizedText": "help point",
+      "srtStart": "00:05:36,000",
+      "srtEnd": "00:05:44,000",
+      "expectedOutputFile": "more--metro-station-facilities--help-point.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-station-facilities--help-point.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-station-facilities--help-point.mp3",
+      "referencedBy": [
+        "Metro/metro-station-facilities (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 44,
+      "originalText": "fare chart",
+      "normalizedText": "fare chart",
+      "srtStart": "00:05:44,000",
+      "srtEnd": "00:05:52,000",
+      "expectedOutputFile": "more--metro-station-facilities--fare-chart.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-station-facilities--fare-chart.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-station-facilities--fare-chart.mp3",
+      "referencedBy": [
+        "Metro/metro-station-facilities (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 45,
+      "originalText": "station clock",
+      "normalizedText": "station clock",
+      "srtStart": "00:05:52,000",
+      "srtEnd": "00:06:00,000",
+      "expectedOutputFile": "more--metro-station-facilities--station-clock.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-station-facilities--station-clock.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-station-facilities--station-clock.mp3",
+      "referencedBy": [
+        "Metro/metro-station-facilities (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 46,
+      "originalText": "platform bench",
+      "normalizedText": "platform bench",
+      "srtStart": "00:06:00,000",
+      "srtEnd": "00:06:08,000",
+      "expectedOutputFile": "more--metro-station-facilities--platform-bench.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-station-facilities--platform-bench.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-station-facilities--platform-bench.mp3",
+      "referencedBy": [
+        "Metro/metro-station-facilities (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 47,
+      "originalText": "public toilet",
+      "normalizedText": "public toilet",
+      "srtStart": "00:06:08,000",
+      "srtEnd": "00:06:16,000",
+      "expectedOutputFile": "more--metro-station-facilities--public-toilet.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-station-facilities--public-toilet.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-station-facilities--public-toilet.mp3",
+      "referencedBy": [
+        "Metro/metro-station-facilities (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 48,
+      "originalText": "bicycle rack",
+      "normalizedText": "bicycle rack",
+      "srtStart": "00:06:16,000",
+      "srtEnd": "00:06:24,000",
+      "expectedOutputFile": "more--metro-station-facilities--bicycle-rack.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-station-facilities--bicycle-rack.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-station-facilities--bicycle-rack.mp3",
+      "referencedBy": [
+        "Metro/metro-station-facilities (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 49,
+      "originalText": "emergency intercom",
+      "normalizedText": "emergency intercom",
+      "srtStart": "00:06:24,000",
+      "srtEnd": "00:06:32,000",
+      "expectedOutputFile": "more--metro-station-facilities--emergency-intercom.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-station-facilities--emergency-intercom.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-station-facilities--emergency-intercom.mp3",
+      "referencedBy": [
+        "Metro/metro-station-facilities (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 50,
+      "originalText": "ventilation grille",
+      "normalizedText": "ventilation grille",
+      "srtStart": "00:06:32,000",
+      "srtEnd": "00:06:40,000",
+      "expectedOutputFile": "more--metro-station-facilities--ventilation-grille.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-station-facilities--ventilation-grille.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-station-facilities--ventilation-grille.mp3",
+      "referencedBy": [
+        "Metro/metro-station-facilities (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 51,
+      "originalText": "standing area",
+      "normalizedText": "standing area",
+      "srtStart": "00:06:40,000",
+      "srtEnd": "00:06:48,000",
+      "expectedOutputFile": "more--metro-station-facilities--standing-area.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-station-facilities--standing-area.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-station-facilities--standing-area.mp3",
+      "referencedBy": [
+        "Metro/metro-station-facilities (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 52,
+      "originalText": "station artwork",
+      "normalizedText": "station artwork",
+      "srtStart": "00:06:48,000",
+      "srtEnd": "00:06:56,000",
+      "expectedOutputFile": "more--metro-station-facilities--station-artwork.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-station-facilities--station-artwork.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-station-facilities--station-artwork.mp3",
+      "referencedBy": [
+        "Metro/metro-station-facilities (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 53,
+      "originalText": "station office",
+      "normalizedText": "station office",
+      "srtStart": "00:06:56,000",
+      "srtEnd": "00:07:04,000",
+      "expectedOutputFile": "more--metro-station-facilities--station-office.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-station-facilities--station-office.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-station-facilities--station-office.mp3",
+      "referencedBy": [
+        "Metro/metro-station-facilities (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 54,
+      "originalText": "accessible ramp",
+      "normalizedText": "accessible ramp",
+      "srtStart": "00:07:04,000",
+      "srtEnd": "00:07:12,000",
+      "expectedOutputFile": "more--metro-station-facilities--accessible-ramp.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-station-facilities--accessible-ramp.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-station-facilities--accessible-ramp.mp3",
+      "referencedBy": [
+        "Metro/metro-station-facilities (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 55,
+      "originalText": "carriage number",
+      "normalizedText": "carriage number",
+      "srtStart": "00:07:12,000",
+      "srtEnd": "00:07:20,000",
+      "expectedOutputFile": "more--metro-train-carriage--carriage-number.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-train-carriage--carriage-number.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-train-carriage--carriage-number.mp3",
+      "referencedBy": [
+        "Metro/metro-train-carriage (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 56,
+      "originalText": "ceiling strap",
+      "normalizedText": "ceiling strap",
+      "srtStart": "00:07:20,000",
+      "srtEnd": "00:07:28,000",
+      "expectedOutputFile": "more--metro-train-carriage--ceiling-strap.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-train-carriage--ceiling-strap.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-train-carriage--ceiling-strap.mp3",
+      "referencedBy": [
+        "Metro/metro-train-carriage (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 57,
+      "originalText": "driver cab",
+      "normalizedText": "driver cab",
+      "srtStart": "00:07:28,000",
+      "srtEnd": "00:07:36,000",
+      "expectedOutputFile": "more--metro-train-carriage--driver-cab.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-train-carriage--driver-cab.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-train-carriage--driver-cab.mp3",
+      "referencedBy": [
+        "Metro/metro-train-carriage (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 58,
+      "originalText": "door chime",
+      "normalizedText": "door chime",
+      "srtStart": "00:07:36,000",
+      "srtEnd": "00:07:44,000",
+      "expectedOutputFile": "more--metro-train-carriage--door-chime.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-train-carriage--door-chime.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-train-carriage--door-chime.mp3",
+      "referencedBy": [
+        "Metro/metro-train-carriage (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 59,
+      "originalText": "emergency handle",
+      "normalizedText": "emergency handle",
+      "srtStart": "00:07:44,000",
+      "srtEnd": "00:07:52,000",
+      "expectedOutputFile": "more--metro-train-carriage--emergency-handle.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-train-carriage--emergency-handle.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-train-carriage--emergency-handle.mp3",
+      "referencedBy": [
+        "Metro/metro-train-carriage (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 60,
+      "originalText": "carriage display",
+      "normalizedText": "carriage display",
+      "srtStart": "00:07:52,000",
+      "srtEnd": "00:08:00,000",
+      "expectedOutputFile": "more--metro-train-carriage--carriage-display.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-train-carriage--carriage-display.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-train-carriage--carriage-display.mp3",
+      "referencedBy": [
+        "Metro/metro-train-carriage (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 61,
+      "originalText": "floor marking",
+      "normalizedText": "floor marking",
+      "srtStart": "00:08:00,000",
+      "srtEnd": "00:08:08,000",
+      "expectedOutputFile": "more--metro-train-carriage--floor-marking.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-train-carriage--floor-marking.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-train-carriage--floor-marking.mp3",
+      "referencedBy": [
+        "Metro/metro-train-carriage (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 62,
+      "originalText": "next-stop indicator",
+      "normalizedText": "next-stop indicator",
+      "srtStart": "00:08:08,000",
+      "srtEnd": "00:08:16,000",
+      "expectedOutputFile": "more--metro-train-carriage--next-stop-indicator.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-train-carriage--next-stop-indicator.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-train-carriage--next-stop-indicator.mp3",
+      "referencedBy": [
+        "Metro/metro-train-carriage (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 63,
+      "originalText": "audible alert",
+      "normalizedText": "audible alert",
+      "srtStart": "00:08:16,000",
+      "srtEnd": "00:08:24,000",
+      "expectedOutputFile": "more--metro-train-carriage--audible-alert.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-train-carriage--audible-alert.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-train-carriage--audible-alert.mp3",
+      "referencedBy": [
+        "Metro/metro-train-carriage (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 64,
+      "originalText": "courtesy zone",
+      "normalizedText": "courtesy zone",
+      "srtStart": "00:08:24,000",
+      "srtEnd": "00:08:32,000",
+      "expectedOutputFile": "more--metro-train-carriage--courtesy-zone.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-train-carriage--courtesy-zone.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-train-carriage--courtesy-zone.mp3",
+      "referencedBy": [
+        "Metro/metro-train-carriage (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 65,
+      "originalText": "train operator",
+      "normalizedText": "train operator",
+      "srtStart": "00:08:32,000",
+      "srtEnd": "00:08:40,000",
+      "expectedOutputFile": "more--metro-train-carriage--train-operator.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-train-carriage--train-operator.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-train-carriage--train-operator.mp3",
+      "referencedBy": [
+        "Metro/metro-train-carriage (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 66,
+      "originalText": "train doors",
+      "normalizedText": "train doors",
+      "srtStart": "00:08:40,000",
+      "srtEnd": "00:08:48,000",
+      "expectedOutputFile": "more--metro-train-carriage--train-doors.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-train-carriage--train-doors.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-train-carriage--train-doors.mp3",
+      "referencedBy": [
+        "Metro/metro-train-carriage (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 67,
+      "originalText": "inbound service",
+      "normalizedText": "inbound service",
+      "srtStart": "00:08:48,000",
+      "srtEnd": "00:08:56,000",
+      "expectedOutputFile": "more--metro-routes-notices--inbound-service.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-routes-notices--inbound-service.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-routes-notices--inbound-service.mp3",
+      "referencedBy": [
+        "Metro/metro-routes-notices (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 68,
+      "originalText": "outbound service",
+      "normalizedText": "outbound service",
+      "srtStart": "00:08:56,000",
+      "srtEnd": "00:09:04,000",
+      "expectedOutputFile": "more--metro-routes-notices--outbound-service.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-routes-notices--outbound-service.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-routes-notices--outbound-service.mp3",
+      "referencedBy": [
+        "Metro/metro-routes-notices (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 69,
+      "originalText": "next stop",
+      "normalizedText": "next stop",
+      "srtStart": "00:09:04,000",
+      "srtEnd": "00:09:12,000",
+      "expectedOutputFile": "more--metro-routes-notices--next-stop.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-routes-notices--next-stop.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-routes-notices--next-stop.mp3",
+      "referencedBy": [
+        "Metro/metro-routes-notices (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 70,
+      "originalText": "service update",
+      "normalizedText": "service update",
+      "srtStart": "00:09:12,000",
+      "srtEnd": "00:09:20,000",
+      "expectedOutputFile": "more--metro-routes-notices--service-update.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-routes-notices--service-update.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-routes-notices--service-update.mp3",
+      "referencedBy": [
+        "Metro/metro-routes-notices (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 71,
+      "originalText": "temporary closure",
+      "normalizedText": "temporary closure",
+      "srtStart": "00:09:20,000",
+      "srtEnd": "00:09:28,000",
+      "expectedOutputFile": "more--metro-routes-notices--temporary-closure.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-routes-notices--temporary-closure.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-routes-notices--temporary-closure.mp3",
+      "referencedBy": [
+        "Metro/metro-routes-notices (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 72,
+      "originalText": "replacement bus",
+      "normalizedText": "replacement bus",
+      "srtStart": "00:09:28,000",
+      "srtEnd": "00:09:36,000",
+      "expectedOutputFile": "more--metro-routes-notices--replacement-bus.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-routes-notices--replacement-bus.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-routes-notices--replacement-bus.mp3",
+      "referencedBy": [
+        "Metro/metro-routes-notices (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 73,
+      "originalText": "last service",
+      "normalizedText": "last service",
+      "srtStart": "00:09:36,000",
+      "srtEnd": "00:09:44,000",
+      "expectedOutputFile": "more--metro-routes-notices--last-service.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-routes-notices--last-service.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-routes-notices--last-service.mp3",
+      "referencedBy": [
+        "Metro/metro-routes-notices (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 74,
+      "originalText": "peak hours",
+      "normalizedText": "peak hours",
+      "srtStart": "00:09:44,000",
+      "srtEnd": "00:09:52,000",
+      "expectedOutputFile": "more--metro-routes-notices--peak-hours.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-routes-notices--peak-hours.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-routes-notices--peak-hours.mp3",
+      "referencedBy": [
+        "Metro/metro-routes-notices (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 75,
+      "originalText": "off-peak fare",
+      "normalizedText": "off-peak fare",
+      "srtStart": "00:09:52,000",
+      "srtEnd": "00:10:00,000",
+      "expectedOutputFile": "more--metro-routes-notices--off-peak-fare.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-routes-notices--off-peak-fare.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-routes-notices--off-peak-fare.mp3",
+      "referencedBy": [
+        "Metro/metro-routes-notices (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 76,
+      "originalText": "mind the gap",
+      "normalizedText": "mind the gap",
+      "srtStart": "00:10:00,000",
+      "srtEnd": "00:10:08,000",
+      "expectedOutputFile": "more--metro-routes-notices--mind-the-gap.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-routes-notices--mind-the-gap.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-routes-notices--mind-the-gap.mp3",
+      "referencedBy": [
+        "Metro/metro-routes-notices (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 77,
+      "originalText": "alight here",
+      "normalizedText": "alight here",
+      "srtStart": "00:10:08,000",
+      "srtEnd": "00:10:16,000",
+      "expectedOutputFile": "more--metro-routes-notices--alight-here.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-routes-notices--alight-here.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-routes-notices--alight-here.mp3",
+      "referencedBy": [
+        "Metro/metro-routes-notices (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "order": 78,
+      "originalText": "connect here",
+      "normalizedText": "connect here",
+      "srtStart": "00:10:16,000",
+      "srtEnd": "00:10:24,000",
+      "expectedOutputFile": "more--metro-routes-notices--connect-here.mp3",
+      "currentOldAudioPath": "assets/audio/words/metro/more--metro-routes-notices--connect-here.mp3",
+      "finalTargetAudioPath": "assets/audio/words/metro/more--metro-routes-notices--connect-here.mp3",
+      "referencedBy": [
+        "Metro/metro-routes-notices (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    }
+  ]
+}

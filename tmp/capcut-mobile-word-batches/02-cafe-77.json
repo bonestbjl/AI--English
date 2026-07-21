@@ -1,0 +1,1484 @@
+{
+  "schemaVersion": 1,
+  "batchIndex": 2,
+  "theme": "cafe",
+  "count": 77,
+  "sourceList": "tmp/mobile-word-capcut-generation-list.json",
+  "timing": {
+    "cueDurationSeconds": 8,
+    "cueStepSeconds": 8,
+    "sourceCueGapSeconds": 0,
+    "openingReservedSilenceSeconds": 0,
+    "endingReservedSilenceSeconds": 0
+  },
+  "export": {
+    "directory": "tmp/capcut-mobile-word-batches/exports/02-cafe-77",
+    "suggestedAudioFile": "02-cafe-77-capcut-export.mp3",
+    "suggestedSrtFile": "02-cafe-77-capcut-export.srt"
+  },
+  "records": [
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 1,
+      "originalText": "cafe",
+      "normalizedText": "cafe",
+      "srtStart": "00:00:00,000",
+      "srtEnd": "00:00:08,000",
+      "expectedOutputFile": "cafe-entrance--cafe.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/cafe-entrance--cafe.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/cafe-entrance--cafe.mp3",
+      "referencedBy": [
+        "Cafe/cafeEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 2,
+      "originalText": "awning",
+      "normalizedText": "awning",
+      "srtStart": "00:00:08,000",
+      "srtEnd": "00:00:16,000",
+      "expectedOutputFile": "cafe-entrance--awning.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/cafe-entrance--awning.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/cafe-entrance--awning.mp3",
+      "referencedBy": [
+        "Cafe/cafeEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 3,
+      "originalText": "window",
+      "normalizedText": "window",
+      "srtStart": "00:00:16,000",
+      "srtEnd": "00:00:24,000",
+      "expectedOutputFile": "cafe-entrance--window.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/cafe-entrance--window.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/cafe-entrance--window.mp3",
+      "referencedBy": [
+        "Cafe/cafeEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 4,
+      "originalText": "queue",
+      "normalizedText": "queue",
+      "srtStart": "00:00:24,000",
+      "srtEnd": "00:00:32,000",
+      "expectedOutputFile": "cafe-entrance--queue.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/cafe-entrance--queue.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/cafe-entrance--queue.mp3",
+      "referencedBy": [
+        "Cafe/cafeEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 5,
+      "originalText": "aroma",
+      "normalizedText": "aroma",
+      "srtStart": "00:00:32,000",
+      "srtEnd": "00:00:40,000",
+      "expectedOutputFile": "cafe-entrance--aroma.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/cafe-entrance--aroma.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/cafe-entrance--aroma.mp3",
+      "referencedBy": [
+        "Cafe/cafeEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 6,
+      "originalText": "door handle",
+      "normalizedText": "door handle",
+      "srtStart": "00:00:40,000",
+      "srtEnd": "00:00:48,000",
+      "expectedOutputFile": "cafe-entrance--door-handle.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/cafe-entrance--door-handle.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/cafe-entrance--door-handle.mp3",
+      "referencedBy": [
+        "Cafe/cafeEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 7,
+      "originalText": "step inside",
+      "normalizedText": "step inside",
+      "srtStart": "00:00:48,000",
+      "srtEnd": "00:00:56,000",
+      "expectedOutputFile": "cafe-entrance--step-inside.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/cafe-entrance--step-inside.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/cafe-entrance--step-inside.mp3",
+      "referencedBy": [
+        "Cafe/cafeEntrance (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 8,
+      "originalText": "chalkboard",
+      "normalizedText": "chalkboard",
+      "srtStart": "00:00:56,000",
+      "srtEnd": "00:01:04,000",
+      "expectedOutputFile": "menu-board--chalkboard.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/menu-board--chalkboard.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/menu-board--chalkboard.mp3",
+      "referencedBy": [
+        "Cafe/menuBoard (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 9,
+      "originalText": "specials",
+      "normalizedText": "specials",
+      "srtStart": "00:01:04,000",
+      "srtEnd": "00:01:12,000",
+      "expectedOutputFile": "menu-board--specials.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/menu-board--specials.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/menu-board--specials.mp3",
+      "referencedBy": [
+        "Cafe/menuBoard (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 10,
+      "originalText": "latte",
+      "normalizedText": "latte",
+      "srtStart": "00:01:12,000",
+      "srtEnd": "00:01:20,000",
+      "expectedOutputFile": "menu-board--latte.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/menu-board--latte.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/menu-board--latte.mp3",
+      "referencedBy": [
+        "Cafe/menuBoard (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 11,
+      "originalText": "espresso",
+      "normalizedText": "espresso",
+      "srtStart": "00:01:20,000",
+      "srtEnd": "00:01:28,000",
+      "expectedOutputFile": "menu-board--espresso.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/menu-board--espresso.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/menu-board--espresso.mp3",
+      "referencedBy": [
+        "Cafe/menuBoard (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 12,
+      "originalText": "mocha",
+      "normalizedText": "mocha",
+      "srtStart": "00:01:28,000",
+      "srtEnd": "00:01:36,000",
+      "expectedOutputFile": "menu-board--mocha.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/menu-board--mocha.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/menu-board--mocha.mp3",
+      "referencedBy": [
+        "Cafe/menuBoard (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 13,
+      "originalText": "brew",
+      "normalizedText": "brew",
+      "srtStart": "00:01:36,000",
+      "srtEnd": "00:01:44,000",
+      "expectedOutputFile": "menu-board--brew.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/menu-board--brew.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/menu-board--brew.mp3",
+      "referencedBy": [
+        "Cafe/menuBoard (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 14,
+      "originalText": "scan",
+      "normalizedText": "scan",
+      "srtStart": "00:01:44,000",
+      "srtEnd": "00:01:52,000",
+      "expectedOutputFile": "menu-board--scan.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/menu-board--scan.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/menu-board--scan.mp3",
+      "referencedBy": [
+        "Cafe/menuBoard (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 15,
+      "originalText": "barista",
+      "normalizedText": "barista",
+      "srtStart": "00:01:52,000",
+      "srtEnd": "00:02:00,000",
+      "expectedOutputFile": "order-counter--barista.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/order-counter--barista.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/order-counter--barista.mp3",
+      "referencedBy": [
+        "Cafe/orderCounter (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 16,
+      "originalText": "greeting",
+      "normalizedText": "greeting",
+      "srtStart": "00:02:00,000",
+      "srtEnd": "00:02:08,000",
+      "expectedOutputFile": "order-counter--greeting.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/order-counter--greeting.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/order-counter--greeting.mp3",
+      "referencedBy": [
+        "Cafe/orderCounter (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 17,
+      "originalText": "preference",
+      "normalizedText": "preference",
+      "srtStart": "00:02:08,000",
+      "srtEnd": "00:02:16,000",
+      "expectedOutputFile": "order-counter--preference.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/order-counter--preference.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/order-counter--preference.mp3",
+      "referencedBy": [
+        "Cafe/orderCounter (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 18,
+      "originalText": "medium",
+      "normalizedText": "medium",
+      "srtStart": "00:02:16,000",
+      "srtEnd": "00:02:24,000",
+      "expectedOutputFile": "order-counter--medium.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/order-counter--medium.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/order-counter--medium.mp3",
+      "referencedBy": [
+        "Cafe/orderCounter (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 19,
+      "originalText": "dairy-free",
+      "normalizedText": "dairy-free",
+      "srtStart": "00:02:24,000",
+      "srtEnd": "00:02:32,000",
+      "expectedOutputFile": "order-counter--dairy-free.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/order-counter--dairy-free.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/order-counter--dairy-free.mp3",
+      "referencedBy": [
+        "Cafe/orderCounter (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 20,
+      "originalText": "request",
+      "normalizedText": "request",
+      "srtStart": "00:02:32,000",
+      "srtEnd": "00:02:40,000",
+      "expectedOutputFile": "order-counter--request.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/order-counter--request.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/order-counter--request.mp3",
+      "referencedBy": [
+        "Cafe/orderCounter (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 21,
+      "originalText": "iced",
+      "normalizedText": "iced",
+      "srtStart": "00:02:40,000",
+      "srtEnd": "00:02:48,000",
+      "expectedOutputFile": "choose-drink--iced.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/choose-drink--iced.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/choose-drink--iced.mp3",
+      "referencedBy": [
+        "Cafe/chooseDrink (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 22,
+      "originalText": "hot",
+      "normalizedText": "hot",
+      "srtStart": "00:02:48,000",
+      "srtEnd": "00:02:56,000",
+      "expectedOutputFile": "choose-drink--hot.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/choose-drink--hot.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/choose-drink--hot.mp3",
+      "referencedBy": [
+        "Cafe/chooseDrink (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 23,
+      "originalText": "size",
+      "normalizedText": "size",
+      "srtStart": "00:02:56,000",
+      "srtEnd": "00:03:04,000",
+      "expectedOutputFile": "choose-drink--size.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/choose-drink--size.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/choose-drink--size.mp3",
+      "referencedBy": [
+        "Cafe/chooseDrink (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 24,
+      "originalText": "milk",
+      "normalizedText": "milk",
+      "srtStart": "00:03:04,000",
+      "srtEnd": "00:03:12,000",
+      "expectedOutputFile": "choose-drink--milk.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/choose-drink--milk.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/choose-drink--milk.mp3",
+      "referencedBy": [
+        "Cafe/chooseDrink (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 25,
+      "originalText": "foam",
+      "normalizedText": "foam",
+      "srtStart": "00:03:12,000",
+      "srtEnd": "00:03:20,000",
+      "expectedOutputFile": "choose-drink--foam.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/choose-drink--foam.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/choose-drink--foam.mp3",
+      "referencedBy": [
+        "Cafe/chooseDrink (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 26,
+      "originalText": "syrup",
+      "normalizedText": "syrup",
+      "srtStart": "00:03:20,000",
+      "srtEnd": "00:03:28,000",
+      "expectedOutputFile": "choose-drink--syrup.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/choose-drink--syrup.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/choose-drink--syrup.mp3",
+      "referencedBy": [
+        "Cafe/chooseDrink (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 27,
+      "originalText": "customize",
+      "normalizedText": "customize",
+      "srtStart": "00:03:28,000",
+      "srtEnd": "00:03:36,000",
+      "expectedOutputFile": "choose-drink--customize.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/choose-drink--customize.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/choose-drink--customize.mp3",
+      "referencedBy": [
+        "Cafe/chooseDrink (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 28,
+      "originalText": "pickup",
+      "normalizedText": "pickup",
+      "srtStart": "00:03:36,000",
+      "srtEnd": "00:03:44,000",
+      "expectedOutputFile": "pickup-counter--pickup.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/pickup-counter--pickup.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/pickup-counter--pickup.mp3",
+      "referencedBy": [
+        "Cafe/pickupCounter (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 29,
+      "originalText": "pickup name",
+      "normalizedText": "pickup name",
+      "srtStart": "00:03:44,000",
+      "srtEnd": "00:03:52,000",
+      "expectedOutputFile": "pickup-counter--pickup-name.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/pickup-counter--pickup-name.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/pickup-counter--pickup-name.mp3",
+      "referencedBy": [
+        "Cafe/pickupCounter (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 30,
+      "originalText": "lid",
+      "normalizedText": "lid",
+      "srtStart": "00:03:52,000",
+      "srtEnd": "00:04:00,000",
+      "expectedOutputFile": "pickup-counter--lid.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/pickup-counter--lid.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/pickup-counter--lid.mp3",
+      "referencedBy": [
+        "Cafe/pickupCounter (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 31,
+      "originalText": "sleeve",
+      "normalizedText": "sleeve",
+      "srtStart": "00:04:00,000",
+      "srtEnd": "00:04:08,000",
+      "expectedOutputFile": "pickup-counter--sleeve.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/pickup-counter--sleeve.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/pickup-counter--sleeve.mp3",
+      "referencedBy": [
+        "Cafe/pickupCounter (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 32,
+      "originalText": "stirrer",
+      "normalizedText": "stirrer",
+      "srtStart": "00:04:08,000",
+      "srtEnd": "00:04:16,000",
+      "expectedOutputFile": "pickup-counter--stirrer.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/pickup-counter--stirrer.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/pickup-counter--stirrer.mp3",
+      "referencedBy": [
+        "Cafe/pickupCounter (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 33,
+      "originalText": "napkin",
+      "normalizedText": "napkin",
+      "srtStart": "00:04:16,000",
+      "srtEnd": "00:04:24,000",
+      "expectedOutputFile": "pickup-counter--napkin.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/pickup-counter--napkin.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/pickup-counter--napkin.mp3",
+      "referencedBy": [
+        "Cafe/pickupCounter (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 34,
+      "originalText": "collect",
+      "normalizedText": "collect",
+      "srtStart": "00:04:24,000",
+      "srtEnd": "00:04:32,000",
+      "expectedOutputFile": "pickup-counter--collect.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/pickup-counter--collect.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/pickup-counter--collect.mp3",
+      "referencedBy": [
+        "Cafe/pickupCounter (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 35,
+      "originalText": "table",
+      "normalizedText": "table",
+      "srtStart": "00:04:32,000",
+      "srtEnd": "00:04:40,000",
+      "expectedOutputFile": "find-table--table.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/find-table--table.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/find-table--table.mp3",
+      "referencedBy": [
+        "Cafe/findTable (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 36,
+      "originalText": "chair",
+      "normalizedText": "chair",
+      "srtStart": "00:04:40,000",
+      "srtEnd": "00:04:48,000",
+      "expectedOutputFile": "find-table--chair.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/find-table--chair.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/find-table--chair.mp3",
+      "referencedBy": [
+        "Cafe/findTable (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 37,
+      "originalText": "corner",
+      "normalizedText": "corner",
+      "srtStart": "00:04:48,000",
+      "srtEnd": "00:04:56,000",
+      "expectedOutputFile": "find-table--corner.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/find-table--corner.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/find-table--corner.mp3",
+      "referencedBy": [
+        "Cafe/findTable (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 38,
+      "originalText": "socket",
+      "normalizedText": "socket",
+      "srtStart": "00:04:56,000",
+      "srtEnd": "00:05:04,000",
+      "expectedOutputFile": "find-table--socket.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/find-table--socket.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/find-table--socket.mp3",
+      "referencedBy": [
+        "Cafe/findTable (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 39,
+      "originalText": "wifi",
+      "normalizedText": "wifi",
+      "srtStart": "00:05:04,000",
+      "srtEnd": "00:05:12,000",
+      "expectedOutputFile": "find-table--wifi.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/find-table--wifi.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/find-table--wifi.mp3",
+      "referencedBy": [
+        "Cafe/findTable (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 40,
+      "originalText": "takeaway",
+      "normalizedText": "takeaway",
+      "srtStart": "00:05:12,000",
+      "srtEnd": "00:05:20,000",
+      "expectedOutputFile": "find-table--takeaway.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/find-table--takeaway.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/find-table--takeaway.mp3",
+      "referencedBy": [
+        "Cafe/findTable (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 41,
+      "originalText": "settle",
+      "normalizedText": "settle",
+      "srtStart": "00:05:20,000",
+      "srtEnd": "00:05:28,000",
+      "expectedOutputFile": "find-table--settle.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/find-table--settle.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/find-table--settle.mp3",
+      "referencedBy": [
+        "Cafe/findTable (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 42,
+      "originalText": "cappuccino",
+      "normalizedText": "cappuccino",
+      "srtStart": "00:05:28,000",
+      "srtEnd": "00:05:36,000",
+      "expectedOutputFile": "more--cafe-drinks--cappuccino.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-drinks--cappuccino.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-drinks--cappuccino.mp3",
+      "referencedBy": [
+        "Cafe/cafe-drinks (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 43,
+      "originalText": "americano",
+      "normalizedText": "americano",
+      "srtStart": "00:05:36,000",
+      "srtEnd": "00:05:44,000",
+      "expectedOutputFile": "more--cafe-drinks--americano.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-drinks--americano.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-drinks--americano.mp3",
+      "referencedBy": [
+        "Cafe/cafe-drinks (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 44,
+      "originalText": "macchiato",
+      "normalizedText": "macchiato",
+      "srtStart": "00:05:44,000",
+      "srtEnd": "00:05:52,000",
+      "expectedOutputFile": "more--cafe-drinks--macchiato.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-drinks--macchiato.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-drinks--macchiato.mp3",
+      "referencedBy": [
+        "Cafe/cafe-drinks (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 45,
+      "originalText": "flat white",
+      "normalizedText": "flat white",
+      "srtStart": "00:05:52,000",
+      "srtEnd": "00:06:00,000",
+      "expectedOutputFile": "more--cafe-drinks--flat-white.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-drinks--flat-white.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-drinks--flat-white.mp3",
+      "referencedBy": [
+        "Cafe/cafe-drinks (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 46,
+      "originalText": "cold brew",
+      "normalizedText": "cold brew",
+      "srtStart": "00:06:00,000",
+      "srtEnd": "00:06:08,000",
+      "expectedOutputFile": "more--cafe-drinks--cold-brew.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-drinks--cold-brew.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-drinks--cold-brew.mp3",
+      "referencedBy": [
+        "Cafe/cafe-drinks (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 47,
+      "originalText": "matcha latte",
+      "normalizedText": "matcha latte",
+      "srtStart": "00:06:08,000",
+      "srtEnd": "00:06:16,000",
+      "expectedOutputFile": "more--cafe-drinks--matcha-latte.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-drinks--matcha-latte.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-drinks--matcha-latte.mp3",
+      "referencedBy": [
+        "Cafe/cafe-drinks (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 48,
+      "originalText": "chai latte",
+      "normalizedText": "chai latte",
+      "srtStart": "00:06:16,000",
+      "srtEnd": "00:06:24,000",
+      "expectedOutputFile": "more--cafe-drinks--chai-latte.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-drinks--chai-latte.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-drinks--chai-latte.mp3",
+      "referencedBy": [
+        "Cafe/cafe-drinks (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 49,
+      "originalText": "herbal tea",
+      "normalizedText": "herbal tea",
+      "srtStart": "00:06:24,000",
+      "srtEnd": "00:06:32,000",
+      "expectedOutputFile": "more--cafe-drinks--herbal-tea.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-drinks--herbal-tea.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-drinks--herbal-tea.mp3",
+      "referencedBy": [
+        "Cafe/cafe-drinks (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 50,
+      "originalText": "lemonade",
+      "normalizedText": "lemonade",
+      "srtStart": "00:06:32,000",
+      "srtEnd": "00:06:40,000",
+      "expectedOutputFile": "more--cafe-drinks--lemonade.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-drinks--lemonade.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-drinks--lemonade.mp3",
+      "referencedBy": [
+        "Cafe/cafe-drinks (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 51,
+      "originalText": "smoothie",
+      "normalizedText": "smoothie",
+      "srtStart": "00:06:40,000",
+      "srtEnd": "00:06:48,000",
+      "expectedOutputFile": "more--cafe-drinks--smoothie.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-drinks--smoothie.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-drinks--smoothie.mp3",
+      "referencedBy": [
+        "Cafe/cafe-drinks (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 52,
+      "originalText": "frappe",
+      "normalizedText": "frappe",
+      "srtStart": "00:06:48,000",
+      "srtEnd": "00:06:56,000",
+      "expectedOutputFile": "more--cafe-drinks--frappe.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-drinks--frappe.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-drinks--frappe.mp3",
+      "referencedBy": [
+        "Cafe/cafe-drinks (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 53,
+      "originalText": "sparkling coffee",
+      "normalizedText": "sparkling coffee",
+      "srtStart": "00:06:56,000",
+      "srtEnd": "00:07:04,000",
+      "expectedOutputFile": "more--cafe-drinks--sparkling-coffee.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-drinks--sparkling-coffee.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-drinks--sparkling-coffee.mp3",
+      "referencedBy": [
+        "Cafe/cafe-drinks (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 54,
+      "originalText": "croissant",
+      "normalizedText": "croissant",
+      "srtStart": "00:07:04,000",
+      "srtEnd": "00:07:12,000",
+      "expectedOutputFile": "more--cafe-food-desserts--croissant.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-food-desserts--croissant.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-food-desserts--croissant.mp3",
+      "referencedBy": [
+        "Cafe/cafe-food-desserts (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 55,
+      "originalText": "muffin",
+      "normalizedText": "muffin",
+      "srtStart": "00:07:12,000",
+      "srtEnd": "00:07:20,000",
+      "expectedOutputFile": "more--cafe-food-desserts--muffin.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-food-desserts--muffin.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-food-desserts--muffin.mp3",
+      "referencedBy": [
+        "Cafe/cafe-food-desserts (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 56,
+      "originalText": "bagel",
+      "normalizedText": "bagel",
+      "srtStart": "00:07:20,000",
+      "srtEnd": "00:07:28,000",
+      "expectedOutputFile": "more--cafe-food-desserts--bagel.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-food-desserts--bagel.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-food-desserts--bagel.mp3",
+      "referencedBy": [
+        "Cafe/cafe-food-desserts (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 57,
+      "originalText": "brownie",
+      "normalizedText": "brownie",
+      "srtStart": "00:07:28,000",
+      "srtEnd": "00:07:36,000",
+      "expectedOutputFile": "more--cafe-food-desserts--brownie.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-food-desserts--brownie.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-food-desserts--brownie.mp3",
+      "referencedBy": [
+        "Cafe/cafe-food-desserts (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 58,
+      "originalText": "cheesecake",
+      "normalizedText": "cheesecake",
+      "srtStart": "00:07:36,000",
+      "srtEnd": "00:07:44,000",
+      "expectedOutputFile": "more--cafe-food-desserts--cheesecake.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-food-desserts--cheesecake.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-food-desserts--cheesecake.mp3",
+      "referencedBy": [
+        "Cafe/cafe-food-desserts (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 59,
+      "originalText": "tiramisu",
+      "normalizedText": "tiramisu",
+      "srtStart": "00:07:44,000",
+      "srtEnd": "00:07:52,000",
+      "expectedOutputFile": "more--cafe-food-desserts--tiramisu.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-food-desserts--tiramisu.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-food-desserts--tiramisu.mp3",
+      "referencedBy": [
+        "Cafe/cafe-food-desserts (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 60,
+      "originalText": "cookie",
+      "normalizedText": "cookie",
+      "srtStart": "00:07:52,000",
+      "srtEnd": "00:08:00,000",
+      "expectedOutputFile": "more--cafe-food-desserts--cookie.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-food-desserts--cookie.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-food-desserts--cookie.mp3",
+      "referencedBy": [
+        "Cafe/cafe-food-desserts (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 61,
+      "originalText": "scone",
+      "normalizedText": "scone",
+      "srtStart": "00:08:00,000",
+      "srtEnd": "00:08:08,000",
+      "expectedOutputFile": "more--cafe-food-desserts--scone.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-food-desserts--scone.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-food-desserts--scone.mp3",
+      "referencedBy": [
+        "Cafe/cafe-food-desserts (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 62,
+      "originalText": "sandwich",
+      "normalizedText": "sandwich",
+      "srtStart": "00:08:08,000",
+      "srtEnd": "00:08:16,000",
+      "expectedOutputFile": "more--cafe-food-desserts--sandwich.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-food-desserts--sandwich.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-food-desserts--sandwich.mp3",
+      "referencedBy": [
+        "Cafe/cafe-food-desserts (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 63,
+      "originalText": "quiche",
+      "normalizedText": "quiche",
+      "srtStart": "00:08:16,000",
+      "srtEnd": "00:08:24,000",
+      "expectedOutputFile": "more--cafe-food-desserts--quiche.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-food-desserts--quiche.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-food-desserts--quiche.mp3",
+      "referencedBy": [
+        "Cafe/cafe-food-desserts (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 64,
+      "originalText": "yogurt parfait",
+      "normalizedText": "yogurt parfait",
+      "srtStart": "00:08:24,000",
+      "srtEnd": "00:08:32,000",
+      "expectedOutputFile": "more--cafe-food-desserts--yogurt-parfait.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-food-desserts--yogurt-parfait.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-food-desserts--yogurt-parfait.mp3",
+      "referencedBy": [
+        "Cafe/cafe-food-desserts (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 65,
+      "originalText": "granola bowl",
+      "normalizedText": "granola bowl",
+      "srtStart": "00:08:32,000",
+      "srtEnd": "00:08:40,000",
+      "expectedOutputFile": "more--cafe-food-desserts--granola-bowl.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-food-desserts--granola-bowl.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-food-desserts--granola-bowl.mp3",
+      "referencedBy": [
+        "Cafe/cafe-food-desserts (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 66,
+      "originalText": "reservation",
+      "normalizedText": "reservation",
+      "srtStart": "00:08:40,000",
+      "srtEnd": "00:08:48,000",
+      "expectedOutputFile": "more--cafe-phrases-items--reservation.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-phrases-items--reservation.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-phrases-items--reservation.mp3",
+      "referencedBy": [
+        "Cafe/cafe-phrases-items (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 67,
+      "originalText": "refill",
+      "normalizedText": "refill",
+      "srtStart": "00:08:48,000",
+      "srtEnd": "00:08:56,000",
+      "expectedOutputFile": "more--cafe-phrases-items--refill.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-phrases-items--refill.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-phrases-items--refill.mp3",
+      "referencedBy": [
+        "Cafe/cafe-phrases-items (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 68,
+      "originalText": "straw",
+      "normalizedText": "straw",
+      "srtStart": "00:08:56,000",
+      "srtEnd": "00:09:04,000",
+      "expectedOutputFile": "more--cafe-phrases-items--straw.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-phrases-items--straw.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-phrases-items--straw.mp3",
+      "referencedBy": [
+        "Cafe/cafe-phrases-items (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 69,
+      "originalText": "coaster",
+      "normalizedText": "coaster",
+      "srtStart": "00:09:04,000",
+      "srtEnd": "00:09:12,000",
+      "expectedOutputFile": "more--cafe-phrases-items--coaster.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-phrases-items--coaster.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-phrases-items--coaster.mp3",
+      "referencedBy": [
+        "Cafe/cafe-phrases-items (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 70,
+      "originalText": "ceramic cup",
+      "normalizedText": "ceramic cup",
+      "srtStart": "00:09:12,000",
+      "srtEnd": "00:09:20,000",
+      "expectedOutputFile": "more--cafe-phrases-items--ceramic-cup.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-phrases-items--ceramic-cup.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-phrases-items--ceramic-cup.mp3",
+      "referencedBy": [
+        "Cafe/cafe-phrases-items (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 71,
+      "originalText": "paper cup",
+      "normalizedText": "paper cup",
+      "srtStart": "00:09:20,000",
+      "srtEnd": "00:09:28,000",
+      "expectedOutputFile": "more--cafe-phrases-items--paper-cup.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-phrases-items--paper-cup.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-phrases-items--paper-cup.mp3",
+      "referencedBy": [
+        "Cafe/cafe-phrases-items (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 72,
+      "originalText": "loyalty card",
+      "normalizedText": "loyalty card",
+      "srtStart": "00:09:28,000",
+      "srtEnd": "00:09:36,000",
+      "expectedOutputFile": "more--cafe-phrases-items--loyalty-card.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-phrases-items--loyalty-card.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-phrases-items--loyalty-card.mp3",
+      "referencedBy": [
+        "Cafe/cafe-phrases-items (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 73,
+      "originalText": "tip jar",
+      "normalizedText": "tip jar",
+      "srtStart": "00:09:36,000",
+      "srtEnd": "00:09:44,000",
+      "expectedOutputFile": "more--cafe-phrases-items--tip-jar.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-phrases-items--tip-jar.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-phrases-items--tip-jar.mp3",
+      "referencedBy": [
+        "Cafe/cafe-phrases-items (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 74,
+      "originalText": "display case",
+      "normalizedText": "display case",
+      "srtStart": "00:09:44,000",
+      "srtEnd": "00:09:52,000",
+      "expectedOutputFile": "more--cafe-phrases-items--display-case.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-phrases-items--display-case.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-phrases-items--display-case.mp3",
+      "referencedBy": [
+        "Cafe/cafe-phrases-items (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 75,
+      "originalText": "booth",
+      "normalizedText": "booth",
+      "srtStart": "00:09:52,000",
+      "srtEnd": "00:10:00,000",
+      "expectedOutputFile": "more--cafe-phrases-items--booth.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-phrases-items--booth.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-phrases-items--booth.mp3",
+      "referencedBy": [
+        "Cafe/cafe-phrases-items (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 76,
+      "originalText": "patio",
+      "normalizedText": "patio",
+      "srtStart": "00:10:00,000",
+      "srtEnd": "00:10:08,000",
+      "expectedOutputFile": "more--cafe-phrases-items--patio.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-phrases-items--patio.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-phrases-items--patio.mp3",
+      "referencedBy": [
+        "Cafe/cafe-phrases-items (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "order": 77,
+      "originalText": "receipt printer",
+      "normalizedText": "receipt printer",
+      "srtStart": "00:10:08,000",
+      "srtEnd": "00:10:16,000",
+      "expectedOutputFile": "more--cafe-phrases-items--receipt-printer.mp3",
+      "currentOldAudioPath": "assets/audio/words/cafe/more--cafe-phrases-items--receipt-printer.mp3",
+      "finalTargetAudioPath": "assets/audio/words/cafe/more--cafe-phrases-items--receipt-printer.mp3",
+      "referencedBy": [
+        "Cafe/cafe-phrases-items (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    }
+  ]
+}

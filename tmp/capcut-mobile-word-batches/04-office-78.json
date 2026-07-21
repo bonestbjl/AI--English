@@ -1,0 +1,1503 @@
+{
+  "schemaVersion": 1,
+  "batchIndex": 4,
+  "theme": "office",
+  "count": 78,
+  "sourceList": "tmp/mobile-word-capcut-generation-list.json",
+  "timing": {
+    "cueDurationSeconds": 8,
+    "cueStepSeconds": 8,
+    "sourceCueGapSeconds": 0,
+    "openingReservedSilenceSeconds": 0,
+    "endingReservedSilenceSeconds": 0
+  },
+  "export": {
+    "directory": "tmp/capcut-mobile-word-batches/exports/04-office-78",
+    "suggestedAudioFile": "04-office-78-capcut-export.mp3",
+    "suggestedSrtFile": "04-office-78-capcut-export.srt"
+  },
+  "records": [
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 1,
+      "originalText": "lobby",
+      "normalizedText": "lobby",
+      "srtStart": "00:00:00,000",
+      "srtEnd": "00:00:08,000",
+      "expectedOutputFile": "office-entrance--lobby.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/office-entrance--lobby.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/office-entrance--lobby.mp3",
+      "referencedBy": [
+        "Office/officeEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 2,
+      "originalText": "reception",
+      "normalizedText": "reception",
+      "srtStart": "00:00:08,000",
+      "srtEnd": "00:00:16,000",
+      "expectedOutputFile": "office-entrance--reception.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/office-entrance--reception.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/office-entrance--reception.mp3",
+      "referencedBy": [
+        "Office/officeEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 3,
+      "originalText": "name badge",
+      "normalizedText": "name badge",
+      "srtStart": "00:00:16,000",
+      "srtEnd": "00:00:24,000",
+      "expectedOutputFile": "office-entrance--name-badge.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/office-entrance--name-badge.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/office-entrance--name-badge.mp3",
+      "referencedBy": [
+        "Office/officeEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 4,
+      "originalText": "appointment",
+      "normalizedText": "appointment",
+      "srtStart": "00:00:24,000",
+      "srtEnd": "00:00:32,000",
+      "expectedOutputFile": "office-entrance--appointment.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/office-entrance--appointment.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/office-entrance--appointment.mp3",
+      "referencedBy": [
+        "Office/officeEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 5,
+      "originalText": "directory",
+      "normalizedText": "directory",
+      "srtStart": "00:00:32,000",
+      "srtEnd": "00:00:40,000",
+      "expectedOutputFile": "office-entrance--directory.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/office-entrance--directory.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/office-entrance--directory.mp3",
+      "referencedBy": [
+        "Office/officeEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 6,
+      "originalText": "register",
+      "normalizedText": "register",
+      "srtStart": "00:00:40,000",
+      "srtEnd": "00:00:48,000",
+      "expectedOutputFile": "office-entrance--register.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/office-entrance--register.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/office-entrance--register.mp3",
+      "referencedBy": [
+        "Office/officeEntrance (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 7,
+      "originalText": "receptionist",
+      "normalizedText": "receptionist",
+      "srtStart": "00:00:48,000",
+      "srtEnd": "00:00:56,000",
+      "expectedOutputFile": "reception-area--receptionist.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/reception-area--receptionist.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/reception-area--receptionist.mp3",
+      "referencedBy": [
+        "Office/receptionArea (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 8,
+      "originalText": "visitor log",
+      "normalizedText": "visitor log",
+      "srtStart": "00:00:56,000",
+      "srtEnd": "00:01:04,000",
+      "expectedOutputFile": "reception-area--visitor-log.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/reception-area--visitor-log.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/reception-area--visitor-log.mp3",
+      "referencedBy": [
+        "Office/receptionArea (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 9,
+      "originalText": "appointment slip",
+      "normalizedText": "appointment slip",
+      "srtStart": "00:01:04,000",
+      "srtEnd": "00:01:12,000",
+      "expectedOutputFile": "reception-area--appointment-slip.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/reception-area--appointment-slip.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/reception-area--appointment-slip.mp3",
+      "referencedBy": [
+        "Office/receptionArea (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 10,
+      "originalText": "waiting area",
+      "normalizedText": "waiting area",
+      "srtStart": "00:01:12,000",
+      "srtEnd": "00:01:20,000",
+      "expectedOutputFile": "reception-area--waiting-area.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/reception-area--waiting-area.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/reception-area--waiting-area.mp3",
+      "referencedBy": [
+        "Office/receptionArea (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 11,
+      "originalText": "badge clip",
+      "normalizedText": "badge clip",
+      "srtStart": "00:01:20,000",
+      "srtEnd": "00:01:28,000",
+      "expectedOutputFile": "reception-area--badge-clip.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/reception-area--badge-clip.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/reception-area--badge-clip.mp3",
+      "referencedBy": [
+        "Office/receptionArea (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 12,
+      "originalText": "confirm",
+      "normalizedText": "confirm",
+      "srtStart": "00:01:28,000",
+      "srtEnd": "00:01:36,000",
+      "expectedOutputFile": "reception-area--confirm.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/reception-area--confirm.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/reception-area--confirm.mp3",
+      "referencedBy": [
+        "Office/receptionArea (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 13,
+      "originalText": "workstation",
+      "normalizedText": "workstation",
+      "srtStart": "00:01:36,000",
+      "srtEnd": "00:01:44,000",
+      "expectedOutputFile": "workstation--workstation.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/workstation--workstation.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/workstation--workstation.mp3",
+      "referencedBy": [
+        "Office/workstation (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 14,
+      "originalText": "monitor",
+      "normalizedText": "monitor",
+      "srtStart": "00:01:44,000",
+      "srtEnd": "00:01:52,000",
+      "expectedOutputFile": "workstation--monitor.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/workstation--monitor.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/workstation--monitor.mp3",
+      "referencedBy": [
+        "Office/workstation (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 15,
+      "originalText": "keyboard",
+      "normalizedText": "keyboard",
+      "srtStart": "00:01:52,000",
+      "srtEnd": "00:02:00,000",
+      "expectedOutputFile": "workstation--keyboard.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/workstation--keyboard.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/workstation--keyboard.mp3",
+      "referencedBy": [
+        "Office/workstation (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 16,
+      "originalText": "mouse",
+      "normalizedText": "mouse",
+      "srtStart": "00:02:00,000",
+      "srtEnd": "00:02:08,000",
+      "expectedOutputFile": "workstation--mouse.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/workstation--mouse.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/workstation--mouse.mp3",
+      "referencedBy": [
+        "Office/workstation (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 17,
+      "originalText": "inbox",
+      "normalizedText": "inbox",
+      "srtStart": "00:02:08,000",
+      "srtEnd": "00:02:16,000",
+      "expectedOutputFile": "workstation--inbox.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/workstation--inbox.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/workstation--inbox.mp3",
+      "referencedBy": [
+        "Office/workstation (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 18,
+      "originalText": "prioritize",
+      "normalizedText": "prioritize",
+      "srtStart": "00:02:16,000",
+      "srtEnd": "00:02:24,000",
+      "expectedOutputFile": "workstation--prioritize.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/workstation--prioritize.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/workstation--prioritize.mp3",
+      "referencedBy": [
+        "Office/workstation (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 19,
+      "originalText": "conference room",
+      "normalizedText": "conference room",
+      "srtStart": "00:02:24,000",
+      "srtEnd": "00:02:32,000",
+      "expectedOutputFile": "meeting-room--conference-room.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/meeting-room--conference-room.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/meeting-room--conference-room.mp3",
+      "referencedBy": [
+        "Office/meetingRoom (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 20,
+      "originalText": "agenda",
+      "normalizedText": "agenda",
+      "srtStart": "00:02:32,000",
+      "srtEnd": "00:02:40,000",
+      "expectedOutputFile": "meeting-room--agenda.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/meeting-room--agenda.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/meeting-room--agenda.mp3",
+      "referencedBy": [
+        "Office/meetingRoom (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 21,
+      "originalText": "projector",
+      "normalizedText": "projector",
+      "srtStart": "00:02:40,000",
+      "srtEnd": "00:02:48,000",
+      "expectedOutputFile": "meeting-room--projector.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/meeting-room--projector.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/meeting-room--projector.mp3",
+      "referencedBy": [
+        "Office/meetingRoom (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 22,
+      "originalText": "briefing",
+      "normalizedText": "briefing",
+      "srtStart": "00:02:48,000",
+      "srtEnd": "00:02:56,000",
+      "expectedOutputFile": "meeting-room--briefing.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/meeting-room--briefing.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/meeting-room--briefing.mp3",
+      "referencedBy": [
+        "Office/meetingRoom (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 23,
+      "originalText": "minutes",
+      "normalizedText": "minutes",
+      "srtStart": "00:02:56,000",
+      "srtEnd": "00:03:04,000",
+      "expectedOutputFile": "meeting-room--minutes.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/meeting-room--minutes.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/meeting-room--minutes.mp3",
+      "referencedBy": [
+        "Office/meetingRoom (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 24,
+      "originalText": "present",
+      "normalizedText": "present",
+      "srtStart": "00:03:04,000",
+      "srtEnd": "00:03:12,000",
+      "expectedOutputFile": "meeting-room--present.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/meeting-room--present.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/meeting-room--present.mp3",
+      "referencedBy": [
+        "Office/meetingRoom (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 25,
+      "originalText": "copier",
+      "normalizedText": "copier",
+      "srtStart": "00:03:12,000",
+      "srtEnd": "00:03:20,000",
+      "expectedOutputFile": "document-station--copier.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/document-station--copier.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/document-station--copier.mp3",
+      "referencedBy": [
+        "Office/documentStation (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 26,
+      "originalText": "printout",
+      "normalizedText": "printout",
+      "srtStart": "00:03:20,000",
+      "srtEnd": "00:03:28,000",
+      "expectedOutputFile": "document-station--printout.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/document-station--printout.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/document-station--printout.mp3",
+      "referencedBy": [
+        "Office/documentStation (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 27,
+      "originalText": "paper stack",
+      "normalizedText": "paper stack",
+      "srtStart": "00:03:28,000",
+      "srtEnd": "00:03:36,000",
+      "expectedOutputFile": "document-station--paper-stack.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/document-station--paper-stack.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/document-station--paper-stack.mp3",
+      "referencedBy": [
+        "Office/documentStation (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 28,
+      "originalText": "paper jam",
+      "normalizedText": "paper jam",
+      "srtStart": "00:03:36,000",
+      "srtEnd": "00:03:44,000",
+      "expectedOutputFile": "document-station--paper-jam.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/document-station--paper-jam.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/document-station--paper-jam.mp3",
+      "referencedBy": [
+        "Office/documentStation (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 29,
+      "originalText": "shredder",
+      "normalizedText": "shredder",
+      "srtStart": "00:03:44,000",
+      "srtEnd": "00:03:52,000",
+      "expectedOutputFile": "document-station--shredder.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/document-station--shredder.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/document-station--shredder.mp3",
+      "referencedBy": [
+        "Office/documentStation (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 30,
+      "originalText": "copy",
+      "normalizedText": "copy",
+      "srtStart": "00:03:52,000",
+      "srtEnd": "00:04:00,000",
+      "expectedOutputFile": "document-station--copy.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/document-station--copy.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/document-station--copy.mp3",
+      "referencedBy": [
+        "Office/documentStation (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 31,
+      "originalText": "break room",
+      "normalizedText": "break room",
+      "srtStart": "00:04:00,000",
+      "srtEnd": "00:04:08,000",
+      "expectedOutputFile": "break-room--break-room.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/break-room--break-room.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/break-room--break-room.mp3",
+      "referencedBy": [
+        "Office/breakRoom (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 32,
+      "originalText": "coffee machine",
+      "normalizedText": "coffee machine",
+      "srtStart": "00:04:08,000",
+      "srtEnd": "00:04:16,000",
+      "expectedOutputFile": "break-room--coffee-machine.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/break-room--coffee-machine.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/break-room--coffee-machine.mp3",
+      "referencedBy": [
+        "Office/breakRoom (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 33,
+      "originalText": "mug",
+      "normalizedText": "mug",
+      "srtStart": "00:04:16,000",
+      "srtEnd": "00:04:24,000",
+      "expectedOutputFile": "break-room--mug.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/break-room--mug.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/break-room--mug.mp3",
+      "referencedBy": [
+        "Office/breakRoom (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 34,
+      "originalText": "microwave",
+      "normalizedText": "microwave",
+      "srtStart": "00:04:24,000",
+      "srtEnd": "00:04:32,000",
+      "expectedOutputFile": "break-room--microwave.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/break-room--microwave.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/break-room--microwave.mp3",
+      "referencedBy": [
+        "Office/breakRoom (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 35,
+      "originalText": "kettle",
+      "normalizedText": "kettle",
+      "srtStart": "00:04:32,000",
+      "srtEnd": "00:04:40,000",
+      "expectedOutputFile": "break-room--kettle.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/break-room--kettle.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/break-room--kettle.mp3",
+      "referencedBy": [
+        "Office/breakRoom (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 36,
+      "originalText": "recharge",
+      "normalizedText": "recharge",
+      "srtStart": "00:04:40,000",
+      "srtEnd": "00:04:48,000",
+      "expectedOutputFile": "break-room--recharge.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/break-room--recharge.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/break-room--recharge.mp3",
+      "referencedBy": [
+        "Office/breakRoom (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 37,
+      "originalText": "handoff",
+      "normalizedText": "handoff",
+      "srtStart": "00:04:48,000",
+      "srtEnd": "00:04:56,000",
+      "expectedOutputFile": "end-workday--handoff.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/end-workday--handoff.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/end-workday--handoff.mp3",
+      "referencedBy": [
+        "Office/endWorkday (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 38,
+      "originalText": "status update",
+      "normalizedText": "status update",
+      "srtStart": "00:04:56,000",
+      "srtEnd": "00:05:04,000",
+      "expectedOutputFile": "end-workday--status-update.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/end-workday--status-update.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/end-workday--status-update.mp3",
+      "referencedBy": [
+        "Office/endWorkday (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 39,
+      "originalText": "approval",
+      "normalizedText": "approval",
+      "srtStart": "00:05:04,000",
+      "srtEnd": "00:05:12,000",
+      "expectedOutputFile": "end-workday--approval.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/end-workday--approval.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/end-workday--approval.mp3",
+      "referencedBy": [
+        "Office/endWorkday (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 40,
+      "originalText": "deadline",
+      "normalizedText": "deadline",
+      "srtStart": "00:05:12,000",
+      "srtEnd": "00:05:20,000",
+      "expectedOutputFile": "end-workday--deadline.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/end-workday--deadline.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/end-workday--deadline.mp3",
+      "referencedBy": [
+        "Office/endWorkday (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 41,
+      "originalText": "timesheet",
+      "normalizedText": "timesheet",
+      "srtStart": "00:05:20,000",
+      "srtEnd": "00:05:28,000",
+      "expectedOutputFile": "end-workday--timesheet.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/end-workday--timesheet.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/end-workday--timesheet.mp3",
+      "referencedBy": [
+        "Office/endWorkday (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 42,
+      "originalText": "sign out",
+      "normalizedText": "sign out",
+      "srtStart": "00:05:28,000",
+      "srtEnd": "00:05:36,000",
+      "expectedOutputFile": "end-workday--sign-out.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/end-workday--sign-out.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/end-workday--sign-out.mp3",
+      "referencedBy": [
+        "Office/endWorkday (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 43,
+      "originalText": "open office",
+      "normalizedText": "open office",
+      "srtStart": "00:05:36,000",
+      "srtEnd": "00:05:44,000",
+      "expectedOutputFile": "more--office-places--open-office.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--office-places--open-office.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--office-places--open-office.mp3",
+      "referencedBy": [
+        "Office/office-places (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 44,
+      "originalText": "huddle room",
+      "normalizedText": "huddle room",
+      "srtStart": "00:05:44,000",
+      "srtEnd": "00:05:52,000",
+      "expectedOutputFile": "more--office-places--huddle-room.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--office-places--huddle-room.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--office-places--huddle-room.mp3",
+      "referencedBy": [
+        "Office/office-places (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 45,
+      "originalText": "mailroom",
+      "normalizedText": "mailroom",
+      "srtStart": "00:05:52,000",
+      "srtEnd": "00:06:00,000",
+      "expectedOutputFile": "more--office-places--mailroom.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--office-places--mailroom.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--office-places--mailroom.mp3",
+      "referencedBy": [
+        "Office/office-places (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 46,
+      "originalText": "archive room",
+      "normalizedText": "archive room",
+      "srtStart": "00:06:00,000",
+      "srtEnd": "00:06:08,000",
+      "expectedOutputFile": "more--office-places--archive-room.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--office-places--archive-room.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--office-places--archive-room.mp3",
+      "referencedBy": [
+        "Office/office-places (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 47,
+      "originalText": "server room",
+      "normalizedText": "server room",
+      "srtStart": "00:06:08,000",
+      "srtEnd": "00:06:16,000",
+      "expectedOutputFile": "more--office-places--server-room.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--office-places--server-room.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--office-places--server-room.mp3",
+      "referencedBy": [
+        "Office/office-places (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 48,
+      "originalText": "training room",
+      "normalizedText": "training room",
+      "srtStart": "00:06:16,000",
+      "srtEnd": "00:06:24,000",
+      "expectedOutputFile": "more--office-places--training-room.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--office-places--training-room.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--office-places--training-room.mp3",
+      "referencedBy": [
+        "Office/office-places (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 49,
+      "originalText": "focus room",
+      "normalizedText": "focus room",
+      "srtStart": "00:06:24,000",
+      "srtEnd": "00:06:32,000",
+      "expectedOutputFile": "more--office-places--focus-room.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--office-places--focus-room.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--office-places--focus-room.mp3",
+      "referencedBy": [
+        "Office/office-places (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 50,
+      "originalText": "pantry",
+      "normalizedText": "pantry",
+      "srtStart": "00:06:32,000",
+      "srtEnd": "00:06:40,000",
+      "expectedOutputFile": "more--office-places--pantry.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--office-places--pantry.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--office-places--pantry.mp3",
+      "referencedBy": [
+        "Office/office-places (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 51,
+      "originalText": "rooftop terrace",
+      "normalizedText": "rooftop terrace",
+      "srtStart": "00:06:40,000",
+      "srtEnd": "00:06:48,000",
+      "expectedOutputFile": "more--office-places--rooftop-terrace.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--office-places--rooftop-terrace.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--office-places--rooftop-terrace.mp3",
+      "referencedBy": [
+        "Office/office-places (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 52,
+      "originalText": "executive suite",
+      "normalizedText": "executive suite",
+      "srtStart": "00:06:48,000",
+      "srtEnd": "00:06:56,000",
+      "expectedOutputFile": "more--office-places--executive-suite.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--office-places--executive-suite.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--office-places--executive-suite.mp3",
+      "referencedBy": [
+        "Office/office-places (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 53,
+      "originalText": "quiet zone",
+      "normalizedText": "quiet zone",
+      "srtStart": "00:06:56,000",
+      "srtEnd": "00:07:04,000",
+      "expectedOutputFile": "more--office-places--quiet-zone.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--office-places--quiet-zone.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--office-places--quiet-zone.mp3",
+      "referencedBy": [
+        "Office/office-places (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 54,
+      "originalText": "project hub",
+      "normalizedText": "project hub",
+      "srtStart": "00:07:04,000",
+      "srtEnd": "00:07:12,000",
+      "expectedOutputFile": "more--office-places--project-hub.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--office-places--project-hub.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--office-places--project-hub.mp3",
+      "referencedBy": [
+        "Office/office-places (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 55,
+      "originalText": "headset",
+      "normalizedText": "headset",
+      "srtStart": "00:07:12,000",
+      "srtEnd": "00:07:20,000",
+      "expectedOutputFile": "more--office-tools--headset.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--office-tools--headset.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--office-tools--headset.mp3",
+      "referencedBy": [
+        "Office/office-tools (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 56,
+      "originalText": "webcam",
+      "normalizedText": "webcam",
+      "srtStart": "00:07:20,000",
+      "srtEnd": "00:07:28,000",
+      "expectedOutputFile": "more--office-tools--webcam.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--office-tools--webcam.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--office-tools--webcam.mp3",
+      "referencedBy": [
+        "Office/office-tools (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 57,
+      "originalText": "docking station",
+      "normalizedText": "docking station",
+      "srtStart": "00:07:28,000",
+      "srtEnd": "00:07:36,000",
+      "expectedOutputFile": "more--office-tools--docking-station.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--office-tools--docking-station.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--office-tools--docking-station.mp3",
+      "referencedBy": [
+        "Office/office-tools (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 58,
+      "originalText": "trackpad",
+      "normalizedText": "trackpad",
+      "srtStart": "00:07:36,000",
+      "srtEnd": "00:07:44,000",
+      "expectedOutputFile": "more--office-tools--trackpad.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--office-tools--trackpad.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--office-tools--trackpad.mp3",
+      "referencedBy": [
+        "Office/office-tools (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 59,
+      "originalText": "lamp",
+      "normalizedText": "lamp",
+      "srtStart": "00:07:44,000",
+      "srtEnd": "00:07:52,000",
+      "expectedOutputFile": "more--office-tools--lamp.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--office-tools--lamp.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--office-tools--lamp.mp3",
+      "referencedBy": [
+        "Office/office-tools (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 60,
+      "originalText": "sticky note",
+      "normalizedText": "sticky note",
+      "srtStart": "00:07:52,000",
+      "srtEnd": "00:08:00,000",
+      "expectedOutputFile": "more--office-tools--sticky-note.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--office-tools--sticky-note.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--office-tools--sticky-note.mp3",
+      "referencedBy": [
+        "Office/office-tools (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 61,
+      "originalText": "binder clip",
+      "normalizedText": "binder clip",
+      "srtStart": "00:08:00,000",
+      "srtEnd": "00:08:08,000",
+      "expectedOutputFile": "more--office-tools--binder-clip.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--office-tools--binder-clip.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--office-tools--binder-clip.mp3",
+      "referencedBy": [
+        "Office/office-tools (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 62,
+      "originalText": "clipboard",
+      "normalizedText": "clipboard",
+      "srtStart": "00:08:08,000",
+      "srtEnd": "00:08:16,000",
+      "expectedOutputFile": "more--office-tools--clipboard.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--office-tools--clipboard.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--office-tools--clipboard.mp3",
+      "referencedBy": [
+        "Office/office-tools (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 63,
+      "originalText": "paper clip",
+      "normalizedText": "paper clip",
+      "srtStart": "00:08:16,000",
+      "srtEnd": "00:08:24,000",
+      "expectedOutputFile": "more--office-tools--paper-clip.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--office-tools--paper-clip.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--office-tools--paper-clip.mp3",
+      "referencedBy": [
+        "Office/office-tools (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 64,
+      "originalText": "badge holder",
+      "normalizedText": "badge holder",
+      "srtStart": "00:08:24,000",
+      "srtEnd": "00:08:32,000",
+      "expectedOutputFile": "more--office-tools--badge-holder.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--office-tools--badge-holder.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--office-tools--badge-holder.mp3",
+      "referencedBy": [
+        "Office/office-tools (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 65,
+      "originalText": "extension cord",
+      "normalizedText": "extension cord",
+      "srtStart": "00:08:32,000",
+      "srtEnd": "00:08:40,000",
+      "expectedOutputFile": "more--office-tools--extension-cord.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--office-tools--extension-cord.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--office-tools--extension-cord.mp3",
+      "referencedBy": [
+        "Office/office-tools (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 66,
+      "originalText": "calendar app",
+      "normalizedText": "calendar app",
+      "srtStart": "00:08:40,000",
+      "srtEnd": "00:08:48,000",
+      "expectedOutputFile": "more--office-tools--calendar-app.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--office-tools--calendar-app.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--office-tools--calendar-app.mp3",
+      "referencedBy": [
+        "Office/office-tools (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 67,
+      "originalText": "kickoff",
+      "normalizedText": "kickoff",
+      "srtStart": "00:08:48,000",
+      "srtEnd": "00:08:56,000",
+      "expectedOutputFile": "more--work-communication--kickoff.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--work-communication--kickoff.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--work-communication--kickoff.mp3",
+      "referencedBy": [
+        "Office/work-communication (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 68,
+      "originalText": "follow-up",
+      "normalizedText": "follow-up",
+      "srtStart": "00:08:56,000",
+      "srtEnd": "00:09:04,000",
+      "expectedOutputFile": "more--work-communication--follow-up.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--work-communication--follow-up.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--work-communication--follow-up.mp3",
+      "referencedBy": [
+        "Office/work-communication (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 69,
+      "originalText": "milestone",
+      "normalizedText": "milestone",
+      "srtStart": "00:09:04,000",
+      "srtEnd": "00:09:12,000",
+      "expectedOutputFile": "more--work-communication--milestone.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--work-communication--milestone.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--work-communication--milestone.mp3",
+      "referencedBy": [
+        "Office/work-communication (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 70,
+      "originalText": "deliverable",
+      "normalizedText": "deliverable",
+      "srtStart": "00:09:12,000",
+      "srtEnd": "00:09:20,000",
+      "expectedOutputFile": "more--work-communication--deliverable.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--work-communication--deliverable.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--work-communication--deliverable.mp3",
+      "referencedBy": [
+        "Office/work-communication (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 71,
+      "originalText": "feedback",
+      "normalizedText": "feedback",
+      "srtStart": "00:09:20,000",
+      "srtEnd": "00:09:28,000",
+      "expectedOutputFile": "more--work-communication--feedback.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--work-communication--feedback.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--work-communication--feedback.mp3",
+      "referencedBy": [
+        "Office/work-communication (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 72,
+      "originalText": "brainstorm",
+      "normalizedText": "brainstorm",
+      "srtStart": "00:09:28,000",
+      "srtEnd": "00:09:36,000",
+      "expectedOutputFile": "more--work-communication--brainstorm.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--work-communication--brainstorm.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--work-communication--brainstorm.mp3",
+      "referencedBy": [
+        "Office/work-communication (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 73,
+      "originalText": "alignment",
+      "normalizedText": "alignment",
+      "srtStart": "00:09:36,000",
+      "srtEnd": "00:09:44,000",
+      "expectedOutputFile": "more--work-communication--alignment.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--work-communication--alignment.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--work-communication--alignment.mp3",
+      "referencedBy": [
+        "Office/work-communication (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 74,
+      "originalText": "escalation",
+      "normalizedText": "escalation",
+      "srtStart": "00:09:44,000",
+      "srtEnd": "00:09:52,000",
+      "expectedOutputFile": "more--work-communication--escalation.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--work-communication--escalation.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--work-communication--escalation.mp3",
+      "referencedBy": [
+        "Office/work-communication (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 75,
+      "originalText": "handover note",
+      "normalizedText": "handover note",
+      "srtStart": "00:09:52,000",
+      "srtEnd": "00:10:00,000",
+      "expectedOutputFile": "more--work-communication--handover-note.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--work-communication--handover-note.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--work-communication--handover-note.mp3",
+      "referencedBy": [
+        "Office/work-communication (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 76,
+      "originalText": "sync-up",
+      "normalizedText": "sync-up",
+      "srtStart": "00:10:00,000",
+      "srtEnd": "00:10:08,000",
+      "expectedOutputFile": "more--work-communication--sync-up.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--work-communication--sync-up.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--work-communication--sync-up.mp3",
+      "referencedBy": [
+        "Office/work-communication (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 77,
+      "originalText": "one-on-one",
+      "normalizedText": "one-on-one",
+      "srtStart": "00:10:08,000",
+      "srtEnd": "00:10:16,000",
+      "expectedOutputFile": "more--work-communication--one-on-one.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--work-communication--one-on-one.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--work-communication--one-on-one.mp3",
+      "referencedBy": [
+        "Office/work-communication (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "order": 78,
+      "originalText": "wrap-up",
+      "normalizedText": "wrap-up",
+      "srtStart": "00:10:16,000",
+      "srtEnd": "00:10:24,000",
+      "expectedOutputFile": "more--work-communication--wrap-up.mp3",
+      "currentOldAudioPath": "assets/audio/words/office/more--work-communication--wrap-up.mp3",
+      "finalTargetAudioPath": "assets/audio/words/office/more--work-communication--wrap-up.mp3",
+      "referencedBy": [
+        "Office/work-communication (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    }
+  ]
+}

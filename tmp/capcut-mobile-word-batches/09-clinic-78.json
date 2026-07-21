@@ -1,0 +1,1503 @@
+{
+  "schemaVersion": 1,
+  "batchIndex": 9,
+  "theme": "clinic",
+  "count": 78,
+  "sourceList": "tmp/mobile-word-capcut-generation-list.json",
+  "timing": {
+    "cueDurationSeconds": 8,
+    "cueStepSeconds": 8,
+    "sourceCueGapSeconds": 0,
+    "openingReservedSilenceSeconds": 0,
+    "endingReservedSilenceSeconds": 0
+  },
+  "export": {
+    "directory": "tmp/capcut-mobile-word-batches/exports/09-clinic-78",
+    "suggestedAudioFile": "09-clinic-78-capcut-export.mp3",
+    "suggestedSrtFile": "09-clinic-78-capcut-export.srt"
+  },
+  "records": [
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 1,
+      "originalText": "clinic sign",
+      "normalizedText": "clinic sign",
+      "srtStart": "00:00:00,000",
+      "srtEnd": "00:00:08,000",
+      "expectedOutputFile": "clinic-entrance--clinic-sign.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-entrance--clinic-sign.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-entrance--clinic-sign.mp3",
+      "referencedBy": [
+        "Clinic/clinic-entrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 2,
+      "originalText": "entrance mat",
+      "normalizedText": "entrance mat",
+      "srtStart": "00:00:08,000",
+      "srtEnd": "00:00:16,000",
+      "expectedOutputFile": "clinic-entrance--entrance-mat.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-entrance--entrance-mat.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-entrance--entrance-mat.mp3",
+      "referencedBy": [
+        "Clinic/clinic-entrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 3,
+      "originalText": "opening hours",
+      "normalizedText": "opening hours",
+      "srtStart": "00:00:16,000",
+      "srtEnd": "00:00:24,000",
+      "expectedOutputFile": "clinic-entrance--opening-hours.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-entrance--opening-hours.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-entrance--opening-hours.mp3",
+      "referencedBy": [
+        "Clinic/clinic-entrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 4,
+      "originalText": "health notice",
+      "normalizedText": "health notice",
+      "srtStart": "00:00:24,000",
+      "srtEnd": "00:00:32,000",
+      "expectedOutputFile": "clinic-entrance--health-notice.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-entrance--health-notice.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-entrance--health-notice.mp3",
+      "referencedBy": [
+        "Clinic/clinic-entrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 5,
+      "originalText": "sanitizer station",
+      "normalizedText": "sanitizer station",
+      "srtStart": "00:00:32,000",
+      "srtEnd": "00:00:40,000",
+      "expectedOutputFile": "clinic-entrance--sanitizer-station.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-entrance--sanitizer-station.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-entrance--sanitizer-station.mp3",
+      "referencedBy": [
+        "Clinic/clinic-entrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 6,
+      "originalText": "enter quietly",
+      "normalizedText": "enter quietly",
+      "srtStart": "00:00:40,000",
+      "srtEnd": "00:00:48,000",
+      "expectedOutputFile": "clinic-entrance--enter-quietly.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-entrance--enter-quietly.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-entrance--enter-quietly.mp3",
+      "referencedBy": [
+        "Clinic/clinic-entrance (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 7,
+      "originalText": "intake form",
+      "normalizedText": "intake form",
+      "srtStart": "00:00:48,000",
+      "srtEnd": "00:00:56,000",
+      "expectedOutputFile": "clinic-registration--intake-form.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-registration--intake-form.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-registration--intake-form.mp3",
+      "referencedBy": [
+        "Clinic/clinic-registration (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 8,
+      "originalText": "insurance card",
+      "normalizedText": "insurance card",
+      "srtStart": "00:00:56,000",
+      "srtEnd": "00:01:04,000",
+      "expectedOutputFile": "clinic-registration--insurance-card.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-registration--insurance-card.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-registration--insurance-card.mp3",
+      "referencedBy": [
+        "Clinic/clinic-registration (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 9,
+      "originalText": "date of birth",
+      "normalizedText": "date of birth",
+      "srtStart": "00:01:04,000",
+      "srtEnd": "00:01:12,000",
+      "expectedOutputFile": "clinic-registration--date-of-birth.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-registration--date-of-birth.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-registration--date-of-birth.mp3",
+      "referencedBy": [
+        "Clinic/clinic-registration (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 10,
+      "originalText": "contact number",
+      "normalizedText": "contact number",
+      "srtStart": "00:01:12,000",
+      "srtEnd": "00:01:20,000",
+      "expectedOutputFile": "clinic-registration--contact-number.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-registration--contact-number.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-registration--contact-number.mp3",
+      "referencedBy": [
+        "Clinic/clinic-registration (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 11,
+      "originalText": "privacy notice",
+      "normalizedText": "privacy notice",
+      "srtStart": "00:01:20,000",
+      "srtEnd": "00:01:28,000",
+      "expectedOutputFile": "clinic-registration--privacy-notice.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-registration--privacy-notice.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-registration--privacy-notice.mp3",
+      "referencedBy": [
+        "Clinic/clinic-registration (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 12,
+      "originalText": "confirm details",
+      "normalizedText": "confirm details",
+      "srtStart": "00:01:28,000",
+      "srtEnd": "00:01:36,000",
+      "expectedOutputFile": "clinic-registration--confirm-details.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-registration--confirm-details.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-registration--confirm-details.mp3",
+      "referencedBy": [
+        "Clinic/clinic-registration (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 13,
+      "originalText": "waiting room",
+      "normalizedText": "waiting room",
+      "srtStart": "00:01:36,000",
+      "srtEnd": "00:01:44,000",
+      "expectedOutputFile": "clinic-waiting--waiting-room.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-waiting--waiting-room.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-waiting--waiting-room.mp3",
+      "referencedBy": [
+        "Clinic/clinic-waiting (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 14,
+      "originalText": "call board",
+      "normalizedText": "call board",
+      "srtStart": "00:01:44,000",
+      "srtEnd": "00:01:52,000",
+      "expectedOutputFile": "clinic-waiting--call-board.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-waiting--call-board.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-waiting--call-board.mp3",
+      "referencedBy": [
+        "Clinic/clinic-waiting (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 15,
+      "originalText": "exam room sign",
+      "normalizedText": "exam room sign",
+      "srtStart": "00:01:52,000",
+      "srtEnd": "00:02:00,000",
+      "expectedOutputFile": "clinic-waiting--exam-room-sign.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-waiting--exam-room-sign.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-waiting--exam-room-sign.mp3",
+      "referencedBy": [
+        "Clinic/clinic-waiting (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 16,
+      "originalText": "magazine rack",
+      "normalizedText": "magazine rack",
+      "srtStart": "00:02:00,000",
+      "srtEnd": "00:02:08,000",
+      "expectedOutputFile": "clinic-waiting--magazine-rack.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-waiting--magazine-rack.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-waiting--magazine-rack.mp3",
+      "referencedBy": [
+        "Clinic/clinic-waiting (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 17,
+      "originalText": "water dispenser",
+      "normalizedText": "water dispenser",
+      "srtStart": "00:02:08,000",
+      "srtEnd": "00:02:16,000",
+      "expectedOutputFile": "clinic-waiting--water-dispenser.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-waiting--water-dispenser.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-waiting--water-dispenser.mp3",
+      "referencedBy": [
+        "Clinic/clinic-waiting (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 18,
+      "originalText": "wait your turn",
+      "normalizedText": "wait your turn",
+      "srtStart": "00:02:16,000",
+      "srtEnd": "00:02:24,000",
+      "expectedOutputFile": "clinic-waiting--wait-your-turn.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-waiting--wait-your-turn.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-waiting--wait-your-turn.mp3",
+      "referencedBy": [
+        "Clinic/clinic-waiting (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 19,
+      "originalText": "thermometer",
+      "normalizedText": "thermometer",
+      "srtStart": "00:02:24,000",
+      "srtEnd": "00:02:32,000",
+      "expectedOutputFile": "clinic-basic-check--thermometer.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-basic-check--thermometer.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-basic-check--thermometer.mp3",
+      "referencedBy": [
+        "Clinic/clinic-basic-check (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 20,
+      "originalText": "pulse oximeter",
+      "normalizedText": "pulse oximeter",
+      "srtStart": "00:02:32,000",
+      "srtEnd": "00:02:40,000",
+      "expectedOutputFile": "clinic-basic-check--pulse-oximeter.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-basic-check--pulse-oximeter.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-basic-check--pulse-oximeter.mp3",
+      "referencedBy": [
+        "Clinic/clinic-basic-check (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 21,
+      "originalText": "pressure cuff",
+      "normalizedText": "pressure cuff",
+      "srtStart": "00:02:40,000",
+      "srtEnd": "00:02:48,000",
+      "expectedOutputFile": "clinic-basic-check--pressure-cuff.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-basic-check--pressure-cuff.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-basic-check--pressure-cuff.mp3",
+      "referencedBy": [
+        "Clinic/clinic-basic-check (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 22,
+      "originalText": "height chart",
+      "normalizedText": "height chart",
+      "srtStart": "00:02:48,000",
+      "srtEnd": "00:02:56,000",
+      "expectedOutputFile": "clinic-basic-check--height-chart.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-basic-check--height-chart.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-basic-check--height-chart.mp3",
+      "referencedBy": [
+        "Clinic/clinic-basic-check (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 23,
+      "originalText": "vital signs",
+      "normalizedText": "vital signs",
+      "srtStart": "00:02:56,000",
+      "srtEnd": "00:03:04,000",
+      "expectedOutputFile": "clinic-basic-check--vital-signs.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-basic-check--vital-signs.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-basic-check--vital-signs.mp3",
+      "referencedBy": [
+        "Clinic/clinic-basic-check (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 24,
+      "originalText": "take vitals",
+      "normalizedText": "take vitals",
+      "srtStart": "00:03:04,000",
+      "srtEnd": "00:03:12,000",
+      "expectedOutputFile": "clinic-basic-check--take-vitals.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-basic-check--take-vitals.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-basic-check--take-vitals.mp3",
+      "referencedBy": [
+        "Clinic/clinic-basic-check (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 25,
+      "originalText": "doctor",
+      "normalizedText": "doctor",
+      "srtStart": "00:03:12,000",
+      "srtEnd": "00:03:20,000",
+      "expectedOutputFile": "clinic-consultation--doctor.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-consultation--doctor.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-consultation--doctor.mp3",
+      "referencedBy": [
+        "Clinic/clinic-consultation (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 26,
+      "originalText": "exam table",
+      "normalizedText": "exam table",
+      "srtStart": "00:03:20,000",
+      "srtEnd": "00:03:28,000",
+      "expectedOutputFile": "clinic-consultation--exam-table.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-consultation--exam-table.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-consultation--exam-table.mp3",
+      "referencedBy": [
+        "Clinic/clinic-consultation (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 27,
+      "originalText": "symptom note",
+      "normalizedText": "symptom note",
+      "srtStart": "00:03:28,000",
+      "srtEnd": "00:03:36,000",
+      "expectedOutputFile": "clinic-consultation--symptom-note.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-consultation--symptom-note.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-consultation--symptom-note.mp3",
+      "referencedBy": [
+        "Clinic/clinic-consultation (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 28,
+      "originalText": "body chart",
+      "normalizedText": "body chart",
+      "srtStart": "00:03:36,000",
+      "srtEnd": "00:03:44,000",
+      "expectedOutputFile": "clinic-consultation--body-chart.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-consultation--body-chart.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-consultation--body-chart.mp3",
+      "referencedBy": [
+        "Clinic/clinic-consultation (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 29,
+      "originalText": "stethoscope",
+      "normalizedText": "stethoscope",
+      "srtStart": "00:03:44,000",
+      "srtEnd": "00:03:52,000",
+      "expectedOutputFile": "clinic-consultation--stethoscope.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-consultation--stethoscope.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-consultation--stethoscope.mp3",
+      "referencedBy": [
+        "Clinic/clinic-consultation (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 30,
+      "originalText": "describe symptoms",
+      "normalizedText": "describe symptoms",
+      "srtStart": "00:03:52,000",
+      "srtEnd": "00:04:00,000",
+      "expectedOutputFile": "clinic-consultation--describe-symptoms.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-consultation--describe-symptoms.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-consultation--describe-symptoms.mp3",
+      "referencedBy": [
+        "Clinic/clinic-consultation (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 31,
+      "originalText": "care plan",
+      "normalizedText": "care plan",
+      "srtStart": "00:04:00,000",
+      "srtEnd": "00:04:08,000",
+      "expectedOutputFile": "clinic-care--care-plan.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-care--care-plan.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-care--care-plan.mp3",
+      "referencedBy": [
+        "Clinic/clinic-care (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 32,
+      "originalText": "rest note",
+      "normalizedText": "rest note",
+      "srtStart": "00:04:08,000",
+      "srtEnd": "00:04:16,000",
+      "expectedOutputFile": "clinic-care--rest-note.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-care--rest-note.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-care--rest-note.mp3",
+      "referencedBy": [
+        "Clinic/clinic-care (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 33,
+      "originalText": "follow-up visit",
+      "normalizedText": "follow-up visit",
+      "srtStart": "00:04:16,000",
+      "srtEnd": "00:04:24,000",
+      "expectedOutputFile": "clinic-care--follow-up-visit.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-care--follow-up-visit.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-care--follow-up-visit.mp3",
+      "referencedBy": [
+        "Clinic/clinic-care (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 34,
+      "originalText": "hydration reminder",
+      "normalizedText": "hydration reminder",
+      "srtStart": "00:04:24,000",
+      "srtEnd": "00:04:32,000",
+      "expectedOutputFile": "clinic-care--hydration-reminder.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-care--hydration-reminder.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-care--hydration-reminder.mp3",
+      "referencedBy": [
+        "Clinic/clinic-care (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 35,
+      "originalText": "question list",
+      "normalizedText": "question list",
+      "srtStart": "00:04:32,000",
+      "srtEnd": "00:04:40,000",
+      "expectedOutputFile": "clinic-care--question-list.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-care--question-list.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-care--question-list.mp3",
+      "referencedBy": [
+        "Clinic/clinic-care (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 36,
+      "originalText": "ask questions",
+      "normalizedText": "ask questions",
+      "srtStart": "00:04:40,000",
+      "srtEnd": "00:04:48,000",
+      "expectedOutputFile": "clinic-care--ask-questions.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-care--ask-questions.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-care--ask-questions.mp3",
+      "referencedBy": [
+        "Clinic/clinic-care (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 37,
+      "originalText": "pharmacy window",
+      "normalizedText": "pharmacy window",
+      "srtStart": "00:04:48,000",
+      "srtEnd": "00:04:56,000",
+      "expectedOutputFile": "clinic-pharmacy--pharmacy-window.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-pharmacy--pharmacy-window.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-pharmacy--pharmacy-window.mp3",
+      "referencedBy": [
+        "Clinic/clinic-pharmacy (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 38,
+      "originalText": "prescription label",
+      "normalizedText": "prescription label",
+      "srtStart": "00:04:56,000",
+      "srtEnd": "00:05:04,000",
+      "expectedOutputFile": "clinic-pharmacy--prescription-label.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-pharmacy--prescription-label.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-pharmacy--prescription-label.mp3",
+      "referencedBy": [
+        "Clinic/clinic-pharmacy (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 39,
+      "originalText": "medicine bag",
+      "normalizedText": "medicine bag",
+      "srtStart": "00:05:04,000",
+      "srtEnd": "00:05:12,000",
+      "expectedOutputFile": "clinic-pharmacy--medicine-bag.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-pharmacy--medicine-bag.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-pharmacy--medicine-bag.mp3",
+      "referencedBy": [
+        "Clinic/clinic-pharmacy (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 40,
+      "originalText": "pickup shelf",
+      "normalizedText": "pickup shelf",
+      "srtStart": "00:05:12,000",
+      "srtEnd": "00:05:20,000",
+      "expectedOutputFile": "clinic-pharmacy--pickup-shelf.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-pharmacy--pickup-shelf.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-pharmacy--pickup-shelf.mp3",
+      "referencedBy": [
+        "Clinic/clinic-pharmacy (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 41,
+      "originalText": "exit route",
+      "normalizedText": "exit route",
+      "srtStart": "00:05:20,000",
+      "srtEnd": "00:05:28,000",
+      "expectedOutputFile": "clinic-pharmacy--exit-route.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-pharmacy--exit-route.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-pharmacy--exit-route.mp3",
+      "referencedBy": [
+        "Clinic/clinic-pharmacy (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 42,
+      "originalText": "collect medicine",
+      "normalizedText": "collect medicine",
+      "srtStart": "00:05:28,000",
+      "srtEnd": "00:05:36,000",
+      "expectedOutputFile": "clinic-pharmacy--collect-medicine.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/clinic-pharmacy--collect-medicine.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/clinic-pharmacy--collect-medicine.mp3",
+      "referencedBy": [
+        "Clinic/clinic-pharmacy (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 43,
+      "originalText": "triage desk",
+      "normalizedText": "triage desk",
+      "srtStart": "00:05:36,000",
+      "srtEnd": "00:05:44,000",
+      "expectedOutputFile": "more--clinic-spaces-equipment--triage-desk.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-spaces-equipment--triage-desk.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-spaces-equipment--triage-desk.mp3",
+      "referencedBy": [
+        "Clinic/clinic-spaces-equipment (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 44,
+      "originalText": "consulting room",
+      "normalizedText": "consulting room",
+      "srtStart": "00:05:44,000",
+      "srtEnd": "00:05:52,000",
+      "expectedOutputFile": "more--clinic-spaces-equipment--consulting-room.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-spaces-equipment--consulting-room.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-spaces-equipment--consulting-room.mp3",
+      "referencedBy": [
+        "Clinic/clinic-spaces-equipment (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 45,
+      "originalText": "nurse station",
+      "normalizedText": "nurse station",
+      "srtStart": "00:05:52,000",
+      "srtEnd": "00:06:00,000",
+      "expectedOutputFile": "more--clinic-spaces-equipment--nurse-station.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-spaces-equipment--nurse-station.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-spaces-equipment--nurse-station.mp3",
+      "referencedBy": [
+        "Clinic/clinic-spaces-equipment (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 46,
+      "originalText": "hand gel",
+      "normalizedText": "hand gel",
+      "srtStart": "00:06:00,000",
+      "srtEnd": "00:06:08,000",
+      "expectedOutputFile": "more--clinic-spaces-equipment--hand-gel.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-spaces-equipment--hand-gel.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-spaces-equipment--hand-gel.mp3",
+      "referencedBy": [
+        "Clinic/clinic-spaces-equipment (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 47,
+      "originalText": "privacy curtain",
+      "normalizedText": "privacy curtain",
+      "srtStart": "00:06:08,000",
+      "srtEnd": "00:06:16,000",
+      "expectedOutputFile": "more--clinic-spaces-equipment--privacy-curtain.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-spaces-equipment--privacy-curtain.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-spaces-equipment--privacy-curtain.mp3",
+      "referencedBy": [
+        "Clinic/clinic-spaces-equipment (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 48,
+      "originalText": "medical chart",
+      "normalizedText": "medical chart",
+      "srtStart": "00:06:16,000",
+      "srtEnd": "00:06:24,000",
+      "expectedOutputFile": "more--clinic-spaces-equipment--medical-chart.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-spaces-equipment--medical-chart.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-spaces-equipment--medical-chart.mp3",
+      "referencedBy": [
+        "Clinic/clinic-spaces-equipment (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 49,
+      "originalText": "sign-in tablet",
+      "normalizedText": "sign-in tablet",
+      "srtStart": "00:06:24,000",
+      "srtEnd": "00:06:32,000",
+      "expectedOutputFile": "more--clinic-spaces-equipment--sign-in-tablet.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-spaces-equipment--sign-in-tablet.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-spaces-equipment--sign-in-tablet.mp3",
+      "referencedBy": [
+        "Clinic/clinic-spaces-equipment (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 50,
+      "originalText": "wheelchair space",
+      "normalizedText": "wheelchair space",
+      "srtStart": "00:06:32,000",
+      "srtEnd": "00:06:40,000",
+      "expectedOutputFile": "more--clinic-spaces-equipment--wheelchair-space.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-spaces-equipment--wheelchair-space.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-spaces-equipment--wheelchair-space.mp3",
+      "referencedBy": [
+        "Clinic/clinic-spaces-equipment (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 51,
+      "originalText": "children’s corner",
+      "normalizedText": "children's corner",
+      "srtStart": "00:06:40,000",
+      "srtEnd": "00:06:48,000",
+      "expectedOutputFile": "more--clinic-spaces-equipment--children-corner.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-spaces-equipment--children-corner.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-spaces-equipment--children-corner.mp3",
+      "referencedBy": [
+        "Clinic/clinic-spaces-equipment (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 52,
+      "originalText": "clinic badge",
+      "normalizedText": "clinic badge",
+      "srtStart": "00:06:48,000",
+      "srtEnd": "00:06:56,000",
+      "expectedOutputFile": "more--clinic-spaces-equipment--clinic-badge.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-spaces-equipment--clinic-badge.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-spaces-equipment--clinic-badge.mp3",
+      "referencedBy": [
+        "Clinic/clinic-spaces-equipment (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 53,
+      "originalText": "sample cup",
+      "normalizedText": "sample cup",
+      "srtStart": "00:06:56,000",
+      "srtEnd": "00:07:04,000",
+      "expectedOutputFile": "more--clinic-spaces-equipment--sample-cup.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-spaces-equipment--sample-cup.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-spaces-equipment--sample-cup.mp3",
+      "referencedBy": [
+        "Clinic/clinic-spaces-equipment (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 54,
+      "originalText": "disposal bin",
+      "normalizedText": "disposal bin",
+      "srtStart": "00:07:04,000",
+      "srtEnd": "00:07:12,000",
+      "expectedOutputFile": "more--clinic-spaces-equipment--disposal-bin.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-spaces-equipment--disposal-bin.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-spaces-equipment--disposal-bin.mp3",
+      "referencedBy": [
+        "Clinic/clinic-spaces-equipment (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 55,
+      "originalText": "mild ache",
+      "normalizedText": "mild ache",
+      "srtStart": "00:07:12,000",
+      "srtEnd": "00:07:20,000",
+      "expectedOutputFile": "more--clinic-symptoms-signals--mild-ache.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-symptoms-signals--mild-ache.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-symptoms-signals--mild-ache.mp3",
+      "referencedBy": [
+        "Clinic/clinic-symptoms-signals (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 56,
+      "originalText": "sore throat",
+      "normalizedText": "sore throat",
+      "srtStart": "00:07:20,000",
+      "srtEnd": "00:07:28,000",
+      "expectedOutputFile": "more--clinic-symptoms-signals--sore-throat.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-symptoms-signals--sore-throat.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-symptoms-signals--sore-throat.mp3",
+      "referencedBy": [
+        "Clinic/clinic-symptoms-signals (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 57,
+      "originalText": "runny nose",
+      "normalizedText": "runny nose",
+      "srtStart": "00:07:28,000",
+      "srtEnd": "00:07:36,000",
+      "expectedOutputFile": "more--clinic-symptoms-signals--runny-nose.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-symptoms-signals--runny-nose.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-symptoms-signals--runny-nose.mp3",
+      "referencedBy": [
+        "Clinic/clinic-symptoms-signals (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 58,
+      "originalText": "blocked nose",
+      "normalizedText": "blocked nose",
+      "srtStart": "00:07:36,000",
+      "srtEnd": "00:07:44,000",
+      "expectedOutputFile": "more--clinic-symptoms-signals--blocked-nose.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-symptoms-signals--blocked-nose.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-symptoms-signals--blocked-nose.mp3",
+      "referencedBy": [
+        "Clinic/clinic-symptoms-signals (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 59,
+      "originalText": "upset stomach",
+      "normalizedText": "upset stomach",
+      "srtStart": "00:07:44,000",
+      "srtEnd": "00:07:52,000",
+      "expectedOutputFile": "more--clinic-symptoms-signals--upset-stomach.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-symptoms-signals--upset-stomach.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-symptoms-signals--upset-stomach.mp3",
+      "referencedBy": [
+        "Clinic/clinic-symptoms-signals (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 60,
+      "originalText": "dizziness",
+      "normalizedText": "dizziness",
+      "srtStart": "00:07:52,000",
+      "srtEnd": "00:08:00,000",
+      "expectedOutputFile": "more--clinic-symptoms-signals--dizziness.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-symptoms-signals--dizziness.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-symptoms-signals--dizziness.mp3",
+      "referencedBy": [
+        "Clinic/clinic-symptoms-signals (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 61,
+      "originalText": "tiredness",
+      "normalizedText": "tiredness",
+      "srtStart": "00:08:00,000",
+      "srtEnd": "00:08:08,000",
+      "expectedOutputFile": "more--clinic-symptoms-signals--tiredness.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-symptoms-signals--tiredness.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-symptoms-signals--tiredness.mp3",
+      "referencedBy": [
+        "Clinic/clinic-symptoms-signals (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 62,
+      "originalText": "rash",
+      "normalizedText": "rash",
+      "srtStart": "00:08:08,000",
+      "srtEnd": "00:08:16,000",
+      "expectedOutputFile": "more--clinic-symptoms-signals--rash.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-symptoms-signals--rash.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-symptoms-signals--rash.mp3",
+      "referencedBy": [
+        "Clinic/clinic-symptoms-signals (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 63,
+      "originalText": "sneeze",
+      "normalizedText": "sneeze",
+      "srtStart": "00:08:16,000",
+      "srtEnd": "00:08:24,000",
+      "expectedOutputFile": "more--clinic-symptoms-signals--sneeze.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-symptoms-signals--sneeze.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-symptoms-signals--sneeze.mp3",
+      "referencedBy": [
+        "Clinic/clinic-symptoms-signals (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 64,
+      "originalText": "chills",
+      "normalizedText": "chills",
+      "srtStart": "00:08:24,000",
+      "srtEnd": "00:08:32,000",
+      "expectedOutputFile": "more--clinic-symptoms-signals--chills.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-symptoms-signals--chills.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-symptoms-signals--chills.mp3",
+      "referencedBy": [
+        "Clinic/clinic-symptoms-signals (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 65,
+      "originalText": "nausea",
+      "normalizedText": "nausea",
+      "srtStart": "00:08:32,000",
+      "srtEnd": "00:08:40,000",
+      "expectedOutputFile": "more--clinic-symptoms-signals--nausea.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-symptoms-signals--nausea.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-symptoms-signals--nausea.mp3",
+      "referencedBy": [
+        "Clinic/clinic-symptoms-signals (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 66,
+      "originalText": "swollen ankle",
+      "normalizedText": "swollen ankle",
+      "srtStart": "00:08:40,000",
+      "srtEnd": "00:08:48,000",
+      "expectedOutputFile": "more--clinic-symptoms-signals--swollen-ankle.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-symptoms-signals--swollen-ankle.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-symptoms-signals--swollen-ankle.mp3",
+      "referencedBy": [
+        "Clinic/clinic-symptoms-signals (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 67,
+      "originalText": "take it easy",
+      "normalizedText": "take it easy",
+      "srtStart": "00:08:48,000",
+      "srtEnd": "00:08:56,000",
+      "expectedOutputFile": "more--clinic-care-phrases--take-it-easy.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-care-phrases--take-it-easy.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-care-phrases--take-it-easy.mp3",
+      "referencedBy": [
+        "Clinic/clinic-care-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 68,
+      "originalText": "drink fluids",
+      "normalizedText": "drink fluids",
+      "srtStart": "00:08:56,000",
+      "srtEnd": "00:09:04,000",
+      "expectedOutputFile": "more--clinic-care-phrases--drink-fluids.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-care-phrases--drink-fluids.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-care-phrases--drink-fluids.mp3",
+      "referencedBy": [
+        "Clinic/clinic-care-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 69,
+      "originalText": "call the clinic",
+      "normalizedText": "call the clinic",
+      "srtStart": "00:09:04,000",
+      "srtEnd": "00:09:12,000",
+      "expectedOutputFile": "more--clinic-care-phrases--call-the-clinic.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-care-phrases--call-the-clinic.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-care-phrases--call-the-clinic.mp3",
+      "referencedBy": [
+        "Clinic/clinic-care-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 70,
+      "originalText": "arrange a visit",
+      "normalizedText": "arrange a visit",
+      "srtStart": "00:09:12,000",
+      "srtEnd": "00:09:20,000",
+      "expectedOutputFile": "more--clinic-care-phrases--arrange-a-visit.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-care-phrases--arrange-a-visit.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-care-phrases--arrange-a-visit.mp3",
+      "referencedBy": [
+        "Clinic/clinic-care-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 71,
+      "originalText": "follow the label",
+      "normalizedText": "follow the label",
+      "srtStart": "00:09:20,000",
+      "srtEnd": "00:09:28,000",
+      "expectedOutputFile": "more--clinic-care-phrases--follow-the-label.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-care-phrases--follow-the-label.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-care-phrases--follow-the-label.mp3",
+      "referencedBy": [
+        "Clinic/clinic-care-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 72,
+      "originalText": "read the leaflet",
+      "normalizedText": "read the leaflet",
+      "srtStart": "00:09:28,000",
+      "srtEnd": "00:09:36,000",
+      "expectedOutputFile": "more--clinic-care-phrases--read-the-leaflet.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-care-phrases--read-the-leaflet.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-care-phrases--read-the-leaflet.mp3",
+      "referencedBy": [
+        "Clinic/clinic-care-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 73,
+      "originalText": "monitor symptoms",
+      "normalizedText": "monitor symptoms",
+      "srtStart": "00:09:36,000",
+      "srtEnd": "00:09:44,000",
+      "expectedOutputFile": "more--clinic-care-phrases--monitor-symptoms.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-care-phrases--monitor-symptoms.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-care-phrases--monitor-symptoms.mp3",
+      "referencedBy": [
+        "Clinic/clinic-care-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 74,
+      "originalText": "next steps",
+      "normalizedText": "next steps",
+      "srtStart": "00:09:44,000",
+      "srtEnd": "00:09:52,000",
+      "expectedOutputFile": "more--clinic-care-phrases--next-steps.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-care-phrases--next-steps.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-care-phrases--next-steps.mp3",
+      "referencedBy": [
+        "Clinic/clinic-care-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 75,
+      "originalText": "aftercare leaflet",
+      "normalizedText": "aftercare leaflet",
+      "srtStart": "00:09:52,000",
+      "srtEnd": "00:10:00,000",
+      "expectedOutputFile": "more--clinic-care-phrases--aftercare-leaflet.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-care-phrases--aftercare-leaflet.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-care-phrases--aftercare-leaflet.mp3",
+      "referencedBy": [
+        "Clinic/clinic-care-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 76,
+      "originalText": "dosage label",
+      "normalizedText": "dosage label",
+      "srtStart": "00:10:00,000",
+      "srtEnd": "00:10:08,000",
+      "expectedOutputFile": "more--clinic-care-phrases--dosage-label.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-care-phrases--dosage-label.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-care-phrases--dosage-label.mp3",
+      "referencedBy": [
+        "Clinic/clinic-care-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 77,
+      "originalText": "keep warm",
+      "normalizedText": "keep warm",
+      "srtStart": "00:10:08,000",
+      "srtEnd": "00:10:16,000",
+      "expectedOutputFile": "more--clinic-care-phrases--keep-warm.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-care-phrases--keep-warm.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-care-phrases--keep-warm.mp3",
+      "referencedBy": [
+        "Clinic/clinic-care-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "order": 78,
+      "originalText": "seek help",
+      "normalizedText": "seek help",
+      "srtStart": "00:10:16,000",
+      "srtEnd": "00:10:24,000",
+      "expectedOutputFile": "more--clinic-care-phrases--seek-help.mp3",
+      "currentOldAudioPath": "assets/audio/words/clinic/more--clinic-care-phrases--seek-help.mp3",
+      "finalTargetAudioPath": "assets/audio/words/clinic/more--clinic-care-phrases--seek-help.mp3",
+      "referencedBy": [
+        "Clinic/clinic-care-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    }
+  ]
+}

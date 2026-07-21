@@ -1,0 +1,1503 @@
+{
+  "schemaVersion": 1,
+  "batchIndex": 10,
+  "theme": "bank",
+  "count": 78,
+  "sourceList": "tmp/mobile-word-capcut-generation-list.json",
+  "timing": {
+    "cueDurationSeconds": 8,
+    "cueStepSeconds": 8,
+    "sourceCueGapSeconds": 0,
+    "openingReservedSilenceSeconds": 0,
+    "endingReservedSilenceSeconds": 0
+  },
+  "export": {
+    "directory": "tmp/capcut-mobile-word-batches/exports/10-bank-78",
+    "suggestedAudioFile": "10-bank-78-capcut-export.mp3",
+    "suggestedSrtFile": "10-bank-78-capcut-export.srt"
+  },
+  "records": [
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 1,
+      "originalText": "bank branch",
+      "normalizedText": "bank branch",
+      "srtStart": "00:00:00,000",
+      "srtEnd": "00:00:08,000",
+      "expectedOutputFile": "bank-entrance--bank-branch.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-entrance--bank-branch.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-entrance--bank-branch.mp3",
+      "referencedBy": [
+        "Bank/bank-entrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 2,
+      "originalText": "entrance canopy",
+      "normalizedText": "entrance canopy",
+      "srtStart": "00:00:08,000",
+      "srtEnd": "00:00:16,000",
+      "expectedOutputFile": "bank-entrance--entrance-canopy.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-entrance--entrance-canopy.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-entrance--entrance-canopy.mp3",
+      "referencedBy": [
+        "Bank/bank-entrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 3,
+      "originalText": "service hours",
+      "normalizedText": "service hours",
+      "srtStart": "00:00:16,000",
+      "srtEnd": "00:00:24,000",
+      "expectedOutputFile": "bank-entrance--service-hours.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-entrance--service-hours.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-entrance--service-hours.mp3",
+      "referencedBy": [
+        "Bank/bank-entrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 4,
+      "originalText": "queue ticket",
+      "normalizedText": "queue ticket",
+      "srtStart": "00:00:24,000",
+      "srtEnd": "00:00:32,000",
+      "expectedOutputFile": "bank-entrance--queue-ticket.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-entrance--queue-ticket.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-entrance--queue-ticket.mp3",
+      "referencedBy": [
+        "Bank/bank-entrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 5,
+      "originalText": "security guard",
+      "normalizedText": "security guard",
+      "srtStart": "00:00:32,000",
+      "srtEnd": "00:00:40,000",
+      "expectedOutputFile": "bank-entrance--security-guard.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-entrance--security-guard.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-entrance--security-guard.mp3",
+      "referencedBy": [
+        "Bank/bank-entrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 6,
+      "originalText": "take a ticket",
+      "normalizedText": "take a ticket",
+      "srtStart": "00:00:40,000",
+      "srtEnd": "00:00:48,000",
+      "expectedOutputFile": "bank-entrance--take-a-ticket.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-entrance--take-a-ticket.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-entrance--take-a-ticket.mp3",
+      "referencedBy": [
+        "Bank/bank-entrance (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 7,
+      "originalText": "welcome counter",
+      "normalizedText": "welcome counter",
+      "srtStart": "00:00:48,000",
+      "srtEnd": "00:00:56,000",
+      "expectedOutputFile": "bank-welcome-counter--welcome-counter.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-welcome-counter--welcome-counter.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-welcome-counter--welcome-counter.mp3",
+      "referencedBy": [
+        "Bank/bank-welcome-counter (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 8,
+      "originalText": "service guide",
+      "normalizedText": "service guide",
+      "srtStart": "00:00:56,000",
+      "srtEnd": "00:01:04,000",
+      "expectedOutputFile": "bank-welcome-counter--service-guide.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-welcome-counter--service-guide.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-welcome-counter--service-guide.mp3",
+      "referencedBy": [
+        "Bank/bank-welcome-counter (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 9,
+      "originalText": "appointment desk",
+      "normalizedText": "appointment desk",
+      "srtStart": "00:01:04,000",
+      "srtEnd": "00:01:12,000",
+      "expectedOutputFile": "bank-welcome-counter--appointment-desk.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-welcome-counter--appointment-desk.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-welcome-counter--appointment-desk.mp3",
+      "referencedBy": [
+        "Bank/bank-welcome-counter (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 10,
+      "originalText": "counter map",
+      "normalizedText": "counter map",
+      "srtStart": "00:01:12,000",
+      "srtEnd": "00:01:20,000",
+      "expectedOutputFile": "bank-welcome-counter--counter-map.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-welcome-counter--counter-map.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-welcome-counter--counter-map.mp3",
+      "referencedBy": [
+        "Bank/bank-welcome-counter (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 11,
+      "originalText": "customer advisor",
+      "normalizedText": "customer advisor",
+      "srtStart": "00:01:20,000",
+      "srtEnd": "00:01:28,000",
+      "expectedOutputFile": "bank-welcome-counter--customer-advisor.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-welcome-counter--customer-advisor.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-welcome-counter--customer-advisor.mp3",
+      "referencedBy": [
+        "Bank/bank-welcome-counter (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 12,
+      "originalText": "choose a service",
+      "normalizedText": "choose a service",
+      "srtStart": "00:01:28,000",
+      "srtEnd": "00:01:36,000",
+      "expectedOutputFile": "bank-welcome-counter--choose-a-service.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-welcome-counter--choose-a-service.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-welcome-counter--choose-a-service.mp3",
+      "referencedBy": [
+        "Bank/bank-welcome-counter (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 13,
+      "originalText": "waiting number",
+      "normalizedText": "waiting number",
+      "srtStart": "00:01:36,000",
+      "srtEnd": "00:01:44,000",
+      "expectedOutputFile": "bank-queue-area--waiting-number.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-queue-area--waiting-number.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-queue-area--waiting-number.mp3",
+      "referencedBy": [
+        "Bank/bank-queue-area (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 14,
+      "originalText": "queue display",
+      "normalizedText": "queue display",
+      "srtStart": "00:01:44,000",
+      "srtEnd": "00:01:52,000",
+      "expectedOutputFile": "bank-queue-area--queue-display.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-queue-area--queue-display.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-queue-area--queue-display.mp3",
+      "referencedBy": [
+        "Bank/bank-queue-area (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 15,
+      "originalText": "counter number",
+      "normalizedText": "counter number",
+      "srtStart": "00:01:52,000",
+      "srtEnd": "00:02:00,000",
+      "expectedOutputFile": "bank-queue-area--counter-number.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-queue-area--counter-number.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-queue-area--counter-number.mp3",
+      "referencedBy": [
+        "Bank/bank-queue-area (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 16,
+      "originalText": "seating row",
+      "normalizedText": "seating row",
+      "srtStart": "00:02:00,000",
+      "srtEnd": "00:02:08,000",
+      "expectedOutputFile": "bank-queue-area--seating-row.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-queue-area--seating-row.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-queue-area--seating-row.mp3",
+      "referencedBy": [
+        "Bank/bank-queue-area (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 17,
+      "originalText": "turn indicator",
+      "normalizedText": "turn indicator",
+      "srtStart": "00:02:08,000",
+      "srtEnd": "00:02:16,000",
+      "expectedOutputFile": "bank-queue-area--turn-indicator.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-queue-area--turn-indicator.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-queue-area--turn-indicator.mp3",
+      "referencedBy": [
+        "Bank/bank-queue-area (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 18,
+      "originalText": "wait for your number",
+      "normalizedText": "wait for your number",
+      "srtStart": "00:02:16,000",
+      "srtEnd": "00:02:24,000",
+      "expectedOutputFile": "bank-queue-area--wait-for-your-number.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-queue-area--wait-for-your-number.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-queue-area--wait-for-your-number.mp3",
+      "referencedBy": [
+        "Bank/bank-queue-area (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 19,
+      "originalText": "bank teller",
+      "normalizedText": "bank teller",
+      "srtStart": "00:02:24,000",
+      "srtEnd": "00:02:32,000",
+      "expectedOutputFile": "bank-teller-counter--bank-teller.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-teller-counter--bank-teller.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-teller-counter--bank-teller.mp3",
+      "referencedBy": [
+        "Bank/bank-teller-counter (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 20,
+      "originalText": "counter screen",
+      "normalizedText": "counter screen",
+      "srtStart": "00:02:32,000",
+      "srtEnd": "00:02:40,000",
+      "expectedOutputFile": "bank-teller-counter--counter-screen.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-teller-counter--counter-screen.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-teller-counter--counter-screen.mp3",
+      "referencedBy": [
+        "Bank/bank-teller-counter (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 21,
+      "originalText": "cash envelope",
+      "normalizedText": "cash envelope",
+      "srtStart": "00:02:40,000",
+      "srtEnd": "00:02:48,000",
+      "expectedOutputFile": "bank-teller-counter--cash-envelope.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-teller-counter--cash-envelope.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-teller-counter--cash-envelope.mp3",
+      "referencedBy": [
+        "Bank/bank-teller-counter (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 22,
+      "originalText": "service token",
+      "normalizedText": "service token",
+      "srtStart": "00:02:48,000",
+      "srtEnd": "00:02:56,000",
+      "expectedOutputFile": "bank-teller-counter--service-token.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-teller-counter--service-token.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-teller-counter--service-token.mp3",
+      "referencedBy": [
+        "Bank/bank-teller-counter (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 23,
+      "originalText": "form tray",
+      "normalizedText": "form tray",
+      "srtStart": "00:02:56,000",
+      "srtEnd": "00:03:04,000",
+      "expectedOutputFile": "bank-teller-counter--form-tray.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-teller-counter--form-tray.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-teller-counter--form-tray.mp3",
+      "referencedBy": [
+        "Bank/bank-teller-counter (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 24,
+      "originalText": "speak to the teller",
+      "normalizedText": "speak to the teller",
+      "srtStart": "00:03:04,000",
+      "srtEnd": "00:03:12,000",
+      "expectedOutputFile": "bank-teller-counter--speak-to-the-teller.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-teller-counter--speak-to-the-teller.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-teller-counter--speak-to-the-teller.mp3",
+      "referencedBy": [
+        "Bank/bank-teller-counter (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 25,
+      "originalText": "self-service kiosk",
+      "normalizedText": "self-service kiosk",
+      "srtStart": "00:03:12,000",
+      "srtEnd": "00:03:20,000",
+      "expectedOutputFile": "bank-self-service--self-service-kiosk.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-self-service--self-service-kiosk.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-self-service--self-service-kiosk.mp3",
+      "referencedBy": [
+        "Bank/bank-self-service (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 26,
+      "originalText": "touchscreen menu",
+      "normalizedText": "touchscreen menu",
+      "srtStart": "00:03:20,000",
+      "srtEnd": "00:03:28,000",
+      "expectedOutputFile": "bank-self-service--touchscreen-menu.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-self-service--touchscreen-menu.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-self-service--touchscreen-menu.mp3",
+      "referencedBy": [
+        "Bank/bank-self-service (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 27,
+      "originalText": "cash dispenser",
+      "normalizedText": "cash dispenser",
+      "srtStart": "00:03:28,000",
+      "srtEnd": "00:03:36,000",
+      "expectedOutputFile": "bank-self-service--cash-dispenser.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-self-service--cash-dispenser.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-self-service--cash-dispenser.mp3",
+      "referencedBy": [
+        "Bank/bank-self-service (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 28,
+      "originalText": "help button",
+      "normalizedText": "help button",
+      "srtStart": "00:03:36,000",
+      "srtEnd": "00:03:44,000",
+      "expectedOutputFile": "bank-self-service--help-button.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-self-service--help-button.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-self-service--help-button.mp3",
+      "referencedBy": [
+        "Bank/bank-self-service (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 29,
+      "originalText": "printed notice",
+      "normalizedText": "printed notice",
+      "srtStart": "00:03:44,000",
+      "srtEnd": "00:03:52,000",
+      "expectedOutputFile": "bank-self-service--printed-notice.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-self-service--printed-notice.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-self-service--printed-notice.mp3",
+      "referencedBy": [
+        "Bank/bank-self-service (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 30,
+      "originalText": "follow the screen",
+      "normalizedText": "follow the screen",
+      "srtStart": "00:03:52,000",
+      "srtEnd": "00:04:00,000",
+      "expectedOutputFile": "bank-self-service--follow-the-screen.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-self-service--follow-the-screen.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-self-service--follow-the-screen.mp3",
+      "referencedBy": [
+        "Bank/bank-self-service (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 31,
+      "originalText": "statement request",
+      "normalizedText": "statement request",
+      "srtStart": "00:04:00,000",
+      "srtEnd": "00:04:08,000",
+      "expectedOutputFile": "bank-documents--statement-request.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-documents--statement-request.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-documents--statement-request.mp3",
+      "referencedBy": [
+        "Bank/bank-documents (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 32,
+      "originalText": "document tray",
+      "normalizedText": "document tray",
+      "srtStart": "00:04:08,000",
+      "srtEnd": "00:04:16,000",
+      "expectedOutputFile": "bank-documents--document-tray.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-documents--document-tray.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-documents--document-tray.mp3",
+      "referencedBy": [
+        "Bank/bank-documents (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 33,
+      "originalText": "branch stamp",
+      "normalizedText": "branch stamp",
+      "srtStart": "00:04:16,000",
+      "srtEnd": "00:04:24,000",
+      "expectedOutputFile": "bank-documents--branch-stamp.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-documents--branch-stamp.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-documents--branch-stamp.mp3",
+      "referencedBy": [
+        "Bank/bank-documents (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 34,
+      "originalText": "information leaflet",
+      "normalizedText": "information leaflet",
+      "srtStart": "00:04:24,000",
+      "srtEnd": "00:04:32,000",
+      "expectedOutputFile": "bank-documents--information-leaflet.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-documents--information-leaflet.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-documents--information-leaflet.mp3",
+      "referencedBy": [
+        "Bank/bank-documents (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 35,
+      "originalText": "service confirmation",
+      "normalizedText": "service confirmation",
+      "srtStart": "00:04:32,000",
+      "srtEnd": "00:04:40,000",
+      "expectedOutputFile": "bank-documents--service-confirmation.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-documents--service-confirmation.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-documents--service-confirmation.mp3",
+      "referencedBy": [
+        "Bank/bank-documents (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 36,
+      "originalText": "request a statement",
+      "normalizedText": "request a statement",
+      "srtStart": "00:04:40,000",
+      "srtEnd": "00:04:48,000",
+      "expectedOutputFile": "bank-documents--request-a-statement.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-documents--request-a-statement.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-documents--request-a-statement.mp3",
+      "referencedBy": [
+        "Bank/bank-documents (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 37,
+      "originalText": "feedback card",
+      "normalizedText": "feedback card",
+      "srtStart": "00:04:48,000",
+      "srtEnd": "00:04:56,000",
+      "expectedOutputFile": "bank-exit--feedback-card.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-exit--feedback-card.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-exit--feedback-card.mp3",
+      "referencedBy": [
+        "Bank/bank-exit (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 38,
+      "originalText": "service survey",
+      "normalizedText": "service survey",
+      "srtStart": "00:04:56,000",
+      "srtEnd": "00:05:04,000",
+      "expectedOutputFile": "bank-exit--service-survey.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-exit--service-survey.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-exit--service-survey.mp3",
+      "referencedBy": [
+        "Bank/bank-exit (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 39,
+      "originalText": "branch doorway",
+      "normalizedText": "branch doorway",
+      "srtStart": "00:05:04,000",
+      "srtEnd": "00:05:12,000",
+      "expectedOutputFile": "bank-exit--branch-doorway.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-exit--branch-doorway.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-exit--branch-doorway.mp3",
+      "referencedBy": [
+        "Bank/bank-exit (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 40,
+      "originalText": "appointment reminder",
+      "normalizedText": "appointment reminder",
+      "srtStart": "00:05:12,000",
+      "srtEnd": "00:05:20,000",
+      "expectedOutputFile": "bank-exit--appointment-reminder.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-exit--appointment-reminder.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-exit--appointment-reminder.mp3",
+      "referencedBy": [
+        "Bank/bank-exit (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 41,
+      "originalText": "help line",
+      "normalizedText": "help line",
+      "srtStart": "00:05:20,000",
+      "srtEnd": "00:05:28,000",
+      "expectedOutputFile": "bank-exit--help-line.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-exit--help-line.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-exit--help-line.mp3",
+      "referencedBy": [
+        "Bank/bank-exit (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 42,
+      "originalText": "confirm the next steps",
+      "normalizedText": "confirm the next steps",
+      "srtStart": "00:05:28,000",
+      "srtEnd": "00:05:36,000",
+      "expectedOutputFile": "bank-exit--confirm-the-next-steps.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/bank-exit--confirm-the-next-steps.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/bank-exit--confirm-the-next-steps.mp3",
+      "referencedBy": [
+        "Bank/bank-exit (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 43,
+      "originalText": "branch lobby",
+      "normalizedText": "branch lobby",
+      "srtStart": "00:05:36,000",
+      "srtEnd": "00:05:44,000",
+      "expectedOutputFile": "more--bank-spaces-people--branch-lobby.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-spaces-people--branch-lobby.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-spaces-people--branch-lobby.mp3",
+      "referencedBy": [
+        "Bank/bank-spaces-people (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 44,
+      "originalText": "queue barrier",
+      "normalizedText": "queue barrier",
+      "srtStart": "00:05:44,000",
+      "srtEnd": "00:05:52,000",
+      "expectedOutputFile": "more--bank-spaces-people--queue-barrier.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-spaces-people--queue-barrier.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-spaces-people--queue-barrier.mp3",
+      "referencedBy": [
+        "Bank/bank-spaces-people (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 45,
+      "originalText": "service booth",
+      "normalizedText": "service booth",
+      "srtStart": "00:05:52,000",
+      "srtEnd": "00:06:00,000",
+      "expectedOutputFile": "more--bank-spaces-people--service-booth.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-spaces-people--service-booth.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-spaces-people--service-booth.mp3",
+      "referencedBy": [
+        "Bank/bank-spaces-people (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 46,
+      "originalText": "customer lounge",
+      "normalizedText": "customer lounge",
+      "srtStart": "00:06:00,000",
+      "srtEnd": "00:06:08,000",
+      "expectedOutputFile": "more--bank-spaces-people--customer-lounge.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-spaces-people--customer-lounge.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-spaces-people--customer-lounge.mp3",
+      "referencedBy": [
+        "Bank/bank-spaces-people (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 47,
+      "originalText": "teller station",
+      "normalizedText": "teller station",
+      "srtStart": "00:06:08,000",
+      "srtEnd": "00:06:16,000",
+      "expectedOutputFile": "more--bank-spaces-people--teller-station.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-spaces-people--teller-station.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-spaces-people--teller-station.mp3",
+      "referencedBy": [
+        "Bank/bank-spaces-people (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 48,
+      "originalText": "security camera",
+      "normalizedText": "security camera",
+      "srtStart": "00:06:16,000",
+      "srtEnd": "00:06:24,000",
+      "expectedOutputFile": "more--bank-spaces-people--security-camera.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-spaces-people--security-camera.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-spaces-people--security-camera.mp3",
+      "referencedBy": [
+        "Bank/bank-spaces-people (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 49,
+      "originalText": "digital notice panel",
+      "normalizedText": "digital notice panel",
+      "srtStart": "00:06:24,000",
+      "srtEnd": "00:06:32,000",
+      "expectedOutputFile": "more--bank-spaces-people--digital-notice-panel.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-spaces-people--digital-notice-panel.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-spaces-people--digital-notice-panel.mp3",
+      "referencedBy": [
+        "Bank/bank-spaces-people (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 50,
+      "originalText": "brochure rack",
+      "normalizedText": "brochure rack",
+      "srtStart": "00:06:32,000",
+      "srtEnd": "00:06:40,000",
+      "expectedOutputFile": "more--bank-spaces-people--brochure-rack.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-spaces-people--brochure-rack.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-spaces-people--brochure-rack.mp3",
+      "referencedBy": [
+        "Bank/bank-spaces-people (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 51,
+      "originalText": "consultation booth",
+      "normalizedText": "consultation booth",
+      "srtStart": "00:06:40,000",
+      "srtEnd": "00:06:48,000",
+      "expectedOutputFile": "more--bank-spaces-people--consultation-booth.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-spaces-people--consultation-booth.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-spaces-people--consultation-booth.mp3",
+      "referencedBy": [
+        "Bank/bank-spaces-people (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 52,
+      "originalText": "cash counter",
+      "normalizedText": "cash counter",
+      "srtStart": "00:06:48,000",
+      "srtEnd": "00:06:56,000",
+      "expectedOutputFile": "more--bank-spaces-people--cash-counter.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-spaces-people--cash-counter.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-spaces-people--cash-counter.mp3",
+      "referencedBy": [
+        "Bank/bank-spaces-people (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 53,
+      "originalText": "private desk",
+      "normalizedText": "private desk",
+      "srtStart": "00:06:56,000",
+      "srtEnd": "00:07:04,000",
+      "expectedOutputFile": "more--bank-spaces-people--private-desk.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-spaces-people--private-desk.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-spaces-people--private-desk.mp3",
+      "referencedBy": [
+        "Bank/bank-spaces-people (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 54,
+      "originalText": "waiting zone",
+      "normalizedText": "waiting zone",
+      "srtStart": "00:07:04,000",
+      "srtEnd": "00:07:12,000",
+      "expectedOutputFile": "more--bank-spaces-people--waiting-zone.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-spaces-people--waiting-zone.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-spaces-people--waiting-zone.mp3",
+      "referencedBy": [
+        "Bank/bank-spaces-people (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 55,
+      "originalText": "account statement",
+      "normalizedText": "account statement",
+      "srtStart": "00:07:12,000",
+      "srtEnd": "00:07:20,000",
+      "expectedOutputFile": "more--bank-services-documents--account-statement.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-services-documents--account-statement.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-services-documents--account-statement.mp3",
+      "referencedBy": [
+        "Bank/bank-services-documents (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 56,
+      "originalText": "cash withdrawal",
+      "normalizedText": "cash withdrawal",
+      "srtStart": "00:07:20,000",
+      "srtEnd": "00:07:28,000",
+      "expectedOutputFile": "more--bank-services-documents--cash-withdrawal.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-services-documents--cash-withdrawal.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-services-documents--cash-withdrawal.mp3",
+      "referencedBy": [
+        "Bank/bank-services-documents (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 57,
+      "originalText": "foreign currency desk",
+      "normalizedText": "foreign currency desk",
+      "srtStart": "00:07:28,000",
+      "srtEnd": "00:07:36,000",
+      "expectedOutputFile": "more--bank-services-documents--foreign-currency-desk.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-services-documents--foreign-currency-desk.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-services-documents--foreign-currency-desk.mp3",
+      "referencedBy": [
+        "Bank/bank-services-documents (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 58,
+      "originalText": "exchange counter",
+      "normalizedText": "exchange counter",
+      "srtStart": "00:07:36,000",
+      "srtEnd": "00:07:44,000",
+      "expectedOutputFile": "more--bank-services-documents--exchange-counter.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-services-documents--exchange-counter.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-services-documents--exchange-counter.mp3",
+      "referencedBy": [
+        "Bank/bank-services-documents (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 59,
+      "originalText": "bank draft",
+      "normalizedText": "bank draft",
+      "srtStart": "00:07:44,000",
+      "srtEnd": "00:07:52,000",
+      "expectedOutputFile": "more--bank-services-documents--bank-draft.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-services-documents--bank-draft.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-services-documents--bank-draft.mp3",
+      "referencedBy": [
+        "Bank/bank-services-documents (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 60,
+      "originalText": "cheque book",
+      "normalizedText": "cheque book",
+      "srtStart": "00:07:52,000",
+      "srtEnd": "00:08:00,000",
+      "expectedOutputFile": "more--bank-services-documents--cheque-book.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-services-documents--cheque-book.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-services-documents--cheque-book.mp3",
+      "referencedBy": [
+        "Bank/bank-services-documents (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 61,
+      "originalText": "confirmation slip",
+      "normalizedText": "confirmation slip",
+      "srtStart": "00:08:00,000",
+      "srtEnd": "00:08:08,000",
+      "expectedOutputFile": "more--bank-services-documents--confirmation-slip.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-services-documents--confirmation-slip.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-services-documents--confirmation-slip.mp3",
+      "referencedBy": [
+        "Bank/bank-services-documents (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 62,
+      "originalText": "document copy",
+      "normalizedText": "document copy",
+      "srtStart": "00:08:08,000",
+      "srtEnd": "00:08:16,000",
+      "expectedOutputFile": "more--bank-services-documents--document-copy.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-services-documents--document-copy.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-services-documents--document-copy.mp3",
+      "referencedBy": [
+        "Bank/bank-services-documents (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 63,
+      "originalText": "processing fee",
+      "normalizedText": "processing fee",
+      "srtStart": "00:08:16,000",
+      "srtEnd": "00:08:24,000",
+      "expectedOutputFile": "more--bank-services-documents--processing-fee.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-services-documents--processing-fee.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-services-documents--processing-fee.mp3",
+      "referencedBy": [
+        "Bank/bank-services-documents (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 64,
+      "originalText": "reference number",
+      "normalizedText": "reference number",
+      "srtStart": "00:08:24,000",
+      "srtEnd": "00:08:32,000",
+      "expectedOutputFile": "more--bank-services-documents--reference-number.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-services-documents--reference-number.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-services-documents--reference-number.mp3",
+      "referencedBy": [
+        "Bank/bank-services-documents (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 65,
+      "originalText": "branch notice",
+      "normalizedText": "branch notice",
+      "srtStart": "00:08:32,000",
+      "srtEnd": "00:08:40,000",
+      "expectedOutputFile": "more--bank-services-documents--branch-notice.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-services-documents--branch-notice.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-services-documents--branch-notice.mp3",
+      "referencedBy": [
+        "Bank/bank-services-documents (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 66,
+      "originalText": "account summary",
+      "normalizedText": "account summary",
+      "srtStart": "00:08:40,000",
+      "srtEnd": "00:08:48,000",
+      "expectedOutputFile": "more--bank-services-documents--account-summary.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-services-documents--account-summary.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-services-documents--account-summary.mp3",
+      "referencedBy": [
+        "Bank/bank-services-documents (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 67,
+      "originalText": "join the queue",
+      "normalizedText": "join the queue",
+      "srtStart": "00:08:48,000",
+      "srtEnd": "00:08:56,000",
+      "expectedOutputFile": "more--bank-service-phrases--join-the-queue.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-service-phrases--join-the-queue.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-service-phrases--join-the-queue.mp3",
+      "referencedBy": [
+        "Bank/bank-service-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 68,
+      "originalText": "ask for assistance",
+      "normalizedText": "ask for assistance",
+      "srtStart": "00:08:56,000",
+      "srtEnd": "00:09:04,000",
+      "expectedOutputFile": "more--bank-service-phrases--ask-for-assistance.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-service-phrases--ask-for-assistance.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-service-phrases--ask-for-assistance.mp3",
+      "referencedBy": [
+        "Bank/bank-service-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 69,
+      "originalText": "wait in line",
+      "normalizedText": "wait in line",
+      "srtStart": "00:09:04,000",
+      "srtEnd": "00:09:12,000",
+      "expectedOutputFile": "more--bank-service-phrases--wait-in-line.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-service-phrases--wait-in-line.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-service-phrases--wait-in-line.mp3",
+      "referencedBy": [
+        "Bank/bank-service-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 70,
+      "originalText": "take a seat",
+      "normalizedText": "take a seat",
+      "srtStart": "00:09:12,000",
+      "srtEnd": "00:09:20,000",
+      "expectedOutputFile": "more--bank-service-phrases--take-a-seat.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-service-phrases--take-a-seat.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-service-phrases--take-a-seat.mp3",
+      "referencedBy": [
+        "Bank/bank-service-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 71,
+      "originalText": "show the notice",
+      "normalizedText": "show the notice",
+      "srtStart": "00:09:20,000",
+      "srtEnd": "00:09:28,000",
+      "expectedOutputFile": "more--bank-service-phrases--show-the-notice.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-service-phrases--show-the-notice.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-service-phrases--show-the-notice.mp3",
+      "referencedBy": [
+        "Bank/bank-service-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 72,
+      "originalText": "browse the guide",
+      "normalizedText": "browse the guide",
+      "srtStart": "00:09:28,000",
+      "srtEnd": "00:09:36,000",
+      "expectedOutputFile": "more--bank-service-phrases--browse-the-guide.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-service-phrases--browse-the-guide.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-service-phrases--browse-the-guide.mp3",
+      "referencedBy": [
+        "Bank/bank-service-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 73,
+      "originalText": "speak clearly",
+      "normalizedText": "speak clearly",
+      "srtStart": "00:09:36,000",
+      "srtEnd": "00:09:44,000",
+      "expectedOutputFile": "more--bank-service-phrases--speak-clearly.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-service-phrases--speak-clearly.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-service-phrases--speak-clearly.mp3",
+      "referencedBy": [
+        "Bank/bank-service-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 74,
+      "originalText": "check the counter",
+      "normalizedText": "check the counter",
+      "srtStart": "00:09:44,000",
+      "srtEnd": "00:09:52,000",
+      "expectedOutputFile": "more--bank-service-phrases--check-the-counter.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-service-phrases--check-the-counter.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-service-phrases--check-the-counter.mp3",
+      "referencedBy": [
+        "Bank/bank-service-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 75,
+      "originalText": "return later",
+      "normalizedText": "return later",
+      "srtStart": "00:09:52,000",
+      "srtEnd": "00:10:00,000",
+      "expectedOutputFile": "more--bank-service-phrases--return-later.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-service-phrases--return-later.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-service-phrases--return-later.mp3",
+      "referencedBy": [
+        "Bank/bank-service-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 76,
+      "originalText": "ask about hours",
+      "normalizedText": "ask about hours",
+      "srtStart": "00:10:00,000",
+      "srtEnd": "00:10:08,000",
+      "expectedOutputFile": "more--bank-service-phrases--ask-about-hours.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-service-phrases--ask-about-hours.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-service-phrases--ask-about-hours.mp3",
+      "referencedBy": [
+        "Bank/bank-service-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 77,
+      "originalText": "follow the sign",
+      "normalizedText": "follow the sign",
+      "srtStart": "00:10:08,000",
+      "srtEnd": "00:10:16,000",
+      "expectedOutputFile": "more--bank-service-phrases--follow-the-sign.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-service-phrases--follow-the-sign.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-service-phrases--follow-the-sign.mp3",
+      "referencedBy": [
+        "Bank/bank-service-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "order": 78,
+      "originalText": "finish my visit",
+      "normalizedText": "finish my visit",
+      "srtStart": "00:10:16,000",
+      "srtEnd": "00:10:24,000",
+      "expectedOutputFile": "more--bank-service-phrases--finish-my-visit.mp3",
+      "currentOldAudioPath": "assets/audio/words/bank/more--bank-service-phrases--finish-my-visit.mp3",
+      "finalTargetAudioPath": "assets/audio/words/bank/more--bank-service-phrases--finish-my-visit.mp3",
+      "referencedBy": [
+        "Bank/bank-service-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    }
+  ]
+}

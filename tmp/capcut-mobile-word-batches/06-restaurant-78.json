@@ -1,0 +1,1503 @@
+{
+  "schemaVersion": 1,
+  "batchIndex": 6,
+  "theme": "restaurant",
+  "count": 78,
+  "sourceList": "tmp/mobile-word-capcut-generation-list.json",
+  "timing": {
+    "cueDurationSeconds": 8,
+    "cueStepSeconds": 8,
+    "sourceCueGapSeconds": 0,
+    "openingReservedSilenceSeconds": 0,
+    "endingReservedSilenceSeconds": 0
+  },
+  "export": {
+    "directory": "tmp/capcut-mobile-word-batches/exports/06-restaurant-78",
+    "suggestedAudioFile": "06-restaurant-78-capcut-export.mp3",
+    "suggestedSrtFile": "06-restaurant-78-capcut-export.srt"
+  },
+  "records": [
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 1,
+      "originalText": "restaurant facade",
+      "normalizedText": "restaurant facade",
+      "srtStart": "00:00:00,000",
+      "srtEnd": "00:00:08,000",
+      "expectedOutputFile": "restaurant-entrance--restaurant-facade.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-entrance--restaurant-facade.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-entrance--restaurant-facade.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 2,
+      "originalText": "entryway",
+      "normalizedText": "entryway",
+      "srtStart": "00:00:08,000",
+      "srtEnd": "00:00:16,000",
+      "expectedOutputFile": "restaurant-entrance--entryway.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-entrance--entryway.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-entrance--entryway.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 3,
+      "originalText": "ambience",
+      "normalizedText": "ambience",
+      "srtStart": "00:00:16,000",
+      "srtEnd": "00:00:24,000",
+      "expectedOutputFile": "restaurant-entrance--ambience.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-entrance--ambience.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-entrance--ambience.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 4,
+      "originalText": "dress code",
+      "normalizedText": "dress code",
+      "srtStart": "00:00:24,000",
+      "srtEnd": "00:00:32,000",
+      "expectedOutputFile": "restaurant-entrance--dress-code.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-entrance--dress-code.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-entrance--dress-code.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 5,
+      "originalText": "coat check",
+      "normalizedText": "coat check",
+      "srtStart": "00:00:32,000",
+      "srtEnd": "00:00:40,000",
+      "expectedOutputFile": "restaurant-entrance--coat-check.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-entrance--coat-check.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-entrance--coat-check.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 6,
+      "originalText": "greet",
+      "normalizedText": "greet",
+      "srtStart": "00:00:40,000",
+      "srtEnd": "00:00:48,000",
+      "expectedOutputFile": "restaurant-entrance--greet.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-entrance--greet.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-entrance--greet.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantEntrance (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 7,
+      "originalText": "maître d’",
+      "normalizedText": "maître d'",
+      "srtStart": "00:00:48,000",
+      "srtEnd": "00:00:56,000",
+      "expectedOutputFile": "restaurant-seating--maitre-d.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-seating--maitre-d.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-seating--maitre-d.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantSeating (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 8,
+      "originalText": "waiting list",
+      "normalizedText": "waiting list",
+      "srtStart": "00:00:56,000",
+      "srtEnd": "00:01:04,000",
+      "expectedOutputFile": "restaurant-seating--waiting-list.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-seating--waiting-list.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-seating--waiting-list.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantSeating (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 9,
+      "originalText": "party size",
+      "normalizedText": "party size",
+      "srtStart": "00:01:04,000",
+      "srtEnd": "00:01:12,000",
+      "expectedOutputFile": "restaurant-seating--party-size.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-seating--party-size.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-seating--party-size.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantSeating (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 10,
+      "originalText": "booth request",
+      "normalizedText": "booth request",
+      "srtStart": "00:01:12,000",
+      "srtEnd": "00:01:20,000",
+      "expectedOutputFile": "restaurant-seating--booth-request.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-seating--booth-request.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-seating--booth-request.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantSeating (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 11,
+      "originalText": "high chair",
+      "normalizedText": "high chair",
+      "srtStart": "00:01:20,000",
+      "srtEnd": "00:01:28,000",
+      "expectedOutputFile": "restaurant-seating--high-chair.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-seating--high-chair.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-seating--high-chair.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantSeating (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 12,
+      "originalText": "follow",
+      "normalizedText": "follow",
+      "srtStart": "00:01:28,000",
+      "srtEnd": "00:01:36,000",
+      "expectedOutputFile": "restaurant-seating--follow.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-seating--follow.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-seating--follow.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantSeating (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 13,
+      "originalText": "place setting",
+      "normalizedText": "place setting",
+      "srtStart": "00:01:36,000",
+      "srtEnd": "00:01:44,000",
+      "expectedOutputFile": "restaurant-dining-table--place-setting.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-dining-table--place-setting.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-dining-table--place-setting.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantDiningTable (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 14,
+      "originalText": "placemat",
+      "normalizedText": "placemat",
+      "srtStart": "00:01:44,000",
+      "srtEnd": "00:01:52,000",
+      "expectedOutputFile": "restaurant-dining-table--placemat.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-dining-table--placemat.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-dining-table--placemat.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantDiningTable (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 15,
+      "originalText": "centerpiece",
+      "normalizedText": "centerpiece",
+      "srtStart": "00:01:52,000",
+      "srtEnd": "00:02:00,000",
+      "expectedOutputFile": "restaurant-dining-table--centerpiece.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-dining-table--centerpiece.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-dining-table--centerpiece.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantDiningTable (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 16,
+      "originalText": "condiment",
+      "normalizedText": "condiment",
+      "srtStart": "00:02:00,000",
+      "srtEnd": "00:02:08,000",
+      "expectedOutputFile": "restaurant-dining-table--condiment.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-dining-table--condiment.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-dining-table--condiment.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantDiningTable (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 17,
+      "originalText": "wine list",
+      "normalizedText": "wine list",
+      "srtStart": "00:02:08,000",
+      "srtEnd": "00:02:16,000",
+      "expectedOutputFile": "restaurant-dining-table--wine-list.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-dining-table--wine-list.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-dining-table--wine-list.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantDiningTable (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 18,
+      "originalText": "compare",
+      "normalizedText": "compare",
+      "srtStart": "00:02:16,000",
+      "srtEnd": "00:02:24,000",
+      "expectedOutputFile": "restaurant-dining-table--compare.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-dining-table--compare.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-dining-table--compare.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantDiningTable (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 19,
+      "originalText": "entrée",
+      "normalizedText": "entrée",
+      "srtStart": "00:02:24,000",
+      "srtEnd": "00:02:32,000",
+      "expectedOutputFile": "restaurant-ordering--entree.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-ordering--entree.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-ordering--entree.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantOrdering (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 20,
+      "originalText": "appetizer",
+      "normalizedText": "appetizer",
+      "srtStart": "00:02:32,000",
+      "srtEnd": "00:02:40,000",
+      "expectedOutputFile": "restaurant-ordering--appetizer.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-ordering--appetizer.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-ordering--appetizer.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantOrdering (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 21,
+      "originalText": "dietary restriction",
+      "normalizedText": "dietary restriction",
+      "srtStart": "00:02:40,000",
+      "srtEnd": "00:02:48,000",
+      "expectedOutputFile": "restaurant-ordering--dietary-restriction.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-ordering--dietary-restriction.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-ordering--dietary-restriction.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantOrdering (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 22,
+      "originalText": "doneness",
+      "normalizedText": "doneness",
+      "srtStart": "00:02:48,000",
+      "srtEnd": "00:02:56,000",
+      "expectedOutputFile": "restaurant-ordering--doneness.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-ordering--doneness.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-ordering--doneness.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantOrdering (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 23,
+      "originalText": "ingredient",
+      "normalizedText": "ingredient",
+      "srtStart": "00:02:56,000",
+      "srtEnd": "00:03:04,000",
+      "expectedOutputFile": "restaurant-ordering--ingredient.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-ordering--ingredient.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-ordering--ingredient.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantOrdering (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 24,
+      "originalText": "select",
+      "normalizedText": "select",
+      "srtStart": "00:03:04,000",
+      "srtEnd": "00:03:12,000",
+      "expectedOutputFile": "restaurant-ordering--select.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-ordering--select.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-ordering--select.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantOrdering (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 25,
+      "originalText": "course",
+      "normalizedText": "course",
+      "srtStart": "00:03:12,000",
+      "srtEnd": "00:03:20,000",
+      "expectedOutputFile": "restaurant-meal--course.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-meal--course.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-meal--course.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantMeal (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 26,
+      "originalText": "portion",
+      "normalizedText": "portion",
+      "srtStart": "00:03:20,000",
+      "srtEnd": "00:03:28,000",
+      "expectedOutputFile": "restaurant-meal--portion.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-meal--portion.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-meal--portion.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantMeal (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 27,
+      "originalText": "side dish",
+      "normalizedText": "side dish",
+      "srtStart": "00:03:28,000",
+      "srtEnd": "00:03:36,000",
+      "expectedOutputFile": "restaurant-meal--side-dish.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-meal--side-dish.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-meal--side-dish.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantMeal (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 28,
+      "originalText": "seasoning",
+      "normalizedText": "seasoning",
+      "srtStart": "00:03:36,000",
+      "srtEnd": "00:03:44,000",
+      "expectedOutputFile": "restaurant-meal--seasoning.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-meal--seasoning.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-meal--seasoning.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantMeal (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 29,
+      "originalText": "server station",
+      "normalizedText": "server station",
+      "srtStart": "00:03:44,000",
+      "srtEnd": "00:03:52,000",
+      "expectedOutputFile": "restaurant-meal--server-station.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-meal--server-station.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-meal--server-station.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantMeal (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 30,
+      "originalText": "assist",
+      "normalizedText": "assist",
+      "srtStart": "00:03:52,000",
+      "srtEnd": "00:04:00,000",
+      "expectedOutputFile": "restaurant-meal--assist.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-meal--assist.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-meal--assist.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantMeal (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 31,
+      "originalText": "itemized check",
+      "normalizedText": "itemized check",
+      "srtStart": "00:04:00,000",
+      "srtEnd": "00:04:08,000",
+      "expectedOutputFile": "restaurant-payment--itemized-check.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-payment--itemized-check.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-payment--itemized-check.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantPayment (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 32,
+      "originalText": "service charge",
+      "normalizedText": "service charge",
+      "srtStart": "00:04:08,000",
+      "srtEnd": "00:04:16,000",
+      "expectedOutputFile": "restaurant-payment--service-charge.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-payment--service-charge.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-payment--service-charge.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantPayment (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 33,
+      "originalText": "gratuity",
+      "normalizedText": "gratuity",
+      "srtStart": "00:04:16,000",
+      "srtEnd": "00:04:24,000",
+      "expectedOutputFile": "restaurant-payment--gratuity.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-payment--gratuity.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-payment--gratuity.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantPayment (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 34,
+      "originalText": "payment terminal",
+      "normalizedText": "payment terminal",
+      "srtStart": "00:04:24,000",
+      "srtEnd": "00:04:32,000",
+      "expectedOutputFile": "restaurant-payment--payment-terminal.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-payment--payment-terminal.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-payment--payment-terminal.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantPayment (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 35,
+      "originalText": "split payment",
+      "normalizedText": "split payment",
+      "srtStart": "00:04:32,000",
+      "srtEnd": "00:04:40,000",
+      "expectedOutputFile": "restaurant-payment--split-payment.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-payment--split-payment.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-payment--split-payment.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantPayment (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 36,
+      "originalText": "settle up",
+      "normalizedText": "settle up",
+      "srtStart": "00:04:40,000",
+      "srtEnd": "00:04:48,000",
+      "expectedOutputFile": "restaurant-payment--settle-up.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-payment--settle-up.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-payment--settle-up.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantPayment (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 37,
+      "originalText": "coat rack",
+      "normalizedText": "coat rack",
+      "srtStart": "00:04:48,000",
+      "srtEnd": "00:04:56,000",
+      "expectedOutputFile": "restaurant-leaving--coat-rack.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-leaving--coat-rack.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-leaving--coat-rack.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantLeaving (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 38,
+      "originalText": "exit sign",
+      "normalizedText": "exit sign",
+      "srtStart": "00:04:56,000",
+      "srtEnd": "00:05:04,000",
+      "expectedOutputFile": "restaurant-leaving--exit-sign.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-leaving--exit-sign.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-leaving--exit-sign.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantLeaving (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 39,
+      "originalText": "leftovers",
+      "normalizedText": "leftovers",
+      "srtStart": "00:05:04,000",
+      "srtEnd": "00:05:12,000",
+      "expectedOutputFile": "restaurant-leaving--leftovers.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-leaving--leftovers.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-leaving--leftovers.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantLeaving (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 40,
+      "originalText": "to-go box",
+      "normalizedText": "to-go box",
+      "srtStart": "00:05:12,000",
+      "srtEnd": "00:05:20,000",
+      "expectedOutputFile": "restaurant-leaving--to-go-box.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-leaving--to-go-box.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-leaving--to-go-box.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantLeaving (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 41,
+      "originalText": "farewell",
+      "normalizedText": "farewell",
+      "srtStart": "00:05:20,000",
+      "srtEnd": "00:05:28,000",
+      "expectedOutputFile": "restaurant-leaving--farewell.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-leaving--farewell.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-leaving--farewell.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantLeaving (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 42,
+      "originalText": "depart",
+      "normalizedText": "depart",
+      "srtStart": "00:05:28,000",
+      "srtEnd": "00:05:36,000",
+      "expectedOutputFile": "restaurant-leaving--depart.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/restaurant-leaving--depart.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/restaurant-leaving--depart.mp3",
+      "referencedBy": [
+        "Restaurant/restaurantLeaving (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 43,
+      "originalText": "banquette",
+      "normalizedText": "banquette",
+      "srtStart": "00:05:36,000",
+      "srtEnd": "00:05:44,000",
+      "expectedOutputFile": "more--restaurant-spaces--banquette.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--restaurant-spaces--banquette.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--restaurant-spaces--banquette.mp3",
+      "referencedBy": [
+        "Restaurant/restaurant-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 44,
+      "originalText": "wine cellar",
+      "normalizedText": "wine cellar",
+      "srtStart": "00:05:44,000",
+      "srtEnd": "00:05:52,000",
+      "expectedOutputFile": "more--restaurant-spaces--wine-cellar.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--restaurant-spaces--wine-cellar.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--restaurant-spaces--wine-cellar.mp3",
+      "referencedBy": [
+        "Restaurant/restaurant-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 45,
+      "originalText": "open kitchen",
+      "normalizedText": "open kitchen",
+      "srtStart": "00:05:52,000",
+      "srtEnd": "00:06:00,000",
+      "expectedOutputFile": "more--restaurant-spaces--open-kitchen.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--restaurant-spaces--open-kitchen.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--restaurant-spaces--open-kitchen.mp3",
+      "referencedBy": [
+        "Restaurant/restaurant-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 46,
+      "originalText": "salad bar",
+      "normalizedText": "salad bar",
+      "srtStart": "00:06:00,000",
+      "srtEnd": "00:06:08,000",
+      "expectedOutputFile": "more--restaurant-spaces--salad-bar.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--restaurant-spaces--salad-bar.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--restaurant-spaces--salad-bar.mp3",
+      "referencedBy": [
+        "Restaurant/restaurant-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 47,
+      "originalText": "dessert station",
+      "normalizedText": "dessert station",
+      "srtStart": "00:06:08,000",
+      "srtEnd": "00:06:16,000",
+      "expectedOutputFile": "more--restaurant-spaces--dessert-station.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--restaurant-spaces--dessert-station.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--restaurant-spaces--dessert-station.mp3",
+      "referencedBy": [
+        "Restaurant/restaurant-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 48,
+      "originalText": "service pass",
+      "normalizedText": "service pass",
+      "srtStart": "00:06:16,000",
+      "srtEnd": "00:06:24,000",
+      "expectedOutputFile": "more--restaurant-spaces--service-pass.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--restaurant-spaces--service-pass.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--restaurant-spaces--service-pass.mp3",
+      "referencedBy": [
+        "Restaurant/restaurant-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 49,
+      "originalText": "dish return",
+      "normalizedText": "dish return",
+      "srtStart": "00:06:24,000",
+      "srtEnd": "00:06:32,000",
+      "expectedOutputFile": "more--restaurant-spaces--dish-return.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--restaurant-spaces--dish-return.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--restaurant-spaces--dish-return.mp3",
+      "referencedBy": [
+        "Restaurant/restaurant-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 50,
+      "originalText": "warming station",
+      "normalizedText": "warming station",
+      "srtStart": "00:06:32,000",
+      "srtEnd": "00:06:40,000",
+      "expectedOutputFile": "more--restaurant-spaces--warming-station.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--restaurant-spaces--warming-station.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--restaurant-spaces--warming-station.mp3",
+      "referencedBy": [
+        "Restaurant/restaurant-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 51,
+      "originalText": "host podium",
+      "normalizedText": "host podium",
+      "srtStart": "00:06:40,000",
+      "srtEnd": "00:06:48,000",
+      "expectedOutputFile": "more--restaurant-spaces--host-podium.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--restaurant-spaces--host-podium.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--restaurant-spaces--host-podium.mp3",
+      "referencedBy": [
+        "Restaurant/restaurant-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 52,
+      "originalText": "private dining room",
+      "normalizedText": "private dining room",
+      "srtStart": "00:06:48,000",
+      "srtEnd": "00:06:56,000",
+      "expectedOutputFile": "more--restaurant-spaces--private-dining-room.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--restaurant-spaces--private-dining-room.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--restaurant-spaces--private-dining-room.mp3",
+      "referencedBy": [
+        "Restaurant/restaurant-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 53,
+      "originalText": "alfresco area",
+      "normalizedText": "alfresco area",
+      "srtStart": "00:06:56,000",
+      "srtEnd": "00:07:04,000",
+      "expectedOutputFile": "more--restaurant-spaces--alfresco-area.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--restaurant-spaces--alfresco-area.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--restaurant-spaces--alfresco-area.mp3",
+      "referencedBy": [
+        "Restaurant/restaurant-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 54,
+      "originalText": "kitchen hatch",
+      "normalizedText": "kitchen hatch",
+      "srtStart": "00:07:04,000",
+      "srtEnd": "00:07:12,000",
+      "expectedOutputFile": "more--restaurant-spaces--kitchen-hatch.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--restaurant-spaces--kitchen-hatch.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--restaurant-spaces--kitchen-hatch.mp3",
+      "referencedBy": [
+        "Restaurant/restaurant-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 55,
+      "originalText": "prix fixe",
+      "normalizedText": "prix fixe",
+      "srtStart": "00:07:12,000",
+      "srtEnd": "00:07:20,000",
+      "expectedOutputFile": "more--food-dining--prix-fixe.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--food-dining--prix-fixe.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--food-dining--prix-fixe.mp3",
+      "referencedBy": [
+        "Restaurant/food-dining (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 56,
+      "originalText": "house salad",
+      "normalizedText": "house salad",
+      "srtStart": "00:07:20,000",
+      "srtEnd": "00:07:28,000",
+      "expectedOutputFile": "more--food-dining--house-salad.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--food-dining--house-salad.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--food-dining--house-salad.mp3",
+      "referencedBy": [
+        "Restaurant/food-dining (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 57,
+      "originalText": "roasted chicken",
+      "normalizedText": "roasted chicken",
+      "srtStart": "00:07:28,000",
+      "srtEnd": "00:07:36,000",
+      "expectedOutputFile": "more--food-dining--roasted-chicken.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--food-dining--roasted-chicken.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--food-dining--roasted-chicken.mp3",
+      "referencedBy": [
+        "Restaurant/food-dining (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 58,
+      "originalText": "steak",
+      "normalizedText": "steak",
+      "srtStart": "00:07:36,000",
+      "srtEnd": "00:07:44,000",
+      "expectedOutputFile": "more--food-dining--steak.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--food-dining--steak.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--food-dining--steak.mp3",
+      "referencedBy": [
+        "Restaurant/food-dining (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 59,
+      "originalText": "seafood platter",
+      "normalizedText": "seafood platter",
+      "srtStart": "00:07:44,000",
+      "srtEnd": "00:07:52,000",
+      "expectedOutputFile": "more--food-dining--seafood-platter.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--food-dining--seafood-platter.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--food-dining--seafood-platter.mp3",
+      "referencedBy": [
+        "Restaurant/food-dining (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 60,
+      "originalText": "vegetarian dish",
+      "normalizedText": "vegetarian dish",
+      "srtStart": "00:07:52,000",
+      "srtEnd": "00:08:00,000",
+      "expectedOutputFile": "more--food-dining--vegetarian-dish.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--food-dining--vegetarian-dish.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--food-dining--vegetarian-dish.mp3",
+      "referencedBy": [
+        "Restaurant/food-dining (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 61,
+      "originalText": "gluten-free dish",
+      "normalizedText": "gluten-free dish",
+      "srtStart": "00:08:00,000",
+      "srtEnd": "00:08:08,000",
+      "expectedOutputFile": "more--food-dining--gluten-free-dish.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--food-dining--gluten-free-dish.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--food-dining--gluten-free-dish.mp3",
+      "referencedBy": [
+        "Restaurant/food-dining (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 62,
+      "originalText": "spicy sauce",
+      "normalizedText": "spicy sauce",
+      "srtStart": "00:08:08,000",
+      "srtEnd": "00:08:16,000",
+      "expectedOutputFile": "more--food-dining--spicy-sauce.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--food-dining--spicy-sauce.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--food-dining--spicy-sauce.mp3",
+      "referencedBy": [
+        "Restaurant/food-dining (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 63,
+      "originalText": "gravy",
+      "normalizedText": "gravy",
+      "srtStart": "00:08:16,000",
+      "srtEnd": "00:08:24,000",
+      "expectedOutputFile": "more--food-dining--gravy.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--food-dining--gravy.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--food-dining--gravy.mp3",
+      "referencedBy": [
+        "Restaurant/food-dining (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 64,
+      "originalText": "mashed potatoes",
+      "normalizedText": "mashed potatoes",
+      "srtStart": "00:08:24,000",
+      "srtEnd": "00:08:32,000",
+      "expectedOutputFile": "more--food-dining--mashed-potatoes.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--food-dining--mashed-potatoes.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--food-dining--mashed-potatoes.mp3",
+      "referencedBy": [
+        "Restaurant/food-dining (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 65,
+      "originalText": "risotto",
+      "normalizedText": "risotto",
+      "srtStart": "00:08:32,000",
+      "srtEnd": "00:08:40,000",
+      "expectedOutputFile": "more--food-dining--risotto.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--food-dining--risotto.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--food-dining--risotto.mp3",
+      "referencedBy": [
+        "Restaurant/food-dining (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 66,
+      "originalText": "sorbet",
+      "normalizedText": "sorbet",
+      "srtStart": "00:08:40,000",
+      "srtEnd": "00:08:48,000",
+      "expectedOutputFile": "more--food-dining--sorbet.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--food-dining--sorbet.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--food-dining--sorbet.mp3",
+      "referencedBy": [
+        "Restaurant/food-dining (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 67,
+      "originalText": "walk-in",
+      "normalizedText": "walk-in",
+      "srtStart": "00:08:48,000",
+      "srtEnd": "00:08:56,000",
+      "expectedOutputFile": "more--restaurant-service-phrases--walk-in.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--restaurant-service-phrases--walk-in.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--restaurant-service-phrases--walk-in.mp3",
+      "referencedBy": [
+        "Restaurant/restaurant-service-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 68,
+      "originalText": "fully booked",
+      "normalizedText": "fully booked",
+      "srtStart": "00:08:56,000",
+      "srtEnd": "00:09:04,000",
+      "expectedOutputFile": "more--restaurant-service-phrases--fully-booked.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--restaurant-service-phrases--fully-booked.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--restaurant-service-phrases--fully-booked.mp3",
+      "referencedBy": [
+        "Restaurant/restaurant-service-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 69,
+      "originalText": "under my name",
+      "normalizedText": "under my name",
+      "srtStart": "00:09:04,000",
+      "srtEnd": "00:09:12,000",
+      "expectedOutputFile": "more--restaurant-service-phrases--under-my-name.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--restaurant-service-phrases--under-my-name.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--restaurant-service-phrases--under-my-name.mp3",
+      "referencedBy": [
+        "Restaurant/restaurant-service-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 70,
+      "originalText": "no onions",
+      "normalizedText": "no onions",
+      "srtStart": "00:09:12,000",
+      "srtEnd": "00:09:20,000",
+      "expectedOutputFile": "more--restaurant-service-phrases--no-onions.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--restaurant-service-phrases--no-onions.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--restaurant-service-phrases--no-onions.mp3",
+      "referencedBy": [
+        "Restaurant/restaurant-service-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 71,
+      "originalText": "less spicy",
+      "normalizedText": "less spicy",
+      "srtStart": "00:09:20,000",
+      "srtEnd": "00:09:28,000",
+      "expectedOutputFile": "more--restaurant-service-phrases--less-spicy.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--restaurant-service-phrases--less-spicy.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--restaurant-service-phrases--less-spicy.mp3",
+      "referencedBy": [
+        "Restaurant/restaurant-service-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 72,
+      "originalText": "on the side",
+      "normalizedText": "on the side",
+      "srtStart": "00:09:28,000",
+      "srtEnd": "00:09:36,000",
+      "expectedOutputFile": "more--restaurant-service-phrases--on-the-side.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--restaurant-service-phrases--on-the-side.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--restaurant-service-phrases--on-the-side.mp3",
+      "referencedBy": [
+        "Restaurant/restaurant-service-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 73,
+      "originalText": "share a dish",
+      "normalizedText": "share a dish",
+      "srtStart": "00:09:36,000",
+      "srtEnd": "00:09:44,000",
+      "expectedOutputFile": "more--restaurant-service-phrases--share-a-dish.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--restaurant-service-phrases--share-a-dish.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--restaurant-service-phrases--share-a-dish.mp3",
+      "referencedBy": [
+        "Restaurant/restaurant-service-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 74,
+      "originalText": "box it up",
+      "normalizedText": "box it up",
+      "srtStart": "00:09:44,000",
+      "srtEnd": "00:09:52,000",
+      "expectedOutputFile": "more--restaurant-service-phrases--box-it-up.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--restaurant-service-phrases--box-it-up.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--restaurant-service-phrases--box-it-up.mp3",
+      "referencedBy": [
+        "Restaurant/restaurant-service-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 75,
+      "originalText": "separate checks",
+      "normalizedText": "separate checks",
+      "srtStart": "00:09:52,000",
+      "srtEnd": "00:10:00,000",
+      "expectedOutputFile": "more--restaurant-service-phrases--separate-checks.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--restaurant-service-phrases--separate-checks.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--restaurant-service-phrases--separate-checks.mp3",
+      "referencedBy": [
+        "Restaurant/restaurant-service-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 76,
+      "originalText": "corkage fee",
+      "normalizedText": "corkage fee",
+      "srtStart": "00:10:00,000",
+      "srtEnd": "00:10:08,000",
+      "expectedOutputFile": "more--restaurant-service-phrases--corkage-fee.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--restaurant-service-phrases--corkage-fee.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--restaurant-service-phrases--corkage-fee.mp3",
+      "referencedBy": [
+        "Restaurant/restaurant-service-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 77,
+      "originalText": "minimum spend",
+      "normalizedText": "minimum spend",
+      "srtStart": "00:10:08,000",
+      "srtEnd": "00:10:16,000",
+      "expectedOutputFile": "more--restaurant-service-phrases--minimum-spend.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--restaurant-service-phrases--minimum-spend.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--restaurant-service-phrases--minimum-spend.mp3",
+      "referencedBy": [
+        "Restaurant/restaurant-service-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "order": 78,
+      "originalText": "compliments to the chef",
+      "normalizedText": "compliments to the chef",
+      "srtStart": "00:10:16,000",
+      "srtEnd": "00:10:24,000",
+      "expectedOutputFile": "more--restaurant-service-phrases--compliments-to-the-chef.mp3",
+      "currentOldAudioPath": "assets/audio/words/restaurant/more--restaurant-service-phrases--compliments-to-the-chef.mp3",
+      "finalTargetAudioPath": "assets/audio/words/restaurant/more--restaurant-service-phrases--compliments-to-the-chef.mp3",
+      "referencedBy": [
+        "Restaurant/restaurant-service-phrases (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    }
+  ]
+}

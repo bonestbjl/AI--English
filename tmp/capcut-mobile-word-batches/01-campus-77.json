@@ -1,0 +1,1484 @@
+{
+  "schemaVersion": 1,
+  "batchIndex": 1,
+  "theme": "campus",
+  "count": 77,
+  "sourceList": "tmp/mobile-word-capcut-generation-list.json",
+  "timing": {
+    "cueDurationSeconds": 8,
+    "cueStepSeconds": 8,
+    "sourceCueGapSeconds": 0,
+    "openingReservedSilenceSeconds": 0,
+    "endingReservedSilenceSeconds": 0
+  },
+  "export": {
+    "directory": "tmp/capcut-mobile-word-batches/exports/01-campus-77",
+    "suggestedAudioFile": "01-campus-77-capcut-export.mp3",
+    "suggestedSrtFile": "01-campus-77-capcut-export.srt"
+  },
+  "records": [
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 1,
+      "originalText": "campus",
+      "normalizedText": "campus",
+      "srtStart": "00:00:00,000",
+      "srtEnd": "00:00:08,000",
+      "expectedOutputFile": "campus-entrance--campus.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/campus-entrance--campus.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/campus-entrance--campus.mp3",
+      "referencedBy": [
+        "Campus/campusEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 2,
+      "originalText": "entrance",
+      "normalizedText": "entrance",
+      "srtStart": "00:00:08,000",
+      "srtEnd": "00:00:16,000",
+      "expectedOutputFile": "campus-entrance--entrance.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/campus-entrance--entrance.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/campus-entrance--entrance.mp3",
+      "referencedBy": [
+        "Campus/campusEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 3,
+      "originalText": "courtyard",
+      "normalizedText": "courtyard",
+      "srtStart": "00:00:16,000",
+      "srtEnd": "00:00:24,000",
+      "expectedOutputFile": "campus-entrance--courtyard.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/campus-entrance--courtyard.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/campus-entrance--courtyard.mp3",
+      "referencedBy": [
+        "Campus/campusEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 4,
+      "originalText": "schedule",
+      "normalizedText": "schedule",
+      "srtStart": "00:00:24,000",
+      "srtEnd": "00:00:32,000",
+      "expectedOutputFile": "campus-entrance--schedule.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/campus-entrance--schedule.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/campus-entrance--schedule.mp3",
+      "referencedBy": [
+        "Campus/campusEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 5,
+      "originalText": "notice board",
+      "normalizedText": "notice board",
+      "srtStart": "00:00:32,000",
+      "srtEnd": "00:00:40,000",
+      "expectedOutputFile": "campus-entrance--notice-board.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/campus-entrance--notice-board.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/campus-entrance--notice-board.mp3",
+      "referencedBy": [
+        "Campus/campusEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 6,
+      "originalText": "uniform",
+      "normalizedText": "uniform",
+      "srtStart": "00:00:40,000",
+      "srtEnd": "00:00:48,000",
+      "expectedOutputFile": "campus-entrance--uniform.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/campus-entrance--uniform.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/campus-entrance--uniform.mp3",
+      "referencedBy": [
+        "Campus/campusEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 7,
+      "originalText": "enter",
+      "normalizedText": "enter",
+      "srtStart": "00:00:48,000",
+      "srtEnd": "00:00:56,000",
+      "expectedOutputFile": "campus-entrance--enter.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/campus-entrance--enter.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/campus-entrance--enter.mp3",
+      "referencedBy": [
+        "Campus/campusEntrance (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 8,
+      "originalText": "classroom",
+      "normalizedText": "classroom",
+      "srtStart": "00:00:56,000",
+      "srtEnd": "00:01:04,000",
+      "expectedOutputFile": "classroom--classroom.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/classroom--classroom.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/classroom--classroom.mp3",
+      "referencedBy": [
+        "Campus/classroom (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 9,
+      "originalText": "desk",
+      "normalizedText": "desk",
+      "srtStart": "00:01:04,000",
+      "srtEnd": "00:01:12,000",
+      "expectedOutputFile": "classroom--desk.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/classroom--desk.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/classroom--desk.mp3",
+      "referencedBy": [
+        "Campus/classroom (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 10,
+      "originalText": "whiteboard",
+      "normalizedText": "whiteboard",
+      "srtStart": "00:01:12,000",
+      "srtEnd": "00:01:20,000",
+      "expectedOutputFile": "classroom--whiteboard.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/classroom--whiteboard.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/classroom--whiteboard.mp3",
+      "referencedBy": [
+        "Campus/classroom (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 11,
+      "originalText": "notebook",
+      "normalizedText": "notebook",
+      "srtStart": "00:01:20,000",
+      "srtEnd": "00:01:28,000",
+      "expectedOutputFile": "classroom--notebook.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/classroom--notebook.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/classroom--notebook.mp3",
+      "referencedBy": [
+        "Campus/classroom (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 12,
+      "originalText": "lesson",
+      "normalizedText": "lesson",
+      "srtStart": "00:01:28,000",
+      "srtEnd": "00:01:36,000",
+      "expectedOutputFile": "classroom--lesson.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/classroom--lesson.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/classroom--lesson.mp3",
+      "referencedBy": [
+        "Campus/classroom (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 13,
+      "originalText": "question",
+      "normalizedText": "question",
+      "srtStart": "00:01:36,000",
+      "srtEnd": "00:01:44,000",
+      "expectedOutputFile": "classroom--question.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/classroom--question.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/classroom--question.mp3",
+      "referencedBy": [
+        "Campus/classroom (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 14,
+      "originalText": "answer",
+      "normalizedText": "answer",
+      "srtStart": "00:01:44,000",
+      "srtEnd": "00:01:52,000",
+      "expectedOutputFile": "classroom--answer.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/classroom--answer.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/classroom--answer.mp3",
+      "referencedBy": [
+        "Campus/classroom (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 15,
+      "originalText": "library",
+      "normalizedText": "library",
+      "srtStart": "00:01:52,000",
+      "srtEnd": "00:02:00,000",
+      "expectedOutputFile": "library--library.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/library--library.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/library--library.mp3",
+      "referencedBy": [
+        "Campus/library (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 16,
+      "originalText": "bookshelf",
+      "normalizedText": "bookshelf",
+      "srtStart": "00:02:00,000",
+      "srtEnd": "00:02:08,000",
+      "expectedOutputFile": "library--bookshelf.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/library--bookshelf.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/library--bookshelf.mp3",
+      "referencedBy": [
+        "Campus/library (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 17,
+      "originalText": "dictionary",
+      "normalizedText": "dictionary",
+      "srtStart": "00:02:08,000",
+      "srtEnd": "00:02:16,000",
+      "expectedOutputFile": "library--dictionary.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/library--dictionary.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/library--dictionary.mp3",
+      "referencedBy": [
+        "Campus/library (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 18,
+      "originalText": "page",
+      "normalizedText": "page",
+      "srtStart": "00:02:16,000",
+      "srtEnd": "00:02:24,000",
+      "expectedOutputFile": "library--page.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/library--page.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/library--page.mp3",
+      "referencedBy": [
+        "Campus/library (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 19,
+      "originalText": "title",
+      "normalizedText": "title",
+      "srtStart": "00:02:24,000",
+      "srtEnd": "00:02:32,000",
+      "expectedOutputFile": "library--title.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/library--title.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/library--title.mp3",
+      "referencedBy": [
+        "Campus/library (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 20,
+      "originalText": "library card",
+      "normalizedText": "library card",
+      "srtStart": "00:02:32,000",
+      "srtEnd": "00:02:40,000",
+      "expectedOutputFile": "library--library-card.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/library--library-card.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/library--library-card.mp3",
+      "referencedBy": [
+        "Campus/library (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 21,
+      "originalText": "borrow",
+      "normalizedText": "borrow",
+      "srtStart": "00:02:40,000",
+      "srtEnd": "00:02:48,000",
+      "expectedOutputFile": "library--borrow.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/library--borrow.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/library--borrow.mp3",
+      "referencedBy": [
+        "Campus/library (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 22,
+      "originalText": "cafeteria",
+      "normalizedText": "cafeteria",
+      "srtStart": "00:02:48,000",
+      "srtEnd": "00:02:56,000",
+      "expectedOutputFile": "cafeteria--cafeteria.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/cafeteria--cafeteria.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/cafeteria--cafeteria.mp3",
+      "referencedBy": [
+        "Campus/cafeteria (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 23,
+      "originalText": "tray",
+      "normalizedText": "tray",
+      "srtStart": "00:02:56,000",
+      "srtEnd": "00:03:04,000",
+      "expectedOutputFile": "cafeteria--tray.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/cafeteria--tray.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/cafeteria--tray.mp3",
+      "referencedBy": [
+        "Campus/cafeteria (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 24,
+      "originalText": "menu",
+      "normalizedText": "menu",
+      "srtStart": "00:03:04,000",
+      "srtEnd": "00:03:12,000",
+      "expectedOutputFile": "cafeteria--menu.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/cafeteria--menu.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/cafeteria--menu.mp3",
+      "referencedBy": [
+        "Campus/cafeteria (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 25,
+      "originalText": "lunch",
+      "normalizedText": "lunch",
+      "srtStart": "00:03:12,000",
+      "srtEnd": "00:03:20,000",
+      "expectedOutputFile": "cafeteria--lunch.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/cafeteria--lunch.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/cafeteria--lunch.mp3",
+      "referencedBy": [
+        "Campus/cafeteria (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 26,
+      "originalText": "soup",
+      "normalizedText": "soup",
+      "srtStart": "00:03:20,000",
+      "srtEnd": "00:03:28,000",
+      "expectedOutputFile": "cafeteria--soup.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/cafeteria--soup.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/cafeteria--soup.mp3",
+      "referencedBy": [
+        "Campus/cafeteria (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 27,
+      "originalText": "seat",
+      "normalizedText": "seat",
+      "srtStart": "00:03:28,000",
+      "srtEnd": "00:03:36,000",
+      "expectedOutputFile": "cafeteria--seat.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/cafeteria--seat.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/cafeteria--seat.mp3",
+      "referencedBy": [
+        "Campus/cafeteria (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 28,
+      "originalText": "order",
+      "normalizedText": "order",
+      "srtStart": "00:03:36,000",
+      "srtEnd": "00:03:44,000",
+      "expectedOutputFile": "cafeteria--order.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/cafeteria--order.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/cafeteria--order.mp3",
+      "referencedBy": [
+        "Campus/cafeteria (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 29,
+      "originalText": "playground",
+      "normalizedText": "playground",
+      "srtStart": "00:03:44,000",
+      "srtEnd": "00:03:52,000",
+      "expectedOutputFile": "playground--playground.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/playground--playground.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/playground--playground.mp3",
+      "referencedBy": [
+        "Campus/playground (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 30,
+      "originalText": "basketball court",
+      "normalizedText": "basketball court",
+      "srtStart": "00:03:52,000",
+      "srtEnd": "00:04:00,000",
+      "expectedOutputFile": "playground--basketball-court.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/playground--basketball-court.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/playground--basketball-court.mp3",
+      "referencedBy": [
+        "Campus/playground (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 31,
+      "originalText": "soccer field",
+      "normalizedText": "soccer field",
+      "srtStart": "00:04:00,000",
+      "srtEnd": "00:04:08,000",
+      "expectedOutputFile": "playground--soccer-field.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/playground--soccer-field.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/playground--soccer-field.mp3",
+      "referencedBy": [
+        "Campus/playground (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 32,
+      "originalText": "whistle",
+      "normalizedText": "whistle",
+      "srtStart": "00:04:08,000",
+      "srtEnd": "00:04:16,000",
+      "expectedOutputFile": "playground--whistle.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/playground--whistle.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/playground--whistle.mp3",
+      "referencedBy": [
+        "Campus/playground (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 33,
+      "originalText": "teamwork",
+      "normalizedText": "teamwork",
+      "srtStart": "00:04:16,000",
+      "srtEnd": "00:04:24,000",
+      "expectedOutputFile": "playground--teamwork.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/playground--teamwork.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/playground--teamwork.mp3",
+      "referencedBy": [
+        "Campus/playground (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 34,
+      "originalText": "scoreboard",
+      "normalizedText": "scoreboard",
+      "srtStart": "00:04:24,000",
+      "srtEnd": "00:04:32,000",
+      "expectedOutputFile": "playground--scoreboard.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/playground--scoreboard.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/playground--scoreboard.mp3",
+      "referencedBy": [
+        "Campus/playground (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 35,
+      "originalText": "practice",
+      "normalizedText": "practice",
+      "srtStart": "00:04:32,000",
+      "srtEnd": "00:04:40,000",
+      "expectedOutputFile": "playground--practice.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/playground--practice.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/playground--practice.mp3",
+      "referencedBy": [
+        "Campus/playground (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 36,
+      "originalText": "hallway",
+      "normalizedText": "hallway",
+      "srtStart": "00:04:40,000",
+      "srtEnd": "00:04:48,000",
+      "expectedOutputFile": "hallway-lockers--hallway.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/hallway-lockers--hallway.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/hallway-lockers--hallway.mp3",
+      "referencedBy": [
+        "Campus/hallwayLockers (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 37,
+      "originalText": "locker",
+      "normalizedText": "locker",
+      "srtStart": "00:04:48,000",
+      "srtEnd": "00:04:56,000",
+      "expectedOutputFile": "hallway-lockers--locker.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/hallway-lockers--locker.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/hallway-lockers--locker.mp3",
+      "referencedBy": [
+        "Campus/hallwayLockers (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 38,
+      "originalText": "backpack",
+      "normalizedText": "backpack",
+      "srtStart": "00:04:56,000",
+      "srtEnd": "00:05:04,000",
+      "expectedOutputFile": "hallway-lockers--backpack.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/hallway-lockers--backpack.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/hallway-lockers--backpack.mp3",
+      "referencedBy": [
+        "Campus/hallwayLockers (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 39,
+      "originalText": "assignment",
+      "normalizedText": "assignment",
+      "srtStart": "00:05:04,000",
+      "srtEnd": "00:05:12,000",
+      "expectedOutputFile": "hallway-lockers--assignment.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/hallway-lockers--assignment.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/hallway-lockers--assignment.mp3",
+      "referencedBy": [
+        "Campus/hallwayLockers (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 40,
+      "originalText": "dismissal",
+      "normalizedText": "dismissal",
+      "srtStart": "00:05:12,000",
+      "srtEnd": "00:05:20,000",
+      "expectedOutputFile": "hallway-lockers--dismissal.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/hallway-lockers--dismissal.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/hallway-lockers--dismissal.mp3",
+      "referencedBy": [
+        "Campus/hallwayLockers (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 41,
+      "originalText": "review",
+      "normalizedText": "review",
+      "srtStart": "00:05:20,000",
+      "srtEnd": "00:05:28,000",
+      "expectedOutputFile": "hallway-lockers--review.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/hallway-lockers--review.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/hallway-lockers--review.mp3",
+      "referencedBy": [
+        "Campus/hallwayLockers (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 42,
+      "originalText": "auditorium",
+      "normalizedText": "auditorium",
+      "srtStart": "00:05:28,000",
+      "srtEnd": "00:05:36,000",
+      "expectedOutputFile": "more--school-places--auditorium.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-places--auditorium.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-places--auditorium.mp3",
+      "referencedBy": [
+        "Campus/school-places (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 43,
+      "originalText": "gymnasium",
+      "normalizedText": "gymnasium",
+      "srtStart": "00:05:36,000",
+      "srtEnd": "00:05:44,000",
+      "expectedOutputFile": "more--school-places--gymnasium.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-places--gymnasium.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-places--gymnasium.mp3",
+      "referencedBy": [
+        "Campus/school-places (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 44,
+      "originalText": "laboratory",
+      "normalizedText": "laboratory",
+      "srtStart": "00:05:44,000",
+      "srtEnd": "00:05:52,000",
+      "expectedOutputFile": "more--school-places--laboratory.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-places--laboratory.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-places--laboratory.mp3",
+      "referencedBy": [
+        "Campus/school-places (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 45,
+      "originalText": "art room",
+      "normalizedText": "art room",
+      "srtStart": "00:05:52,000",
+      "srtEnd": "00:06:00,000",
+      "expectedOutputFile": "more--school-places--art-room.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-places--art-room.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-places--art-room.mp3",
+      "referencedBy": [
+        "Campus/school-places (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 46,
+      "originalText": "music room",
+      "normalizedText": "music room",
+      "srtStart": "00:06:00,000",
+      "srtEnd": "00:06:08,000",
+      "expectedOutputFile": "more--school-places--music-room.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-places--music-room.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-places--music-room.mp3",
+      "referencedBy": [
+        "Campus/school-places (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 47,
+      "originalText": "nurse's office",
+      "normalizedText": "nurse's office",
+      "srtStart": "00:06:08,000",
+      "srtEnd": "00:06:16,000",
+      "expectedOutputFile": "more--school-places--nurses-office.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-places--nurses-office.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-places--nurses-office.mp3",
+      "referencedBy": [
+        "Campus/school-places (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 48,
+      "originalText": "principal's office",
+      "normalizedText": "principal's office",
+      "srtStart": "00:06:16,000",
+      "srtEnd": "00:06:24,000",
+      "expectedOutputFile": "more--school-places--principals-office.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-places--principals-office.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-places--principals-office.mp3",
+      "referencedBy": [
+        "Campus/school-places (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 49,
+      "originalText": "dormitory",
+      "normalizedText": "dormitory",
+      "srtStart": "00:06:24,000",
+      "srtEnd": "00:06:32,000",
+      "expectedOutputFile": "more--school-places--dormitory.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-places--dormitory.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-places--dormitory.mp3",
+      "referencedBy": [
+        "Campus/school-places (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 50,
+      "originalText": "computer lab",
+      "normalizedText": "computer lab",
+      "srtStart": "00:06:32,000",
+      "srtEnd": "00:06:40,000",
+      "expectedOutputFile": "more--school-places--computer-lab.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-places--computer-lab.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-places--computer-lab.mp3",
+      "referencedBy": [
+        "Campus/school-places (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 51,
+      "originalText": "assembly hall",
+      "normalizedText": "assembly hall",
+      "srtStart": "00:06:40,000",
+      "srtEnd": "00:06:48,000",
+      "expectedOutputFile": "more--school-places--assembly-hall.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-places--assembly-hall.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-places--assembly-hall.mp3",
+      "referencedBy": [
+        "Campus/school-places (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 52,
+      "originalText": "staircase",
+      "normalizedText": "staircase",
+      "srtStart": "00:06:48,000",
+      "srtEnd": "00:06:56,000",
+      "expectedOutputFile": "more--school-places--staircase.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-places--staircase.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-places--staircase.mp3",
+      "referencedBy": [
+        "Campus/school-places (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 53,
+      "originalText": "parking lot",
+      "normalizedText": "parking lot",
+      "srtStart": "00:06:56,000",
+      "srtEnd": "00:07:04,000",
+      "expectedOutputFile": "more--school-places--parking-lot.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-places--parking-lot.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-places--parking-lot.mp3",
+      "referencedBy": [
+        "Campus/school-places (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 54,
+      "originalText": "pencil",
+      "normalizedText": "pencil",
+      "srtStart": "00:07:04,000",
+      "srtEnd": "00:07:12,000",
+      "expectedOutputFile": "more--school-objects--pencil.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-objects--pencil.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-objects--pencil.mp3",
+      "referencedBy": [
+        "Campus/school-objects (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 55,
+      "originalText": "eraser",
+      "normalizedText": "eraser",
+      "srtStart": "00:07:12,000",
+      "srtEnd": "00:07:20,000",
+      "expectedOutputFile": "more--school-objects--eraser.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-objects--eraser.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-objects--eraser.mp3",
+      "referencedBy": [
+        "Campus/school-objects (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 56,
+      "originalText": "ruler",
+      "normalizedText": "ruler",
+      "srtStart": "00:07:20,000",
+      "srtEnd": "00:07:28,000",
+      "expectedOutputFile": "more--school-objects--ruler.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-objects--ruler.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-objects--ruler.mp3",
+      "referencedBy": [
+        "Campus/school-objects (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 57,
+      "originalText": "marker",
+      "normalizedText": "marker",
+      "srtStart": "00:07:28,000",
+      "srtEnd": "00:07:36,000",
+      "expectedOutputFile": "more--school-objects--marker.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-objects--marker.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-objects--marker.mp3",
+      "referencedBy": [
+        "Campus/school-objects (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 58,
+      "originalText": "textbook",
+      "normalizedText": "textbook",
+      "srtStart": "00:07:36,000",
+      "srtEnd": "00:07:44,000",
+      "expectedOutputFile": "more--school-objects--textbook.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-objects--textbook.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-objects--textbook.mp3",
+      "referencedBy": [
+        "Campus/school-objects (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 59,
+      "originalText": "workbook",
+      "normalizedText": "workbook",
+      "srtStart": "00:07:44,000",
+      "srtEnd": "00:07:52,000",
+      "expectedOutputFile": "more--school-objects--workbook.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-objects--workbook.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-objects--workbook.mp3",
+      "referencedBy": [
+        "Campus/school-objects (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 60,
+      "originalText": "folder",
+      "normalizedText": "folder",
+      "srtStart": "00:07:52,000",
+      "srtEnd": "00:08:00,000",
+      "expectedOutputFile": "more--school-objects--folder.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-objects--folder.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-objects--folder.mp3",
+      "referencedBy": [
+        "Campus/school-objects (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 61,
+      "originalText": "calculator",
+      "normalizedText": "calculator",
+      "srtStart": "00:08:00,000",
+      "srtEnd": "00:08:08,000",
+      "expectedOutputFile": "more--school-objects--calculator.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-objects--calculator.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-objects--calculator.mp3",
+      "referencedBy": [
+        "Campus/school-objects (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 62,
+      "originalText": "glue",
+      "normalizedText": "glue",
+      "srtStart": "00:08:08,000",
+      "srtEnd": "00:08:16,000",
+      "expectedOutputFile": "more--school-objects--glue.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-objects--glue.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-objects--glue.mp3",
+      "referencedBy": [
+        "Campus/school-objects (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 63,
+      "originalText": "scissors",
+      "normalizedText": "scissors",
+      "srtStart": "00:08:16,000",
+      "srtEnd": "00:08:24,000",
+      "expectedOutputFile": "more--school-objects--scissors.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-objects--scissors.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-objects--scissors.mp3",
+      "referencedBy": [
+        "Campus/school-objects (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 64,
+      "originalText": "compass",
+      "normalizedText": "compass",
+      "srtStart": "00:08:24,000",
+      "srtEnd": "00:08:32,000",
+      "expectedOutputFile": "more--school-objects--compass.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-objects--compass.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-objects--compass.mp3",
+      "referencedBy": [
+        "Campus/school-objects (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 65,
+      "originalText": "stapler",
+      "normalizedText": "stapler",
+      "srtStart": "00:08:32,000",
+      "srtEnd": "00:08:40,000",
+      "expectedOutputFile": "more--school-objects--stapler.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-objects--stapler.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-objects--stapler.mp3",
+      "referencedBy": [
+        "Campus/school-objects (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 66,
+      "originalText": "attendance",
+      "normalizedText": "attendance",
+      "srtStart": "00:08:40,000",
+      "srtEnd": "00:08:48,000",
+      "expectedOutputFile": "more--school-life--attendance.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-life--attendance.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-life--attendance.mp3",
+      "referencedBy": [
+        "Campus/school-life (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 67,
+      "originalText": "homework",
+      "normalizedText": "homework",
+      "srtStart": "00:08:48,000",
+      "srtEnd": "00:08:56,000",
+      "expectedOutputFile": "more--school-life--homework.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-life--homework.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-life--homework.mp3",
+      "referencedBy": [
+        "Campus/school-life (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 68,
+      "originalText": "project",
+      "normalizedText": "project",
+      "srtStart": "00:08:56,000",
+      "srtEnd": "00:09:04,000",
+      "expectedOutputFile": "more--school-life--project.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-life--project.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-life--project.mp3",
+      "referencedBy": [
+        "Campus/school-life (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 69,
+      "originalText": "presentation",
+      "normalizedText": "presentation",
+      "srtStart": "00:09:04,000",
+      "srtEnd": "00:09:12,000",
+      "expectedOutputFile": "more--school-life--presentation.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-life--presentation.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-life--presentation.mp3",
+      "referencedBy": [
+        "Campus/school-life (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 70,
+      "originalText": "experiment",
+      "normalizedText": "experiment",
+      "srtStart": "00:09:12,000",
+      "srtEnd": "00:09:20,000",
+      "expectedOutputFile": "more--school-life--experiment.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-life--experiment.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-life--experiment.mp3",
+      "referencedBy": [
+        "Campus/school-life (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 71,
+      "originalText": "exam",
+      "normalizedText": "exam",
+      "srtStart": "00:09:20,000",
+      "srtEnd": "00:09:28,000",
+      "expectedOutputFile": "more--school-life--exam.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-life--exam.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-life--exam.mp3",
+      "referencedBy": [
+        "Campus/school-life (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 72,
+      "originalText": "grade",
+      "normalizedText": "grade",
+      "srtStart": "00:09:28,000",
+      "srtEnd": "00:09:36,000",
+      "expectedOutputFile": "more--school-life--grade.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-life--grade.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-life--grade.mp3",
+      "referencedBy": [
+        "Campus/school-life (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 73,
+      "originalText": "recess",
+      "normalizedText": "recess",
+      "srtStart": "00:09:36,000",
+      "srtEnd": "00:09:44,000",
+      "expectedOutputFile": "more--school-life--recess.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-life--recess.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-life--recess.mp3",
+      "referencedBy": [
+        "Campus/school-life (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 74,
+      "originalText": "club",
+      "normalizedText": "club",
+      "srtStart": "00:09:44,000",
+      "srtEnd": "00:09:52,000",
+      "expectedOutputFile": "more--school-life--club.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-life--club.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-life--club.mp3",
+      "referencedBy": [
+        "Campus/school-life (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 75,
+      "originalText": "semester",
+      "normalizedText": "semester",
+      "srtStart": "00:09:52,000",
+      "srtEnd": "00:10:00,000",
+      "expectedOutputFile": "more--school-life--semester.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-life--semester.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-life--semester.mp3",
+      "referencedBy": [
+        "Campus/school-life (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 76,
+      "originalText": "timetable",
+      "normalizedText": "timetable",
+      "srtStart": "00:10:00,000",
+      "srtEnd": "00:10:08,000",
+      "expectedOutputFile": "more--school-life--timetable.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-life--timetable.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-life--timetable.mp3",
+      "referencedBy": [
+        "Campus/school-life (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "order": 77,
+      "originalText": "graduation",
+      "normalizedText": "graduation",
+      "srtStart": "00:10:08,000",
+      "srtEnd": "00:10:16,000",
+      "expectedOutputFile": "more--school-life--graduation.mp3",
+      "currentOldAudioPath": "assets/audio/words/campus/more--school-life--graduation.mp3",
+      "finalTargetAudioPath": "assets/audio/words/campus/more--school-life--graduation.mp3",
+      "referencedBy": [
+        "Campus/school-life (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "sourceList": "tmp/mobile-word-capcut-generation-list.json",
+  "totalBatches": 11,
+  "totalTexts": 863,
+  "batches": [
+    {
+      "batchIndex": 1,
+      "theme": "campus",
+      "textCount": 77,
+      "srtFile": "tmp/capcut-mobile-word-batches/01-campus-77.srt",
+      "jsonFile": "tmp/capcut-mobile-word-batches/01-campus-77.json",
+      "suggestedExportAudioFile": "01-campus-77-capcut-export.mp3",
+      "suggestedExportSrtFile": "01-campus-77-capcut-export.srt",
+      "exportDirectory": "tmp/capcut-mobile-word-batches/exports/01-campus-77",
+      "expectedSplitFiles": 77
+    },
+    {
+      "batchIndex": 2,
+      "theme": "cafe",
+      "textCount": 77,
+      "srtFile": "tmp/capcut-mobile-word-batches/02-cafe-77.srt",
+      "jsonFile": "tmp/capcut-mobile-word-batches/02-cafe-77.json",
+      "suggestedExportAudioFile": "02-cafe-77-capcut-export.mp3",
+      "suggestedExportSrtFile": "02-cafe-77-capcut-export.srt",
+      "exportDirectory": "tmp/capcut-mobile-word-batches/exports/02-cafe-77",
+      "expectedSplitFiles": 77
+    },
+    {
+      "batchIndex": 3,
+      "theme": "airport",
+      "textCount": 85,
+      "srtFile": "tmp/capcut-mobile-word-batches/03-airport-85.srt",
+      "jsonFile": "tmp/capcut-mobile-word-batches/03-airport-85.json",
+      "suggestedExportAudioFile": "03-airport-85-capcut-export.mp3",
+      "suggestedExportSrtFile": "03-airport-85-capcut-export.srt",
+      "exportDirectory": "tmp/capcut-mobile-word-batches/exports/03-airport-85",
+      "expectedSplitFiles": 85
+    },
+    {
+      "batchIndex": 4,
+      "theme": "office",
+      "textCount": 78,
+      "srtFile": "tmp/capcut-mobile-word-batches/04-office-78.srt",
+      "jsonFile": "tmp/capcut-mobile-word-batches/04-office-78.json",
+      "suggestedExportAudioFile": "04-office-78-capcut-export.mp3",
+      "suggestedExportSrtFile": "04-office-78-capcut-export.srt",
+      "exportDirectory": "tmp/capcut-mobile-word-batches/exports/04-office-78",
+      "expectedSplitFiles": 78
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "textCount": 78,
+      "srtFile": "tmp/capcut-mobile-word-batches/05-hotel-78.srt",
+      "jsonFile": "tmp/capcut-mobile-word-batches/05-hotel-78.json",
+      "suggestedExportAudioFile": "05-hotel-78-capcut-export.mp3",
+      "suggestedExportSrtFile": "05-hotel-78-capcut-export.srt",
+      "exportDirectory": "tmp/capcut-mobile-word-batches/exports/05-hotel-78",
+      "expectedSplitFiles": 78
+    },
+    {
+      "batchIndex": 6,
+      "theme": "restaurant",
+      "textCount": 78,
+      "srtFile": "tmp/capcut-mobile-word-batches/06-restaurant-78.srt",
+      "jsonFile": "tmp/capcut-mobile-word-batches/06-restaurant-78.json",
+      "suggestedExportAudioFile": "06-restaurant-78-capcut-export.mp3",
+      "suggestedExportSrtFile": "06-restaurant-78-capcut-export.srt",
+      "exportDirectory": "tmp/capcut-mobile-word-batches/exports/06-restaurant-78",
+      "expectedSplitFiles": 78
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "textCount": 78,
+      "srtFile": "tmp/capcut-mobile-word-batches/07-supermarket-78.srt",
+      "jsonFile": "tmp/capcut-mobile-word-batches/07-supermarket-78.json",
+      "suggestedExportAudioFile": "07-supermarket-78-capcut-export.mp3",
+      "suggestedExportSrtFile": "07-supermarket-78-capcut-export.srt",
+      "exportDirectory": "tmp/capcut-mobile-word-batches/exports/07-supermarket-78",
+      "expectedSplitFiles": 78
+    },
+    {
+      "batchIndex": 8,
+      "theme": "metro",
+      "textCount": 78,
+      "srtFile": "tmp/capcut-mobile-word-batches/08-metro-78.srt",
+      "jsonFile": "tmp/capcut-mobile-word-batches/08-metro-78.json",
+      "suggestedExportAudioFile": "08-metro-78-capcut-export.mp3",
+      "suggestedExportSrtFile": "08-metro-78-capcut-export.srt",
+      "exportDirectory": "tmp/capcut-mobile-word-batches/exports/08-metro-78",
+      "expectedSplitFiles": 78
+    },
+    {
+      "batchIndex": 9,
+      "theme": "clinic",
+      "textCount": 78,
+      "srtFile": "tmp/capcut-mobile-word-batches/09-clinic-78.srt",
+      "jsonFile": "tmp/capcut-mobile-word-batches/09-clinic-78.json",
+      "suggestedExportAudioFile": "09-clinic-78-capcut-export.mp3",
+      "suggestedExportSrtFile": "09-clinic-78-capcut-export.srt",
+      "exportDirectory": "tmp/capcut-mobile-word-batches/exports/09-clinic-78",
+      "expectedSplitFiles": 78
+    },
+    {
+      "batchIndex": 10,
+      "theme": "bank",
+      "textCount": 78,
+      "srtFile": "tmp/capcut-mobile-word-batches/10-bank-78.srt",
+      "jsonFile": "tmp/capcut-mobile-word-batches/10-bank-78.json",
+      "suggestedExportAudioFile": "10-bank-78-capcut-export.mp3",
+      "suggestedExportSrtFile": "10-bank-78-capcut-export.srt",
+      "exportDirectory": "tmp/capcut-mobile-word-batches/exports/10-bank-78",
+      "expectedSplitFiles": 78
+    },
+    {
+      "batchIndex": 11,
+      "theme": "apartment",
+      "textCount": 78,
+      "srtFile": "tmp/capcut-mobile-word-batches/11-apartment-78.srt",
+      "jsonFile": "tmp/capcut-mobile-word-batches/11-apartment-78.json",
+      "suggestedExportAudioFile": "11-apartment-78-capcut-export.mp3",
+      "suggestedExportSrtFile": "11-apartment-78-capcut-export.srt",
+      "exportDirectory": "tmp/capcut-mobile-word-batches/exports/11-apartment-78",
+      "expectedSplitFiles": 78
+    }
+  ],
+  "timing": {
+    "cueDurationSeconds": 8,
+    "cueStepSeconds": 8,
+    "sourceCueGapSeconds": 0,
+    "openingReservedSilenceSeconds": 0,
+    "endingReservedSilenceSeconds": 0,
+    "plannedStartFormula": "(order - 1) * 8 seconds",
+    "plannedEndFormula": "order * 8 seconds",
+    "productionEvidence": "audio-workbench/jianying-laundry-remaining/jianying-audio-source.srt and scripts/prepare-jianying-audio.mjs default cueSeconds=8",
+    "exportedCutRule": "Use the CapCut-exported SRT actual start/end values after validating text/order and fixed starts. Do not infer cut points from audio waveform.",
+    "safetyInterval": "Speech is expected to end before the next fixed 8-second start; the unused remainder is the inter-item safety interval.",
+    "ffmpegInputBoundaryFlags": "-ss <exported-srt-start> -to <exported-srt-end>",
+    "ffmpegAudioFilter": "silenceremove=start_periods=1:start_duration=0.03:start_threshold=-50dB:start_silence=0.06:stop_periods=-1:stop_duration=0.08:stop_threshold=-50dB:stop_silence=0.10,loudnorm=I=-18:TP=-2:LRA=7",
+    "outputEncoding": {
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "bitrate": "64k",
+      "format": "mp3"
+    }
+  },
+  "capcutVoiceEvidence": {
+    "confirmed": false,
+    "voiceName": null,
+    "finding": "No committed document, manifest, CapCut export metadata, or Laundry workbench file records the final CapCut voice name.",
+    "requiredSelection": "需要用户在剪映中选择与 Laundry 相同的声音"
+  },
+  "readyForHumanCapcutExport": true,
+  "protections": {
+    "generateMp3Now": false,
+    "overwriteExistingAudioNow": false,
+    "modifyRuntimeMapNow": false,
+    "modifyHtmlNow": false,
+    "paidApiCalls": false
+  }
+}

@@ -1,0 +1,1503 @@
+{
+  "schemaVersion": 1,
+  "batchIndex": 5,
+  "theme": "hotel",
+  "count": 78,
+  "sourceList": "tmp/mobile-word-capcut-generation-list.json",
+  "timing": {
+    "cueDurationSeconds": 8,
+    "cueStepSeconds": 8,
+    "sourceCueGapSeconds": 0,
+    "openingReservedSilenceSeconds": 0,
+    "endingReservedSilenceSeconds": 0
+  },
+  "export": {
+    "directory": "tmp/capcut-mobile-word-batches/exports/05-hotel-78",
+    "suggestedAudioFile": "05-hotel-78-capcut-export.mp3",
+    "suggestedSrtFile": "05-hotel-78-capcut-export.srt"
+  },
+  "records": [
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 1,
+      "originalText": "hotel",
+      "normalizedText": "hotel",
+      "srtStart": "00:00:00,000",
+      "srtEnd": "00:00:08,000",
+      "expectedOutputFile": "hotel-arrival--hotel.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-arrival--hotel.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-arrival--hotel.mp3",
+      "referencedBy": [
+        "Hotel/hotelArrival (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 2,
+      "originalText": "canopy",
+      "normalizedText": "canopy",
+      "srtStart": "00:00:08,000",
+      "srtEnd": "00:00:16,000",
+      "expectedOutputFile": "hotel-arrival--canopy.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-arrival--canopy.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-arrival--canopy.mp3",
+      "referencedBy": [
+        "Hotel/hotelArrival (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 3,
+      "originalText": "bell cart",
+      "normalizedText": "bell cart",
+      "srtStart": "00:00:16,000",
+      "srtEnd": "00:00:24,000",
+      "expectedOutputFile": "hotel-arrival--bell-cart.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-arrival--bell-cart.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-arrival--bell-cart.mp3",
+      "referencedBy": [
+        "Hotel/hotelArrival (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 4,
+      "originalText": "concierge",
+      "normalizedText": "concierge",
+      "srtStart": "00:00:24,000",
+      "srtEnd": "00:00:32,000",
+      "expectedOutputFile": "hotel-arrival--concierge.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-arrival--concierge.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-arrival--concierge.mp3",
+      "referencedBy": [
+        "Hotel/hotelArrival (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 5,
+      "originalText": "atrium",
+      "normalizedText": "atrium",
+      "srtStart": "00:00:32,000",
+      "srtEnd": "00:00:40,000",
+      "expectedOutputFile": "hotel-arrival--atrium.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-arrival--atrium.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-arrival--atrium.mp3",
+      "referencedBy": [
+        "Hotel/hotelArrival (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 6,
+      "originalText": "approach",
+      "normalizedText": "approach",
+      "srtStart": "00:00:40,000",
+      "srtEnd": "00:00:48,000",
+      "expectedOutputFile": "hotel-arrival--approach.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-arrival--approach.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-arrival--approach.mp3",
+      "referencedBy": [
+        "Hotel/hotelArrival (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 7,
+      "originalText": "booking reference",
+      "normalizedText": "booking reference",
+      "srtStart": "00:00:48,000",
+      "srtEnd": "00:00:56,000",
+      "expectedOutputFile": "hotel-booking--booking-reference.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-booking--booking-reference.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-booking--booking-reference.mp3",
+      "referencedBy": [
+        "Hotel/hotelBooking (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 8,
+      "originalText": "vacancy",
+      "normalizedText": "vacancy",
+      "srtStart": "00:00:56,000",
+      "srtEnd": "00:01:04,000",
+      "expectedOutputFile": "hotel-booking--vacancy.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-booking--vacancy.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-booking--vacancy.mp3",
+      "referencedBy": [
+        "Hotel/hotelBooking (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 9,
+      "originalText": "deposit",
+      "normalizedText": "deposit",
+      "srtStart": "00:01:04,000",
+      "srtEnd": "00:01:12,000",
+      "expectedOutputFile": "hotel-booking--deposit.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-booking--deposit.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-booking--deposit.mp3",
+      "referencedBy": [
+        "Hotel/hotelBooking (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 10,
+      "originalText": "signature",
+      "normalizedText": "signature",
+      "srtStart": "00:01:12,000",
+      "srtEnd": "00:01:20,000",
+      "expectedOutputFile": "hotel-booking--signature.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-booking--signature.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-booking--signature.mp3",
+      "referencedBy": [
+        "Hotel/hotelBooking (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 11,
+      "originalText": "room number",
+      "normalizedText": "room number",
+      "srtStart": "00:01:20,000",
+      "srtEnd": "00:01:28,000",
+      "expectedOutputFile": "hotel-booking--room-number.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-booking--room-number.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-booking--room-number.mp3",
+      "referencedBy": [
+        "Hotel/hotelBooking (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 12,
+      "originalText": "verify",
+      "normalizedText": "verify",
+      "srtStart": "00:01:28,000",
+      "srtEnd": "00:01:36,000",
+      "expectedOutputFile": "hotel-booking--verify.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-booking--verify.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-booking--verify.mp3",
+      "referencedBy": [
+        "Hotel/hotelBooking (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 13,
+      "originalText": "keycard",
+      "normalizedText": "keycard",
+      "srtStart": "00:01:36,000",
+      "srtEnd": "00:01:44,000",
+      "expectedOutputFile": "hotel-elevator--keycard.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-elevator--keycard.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-elevator--keycard.mp3",
+      "referencedBy": [
+        "Hotel/hotelElevator (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 14,
+      "originalText": "elevator",
+      "normalizedText": "elevator",
+      "srtStart": "00:01:44,000",
+      "srtEnd": "00:01:52,000",
+      "expectedOutputFile": "hotel-elevator--elevator.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-elevator--elevator.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-elevator--elevator.mp3",
+      "referencedBy": [
+        "Hotel/hotelElevator (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 15,
+      "originalText": "floor guide",
+      "normalizedText": "floor guide",
+      "srtStart": "00:01:52,000",
+      "srtEnd": "00:02:00,000",
+      "expectedOutputFile": "hotel-elevator--floor-guide.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-elevator--floor-guide.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-elevator--floor-guide.mp3",
+      "referencedBy": [
+        "Hotel/hotelElevator (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 16,
+      "originalText": "bellhop",
+      "normalizedText": "bellhop",
+      "srtStart": "00:02:00,000",
+      "srtEnd": "00:02:08,000",
+      "expectedOutputFile": "hotel-elevator--bellhop.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-elevator--bellhop.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-elevator--bellhop.mp3",
+      "referencedBy": [
+        "Hotel/hotelElevator (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 17,
+      "originalText": "corridor",
+      "normalizedText": "corridor",
+      "srtStart": "00:02:08,000",
+      "srtEnd": "00:02:16,000",
+      "expectedOutputFile": "hotel-elevator--corridor.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-elevator--corridor.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-elevator--corridor.mp3",
+      "referencedBy": [
+        "Hotel/hotelElevator (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 18,
+      "originalText": "ride",
+      "normalizedText": "ride",
+      "srtStart": "00:02:16,000",
+      "srtEnd": "00:02:24,000",
+      "expectedOutputFile": "hotel-elevator--ride.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-elevator--ride.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-elevator--ride.mp3",
+      "referencedBy": [
+        "Hotel/hotelElevator (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 19,
+      "originalText": "guest room",
+      "normalizedText": "guest room",
+      "srtStart": "00:02:24,000",
+      "srtEnd": "00:02:32,000",
+      "expectedOutputFile": "hotel-guest-room--guest-room.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-guest-room--guest-room.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-guest-room--guest-room.mp3",
+      "referencedBy": [
+        "Hotel/hotelGuestRoom (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 20,
+      "originalText": "thermostat",
+      "normalizedText": "thermostat",
+      "srtStart": "00:02:32,000",
+      "srtEnd": "00:02:40,000",
+      "expectedOutputFile": "hotel-guest-room--thermostat.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-guest-room--thermostat.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-guest-room--thermostat.mp3",
+      "referencedBy": [
+        "Hotel/hotelGuestRoom (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 21,
+      "originalText": "minibar",
+      "normalizedText": "minibar",
+      "srtStart": "00:02:40,000",
+      "srtEnd": "00:02:48,000",
+      "expectedOutputFile": "hotel-guest-room--minibar.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-guest-room--minibar.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-guest-room--minibar.mp3",
+      "referencedBy": [
+        "Hotel/hotelGuestRoom (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 22,
+      "originalText": "safe",
+      "normalizedText": "safe",
+      "srtStart": "00:02:48,000",
+      "srtEnd": "00:02:56,000",
+      "expectedOutputFile": "hotel-guest-room--safe.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-guest-room--safe.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-guest-room--safe.mp3",
+      "referencedBy": [
+        "Hotel/hotelGuestRoom (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 23,
+      "originalText": "bedside lamp",
+      "normalizedText": "bedside lamp",
+      "srtStart": "00:02:56,000",
+      "srtEnd": "00:03:04,000",
+      "expectedOutputFile": "hotel-guest-room--bedside-lamp.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-guest-room--bedside-lamp.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-guest-room--bedside-lamp.mp3",
+      "referencedBy": [
+        "Hotel/hotelGuestRoom (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 24,
+      "originalText": "unlock",
+      "normalizedText": "unlock",
+      "srtStart": "00:03:04,000",
+      "srtEnd": "00:03:12,000",
+      "expectedOutputFile": "hotel-guest-room--unlock.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-guest-room--unlock.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-guest-room--unlock.mp3",
+      "referencedBy": [
+        "Hotel/hotelGuestRoom (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 25,
+      "originalText": "pillow",
+      "normalizedText": "pillow",
+      "srtStart": "00:03:12,000",
+      "srtEnd": "00:03:20,000",
+      "expectedOutputFile": "hotel-amenities--pillow.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-amenities--pillow.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-amenities--pillow.mp3",
+      "referencedBy": [
+        "Hotel/hotelAmenities (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 26,
+      "originalText": "blanket",
+      "normalizedText": "blanket",
+      "srtStart": "00:03:20,000",
+      "srtEnd": "00:03:28,000",
+      "expectedOutputFile": "hotel-amenities--blanket.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-amenities--blanket.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-amenities--blanket.mp3",
+      "referencedBy": [
+        "Hotel/hotelAmenities (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 27,
+      "originalText": "bathrobe",
+      "normalizedText": "bathrobe",
+      "srtStart": "00:03:28,000",
+      "srtEnd": "00:03:36,000",
+      "expectedOutputFile": "hotel-amenities--bathrobe.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-amenities--bathrobe.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-amenities--bathrobe.mp3",
+      "referencedBy": [
+        "Hotel/hotelAmenities (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 28,
+      "originalText": "toiletries",
+      "normalizedText": "toiletries",
+      "srtStart": "00:03:36,000",
+      "srtEnd": "00:03:44,000",
+      "expectedOutputFile": "hotel-amenities--toiletries.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-amenities--toiletries.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-amenities--toiletries.mp3",
+      "referencedBy": [
+        "Hotel/hotelAmenities (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 29,
+      "originalText": "shower",
+      "normalizedText": "shower",
+      "srtStart": "00:03:44,000",
+      "srtEnd": "00:03:52,000",
+      "expectedOutputFile": "hotel-amenities--shower.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-amenities--shower.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-amenities--shower.mp3",
+      "referencedBy": [
+        "Hotel/hotelAmenities (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 30,
+      "originalText": "inspect",
+      "normalizedText": "inspect",
+      "srtStart": "00:03:52,000",
+      "srtEnd": "00:04:00,000",
+      "expectedOutputFile": "hotel-amenities--inspect.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-amenities--inspect.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-amenities--inspect.mp3",
+      "referencedBy": [
+        "Hotel/hotelAmenities (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 31,
+      "originalText": "housekeeping",
+      "normalizedText": "housekeeping",
+      "srtStart": "00:04:00,000",
+      "srtEnd": "00:04:08,000",
+      "expectedOutputFile": "hotel-housekeeping--housekeeping.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-housekeeping--housekeeping.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-housekeeping--housekeeping.mp3",
+      "referencedBy": [
+        "Hotel/hotelHousekeeping (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 32,
+      "originalText": "housekeeper",
+      "normalizedText": "housekeeper",
+      "srtStart": "00:04:08,000",
+      "srtEnd": "00:04:16,000",
+      "expectedOutputFile": "hotel-housekeeping--housekeeper.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-housekeeping--housekeeper.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-housekeeping--housekeeper.mp3",
+      "referencedBy": [
+        "Hotel/hotelHousekeeping (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 33,
+      "originalText": "linen",
+      "normalizedText": "linen",
+      "srtStart": "00:04:16,000",
+      "srtEnd": "00:04:24,000",
+      "expectedOutputFile": "hotel-housekeeping--linen.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-housekeeping--linen.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-housekeeping--linen.mp3",
+      "referencedBy": [
+        "Hotel/hotelHousekeeping (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 34,
+      "originalText": "extra towel",
+      "normalizedText": "extra towel",
+      "srtStart": "00:04:24,000",
+      "srtEnd": "00:04:32,000",
+      "expectedOutputFile": "hotel-housekeeping--extra-towel.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-housekeeping--extra-towel.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-housekeeping--extra-towel.mp3",
+      "referencedBy": [
+        "Hotel/hotelHousekeeping (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 35,
+      "originalText": "maintenance",
+      "normalizedText": "maintenance",
+      "srtStart": "00:04:32,000",
+      "srtEnd": "00:04:40,000",
+      "expectedOutputFile": "hotel-housekeeping--maintenance.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-housekeeping--maintenance.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-housekeeping--maintenance.mp3",
+      "referencedBy": [
+        "Hotel/hotelHousekeeping (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 36,
+      "originalText": "contact",
+      "normalizedText": "contact",
+      "srtStart": "00:04:40,000",
+      "srtEnd": "00:04:48,000",
+      "expectedOutputFile": "hotel-housekeeping--contact.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-housekeeping--contact.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-housekeeping--contact.mp3",
+      "referencedBy": [
+        "Hotel/hotelHousekeeping (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 37,
+      "originalText": "folio",
+      "normalizedText": "folio",
+      "srtStart": "00:04:48,000",
+      "srtEnd": "00:04:56,000",
+      "expectedOutputFile": "hotel-checkout--folio.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-checkout--folio.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-checkout--folio.mp3",
+      "referencedBy": [
+        "Hotel/hotelCheckout (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 38,
+      "originalText": "charge",
+      "normalizedText": "charge",
+      "srtStart": "00:04:56,000",
+      "srtEnd": "00:05:04,000",
+      "expectedOutputFile": "hotel-checkout--charge.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-checkout--charge.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-checkout--charge.mp3",
+      "referencedBy": [
+        "Hotel/hotelCheckout (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 39,
+      "originalText": "refund",
+      "normalizedText": "refund",
+      "srtStart": "00:05:04,000",
+      "srtEnd": "00:05:12,000",
+      "expectedOutputFile": "hotel-checkout--refund.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-checkout--refund.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-checkout--refund.mp3",
+      "referencedBy": [
+        "Hotel/hotelCheckout (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 40,
+      "originalText": "departure",
+      "normalizedText": "departure",
+      "srtStart": "00:05:12,000",
+      "srtEnd": "00:05:20,000",
+      "expectedOutputFile": "hotel-checkout--departure.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-checkout--departure.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-checkout--departure.mp3",
+      "referencedBy": [
+        "Hotel/hotelCheckout (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 41,
+      "originalText": "porter",
+      "normalizedText": "porter",
+      "srtStart": "00:05:20,000",
+      "srtEnd": "00:05:28,000",
+      "expectedOutputFile": "hotel-checkout--porter.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-checkout--porter.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-checkout--porter.mp3",
+      "referencedBy": [
+        "Hotel/hotelCheckout (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 42,
+      "originalText": "check out",
+      "normalizedText": "check out",
+      "srtStart": "00:05:28,000",
+      "srtEnd": "00:05:36,000",
+      "expectedOutputFile": "hotel-checkout--check-out.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/hotel-checkout--check-out.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/hotel-checkout--check-out.mp3",
+      "referencedBy": [
+        "Hotel/hotelCheckout (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 43,
+      "originalText": "drop-off zone",
+      "normalizedText": "drop-off zone",
+      "srtStart": "00:05:36,000",
+      "srtEnd": "00:05:44,000",
+      "expectedOutputFile": "more--hotel-spaces--drop-off-zone.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--hotel-spaces--drop-off-zone.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--hotel-spaces--drop-off-zone.mp3",
+      "referencedBy": [
+        "Hotel/hotel-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 44,
+      "originalText": "vestibule",
+      "normalizedText": "vestibule",
+      "srtStart": "00:05:44,000",
+      "srtEnd": "00:05:52,000",
+      "expectedOutputFile": "more--hotel-spaces--vestibule.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--hotel-spaces--vestibule.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--hotel-spaces--vestibule.mp3",
+      "referencedBy": [
+        "Hotel/hotel-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 45,
+      "originalText": "mezzanine",
+      "normalizedText": "mezzanine",
+      "srtStart": "00:05:52,000",
+      "srtEnd": "00:06:00,000",
+      "expectedOutputFile": "more--hotel-spaces--mezzanine.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--hotel-spaces--mezzanine.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--hotel-spaces--mezzanine.mp3",
+      "referencedBy": [
+        "Hotel/hotel-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 46,
+      "originalText": "ballroom",
+      "normalizedText": "ballroom",
+      "srtStart": "00:06:00,000",
+      "srtEnd": "00:06:08,000",
+      "expectedOutputFile": "more--hotel-spaces--ballroom.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--hotel-spaces--ballroom.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--hotel-spaces--ballroom.mp3",
+      "referencedBy": [
+        "Hotel/hotel-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 47,
+      "originalText": "banquet hall",
+      "normalizedText": "banquet hall",
+      "srtStart": "00:06:08,000",
+      "srtEnd": "00:06:16,000",
+      "expectedOutputFile": "more--hotel-spaces--banquet-hall.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--hotel-spaces--banquet-hall.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--hotel-spaces--banquet-hall.mp3",
+      "referencedBy": [
+        "Hotel/hotel-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 48,
+      "originalText": "conference suite",
+      "normalizedText": "conference suite",
+      "srtStart": "00:06:16,000",
+      "srtEnd": "00:06:24,000",
+      "expectedOutputFile": "more--hotel-spaces--conference-suite.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--hotel-spaces--conference-suite.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--hotel-spaces--conference-suite.mp3",
+      "referencedBy": [
+        "Hotel/hotel-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 49,
+      "originalText": "executive floor",
+      "normalizedText": "executive floor",
+      "srtStart": "00:06:24,000",
+      "srtEnd": "00:06:32,000",
+      "expectedOutputFile": "more--hotel-spaces--executive-floor.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--hotel-spaces--executive-floor.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--hotel-spaces--executive-floor.mp3",
+      "referencedBy": [
+        "Hotel/hotel-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 50,
+      "originalText": "rooftop pool",
+      "normalizedText": "rooftop pool",
+      "srtStart": "00:06:32,000",
+      "srtEnd": "00:06:40,000",
+      "expectedOutputFile": "more--hotel-spaces--rooftop-pool.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--hotel-spaces--rooftop-pool.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--hotel-spaces--rooftop-pool.mp3",
+      "referencedBy": [
+        "Hotel/hotel-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 51,
+      "originalText": "wellness center",
+      "normalizedText": "wellness center",
+      "srtStart": "00:06:40,000",
+      "srtEnd": "00:06:48,000",
+      "expectedOutputFile": "more--hotel-spaces--wellness-center.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--hotel-spaces--wellness-center.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--hotel-spaces--wellness-center.mp3",
+      "referencedBy": [
+        "Hotel/hotel-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 52,
+      "originalText": "luggage room",
+      "normalizedText": "luggage room",
+      "srtStart": "00:06:48,000",
+      "srtEnd": "00:06:56,000",
+      "expectedOutputFile": "more--hotel-spaces--luggage-room.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--hotel-spaces--luggage-room.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--hotel-spaces--luggage-room.mp3",
+      "referencedBy": [
+        "Hotel/hotel-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 53,
+      "originalText": "service corridor",
+      "normalizedText": "service corridor",
+      "srtStart": "00:06:56,000",
+      "srtEnd": "00:07:04,000",
+      "expectedOutputFile": "more--hotel-spaces--service-corridor.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--hotel-spaces--service-corridor.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--hotel-spaces--service-corridor.mp3",
+      "referencedBy": [
+        "Hotel/hotel-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 54,
+      "originalText": "garden terrace",
+      "normalizedText": "garden terrace",
+      "srtStart": "00:07:04,000",
+      "srtEnd": "00:07:12,000",
+      "expectedOutputFile": "more--hotel-spaces--garden-terrace.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--hotel-spaces--garden-terrace.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--hotel-spaces--garden-terrace.mp3",
+      "referencedBy": [
+        "Hotel/hotel-spaces (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 55,
+      "originalText": "headboard",
+      "normalizedText": "headboard",
+      "srtStart": "00:07:12,000",
+      "srtEnd": "00:07:20,000",
+      "expectedOutputFile": "more--room-comfort--headboard.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--room-comfort--headboard.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--room-comfort--headboard.mp3",
+      "referencedBy": [
+        "Hotel/room-comfort (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 56,
+      "originalText": "mattress",
+      "normalizedText": "mattress",
+      "srtStart": "00:07:20,000",
+      "srtEnd": "00:07:28,000",
+      "expectedOutputFile": "more--room-comfort--mattress.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--room-comfort--mattress.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--room-comfort--mattress.mp3",
+      "referencedBy": [
+        "Hotel/room-comfort (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 57,
+      "originalText": "duvet",
+      "normalizedText": "duvet",
+      "srtStart": "00:07:28,000",
+      "srtEnd": "00:07:36,000",
+      "expectedOutputFile": "more--room-comfort--duvet.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--room-comfort--duvet.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--room-comfort--duvet.mp3",
+      "referencedBy": [
+        "Hotel/room-comfort (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 58,
+      "originalText": "bedsheet",
+      "normalizedText": "bedsheet",
+      "srtStart": "00:07:36,000",
+      "srtEnd": "00:07:44,000",
+      "expectedOutputFile": "more--room-comfort--bedsheet.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--room-comfort--bedsheet.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--room-comfort--bedsheet.mp3",
+      "referencedBy": [
+        "Hotel/room-comfort (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 59,
+      "originalText": "pillowcase",
+      "normalizedText": "pillowcase",
+      "srtStart": "00:07:44,000",
+      "srtEnd": "00:07:52,000",
+      "expectedOutputFile": "more--room-comfort--pillowcase.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--room-comfort--pillowcase.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--room-comfort--pillowcase.mp3",
+      "referencedBy": [
+        "Hotel/room-comfort (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 60,
+      "originalText": "bath mat",
+      "normalizedText": "bath mat",
+      "srtStart": "00:07:52,000",
+      "srtEnd": "00:08:00,000",
+      "expectedOutputFile": "more--room-comfort--bath-mat.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--room-comfort--bath-mat.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--room-comfort--bath-mat.mp3",
+      "referencedBy": [
+        "Hotel/room-comfort (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 61,
+      "originalText": "vanity mirror",
+      "normalizedText": "vanity mirror",
+      "srtStart": "00:08:00,000",
+      "srtEnd": "00:08:08,000",
+      "expectedOutputFile": "more--room-comfort--vanity-mirror.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--room-comfort--vanity-mirror.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--room-comfort--vanity-mirror.mp3",
+      "referencedBy": [
+        "Hotel/room-comfort (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 62,
+      "originalText": "blackout curtain",
+      "normalizedText": "blackout curtain",
+      "srtStart": "00:08:08,000",
+      "srtEnd": "00:08:16,000",
+      "expectedOutputFile": "more--room-comfort--blackout-curtain.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--room-comfort--blackout-curtain.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--room-comfort--blackout-curtain.mp3",
+      "referencedBy": [
+        "Hotel/room-comfort (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 63,
+      "originalText": "bedside table",
+      "normalizedText": "bedside table",
+      "srtStart": "00:08:16,000",
+      "srtEnd": "00:08:24,000",
+      "expectedOutputFile": "more--room-comfort--bedside-table.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--room-comfort--bedside-table.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--room-comfort--bedside-table.mp3",
+      "referencedBy": [
+        "Hotel/room-comfort (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 64,
+      "originalText": "wardrobe",
+      "normalizedText": "wardrobe",
+      "srtStart": "00:08:24,000",
+      "srtEnd": "00:08:32,000",
+      "expectedOutputFile": "more--room-comfort--wardrobe.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--room-comfort--wardrobe.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--room-comfort--wardrobe.mp3",
+      "referencedBy": [
+        "Hotel/room-comfort (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 65,
+      "originalText": "ironing board",
+      "normalizedText": "ironing board",
+      "srtStart": "00:08:32,000",
+      "srtEnd": "00:08:40,000",
+      "expectedOutputFile": "more--room-comfort--ironing-board.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--room-comfort--ironing-board.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--room-comfort--ironing-board.mp3",
+      "referencedBy": [
+        "Hotel/room-comfort (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 66,
+      "originalText": "luggage rack",
+      "normalizedText": "luggage rack",
+      "srtStart": "00:08:40,000",
+      "srtEnd": "00:08:48,000",
+      "expectedOutputFile": "more--room-comfort--luggage-rack.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--room-comfort--luggage-rack.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--room-comfort--luggage-rack.mp3",
+      "referencedBy": [
+        "Hotel/room-comfort (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 67,
+      "originalText": "late checkout",
+      "normalizedText": "late checkout",
+      "srtStart": "00:08:48,000",
+      "srtEnd": "00:08:56,000",
+      "expectedOutputFile": "more--hotel-services-policies--late-checkout.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--hotel-services-policies--late-checkout.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--hotel-services-policies--late-checkout.mp3",
+      "referencedBy": [
+        "Hotel/hotel-services-policies (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 68,
+      "originalText": "early arrival",
+      "normalizedText": "early arrival",
+      "srtStart": "00:08:56,000",
+      "srtEnd": "00:09:04,000",
+      "expectedOutputFile": "more--hotel-services-policies--early-arrival.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--hotel-services-policies--early-arrival.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--hotel-services-policies--early-arrival.mp3",
+      "referencedBy": [
+        "Hotel/hotel-services-policies (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 69,
+      "originalText": "wake-up call",
+      "normalizedText": "wake-up call",
+      "srtStart": "00:09:04,000",
+      "srtEnd": "00:09:12,000",
+      "expectedOutputFile": "more--hotel-services-policies--wake-up-call.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--hotel-services-policies--wake-up-call.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--hotel-services-policies--wake-up-call.mp3",
+      "referencedBy": [
+        "Hotel/hotel-services-policies (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 70,
+      "originalText": "turndown service",
+      "normalizedText": "turndown service",
+      "srtStart": "00:09:12,000",
+      "srtEnd": "00:09:20,000",
+      "expectedOutputFile": "more--hotel-services-policies--turndown-service.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--hotel-services-policies--turndown-service.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--hotel-services-policies--turndown-service.mp3",
+      "referencedBy": [
+        "Hotel/hotel-services-policies (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 71,
+      "originalText": "laundry service",
+      "normalizedText": "laundry service",
+      "srtStart": "00:09:20,000",
+      "srtEnd": "00:09:28,000",
+      "expectedOutputFile": "more--hotel-services-policies--laundry-service.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--hotel-services-policies--laundry-service.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--hotel-services-policies--laundry-service.mp3",
+      "referencedBy": [
+        "Hotel/hotel-services-policies (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 72,
+      "originalText": "dry cleaning",
+      "normalizedText": "dry cleaning",
+      "srtStart": "00:09:28,000",
+      "srtEnd": "00:09:36,000",
+      "expectedOutputFile": "more--hotel-services-policies--dry-cleaning.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--hotel-services-policies--dry-cleaning.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--hotel-services-policies--dry-cleaning.mp3",
+      "referencedBy": [
+        "Hotel/hotel-services-policies (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 73,
+      "originalText": "breakfast buffet",
+      "normalizedText": "breakfast buffet",
+      "srtStart": "00:09:36,000",
+      "srtEnd": "00:09:44,000",
+      "expectedOutputFile": "more--hotel-services-policies--breakfast-buffet.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--hotel-services-policies--breakfast-buffet.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--hotel-services-policies--breakfast-buffet.mp3",
+      "referencedBy": [
+        "Hotel/hotel-services-policies (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 74,
+      "originalText": "shuttle service",
+      "normalizedText": "shuttle service",
+      "srtStart": "00:09:44,000",
+      "srtEnd": "00:09:52,000",
+      "expectedOutputFile": "more--hotel-services-policies--shuttle-service.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--hotel-services-policies--shuttle-service.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--hotel-services-policies--shuttle-service.mp3",
+      "referencedBy": [
+        "Hotel/hotel-services-policies (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 75,
+      "originalText": "valet parking",
+      "normalizedText": "valet parking",
+      "srtStart": "00:09:52,000",
+      "srtEnd": "00:10:00,000",
+      "expectedOutputFile": "more--hotel-services-policies--valet-parking.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--hotel-services-policies--valet-parking.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--hotel-services-policies--valet-parking.mp3",
+      "referencedBy": [
+        "Hotel/hotel-services-policies (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 76,
+      "originalText": "security deposit",
+      "normalizedText": "security deposit",
+      "srtStart": "00:10:00,000",
+      "srtEnd": "00:10:08,000",
+      "expectedOutputFile": "more--hotel-services-policies--security-deposit.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--hotel-services-policies--security-deposit.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--hotel-services-policies--security-deposit.mp3",
+      "referencedBy": [
+        "Hotel/hotel-services-policies (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 77,
+      "originalText": "incidental charge",
+      "normalizedText": "incidental charge",
+      "srtStart": "00:10:08,000",
+      "srtEnd": "00:10:16,000",
+      "expectedOutputFile": "more--hotel-services-policies--incidental-charge.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--hotel-services-policies--incidental-charge.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--hotel-services-policies--incidental-charge.mp3",
+      "referencedBy": [
+        "Hotel/hotel-services-policies (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 5,
+      "theme": "hotel",
+      "order": 78,
+      "originalText": "occupancy limit",
+      "normalizedText": "occupancy limit",
+      "srtStart": "00:10:16,000",
+      "srtEnd": "00:10:24,000",
+      "expectedOutputFile": "more--hotel-services-policies--occupancy-limit.mp3",
+      "currentOldAudioPath": "assets/audio/words/hotel/more--hotel-services-policies--occupancy-limit.mp3",
+      "finalTargetAudioPath": "assets/audio/words/hotel/more--hotel-services-policies--occupancy-limit.mp3",
+      "referencedBy": [
+        "Hotel/hotel-services-policies (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    }
+  ]
+}

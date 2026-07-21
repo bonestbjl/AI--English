@@ -1,0 +1,1503 @@
+{
+  "schemaVersion": 1,
+  "batchIndex": 7,
+  "theme": "supermarket",
+  "count": 78,
+  "sourceList": "tmp/mobile-word-capcut-generation-list.json",
+  "timing": {
+    "cueDurationSeconds": 8,
+    "cueStepSeconds": 8,
+    "sourceCueGapSeconds": 0,
+    "openingReservedSilenceSeconds": 0,
+    "endingReservedSilenceSeconds": 0
+  },
+  "export": {
+    "directory": "tmp/capcut-mobile-word-batches/exports/07-supermarket-78",
+    "suggestedAudioFile": "07-supermarket-78-capcut-export.mp3",
+    "suggestedSrtFile": "07-supermarket-78-capcut-export.srt"
+  },
+  "records": [
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 1,
+      "originalText": "storefront",
+      "normalizedText": "storefront",
+      "srtStart": "00:00:00,000",
+      "srtEnd": "00:00:08,000",
+      "expectedOutputFile": "supermarket-entrance--storefront.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-entrance--storefront.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-entrance--storefront.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 2,
+      "originalText": "automatic doors",
+      "normalizedText": "automatic doors",
+      "srtStart": "00:00:08,000",
+      "srtEnd": "00:00:16,000",
+      "expectedOutputFile": "supermarket-entrance--automatic-doors.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-entrance--automatic-doors.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-entrance--automatic-doors.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 3,
+      "originalText": "cart corral",
+      "normalizedText": "cart corral",
+      "srtStart": "00:00:16,000",
+      "srtEnd": "00:00:24,000",
+      "expectedOutputFile": "supermarket-entrance--cart-corral.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-entrance--cart-corral.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-entrance--cart-corral.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 4,
+      "originalText": "store directory",
+      "normalizedText": "store directory",
+      "srtStart": "00:00:24,000",
+      "srtEnd": "00:00:32,000",
+      "expectedOutputFile": "supermarket-entrance--store-directory.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-entrance--store-directory.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-entrance--store-directory.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 5,
+      "originalText": "shopping list",
+      "normalizedText": "shopping list",
+      "srtStart": "00:00:32,000",
+      "srtEnd": "00:00:40,000",
+      "expectedOutputFile": "supermarket-entrance--shopping-list.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-entrance--shopping-list.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-entrance--shopping-list.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketEntrance (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 6,
+      "originalText": "retrieve",
+      "normalizedText": "retrieve",
+      "srtStart": "00:00:40,000",
+      "srtEnd": "00:00:48,000",
+      "expectedOutputFile": "supermarket-entrance--retrieve.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-entrance--retrieve.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-entrance--retrieve.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketEntrance (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 7,
+      "originalText": "pantry staple",
+      "normalizedText": "pantry staple",
+      "srtStart": "00:00:48,000",
+      "srtEnd": "00:00:56,000",
+      "expectedOutputFile": "supermarket-grocery--pantry-staple.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-grocery--pantry-staple.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-grocery--pantry-staple.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketGrocery (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 8,
+      "originalText": "cereal box",
+      "normalizedText": "cereal box",
+      "srtStart": "00:00:56,000",
+      "srtEnd": "00:01:04,000",
+      "expectedOutputFile": "supermarket-grocery--cereal-box.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-grocery--cereal-box.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-grocery--cereal-box.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketGrocery (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 9,
+      "originalText": "canned goods",
+      "normalizedText": "canned goods",
+      "srtStart": "00:01:04,000",
+      "srtEnd": "00:01:12,000",
+      "expectedOutputFile": "supermarket-grocery--canned-goods.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-grocery--canned-goods.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-grocery--canned-goods.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketGrocery (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 10,
+      "originalText": "pasta packet",
+      "normalizedText": "pasta packet",
+      "srtStart": "00:01:12,000",
+      "srtEnd": "00:01:20,000",
+      "expectedOutputFile": "supermarket-grocery--pasta-packet.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-grocery--pasta-packet.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-grocery--pasta-packet.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketGrocery (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 11,
+      "originalText": "unit price",
+      "normalizedText": "unit price",
+      "srtStart": "00:01:20,000",
+      "srtEnd": "00:01:28,000",
+      "expectedOutputFile": "supermarket-grocery--unit-price.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-grocery--unit-price.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-grocery--unit-price.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketGrocery (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 12,
+      "originalText": "track down",
+      "normalizedText": "track down",
+      "srtStart": "00:01:28,000",
+      "srtEnd": "00:01:36,000",
+      "expectedOutputFile": "supermarket-grocery--track-down.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-grocery--track-down.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-grocery--track-down.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketGrocery (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 13,
+      "originalText": "produce mister",
+      "normalizedText": "produce mister",
+      "srtStart": "00:01:36,000",
+      "srtEnd": "00:01:44,000",
+      "expectedOutputFile": "supermarket-fresh--produce-mister.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-fresh--produce-mister.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-fresh--produce-mister.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketFresh (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 14,
+      "originalText": "deli case",
+      "normalizedText": "deli case",
+      "srtStart": "00:01:44,000",
+      "srtEnd": "00:01:52,000",
+      "expectedOutputFile": "supermarket-fresh--deli-case.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-fresh--deli-case.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-fresh--deli-case.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketFresh (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 15,
+      "originalText": "bakery loaf",
+      "normalizedText": "bakery loaf",
+      "srtStart": "00:01:52,000",
+      "srtEnd": "00:02:00,000",
+      "expectedOutputFile": "supermarket-fresh--bakery-loaf.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-fresh--bakery-loaf.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-fresh--bakery-loaf.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketFresh (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 16,
+      "originalText": "egg carton",
+      "normalizedText": "egg carton",
+      "srtStart": "00:02:00,000",
+      "srtEnd": "00:02:08,000",
+      "expectedOutputFile": "supermarket-fresh--egg-carton.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-fresh--egg-carton.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-fresh--egg-carton.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketFresh (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 17,
+      "originalText": "use-by date",
+      "normalizedText": "use-by date",
+      "srtStart": "00:02:08,000",
+      "srtEnd": "00:02:16,000",
+      "expectedOutputFile": "supermarket-fresh--use-by-date.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-fresh--use-by-date.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-fresh--use-by-date.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketFresh (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 18,
+      "originalText": "examine",
+      "normalizedText": "examine",
+      "srtStart": "00:02:16,000",
+      "srtEnd": "00:02:24,000",
+      "expectedOutputFile": "supermarket-fresh--examine.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-fresh--examine.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-fresh--examine.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketFresh (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 19,
+      "originalText": "freezer cabinet",
+      "normalizedText": "freezer cabinet",
+      "srtStart": "00:02:24,000",
+      "srtEnd": "00:02:32,000",
+      "expectedOutputFile": "supermarket-frozen--freezer-cabinet.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-frozen--freezer-cabinet.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-frozen--freezer-cabinet.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketFrozen (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 20,
+      "originalText": "freezer door",
+      "normalizedText": "freezer door",
+      "srtStart": "00:02:32,000",
+      "srtEnd": "00:02:40,000",
+      "expectedOutputFile": "supermarket-frozen--freezer-door.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-frozen--freezer-door.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-frozen--freezer-door.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketFrozen (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 21,
+      "originalText": "frozen meal",
+      "normalizedText": "frozen meal",
+      "srtStart": "00:02:40,000",
+      "srtEnd": "00:02:48,000",
+      "expectedOutputFile": "supermarket-frozen--frozen-meal.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-frozen--frozen-meal.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-frozen--frozen-meal.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketFrozen (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 22,
+      "originalText": "ice cream tub",
+      "normalizedText": "ice cream tub",
+      "srtStart": "00:02:48,000",
+      "srtEnd": "00:02:56,000",
+      "expectedOutputFile": "supermarket-frozen--ice-cream-tub.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-frozen--ice-cream-tub.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-frozen--ice-cream-tub.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketFrozen (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 23,
+      "originalText": "cold chain",
+      "normalizedText": "cold chain",
+      "srtStart": "00:02:56,000",
+      "srtEnd": "00:03:04,000",
+      "expectedOutputFile": "supermarket-frozen--cold-chain.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-frozen--cold-chain.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-frozen--cold-chain.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketFrozen (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 24,
+      "originalText": "pick out",
+      "normalizedText": "pick out",
+      "srtStart": "00:03:04,000",
+      "srtEnd": "00:03:12,000",
+      "expectedOutputFile": "supermarket-frozen--pick-out.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-frozen--pick-out.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-frozen--pick-out.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketFrozen (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 25,
+      "originalText": "store associate",
+      "normalizedText": "store associate",
+      "srtStart": "00:03:12,000",
+      "srtEnd": "00:03:20,000",
+      "expectedOutputFile": "supermarket-help--store-associate.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-help--store-associate.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-help--store-associate.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketHelp (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 26,
+      "originalText": "product locator",
+      "normalizedText": "product locator",
+      "srtStart": "00:03:20,000",
+      "srtEnd": "00:03:28,000",
+      "expectedOutputFile": "supermarket-help--product-locator.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-help--product-locator.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-help--product-locator.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketHelp (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 27,
+      "originalText": "out of stock",
+      "normalizedText": "out of stock",
+      "srtStart": "00:03:28,000",
+      "srtEnd": "00:03:36,000",
+      "expectedOutputFile": "supermarket-help--out-of-stock.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-help--out-of-stock.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-help--out-of-stock.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketHelp (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 28,
+      "originalText": "restocking trolley",
+      "normalizedText": "restocking trolley",
+      "srtStart": "00:03:36,000",
+      "srtEnd": "00:03:44,000",
+      "expectedOutputFile": "supermarket-help--restocking-trolley.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-help--restocking-trolley.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-help--restocking-trolley.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketHelp (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 29,
+      "originalText": "substitute item",
+      "normalizedText": "substitute item",
+      "srtStart": "00:03:44,000",
+      "srtEnd": "00:03:52,000",
+      "expectedOutputFile": "supermarket-help--substitute-item.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-help--substitute-item.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-help--substitute-item.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketHelp (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 30,
+      "originalText": "inquire",
+      "normalizedText": "inquire",
+      "srtStart": "00:03:52,000",
+      "srtEnd": "00:04:00,000",
+      "expectedOutputFile": "supermarket-help--inquire.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-help--inquire.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-help--inquire.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketHelp (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 31,
+      "originalText": "scanner bed",
+      "normalizedText": "scanner bed",
+      "srtStart": "00:04:00,000",
+      "srtEnd": "00:04:08,000",
+      "expectedOutputFile": "supermarket-checkout--scanner-bed.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-checkout--scanner-bed.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-checkout--scanner-bed.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketCheckout (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 32,
+      "originalText": "lane divider",
+      "normalizedText": "lane divider",
+      "srtStart": "00:04:08,000",
+      "srtEnd": "00:04:16,000",
+      "expectedOutputFile": "supermarket-checkout--lane-divider.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-checkout--lane-divider.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-checkout--lane-divider.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketCheckout (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 33,
+      "originalText": "self-checkout kiosk",
+      "normalizedText": "self-checkout kiosk",
+      "srtStart": "00:04:16,000",
+      "srtEnd": "00:04:24,000",
+      "expectedOutputFile": "supermarket-checkout--self-checkout-kiosk.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-checkout--self-checkout-kiosk.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-checkout--self-checkout-kiosk.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketCheckout (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 34,
+      "originalText": "loyalty points",
+      "normalizedText": "loyalty points",
+      "srtStart": "00:04:24,000",
+      "srtEnd": "00:04:32,000",
+      "expectedOutputFile": "supermarket-checkout--loyalty-points.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-checkout--loyalty-points.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-checkout--loyalty-points.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketCheckout (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 35,
+      "originalText": "contactless payment",
+      "normalizedText": "contactless payment",
+      "srtStart": "00:04:32,000",
+      "srtEnd": "00:04:40,000",
+      "expectedOutputFile": "supermarket-checkout--contactless-payment.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-checkout--contactless-payment.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-checkout--contactless-payment.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketCheckout (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 36,
+      "originalText": "unload",
+      "normalizedText": "unload",
+      "srtStart": "00:04:40,000",
+      "srtEnd": "00:04:48,000",
+      "expectedOutputFile": "supermarket-checkout--unload.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-checkout--unload.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-checkout--unload.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketCheckout (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 37,
+      "originalText": "bagging station",
+      "normalizedText": "bagging station",
+      "srtStart": "00:04:48,000",
+      "srtEnd": "00:04:56,000",
+      "expectedOutputFile": "supermarket-packing--bagging-station.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-packing--bagging-station.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-packing--bagging-station.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketPacking (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 38,
+      "originalText": "reusable tote",
+      "normalizedText": "reusable tote",
+      "srtStart": "00:04:56,000",
+      "srtEnd": "00:05:04,000",
+      "expectedOutputFile": "supermarket-packing--reusable-tote.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-packing--reusable-tote.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-packing--reusable-tote.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketPacking (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 39,
+      "originalText": "cooler pouch",
+      "normalizedText": "cooler pouch",
+      "srtStart": "00:05:04,000",
+      "srtEnd": "00:05:12,000",
+      "expectedOutputFile": "supermarket-packing--cooler-pouch.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-packing--cooler-pouch.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-packing--cooler-pouch.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketPacking (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 40,
+      "originalText": "fragile item",
+      "normalizedText": "fragile item",
+      "srtStart": "00:05:12,000",
+      "srtEnd": "00:05:20,000",
+      "expectedOutputFile": "supermarket-packing--fragile-item.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-packing--fragile-item.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-packing--fragile-item.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketPacking (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 41,
+      "originalText": "shopping haul",
+      "normalizedText": "shopping haul",
+      "srtStart": "00:05:20,000",
+      "srtEnd": "00:05:28,000",
+      "expectedOutputFile": "supermarket-packing--shopping-haul.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-packing--shopping-haul.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-packing--shopping-haul.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketPacking (Hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 42,
+      "originalText": "arrange",
+      "normalizedText": "arrange",
+      "srtStart": "00:05:28,000",
+      "srtEnd": "00:05:36,000",
+      "expectedOutputFile": "supermarket-packing--arrange.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/supermarket-packing--arrange.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/supermarket-packing--arrange.mp3",
+      "referencedBy": [
+        "Supermarket/supermarketPacking (Action hotspot learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 43,
+      "originalText": "bulk bins",
+      "normalizedText": "bulk bins",
+      "srtStart": "00:05:36,000",
+      "srtEnd": "00:05:44,000",
+      "expectedOutputFile": "more--supermarket-sections--bulk-bins.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--supermarket-sections--bulk-bins.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--supermarket-sections--bulk-bins.mp3",
+      "referencedBy": [
+        "Supermarket/supermarket-sections (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 44,
+      "originalText": "dairy case",
+      "normalizedText": "dairy case",
+      "srtStart": "00:05:44,000",
+      "srtEnd": "00:05:52,000",
+      "expectedOutputFile": "more--supermarket-sections--dairy-case.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--supermarket-sections--dairy-case.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--supermarket-sections--dairy-case.mp3",
+      "referencedBy": [
+        "Supermarket/supermarket-sections (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 45,
+      "originalText": "meat department",
+      "normalizedText": "meat department",
+      "srtStart": "00:05:52,000",
+      "srtEnd": "00:06:00,000",
+      "expectedOutputFile": "more--supermarket-sections--meat-department.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--supermarket-sections--meat-department.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--supermarket-sections--meat-department.mp3",
+      "referencedBy": [
+        "Supermarket/supermarket-sections (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 46,
+      "originalText": "bakery department",
+      "normalizedText": "bakery department",
+      "srtStart": "00:06:00,000",
+      "srtEnd": "00:06:08,000",
+      "expectedOutputFile": "more--supermarket-sections--bakery-department.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--supermarket-sections--bakery-department.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--supermarket-sections--bakery-department.mp3",
+      "referencedBy": [
+        "Supermarket/supermarket-sections (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 47,
+      "originalText": "deli department",
+      "normalizedText": "deli department",
+      "srtStart": "00:06:08,000",
+      "srtEnd": "00:06:16,000",
+      "expectedOutputFile": "more--supermarket-sections--deli-department.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--supermarket-sections--deli-department.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--supermarket-sections--deli-department.mp3",
+      "referencedBy": [
+        "Supermarket/supermarket-sections (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 48,
+      "originalText": "household goods",
+      "normalizedText": "household goods",
+      "srtStart": "00:06:16,000",
+      "srtEnd": "00:06:24,000",
+      "expectedOutputFile": "more--supermarket-sections--household-goods.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--supermarket-sections--household-goods.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--supermarket-sections--household-goods.mp3",
+      "referencedBy": [
+        "Supermarket/supermarket-sections (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 49,
+      "originalText": "personal care",
+      "normalizedText": "personal care",
+      "srtStart": "00:06:24,000",
+      "srtEnd": "00:06:32,000",
+      "expectedOutputFile": "more--supermarket-sections--personal-care.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--supermarket-sections--personal-care.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--supermarket-sections--personal-care.mp3",
+      "referencedBy": [
+        "Supermarket/supermarket-sections (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 50,
+      "originalText": "pet supplies",
+      "normalizedText": "pet supplies",
+      "srtStart": "00:06:32,000",
+      "srtEnd": "00:06:40,000",
+      "expectedOutputFile": "more--supermarket-sections--pet-supplies.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--supermarket-sections--pet-supplies.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--supermarket-sections--pet-supplies.mp3",
+      "referencedBy": [
+        "Supermarket/supermarket-sections (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 51,
+      "originalText": "baby products",
+      "normalizedText": "baby products",
+      "srtStart": "00:06:40,000",
+      "srtEnd": "00:06:48,000",
+      "expectedOutputFile": "more--supermarket-sections--baby-products.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--supermarket-sections--baby-products.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--supermarket-sections--baby-products.mp3",
+      "referencedBy": [
+        "Supermarket/supermarket-sections (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 52,
+      "originalText": "floral department",
+      "normalizedText": "floral department",
+      "srtStart": "00:06:48,000",
+      "srtEnd": "00:06:56,000",
+      "expectedOutputFile": "more--supermarket-sections--floral-department.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--supermarket-sections--floral-department.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--supermarket-sections--floral-department.mp3",
+      "referencedBy": [
+        "Supermarket/supermarket-sections (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 53,
+      "originalText": "organic section",
+      "normalizedText": "organic section",
+      "srtStart": "00:06:56,000",
+      "srtEnd": "00:07:04,000",
+      "expectedOutputFile": "more--supermarket-sections--organic-section.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--supermarket-sections--organic-section.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--supermarket-sections--organic-section.mp3",
+      "referencedBy": [
+        "Supermarket/supermarket-sections (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 54,
+      "originalText": "recycling station",
+      "normalizedText": "recycling station",
+      "srtStart": "00:07:04,000",
+      "srtEnd": "00:07:12,000",
+      "expectedOutputFile": "more--supermarket-sections--recycling-station.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--supermarket-sections--recycling-station.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--supermarket-sections--recycling-station.mp3",
+      "referencedBy": [
+        "Supermarket/supermarket-sections (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 55,
+      "originalText": "family pack",
+      "normalizedText": "family pack",
+      "srtStart": "00:07:12,000",
+      "srtEnd": "00:07:20,000",
+      "expectedOutputFile": "more--products-packaging--family-pack.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--products-packaging--family-pack.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--products-packaging--family-pack.mp3",
+      "referencedBy": [
+        "Supermarket/products-packaging (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 56,
+      "originalText": "multipack",
+      "normalizedText": "multipack",
+      "srtStart": "00:07:20,000",
+      "srtEnd": "00:07:28,000",
+      "expectedOutputFile": "more--products-packaging--multipack.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--products-packaging--multipack.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--products-packaging--multipack.mp3",
+      "referencedBy": [
+        "Supermarket/products-packaging (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 57,
+      "originalText": "value size",
+      "normalizedText": "value size",
+      "srtStart": "00:07:28,000",
+      "srtEnd": "00:07:36,000",
+      "expectedOutputFile": "more--products-packaging--value-size.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--products-packaging--value-size.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--products-packaging--value-size.mp3",
+      "referencedBy": [
+        "Supermarket/products-packaging (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 58,
+      "originalText": "shrink wrap",
+      "normalizedText": "shrink wrap",
+      "srtStart": "00:07:36,000",
+      "srtEnd": "00:07:44,000",
+      "expectedOutputFile": "more--products-packaging--shrink-wrap.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--products-packaging--shrink-wrap.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--products-packaging--shrink-wrap.mp3",
+      "referencedBy": [
+        "Supermarket/products-packaging (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 59,
+      "originalText": "blister pack",
+      "normalizedText": "blister pack",
+      "srtStart": "00:07:44,000",
+      "srtEnd": "00:07:52,000",
+      "expectedOutputFile": "more--products-packaging--blister-pack.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--products-packaging--blister-pack.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--products-packaging--blister-pack.mp3",
+      "referencedBy": [
+        "Supermarket/products-packaging (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 60,
+      "originalText": "glass jar",
+      "normalizedText": "glass jar",
+      "srtStart": "00:07:52,000",
+      "srtEnd": "00:08:00,000",
+      "expectedOutputFile": "more--products-packaging--glass-jar.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--products-packaging--glass-jar.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--products-packaging--glass-jar.mp3",
+      "referencedBy": [
+        "Supermarket/products-packaging (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 61,
+      "originalText": "screw cap",
+      "normalizedText": "screw cap",
+      "srtStart": "00:08:00,000",
+      "srtEnd": "00:08:08,000",
+      "expectedOutputFile": "more--products-packaging--screw-cap.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--products-packaging--screw-cap.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--products-packaging--screw-cap.mp3",
+      "referencedBy": [
+        "Supermarket/products-packaging (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 62,
+      "originalText": "tamper seal",
+      "normalizedText": "tamper seal",
+      "srtStart": "00:08:08,000",
+      "srtEnd": "00:08:16,000",
+      "expectedOutputFile": "more--products-packaging--tamper-seal.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--products-packaging--tamper-seal.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--products-packaging--tamper-seal.mp3",
+      "referencedBy": [
+        "Supermarket/products-packaging (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 63,
+      "originalText": "nutrition facts",
+      "normalizedText": "nutrition facts",
+      "srtStart": "00:08:16,000",
+      "srtEnd": "00:08:24,000",
+      "expectedOutputFile": "more--products-packaging--nutrition-facts.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--products-packaging--nutrition-facts.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--products-packaging--nutrition-facts.mp3",
+      "referencedBy": [
+        "Supermarket/products-packaging (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 64,
+      "originalText": "serving size",
+      "normalizedText": "serving size",
+      "srtStart": "00:08:24,000",
+      "srtEnd": "00:08:32,000",
+      "expectedOutputFile": "more--products-packaging--serving-size.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--products-packaging--serving-size.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--products-packaging--serving-size.mp3",
+      "referencedBy": [
+        "Supermarket/products-packaging (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 65,
+      "originalText": "allergen warning",
+      "normalizedText": "allergen warning",
+      "srtStart": "00:08:32,000",
+      "srtEnd": "00:08:40,000",
+      "expectedOutputFile": "more--products-packaging--allergen-warning.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--products-packaging--allergen-warning.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--products-packaging--allergen-warning.mp3",
+      "referencedBy": [
+        "Supermarket/products-packaging (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 66,
+      "originalText": "bottle deposit",
+      "normalizedText": "bottle deposit",
+      "srtStart": "00:08:40,000",
+      "srtEnd": "00:08:48,000",
+      "expectedOutputFile": "more--products-packaging--bottle-deposit.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--products-packaging--bottle-deposit.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--products-packaging--bottle-deposit.mp3",
+      "referencedBy": [
+        "Supermarket/products-packaging (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 67,
+      "originalText": "buy one get one free",
+      "normalizedText": "buy one get one free",
+      "srtStart": "00:08:48,000",
+      "srtEnd": "00:08:56,000",
+      "expectedOutputFile": "more--shopping-actions-signs--buy-one-get-one-free.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--shopping-actions-signs--buy-one-get-one-free.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--shopping-actions-signs--buy-one-get-one-free.mp3",
+      "referencedBy": [
+        "Supermarket/shopping-actions-signs (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 68,
+      "originalText": "clearance rack",
+      "normalizedText": "clearance rack",
+      "srtStart": "00:08:56,000",
+      "srtEnd": "00:09:04,000",
+      "expectedOutputFile": "more--shopping-actions-signs--clearance-rack.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--shopping-actions-signs--clearance-rack.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--shopping-actions-signs--clearance-rack.mp3",
+      "referencedBy": [
+        "Supermarket/shopping-actions-signs (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 69,
+      "originalText": "rain check",
+      "normalizedText": "rain check",
+      "srtStart": "00:09:04,000",
+      "srtEnd": "00:09:12,000",
+      "expectedOutputFile": "more--shopping-actions-signs--rain-check.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--shopping-actions-signs--rain-check.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--shopping-actions-signs--rain-check.mp3",
+      "referencedBy": [
+        "Supermarket/shopping-actions-signs (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 70,
+      "originalText": "price match",
+      "normalizedText": "price match",
+      "srtStart": "00:09:12,000",
+      "srtEnd": "00:09:20,000",
+      "expectedOutputFile": "more--shopping-actions-signs--price-match.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--shopping-actions-signs--price-match.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--shopping-actions-signs--price-match.mp3",
+      "referencedBy": [
+        "Supermarket/shopping-actions-signs (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 71,
+      "originalText": "member offer",
+      "normalizedText": "member offer",
+      "srtStart": "00:09:20,000",
+      "srtEnd": "00:09:28,000",
+      "expectedOutputFile": "more--shopping-actions-signs--member-offer.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--shopping-actions-signs--member-offer.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--shopping-actions-signs--member-offer.mp3",
+      "referencedBy": [
+        "Supermarket/shopping-actions-signs (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 72,
+      "originalText": "limited stock",
+      "normalizedText": "limited stock",
+      "srtStart": "00:09:28,000",
+      "srtEnd": "00:09:36,000",
+      "expectedOutputFile": "more--shopping-actions-signs--limited-stock.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--shopping-actions-signs--limited-stock.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--shopping-actions-signs--limited-stock.mp3",
+      "referencedBy": [
+        "Supermarket/shopping-actions-signs (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 73,
+      "originalText": "express lane",
+      "normalizedText": "express lane",
+      "srtStart": "00:09:36,000",
+      "srtEnd": "00:09:44,000",
+      "expectedOutputFile": "more--shopping-actions-signs--express-lane.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--shopping-actions-signs--express-lane.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--shopping-actions-signs--express-lane.mp3",
+      "referencedBy": [
+        "Supermarket/shopping-actions-signs (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 74,
+      "originalText": "coupon code",
+      "normalizedText": "coupon code",
+      "srtStart": "00:09:44,000",
+      "srtEnd": "00:09:52,000",
+      "expectedOutputFile": "more--shopping-actions-signs--coupon-code.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--shopping-actions-signs--coupon-code.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--shopping-actions-signs--coupon-code.mp3",
+      "referencedBy": [
+        "Supermarket/shopping-actions-signs (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 75,
+      "originalText": "redeem points",
+      "normalizedText": "redeem points",
+      "srtStart": "00:09:52,000",
+      "srtEnd": "00:10:00,000",
+      "expectedOutputFile": "more--shopping-actions-signs--redeem-points.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--shopping-actions-signs--redeem-points.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--shopping-actions-signs--redeem-points.mp3",
+      "referencedBy": [
+        "Supermarket/shopping-actions-signs (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 76,
+      "originalText": "return policy",
+      "normalizedText": "return policy",
+      "srtStart": "00:10:00,000",
+      "srtEnd": "00:10:08,000",
+      "expectedOutputFile": "more--shopping-actions-signs--return-policy.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--shopping-actions-signs--return-policy.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--shopping-actions-signs--return-policy.mp3",
+      "referencedBy": [
+        "Supermarket/shopping-actions-signs (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 77,
+      "originalText": "exchange policy",
+      "normalizedText": "exchange policy",
+      "srtStart": "00:10:08,000",
+      "srtEnd": "00:10:16,000",
+      "expectedOutputFile": "more--shopping-actions-signs--exchange-policy.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--shopping-actions-signs--exchange-policy.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--shopping-actions-signs--exchange-policy.mp3",
+      "referencedBy": [
+        "Supermarket/shopping-actions-signs (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    },
+    {
+      "batchIndex": 7,
+      "theme": "supermarket",
+      "order": 78,
+      "originalText": "per-customer limit",
+      "normalizedText": "per-customer limit",
+      "srtStart": "00:10:16,000",
+      "srtEnd": "00:10:24,000",
+      "expectedOutputFile": "more--shopping-actions-signs--per-customer-limit.mp3",
+      "currentOldAudioPath": "assets/audio/words/supermarket/more--shopping-actions-signs--per-customer-limit.mp3",
+      "finalTargetAudioPath": "assets/audio/words/supermarket/more--shopping-actions-signs--per-customer-limit.mp3",
+      "referencedBy": [
+        "Supermarket/shopping-actions-signs (More Words learning card)",
+        "Word Book / saved-word review (shared text lookup)",
+        "Theme summary / learned-word state (shared vocabulary item)"
+      ],
+      "sourceProvider": "capcut",
+      "replacementReason": "replace_unstable_volcengine_word_audio"
+    }
+  ]
+}
