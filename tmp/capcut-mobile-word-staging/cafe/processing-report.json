@@ -1,0 +1,5714 @@
+{
+  "schemaVersion": 1,
+  "processedAt": "2026-07-21T10:26:43.253Z",
+  "scope": {
+    "theme": "cafe",
+    "count": 77
+  },
+  "source": {
+    "mp3": "tmp/capcut-mobile-word-exports/02-cafe-77-capcut-export/02-cafe-77-capcut-export.mp3",
+    "actualSrt": "tmp/capcut-mobile-word-exports/02-cafe-77-capcut-export/02-cafe-77-capcut-export.srt",
+    "plannedSrt": "tmp/capcut-mobile-word-batches/02-cafe-77.srt",
+    "batchJson": "tmp/capcut-mobile-word-batches/02-cafe-77.json",
+    "sourceDurationSeconds": 616.019583
+  },
+  "parameters": {
+    "cutBoundary": "actual exported SRT",
+    "silenceFilter": "silenceremove=start_periods=1:start_duration=0.03:start_threshold=-50dB:start_silence=0.06:stop_periods=-1:stop_duration=0.08:stop_threshold=-50dB:stop_silence=0.10",
+    "safetyPadding": {
+      "startSeconds": 0.06,
+      "endSeconds": 0.1
+    },
+    "loudness": {
+      "integratedLufs": -18,
+      "truePeakDb": -2,
+      "lra": 7
+    },
+    "output": {
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "bitrateKbps": 64
+    }
+  },
+  "summary": {
+    "expected": 77,
+    "generated": 77,
+    "passed": 77,
+    "failed": 0,
+    "byteDuplicateOutputs": 0,
+    "stagingDirectory": "tmp/capcut-mobile-word-staging/cafe",
+    "qcDirectory": "tmp/capcut-mobile-word-staging/cafe-qc-samples",
+    "qcSamples": 12,
+    "durationSeconds": {
+      "min": 0.540875,
+      "max": 1.629,
+      "average": 0.9974015064935065
+    },
+    "integratedLufs": {
+      "min": -18.49,
+      "max": -18.03,
+      "average": -18.4305194805195
+    },
+    "truePeakDbfs": {
+      "min": -8.3,
+      "max": -2.86,
+      "average": -5.375064935064935
+    },
+    "meanVolumeDb": {
+      "min": -20.6,
+      "max": -18.2,
+      "average": -19.218181818181815
+    },
+    "maxVolumeDb": {
+      "min": -8.3,
+      "max": -2.9,
+      "average": -5.401298701298701
+    },
+    "rawLeadingSilenceSeconds": {
+      "min": 0.0945125,
+      "max": 0.140431,
+      "average": 0.12128518311688315
+    },
+    "rawTrailingSilenceSeconds": {
+      "min": 6.465533,
+      "max": 7.503651,
+      "average": 7.07885587012987
+    },
+    "processedTrailingSilenceSeconds": {
+      "min": 0.12537500000000001,
+      "max": 0.19670799999999988,
+      "average": 0.1760405454545454
+    },
+    "pcmPotentialStartClips": 0,
+    "pcmPotentialEndClips": 0
+  },
+  "results": [
+    {
+      "order": 1,
+      "text": "cafe",
+      "normalizedText": "cafe",
+      "srtStart": "00:00:00,000",
+      "srtEnd": "00:00:08,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.125102,
+        "voiceEndSeconds": 0.899683,
+        "leadingSilenceSeconds": 0.125102,
+        "trailingSilenceSeconds": 7.100317,
+        "silenceStarts": [
+          0,
+          0.899683
+        ],
+        "silenceEnds": [
+          0.125102,
+          8
+        ]
+      },
+      "expectedOutputFile": "cafe-entrance--cafe.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/cafe-entrance--cafe.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/cafe-entrance--cafe.mp3",
+      "sha256": "49c7bb1dcaad74f53e98700e6d193b872561f6ab0767c822241957444c1bd5c4",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.982333,
+      "sizeBytes": 8493,
+      "formatBitrate": 69165,
+      "integratedLufs": -18.44,
+      "truePeakDbfs": -5.69,
+      "meanVolumeDb": -19.6,
+      "maxVolumeDb": -5.8,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.8025,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.17983300000000002,
+        "silenceStarts": [
+          0.8025
+        ],
+        "silenceEnds": [
+          0.982333
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.000501011694479471,
+        "first10msPeakRatio": 0.0016603960891228163,
+        "first10msRmsRatio": 0.0010738828803082147,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 2,
+      "text": "awning",
+      "normalizedText": "awning",
+      "srtStart": "00:00:08,000",
+      "srtEnd": "00:00:16,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.121111,
+        "voiceEndSeconds": 0.741066,
+        "leadingSilenceSeconds": 0.121111,
+        "trailingSilenceSeconds": 7.258934,
+        "silenceStarts": [
+          0,
+          0.741066
+        ],
+        "silenceEnds": [
+          0.121111,
+          8
+        ]
+      },
+      "expectedOutputFile": "cafe-entrance--awning.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/cafe-entrance--awning.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/cafe-entrance--awning.mp3",
+      "sha256": "1af2c80ca40514279ceaba763e68963860fd06d12c5b2795e52d35ebe8482866",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.819875,
+      "sizeBytes": 7341,
+      "formatBitrate": 71630,
+      "integratedLufs": -18.43,
+      "truePeakDbfs": -5.09,
+      "meanVolumeDb": -18.7,
+      "maxVolumeDb": -5.1,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.649458,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.17041700000000004,
+        "silenceStarts": [
+          0.649458
+        ],
+        "silenceEnds": [
+          0.819875
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00003921365922501759,
+        "first10msPeakRatio": 0.0008884772344200506,
+        "first10msRmsRatio": 0.00015999352653398531,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 3,
+      "text": "window",
+      "normalizedText": "window",
+      "srtStart": "00:00:16,000",
+      "srtEnd": "00:00:24,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.127347,
+        "voiceEndSeconds": 0.860295,
+        "leadingSilenceSeconds": 0.127347,
+        "trailingSilenceSeconds": 7.139705,
+        "silenceStarts": [
+          0,
+          0.860295
+        ],
+        "silenceEnds": [
+          0.127347,
+          8
+        ]
+      },
+      "expectedOutputFile": "cafe-entrance--window.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/cafe-entrance--window.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/cafe-entrance--window.mp3",
+      "sha256": "a7cc509f807db0e696bea4cb0ca445e9dee51c7fdd92eca316ad995ec4bdc95c",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.929125,
+      "sizeBytes": 8109,
+      "formatBitrate": 69820,
+      "integratedLufs": -18.46,
+      "truePeakDbfs": -5.87,
+      "meanVolumeDb": -19.2,
+      "maxVolumeDb": -5.9,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.743292,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.18583300000000003,
+        "silenceStarts": [
+          0.743292
+        ],
+        "silenceEnds": [
+          0.929125
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0005978975768871158,
+        "first10msPeakRatio": 0.002352530650518499,
+        "first10msRmsRatio": 0.0010329721313836128,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 4,
+      "text": "queue",
+      "normalizedText": "queue",
+      "srtStart": "00:00:24,000",
+      "srtEnd": "00:00:32,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.12102,
+        "voiceEndSeconds": 0.664649,
+        "leadingSilenceSeconds": 0.12102,
+        "trailingSilenceSeconds": 7.335351,
+        "silenceStarts": [
+          0,
+          0.664649
+        ],
+        "silenceEnds": [
+          0.12102,
+          8
+        ]
+      },
+      "expectedOutputFile": "cafe-entrance--queue.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/cafe-entrance--queue.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/cafe-entrance--queue.mp3",
+      "sha256": "dc8b4971b1ab0772b4f2fe9c6eb3a918170aa8b2b310db4f58934147f6051b08",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.756042,
+      "sizeBytes": 6765,
+      "formatBitrate": 71583,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -5.88,
+      "meanVolumeDb": -19.5,
+      "maxVolumeDb": -5.9,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.571667,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.18437499999999996,
+        "silenceStarts": [
+          0.571667
+        ],
+        "silenceEnds": [
+          0.756042
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.000027996972309985104,
+        "first10msPeakRatio": 0.0009601735403910306,
+        "first10msRmsRatio": 0.00022714353016790756,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 5,
+      "text": "aroma",
+      "normalizedText": "aroma",
+      "srtStart": "00:00:32,000",
+      "srtEnd": "00:00:40,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.122993,
+        "voiceEndSeconds": 0.828118,
+        "leadingSilenceSeconds": 0.122993,
+        "trailingSilenceSeconds": 7.171882,
+        "silenceStarts": [
+          0,
+          0.828118
+        ],
+        "silenceEnds": [
+          0.122993,
+          8
+        ]
+      },
+      "expectedOutputFile": "cafe-entrance--aroma.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/cafe-entrance--aroma.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/cafe-entrance--aroma.mp3",
+      "sha256": "558e455e56353e83cc5b0c51ac19310fcce2c96a571bb7fea11bdf52ed9f9a47",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.907625,
+      "sizeBytes": 7917,
+      "formatBitrate": 69782,
+      "integratedLufs": -18.47,
+      "truePeakDbfs": -6.13,
+      "meanVolumeDb": -18.8,
+      "maxVolumeDb": -6.2,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.733708,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.173917,
+        "silenceStarts": [
+          0.733708
+        ],
+        "silenceEnds": [
+          0.907625
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00001188429068038986,
+        "first10msPeakRatio": 0.0009802505331961793,
+        "first10msRmsRatio": 0.00023808620084132882,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 6,
+      "text": "door handle",
+      "normalizedText": "door handle",
+      "srtStart": "00:00:40,000",
+      "srtEnd": "00:00:48,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.136667,
+        "voiceEndSeconds": 1.024694,
+        "leadingSilenceSeconds": 0.136667,
+        "trailingSilenceSeconds": 6.975306,
+        "silenceStarts": [
+          0,
+          1.024694
+        ],
+        "silenceEnds": [
+          0.136667,
+          8
+        ]
+      },
+      "expectedOutputFile": "cafe-entrance--door-handle.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/cafe-entrance--door-handle.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/cafe-entrance--door-handle.mp3",
+      "sha256": "99872a19d4f53b457d1e4adeea36b63155e3994566b6d435f3fb5f929e88fcf8",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.065833,
+      "sizeBytes": 9261,
+      "formatBitrate": 69511,
+      "integratedLufs": -18.45,
+      "truePeakDbfs": -6,
+      "meanVolumeDb": -18.9,
+      "maxVolumeDb": -6,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.916667,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.14916600000000002,
+        "silenceStarts": [
+          0.916667
+        ],
+        "silenceEnds": [
+          1.065833
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0006514458346054685,
+        "first10msPeakRatio": 0.001681176237549442,
+        "first10msRmsRatio": 0.0010212635655983575,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 7,
+      "text": "step inside",
+      "normalizedText": "step inside",
+      "srtStart": "00:00:48,000",
+      "srtEnd": "00:00:56,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.111995,
+        "voiceEndSeconds": 1.333152,
+        "leadingSilenceSeconds": 0.111995,
+        "trailingSilenceSeconds": 6.666848,
+        "silenceStarts": [
+          0,
+          0.24771,
+          1.333152
+        ],
+        "silenceEnds": [
+          0.111995,
+          0.280635,
+          8
+        ]
+      },
+      "expectedOutputFile": "cafe-entrance--step-inside.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/cafe-entrance--step-inside.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/cafe-entrance--step-inside.mp3",
+      "sha256": "a140a3f979a0ab0d317bbe9d0b877d4f8b6bb1b2c59066d6f63b5cf755305e57",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.419667,
+      "sizeBytes": 12141,
+      "formatBitrate": 68416,
+      "integratedLufs": -18.46,
+      "truePeakDbfs": -5.51,
+      "meanVolumeDb": -19.6,
+      "maxVolumeDb": -5.6,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.234583,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.18508400000000003,
+        "silenceStarts": [
+          0.15275,
+          1.234583
+        ],
+        "silenceEnds": [
+          0.184667,
+          1.419667
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0004115640445965038,
+        "first10msPeakRatio": 0.001490940075524437,
+        "first10msRmsRatio": 0.0005538519294402481,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 8,
+      "text": "chalkboard",
+      "normalizedText": "chalkboard",
+      "srtStart": "00:00:56,000",
+      "srtEnd": "00:01:04,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.12322,
+        "voiceEndSeconds": 0.965624,
+        "leadingSilenceSeconds": 0.12322,
+        "trailingSilenceSeconds": 7.034376,
+        "silenceStarts": [
+          0,
+          0.477891,
+          0.965624
+        ],
+        "silenceEnds": [
+          0.12322,
+          0.526213,
+          8
+        ]
+      },
+      "expectedOutputFile": "menu-board--chalkboard.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/menu-board--chalkboard.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/menu-board--chalkboard.mp3",
+      "sha256": "66890c721461e41e315a1a156703941d7c8aeab61e2444fd19c77cd583998df9",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.04075,
+      "sizeBytes": 9069,
+      "formatBitrate": 69711,
+      "integratedLufs": -18.45,
+      "truePeakDbfs": -4.56,
+      "meanVolumeDb": -18.9,
+      "maxVolumeDb": -4.6,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.871208,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.16954200000000008,
+        "silenceStarts": [
+          0.380125,
+          0.871208
+        ],
+        "silenceEnds": [
+          0.431542,
+          1.04075
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.000018244198482012354,
+        "first10msPeakRatio": 0.0013648832288096788,
+        "first10msRmsRatio": 0.0004939537957351905,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 9,
+      "text": "specials",
+      "normalizedText": "specials",
+      "srtStart": "00:01:04,000",
+      "srtEnd": "00:01:12,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.110499,
+        "voiceEndSeconds": 0.964943,
+        "leadingSilenceSeconds": 0.110499,
+        "trailingSilenceSeconds": 7.035057,
+        "silenceStarts": [
+          0,
+          0.224785,
+          0.964943
+        ],
+        "silenceEnds": [
+          0.110499,
+          0.280771,
+          8
+        ]
+      },
+      "expectedOutputFile": "menu-board--specials.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/menu-board--specials.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/menu-board--specials.mp3",
+      "sha256": "7aa15165261811f4705a7c42b4e67ddcb54e8e016a60b4b9326955e7b5a6d656",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.059333,
+      "sizeBytes": 9261,
+      "formatBitrate": 69938,
+      "integratedLufs": -18.45,
+      "truePeakDbfs": -4.31,
+      "meanVolumeDb": -20,
+      "maxVolumeDb": -4.3,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.864875,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.19445800000000013,
+        "silenceStarts": [
+          0.864875
+        ],
+        "silenceEnds": [
+          1.059333
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00009619803311225251,
+        "first10msPeakRatio": 0.0012411732042266214,
+        "first10msRmsRatio": 0.0004177319293841791,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 10,
+      "text": "latte",
+      "normalizedText": "latte",
+      "srtStart": "00:01:12,000",
+      "srtEnd": "00:01:20,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.119048,
+        "voiceEndSeconds": 0.930091,
+        "leadingSilenceSeconds": 0.119048,
+        "trailingSilenceSeconds": 7.069909,
+        "silenceStarts": [
+          0,
+          0.930091
+        ],
+        "silenceEnds": [
+          0.119048,
+          8
+        ]
+      },
+      "expectedOutputFile": "menu-board--latte.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/menu-board--latte.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/menu-board--latte.mp3",
+      "sha256": "21028e8ff978a4f0f63857ecef744b2e9b4effb7a3ef6e8ea550bcfb868cd228",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.987792,
+      "sizeBytes": 8685,
+      "formatBitrate": 70338,
+      "integratedLufs": -18.43,
+      "truePeakDbfs": -5.36,
+      "meanVolumeDb": -19.3,
+      "maxVolumeDb": -5.4,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.831167,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.15662500000000001,
+        "silenceStarts": [
+          0.799,
+          0.831167
+        ],
+        "silenceEnds": [
+          0.830333,
+          0.987792
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0002628381796092665,
+        "first10msPeakRatio": 0.0008210835228586473,
+        "first10msRmsRatio": 0.0005387137892250322,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 11,
+      "text": "espresso",
+      "normalizedText": "espresso",
+      "srtStart": "00:01:20,000",
+      "srtEnd": "00:01:28,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.126463,
+        "voiceEndSeconds": 1.126621,
+        "leadingSilenceSeconds": 0.126463,
+        "trailingSilenceSeconds": 6.873379,
+        "silenceStarts": [
+          0,
+          0.395986,
+          1.126621
+        ],
+        "silenceEnds": [
+          0.126463,
+          0.440317,
+          8
+        ]
+      },
+      "expectedOutputFile": "menu-board--espresso.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/menu-board--espresso.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/menu-board--espresso.mp3",
+      "sha256": "fc956f8f401a27238820284ecf568e00a30112ae0402b05c559a109eda1f1bf9",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.202583,
+      "sizeBytes": 10413,
+      "formatBitrate": 69270,
+      "integratedLufs": -18.46,
+      "truePeakDbfs": -5.86,
+      "meanVolumeDb": -19,
+      "maxVolumeDb": -5.9,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.028917,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.17366599999999988,
+        "silenceStarts": [
+          0.297542,
+          1.028917
+        ],
+        "silenceEnds": [
+          0.342625,
+          1.202583
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0001263709994471475,
+        "first10msPeakRatio": 0.0008199088658176336,
+        "first10msRmsRatio": 0.0003590755478432859,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 12,
+      "text": "mocha",
+      "normalizedText": "mocha",
+      "srtStart": "00:01:28,000",
+      "srtEnd": "00:01:36,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.117052,
+        "voiceEndSeconds": 0.844898,
+        "leadingSilenceSeconds": 0.117052,
+        "trailingSilenceSeconds": 7.155102,
+        "silenceStarts": [
+          0,
+          0.844898
+        ],
+        "silenceEnds": [
+          0.117052,
+          8
+        ]
+      },
+      "expectedOutputFile": "menu-board--mocha.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/menu-board--mocha.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/menu-board--mocha.mp3",
+      "sha256": "fda21540e46e6a0d0ff3d876133d611940772f858f18822bf51817e85f713e0d",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.899125,
+      "sizeBytes": 7917,
+      "formatBitrate": 70441,
+      "integratedLufs": -18.42,
+      "truePeakDbfs": -6.96,
+      "meanVolumeDb": -19.4,
+      "maxVolumeDb": -7,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.74975,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.14937499999999992,
+        "silenceStarts": [
+          0.74975
+        ],
+        "silenceEnds": [
+          0.899125
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.000022213726072027533,
+        "first10msPeakRatio": 0.0007734569752721954,
+        "first10msRmsRatio": 0.00016396862688536473,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 13,
+      "text": "brew",
+      "normalizedText": "brew",
+      "srtStart": "00:01:36,000",
+      "srtEnd": "00:01:44,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.132902,
+        "voiceEndSeconds": 0.680771,
+        "leadingSilenceSeconds": 0.132902,
+        "trailingSilenceSeconds": 7.319229,
+        "silenceStarts": [
+          0,
+          0.680771
+        ],
+        "silenceEnds": [
+          0.132902,
+          8
+        ]
+      },
+      "expectedOutputFile": "menu-board--brew.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/menu-board--brew.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/menu-board--brew.mp3",
+      "sha256": "89c1af0adc13e78776c24fa8dd95fe1568bc8094986c5a1145df8efd4d0efd7c",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.761125,
+      "sizeBytes": 6765,
+      "formatBitrate": 71105,
+      "integratedLufs": -18.47,
+      "truePeakDbfs": -8.3,
+      "meanVolumeDb": -19.2,
+      "maxVolumeDb": -8.3,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.567583,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.1935420000000001,
+        "silenceStarts": [
+          0.567583
+        ],
+        "silenceEnds": [
+          0.761125
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0010279891505537468,
+        "first10msPeakRatio": 0.0010732654631538997,
+        "first10msRmsRatio": 0.00045872330936438347,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 14,
+      "text": "scan",
+      "normalizedText": "scan",
+      "srtStart": "00:01:44,000",
+      "srtEnd": "00:01:52,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.122766,
+        "voiceEndSeconds": 0.717052,
+        "leadingSilenceSeconds": 0.122766,
+        "trailingSilenceSeconds": 7.282948,
+        "silenceStarts": [
+          0,
+          0.236009,
+          0.717052
+        ],
+        "silenceEnds": [
+          0.122766,
+          0.278367,
+          8
+        ]
+      },
+      "expectedOutputFile": "menu-board--scan.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/menu-board--scan.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/menu-board--scan.mp3",
+      "sha256": "293a2d721150466130c109850d08156c559a1fdc27c629560d03ec6ac5d1b3a8",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.799292,
+      "sizeBytes": 7149,
+      "formatBitrate": 71553,
+      "integratedLufs": -18.44,
+      "truePeakDbfs": -6.85,
+      "meanVolumeDb": -20.3,
+      "maxVolumeDb": -6.9,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.615375,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.183917,
+        "silenceStarts": [
+          0.615375
+        ],
+        "silenceEnds": [
+          0.799292
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0007045899571861816,
+        "first10msPeakRatio": 0.005060116919314475,
+        "first10msRmsRatio": 0.0009581311180307811,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 15,
+      "text": "barista",
+      "normalizedText": "barista",
+      "srtStart": "00:01:52,000",
+      "srtEnd": "00:02:00,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.140431,
+        "voiceEndSeconds": 0.953333,
+        "leadingSilenceSeconds": 0.140431,
+        "trailingSilenceSeconds": 7.046667,
+        "silenceStarts": [
+          0,
+          0.953333
+        ],
+        "silenceEnds": [
+          0.140431,
+          8
+        ]
+      },
+      "expectedOutputFile": "order-counter--barista.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/order-counter--barista.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/order-counter--barista.mp3",
+      "sha256": "95cd2d018ebb783e2c9c1a0f02fd5603875d25694d4e1d350c2fb47cf1e3cdc2",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.025625,
+      "sizeBytes": 8877,
+      "formatBitrate": 69241,
+      "integratedLufs": -18.44,
+      "truePeakDbfs": -5.38,
+      "meanVolumeDb": -18.7,
+      "maxVolumeDb": -5.4,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.842542,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.183083,
+        "silenceStarts": [
+          0.842542
+        ],
+        "silenceEnds": [
+          1.025625
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0008917456484897934,
+        "first10msPeakRatio": 0.002251882468176877,
+        "first10msRmsRatio": 0.000793527888034383,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 16,
+      "text": "greeting",
+      "normalizedText": "greeting",
+      "srtStart": "00:02:00,000",
+      "srtEnd": "00:02:08,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.12483,
+        "voiceEndSeconds": 0.736689,
+        "leadingSilenceSeconds": 0.12483,
+        "trailingSilenceSeconds": 7.263311,
+        "silenceStarts": [
+          0,
+          0.736689
+        ],
+        "silenceEnds": [
+          0.12483,
+          8
+        ]
+      },
+      "expectedOutputFile": "order-counter--greeting.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/order-counter--greeting.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/order-counter--greeting.mp3",
+      "sha256": "ea04ced8a0fc0d30270be19a4fa5728ed98a17647f247c322eb23d6edc85c3e2",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.825625,
+      "sizeBytes": 7341,
+      "formatBitrate": 71131,
+      "integratedLufs": -18.49,
+      "truePeakDbfs": -4.99,
+      "meanVolumeDb": -18.7,
+      "maxVolumeDb": -5,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.64025,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.18537500000000007,
+        "silenceStarts": [
+          0.64025
+        ],
+        "silenceEnds": [
+          0.825625
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0010268280403257042,
+        "first10msPeakRatio": 0.0028089821256270485,
+        "first10msRmsRatio": 0.00203565377291331,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 17,
+      "text": "preference",
+      "normalizedText": "preference",
+      "srtStart": "00:02:08,000",
+      "srtEnd": "00:02:16,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.12483,
+        "voiceEndSeconds": 0.878912,
+        "leadingSilenceSeconds": 0.12483,
+        "trailingSilenceSeconds": 7.121088,
+        "silenceStarts": [
+          0,
+          0.878912
+        ],
+        "silenceEnds": [
+          0.12483,
+          8
+        ]
+      },
+      "expectedOutputFile": "order-counter--preference.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/order-counter--preference.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/order-counter--preference.mp3",
+      "sha256": "0be76e6c5430e1940929a1047aef6ba65ce030e5c056c667eba95538f91a54a2",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.966417,
+      "sizeBytes": 8493,
+      "formatBitrate": 70305,
+      "integratedLufs": -18.39,
+      "truePeakDbfs": -3.53,
+      "meanVolumeDb": -19.3,
+      "maxVolumeDb": -3.6,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.8015,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.16491699999999998,
+        "silenceStarts": [
+          0.8015
+        ],
+        "silenceEnds": [
+          0.966417
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0005762946822189093,
+        "first10msPeakRatio": 0.0014844509463159139,
+        "first10msRmsRatio": 0.0009242350405798788,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 4.591226066248989e-21,
+        "last10msRmsRatio": 8.065929005621384e-22,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 18,
+      "text": "medium",
+      "normalizedText": "medium",
+      "srtStart": "00:02:16,000",
+      "srtEnd": "00:02:24,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.115442,
+        "voiceEndSeconds": 0.869365,
+        "leadingSilenceSeconds": 0.115442,
+        "trailingSilenceSeconds": 7.130635,
+        "silenceStarts": [
+          0,
+          0.869365
+        ],
+        "silenceEnds": [
+          0.115442,
+          8
+        ]
+      },
+      "expectedOutputFile": "order-counter--medium.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/order-counter--medium.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/order-counter--medium.mp3",
+      "sha256": "563e0826f6d8277b85824e871b1df915a3cd194ebcecb9239b679d75364cb011",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.962792,
+      "sizeBytes": 8493,
+      "formatBitrate": 70569,
+      "integratedLufs": -18.44,
+      "truePeakDbfs": -7.01,
+      "meanVolumeDb": -19,
+      "maxVolumeDb": -7,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.772625,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.19016699999999997,
+        "silenceStarts": [
+          0.772625
+        ],
+        "silenceEnds": [
+          0.962792
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.000004587135333864046,
+        "first10msPeakRatio": 0.0006310822492268152,
+        "first10msRmsRatio": 0.00021540425727588342,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 19,
+      "text": "dairy-free",
+      "normalizedText": "dairy-free",
+      "srtStart": "00:02:24,000",
+      "srtEnd": "00:02:32,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.136395,
+        "voiceEndSeconds": 1.098798,
+        "leadingSilenceSeconds": 0.136395,
+        "trailingSilenceSeconds": 6.901202,
+        "silenceStarts": [
+          0,
+          1.098798
+        ],
+        "silenceEnds": [
+          0.136395,
+          8
+        ]
+      },
+      "expectedOutputFile": "order-counter--dairy-free.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/order-counter--dairy-free.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/order-counter--dairy-free.mp3",
+      "sha256": "48549ae4ae85ecc3691b2c4be0ef326dfdf7c92bfda4f015ffb7348382242eb4",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.162125,
+      "sizeBytes": 10029,
+      "formatBitrate": 69039,
+      "integratedLufs": -18.45,
+      "truePeakDbfs": -6.07,
+      "meanVolumeDb": -18.7,
+      "maxVolumeDb": -6.1,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.978292,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.18383300000000002,
+        "silenceStarts": [
+          0.978292
+        ],
+        "silenceEnds": [
+          1.162125
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0006387502707974869,
+        "first10msPeakRatio": 0.0010659376627932858,
+        "first10msRmsRatio": 0.0006499628341092908,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 20,
+      "text": "request",
+      "normalizedText": "request",
+      "srtStart": "00:02:32,000",
+      "srtEnd": "00:02:40,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.111746,
+        "voiceEndSeconds": 0.86932,
+        "leadingSilenceSeconds": 0.111746,
+        "trailingSilenceSeconds": 7.13068,
+        "silenceStarts": [
+          0,
+          0.767347,
+          0.86932
+        ],
+        "silenceEnds": [
+          0.111746,
+          0.810816,
+          8
+        ]
+      },
+      "expectedOutputFile": "order-counter--request.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/order-counter--request.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/order-counter--request.mp3",
+      "sha256": "a193fd98955445eb02f79706145d8f1f90a8c1861bc1fec04352d53d0349b458",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.961958,
+      "sizeBytes": 8493,
+      "formatBitrate": 70630,
+      "integratedLufs": -18.45,
+      "truePeakDbfs": -4.15,
+      "meanVolumeDb": -19.8,
+      "maxVolumeDb": -4.2,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.785667,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.17629099999999998,
+        "silenceStarts": [
+          0.680958,
+          0.785667
+        ],
+        "silenceEnds": [
+          0.72175,
+          0.961958
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.000012492132394181855,
+        "first10msPeakRatio": 0.0009994429306528787,
+        "first10msRmsRatio": 0.00021838136435531645,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 21,
+      "text": "iced",
+      "normalizedText": "iced",
+      "srtStart": "00:02:40,000",
+      "srtEnd": "00:02:48,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.130317,
+        "voiceEndSeconds": 0.665057,
+        "leadingSilenceSeconds": 0.130317,
+        "trailingSilenceSeconds": 7.334943,
+        "silenceStarts": [
+          0,
+          0.665057
+        ],
+        "silenceEnds": [
+          0.130317,
+          8
+        ]
+      },
+      "expectedOutputFile": "choose-drink--iced.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/choose-drink--iced.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/choose-drink--iced.mp3",
+      "sha256": "440592e91364cf2e1fc626e3b726582b4a564719b3b2c1a04a508cca79be1940",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.743042,
+      "sizeBytes": 6573,
+      "formatBitrate": 70768,
+      "integratedLufs": -18.47,
+      "truePeakDbfs": -2.86,
+      "meanVolumeDb": -18.3,
+      "maxVolumeDb": -2.9,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.572792,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.17025,
+        "silenceStarts": [
+          0.572792
+        ],
+        "silenceEnds": [
+          0.743042
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00019006762806904744,
+        "first10msPeakRatio": 0.0004991304214347917,
+        "first10msRmsRatio": 0.00023991540302674479,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 22,
+      "text": "hot",
+      "normalizedText": "hot",
+      "srtStart": "00:02:48,000",
+      "srtEnd": "00:02:56,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.0982766,
+        "voiceEndSeconds": 0.496349,
+        "leadingSilenceSeconds": 0.0982766,
+        "trailingSilenceSeconds": 7.503651,
+        "silenceStarts": [
+          0,
+          0.496349
+        ],
+        "silenceEnds": [
+          0.0982766,
+          8
+        ]
+      },
+      "expectedOutputFile": "choose-drink--hot.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/choose-drink--hot.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/choose-drink--hot.mp3",
+      "sha256": "7bc2861e1a693eba25ad1c07bf99d95365220ab6a898d84665445c7fd6d17f18",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.540875,
+      "sizeBytes": 5037,
+      "formatBitrate": 74501,
+      "integratedLufs": -18.44,
+      "truePeakDbfs": -5.77,
+      "meanVolumeDb": -19.5,
+      "maxVolumeDb": -5.8,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.381917,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.158958,
+        "silenceStarts": [
+          0.381917
+        ],
+        "silenceEnds": [
+          0.540875
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0009565426841606249,
+        "first10msPeakRatio": 0.023028286957267354,
+        "first10msRmsRatio": 0.004560678399697078,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 23,
+      "text": "size",
+      "normalizedText": "size",
+      "srtStart": "00:02:56,000",
+      "srtEnd": "00:03:04,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.11254,
+        "voiceEndSeconds": 0.772154,
+        "leadingSilenceSeconds": 0.11254,
+        "trailingSilenceSeconds": 7.2278459999999995,
+        "silenceStarts": [
+          0,
+          0.772154
+        ],
+        "silenceEnds": [
+          0.11254,
+          8
+        ]
+      },
+      "expectedOutputFile": "choose-drink--size.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/choose-drink--size.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/choose-drink--size.mp3",
+      "sha256": "600f9684e23fa2bab67e355f7c515a34a2841466d5238b3327f977bb402069eb",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.841958,
+      "sizeBytes": 7533,
+      "formatBitrate": 71576,
+      "integratedLufs": -18.4,
+      "truePeakDbfs": -5.51,
+      "meanVolumeDb": -20.5,
+      "maxVolumeDb": -5.6,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.646833,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.195125,
+        "silenceStarts": [
+          0.646833
+        ],
+        "silenceEnds": [
+          0.841958
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0001500352581299067,
+        "first10msPeakRatio": 0.0010175369760796115,
+        "first10msRmsRatio": 0.0005112565206312649,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 24,
+      "text": "milk",
+      "normalizedText": "milk",
+      "srtStart": "00:03:04,000",
+      "srtEnd": "00:03:12,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.115964,
+        "voiceEndSeconds": 0.726667,
+        "leadingSilenceSeconds": 0.115964,
+        "trailingSilenceSeconds": 7.273333,
+        "silenceStarts": [
+          0,
+          0.572018,
+          0.726667
+        ],
+        "silenceEnds": [
+          0.115964,
+          0.602971,
+          8
+        ]
+      },
+      "expectedOutputFile": "choose-drink--milk.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/choose-drink--milk.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/choose-drink--milk.mp3",
+      "sha256": "2433846c233897e34035990a2ea7a42efdcaea06af44db1ec9e2b45a622c9057",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.813542,
+      "sizeBytes": 7149,
+      "formatBitrate": 70299,
+      "integratedLufs": -18.42,
+      "truePeakDbfs": -5.24,
+      "meanVolumeDb": -19.6,
+      "maxVolumeDb": -5.3,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.624875,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.18866700000000003,
+        "silenceStarts": [
+          0.47275,
+          0.624875
+        ],
+        "silenceEnds": [
+          0.503833,
+          0.813542
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00004147878405688537,
+        "first10msPeakRatio": 0.0011590062480646987,
+        "first10msRmsRatio": 0.0005199927963671181,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 25,
+      "text": "foam",
+      "normalizedText": "foam",
+      "srtStart": "00:03:12,000",
+      "srtEnd": "00:03:20,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.100499,
+        "voiceEndSeconds": 0.6978,
+        "leadingSilenceSeconds": 0.100499,
+        "trailingSilenceSeconds": 7.3022,
+        "silenceStarts": [
+          0,
+          0.6978
+        ],
+        "silenceEnds": [
+          0.100499,
+          8
+        ]
+      },
+      "expectedOutputFile": "choose-drink--foam.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/choose-drink--foam.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/choose-drink--foam.mp3",
+      "sha256": "1f1cf025ec8949b8636d89d3a980105d515a461168151d8ba1c53b583ed48cec",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.785875,
+      "sizeBytes": 6957,
+      "formatBitrate": 70820,
+      "integratedLufs": -18.48,
+      "truePeakDbfs": -5.98,
+      "meanVolumeDb": -19,
+      "maxVolumeDb": -6,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.602292,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.18358299999999994,
+        "silenceStarts": [
+          0.602292
+        ],
+        "silenceEnds": [
+          0.785875
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.000028962786440762103,
+        "first10msPeakRatio": 0.011379555210101287,
+        "first10msRmsRatio": 0.00221025244776009,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 26,
+      "text": "syrup",
+      "normalizedText": "syrup",
+      "srtStart": "00:03:20,000",
+      "srtEnd": "00:03:28,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.114331,
+        "voiceEndSeconds": 0.742404,
+        "leadingSilenceSeconds": 0.114331,
+        "trailingSilenceSeconds": 7.257596,
+        "silenceStarts": [
+          0,
+          0.597619,
+          0.742404
+        ],
+        "silenceEnds": [
+          0.114331,
+          0.655215,
+          8
+        ]
+      },
+      "expectedOutputFile": "choose-drink--syrup.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/choose-drink--syrup.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/choose-drink--syrup.mp3",
+      "sha256": "bad1531d03fe0ef11b6d2b3785d67c72b93e8fa7249a0162fda8916eb9f7f204",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.834583,
+      "sizeBytes": 7341,
+      "formatBitrate": 70368,
+      "integratedLufs": -18.43,
+      "truePeakDbfs": -6.08,
+      "meanVolumeDb": -20.6,
+      "maxVolumeDb": -6.1,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.639167,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.19541599999999992,
+        "silenceStarts": [
+          0.487875,
+          0.639167
+        ],
+        "silenceEnds": [
+          0.556458,
+          0.834583
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00018609761043235086,
+        "first10msPeakRatio": 0.000881205599572422,
+        "first10msRmsRatio": 0.0003683816055351073,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 27,
+      "text": "customize",
+      "normalizedText": "customize",
+      "srtStart": "00:03:28,000",
+      "srtEnd": "00:03:36,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.128866,
+        "voiceEndSeconds": 1.080249,
+        "leadingSilenceSeconds": 0.128866,
+        "trailingSilenceSeconds": 6.919751,
+        "silenceStarts": [
+          0,
+          1.080249
+        ],
+        "silenceEnds": [
+          0.128866,
+          8
+        ]
+      },
+      "expectedOutputFile": "choose-drink--customize.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/choose-drink--customize.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/choose-drink--customize.mp3",
+      "sha256": "b03cae86d1ff2a46da10c5255ef152f3a07fdcaa6ca351e4fdda33b48e47df4f",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.13975,
+      "sizeBytes": 9837,
+      "formatBitrate": 69046,
+      "integratedLufs": -18.42,
+      "truePeakDbfs": -3.95,
+      "meanVolumeDb": -19.2,
+      "maxVolumeDb": -4,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.981792,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.15795800000000004,
+        "silenceStarts": [
+          0.981792
+        ],
+        "silenceEnds": [
+          1.13975
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0012572846082267608,
+        "first10msPeakRatio": 0.002576597204322367,
+        "first10msRmsRatio": 0.0017787371579647778,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 28,
+      "text": "pickup",
+      "normalizedText": "pickup",
+      "srtStart": "00:03:36,000",
+      "srtEnd": "00:03:44,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.130385,
+        "voiceEndSeconds": 0.722222,
+        "leadingSilenceSeconds": 0.130385,
+        "trailingSilenceSeconds": 7.277778,
+        "silenceStarts": [
+          0,
+          0.565986,
+          0.722222
+        ],
+        "silenceEnds": [
+          0.130385,
+          0.619887,
+          8
+        ]
+      },
+      "expectedOutputFile": "pickup-counter--pickup.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/pickup-counter--pickup.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/pickup-counter--pickup.mp3",
+      "sha256": "881e98b1992081bdd4986e5f36d83e47fe4b6df79bed1a2b10bacaad4aabd85d",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.811958,
+      "sizeBytes": 7149,
+      "formatBitrate": 70437,
+      "integratedLufs": -18.45,
+      "truePeakDbfs": -4.33,
+      "meanVolumeDb": -19.5,
+      "maxVolumeDb": -4.4,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.620417,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.19154099999999996,
+        "silenceStarts": [
+          0.464167,
+          0.620417
+        ],
+        "silenceEnds": [
+          0.518,
+          0.811958
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0011710177856830782,
+        "first10msPeakRatio": 0.0011710177856830782,
+        "first10msRmsRatio": 0.0006511330602177444,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 29,
+      "text": "pickup name",
+      "normalizedText": "pickup name",
+      "srtStart": "00:03:44,000",
+      "srtEnd": "00:03:52,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.138503,
+        "voiceEndSeconds": 1.058776,
+        "leadingSilenceSeconds": 0.138503,
+        "trailingSilenceSeconds": 6.941224,
+        "silenceStarts": [
+          0,
+          1.058776
+        ],
+        "silenceEnds": [
+          0.138503,
+          8
+        ]
+      },
+      "expectedOutputFile": "pickup-counter--pickup-name.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/pickup-counter--pickup-name.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/pickup-counter--pickup-name.mp3",
+      "sha256": "dc57eafc21c84583d9721386029822d345d61e4e41d771f4d0d9763f253be2fa",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.122917,
+      "sizeBytes": 9645,
+      "formatBitrate": 68713,
+      "integratedLufs": -18.46,
+      "truePeakDbfs": -4.25,
+      "meanVolumeDb": -18.9,
+      "maxVolumeDb": -4.3,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.950208,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.1727089999999999,
+        "silenceStarts": [
+          0.950208
+        ],
+        "silenceEnds": [
+          1.122917
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00015924880328698344,
+        "first10msPeakRatio": 0.0006863803929313467,
+        "first10msRmsRatio": 0.0003379174605336339,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 30,
+      "text": "lid",
+      "normalizedText": "lid",
+      "srtStart": "00:03:52,000",
+      "srtEnd": "00:04:00,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.116825,
+        "voiceEndSeconds": 0.663878,
+        "leadingSilenceSeconds": 0.116825,
+        "trailingSilenceSeconds": 7.336122,
+        "silenceStarts": [
+          0,
+          0.663878
+        ],
+        "silenceEnds": [
+          0.116825,
+          8
+        ]
+      },
+      "expectedOutputFile": "pickup-counter--lid.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/pickup-counter--lid.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/pickup-counter--lid.mp3",
+      "sha256": "8f639c40bd9ecf9df586d5110d79f9d00623e5cac96474e89b3aa42bf0a267e6",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.754208,
+      "sizeBytes": 6765,
+      "formatBitrate": 71757,
+      "integratedLufs": -18.42,
+      "truePeakDbfs": -4.84,
+      "meanVolumeDb": -19.3,
+      "maxVolumeDb": -4.8,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.568583,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.18562500000000004,
+        "silenceStarts": [
+          0.568583
+        ],
+        "silenceEnds": [
+          0.754208
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00011635525711432905,
+        "first10msPeakRatio": 0.0006212723003298444,
+        "first10msRmsRatio": 0.0002484602241026585,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 31,
+      "text": "sleeve",
+      "normalizedText": "sleeve",
+      "srtStart": "00:04:00,000",
+      "srtEnd": "00:04:08,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.114263,
+        "voiceEndSeconds": 0.815964,
+        "leadingSilenceSeconds": 0.114263,
+        "trailingSilenceSeconds": 7.184036,
+        "silenceStarts": [
+          0,
+          0.815964
+        ],
+        "silenceEnds": [
+          0.114263,
+          8
+        ]
+      },
+      "expectedOutputFile": "pickup-counter--sleeve.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/pickup-counter--sleeve.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/pickup-counter--sleeve.mp3",
+      "sha256": "bc79f2612a0a5878ff297a4a17a20a2aa5063c710b8aca92bd1054300b68d0c2",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.909292,
+      "sizeBytes": 7917,
+      "formatBitrate": 69654,
+      "integratedLufs": -18.41,
+      "truePeakDbfs": -6.35,
+      "meanVolumeDb": -19.8,
+      "maxVolumeDb": -6.4,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.716292,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.19299999999999995,
+        "silenceStarts": [
+          0.716292
+        ],
+        "silenceEnds": [
+          0.909292
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00015441438391564576,
+        "first10msPeakRatio": 0.0011257246005865966,
+        "first10msRmsRatio": 0.0003849054769492497,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 32,
+      "text": "stirrer",
+      "normalizedText": "stirrer",
+      "srtStart": "00:04:08,000",
+      "srtEnd": "00:04:16,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.12127,
+        "voiceEndSeconds": 0.773469,
+        "leadingSilenceSeconds": 0.12127,
+        "trailingSilenceSeconds": 7.226531,
+        "silenceStarts": [
+          0,
+          0.263741,
+          0.773469
+        ],
+        "silenceEnds": [
+          0.12127,
+          0.302653,
+          8
+        ]
+      },
+      "expectedOutputFile": "pickup-counter--stirrer.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/pickup-counter--stirrer.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/pickup-counter--stirrer.mp3",
+      "sha256": "c1c66772f5d931b925b4e3ed7ab6168b494314e147a0a1df72fcea8f0e395b51",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.853958,
+      "sizeBytes": 7533,
+      "formatBitrate": 70570,
+      "integratedLufs": -18.46,
+      "truePeakDbfs": -7.74,
+      "meanVolumeDb": -20.1,
+      "maxVolumeDb": -7.7,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.669125,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.18483300000000003,
+        "silenceStarts": [
+          0.165125,
+          0.669125
+        ],
+        "silenceEnds": [
+          0.199167,
+          0.853958
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0001263484545220583,
+        "first10msPeakRatio": 0.002338470406670271,
+        "first10msRmsRatio": 0.0006068271690496932,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 33,
+      "text": "napkin",
+      "normalizedText": "napkin",
+      "srtStart": "00:04:16,000",
+      "srtEnd": "00:04:24,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.112109,
+        "voiceEndSeconds": 0.880567,
+        "leadingSilenceSeconds": 0.112109,
+        "trailingSilenceSeconds": 7.119433,
+        "silenceStarts": [
+          0,
+          0.880567
+        ],
+        "silenceEnds": [
+          0.112109,
+          8
+        ]
+      },
+      "expectedOutputFile": "pickup-counter--napkin.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/pickup-counter--napkin.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/pickup-counter--napkin.mp3",
+      "sha256": "9ab6a35197505a1f07b41049085b9c60ea22fcea80c15b73399bf9a4917d2197",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.97675,
+      "sizeBytes": 8493,
+      "formatBitrate": 69561,
+      "integratedLufs": -18.42,
+      "truePeakDbfs": -3.77,
+      "meanVolumeDb": -19,
+      "maxVolumeDb": -3.8,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.802125,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.17462500000000003,
+        "silenceStarts": [
+          0.802125
+        ],
+        "silenceEnds": [
+          0.97675
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00001885779427288605,
+        "first10msPeakRatio": 0.0007711072194800815,
+        "first10msRmsRatio": 0.00019930014027119342,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 34,
+      "text": "collect",
+      "normalizedText": "collect",
+      "srtStart": "00:04:24,000",
+      "srtEnd": "00:04:32,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.120045,
+        "voiceEndSeconds": 0.740612,
+        "leadingSilenceSeconds": 0.120045,
+        "trailingSilenceSeconds": 7.2593879999999995,
+        "silenceStarts": [
+          0,
+          0.543197,
+          0.587007,
+          0.740612
+        ],
+        "silenceEnds": [
+          0.120045,
+          0.58458,
+          0.646213,
+          8
+        ]
+      },
+      "expectedOutputFile": "pickup-counter--collect.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/pickup-counter--collect.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/pickup-counter--collect.mp3",
+      "sha256": "30bbea6c60781356566354535ea551b9a7d1beb8ea85be103908c3f26688e5f1",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.831375,
+      "sizeBytes": 7341,
+      "formatBitrate": 70639,
+      "integratedLufs": -18.42,
+      "truePeakDbfs": -4.71,
+      "meanVolumeDb": -20,
+      "maxVolumeDb": -4.7,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.65125,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.18012499999999998,
+        "silenceStarts": [
+          0.452458,
+          0.496292,
+          0.65125
+        ],
+        "silenceEnds": [
+          0.493875,
+          0.56125,
+          0.831375
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.000006082564052463651,
+        "first10msPeakRatio": 0.002733777538151069,
+        "first10msRmsRatio": 0.0014306552186365762,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 35,
+      "text": "table",
+      "normalizedText": "table",
+      "srtStart": "00:04:32,000",
+      "srtEnd": "00:04:40,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.132789,
+        "voiceEndSeconds": 0.660227,
+        "leadingSilenceSeconds": 0.132789,
+        "trailingSilenceSeconds": 7.339773,
+        "silenceStarts": [
+          0,
+          0.660227
+        ],
+        "silenceEnds": [
+          0.132789,
+          8
+        ]
+      },
+      "expectedOutputFile": "find-table--table.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/find-table--table.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/find-table--table.mp3",
+      "sha256": "9cdca5f07dd91ea264bfbe8ddfef05496670aef64df64eec805ac8f79f2c1d90",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.736042,
+      "sizeBytes": 6573,
+      "formatBitrate": 71441,
+      "integratedLufs": -18.42,
+      "truePeakDbfs": -5.05,
+      "meanVolumeDb": -18.8,
+      "maxVolumeDb": -5.1,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.54975,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.186292,
+        "silenceStarts": [
+          0.54975
+        ],
+        "silenceEnds": [
+          0.736042
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00020706529171011717,
+        "first10msPeakRatio": 0.0008494743064276445,
+        "first10msRmsRatio": 0.00034266920224550754,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 36,
+      "text": "chair",
+      "normalizedText": "chair",
+      "srtStart": "00:04:40,000",
+      "srtEnd": "00:04:48,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.114853,
+        "voiceEndSeconds": 0.638957,
+        "leadingSilenceSeconds": 0.114853,
+        "trailingSilenceSeconds": 7.3610430000000004,
+        "silenceStarts": [
+          0,
+          0.638957
+        ],
+        "silenceEnds": [
+          0.114853,
+          8
+        ]
+      },
+      "expectedOutputFile": "find-table--chair.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/find-table--chair.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/find-table--chair.mp3",
+      "sha256": "e2fae3eec4ab8b57a5bb12cc2fb591ac4361c339fc1e2f436f668a043f126135",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.712167,
+      "sizeBytes": 6381,
+      "formatBitrate": 71679,
+      "integratedLufs": -18.43,
+      "truePeakDbfs": -6.95,
+      "meanVolumeDb": -19.4,
+      "maxVolumeDb": -7,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.520333,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.19183399999999995,
+        "silenceStarts": [
+          0.520333
+        ],
+        "silenceEnds": [
+          0.712167
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.000034684315870803237,
+        "first10msPeakRatio": 0.0010464996502897405,
+        "first10msRmsRatio": 0.0004355593308445237,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 37,
+      "text": "corner",
+      "normalizedText": "corner",
+      "srtStart": "00:04:48,000",
+      "srtEnd": "00:04:56,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.118005,
+        "voiceEndSeconds": 0.716599,
+        "leadingSilenceSeconds": 0.118005,
+        "trailingSilenceSeconds": 7.283401,
+        "silenceStarts": [
+          0,
+          0.716599
+        ],
+        "silenceEnds": [
+          0.118005,
+          8
+        ]
+      },
+      "expectedOutputFile": "find-table--corner.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/find-table--corner.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/find-table--corner.mp3",
+      "sha256": "724f9d55c70bfaae6340085a367fc8d9c26aca3632513f4f207ddc1a60cbe85c",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.775458,
+      "sizeBytes": 6957,
+      "formatBitrate": 71771,
+      "integratedLufs": -18.44,
+      "truePeakDbfs": -5.43,
+      "meanVolumeDb": -19.3,
+      "maxVolumeDb": -5.4,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.6205,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.15495799999999993,
+        "silenceStarts": [
+          0.6205
+        ],
+        "silenceEnds": [
+          0.775458
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00006400789217053214,
+        "first10msPeakRatio": 0.00267938107668276,
+        "first10msRmsRatio": 0.00151604974584555,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 38,
+      "text": "socket",
+      "normalizedText": "socket",
+      "srtStart": "00:04:56,000",
+      "srtEnd": "00:05:04,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.110794,
+        "voiceEndSeconds": 0.813061,
+        "leadingSilenceSeconds": 0.110794,
+        "trailingSilenceSeconds": 7.186939,
+        "silenceStarts": [
+          0,
+          0.813061
+        ],
+        "silenceEnds": [
+          0.110794,
+          8
+        ]
+      },
+      "expectedOutputFile": "find-table--socket.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/find-table--socket.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/find-table--socket.mp3",
+      "sha256": "1569f67d383f58b2cda4b9bdb0d9cdb07f3ba840ec3a089e4acbf1a302367801",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.837958,
+      "sizeBytes": 7341,
+      "formatBitrate": 70084,
+      "integratedLufs": -18.42,
+      "truePeakDbfs": -4.3,
+      "meanVolumeDb": -19.5,
+      "maxVolumeDb": -4.3,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.712333,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.125625,
+        "silenceStarts": [
+          0.712333
+        ],
+        "silenceEnds": [
+          0.837958
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0005742405987277782,
+        "first10msPeakRatio": 0.0034221350194403384,
+        "first10msRmsRatio": 0.00048648516127138355,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 39,
+      "text": "wifi",
+      "normalizedText": "wifi",
+      "srtStart": "00:05:04,000",
+      "srtEnd": "00:05:12,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.129683,
+        "voiceEndSeconds": 1.023469,
+        "leadingSilenceSeconds": 0.129683,
+        "trailingSilenceSeconds": 6.976531,
+        "silenceStarts": [
+          0,
+          1.023469
+        ],
+        "silenceEnds": [
+          0.129683,
+          8
+        ]
+      },
+      "expectedOutputFile": "find-table--wifi.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/find-table--wifi.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/find-table--wifi.mp3",
+      "sha256": "ce4f4602bb1e1c460d9bbb75dd573fa0d285860221da51abca08a048559e31c3",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.095917,
+      "sizeBytes": 9453,
+      "formatBitrate": 69005,
+      "integratedLufs": -18.47,
+      "truePeakDbfs": -5.77,
+      "meanVolumeDb": -19.4,
+      "maxVolumeDb": -5.8,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.92,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.175917,
+        "silenceStarts": [
+          0.92
+        ],
+        "silenceEnds": [
+          1.095917
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00007493432458228927,
+        "first10msPeakRatio": 0.0012656023512841925,
+        "first10msRmsRatio": 0.0006383479841733381,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 40,
+      "text": "takeaway",
+      "normalizedText": "takeaway",
+      "srtStart": "00:05:12,000",
+      "srtEnd": "00:05:20,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.124444,
+        "voiceEndSeconds": 0.918753,
+        "leadingSilenceSeconds": 0.124444,
+        "trailingSilenceSeconds": 7.081247,
+        "silenceStarts": [
+          0,
+          0.918753
+        ],
+        "silenceEnds": [
+          0.124444,
+          8
+        ]
+      },
+      "expectedOutputFile": "find-table--takeaway.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/find-table--takeaway.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/find-table--takeaway.mp3",
+      "sha256": "3d34fba130e15fb48b53984637e9ae212c0b5c69149475eeee40c93bbdf8369b",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.001167,
+      "sizeBytes": 8685,
+      "formatBitrate": 69399,
+      "integratedLufs": -18.43,
+      "truePeakDbfs": -6.05,
+      "meanVolumeDb": -19.2,
+      "maxVolumeDb": -6.1,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.824167,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.17699999999999994,
+        "silenceStarts": [
+          0.824167
+        ],
+        "silenceEnds": [
+          1.001167
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00015231124198238164,
+        "first10msPeakRatio": 0.003511988871547353,
+        "first10msRmsRatio": 0.0021061872421369054,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 41,
+      "text": "settle",
+      "normalizedText": "settle",
+      "srtStart": "00:05:20,000",
+      "srtEnd": "00:05:28,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.121383,
+        "voiceEndSeconds": 0.733356,
+        "leadingSilenceSeconds": 0.121383,
+        "trailingSilenceSeconds": 7.266644,
+        "silenceStarts": [
+          0,
+          0.733356
+        ],
+        "silenceEnds": [
+          0.121383,
+          8
+        ]
+      },
+      "expectedOutputFile": "find-table--settle.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/find-table--settle.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/find-table--settle.mp3",
+      "sha256": "8eb1d5a945d959ec0c6da5c5208819f6585407b140f71dbe6d757ae890053485",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.791208,
+      "sizeBytes": 6957,
+      "formatBitrate": 70343,
+      "integratedLufs": -18.45,
+      "truePeakDbfs": -6.8,
+      "meanVolumeDb": -20,
+      "maxVolumeDb": -6.8,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.620875,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.17033300000000007,
+        "silenceStarts": [
+          0.620875
+        ],
+        "silenceEnds": [
+          0.791208
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.000018672383782682253,
+        "first10msPeakRatio": 0.0011355366247570906,
+        "first10msRmsRatio": 0.0004093966017907449,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 42,
+      "text": "cappuccino",
+      "normalizedText": "cappuccino",
+      "srtStart": "00:05:28,000",
+      "srtEnd": "00:05:36,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.124218,
+        "voiceEndSeconds": 1.155873,
+        "leadingSilenceSeconds": 0.124218,
+        "trailingSilenceSeconds": 6.844127,
+        "silenceStarts": [
+          0,
+          1.155873
+        ],
+        "silenceEnds": [
+          0.124218,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-drinks--cappuccino.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-drinks--cappuccino.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-drinks--cappuccino.mp3",
+      "sha256": "a11f76026cb11d49d01b9163747d91e8974781a40c682d0450a293ef4f388eab",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.249958,
+      "sizeBytes": 10797,
+      "formatBitrate": 69103,
+      "integratedLufs": -18.44,
+      "truePeakDbfs": -3.77,
+      "meanVolumeDb": -18.9,
+      "maxVolumeDb": -3.8,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.08175,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.1682079999999999,
+        "silenceStarts": [
+          1.08175
+        ],
+        "silenceEnds": [
+          1.249958
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.000621376576101272,
+        "first10msPeakRatio": 0.002545092599987159,
+        "first10msRmsRatio": 0.0016306823852815877,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 43,
+      "text": "americano",
+      "normalizedText": "americano",
+      "srtStart": "00:05:36,000",
+      "srtEnd": "00:05:44,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.120363,
+        "voiceEndSeconds": 1.277392,
+        "leadingSilenceSeconds": 0.120363,
+        "trailingSilenceSeconds": 6.722608,
+        "silenceStarts": [
+          0,
+          0.629478,
+          1.277392
+        ],
+        "silenceEnds": [
+          0.120363,
+          0.663923,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-drinks--americano.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-drinks--americano.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-drinks--americano.mp3",
+      "sha256": "19801057c1e303a1d2705f53b13f995f2e9ce25b6dd5714e1e9922228f77c8de",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.363208,
+      "sizeBytes": 11565,
+      "formatBitrate": 67869,
+      "integratedLufs": -18.46,
+      "truePeakDbfs": -6.38,
+      "meanVolumeDb": -19.2,
+      "maxVolumeDb": -6.4,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.171,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.19220799999999993,
+        "silenceStarts": [
+          0.532417,
+          1.171
+        ],
+        "silenceEnds": [
+          0.572333,
+          1.363208
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00009682768511448867,
+        "first10msPeakRatio": 0.0011694034276657755,
+        "first10msRmsRatio": 0.00024337557346899312,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 44,
+      "text": "macchiato",
+      "normalizedText": "macchiato",
+      "srtStart": "00:05:44,000",
+      "srtEnd": "00:05:52,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.120794,
+        "voiceEndSeconds": 1.116032,
+        "leadingSilenceSeconds": 0.120794,
+        "trailingSilenceSeconds": 6.883968,
+        "silenceStarts": [
+          0,
+          1.116032
+        ],
+        "silenceEnds": [
+          0.120794,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-drinks--macchiato.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-drinks--macchiato.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-drinks--macchiato.mp3",
+      "sha256": "e1b022ff773dda52c38498e6f9e74970d504ca02fceb24771eb99dfda30df33b",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.187,
+      "sizeBytes": 10221,
+      "formatBitrate": 68886,
+      "integratedLufs": -18.41,
+      "truePeakDbfs": -6.27,
+      "meanVolumeDb": -19,
+      "maxVolumeDb": -6.3,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.019833,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.16716700000000007,
+        "silenceStarts": [
+          1.019833
+        ],
+        "silenceEnds": [
+          1.187
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.000040676183361704775,
+        "first10msPeakRatio": 0.0004945401299081158,
+        "first10msRmsRatio": 0.0001960640918006734,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 45,
+      "text": "flat white",
+      "normalizedText": "flat white",
+      "srtStart": "00:05:52,000",
+      "srtEnd": "00:06:00,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.102585,
+        "voiceEndSeconds": 1.003311,
+        "leadingSilenceSeconds": 0.102585,
+        "trailingSilenceSeconds": 6.996689,
+        "silenceStarts": [
+          0,
+          1.003311
+        ],
+        "silenceEnds": [
+          0.102585,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-drinks--flat-white.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-drinks--flat-white.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-drinks--flat-white.mp3",
+      "sha256": "97dc9de6eaa40b5f1cd0b8dedacf1cd516f95b51023489e63327f7d5ce3ee6a0",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.098292,
+      "sizeBytes": 9453,
+      "formatBitrate": 68856,
+      "integratedLufs": -18.43,
+      "truePeakDbfs": -5.22,
+      "meanVolumeDb": -19.5,
+      "maxVolumeDb": -5.2,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.909417,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.18887500000000002,
+        "silenceStarts": [
+          0.909417
+        ],
+        "silenceEnds": [
+          1.098292
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0000014416273704549093,
+        "first10msPeakRatio": 0.004784948053147484,
+        "first10msRmsRatio": 0.001079764025516773,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 46,
+      "text": "cold brew",
+      "normalizedText": "cold brew",
+      "srtStart": "00:06:00,000",
+      "srtEnd": "00:06:08,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.1322,
+        "voiceEndSeconds": 1.084376,
+        "leadingSilenceSeconds": 0.1322,
+        "trailingSilenceSeconds": 6.915624,
+        "silenceStarts": [
+          0,
+          1.084376
+        ],
+        "silenceEnds": [
+          0.1322,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-drinks--cold-brew.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-drinks--cold-brew.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-drinks--cold-brew.mp3",
+      "sha256": "145c6a54f40103130925f50b2dfe82788c95228fa8ef6157a02b11e0479f6f16",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.168958,
+      "sizeBytes": 10029,
+      "formatBitrate": 68635,
+      "integratedLufs": -18.43,
+      "truePeakDbfs": -5.91,
+      "meanVolumeDb": -18.4,
+      "maxVolumeDb": -5.9,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.981708,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.18724999999999992,
+        "silenceStarts": [
+          0.981708
+        ],
+        "silenceEnds": [
+          1.168958
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0018893181810279995,
+        "first10msPeakRatio": 0.0019480126924483509,
+        "first10msRmsRatio": 0.0007301047523230014,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 47,
+      "text": "matcha latte",
+      "normalizedText": "matcha latte",
+      "srtStart": "00:06:08,000",
+      "srtEnd": "00:06:16,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.119909,
+        "voiceEndSeconds": 1.333039,
+        "leadingSilenceSeconds": 0.119909,
+        "trailingSilenceSeconds": 6.666961,
+        "silenceStarts": [
+          0,
+          1.333039
+        ],
+        "silenceEnds": [
+          0.119909,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-drinks--matcha-latte.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-drinks--matcha-latte.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-drinks--matcha-latte.mp3",
+      "sha256": "eeace91fe83036782e7396938f9ad5a2b269aed6426c2d8a0fc24e71d2a543bf",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.421042,
+      "sizeBytes": 12141,
+      "formatBitrate": 68349,
+      "integratedLufs": -18.42,
+      "truePeakDbfs": -4.57,
+      "meanVolumeDb": -19,
+      "maxVolumeDb": -4.6,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.241417,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.17962499999999992,
+        "silenceStarts": [
+          1.241417
+        ],
+        "silenceEnds": [
+          1.421042
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.000013838262634176156,
+        "first10msPeakRatio": 0.0008155837062934526,
+        "first10msRmsRatio": 0.00017414174198325088,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 48,
+      "text": "chai latte",
+      "normalizedText": "chai latte",
+      "srtStart": "00:06:16,000",
+      "srtEnd": "00:06:24,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.116077,
+        "voiceEndSeconds": 1.170748,
+        "leadingSilenceSeconds": 0.116077,
+        "trailingSilenceSeconds": 6.829252,
+        "silenceStarts": [
+          0,
+          1.170748
+        ],
+        "silenceEnds": [
+          0.116077,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-drinks--chai-latte.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-drinks--chai-latte.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-drinks--chai-latte.mp3",
+      "sha256": "a3e3448702d87294b513e900a2e56b2914e7f421b50239c11e5b453f78461772",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.241417,
+      "sizeBytes": 10605,
+      "formatBitrate": 68341,
+      "integratedLufs": -18.45,
+      "truePeakDbfs": -5.46,
+      "meanVolumeDb": -19,
+      "maxVolumeDb": -5.5,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.0695,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.1719170000000001,
+        "silenceStarts": [
+          1.0695
+        ],
+        "silenceEnds": [
+          1.241417
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0004918947213290911,
+        "first10msPeakRatio": 0.0012840041650987876,
+        "first10msRmsRatio": 0.0005190753923222706,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 49,
+      "text": "herbal tea",
+      "normalizedText": "herbal tea",
+      "srtStart": "00:06:24,000",
+      "srtEnd": "00:06:32,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.121315,
+        "voiceEndSeconds": 1.060295,
+        "leadingSilenceSeconds": 0.121315,
+        "trailingSilenceSeconds": 6.939705,
+        "silenceStarts": [
+          0,
+          1.060295
+        ],
+        "silenceEnds": [
+          0.121315,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-drinks--herbal-tea.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-drinks--herbal-tea.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-drinks--herbal-tea.mp3",
+      "sha256": "c5eec39c98dd7899a6fcc477984dde41a3ebfe505ab784a5eb7a493208c75c75",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.1225,
+      "sizeBytes": 9645,
+      "formatBitrate": 68739,
+      "integratedLufs": -18.47,
+      "truePeakDbfs": -4.44,
+      "meanVolumeDb": -18.3,
+      "maxVolumeDb": -4.4,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.967833,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.154667,
+        "silenceStarts": [
+          0.967833
+        ],
+        "silenceEnds": [
+          1.1225
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.000025259443692351956,
+        "first10msPeakRatio": 0.001010491606932435,
+        "first10msRmsRatio": 0.00020728506690922895,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 50,
+      "text": "lemonade",
+      "normalizedText": "lemonade",
+      "srtStart": "00:06:32,000",
+      "srtEnd": "00:06:40,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.118821,
+        "voiceEndSeconds": 0.985238,
+        "leadingSilenceSeconds": 0.118821,
+        "trailingSilenceSeconds": 7.014762,
+        "silenceStarts": [
+          0,
+          0.985238
+        ],
+        "silenceEnds": [
+          0.118821,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-drinks--lemonade.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-drinks--lemonade.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-drinks--lemonade.mp3",
+      "sha256": "6f2c0736378a754b3ea5dba52c0ae5011f5f3420dce7c60be9cd66c64a371312",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.075667,
+      "sizeBytes": 9261,
+      "formatBitrate": 68876,
+      "integratedLufs": -18.44,
+      "truePeakDbfs": -6.72,
+      "meanVolumeDb": -19.1,
+      "maxVolumeDb": -6.7,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.887167,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.1884999999999999,
+        "silenceStarts": [
+          0.887167
+        ],
+        "silenceEnds": [
+          1.075667
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00005010828548189342,
+        "first10msPeakRatio": 0.0012849901153194501,
+        "first10msRmsRatio": 0.0007987903612509888,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 51,
+      "text": "smoothie",
+      "normalizedText": "smoothie",
+      "srtStart": "00:06:40,000",
+      "srtEnd": "00:06:48,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.110317,
+        "voiceEndSeconds": 0.914263,
+        "leadingSilenceSeconds": 0.110317,
+        "trailingSilenceSeconds": 7.085737,
+        "silenceStarts": [
+          0,
+          0.914263
+        ],
+        "silenceEnds": [
+          0.110317,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-drinks--smoothie.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-drinks--smoothie.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-drinks--smoothie.mp3",
+      "sha256": "8c253d61d2ee17c7fa4a820761ac8ffa4301652c9f28cc4f600ef43b9333e5d5",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.961958,
+      "sizeBytes": 8493,
+      "formatBitrate": 70630,
+      "integratedLufs": -18.41,
+      "truePeakDbfs": -5.46,
+      "meanVolumeDb": -19.3,
+      "maxVolumeDb": -5.5,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.816167,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.145791,
+        "silenceStarts": [
+          0.816167
+        ],
+        "silenceEnds": [
+          0.961958
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00018767587545685723,
+        "first10msPeakRatio": 0.0010742481637313031,
+        "first10msRmsRatio": 0.0003839032706113617,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 52,
+      "text": "frappe",
+      "normalizedText": "frappe",
+      "srtStart": "00:06:48,000",
+      "srtEnd": "00:06:56,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.0945125,
+        "voiceEndSeconds": 0.682109,
+        "leadingSilenceSeconds": 0.0945125,
+        "trailingSilenceSeconds": 7.317891,
+        "silenceStarts": [
+          0,
+          0.503923,
+          0.682109
+        ],
+        "silenceEnds": [
+          0.0945125,
+          0.548639,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-drinks--frappe.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-drinks--frappe.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-drinks--frappe.mp3",
+      "sha256": "18d7e4a789f6a57cd077500433a47e956d8ca064cee677cbdcf5fcedd847d4a4",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.77825,
+      "sizeBytes": 6957,
+      "formatBitrate": 71514,
+      "integratedLufs": -18.44,
+      "truePeakDbfs": -4.37,
+      "meanVolumeDb": -19.5,
+      "maxVolumeDb": -4.4,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.594167,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.184083,
+        "silenceStarts": [
+          0.420083,
+          0.594167
+        ],
+        "silenceEnds": [
+          0.460667,
+          0.77825
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.000066268236905667,
+        "first10msPeakRatio": 0.0075907994792428065,
+        "first10msRmsRatio": 0.002095951335311071,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 53,
+      "text": "sparkling coffee",
+      "normalizedText": "sparkling coffee",
+      "srtStart": "00:06:56,000",
+      "srtEnd": "00:07:04,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.111111,
+        "voiceEndSeconds": 1.450181,
+        "leadingSilenceSeconds": 0.111111,
+        "trailingSilenceSeconds": 6.549819,
+        "silenceStarts": [
+          0,
+          0.234603,
+          1.450181
+        ],
+        "silenceEnds": [
+          0.111111,
+          0.306553,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-drinks--sparkling-coffee.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-drinks--sparkling-coffee.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-drinks--sparkling-coffee.mp3",
+      "sha256": "1a242dc99af66d51ec89c334771e97bda2a80e1e93145212ddb8bf61a7a2a1a7",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.54225,
+      "sizeBytes": 13101,
+      "formatBitrate": 67957,
+      "integratedLufs": -18.44,
+      "truePeakDbfs": -3.45,
+      "meanVolumeDb": -18.9,
+      "maxVolumeDb": -3.4,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.353958,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.1882919999999999,
+        "silenceStarts": [
+          0.150875,
+          1.353958
+        ],
+        "silenceEnds": [
+          0.210292,
+          1.54225
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.000031814663377017195,
+        "first10msPeakRatio": 0.002673068741812237,
+        "first10msRmsRatio": 0.0004772898674104849,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 54,
+      "text": "croissant",
+      "normalizedText": "croissant",
+      "srtStart": "00:07:04,000",
+      "srtEnd": "00:07:12,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.123787,
+        "voiceEndSeconds": 0.846667,
+        "leadingSilenceSeconds": 0.123787,
+        "trailingSilenceSeconds": 7.153333,
+        "silenceStarts": [
+          0,
+          0.846667
+        ],
+        "silenceEnds": [
+          0.123787,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-food-desserts--croissant.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-food-desserts--croissant.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-food-desserts--croissant.mp3",
+      "sha256": "6f1d54d387fb25bc794055ff08ec1ae28c9ff0aa8a4b36d99dd7fb9e957cc125",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.931,
+      "sizeBytes": 8109,
+      "formatBitrate": 69679,
+      "integratedLufs": -18.38,
+      "truePeakDbfs": -5.45,
+      "meanVolumeDb": -19.6,
+      "maxVolumeDb": -5.5,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.746042,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.18495800000000007,
+        "silenceStarts": [
+          0.746042
+        ],
+        "silenceEnds": [
+          0.931
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0010926397265208106,
+        "first10msPeakRatio": 0.002552887816310646,
+        "first10msRmsRatio": 0.0017084331695096544,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 55,
+      "text": "muffin",
+      "normalizedText": "muffin",
+      "srtStart": "00:07:12,000",
+      "srtEnd": "00:07:20,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.125941,
+        "voiceEndSeconds": 0.848073,
+        "leadingSilenceSeconds": 0.125941,
+        "trailingSilenceSeconds": 7.151927,
+        "silenceStarts": [
+          0,
+          0.848073
+        ],
+        "silenceEnds": [
+          0.125941,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-food-desserts--muffin.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-food-desserts--muffin.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-food-desserts--muffin.mp3",
+      "sha256": "0b72aafa9a485f1ad11518ca8894452128b6a617c9a44b2c4a188ef7c42dae13",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.935708,
+      "sizeBytes": 8109,
+      "formatBitrate": 69329,
+      "integratedLufs": -18.46,
+      "truePeakDbfs": -3.88,
+      "meanVolumeDb": -18.8,
+      "maxVolumeDb": -3.9,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.770125,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.16558300000000004,
+        "silenceStarts": [
+          0.770125
+        ],
+        "silenceEnds": [
+          0.935708
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00048584321072702553,
+        "first10msPeakRatio": 0.0030336455238201255,
+        "first10msRmsRatio": 0.0013579265523399869,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 56,
+      "text": "bagel",
+      "normalizedText": "bagel",
+      "srtStart": "00:07:20,000",
+      "srtEnd": "00:07:28,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.13644,
+        "voiceEndSeconds": 0.774422,
+        "leadingSilenceSeconds": 0.13644,
+        "trailingSilenceSeconds": 7.225578,
+        "silenceStarts": [
+          0,
+          0.774422
+        ],
+        "silenceEnds": [
+          0.13644,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-food-desserts--bagel.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-food-desserts--bagel.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-food-desserts--bagel.mp3",
+      "sha256": "2b390b0a311f42553e035f444940ee74ae1493b17f41fbe9d2960dc2a44d0365",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.85325,
+      "sizeBytes": 7533,
+      "formatBitrate": 70628,
+      "integratedLufs": -18.44,
+      "truePeakDbfs": -6.22,
+      "meanVolumeDb": -18.5,
+      "maxVolumeDb": -6.2,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.66625,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.18699999999999994,
+        "silenceStarts": [
+          0.66625
+        ],
+        "silenceEnds": [
+          0.85325
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00045266115852648424,
+        "first10msPeakRatio": 0.0007131656974736184,
+        "first10msRmsRatio": 0.00034054697631715543,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 57,
+      "text": "brownie",
+      "normalizedText": "brownie",
+      "srtStart": "00:07:28,000",
+      "srtEnd": "00:07:36,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.13229,
+        "voiceEndSeconds": 0.757982,
+        "leadingSilenceSeconds": 0.13229,
+        "trailingSilenceSeconds": 7.242018,
+        "silenceStarts": [
+          0,
+          0.757982
+        ],
+        "silenceEnds": [
+          0.13229,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-food-desserts--brownie.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-food-desserts--brownie.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-food-desserts--brownie.mp3",
+      "sha256": "398985065ccf748f596b3198146ac1243cf6b9250b766d0986bef12e62f1d08c",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.809292,
+      "sizeBytes": 7149,
+      "formatBitrate": 70669,
+      "integratedLufs": -18.38,
+      "truePeakDbfs": -4.98,
+      "meanVolumeDb": -19.3,
+      "maxVolumeDb": -5,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.654042,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.15525,
+        "silenceStarts": [
+          0.654042
+        ],
+        "silenceEnds": [
+          0.809292
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0017730037352481614,
+        "first10msPeakRatio": 0.0017730037352481614,
+        "first10msRmsRatio": 0.0005578552731433072,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 58,
+      "text": "cheesecake",
+      "normalizedText": "cheesecake",
+      "srtStart": "00:07:36,000",
+      "srtEnd": "00:07:44,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.114263,
+        "voiceEndSeconds": 0.874717,
+        "leadingSilenceSeconds": 0.114263,
+        "trailingSilenceSeconds": 7.125283,
+        "silenceStarts": [
+          0,
+          0.761927,
+          0.874717
+        ],
+        "silenceEnds": [
+          0.114263,
+          0.808367,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-food-desserts--cheesecake.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-food-desserts--cheesecake.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-food-desserts--cheesecake.mp3",
+      "sha256": "a327adb33bafb8666957897ea520c38ce9bbe51e5e940798a4c4663a33703892",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.931042,
+      "sizeBytes": 8109,
+      "formatBitrate": 69676,
+      "integratedLufs": -18.39,
+      "truePeakDbfs": -4.36,
+      "meanVolumeDb": -19.4,
+      "maxVolumeDb": -4.5,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.799792,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.1312500000000001,
+        "silenceStarts": [
+          0.668917,
+          0.799792
+        ],
+        "silenceEnds": [
+          0.705125,
+          0.931042
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.001824627871787563,
+        "first10msPeakRatio": 0.00208259899060058,
+        "first10msRmsRatio": 0.0010252389671367359,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 59,
+      "text": "tiramisu",
+      "normalizedText": "tiramisu",
+      "srtStart": "00:07:44,000",
+      "srtEnd": "00:07:52,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.127438,
+        "voiceEndSeconds": 1.254172,
+        "leadingSilenceSeconds": 0.127438,
+        "trailingSilenceSeconds": 6.7458279999999995,
+        "silenceStarts": [
+          0,
+          1.254172
+        ],
+        "silenceEnds": [
+          0.127438,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-food-desserts--tiramisu.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-food-desserts--tiramisu.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-food-desserts--tiramisu.mp3",
+      "sha256": "05c49f240c7b2b88b36fcb105f148390f4665027c8aba6c8fc495e90e3cc2f0b",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.346292,
+      "sizeBytes": 11565,
+      "formatBitrate": 68722,
+      "integratedLufs": -18.03,
+      "truePeakDbfs": -5.62,
+      "meanVolumeDb": -18.7,
+      "maxVolumeDb": -5.6,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.156458,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.18983400000000006,
+        "silenceStarts": [
+          1.156458
+        ],
+        "silenceEnds": [
+          1.346292
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0007711191344086836,
+        "first10msPeakRatio": 0.0018105540665470203,
+        "first10msRmsRatio": 0.0010921445178015666,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 60,
+      "text": "cookie",
+      "normalizedText": "cookie",
+      "srtStart": "00:07:52,000",
+      "srtEnd": "00:08:00,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.122381,
+        "voiceEndSeconds": 0.632562,
+        "leadingSilenceSeconds": 0.122381,
+        "trailingSilenceSeconds": 7.367438,
+        "silenceStarts": [
+          0,
+          0.632562
+        ],
+        "silenceEnds": [
+          0.122381,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-food-desserts--cookie.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-food-desserts--cookie.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-food-desserts--cookie.mp3",
+      "sha256": "a9f7a8807a923341b02b8562b1fa5d264a562051718353e3729b2a83a3691b24",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.694917,
+      "sizeBytes": 6189,
+      "formatBitrate": 71248,
+      "integratedLufs": -18.41,
+      "truePeakDbfs": -4.7,
+      "meanVolumeDb": -18.9,
+      "maxVolumeDb": -4.7,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.539667,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.15525,
+        "silenceStarts": [
+          0.539667
+        ],
+        "silenceEnds": [
+          0.694917
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00003776276423198017,
+        "first10msPeakRatio": 0.004727608499058801,
+        "first10msRmsRatio": 0.0027247632104813483,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 61,
+      "text": "scone",
+      "normalizedText": "scone",
+      "srtStart": "00:08:00,000",
+      "srtEnd": "00:08:08,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.112608,
+        "voiceEndSeconds": 0.768934,
+        "leadingSilenceSeconds": 0.112608,
+        "trailingSilenceSeconds": 7.231066,
+        "silenceStarts": [
+          0,
+          0.257687,
+          0.768934
+        ],
+        "silenceEnds": [
+          0.112608,
+          0.289887,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-food-desserts--scone.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-food-desserts--scone.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-food-desserts--scone.mp3",
+      "sha256": "a01c585309cbaaff335ed8c60c006b5c5a922cec0263e99cfd26ffa3038c3d2a",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.858583,
+      "sizeBytes": 7533,
+      "formatBitrate": 70190,
+      "integratedLufs": -18.45,
+      "truePeakDbfs": -5.84,
+      "meanVolumeDb": -19.8,
+      "maxVolumeDb": -5.9,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.668,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.19058299999999995,
+        "silenceStarts": [
+          0.668
+        ],
+        "silenceEnds": [
+          0.858583
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0004722330345803999,
+        "first10msPeakRatio": 0.005107945120908384,
+        "first10msRmsRatio": 0.0010541287792815172,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 62,
+      "text": "sandwich",
+      "normalizedText": "sandwich",
+      "srtStart": "00:08:08,000",
+      "srtEnd": "00:08:16,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.113651,
+        "voiceEndSeconds": 0.950272,
+        "leadingSilenceSeconds": 0.113651,
+        "trailingSilenceSeconds": 7.049728,
+        "silenceStarts": [
+          0,
+          0.950272
+        ],
+        "silenceEnds": [
+          0.113651,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-food-desserts--sandwich.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-food-desserts--sandwich.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-food-desserts--sandwich.mp3",
+      "sha256": "da0604a71fa62222999f24a818be9aa7a920aa1e993f61277615502142ee8fa6",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.028375,
+      "sizeBytes": 8877,
+      "formatBitrate": 69056,
+      "integratedLufs": -18.43,
+      "truePeakDbfs": -5.95,
+      "meanVolumeDb": -19.3,
+      "maxVolumeDb": -6,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.843583,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.18479200000000007,
+        "silenceStarts": [
+          0.843583
+        ],
+        "silenceEnds": [
+          1.028375
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0001624194061869645,
+        "first10msPeakRatio": 0.0009108618986381613,
+        "first10msRmsRatio": 0.00034877400060025454,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 63,
+      "text": "quiche",
+      "normalizedText": "quiche",
+      "srtStart": "00:08:16,000",
+      "srtEnd": "00:08:24,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.135601,
+        "voiceEndSeconds": 0.651134,
+        "leadingSilenceSeconds": 0.135601,
+        "trailingSilenceSeconds": 7.348866,
+        "silenceStarts": [
+          0,
+          0.651134
+        ],
+        "silenceEnds": [
+          0.135601,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-food-desserts--quiche.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-food-desserts--quiche.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-food-desserts--quiche.mp3",
+      "sha256": "e66bccc416de75a60a5044c681d0c5be6da93e1e2b6df4cdb9a247149ba98ed5",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.727125,
+      "sizeBytes": 6573,
+      "formatBitrate": 72317,
+      "integratedLufs": -18.41,
+      "truePeakDbfs": -5.2,
+      "meanVolumeDb": -19.4,
+      "maxVolumeDb": -5.3,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.551833,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.175292,
+        "silenceStarts": [
+          0.551833
+        ],
+        "silenceEnds": [
+          0.727125
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0006172155607770583,
+        "first10msPeakRatio": 0.0019029988629300008,
+        "first10msRmsRatio": 0.0009735015422317418,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 64,
+      "text": "yogurt parfait",
+      "normalizedText": "yogurt parfait",
+      "srtStart": "00:08:24,000",
+      "srtEnd": "00:08:32,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.118209,
+        "voiceEndSeconds": 1.534467,
+        "leadingSilenceSeconds": 0.118209,
+        "trailingSilenceSeconds": 6.465533,
+        "silenceStarts": [
+          0,
+          0.657823,
+          1.534467
+        ],
+        "silenceEnds": [
+          0.118209,
+          0.759728,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-food-desserts--yogurt-parfait.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-food-desserts--yogurt-parfait.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-food-desserts--yogurt-parfait.mp3",
+      "sha256": "19f5929b83fa17cde20d8d3550447d32ae4f2fef87c374abec8b421ed11d6cc4",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.629,
+      "sizeBytes": 13677,
+      "formatBitrate": 67167,
+      "integratedLufs": -18.41,
+      "truePeakDbfs": -4.4,
+      "meanVolumeDb": -19,
+      "maxVolumeDb": -4.4,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.440583,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.18841700000000006,
+        "silenceStarts": [
+          0.563833,
+          1.440583
+        ],
+        "silenceEnds": [
+          0.665833,
+          1.629
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0000448812792383789,
+        "first10msPeakRatio": 0.0008262769854293895,
+        "first10msRmsRatio": 0.0004605049447659447,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 65,
+      "text": "granola bowl",
+      "normalizedText": "granola bowl",
+      "srtStart": "00:08:32,000",
+      "srtEnd": "00:08:40,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.122336,
+        "voiceEndSeconds": 1.207596,
+        "leadingSilenceSeconds": 0.122336,
+        "trailingSilenceSeconds": 6.792404,
+        "silenceStarts": [
+          0,
+          1.207596
+        ],
+        "silenceEnds": [
+          0.122336,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-food-desserts--granola-bowl.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-food-desserts--granola-bowl.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-food-desserts--granola-bowl.mp3",
+      "sha256": "e9294b3b3bb91ffad9b0569d53944412cde113ba17c68c7bce50fe4291e19444",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.275667,
+      "sizeBytes": 10989,
+      "formatBitrate": 68914,
+      "integratedLufs": -18.47,
+      "truePeakDbfs": -7.37,
+      "meanVolumeDb": -19,
+      "maxVolumeDb": -7.4,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.084583,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.19108400000000003,
+        "silenceStarts": [
+          1.084583
+        ],
+        "silenceEnds": [
+          1.275667
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.000023301023647756123,
+        "first10msPeakRatio": 0.0022117865577475737,
+        "first10msRmsRatio": 0.001532556055169063,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 66,
+      "text": "reservation",
+      "normalizedText": "reservation",
+      "srtStart": "00:08:40,000",
+      "srtEnd": "00:08:48,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.120998,
+        "voiceEndSeconds": 1.262404,
+        "leadingSilenceSeconds": 0.120998,
+        "trailingSilenceSeconds": 6.737596,
+        "silenceStarts": [
+          0,
+          1.262404
+        ],
+        "silenceEnds": [
+          0.120998,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-phrases-items--reservation.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-phrases-items--reservation.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-phrases-items--reservation.mp3",
+      "sha256": "939c29e9a9fb1da51da52942b3b41ca8a0b185f9e9e9951027d3e4cbcbf9367e",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.31525,
+      "sizeBytes": 11181,
+      "formatBitrate": 68008,
+      "integratedLufs": -18.45,
+      "truePeakDbfs": -5.28,
+      "meanVolumeDb": -18.6,
+      "maxVolumeDb": -5.3,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.127708,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.1875420000000001,
+        "silenceStarts": [
+          1.127708
+        ],
+        "silenceEnds": [
+          1.31525
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00023508180859135692,
+        "first10msPeakRatio": 0.002443332827286485,
+        "first10msRmsRatio": 0.0009470207975661936,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 67,
+      "text": "refill",
+      "normalizedText": "refill",
+      "srtStart": "00:08:48,000",
+      "srtEnd": "00:08:56,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.116077,
+        "voiceEndSeconds": 0.964059,
+        "leadingSilenceSeconds": 0.116077,
+        "trailingSilenceSeconds": 7.035941,
+        "silenceStarts": [
+          0,
+          0.964059
+        ],
+        "silenceEnds": [
+          0.116077,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-phrases-items--refill.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-phrases-items--refill.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-phrases-items--refill.mp3",
+      "sha256": "fece393de12f8540e6633f8d5e10719e6c105203333c56277760259a88b9fa8a",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.061458,
+      "sizeBytes": 9261,
+      "formatBitrate": 69798,
+      "integratedLufs": -18.45,
+      "truePeakDbfs": -5.79,
+      "meanVolumeDb": -19,
+      "maxVolumeDb": -5.8,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.870792,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.190666,
+        "silenceStarts": [
+          0.870792
+        ],
+        "silenceEnds": [
+          1.061458
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00006850392752283751,
+        "first10msPeakRatio": 0.0010701518806720315,
+        "first10msRmsRatio": 0.0003943048011446958,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 68,
+      "text": "straw",
+      "normalizedText": "straw",
+      "srtStart": "00:08:56,000",
+      "srtEnd": "00:09:04,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.113265,
+        "voiceEndSeconds": 0.741746,
+        "leadingSilenceSeconds": 0.113265,
+        "trailingSilenceSeconds": 7.258254,
+        "silenceStarts": [
+          0,
+          0.741746
+        ],
+        "silenceEnds": [
+          0.113265,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-phrases-items--straw.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-phrases-items--straw.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-phrases-items--straw.mp3",
+      "sha256": "5235d358fc0e57b6ddac71f2a15a17605cf89ce52da9d7856df1a39493f7bac0",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.813083,
+      "sizeBytes": 7149,
+      "formatBitrate": 70339,
+      "integratedLufs": -18.47,
+      "truePeakDbfs": -7.09,
+      "meanVolumeDb": -19.9,
+      "maxVolumeDb": -7.1,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.63975,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.17333299999999996,
+        "silenceStarts": [
+          0.63975
+        ],
+        "silenceEnds": [
+          0.813083
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0009640990819613154,
+        "first10msPeakRatio": 0.0012546705783896908,
+        "first10msRmsRatio": 0.00036911660761783106,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 69,
+      "text": "coaster",
+      "normalizedText": "coaster",
+      "srtStart": "00:09:04,000",
+      "srtEnd": "00:09:12,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.123515,
+        "voiceEndSeconds": 0.783719,
+        "leadingSilenceSeconds": 0.123515,
+        "trailingSilenceSeconds": 7.216281,
+        "silenceStarts": [
+          0,
+          0.783719
+        ],
+        "silenceEnds": [
+          0.123515,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-phrases-items--coaster.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-phrases-items--coaster.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-phrases-items--coaster.mp3",
+      "sha256": "e5bbcfd47d6d7e6c327349bde2e93479b164ec87c7e43c4e6841a1b759ab8dc5",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.876625,
+      "sizeBytes": 7725,
+      "formatBitrate": 70497,
+      "integratedLufs": -18.42,
+      "truePeakDbfs": -4.38,
+      "meanVolumeDb": -19,
+      "maxVolumeDb": -4.4,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.690167,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.186458,
+        "silenceStarts": [
+          0.690167
+        ],
+        "silenceEnds": [
+          0.876625
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00006199862298823921,
+        "first10msPeakRatio": 0.002402060340506205,
+        "first10msRmsRatio": 0.001575932827554477,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 70,
+      "text": "ceramic cup",
+      "normalizedText": "ceramic cup",
+      "srtStart": "00:09:12,000",
+      "srtEnd": "00:09:20,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.113469,
+        "voiceEndSeconds": 1.194036,
+        "leadingSilenceSeconds": 0.113469,
+        "trailingSilenceSeconds": 6.8059639999999995,
+        "silenceStarts": [
+          0,
+          0.679025,
+          1.020476,
+          1.194036
+        ],
+        "silenceEnds": [
+          0.113469,
+          0.754195,
+          1.064014,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-phrases-items--ceramic-cup.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-phrases-items--ceramic-cup.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-phrases-items--ceramic-cup.mp3",
+      "sha256": "9c9e7bf7a49c213b31587c5a3e5d15918eeccaa60ae9dc73b72b70e0e3e81132",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.291083,
+      "sizeBytes": 10989,
+      "formatBitrate": 68091,
+      "integratedLufs": -18.43,
+      "truePeakDbfs": -5.51,
+      "meanVolumeDb": -19.3,
+      "maxVolumeDb": -5.6,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.094375,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.19670799999999988,
+        "silenceStarts": [
+          0.560583,
+          0.920708,
+          1.094375
+        ],
+        "silenceEnds": [
+          0.654625,
+          0.964375,
+          1.291083
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00032469227029423736,
+        "first10msPeakRatio": 0.002066585739388421,
+        "first10msRmsRatio": 0.00047334392003332235,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 71,
+      "text": "paper cup",
+      "normalizedText": "paper cup",
+      "srtStart": "00:09:20,000",
+      "srtEnd": "00:09:28,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.1322,
+        "voiceEndSeconds": 1.063968,
+        "leadingSilenceSeconds": 0.1322,
+        "trailingSilenceSeconds": 6.936032,
+        "silenceStarts": [
+          0,
+          0.881406,
+          1.063968
+        ],
+        "silenceEnds": [
+          0.1322,
+          0.921927,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-phrases-items--paper-cup.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-phrases-items--paper-cup.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-phrases-items--paper-cup.mp3",
+      "sha256": "8c4ed8ac081520f1b0e3e92506dd54155d84395a0a3c40ec11e4ed9467ef0be4",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.149208,
+      "sizeBytes": 9837,
+      "formatBitrate": 68478,
+      "integratedLufs": -18.41,
+      "truePeakDbfs": -5.16,
+      "meanVolumeDb": -19.6,
+      "maxVolumeDb": -5.2,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.961167,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.188041,
+        "silenceStarts": [
+          0.778583,
+          0.961167
+        ],
+        "silenceEnds": [
+          0.819167,
+          1.149208
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0013415710602553417,
+        "first10msPeakRatio": 0.0013415710602553417,
+        "first10msRmsRatio": 0.00042123027403707215,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 72,
+      "text": "loyalty card",
+      "normalizedText": "loyalty card",
+      "srtStart": "00:09:28,000",
+      "srtEnd": "00:09:36,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.116508,
+        "voiceEndSeconds": 1.272381,
+        "leadingSilenceSeconds": 0.116508,
+        "trailingSilenceSeconds": 6.727619,
+        "silenceStarts": [
+          0,
+          1.272381
+        ],
+        "silenceEnds": [
+          0.116508,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-phrases-items--loyalty-card.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-phrases-items--loyalty-card.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-phrases-items--loyalty-card.mp3",
+      "sha256": "933c510fbe6adfae9eda6ff5d7e9398f4f235a182c031d3018f247646838085b",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.321958,
+      "sizeBytes": 11373,
+      "formatBitrate": 68825,
+      "integratedLufs": -18.43,
+      "truePeakDbfs": -5.42,
+      "meanVolumeDb": -18.5,
+      "maxVolumeDb": -5.4,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.181083,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.14087499999999986,
+        "silenceStarts": [
+          1.181083
+        ],
+        "silenceEnds": [
+          1.321958
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00005121554245280919,
+        "first10msPeakRatio": 0.0007517515909532566,
+        "first10msRmsRatio": 0.00031025819746827366,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 73,
+      "text": "tip jar",
+      "normalizedText": "tip jar",
+      "srtStart": "00:09:36,000",
+      "srtEnd": "00:09:44,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.124263,
+        "voiceEndSeconds": 0.930023,
+        "leadingSilenceSeconds": 0.124263,
+        "trailingSilenceSeconds": 7.069977,
+        "silenceStarts": [
+          0,
+          0.364036,
+          0.930023
+        ],
+        "silenceEnds": [
+          0.124263,
+          0.401859,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-phrases-items--tip-jar.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-phrases-items--tip-jar.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-phrases-items--tip-jar.mp3",
+      "sha256": "5a707cc86d6750e5b9545c146e1af2d3ee03d03ec4e9e3cbe5ca4111a1acb611",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.986,
+      "sizeBytes": 8685,
+      "formatBitrate": 70466,
+      "integratedLufs": -18.41,
+      "truePeakDbfs": -6,
+      "meanVolumeDb": -19.3,
+      "maxVolumeDb": -6,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.831625,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.15437500000000004,
+        "silenceStarts": [
+          0.234542,
+          0.269542,
+          0.831625
+        ],
+        "silenceEnds": [
+          0.2675,
+          0.307417,
+          0.986
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0002536783743426264,
+        "first10msPeakRatio": 0.001909576858999001,
+        "first10msRmsRatio": 0.0012155282764886317,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 74,
+      "text": "display case",
+      "normalizedText": "display case",
+      "srtStart": "00:09:44,000",
+      "srtEnd": "00:09:52,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.135737,
+        "voiceEndSeconds": 1.242449,
+        "leadingSilenceSeconds": 0.135737,
+        "trailingSilenceSeconds": 6.757551,
+        "silenceStarts": [
+          0,
+          0.376825,
+          1.20093,
+          1.242449
+        ],
+        "silenceEnds": [
+          0.135737,
+          0.413855,
+          1.238617,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-phrases-items--display-case.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-phrases-items--display-case.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-phrases-items--display-case.mp3",
+      "sha256": "ee6e233a849630306c5aedba0ff9b4fa85c0670bf5b12ff0768fd5f9b2034359",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.262208,
+      "sizeBytes": 10797,
+      "formatBitrate": 68432,
+      "integratedLufs": -18.41,
+      "truePeakDbfs": -4.27,
+      "meanVolumeDb": -19.2,
+      "maxVolumeDb": -4.3,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.136833,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.12537500000000001,
+        "silenceStarts": [
+          0.271333,
+          1.136833
+        ],
+        "silenceEnds": [
+          0.307458,
+          1.262208
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00024992008428111956,
+        "first10msPeakRatio": 0.0005694707111189195,
+        "first10msRmsRatio": 0.00022432878585630588,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 75,
+      "text": "booth",
+      "normalizedText": "booth",
+      "srtStart": "00:09:52,000",
+      "srtEnd": "00:10:00,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.138073,
+        "voiceEndSeconds": 0.585828,
+        "leadingSilenceSeconds": 0.138073,
+        "trailingSilenceSeconds": 7.414172,
+        "silenceStarts": [
+          0,
+          0.585828
+        ],
+        "silenceEnds": [
+          0.138073,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-phrases-items--booth.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-phrases-items--booth.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-phrases-items--booth.mp3",
+      "sha256": "f55e2d757fd459ce0dd32362fb6a5efd0cf75923a8b37d4dde0b28dc22c89d7f",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.65825,
+      "sizeBytes": 5997,
+      "formatBitrate": 72884,
+      "integratedLufs": -18.42,
+      "truePeakDbfs": -5.18,
+      "meanVolumeDb": -18.2,
+      "maxVolumeDb": -5.2,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.476875,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.181375,
+        "silenceStarts": [
+          0.476875
+        ],
+        "silenceEnds": [
+          0.65825
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0006837088769339752,
+        "first10msPeakRatio": 0.0013784992364965214,
+        "first10msRmsRatio": 0.0007241261234041293,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 76,
+      "text": "patio",
+      "normalizedText": "patio",
+      "srtStart": "00:10:00,000",
+      "srtEnd": "00:10:08,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.13254,
+        "voiceEndSeconds": 0.882222,
+        "leadingSilenceSeconds": 0.13254,
+        "trailingSilenceSeconds": 7.117778,
+        "silenceStarts": [
+          0,
+          0.882222
+        ],
+        "silenceEnds": [
+          0.13254,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-phrases-items--patio.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-phrases-items--patio.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-phrases-items--patio.mp3",
+      "sha256": "b9518eb1e79b73ce6e412d136b8dc045e6a14c8aacb88a72f898381246bc7f1c",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 0.961958,
+      "sizeBytes": 8493,
+      "formatBitrate": 70630,
+      "integratedLufs": -18.45,
+      "truePeakDbfs": -5.09,
+      "meanVolumeDb": -19.1,
+      "maxVolumeDb": -5.1,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 0.776,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.18595799999999996,
+        "silenceStarts": [
+          0.776
+        ],
+        "silenceEnds": [
+          0.961958
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.0002769018231247645,
+        "first10msPeakRatio": 0.0019359673964219465,
+        "first10msRmsRatio": 0.0009383881792892769,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    },
+    {
+      "order": 77,
+      "text": "receipt printer",
+      "normalizedText": "receipt printer",
+      "srtStart": "00:10:08,000",
+      "srtEnd": "00:10:16,000",
+      "slotDurationSeconds": 8,
+      "rawVoiceBounds": {
+        "voiceStartSeconds": 0.117143,
+        "voiceEndSeconds": 1.342744,
+        "leadingSilenceSeconds": 0.117143,
+        "trailingSilenceSeconds": 6.657256,
+        "silenceStarts": [
+          0,
+          0.663764,
+          1.342744
+        ],
+        "silenceEnds": [
+          0.117143,
+          0.725215,
+          8
+        ]
+      },
+      "expectedOutputFile": "more--cafe-phrases-items--receipt-printer.mp3",
+      "stagingPath": "tmp/capcut-mobile-word-staging/cafe/more--cafe-phrases-items--receipt-printer.mp3",
+      "formalTargetPath": "assets/audio/words/cafe/more--cafe-phrases-items--receipt-printer.mp3",
+      "sha256": "00bea18ad2ddcf375bc8c37e9f132320720ef0000030e926accfb13a989714ca",
+      "codec": "mp3",
+      "sampleRateHz": 24000,
+      "channels": 1,
+      "streamBitrate": 64000,
+      "durationSeconds": 1.427042,
+      "sizeBytes": 12141,
+      "formatBitrate": 68062,
+      "integratedLufs": -18.45,
+      "truePeakDbfs": -3.49,
+      "meanVolumeDb": -18.8,
+      "maxVolumeDb": -3.5,
+      "processedVoiceBounds": {
+        "voiceStartSeconds": 0,
+        "voiceEndSeconds": 1.246292,
+        "leadingSilenceSeconds": 0,
+        "trailingSilenceSeconds": 0.18074999999999997,
+        "silenceStarts": [
+          0.567292,
+          1.246292
+        ],
+        "silenceEnds": [
+          0.62625,
+          1.427042
+        ]
+      },
+      "checks": {
+        "readable": true,
+        "validVoice": true,
+        "noClipping": true,
+        "encoding": true,
+        "durationReasonable": true,
+        "leadingEdgeSafe": true,
+        "trailingEdgeSafe": true,
+        "processedLongSilenceFree": true,
+        "targetUnchanged": true
+      },
+      "passed": true,
+      "pcmEdge": {
+        "firstSampleRatio": 0.00006874658307816002,
+        "first10msPeakRatio": 0.0010394305388021282,
+        "first10msRmsRatio": 0.00044030843702522643,
+        "lastSampleRatio": 0,
+        "last10msPeakRatio": 0,
+        "last10msRmsRatio": 0,
+        "startEdgeSafe": true,
+        "endEdgeSafe": true
+      }
+    }
+  ],
+  "qcSamples": [
+    {
+      "order": 1,
+      "text": "cafe",
+      "file": "tmp/capcut-mobile-word-staging/cafe-qc-samples/001-cafe.mp3"
+    },
+    {
+      "order": 2,
+      "text": "awning",
+      "file": "tmp/capcut-mobile-word-staging/cafe-qc-samples/002-awning.mp3"
+    },
+    {
+      "order": 3,
+      "text": "window",
+      "file": "tmp/capcut-mobile-word-staging/cafe-qc-samples/003-window.mp3"
+    },
+    {
+      "order": 38,
+      "text": "socket",
+      "file": "tmp/capcut-mobile-word-staging/cafe-qc-samples/038-socket.mp3"
+    },
+    {
+      "order": 39,
+      "text": "wifi",
+      "file": "tmp/capcut-mobile-word-staging/cafe-qc-samples/039-wifi.mp3"
+    },
+    {
+      "order": 40,
+      "text": "takeaway",
+      "file": "tmp/capcut-mobile-word-staging/cafe-qc-samples/040-takeaway.mp3"
+    },
+    {
+      "order": 47,
+      "text": "matcha latte",
+      "file": "tmp/capcut-mobile-word-staging/cafe-qc-samples/047-matcha-latte.mp3"
+    },
+    {
+      "order": 53,
+      "text": "sparkling coffee",
+      "file": "tmp/capcut-mobile-word-staging/cafe-qc-samples/053-sparkling-coffee.mp3"
+    },
+    {
+      "order": 64,
+      "text": "yogurt parfait",
+      "file": "tmp/capcut-mobile-word-staging/cafe-qc-samples/064-yogurt-parfait.mp3"
+    },
+    {
+      "order": 75,
+      "text": "booth",
+      "file": "tmp/capcut-mobile-word-staging/cafe-qc-samples/075-booth.mp3"
+    },
+    {
+      "order": 76,
+      "text": "patio",
+      "file": "tmp/capcut-mobile-word-staging/cafe-qc-samples/076-patio.mp3"
+    },
+    {
+      "order": 77,
+      "text": "receipt printer",
+      "file": "tmp/capcut-mobile-word-staging/cafe-qc-samples/077-receipt-printer.mp3"
+    }
+  ],
+  "duplicates": [],
+  "failures": []
+}

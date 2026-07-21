@@ -257,6 +257,7 @@ export function buildManifest() {
         deployCnFile: `deploy-cn/${expectedFile}`,
         sourceProvider: existing ? (previousAsset?.sourceProvider || "existing") : (previousAsset?.sourceProvider || "pending"),
         providerVoice: previousAsset?.providerVoice || null,
+        ...(previousAsset?.replacementReason ? { replacementReason: previousAsset.replacementReason } : {}),
         status: existing ? "ready" : mirror.state === "divergent" ? "mirror-mismatch" : mirror.state === "missing" ? "missing" : "repairable",
         existing,
         mirrorState: mirror.state,
@@ -315,7 +316,7 @@ export function writeManifestArtifacts(manifest) {
   writeFileSync(manifestJsonPath, `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
   const headers = [
     "key", "originalText", "normalizedText", "textHash", "voice", "language", "rate", "tone",
-    "expectedFile", "deployCnFile", "sourceProvider", "providerVoice", "status", "existing", "mirrorState", "generatedAt", "processedAt",
+    "expectedFile", "deployCnFile", "sourceProvider", "providerVoice", "replacementReason", "status", "existing", "mirrorState", "generatedAt", "processedAt",
     "legacyFiles", "themes", "types", "usageCount",
   ];
   const rows = manifest.assets.map((asset) => ({

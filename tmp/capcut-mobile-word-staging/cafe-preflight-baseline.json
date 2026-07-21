@@ -1,0 +1,15 @@
+{
+  "createdAt": "2026-07-21T10:24:15.284Z",
+  "assetsAudio": {
+    "files": 3122,
+    "sha256": "6db8ecdcdfb028899acc8ef087f3a69a173dd8b63114bfe7505dff140063e39e"
+  },
+  "deployAudio": {
+    "files": 3122,
+    "sha256": "6db8ecdcdfb028899acc8ef087f3a69a173dd8b63114bfe7505dff140063e39e"
+  },
+  "indexSha256": "ae6b94872b660d3c3bf006088908fbe6e41c7024cc15def9ac5e775e2140646a",
+  "deployIndexSha256": "ae6b94872b660d3c3bf006088908fbe6e41c7024cc15def9ac5e775e2140646a",
+  "mapSha256": "9f42e41e8ca766c6287f9c8b01b95fe47718a4dfc6e07ab78e543222728279da",
+  "deployMapSha256": "9f42e41e8ca766c6287f9c8b01b95fe47718a4dfc6e07ab78e543222728279da"
+}

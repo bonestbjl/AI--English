@@ -1,0 +1,814 @@
+{
+  "schemaVersion": 1,
+  "processedAt": "2026-07-21T11:33:47.965Z",
+  "expectedThemes": 9,
+  "processedThemes": 9,
+  "expectedItems": 709,
+  "generatedItems": 709,
+  "passedItems": 709,
+  "failedItems": 0,
+  "globalDuplicateOutputs": 0,
+  "qcSamples": 54,
+  "aggregateQcDirectory": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples",
+  "parameters": {
+    "silenceFilter": "silenceremove=start_periods=1:start_duration=0.03:start_threshold=-50dB:start_silence=0.06:stop_periods=-1:stop_duration=0.08:stop_threshold=-50dB:stop_silence=0.10",
+    "safetyPadding": {
+      "startSeconds": 0.06,
+      "endSeconds": 0.1
+    },
+    "integratedLufs": -18,
+    "truePeakDb": -2,
+    "sampleRateHz": 24000,
+    "channels": 1,
+    "bitrateKbps": 64
+  },
+  "themes": [
+    {
+      "theme": "airport",
+      "planned": 85,
+      "sourceDurationSeconds": 680.045708,
+      "generated": 85,
+      "passed": 85,
+      "failed": 0,
+      "duplicates": 0,
+      "stagingDirectory": "tmp/capcut-mobile-word-staging/airport",
+      "qcDirectory": "tmp/capcut-mobile-word-staging/airport-qc-samples",
+      "qcSamples": 6,
+      "outputDurationSeconds": {
+        "min": 0.693,
+        "max": 1.641792,
+        "average": 1.1521734823529415
+      },
+      "integratedLufs": {
+        "min": -18.4,
+        "max": -18.3,
+        "average": -18.388235294117667
+      },
+      "truePeakDbfs": {
+        "min": -8,
+        "max": -2.2,
+        "average": -4.88235294117647
+      },
+      "rawTrailingSilenceSeconds": {
+        "min": 6.424149999999997,
+        "max": 7.383967999999982,
+        "average": 6.925475188235293
+      },
+      "processedLeadingSilenceSeconds": {
+        "min": 0.004,
+        "max": 0.02975,
+        "average": 0.024007843137254896
+      },
+      "processedTrailingSilenceSeconds": {
+        "min": 0.12270833333333334,
+        "max": 0.19975,
+        "average": 0.17697549019607844
+      },
+      "potentialStartClips": 0,
+      "potentialEndClips": 0,
+      "elapsedSeconds": 32.305
+    },
+    {
+      "theme": "office",
+      "planned": 78,
+      "sourceDurationSeconds": 617.142833,
+      "generated": 78,
+      "passed": 78,
+      "failed": 0,
+      "duplicates": 0,
+      "stagingDirectory": "tmp/capcut-mobile-word-staging/office",
+      "qcDirectory": "tmp/capcut-mobile-word-staging/office-qc-samples",
+      "qcSamples": 6,
+      "outputDurationSeconds": {
+        "min": 0.717833,
+        "max": 1.544417,
+        "average": 1.0896607564102558
+      },
+      "integratedLufs": {
+        "min": -18.4,
+        "max": -18.3,
+        "average": -18.38846153846155
+      },
+      "truePeakDbfs": {
+        "min": -7.6,
+        "max": -2.3,
+        "average": -4.938461538461539
+      },
+      "rawTrailingSilenceSeconds": {
+        "min": 0.1789330000000291,
+        "max": 0.2921999999999798,
+        "average": 0.2531943333333492
+      },
+      "processedLeadingSilenceSeconds": {
+        "min": 0.006791666666666666,
+        "max": 0.029791666666666668,
+        "average": 0.023894230769230775
+      },
+      "processedTrailingSilenceSeconds": {
+        "min": 0.139375,
+        "max": 0.1975,
+        "average": 0.18037232905982903
+      },
+      "potentialStartClips": 0,
+      "potentialEndClips": 0,
+      "elapsedSeconds": 25.322
+    },
+    {
+      "theme": "hotel",
+      "planned": 78,
+      "sourceDurationSeconds": 624.039167,
+      "generated": 78,
+      "passed": 78,
+      "failed": 0,
+      "duplicates": 0,
+      "stagingDirectory": "tmp/capcut-mobile-word-staging/hotel",
+      "qcDirectory": "tmp/capcut-mobile-word-staging/hotel-qc-samples",
+      "qcSamples": 6,
+      "outputDurationSeconds": {
+        "min": 0.737958,
+        "max": 1.631875,
+        "average": 1.1231190512820513
+      },
+      "integratedLufs": {
+        "min": -18.9,
+        "max": -18.3,
+        "average": -18.392307692307703
+      },
+      "truePeakDbfs": {
+        "min": -7.1,
+        "max": -2.6,
+        "average": -5.035897435897436
+      },
+      "rawTrailingSilenceSeconds": {
+        "min": 6.447550999999976,
+        "max": 7.365556000000026,
+        "average": 6.955452961538461
+      },
+      "processedLeadingSilenceSeconds": {
+        "min": 0.0009166666666666666,
+        "max": 0.029833333333333333,
+        "average": 0.023838141025641028
+      },
+      "processedTrailingSilenceSeconds": {
+        "min": 0.13583333333333333,
+        "max": 0.19820833333333332,
+        "average": 0.17676923076923085
+      },
+      "potentialStartClips": 0,
+      "potentialEndClips": 0,
+      "elapsedSeconds": 30.688
+    },
+    {
+      "theme": "restaurant",
+      "planned": 78,
+      "sourceDurationSeconds": 624.039167,
+      "generated": 78,
+      "passed": 78,
+      "failed": 0,
+      "duplicates": 0,
+      "stagingDirectory": "tmp/capcut-mobile-word-staging/restaurant",
+      "qcDirectory": "tmp/capcut-mobile-word-staging/restaurant-qc-samples",
+      "qcSamples": 6,
+      "outputDurationSeconds": {
+        "min": 0.705125,
+        "max": 1.807,
+        "average": 1.1792163717948716
+      },
+      "integratedLufs": {
+        "min": -18.4,
+        "max": -18.3,
+        "average": -18.387179487179495
+      },
+      "truePeakDbfs": {
+        "min": -7.3,
+        "max": -3.2,
+        "average": -5.0576923076923075
+      },
+      "rawTrailingSilenceSeconds": {
+        "min": 6.2787759999999935,
+        "max": 7.380997999999998,
+        "average": 6.898102884615384
+      },
+      "processedLeadingSilenceSeconds": {
+        "min": 0.0003333333333333333,
+        "max": 0.029791666666666668,
+        "average": 0.02311912393162393
+      },
+      "processedTrailingSilenceSeconds": {
+        "min": 0.13816666666666666,
+        "max": 0.19825,
+        "average": 0.1750320512820513
+      },
+      "potentialStartClips": 0,
+      "potentialEndClips": 0,
+      "elapsedSeconds": 29.623
+    },
+    {
+      "theme": "supermarket",
+      "planned": 78,
+      "sourceDurationSeconds": 624.039167,
+      "generated": 78,
+      "passed": 78,
+      "failed": 0,
+      "duplicates": 0,
+      "stagingDirectory": "tmp/capcut-mobile-word-staging/supermarket",
+      "qcDirectory": "tmp/capcut-mobile-word-staging/supermarket-qc-samples",
+      "qcSamples": 6,
+      "outputDurationSeconds": {
+        "min": 0.889958,
+        "max": 1.885458,
+        "average": 1.297445487179487
+      },
+      "integratedLufs": {
+        "min": -18.4,
+        "max": -18.3,
+        "average": -18.393589743589757
+      },
+      "truePeakDbfs": {
+        "min": -7,
+        "max": -2.7,
+        "average": -4.6512820512820525
+      },
+      "rawTrailingSilenceSeconds": {
+        "min": 6.171246999999994,
+        "max": 7.189184000000012,
+        "average": 6.778378192307689
+      },
+      "processedLeadingSilenceSeconds": {
+        "min": 0.0009166666666666666,
+        "max": 0.029625,
+        "average": 0.023184294871794877
+      },
+      "processedTrailingSilenceSeconds": {
+        "min": 0.124,
+        "max": 0.19741666666666666,
+        "average": 0.1754706196581197
+      },
+      "potentialStartClips": 0,
+      "potentialEndClips": 0,
+      "elapsedSeconds": 28.096
+    },
+    {
+      "theme": "metro",
+      "planned": 78,
+      "sourceDurationSeconds": 624.039167,
+      "generated": 78,
+      "passed": 78,
+      "failed": 0,
+      "duplicates": 0,
+      "stagingDirectory": "tmp/capcut-mobile-word-staging/metro",
+      "qcDirectory": "tmp/capcut-mobile-word-staging/metro-qc-samples",
+      "qcSamples": 6,
+      "outputDurationSeconds": {
+        "min": 0.74825,
+        "max": 1.8155,
+        "average": 1.247056025641026
+      },
+      "integratedLufs": {
+        "min": -18.4,
+        "max": -18.3,
+        "average": -18.38846153846155
+      },
+      "truePeakDbfs": {
+        "min": -7.1,
+        "max": -2.9,
+        "average": -5.026923076923077
+      },
+      "rawTrailingSilenceSeconds": {
+        "min": 6.2860769999999775,
+        "max": 7.3268930000000125,
+        "average": 6.832225205128204
+      },
+      "processedLeadingSilenceSeconds": {
+        "min": 0.0022083333333333334,
+        "max": 0.029708333333333333,
+        "average": 0.022654380341880345
+      },
+      "processedTrailingSilenceSeconds": {
+        "min": 0.128625,
+        "max": 0.19558333333333333,
+        "average": 0.1740528846153846
+      },
+      "potentialStartClips": 0,
+      "potentialEndClips": 0,
+      "elapsedSeconds": 27.503
+    },
+    {
+      "theme": "clinic",
+      "planned": 78,
+      "sourceDurationSeconds": 624.039167,
+      "generated": 78,
+      "passed": 78,
+      "failed": 0,
+      "duplicates": 0,
+      "stagingDirectory": "tmp/capcut-mobile-word-staging/clinic",
+      "qcDirectory": "tmp/capcut-mobile-word-staging/clinic-qc-samples",
+      "qcSamples": 6,
+      "outputDurationSeconds": {
+        "min": 0.817958,
+        "max": 1.799917,
+        "average": 1.2766228076923078
+      },
+      "integratedLufs": {
+        "min": -18.4,
+        "max": -18.3,
+        "average": -18.3871794871795
+      },
+      "truePeakDbfs": {
+        "min": -6.6,
+        "max": -2.6,
+        "average": -4.816666666666669
+      },
+      "rawTrailingSilenceSeconds": {
+        "min": 6.287052000000017,
+        "max": 7.264989000000014,
+        "average": 6.802192961538465
+      },
+      "processedLeadingSilenceSeconds": {
+        "min": 0.004958333333333334,
+        "max": 0.029625,
+        "average": 0.02291987179487179
+      },
+      "processedTrailingSilenceSeconds": {
+        "min": 0.12929166666666667,
+        "max": 0.19883333333333333,
+        "average": 0.17857532051282055
+      },
+      "potentialStartClips": 0,
+      "potentialEndClips": 0,
+      "elapsedSeconds": 27.677
+    },
+    {
+      "theme": "bank",
+      "planned": 78,
+      "sourceDurationSeconds": 624.039167,
+      "generated": 78,
+      "passed": 78,
+      "failed": 0,
+      "duplicates": 0,
+      "stagingDirectory": "tmp/capcut-mobile-word-staging/bank",
+      "qcDirectory": "tmp/capcut-mobile-word-staging/bank-qc-samples",
+      "qcSamples": 6,
+      "outputDurationSeconds": {
+        "min": 0.916167,
+        "max": 1.90625,
+        "average": 1.3501062692307695
+      },
+      "integratedLufs": {
+        "min": -18.4,
+        "max": -18.3,
+        "average": -18.3871794871795
+      },
+      "truePeakDbfs": {
+        "min": -6.2,
+        "max": -1.9,
+        "average": -4.651282051282052
+      },
+      "rawTrailingSilenceSeconds": {
+        "min": 6.165260999999987,
+        "max": 7.117301999999995,
+        "average": 6.725556487179487
+      },
+      "processedLeadingSilenceSeconds": {
+        "min": 0.00016666666666666666,
+        "max": 0.02975,
+        "average": 0.022298611111111113
+      },
+      "processedTrailingSilenceSeconds": {
+        "min": 0.12208333333333334,
+        "max": 0.19416666666666665,
+        "average": 0.17393162393162395
+      },
+      "potentialStartClips": 0,
+      "potentialEndClips": 0,
+      "elapsedSeconds": 27.721
+    },
+    {
+      "theme": "apartment",
+      "planned": 78,
+      "sourceDurationSeconds": 624.039167,
+      "generated": 78,
+      "passed": 78,
+      "failed": 0,
+      "duplicates": 0,
+      "stagingDirectory": "tmp/capcut-mobile-word-staging/apartment",
+      "qcDirectory": "tmp/capcut-mobile-word-staging/apartment-qc-samples",
+      "qcSamples": 6,
+      "outputDurationSeconds": {
+        "min": 0.915625,
+        "max": 1.916917,
+        "average": 1.319139910256411
+      },
+      "integratedLufs": {
+        "min": -18.4,
+        "max": -18.3,
+        "average": -18.39102564102565
+      },
+      "truePeakDbfs": {
+        "min": -7.2,
+        "max": -2.5,
+        "average": -4.794871794871794
+      },
+      "rawTrailingSilenceSeconds": {
+        "min": 6.185533000000021,
+        "max": 7.134648999999996,
+        "average": 6.7582828205128225
+      },
+      "processedLeadingSilenceSeconds": {
+        "min": 0.005166666666666667,
+        "max": 0.029833333333333333,
+        "average": 0.023892094017094013
+      },
+      "processedTrailingSilenceSeconds": {
+        "min": 0.13104166666666667,
+        "max": 0.19904166666666667,
+        "average": 0.17626869658119665
+      },
+      "potentialStartClips": 0,
+      "potentialEndClips": 0,
+      "elapsedSeconds": 27.889
+    }
+  ],
+  "qcSampleManifest": [
+    {
+      "theme": "airport",
+      "order": 1,
+      "text": "terminal",
+      "file": "tmp/capcut-mobile-word-staging/airport-qc-samples/airport-001-terminal.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/airport-001-terminal.mp3"
+    },
+    {
+      "theme": "airport",
+      "order": 43,
+      "text": "aircraft",
+      "file": "tmp/capcut-mobile-word-staging/airport-qc-samples/airport-043-aircraft.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/airport-043-aircraft.mp3"
+    },
+    {
+      "theme": "airport",
+      "order": 56,
+      "text": "currency exchange",
+      "file": "tmp/capcut-mobile-word-staging/airport-qc-samples/airport-056-currency-exchange.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/airport-056-currency-exchange.mp3"
+    },
+    {
+      "theme": "airport",
+      "order": 57,
+      "text": "lost and found",
+      "file": "tmp/capcut-mobile-word-staging/airport-qc-samples/airport-057-lost-and-found.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/airport-057-lost-and-found.mp3"
+    },
+    {
+      "theme": "airport",
+      "order": 60,
+      "text": "rental car desk",
+      "file": "tmp/capcut-mobile-word-staging/airport-qc-samples/airport-060-rental-car-desk.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/airport-060-rental-car-desk.mp3"
+    },
+    {
+      "theme": "airport",
+      "order": 85,
+      "text": "aisle access",
+      "file": "tmp/capcut-mobile-word-staging/airport-qc-samples/airport-085-aisle-access.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/airport-085-aisle-access.mp3"
+    },
+    {
+      "theme": "office",
+      "order": 1,
+      "text": "lobby",
+      "file": "tmp/capcut-mobile-word-staging/office-qc-samples/office-001-lobby.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/office-001-lobby.mp3"
+    },
+    {
+      "theme": "office",
+      "order": 9,
+      "text": "appointment slip",
+      "file": "tmp/capcut-mobile-word-staging/office-qc-samples/office-009-appointment-slip.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/office-009-appointment-slip.mp3"
+    },
+    {
+      "theme": "office",
+      "order": 19,
+      "text": "conference room",
+      "file": "tmp/capcut-mobile-word-staging/office-qc-samples/office-019-conference-room.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/office-019-conference-room.mp3"
+    },
+    {
+      "theme": "office",
+      "order": 40,
+      "text": "deadline",
+      "file": "tmp/capcut-mobile-word-staging/office-qc-samples/office-040-deadline.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/office-040-deadline.mp3"
+    },
+    {
+      "theme": "office",
+      "order": 51,
+      "text": "rooftop terrace",
+      "file": "tmp/capcut-mobile-word-staging/office-qc-samples/office-051-rooftop-terrace.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/office-051-rooftop-terrace.mp3"
+    },
+    {
+      "theme": "office",
+      "order": 78,
+      "text": "wrap-up",
+      "file": "tmp/capcut-mobile-word-staging/office-qc-samples/office-078-wrap-up.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/office-078-wrap-up.mp3"
+    },
+    {
+      "theme": "hotel",
+      "order": 1,
+      "text": "hotel",
+      "file": "tmp/capcut-mobile-word-staging/hotel-qc-samples/hotel-001-hotel.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/hotel-001-hotel.mp3"
+    },
+    {
+      "theme": "hotel",
+      "order": 7,
+      "text": "booking reference",
+      "file": "tmp/capcut-mobile-word-staging/hotel-qc-samples/hotel-007-booking-reference.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/hotel-007-booking-reference.mp3"
+    },
+    {
+      "theme": "hotel",
+      "order": 40,
+      "text": "departure",
+      "file": "tmp/capcut-mobile-word-staging/hotel-qc-samples/hotel-040-departure.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/hotel-040-departure.mp3"
+    },
+    {
+      "theme": "hotel",
+      "order": 48,
+      "text": "conference suite",
+      "file": "tmp/capcut-mobile-word-staging/hotel-qc-samples/hotel-048-conference-suite.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/hotel-048-conference-suite.mp3"
+    },
+    {
+      "theme": "hotel",
+      "order": 77,
+      "text": "incidental charge",
+      "file": "tmp/capcut-mobile-word-staging/hotel-qc-samples/hotel-077-incidental-charge.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/hotel-077-incidental-charge.mp3"
+    },
+    {
+      "theme": "hotel",
+      "order": 78,
+      "text": "occupancy limit",
+      "file": "tmp/capcut-mobile-word-staging/hotel-qc-samples/hotel-078-occupancy-limit.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/hotel-078-occupancy-limit.mp3"
+    },
+    {
+      "theme": "restaurant",
+      "order": 1,
+      "text": "restaurant facade",
+      "file": "tmp/capcut-mobile-word-staging/restaurant-qc-samples/restaurant-001-restaurant-facade.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/restaurant-001-restaurant-facade.mp3"
+    },
+    {
+      "theme": "restaurant",
+      "order": 40,
+      "text": "to-go box",
+      "file": "tmp/capcut-mobile-word-staging/restaurant-qc-samples/restaurant-040-to-go-box.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/restaurant-040-to-go-box.mp3"
+    },
+    {
+      "theme": "restaurant",
+      "order": 52,
+      "text": "private dining room",
+      "file": "tmp/capcut-mobile-word-staging/restaurant-qc-samples/restaurant-052-private-dining-room.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/restaurant-052-private-dining-room.mp3"
+    },
+    {
+      "theme": "restaurant",
+      "order": 69,
+      "text": "under my name",
+      "file": "tmp/capcut-mobile-word-staging/restaurant-qc-samples/restaurant-069-under-my-name.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/restaurant-069-under-my-name.mp3"
+    },
+    {
+      "theme": "restaurant",
+      "order": 73,
+      "text": "share a dish",
+      "file": "tmp/capcut-mobile-word-staging/restaurant-qc-samples/restaurant-073-share-a-dish.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/restaurant-073-share-a-dish.mp3"
+    },
+    {
+      "theme": "restaurant",
+      "order": 78,
+      "text": "compliments to the chef",
+      "file": "tmp/capcut-mobile-word-staging/restaurant-qc-samples/restaurant-078-compliments-to-the-chef.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/restaurant-078-compliments-to-the-chef.mp3"
+    },
+    {
+      "theme": "supermarket",
+      "order": 1,
+      "text": "storefront",
+      "file": "tmp/capcut-mobile-word-staging/supermarket-qc-samples/supermarket-001-storefront.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/supermarket-001-storefront.mp3"
+    },
+    {
+      "theme": "supermarket",
+      "order": 22,
+      "text": "ice cream tub",
+      "file": "tmp/capcut-mobile-word-staging/supermarket-qc-samples/supermarket-022-ice-cream-tub.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/supermarket-022-ice-cream-tub.mp3"
+    },
+    {
+      "theme": "supermarket",
+      "order": 27,
+      "text": "out of stock",
+      "file": "tmp/capcut-mobile-word-staging/supermarket-qc-samples/supermarket-027-out-of-stock.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/supermarket-027-out-of-stock.mp3"
+    },
+    {
+      "theme": "supermarket",
+      "order": 40,
+      "text": "fragile item",
+      "file": "tmp/capcut-mobile-word-staging/supermarket-qc-samples/supermarket-040-fragile-item.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/supermarket-040-fragile-item.mp3"
+    },
+    {
+      "theme": "supermarket",
+      "order": 67,
+      "text": "buy one get one free",
+      "file": "tmp/capcut-mobile-word-staging/supermarket-qc-samples/supermarket-067-buy-one-get-one-free.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/supermarket-067-buy-one-get-one-free.mp3"
+    },
+    {
+      "theme": "supermarket",
+      "order": 78,
+      "text": "per-customer limit",
+      "file": "tmp/capcut-mobile-word-staging/supermarket-qc-samples/supermarket-078-per-customer-limit.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/supermarket-078-per-customer-limit.mp3"
+    },
+    {
+      "theme": "metro",
+      "order": 1,
+      "text": "metro station",
+      "file": "tmp/capcut-mobile-word-staging/metro-qc-samples/metro-001-metro-station.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/metro-001-metro-station.mp3"
+    },
+    {
+      "theme": "metro",
+      "order": 36,
+      "text": "make a connection",
+      "file": "tmp/capcut-mobile-word-staging/metro-qc-samples/metro-036-make-a-connection.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/metro-036-make-a-connection.mp3"
+    },
+    {
+      "theme": "metro",
+      "order": 40,
+      "text": "ground level",
+      "file": "tmp/capcut-mobile-word-staging/metro-qc-samples/metro-040-ground-level.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/metro-040-ground-level.mp3"
+    },
+    {
+      "theme": "metro",
+      "order": 62,
+      "text": "next-stop indicator",
+      "file": "tmp/capcut-mobile-word-staging/metro-qc-samples/metro-062-next-stop-indicator.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/metro-062-next-stop-indicator.mp3"
+    },
+    {
+      "theme": "metro",
+      "order": 76,
+      "text": "mind the gap",
+      "file": "tmp/capcut-mobile-word-staging/metro-qc-samples/metro-076-mind-the-gap.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/metro-076-mind-the-gap.mp3"
+    },
+    {
+      "theme": "metro",
+      "order": 78,
+      "text": "connect here",
+      "file": "tmp/capcut-mobile-word-staging/metro-qc-samples/metro-078-connect-here.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/metro-078-connect-here.mp3"
+    },
+    {
+      "theme": "clinic",
+      "order": 1,
+      "text": "clinic sign",
+      "file": "tmp/capcut-mobile-word-staging/clinic-qc-samples/clinic-001-clinic-sign.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/clinic-001-clinic-sign.mp3"
+    },
+    {
+      "theme": "clinic",
+      "order": 40,
+      "text": "pickup shelf",
+      "file": "tmp/capcut-mobile-word-staging/clinic-qc-samples/clinic-040-pickup-shelf.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/clinic-040-pickup-shelf.mp3"
+    },
+    {
+      "theme": "clinic",
+      "order": 69,
+      "text": "call the clinic",
+      "file": "tmp/capcut-mobile-word-staging/clinic-qc-samples/clinic-069-call-the-clinic.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/clinic-069-call-the-clinic.mp3"
+    },
+    {
+      "theme": "clinic",
+      "order": 71,
+      "text": "follow the label",
+      "file": "tmp/capcut-mobile-word-staging/clinic-qc-samples/clinic-071-follow-the-label.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/clinic-071-follow-the-label.mp3"
+    },
+    {
+      "theme": "clinic",
+      "order": 72,
+      "text": "read the leaflet",
+      "file": "tmp/capcut-mobile-word-staging/clinic-qc-samples/clinic-072-read-the-leaflet.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/clinic-072-read-the-leaflet.mp3"
+    },
+    {
+      "theme": "clinic",
+      "order": 78,
+      "text": "seek help",
+      "file": "tmp/capcut-mobile-word-staging/clinic-qc-samples/clinic-078-seek-help.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/clinic-078-seek-help.mp3"
+    },
+    {
+      "theme": "bank",
+      "order": 1,
+      "text": "bank branch",
+      "file": "tmp/capcut-mobile-word-staging/bank-qc-samples/bank-001-bank-branch.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/bank-001-bank-branch.mp3"
+    },
+    {
+      "theme": "bank",
+      "order": 18,
+      "text": "wait for your number",
+      "file": "tmp/capcut-mobile-word-staging/bank-qc-samples/bank-018-wait-for-your-number.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/bank-018-wait-for-your-number.mp3"
+    },
+    {
+      "theme": "bank",
+      "order": 24,
+      "text": "speak to the teller",
+      "file": "tmp/capcut-mobile-word-staging/bank-qc-samples/bank-024-speak-to-the-teller.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/bank-024-speak-to-the-teller.mp3"
+    },
+    {
+      "theme": "bank",
+      "order": 40,
+      "text": "appointment reminder",
+      "file": "tmp/capcut-mobile-word-staging/bank-qc-samples/bank-040-appointment-reminder.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/bank-040-appointment-reminder.mp3"
+    },
+    {
+      "theme": "bank",
+      "order": 42,
+      "text": "confirm the next steps",
+      "file": "tmp/capcut-mobile-word-staging/bank-qc-samples/bank-042-confirm-the-next-steps.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/bank-042-confirm-the-next-steps.mp3"
+    },
+    {
+      "theme": "bank",
+      "order": 78,
+      "text": "finish my visit",
+      "file": "tmp/capcut-mobile-word-staging/bank-qc-samples/bank-078-finish-my-visit.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/bank-078-finish-my-visit.mp3"
+    },
+    {
+      "theme": "apartment",
+      "order": 1,
+      "text": "building directory",
+      "file": "tmp/capcut-mobile-word-staging/apartment-qc-samples/apartment-001-building-directory.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/apartment-001-building-directory.mp3"
+    },
+    {
+      "theme": "apartment",
+      "order": 18,
+      "text": "check the natural light",
+      "file": "tmp/capcut-mobile-word-staging/apartment-qc-samples/apartment-018-check-the-natural-light.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/apartment-018-check-the-natural-light.mp3"
+    },
+    {
+      "theme": "apartment",
+      "order": 30,
+      "text": "review the cost summary",
+      "file": "tmp/capcut-mobile-word-staging/apartment-qc-samples/apartment-030-review-the-cost-summary.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/apartment-030-review-the-cost-summary.mp3"
+    },
+    {
+      "theme": "apartment",
+      "order": 40,
+      "text": "entry code",
+      "file": "tmp/capcut-mobile-word-staging/apartment-qc-samples/apartment-040-entry-code.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/apartment-040-entry-code.mp3"
+    },
+    {
+      "theme": "apartment",
+      "order": 42,
+      "text": "confirm the next step",
+      "file": "tmp/capcut-mobile-word-staging/apartment-qc-samples/apartment-042-confirm-the-next-step.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/apartment-042-confirm-the-next-step.mp3"
+    },
+    {
+      "theme": "apartment",
+      "order": 78,
+      "text": "report an issue",
+      "file": "tmp/capcut-mobile-word-staging/apartment-qc-samples/apartment-078-report-an-issue.mp3",
+      "aggregateFile": "tmp/capcut-mobile-word-staging/remaining-themes-qc-samples/apartment-078-report-an-issue.mp3"
+    }
+  ],
+  "globalDuplicates": [],
+  "releaseForManualQc": true
+}
