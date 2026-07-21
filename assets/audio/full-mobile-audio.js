@@ -1,4 +1,5 @@
 // Generated from mobile-audio-manifest.json. Mobile only: desktop never looks up these paths.
+window.FullMobileAudioMapVersion = "231e9ebf6e7fa727";
 window.FullMobileAudioUrls = Object.freeze({
   "A bagel is round and chewy.": "assets/audio/sentences/cafe/more--cafe-food-desserts--bagel.mp3",
   "A binder clip holds the papers together.": "assets/audio/sentences/office/more--office-tools--binder-clip.mp3",

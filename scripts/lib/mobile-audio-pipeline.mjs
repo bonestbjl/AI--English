@@ -9,6 +9,7 @@ export const manifestJsonPath = resolve(root, "mobile-audio-manifest.json");
 export const manifestCsvPath = resolve(root, "mobile-audio-manifest.csv");
 export const sourcePath = resolve(root, "index.html");
 export const deploySourcePath = resolve(root, "deploy-cn/index.html");
+export const mobileAudioMapPath = "assets/audio/full-mobile-audio.js";
 
 export const AUDIO_PROFILE = Object.freeze({
   language: "en-US",
@@ -30,6 +31,10 @@ export function normalizeText(value) {
 
 export function sha256(value) {
   return createHash("sha256").update(value).digest("hex");
+}
+
+export function mobileAudioMapVersion(map) {
+  return sha256(JSON.stringify(map)).slice(0, 16);
 }
 
 export function audioIdentity(text, profile = AUDIO_PROFILE) {
@@ -339,13 +344,34 @@ export function writeRuntimeAudioMaps(manifest) {
     }
   }
   const map = Object.fromEntries([...entries].sort(([left], [right]) => left.localeCompare(right, "en")));
-  const content = `// Generated from mobile-audio-manifest.json. Mobile only: desktop never looks up these paths.\nwindow.FullMobileAudioUrls = Object.freeze(${JSON.stringify(map, null, 2)});\n`;
+  const version = mobileAudioMapVersion(map);
+  const content = `// Generated from mobile-audio-manifest.json. Mobile only: desktop never looks up these paths.\nwindow.FullMobileAudioMapVersion = ${JSON.stringify(version)};\nwindow.FullMobileAudioUrls = Object.freeze(${JSON.stringify(map, null, 2)});\n`;
   const outputs = [
-    resolve(root, "assets/audio/full-mobile-audio.js"),
-    resolve(root, "deploy-cn/assets/audio/full-mobile-audio.js"),
+    resolve(root, mobileAudioMapPath),
+    resolve(root, `deploy-cn/${mobileAudioMapPath}`),
   ];
+  const scriptTagPattern = /<script src="assets\/audio\/full-mobile-audio\.js(?:\?v=[a-f0-9]+)?"><\/script>/g;
+  const htmlOutputs = [sourcePath, deploySourcePath].map((path) => {
+    const source = readFileSync(path, "utf8");
+    let replacements = 0;
+    const updated = source.replace(scriptTagPattern, () => {
+      replacements += 1;
+      return `<script src="${mobileAudioMapPath}?v=${version}"></script>`;
+    });
+    if (replacements !== 1) {
+      throw new Error(`Expected one mobile audio map script tag in ${path.replace(`${root}/`, "")}; found ${replacements}.`);
+    }
+    return { path, updated };
+  });
   for (const output of outputs) writeFileSync(output, content, "utf8");
-  return { entries: entries.size, outputs: outputs.map((output) => output.replace(`${root}/`, "")) };
+  for (const output of htmlOutputs) writeFileSync(output.path, output.updated, "utf8");
+  return {
+    entries: entries.size,
+    version,
+    scriptUrl: `${mobileAudioMapPath}?v=${version}`,
+    outputs: outputs.map((output) => output.replace(`${root}/`, "")),
+    htmlOutputs: htmlOutputs.map((output) => output.path.replace(`${root}/`, "")),
+  };
 }
 
 export function filterAssets(manifest, { themes = [], onlyMissing = false, includeOptional = true } = {}) {

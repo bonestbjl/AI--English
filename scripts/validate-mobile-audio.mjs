@@ -10,6 +10,8 @@ import {
   deploySourcePath,
   loadRuntimeAudioMap,
   manifestJsonPath,
+  mobileAudioMapPath,
+  mobileAudioMapVersion,
   root,
   sourcePath,
 } from "./lib/mobile-audio-pipeline.mjs";
@@ -179,6 +181,17 @@ function sourceChecks(issues) {
   const mapDeploy = resolve(root, "deploy-cn/assets/audio/full-mobile-audio.js");
   if (!existsSync(mapSource) || !existsSync(mapDeploy) || readFileSync(mapSource, "utf8") !== readFileSync(mapDeploy, "utf8")) {
     issues.push("Mobile audio maps are missing or not synchronized.");
+  } else {
+    const runtimeMap = loadRuntimeAudioMap(mapSource);
+    const version = mobileAudioMapVersion(runtimeMap);
+    const versionedReference = `src="${mobileAudioMapPath}?v=${version}"`;
+    const mapVersionMarker = `window.FullMobileAudioMapVersion = ${JSON.stringify(version)};`;
+    if (!source.includes(versionedReference) || !deploy.includes(versionedReference)) {
+      issues.push("HTML files do not reference the current content-versioned mobile audio map.");
+    }
+    if (!readFileSync(mapSource, "utf8").includes(mapVersionMarker)) {
+      issues.push("Mobile audio map version marker does not match its content hash.");
+    }
   }
 }
 

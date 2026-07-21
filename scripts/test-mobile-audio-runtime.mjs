@@ -4,7 +4,13 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import vm from "node:vm";
-import { sourcePath } from "./lib/mobile-audio-pipeline.mjs";
+import {
+  deploySourcePath,
+  loadRuntimeAudioMap,
+  mobileAudioMapPath,
+  mobileAudioMapVersion,
+  sourcePath,
+} from "./lib/mobile-audio-pipeline.mjs";
 
 function between(source, start, end) {
   const from = source.indexOf(start);
@@ -17,14 +23,14 @@ function assert(condition, message) {
   if (!condition) throw new Error(message);
 }
 
-function audioLookup(source, navigator, map) {
+function audioLookup(source, navigator, map, text = "gate") {
   const runtime = between(source, "      function isMobileAudioPreferred()", "      const scenes = [");
   const context = vm.createContext({
     navigator,
     window: { FullMobileAudioUrls: map, matchMedia: () => ({ matches: false }), screen: { width: 1440 } },
   });
   vm.runInContext(`${runtime}\nglobalThis.lookup = getMobileAudioUrl;`, context);
-  return context.lookup("gate");
+  return context.lookup(text);
 }
 
 async function speechPath(source, mobileUrl) {
@@ -76,10 +82,37 @@ function playbackPath(source, audioAvailable) {
 
 export async function runRuntimeAudioTests(path = sourcePath) {
   const source = readFileSync(path, "utf8");
+  const deploySource = readFileSync(deploySourcePath, "utf8");
+  const runtimeMap = loadRuntimeAudioMap();
+  const mapVersion = mobileAudioMapVersion(runtimeMap);
+  const versionedMapUrl = `${mobileAudioMapPath}?v=${mapVersion}`;
+  const scriptReference = `src="${versionedMapUrl}"`;
+  assert(source.includes(scriptReference) && deploySource.includes(scriptReference), "HTML files do not reference the current versioned mobile audio map.");
+
+  const previousVersionedUrl = `${mobileAudioMapPath}?v=0000000000000000`;
+  const simulatedOldCache = new Map([
+    [mobileAudioMapPath, { laundromat: null }],
+    [previousVersionedUrl, { laundromat: null }],
+  ]);
+  assert(simulatedOldCache.has(mobileAudioMapPath) && simulatedOldCache.has(previousVersionedUrl), "The simulated old map cache was not created.");
+  assert(!simulatedOldCache.has(versionedMapUrl), "The current versioned map URL still collides with an old cache key.");
+  assert(mobileAudioMapVersion({ ...runtimeMap, "cache-version-test": "new-audio.mp3" }) !== mapVersion, "A changed map did not produce a new cache version.");
+
   const desktopLookup = audioLookup(source, { userAgent: "Mozilla/5.0 Macintosh", platform: "MacIntel", maxTouchPoints: 0 }, { gate: "assets/audio/gate.mp3" });
   assert(desktopLookup === null, "Desktop audio lookup must not return a mobile MP3.");
   const mobileLookup = audioLookup(source, { userAgent: "Mozilla/5.0 iPhone Mobile", platform: "iPhone", maxTouchPoints: 5 }, { gate: "assets/audio/gate.mp3" });
   assert(mobileLookup === "assets/audio/gate.mp3", "Mobile audio lookup did not return the static MP3.");
+
+  const mobileBrowsers = [
+    { name: "Chrome iOS", navigator: { userAgent: "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) CriOS/126 Mobile", platform: "iPhone", maxTouchPoints: 5 } },
+    { name: "Safari iOS", navigator: { userAgent: "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) Version/18.0 Mobile Safari", platform: "iPhone", maxTouchPoints: 5 } },
+    { name: "WeChat iOS", navigator: { userAgent: "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) Mobile MicroMessenger", platform: "iPhone", maxTouchPoints: 5 } },
+  ];
+  for (const browser of mobileBrowsers) {
+    assert(audioLookup(source, browser.navigator, runtimeMap, "laundromat") === runtimeMap.laundromat, `${browser.name} did not resolve the Laundry MP3.`);
+    assert(audioLookup(source, browser.navigator, runtimeMap, "gate") === runtimeMap.gate, `${browser.name} did not preserve the Zoo MP3.`);
+    assert(audioLookup(source, browser.navigator, runtimeMap, "apple") === runtimeMap.apple, `${browser.name} did not preserve the Fruit Shop MP3.`);
+  }
 
   const desktop = await speechPath(source, desktopLookup);
   assert(desktop.mobile.length === 0 && desktop.spoken.length === 1, "Desktop speech did not stay on speechSynthesis.");
@@ -91,7 +124,18 @@ export async function runRuntimeAudioTests(path = sourcePath) {
   assert(noAudio.fallback.length === 1 && noAudio.fallback[0][3] === true, "Missing Audio support did not use the speech fallback.");
   const rapid = playbackPath(source, true);
   assert(rapid.instances.length === 2 && rapid.instances[0].paused && rapid.instances[0].loaded, "Rapid clicks did not stop and release the previous Audio instance.");
-  return { desktopSpeechSynthesis: true, mobileStaticMp3: true, missingMp3Fallback: true, rapidClickReplacement: true };
+  return {
+    desktopSpeechSynthesis: true,
+    mobileStaticMp3: true,
+    missingMp3Fallback: true,
+    rapidClickReplacement: true,
+    cacheVersion: mapVersion,
+    oldCacheBypassed: true,
+    laundryChromeMp3: true,
+    laundrySafariMp3: true,
+    laundryWeChatMp3: true,
+    zooAndFruitShopProtected: true,
+  };
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
