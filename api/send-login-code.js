@@ -3,7 +3,19 @@ const crypto = require("crypto");
 const PHONE_PATTERN = /^1[3-9]\d{9}$/;
 const CODE_TTL_SECONDS = 5 * 60;
 const SEND_COOLDOWN_SECONDS = 60;
+const DAILY_SEND_LIMIT = 10;
+const DAILY_WINDOW_SECONDS = 24 * 60 * 60;
 const MOCK_CODE = "123456";
+const SMS_MODES = new Set(["mock", "tencent"]);
+const SMS_AUDIT_PREFIX = "[rse-sms:";
+
+class SmsProviderError extends Error {
+  constructor(providerCode) {
+    super("sms_provider_error");
+    this.name = "SmsProviderError";
+    this.providerCode = normalizeProviderCode(providerCode);
+  }
+}
 
 function sendJson(res, status, body) {
   res.setHeader("Content-Type", "application/json; charset=utf-8");
@@ -27,18 +39,36 @@ function sanitizeDetail(value) {
   if (typeof value === "string") {
     detail = value;
   } else if (value && typeof value === "object") {
-    detail = value.message || value.error || value.details || value.hint || JSON.stringify(value);
+    detail = value.message || value.error || value.details || value.hint || "";
   }
   return String(detail)
     .replace(/Bearer\s+[A-Za-z0-9._~+/-]+/gi, "Bearer [redacted]")
-    .replace(/("?(?:apikey|authorization|token|key)"?\s*[:=]\s*")([^"]+)(")/gi, "$1[redacted]$3")
-    .replace(/(service_role[\\w.-]*)/gi, "[redacted]")
-    .slice(0, 500);
+    .replace(/("?(?:apikey|authorization|token|secret|key)"?\s*[:=]\s*")([^"]+)(")/gi, "$1[redacted]$3")
+    .replace(/(service_role[\w.-]*)/gi, "[redacted]")
+    .slice(0, 300);
+}
+
+function normalizeProviderCode(value) {
+  return String(value || "UnknownProviderError")
+    .replace(/[^A-Za-z0-9_.:-]/g, "_")
+    .slice(0, 100);
+}
+
+function maskPhone(phone) {
+  const value = String(phone || "");
+  return `${"*".repeat(Math.max(0, value.length - 4))}${value.slice(-4)}`;
+}
+
+function normalizePhone(value) {
+  const raw = String(value || "").trim();
+  if (!raw || !/^[\d\s-]+$/.test(raw)) return "";
+  const normalized = raw.replace(/[\s-]+/g, "");
+  return PHONE_PATTERN.test(normalized) ? normalized : "";
 }
 
 async function readSupabaseJson(response) {
   const text = await response.text();
-  if (!text) return { rawText: "" };
+  if (!text) return null;
   try {
     return JSON.parse(text);
   } catch (error) {
@@ -57,36 +87,68 @@ function supabaseHeaders(serviceRoleKey) {
 
 function createSupabaseError(message, response, body) {
   const error = new Error(message);
+  error.name = "SupabaseError";
   error.status = response.status;
-  error.body = body;
   error.detail = sanitizeDetail(body);
   return error;
 }
 
-function getSmsMode() {
-  return String(process.env.SMS_MODE || "mock").trim().toLowerCase();
+function getSmsMode(env) {
+  return String(env.SMS_MODE || "").trim().toLowerCase();
 }
 
-function isProductionRuntime() {
-  return process.env.NODE_ENV === "production" || process.env.VERCEL_ENV === "production";
-}
+function getRuntimeConfig(env) {
+  const mode = getSmsMode(env);
+  const missing = [];
+  if (!SMS_MODES.has(mode)) missing.push("SMS_MODE");
+  if (!String(env.SMS_CODE_SECRET || "").trim()) missing.push("SMS_CODE_SECRET");
+  if (!String(env.SUPABASE_URL || "").trim()) missing.push("SUPABASE_URL");
+  if (!String(env.SUPABASE_SERVICE_ROLE_KEY || "").trim()) missing.push("SUPABASE_SERVICE_ROLE_KEY");
 
-function getSmsSecret() {
-  const secret = String(process.env.SMS_CODE_SECRET || "").trim();
-  if (secret) return secret;
-  if (getSmsMode() === "mock" && !isProductionRuntime()) {
-    return "development_sms_code_secret";
+  if (mode === "tencent") {
+    [
+      "TENCENTCLOUD_SECRET_ID",
+      "TENCENTCLOUD_SECRET_KEY",
+      "TENCENT_SMS_SDK_APP_ID",
+      "TENCENT_SMS_SIGN_NAME",
+      "TENCENT_SMS_TEMPLATE_ID",
+    ].forEach((name) => {
+      if (!String(env[name] || "").trim()) missing.push(name);
+    });
   }
-  return "";
+
+  if (missing.length) {
+    const error = new Error("server_config_error");
+    error.name = "ServerConfigError";
+    error.missing = [...new Set(missing)];
+    throw error;
+  }
+
+  return {
+    mode,
+    smsCodeSecret: String(env.SMS_CODE_SECRET).trim(),
+    supabaseUrl: String(env.SUPABASE_URL).trim().replace(/\/+$/, ""),
+    serviceRoleKey: String(env.SUPABASE_SERVICE_ROLE_KEY).trim(),
+    tencent: mode === "tencent"
+      ? {
+        secretId: String(env.TENCENTCLOUD_SECRET_ID).trim(),
+        secretKey: String(env.TENCENTCLOUD_SECRET_KEY).trim(),
+        sdkAppId: String(env.TENCENT_SMS_SDK_APP_ID).trim(),
+        signName: String(env.TENCENT_SMS_SIGN_NAME).trim(),
+        templateId: String(env.TENCENT_SMS_TEMPLATE_ID).trim(),
+        region: String(env.TENCENT_SMS_REGION || "ap-guangzhou").trim() || "ap-guangzhou",
+      }
+      : null,
+  };
 }
 
 function hashCode(phone, code, secret) {
   return crypto.createHash("sha256").update(`${phone}:${code}:${secret}`, "utf8").digest("hex");
 }
 
-function createSixDigitCode() {
-  if (getSmsMode() === "mock") return MOCK_CODE;
-  return String(crypto.randomInt(0, 1000000)).padStart(6, "0");
+function createSixDigitCode(mode, randomInt = crypto.randomInt) {
+  if (mode === "mock") return MOCK_CODE;
+  return String(randomInt(0, 1000000)).padStart(6, "0");
 }
 
 function getClientIp(req) {
@@ -96,103 +158,311 @@ function getClientIp(req) {
     .slice(0, 80);
 }
 
-async function fetchLatestCode({ supabaseUrl, serviceRoleKey, phone }) {
-  const endpoint = `${supabaseUrl}/rest/v1/sms_login_codes?phone=eq.${encodeURIComponent(phone)}&select=created_at&order=created_at.desc&limit=1`;
-  const response = await fetch(endpoint, {
+function buildAuditUserAgent(mode, status, userAgent) {
+  const marker = `${SMS_AUDIT_PREFIX}${mode}:${status}]`;
+  const suffix = String(userAgent || "").replace(/[\r\n]+/g, " ").trim();
+  return `${marker}${suffix ? ` ${suffix}` : ""}`.slice(0, 500);
+}
+
+function hasAuditStatus(row, mode, statuses) {
+  const userAgent = String(row?.user_agent || "");
+  if (statuses.some((status) => userAgent.startsWith(`${SMS_AUDIT_PREFIX}${mode}:${status}]`))) {
+    return true;
+  }
+  return mode === "mock" && !userAgent.startsWith(SMS_AUDIT_PREFIX);
+}
+
+async function fetchRecentCodes({ fetchImpl, supabaseUrl, serviceRoleKey, phone, since }) {
+  const endpoint = `${supabaseUrl}/rest/v1/sms_login_codes?phone=eq.${encodeURIComponent(phone)}&created_at=gte.${encodeURIComponent(since)}&select=created_at,user_agent&order=created_at.desc&limit=2000`;
+  const response = await fetchImpl(endpoint, {
     method: "GET",
     headers: supabaseHeaders(serviceRoleKey),
   });
   const body = await readSupabaseJson(response);
   if (!response.ok) throw createSupabaseError("sms_code_lookup_failed", response, body);
-  return Array.isArray(body) ? body[0] || null : null;
+  return Array.isArray(body) ? body : [];
 }
 
-async function consumeOpenCodes({ supabaseUrl, serviceRoleKey, phone, consumedAt }) {
-  const endpoint = `${supabaseUrl}/rest/v1/sms_login_codes?phone=eq.${encodeURIComponent(phone)}&consumed_at=is.null`;
-  const response = await fetch(endpoint, {
+async function consumeOpenCodesExcept({ fetchImpl, supabaseUrl, serviceRoleKey, phone, exceptId, consumedAt }) {
+  const endpoint = `${supabaseUrl}/rest/v1/sms_login_codes?phone=eq.${encodeURIComponent(phone)}&consumed_at=is.null&id=neq.${encodeURIComponent(exceptId)}`;
+  const response = await fetchImpl(endpoint, {
     method: "PATCH",
     headers: supabaseHeaders(serviceRoleKey),
     body: JSON.stringify({ consumed_at: consumedAt }),
   });
   const body = await readSupabaseJson(response);
   if (!response.ok) throw createSupabaseError("sms_code_invalidate_failed", response, body);
-  return body;
 }
 
-async function insertCode({ supabaseUrl, serviceRoleKey, row }) {
+async function insertCode({ fetchImpl, supabaseUrl, serviceRoleKey, row }) {
   const endpoint = `${supabaseUrl}/rest/v1/sms_login_codes`;
-  const response = await fetch(endpoint, {
+  const response = await fetchImpl(endpoint, {
     method: "POST",
     headers: supabaseHeaders(serviceRoleKey),
     body: JSON.stringify(row),
   });
   const body = await readSupabaseJson(response);
   if (!response.ok) throw createSupabaseError("sms_code_create_failed", response, body);
-  return body;
+  const inserted = Array.isArray(body) ? body[0] : body;
+  if (!inserted?.id) {
+    const error = new Error("sms_code_create_missing_id");
+    error.name = "SupabaseError";
+    throw error;
+  }
+  return inserted;
 }
 
-module.exports = async function handler(req, res) {
-  if (req.method !== "POST") {
-    res.setHeader("Allow", "POST");
-    sendJson(res, 405, { ok: false, error: "method_not_allowed" });
-    return;
-  }
+async function patchCode({ fetchImpl, supabaseUrl, serviceRoleKey, id, patch }) {
+  const endpoint = `${supabaseUrl}/rest/v1/sms_login_codes?id=eq.${encodeURIComponent(id)}`;
+  const response = await fetchImpl(endpoint, {
+    method: "PATCH",
+    headers: supabaseHeaders(serviceRoleKey),
+    body: JSON.stringify(patch),
+  });
+  const body = await readSupabaseJson(response);
+  if (!response.ok) throw createSupabaseError("sms_code_update_failed", response, body);
+}
 
-  const body = readRequestBody(req);
-  const phone = String(body.phone || "").trim();
-  if (!PHONE_PATTERN.test(phone)) {
-    sendJson(res, 400, { ok: false, error: "invalid_phone" });
-    return;
-  }
+async function deleteCode({ fetchImpl, supabaseUrl, serviceRoleKey, id }) {
+  const endpoint = `${supabaseUrl}/rest/v1/sms_login_codes?id=eq.${encodeURIComponent(id)}`;
+  const response = await fetchImpl(endpoint, {
+    method: "DELETE",
+    headers: supabaseHeaders(serviceRoleKey),
+  });
+  const body = await readSupabaseJson(response);
+  if (!response.ok) throw createSupabaseError("sms_code_delete_failed", response, body);
+}
 
-  const supabaseUrl = process.env.SUPABASE_URL;
-  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-  if (!supabaseUrl || !serviceRoleKey) {
-    sendJson(res, 500, { ok: false, error: "missing_supabase_env" });
-    return;
-  }
-  const secret = getSmsSecret();
-  if (!secret) {
-    sendJson(res, 500, { ok: false, error: "missing_sms_code_secret" });
-    return;
-  }
-
-  const requestContext = { supabaseUrl: supabaseUrl.replace(/\/+$/, ""), serviceRoleKey, phone };
+async function invalidateInsertedCode(context, id, mode, userAgent, nowIso, logger) {
   try {
-    const latest = await fetchLatestCode(requestContext);
-    const latestMs = latest?.created_at ? new Date(latest.created_at).getTime() : 0;
-    const now = new Date();
-    if (Number.isFinite(latestMs) && now.getTime() - latestMs < SEND_COOLDOWN_SECONDS * 1000) {
-      const retryAfter = Math.max(1, SEND_COOLDOWN_SECONDS - Math.floor((now.getTime() - latestMs) / 1000));
-      sendJson(res, 429, { ok: false, error: "cooldown", retryAfter });
+    await patchCode({
+      ...context,
+      id,
+      patch: {
+        consumed_at: nowIso,
+        user_agent: buildAuditUserAgent(mode, "failed", userAgent),
+      },
+    });
+    return true;
+  } catch (patchError) {
+    try {
+      await deleteCode({ ...context, id });
+      return true;
+    } catch (deleteError) {
+      logger.error("sms code rollback failed", {
+        databaseStatus: deleteError.status || patchError.status || 500,
+      });
+      return false;
+    }
+  }
+}
+
+function createTencentSmsClient(config) {
+  const { sms } = require("tencentcloud-sdk-nodejs-sms");
+  const SmsClient = sms.v20210111.Client;
+  return new SmsClient({
+    credential: {
+      secretId: config.secretId,
+      secretKey: config.secretKey,
+    },
+    region: config.region,
+    profile: {
+      httpProfile: {
+        endpoint: "sms.tencentcloudapi.com",
+      },
+    },
+  });
+}
+
+async function sendTencentCode({ client, config, phone, code }) {
+  const response = await client.SendSms({
+    SmsSdkAppId: config.sdkAppId,
+    SignName: config.signName,
+    TemplateId: config.templateId,
+    TemplateParamSet: [code, String(CODE_TTL_SECONDS / 60)],
+    PhoneNumberSet: [`+86${phone}`],
+  });
+  const sendStatus = response?.SendStatusSet?.[0];
+  if (sendStatus?.Code !== "Ok") {
+    throw new SmsProviderError(sendStatus?.Code);
+  }
+  return {
+    providerCode: "Ok",
+    requestId: String(response?.RequestId || "").slice(0, 100),
+  };
+}
+
+function createHandler(overrides = {}) {
+  const env = overrides.env || process.env;
+  const fetchImpl = overrides.fetchImpl || global.fetch;
+  const now = overrides.now || (() => new Date());
+  const randomInt = overrides.randomInt || crypto.randomInt;
+  const createSmsClient = overrides.createSmsClient || createTencentSmsClient;
+  const logger = overrides.logger || console;
+
+  return async function handler(req, res) {
+    if (req.method !== "POST") {
+      res.setHeader("Allow", "POST");
+      sendJson(res, 405, { ok: false, error: "method_not_allowed" });
       return;
     }
 
-    const code = createSixDigitCode();
-    const createdAt = now.toISOString();
-    await consumeOpenCodes({ ...requestContext, consumedAt: createdAt });
-    await insertCode({
-      ...requestContext,
-      row: {
-        phone,
-        code_hash: hashCode(phone, code, secret),
-        expires_at: new Date(now.getTime() + CODE_TTL_SECONDS * 1000).toISOString(),
-        attempts: 0,
-        send_ip: getClientIp(req),
-        user_agent: String(req.headers["user-agent"] || "").slice(0, 500),
-        created_at: createdAt,
-      },
-    });
+    const body = readRequestBody(req);
+    const phone = normalizePhone(body.phone);
+    if (!phone) {
+      sendJson(res, 400, { ok: false, error: "invalid_phone" });
+      return;
+    }
 
-    const responseBody = { ok: true, mock: getSmsMode() === "mock", message: "验证码已发送" };
-    if (getSmsMode() === "mock") responseBody.devCode = code;
-    sendJson(res, 200, responseBody);
-  } catch (error) {
-    sendJson(res, 500, {
-      ok: false,
-      error: "server_error",
-      status: error.status || 500,
-      detail: sanitizeDetail(error.detail || error.body || error.message),
-    });
-  }
+    let config;
+    try {
+      config = getRuntimeConfig(env);
+    } catch (error) {
+      logger.error("sms server configuration error", {
+        missingVariables: error.missing || ["SMS_MODE"],
+      });
+      sendJson(res, 500, { ok: false, error: "server_config_error" });
+      return;
+    }
+
+    const currentTime = now();
+    const nowIso = currentTime.toISOString();
+    const databaseContext = {
+      fetchImpl,
+      supabaseUrl: config.supabaseUrl,
+      serviceRoleKey: config.serviceRoleKey,
+      phone,
+    };
+    const rawUserAgent = String(req.headers["user-agent"] || "");
+
+    try {
+      const recentCodes = await fetchRecentCodes({
+        ...databaseContext,
+        since: new Date(currentTime.getTime() - DAILY_WINDOW_SECONDS * 1000).toISOString(),
+      });
+      const recentAttempts = recentCodes.filter((row) =>
+        hasAuditStatus(row, config.mode, ["pending", "sent"])
+      );
+      const latestAttemptMs = recentAttempts.reduce((latest, row) => {
+        const value = new Date(row.created_at || 0).getTime();
+        return Number.isFinite(value) ? Math.max(latest, value) : latest;
+      }, 0);
+      if (latestAttemptMs && currentTime.getTime() - latestAttemptMs < SEND_COOLDOWN_SECONDS * 1000) {
+        const retryAfter = Math.max(
+          1,
+          SEND_COOLDOWN_SECONDS - Math.floor((currentTime.getTime() - latestAttemptMs) / 1000)
+        );
+        sendJson(res, 429, { ok: false, error: "cooldown", retryAfter });
+        return;
+      }
+
+      if (
+        config.mode === "tencent" &&
+        recentCodes.filter((row) => hasAuditStatus(row, "tencent", ["sent"])).length >= DAILY_SEND_LIMIT
+      ) {
+        sendJson(res, 429, { ok: false, error: "daily_limit" });
+        return;
+      }
+
+      const code = createSixDigitCode(config.mode, randomInt);
+      const inserted = await insertCode({
+        ...databaseContext,
+        row: {
+          phone,
+          code_hash: hashCode(phone, code, config.smsCodeSecret),
+          expires_at: new Date(currentTime.getTime() + CODE_TTL_SECONDS * 1000).toISOString(),
+          attempts: 0,
+          send_ip: getClientIp(req),
+          user_agent: buildAuditUserAgent(config.mode, "pending", rawUserAgent),
+          created_at: nowIso,
+        },
+      });
+
+      try {
+        await consumeOpenCodesExcept({
+          ...databaseContext,
+          exceptId: inserted.id,
+          consumedAt: nowIso,
+        });
+      } catch (error) {
+        await invalidateInsertedCode(databaseContext, inserted.id, config.mode, rawUserAgent, nowIso, logger);
+        throw error;
+      }
+
+      if (config.mode === "tencent") {
+        try {
+          const client = createSmsClient(config.tencent);
+          await sendTencentCode({ client, config: config.tencent, phone, code });
+        } catch (error) {
+          const rolledBack = await invalidateInsertedCode(
+            databaseContext,
+            inserted.id,
+            config.mode,
+            rawUserAgent,
+            nowIso,
+            logger
+          );
+          const providerCode = error instanceof SmsProviderError
+            ? error.providerCode
+            : normalizeProviderCode(error?.code || error?.name);
+          logger.error("sms provider send failed", {
+            phone: maskPhone(phone),
+            providerCode,
+            codeRecordInvalidated: rolledBack,
+          });
+          if (!rolledBack) {
+            sendJson(res, 500, { ok: false, error: "database_error" });
+            return;
+          }
+          sendJson(res, 502, { ok: false, error: "sms_provider_error" });
+          return;
+        }
+      }
+
+      await patchCode({
+        ...databaseContext,
+        id: inserted.id,
+        patch: {
+          user_agent: buildAuditUserAgent(config.mode, "sent", rawUserAgent),
+        },
+      });
+
+      const responseBody = {
+        ok: true,
+        mock: config.mode === "mock",
+        message: "验证码已发送",
+      };
+      if (config.mode === "mock") responseBody.devCode = code;
+      sendJson(res, 200, responseBody);
+    } catch (error) {
+      if (error?.name === "SupabaseError") {
+        logger.error("sms database operation failed", {
+          phone: maskPhone(phone),
+          databaseStatus: error.status || 500,
+          operation: sanitizeDetail(error.message),
+        });
+        sendJson(res, 500, { ok: false, error: "database_error" });
+        return;
+      }
+      logger.error("sms send unexpected failure", {
+        phone: maskPhone(phone),
+        errorType: normalizeProviderCode(error?.name),
+      });
+      sendJson(res, 500, { ok: false, error: "server_error" });
+    }
+  };
+}
+
+const handler = createHandler();
+
+module.exports = handler;
+module.exports.createHandler = createHandler;
+module.exports._internals = {
+  buildAuditUserAgent,
+  createSixDigitCode,
+  getRuntimeConfig,
+  hashCode,
+  maskPhone,
+  normalizePhone,
+  sendTencentCode,
 };
