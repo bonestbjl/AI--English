@@ -6,7 +6,11 @@
     "node": ">=18"
   },
   "scripts": {
-    "test": "node --test tests/*.test.js"
+    "test": "node --test tests/*.test.js",
+    "generate:theme-resource-packs": "node scripts/generate-theme-resource-packs.mjs",
+    "validate:theme-resource-packs": "node scripts/validate-theme-resource-packs.mjs",
+    "optimize:deploy-cn-images": "node scripts/optimize-deploy-cn-images.mjs",
+    "prepare:deploy-cn": "npm run optimize:deploy-cn-images && npm run generate:theme-resource-packs"
   },
   "dependencies": {
     "tencentcloud-sdk-nodejs-sms": "4.1.240"

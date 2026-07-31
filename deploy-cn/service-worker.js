@@ -1,5 +1,6 @@
 const CACHE_PREFIX = "real-scene-cn";
-const CACHE_VERSION = "v1";
+const THEME_PACK_VERSION = "zoo-4b7c64d2342b";
+const CACHE_VERSION = `v1-${THEME_PACK_VERSION}`;
 const APP_CACHE = `${CACHE_PREFIX}-${CACHE_VERSION}`;
 const INDEX_URL = new URL("./index.html", self.registration.scope).href;
 const APP_SHELL = [
@@ -12,6 +13,7 @@ const APP_SHELL = [
   "./vendor/react-dom.production.min.js",
   "./vendor/babel.min.js",
   "./vendor/tailwind-runtime.js",
+  `./assets/theme-resource-packs.js?v=${THEME_PACK_VERSION}`,
 ];
 
 self.addEventListener("install", (event) => {

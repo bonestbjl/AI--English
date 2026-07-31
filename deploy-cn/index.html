@@ -1310,6 +1310,7 @@
     </style>
     <script src="vendor/react.production.min.js"></script>
     <script src="vendor/react-dom.production.min.js"></script>
+    <script src="assets/theme-resource-packs.js?v=zoo-4b7c64d2342b"></script>
     <script src="assets/audio/full-mobile-audio.js?v=ba0fcbb0b5d9c61e"></script>
     <script src="vendor/babel.min.js"></script>
   </head>
@@ -1320,6 +1321,222 @@
       const { useEffect, useMemo, useRef, useState } = React;
 
       let activeLearningAudio = null;
+      const THEME_PACK_READY_PREFIX = "realSceneThemePackReady:";
+      const themeResourceRequests = new Map();
+      const themePreparedResourceUrls = new Map();
+      let themeResourceUrlLookup = null;
+
+      function getThemeResourcePack(themeId) {
+        return window.RealSceneThemeResourcePacks?.[themeId] || null;
+      }
+
+      function getThemeResourceLookup() {
+        if (themeResourceUrlLookup) return themeResourceUrlLookup;
+        themeResourceUrlLookup = new Map();
+        Object.values(window.RealSceneThemeResourcePacks || {}).forEach((pack) => {
+          (pack.resources || []).forEach((resource) => {
+            themeResourceUrlLookup.set(resource.url, { pack, resource });
+          });
+        });
+        return themeResourceUrlLookup;
+      }
+
+      function getVersionedThemeResourceUrl(resourceUrl) {
+        const entry = getThemeResourceLookup().get(resourceUrl);
+        if (!entry) return resourceUrl;
+        const separator = resourceUrl.includes("?") ? "&" : "?";
+        return `${resourceUrl}${separator}theme-pack=${encodeURIComponent(entry.pack.version)}`;
+      }
+
+      function setPreparedThemeResourceUrl(resourceUrl, objectUrl) {
+        const previous = themePreparedResourceUrls.get(resourceUrl);
+        if (previous && previous !== objectUrl) URL.revokeObjectURL(previous);
+        themePreparedResourceUrls.set(resourceUrl, objectUrl);
+      }
+
+      function getPreparedThemeResourceUrl(resourceUrl) {
+        return themePreparedResourceUrls.get(resourceUrl) || getVersionedThemeResourceUrl(resourceUrl);
+      }
+
+      function getThemePackReadyKey(themeId) {
+        return `${THEME_PACK_READY_PREFIX}${themeId}`;
+      }
+
+      async function getCachedThemeResource(resourceUrl) {
+        if (!("caches" in window)) return null;
+        try {
+          return await window.caches.match(getVersionedThemeResourceUrl(resourceUrl));
+        } catch (error) {
+          return null;
+        }
+      }
+
+      async function decodeThemeImage(response, resourceUrl, keepObjectUrl) {
+        if (typeof Image !== "function" || !("createObjectURL" in URL)) {
+          await response.arrayBuffer();
+          return;
+        }
+        const objectUrl = URL.createObjectURL(await response.blob());
+        let retained = false;
+        try {
+          const image = new Image();
+          image.src = objectUrl;
+          if (typeof image.decode === "function") {
+            await image.decode();
+          } else {
+            await new Promise((resolve, reject) => {
+              image.onload = resolve;
+              image.onerror = () => reject(new Error("image_decode_failed"));
+            });
+          }
+          if (keepObjectUrl) {
+            setPreparedThemeResourceUrl(resourceUrl, objectUrl);
+            retained = true;
+          }
+        } finally {
+          if (!retained) URL.revokeObjectURL(objectUrl);
+        }
+      }
+
+      async function consumeThemeResource(response, resource, keepObjectUrl) {
+        if (resource.type === "image") {
+          await decodeThemeImage(response, resource.url, keepObjectUrl);
+          return;
+        }
+        if (keepObjectUrl && "createObjectURL" in URL) {
+          setPreparedThemeResourceUrl(resource.url, URL.createObjectURL(await response.blob()));
+          return;
+        }
+        await response.arrayBuffer();
+      }
+
+      async function loadThemeResource(pack, resource, options = {}) {
+        const timeoutMs = options.timeoutMs || 20000;
+        const keepObjectUrl = options.prepareForDisplay === true;
+        const requestUrl = getVersionedThemeResourceUrl(resource.url);
+        const cached = await getCachedThemeResource(resource.url);
+        if (cached) {
+          try {
+            if (keepObjectUrl) await consumeThemeResource(cached.clone(), resource, true);
+            return { resource, cached: true };
+          } catch (error) {
+            try {
+              const cache = await window.caches.open(pack.cacheName);
+              await cache.delete(requestUrl);
+            } catch (cacheError) {
+              // Continue with a network refresh when a cached response is unreadable.
+            }
+          }
+        }
+        if (themeResourceRequests.has(requestUrl)) return themeResourceRequests.get(requestUrl);
+
+        const request = (async () => {
+          const controller = typeof AbortController === "function" ? new AbortController() : null;
+          const timeout = window.setTimeout(() => controller?.abort(), timeoutMs);
+          try {
+            const response = await fetch(requestUrl, {
+              cache: "force-cache",
+              signal: controller?.signal,
+            });
+            if (!response.ok) throw new Error(`resource_http_${response.status}`);
+            const cacheResponse = response.clone();
+            await consumeThemeResource(response, resource, keepObjectUrl);
+            if ("caches" in window) {
+              try {
+                const cache = await window.caches.open(pack.cacheName);
+                await cache.put(requestUrl, cacheResponse);
+              } catch (error) {
+                console.warn("[RSE theme pack] Cache Storage write failed", {
+                  theme: pack.id,
+                  resource: resource.url,
+                });
+              }
+            }
+            return { resource, cached: false };
+          } finally {
+            window.clearTimeout(timeout);
+          }
+        })();
+
+        themeResourceRequests.set(requestUrl, request);
+        try {
+          return await request;
+        } finally {
+          themeResourceRequests.delete(requestUrl);
+        }
+      }
+
+      async function loadThemeResourceList(pack, resources, options = {}) {
+        const concurrency = Math.max(1, Math.min(6, Number(options.concurrency) || 5));
+        const failures = [];
+        let completed = 0;
+        let cursor = 0;
+        options.onProgress?.({ completed, total: resources.length, failed: 0 });
+
+        async function worker() {
+          while (cursor < resources.length) {
+            const resource = resources[cursor];
+            cursor += 1;
+            try {
+              await loadThemeResource(pack, resource, {
+                prepareForDisplay: options.prepareForDisplay === true,
+              });
+            } catch (error) {
+              failures.push({ resource, error });
+            } finally {
+              completed += 1;
+              options.onProgress?.({ completed, total: resources.length, failed: failures.length });
+            }
+          }
+        }
+
+        await Promise.all(Array.from({ length: Math.min(concurrency, resources.length) }, () => worker()));
+        return { completed, total: resources.length, failures };
+      }
+
+      async function areThemeResourcesCached(resources) {
+        if (!("caches" in window)) return false;
+        const checks = await Promise.all(resources.map((resource) => getCachedThemeResource(resource.url)));
+        return checks.every(Boolean);
+      }
+
+      async function pruneOldThemeCaches(pack) {
+        if (!("caches" in window)) return;
+        try {
+          const keys = await window.caches.keys();
+          await Promise.all(keys
+            .filter((key) => key.startsWith(`real-scene-theme-${pack.id}-`) && key !== pack.cacheName)
+            .map((key) => window.caches.delete(key)));
+        } catch (error) {
+          console.warn("[RSE theme pack] Old cache cleanup failed", { theme: pack.id });
+        }
+      }
+
+      function prepareFullThemePackInBackground(pack) {
+        const requestKey = `${pack.id}:${pack.version}:full`;
+        if (themeResourceRequests.has(requestKey)) return themeResourceRequests.get(requestKey);
+        const request = loadThemeResourceList(pack, pack.resources, { concurrency: 4 })
+          .then(async (result) => {
+            if (result.failures.length) throw new Error(`theme_pack_incomplete_${result.failures.length}`);
+            if (!(await areThemeResourcesCached(pack.resources))) {
+              localStorage.removeItem(getThemePackReadyKey(pack.id));
+              throw new Error("theme_pack_cache_incomplete");
+            }
+            localStorage.setItem(getThemePackReadyKey(pack.id), pack.version);
+            await pruneOldThemeCaches(pack);
+            return result;
+          })
+          .catch((error) => {
+            console.warn("[RSE theme pack] Background preparation incomplete", {
+              theme: pack.id,
+              version: pack.version,
+            });
+            return null;
+          })
+          .finally(() => themeResourceRequests.delete(requestKey));
+        themeResourceRequests.set(requestKey, request);
+        return request;
+      }
 
       function isMobileAudioPreferred() {
         const userAgent = navigator.userAgent || "";
@@ -1334,7 +1551,8 @@
 
       function getMobileAudioUrl(text) {
         if (!isMobileAudioPreferred()) return null;
-        return window.FullMobileAudioUrls?.[text] || null;
+        const audioUrl = window.FullMobileAudioUrls?.[text] || null;
+        return audioUrl ? getPreparedThemeResourceUrl(audioUrl) : null;
       }
 
       const scenes = [
@@ -9824,6 +10042,70 @@
         );
       }
 
+      function getSceneCoverBackground(image, shouldLoadImage) {
+        const source = String(image || "");
+        const urlPattern = /url\((['\"]?)([^'\")]+)\1\)/;
+        const match = source.match(urlPattern);
+        if (!match) return source;
+        if (!shouldLoadImage) return source.replace(/,?\s*url\((['\"]?)([^'\")]+)\1\)/, "");
+        return source.replace(urlPattern, `url('${getPreparedThemeResourceUrl(match[2])}')`);
+      }
+
+      function SceneSelectCover({ scene, sceneIndex, isAvailable }) {
+        const coverRef = useRef(null);
+        const [shouldLoadImage, setShouldLoadImage] = useState(
+          sceneIndex < 2 || !/url\(/.test(String(scene.image || ""))
+        );
+
+        useEffect(() => {
+          if (shouldLoadImage || !coverRef.current) return undefined;
+          if (typeof IntersectionObserver !== "function") {
+            setShouldLoadImage(true);
+            return undefined;
+          }
+          const observer = new IntersectionObserver((entries) => {
+            if (entries.some((entry) => entry.isIntersecting)) {
+              setShouldLoadImage(true);
+              observer.disconnect();
+            }
+          }, { rootMargin: "250px 0px" });
+          observer.observe(coverRef.current);
+          return () => observer.disconnect();
+        }, [shouldLoadImage]);
+
+        return (
+          <div
+            ref={coverRef}
+            data-scene-cover={scene.id}
+            data-cover-loaded={shouldLoadImage ? "true" : "false"}
+            className={`relative mb-5 h-32 overflow-hidden rounded-2xl border border-white/12 bg-cover shadow-[inset_0_-42px_70px_rgba(0,0,0,0.38)] ${
+              isAvailable ? "" : "saturate-[0.72]"
+            }`}
+            style={{
+              backgroundImage: getSceneCoverBackground(scene.image, shouldLoadImage),
+              backgroundPosition: scene.imagePosition,
+              backgroundSize: "cover",
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-white/8 via-transparent to-black/35"></div>
+            <div
+              className="absolute inset-x-0 bottom-0 h-16"
+              style={{
+                background: `linear-gradient(180deg, transparent, rgba(8, 17, 13, 0.72)), radial-gradient(circle at 78% 20%, ${scene.accent}33, transparent 42%)`,
+              }}
+            ></div>
+            <div className="relative flex h-full items-end justify-between gap-3 p-3">
+              <span className="rounded-full border border-white/14 bg-black/28 px-3 py-1 text-[10px] font-black uppercase tracking-[0.14em] text-white/88 backdrop-blur-sm">
+                {scene.visual}
+              </span>
+              <span className="rounded-full bg-black/18 px-3 py-1 text-right text-xs font-bold text-cream/76 backdrop-blur-sm">
+                {scene.visualZh}
+              </span>
+            </div>
+          </div>
+        );
+      }
+
       function LandscapePrompt() {
         return (
           <div className="fixed inset-0 z-[999] flex min-h-screen items-center justify-center overflow-hidden bg-[#101614] px-6 text-center text-white">
@@ -11015,6 +11297,15 @@
         const [currentChapter, setCurrentChapter] = useState(() => initialLearningData.lastScene.chapterId);
         const [sceneSelectHint, setSceneSelectHint] = useState("");
         const [sceneSelectNotice, setSceneSelectNotice] = useState(null);
+        const [themePreparation, setThemePreparation] = useState({
+          themeId: null,
+          status: "idle",
+          completed: 0,
+          total: 0,
+          failed: 0,
+        });
+        const zooPreparationRef = useRef(false);
+        const zooPreparationRunRef = useRef(0);
         const [wordBookReturnView, setWordBookReturnView] = useState("sceneSelect");
         const [wordBookFilter, setWordBookFilter] = useState("all");
         const [isReviewingWordBook, setIsReviewingWordBook] = useState(false);
@@ -12657,6 +12948,114 @@
           setShowEnding(true);
         }
 
+        function getZooCriticalResources(pack) {
+          const targetIndex = currentChapter === "zoo"
+            ? Math.max(0, Math.min(currentIndex, scenes.length - 1))
+            : 0;
+          const criticalSceneIds = new Set(
+            [scenes[targetIndex]?.id, scenes[targetIndex + 1]?.id].filter(Boolean)
+          );
+          return pack.resources.filter((resource) =>
+            resource.categories.includes("cover") ||
+            resource.sceneIds.some((sceneId) => criticalSceneIds.has(sceneId))
+          );
+        }
+
+        async function prepareZooEntry() {
+          if (zooPreparationRef.current) return;
+          const pack = getThemeResourcePack("zoo");
+          if (!pack?.resources?.length) {
+            setThemePreparation({
+              themeId: "zoo",
+              status: "error",
+              completed: 0,
+              total: 0,
+              failed: 1,
+            });
+            return;
+          }
+
+          zooPreparationRef.current = true;
+          const runId = zooPreparationRunRef.current + 1;
+          zooPreparationRunRef.current = runId;
+          const criticalResources = getZooCriticalResources(pack);
+
+          try {
+            const criticalReady = await areThemeResourcesCached(criticalResources);
+            if (criticalReady) {
+              const cachedResult = await loadThemeResourceList(pack, criticalResources, {
+                concurrency: 5,
+                prepareForDisplay: true,
+              });
+              if (cachedResult.failures.length) {
+                throw new Error(`cached_theme_resources_invalid_${cachedResult.failures.length}`);
+              }
+              setThemePreparation({ themeId: null, status: "idle", completed: 0, total: 0, failed: 0 });
+              enterZoo();
+              prepareFullThemePackInBackground(pack);
+              return;
+            }
+
+            setThemePreparation({
+              themeId: "zoo",
+              status: "loading",
+              completed: 0,
+              total: criticalResources.length,
+              failed: 0,
+            });
+            const result = await loadThemeResourceList(pack, criticalResources, {
+              concurrency: 5,
+              prepareForDisplay: true,
+              onProgress: ({ completed, total, failed }) => {
+                if (zooPreparationRunRef.current !== runId) return;
+                setThemePreparation({
+                  themeId: "zoo",
+                  status: "loading",
+                  completed,
+                  total,
+                  failed,
+                });
+              },
+            });
+
+            if (zooPreparationRunRef.current !== runId) return;
+            if (result.failures.length) {
+              setThemePreparation({
+                themeId: "zoo",
+                status: "error",
+                completed: result.completed - result.failures.length,
+                total: result.total,
+                failed: result.failures.length,
+              });
+              return;
+            }
+
+            setThemePreparation({
+              themeId: "zoo",
+              status: "ready",
+              completed: result.total,
+              total: result.total,
+              failed: 0,
+            });
+            await new Promise((resolve) => window.setTimeout(resolve, 220));
+            if (zooPreparationRunRef.current !== runId) return;
+            setThemePreparation({ themeId: null, status: "idle", completed: 0, total: 0, failed: 0 });
+            enterZoo();
+            prepareFullThemePackInBackground(pack);
+          } catch (error) {
+            if (zooPreparationRunRef.current === runId) {
+              setThemePreparation((current) => ({
+                ...current,
+                themeId: "zoo",
+                status: "error",
+                failed: Math.max(1, current.failed || 0),
+              }));
+            }
+          } finally {
+            if (zooPreparationRunRef.current === runId) zooPreparationRef.current = false;
+          }
+        }
+
         function enterZoo() {
           setSceneSelectHint("");
           setCurrentChapter("zoo");
@@ -13114,8 +13513,11 @@
         }
 
         function enterTheme(chapter) {
+          if (chapter === "zoo") {
+            prepareZooEntry();
+            return;
+          }
           const enterByChapter = {
-            zoo: enterZoo,
             fruitShop: enterFruitShop,
             campus: enterCampus,
             cafe: enterCafe,
@@ -14463,6 +14865,9 @@
         }
 
         if (currentView === "sceneSelect") {
+          const preparationPercent = themePreparation.total
+            ? Math.round((themePreparation.completed / themePreparation.total) * 100)
+            : 0;
           return (
             <main className="scene-select-page relative min-h-screen overflow-hidden bg-[#17251c] px-4 py-5 text-cream sm:px-6">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_10%,rgba(255,216,107,0.14),transparent_28%),radial-gradient(circle_at_80%_24%,rgba(139,211,230,0.12),transparent_30%),linear-gradient(145deg,#101f1a_0%,#17251c_52%,#24382f_100%)]"></div>
@@ -14512,7 +14917,7 @@
                 </header>
 
                 <section className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-                  {sceneSelectCards.map((scene) => {
+                  {sceneSelectCards.map((scene, sceneIndex) => {
                     const isUpdateCard = scene.updateCard === true;
                     const hasDeveloperAccess = isDeveloperUser();
                     const hasPremiumAccess = isPremiumUser();
@@ -14546,32 +14951,7 @@
                           : "border-white/18 bg-white/10"
                       }`}
                     >
-                      <div
-                        className={`relative mb-5 h-32 overflow-hidden rounded-2xl border border-white/12 bg-cover shadow-[inset_0_-42px_70px_rgba(0,0,0,0.38)] ${
-                          isAvailable ? "" : "saturate-[0.72]"
-                        }`}
-                        style={{
-                          backgroundImage: scene.image,
-                          backgroundPosition: scene.imagePosition,
-                          backgroundSize: "cover",
-                        }}
-                      >
-                        <div className="absolute inset-0 bg-gradient-to-br from-white/8 via-transparent to-black/35"></div>
-                        <div
-                          className="absolute inset-x-0 bottom-0 h-16"
-                          style={{
-                            background: `linear-gradient(180deg, transparent, rgba(8, 17, 13, 0.72)), radial-gradient(circle at 78% 20%, ${scene.accent}33, transparent 42%)`,
-                          }}
-                        ></div>
-                        <div className="relative flex h-full items-end justify-between gap-3 p-3">
-                          <span className="rounded-full border border-white/14 bg-black/28 px-3 py-1 text-[10px] font-black uppercase tracking-[0.14em] text-white/88 backdrop-blur-sm">
-                            {scene.visual}
-                          </span>
-                          <span className="rounded-full bg-black/18 px-3 py-1 text-right text-xs font-bold text-cream/76 backdrop-blur-sm">
-                            {scene.visualZh}
-                          </span>
-                        </div>
-                      </div>
+                      <SceneSelectCover scene={scene} sceneIndex={sceneIndex} isAvailable={isAvailable} />
                       <div className="flex items-start justify-between gap-3">
                         <div>
                           <h2 className="text-3xl font-black text-white">{isUpdateCard ? scene.zh : scene.title}</h2>
@@ -14615,6 +14995,56 @@
                 {renderFullVersionAccessSummary()}
                 {renderSceneLegalFooter()}
               </div>
+              {themePreparation.themeId === "zoo" && themePreparation.status !== "idle" && (
+                <div
+                  className="fixed inset-0 z-[90] flex items-center justify-center bg-[#0c1712]/90 px-5 backdrop-blur-xl"
+                  role="dialog"
+                  aria-modal="true"
+                  aria-labelledby="zoo-preparation-title"
+                  data-theme-preparation-status={themePreparation.status}
+                >
+                  <div className="dialogue-enter w-full max-w-md rounded-3xl border border-white/16 bg-[#172b22]/96 p-6 text-center text-cream shadow-glow sm:p-8">
+                    <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">Preparing Zoo</p>
+                    <h2 id="zoo-preparation-title" className="mt-3 text-3xl font-black text-white">
+                      正在准备学习场景
+                    </h2>
+                    {themePreparation.status === "error" ? (
+                      <>
+                        <p className="mt-5 text-base font-black text-white">部分学习资源加载失败</p>
+                        <p className="mt-2 text-sm font-bold leading-6 text-cream/72">请检查网络后重试</p>
+                        <button
+                          type="button"
+                          onClick={prepareZooEntry}
+                          className="mt-6 min-h-12 w-full rounded-2xl bg-banana px-5 py-3 font-black text-ink shadow-label transition hover:bg-[#ffc83f] active:scale-[0.99]"
+                        >
+                          <ButtonCopy en="Retry" zh="重新加载" />
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        <p className="mt-5 text-sm font-bold leading-6 text-cream/78">
+                          首次进入需要加载场景图片与语音<br />
+                          完成后本主题将获得更流畅的学习体验
+                        </p>
+                        <div className="mt-6 overflow-hidden rounded-full border border-white/12 bg-black/28 p-1">
+                          <div
+                            className="h-2 rounded-full bg-banana transition-[width] duration-200 ease-out"
+                            style={{ width: `${preparationPercent}%` }}
+                          ></div>
+                        </div>
+                        <div className="mt-4 flex items-center justify-between gap-4 text-sm font-black">
+                          <span className="text-cream/70">
+                            {themePreparation.status === "ready" ? "准备完成" : "正在加载图片与语音…"}
+                          </span>
+                          <span className="text-banana">
+                            {preparationPercent}% · {themePreparation.completed} / {themePreparation.total}
+                          </span>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                </div>
+              )}
               {sceneSelectNotice && (
                 <div className="fixed inset-0 z-[80] flex items-center justify-center bg-black/60 px-4 py-[max(1rem,env(safe-area-inset-top))] backdrop-blur-sm">
                   <div className="dialogue-enter max-h-[calc(100dvh-2rem)] w-full max-w-lg overflow-y-auto rounded-3xl border border-white/16 bg-[#13241e]/96 p-5 text-left text-cream shadow-glow sm:p-6">
@@ -14894,7 +15324,7 @@
             >
               {currentScene.bg ? (
                 <img
-                  src={currentScene.bg}
+                  src={getPreparedThemeResourceUrl(currentScene.bg)}
                   alt={`${currentScene.title} first-person scene`}
                   className={`absolute inset-0 h-full w-full object-cover ${
                     animalEffect?.effect === "roarShake" ? "lion-soft-shake" : ""

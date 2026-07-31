@@ -27,6 +27,7 @@ function audioLookup(source, navigator, map, text = "gate") {
   const runtime = between(source, "      function isMobileAudioPreferred()", "      const scenes = [");
   const context = vm.createContext({
     navigator,
+    getPreparedThemeResourceUrl: (url) => url,
     window: { FullMobileAudioUrls: map, matchMedia: () => ({ matches: false }), screen: { width: 1440 } },
   });
   vm.runInContext(`${runtime}\nglobalThis.lookup = getMobileAudioUrl;`, context);
