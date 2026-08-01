@@ -13,7 +13,6 @@ const APP_SHELL = [
   "./vendor/react-dom.production.min.js",
   "./vendor/babel.min.js",
   "./vendor/tailwind-runtime.js",
-  `./assets/theme-resource-packs.js?v=${THEME_PACK_VERSION}`,
 ];
 
 self.addEventListener("install", (event) => {

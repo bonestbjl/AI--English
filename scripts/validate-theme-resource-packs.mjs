@@ -37,13 +37,14 @@ for (const resource of sourcePack.zoo.resources) {
 
 for (const htmlPath of [resolve(root, "index.html"), resolve(root, "deploy-cn/index.html")]) {
   const html = readFileSync(htmlPath, "utf8");
-  assert(html.includes(`assets/theme-resource-packs.js?v=${expected.version}`), `Stale pack version in ${htmlPath}`);
+  assert(html.includes(`const THEME_RESOURCE_PACKS_SCRIPT_URL = "assets/theme-resource-packs.js?v=${expected.version}";`), `Stale deferred pack URL in ${htmlPath}`);
+  assert(!html.includes(`<script src="assets/theme-resource-packs.js?v=${expected.version}"></script>`), `Theme pack is still parser-blocking in ${htmlPath}`);
 }
 
 for (const serviceWorkerPath of [resolve(root, "service-worker.js"), resolve(root, "deploy-cn/service-worker.js")]) {
   const serviceWorker = readFileSync(serviceWorkerPath, "utf8");
   assert(serviceWorker.includes(`const THEME_PACK_VERSION = ${JSON.stringify(expected.version)};`), `Stale pack version in ${serviceWorkerPath}`);
-  assert(serviceWorker.includes("`./assets/theme-resource-packs.js?v=${THEME_PACK_VERSION}`"), `Theme pack is missing from app shell in ${serviceWorkerPath}`);
+  assert(!serviceWorker.includes("`./assets/theme-resource-packs.js?v=${THEME_PACK_VERSION}`"), `Theme pack must not be installed with the app shell in ${serviceWorkerPath}`);
 }
 
 console.log(JSON.stringify({

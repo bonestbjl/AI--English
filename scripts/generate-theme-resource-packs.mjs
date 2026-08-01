@@ -124,11 +124,11 @@ export function buildZooResourcePack() {
 
 function updateHtmlVersion(htmlPath, version) {
   const source = readFileSync(htmlPath, "utf8");
-  const pattern = /assets\/theme-resource-packs\.js(?:\?v=[^\"]+)?/g;
+  const pattern = /const THEME_RESOURCE_PACKS_SCRIPT_URL = "assets\/theme-resource-packs\.js(?:\?v=[^\"]+)?";/g;
   if (!pattern.test(source)) {
-    throw new Error(`Missing theme resource pack script reference in ${htmlPath}`);
+    throw new Error(`Missing deferred theme resource pack URL in ${htmlPath}`);
   }
-  writeFileSync(htmlPath, source.replace(pattern, `assets/theme-resource-packs.js?v=${version}`));
+  writeFileSync(htmlPath, source.replace(pattern, `const THEME_RESOURCE_PACKS_SCRIPT_URL = "assets/theme-resource-packs.js?v=${version}";`));
 }
 
 function updateServiceWorkerVersion(serviceWorkerPath, version) {

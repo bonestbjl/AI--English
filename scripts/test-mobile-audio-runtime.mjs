@@ -44,6 +44,8 @@ async function speechPath(source, mobileUrl) {
   const context = vm.createContext({
     activeSpeechToken: 0,
     englishVoicesReady: true,
+    isMobileAudioPreferred: () => Boolean(mobileUrl),
+    ensureMobileAudioMapLoaded: async () => true,
     getMobileAudioUrl: () => mobileUrl,
     loadEnglishVoices: () => voice,
     waitForEnglishVoice: async () => voice,
@@ -87,8 +89,9 @@ export async function runRuntimeAudioTests(path = sourcePath) {
   const runtimeMap = loadRuntimeAudioMap();
   const mapVersion = mobileAudioMapVersion(runtimeMap);
   const versionedMapUrl = `${mobileAudioMapPath}?v=${mapVersion}`;
-  const scriptReference = `src="${versionedMapUrl}"`;
-  assert(source.includes(scriptReference) && deploySource.includes(scriptReference), "HTML files do not reference the current versioned mobile audio map.");
+  const scriptReference = `const MOBILE_AUDIO_MAP_SCRIPT_URL = "${versionedMapUrl}";`;
+  assert(source.includes(scriptReference) && deploySource.includes(scriptReference), "HTML files do not reference the current deferred versioned mobile audio map.");
+  assert(!source.includes(`<script src="${versionedMapUrl}"></script>`) && !deploySource.includes(`<script src="${versionedMapUrl}"></script>`), "Mobile audio map is still parser-blocking.");
 
   const previousVersionedUrl = `${mobileAudioMapPath}?v=0000000000000000`;
   const simulatedOldCache = new Map([

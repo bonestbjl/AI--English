@@ -1310,8 +1310,6 @@
     </style>
     <script src="vendor/react.production.min.js"></script>
     <script src="vendor/react-dom.production.min.js"></script>
-    <script src="assets/theme-resource-packs.js?v=zoo-4b7c64d2342b"></script>
-    <script src="assets/audio/full-mobile-audio.js?v=ba0fcbb0b5d9c61e"></script>
     <script src="vendor/babel.min.js"></script>
   </head>
   <body class="bg-[#17251c] text-cream">
@@ -1321,10 +1319,65 @@
       const { useEffect, useMemo, useRef, useState } = React;
 
       let activeLearningAudio = null;
+      const MOBILE_AUDIO_MAP_SCRIPT_URL = "assets/audio/full-mobile-audio.js?v=ba0fcbb0b5d9c61e";
+      const THEME_RESOURCE_PACKS_SCRIPT_URL = "assets/theme-resource-packs.js?v=zoo-4b7c64d2342b";
+      const deferredScriptLoaders = new Map();
       const THEME_PACK_READY_PREFIX = "realSceneThemePackReady:";
       const themeResourceRequests = new Map();
       const themePreparedResourceUrls = new Map();
       let themeResourceUrlLookup = null;
+
+      function ensureDeferredScriptLoaded({ key, src, isReady }) {
+        if (isReady()) return Promise.resolve(true);
+        if (deferredScriptLoaders.has(key)) return deferredScriptLoaders.get(key);
+
+        const request = new Promise((resolve, reject) => {
+          document.querySelectorAll(`script[data-rse-deferred-script="${key}"]`).forEach((script) => script.remove());
+          const script = document.createElement("script");
+          script.src = src;
+          script.async = true;
+          script.dataset.rseDeferredScript = key;
+
+          const fail = (error) => {
+            script.remove();
+            deferredScriptLoaders.delete(key);
+            reject(error);
+          };
+
+          script.onload = () => {
+            if (!isReady()) {
+              fail(new Error(`${key}_script_missing_runtime`));
+              return;
+            }
+            resolve(true);
+          };
+          script.onerror = () => fail(new Error(`${key}_script_load_failed`));
+          document.head.appendChild(script);
+        });
+
+        deferredScriptLoaders.set(key, request);
+        return request;
+      }
+
+      function ensureMobileAudioMapLoaded() {
+        if (!isMobileAudioPreferred()) return Promise.resolve(false);
+        return ensureDeferredScriptLoaded({
+          key: "mobile-audio-map",
+          src: MOBILE_AUDIO_MAP_SCRIPT_URL,
+          isReady: () => Boolean(window.FullMobileAudioUrls),
+        });
+      }
+
+      function ensureThemeResourcePacksLoaded() {
+        return ensureDeferredScriptLoaded({
+          key: "theme-resource-packs",
+          src: THEME_RESOURCE_PACKS_SCRIPT_URL,
+          isReady: () => Boolean(window.RealSceneThemeResourcePacks),
+        }).then(() => {
+          themeResourceUrlLookup = null;
+          return true;
+        });
+      }
 
       function getThemeResourcePack(themeId) {
         return window.RealSceneThemeResourcePacks?.[themeId] || null;
@@ -10042,13 +10095,27 @@
         );
       }
 
-      function getSceneCoverBackground(image, shouldLoadImage) {
+      function getSceneCoverBackground(image, shouldLoadImage, themeId) {
         const source = String(image || "");
         const urlPattern = /url\((['\"]?)([^'\")]+)\1\)/;
         const match = source.match(urlPattern);
         if (!match) return source;
         if (!shouldLoadImage) return source.replace(/,?\s*url\((['\"]?)([^'\")]+)\1\)/, "");
-        return source.replace(urlPattern, `url('${getPreparedThemeResourceUrl(match[2])}')`);
+        let resourceUrl = match[2];
+        if (themeId === "zoo" && !getThemeResourcePack("zoo")) {
+          try {
+            const version = new URL(THEME_RESOURCE_PACKS_SCRIPT_URL, document.baseURI).searchParams.get("v");
+            if (version) {
+              const separator = resourceUrl.includes("?") ? "&" : "?";
+              resourceUrl = `${resourceUrl}${separator}theme-pack=${encodeURIComponent(version)}`;
+            }
+          } catch (error) {
+            // The unversioned cover remains a safe fallback when URL parsing is unavailable.
+          }
+        } else {
+          resourceUrl = getPreparedThemeResourceUrl(resourceUrl);
+        }
+        return source.replace(urlPattern, `url('${resourceUrl}')`);
       }
 
       function SceneSelectCover({ scene, sceneIndex, isAvailable }) {
@@ -10082,7 +10149,7 @@
               isAvailable ? "" : "saturate-[0.72]"
             }`}
             style={{
-              backgroundImage: getSceneCoverBackground(scene.image, shouldLoadImage),
+              backgroundImage: getSceneCoverBackground(scene.image, shouldLoadImage, scene.chapter),
               backgroundPosition: scene.imagePosition,
               backgroundSize: "cover",
             }}
@@ -12351,10 +12418,17 @@
         const endingSavedWords = isLaundryChapter ? laundryEndingSavedWords : savedWords;
 
         async function speakEnglish(text, rate = 0.9, key = text, skipMobileAudio = false) {
-          const audioUrl = !skipMobileAudio && getMobileAudioUrl(text);
-          if (audioUrl) {
-            playLearningAudio({ text, audioUrl, rate, key });
-            return;
+          if (!skipMobileAudio && isMobileAudioPreferred()) {
+            try {
+              await ensureMobileAudioMapLoaded();
+            } catch (error) {
+              // Preserve the existing speech fallback and allow the next click to retry the map.
+            }
+            const audioUrl = getMobileAudioUrl(text);
+            if (audioUrl) {
+              playLearningAudio({ text, audioUrl, rate, key });
+              return;
+            }
           }
           if (!("speechSynthesis" in window)) return;
           const speechToken = activeSpeechToken + 1;
@@ -12622,6 +12696,7 @@
         }
 
         function openWordBook(returnView = currentView) {
+          if (isMobileAudioPreferred()) ensureMobileAudioMapLoaded().catch(() => {});
           setWordBookReturnView(returnView);
           setSelectedHotspot(null);
           setSelectedMoreAnimal(null);
@@ -12963,30 +13038,24 @@
 
         async function prepareZooEntry() {
           if (zooPreparationRef.current) return;
-          const pack = getThemeResourcePack("zoo");
-          if (!pack?.resources?.length) {
-            setThemePreparation({
-              themeId: "zoo",
-              status: "error",
-              completed: 0,
-              total: 0,
-              failed: 1,
-            });
-            return;
-          }
-
           zooPreparationRef.current = true;
           const runId = zooPreparationRunRef.current + 1;
           zooPreparationRunRef.current = runId;
-          const criticalResources = getZooCriticalResources(pack);
 
           try {
+            await ensureThemeResourcePacksLoaded();
+            const pack = getThemeResourcePack("zoo");
+            if (!pack?.resources?.length) throw new Error("zoo_theme_pack_missing");
+            const criticalResources = getZooCriticalResources(pack);
             const criticalReady = await areThemeResourcesCached(criticalResources);
             if (criticalReady) {
-              const cachedResult = await loadThemeResourceList(pack, criticalResources, {
-                concurrency: 5,
-                prepareForDisplay: true,
-              });
+              const [cachedResult] = await Promise.all([
+                loadThemeResourceList(pack, criticalResources, {
+                  concurrency: 5,
+                  prepareForDisplay: true,
+                }),
+                isMobileAudioPreferred() ? ensureMobileAudioMapLoaded() : Promise.resolve(false),
+              ]);
               if (cachedResult.failures.length) {
                 throw new Error(`cached_theme_resources_invalid_${cachedResult.failures.length}`);
               }
@@ -13003,20 +13072,23 @@
               total: criticalResources.length,
               failed: 0,
             });
-            const result = await loadThemeResourceList(pack, criticalResources, {
-              concurrency: 5,
-              prepareForDisplay: true,
-              onProgress: ({ completed, total, failed }) => {
-                if (zooPreparationRunRef.current !== runId) return;
-                setThemePreparation({
-                  themeId: "zoo",
-                  status: "loading",
-                  completed,
-                  total,
-                  failed,
-                });
-              },
-            });
+            const [result] = await Promise.all([
+              loadThemeResourceList(pack, criticalResources, {
+                concurrency: 5,
+                prepareForDisplay: true,
+                onProgress: ({ completed, total, failed }) => {
+                  if (zooPreparationRunRef.current !== runId) return;
+                  setThemePreparation({
+                    themeId: "zoo",
+                    status: "loading",
+                    completed,
+                    total,
+                    failed,
+                  });
+                },
+              }),
+              isMobileAudioPreferred() ? ensureMobileAudioMapLoaded() : Promise.resolve(false),
+            ]);
 
             if (zooPreparationRunRef.current !== runId) return;
             if (result.failures.length) {
@@ -13512,7 +13584,7 @@
           setCurrentView("zoo");
         }
 
-        function enterTheme(chapter) {
+        async function enterTheme(chapter) {
           if (chapter === "zoo") {
             prepareZooEntry();
             return;
@@ -13532,6 +13604,16 @@
             apartment: enterApartment,
             laundry: enterLaundry,
           };
+          if (!enterByChapter[chapter]) return;
+          if (isMobileAudioPreferred()) {
+            setSceneSelectHint("正在准备学习语音…");
+            try {
+              await ensureMobileAudioMapLoaded();
+            } catch (error) {
+              setSceneSelectHint("语音资源加载失败，请检查网络后重试。");
+              return;
+            }
+          }
           enterByChapter[chapter]?.();
         }
 

@@ -351,16 +351,16 @@ export function writeRuntimeAudioMaps(manifest) {
     resolve(root, mobileAudioMapPath),
     resolve(root, `deploy-cn/${mobileAudioMapPath}`),
   ];
-  const scriptTagPattern = /<script src="assets\/audio\/full-mobile-audio\.js(?:\?v=[a-f0-9]+)?"><\/script>/g;
+  const scriptUrlPattern = /const MOBILE_AUDIO_MAP_SCRIPT_URL = "assets\/audio\/full-mobile-audio\.js(?:\?v=[a-f0-9]+)?";/g;
   const htmlOutputs = [sourcePath, deploySourcePath].map((path) => {
     const source = readFileSync(path, "utf8");
     let replacements = 0;
-    const updated = source.replace(scriptTagPattern, () => {
+    const updated = source.replace(scriptUrlPattern, () => {
       replacements += 1;
-      return `<script src="${mobileAudioMapPath}?v=${version}"></script>`;
+      return `const MOBILE_AUDIO_MAP_SCRIPT_URL = "${mobileAudioMapPath}?v=${version}";`;
     });
     if (replacements !== 1) {
-      throw new Error(`Expected one mobile audio map script tag in ${path.replace(`${root}/`, "")}; found ${replacements}.`);
+      throw new Error(`Expected one deferred mobile audio map URL in ${path.replace(`${root}/`, "")}; found ${replacements}.`);
     }
     return { path, updated };
   });

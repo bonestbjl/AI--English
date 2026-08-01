@@ -184,10 +184,13 @@ function sourceChecks(issues) {
   } else {
     const runtimeMap = loadRuntimeAudioMap(mapSource);
     const version = mobileAudioMapVersion(runtimeMap);
-    const versionedReference = `src="${mobileAudioMapPath}?v=${version}"`;
+    const versionedReference = `const MOBILE_AUDIO_MAP_SCRIPT_URL = "${mobileAudioMapPath}?v=${version}";`;
     const mapVersionMarker = `window.FullMobileAudioMapVersion = ${JSON.stringify(version)};`;
     if (!source.includes(versionedReference) || !deploy.includes(versionedReference)) {
-      issues.push("HTML files do not reference the current content-versioned mobile audio map.");
+      issues.push("HTML files do not reference the current deferred content-versioned mobile audio map.");
+    }
+    if (source.includes(`<script src="${mobileAudioMapPath}?v=${version}"></script>`) || deploy.includes(`<script src="${mobileAudioMapPath}?v=${version}"></script>`)) {
+      issues.push("Mobile audio map is still parser-blocking.");
     }
     if (!readFileSync(mapSource, "utf8").includes(mapVersionMarker)) {
       issues.push("Mobile audio map version marker does not match its content hash.");
