@@ -10329,6 +10329,7 @@
       }
 
       const AUTH_STORAGE_KEY = "realSceneEnglishUser";
+      const ALIPAY_PENDING_ORDER_STORAGE_KEY = "realSceneEnglishPendingAlipayOrder";
       const PAYMENT_PLANS = {
         monthly: {
           plan: "monthly",
@@ -10523,11 +10524,49 @@
         return messages[errorCode] || messages.server_error;
       }
 
-      async function createFullVersionOrder(phone, plan = "monthly") {
-        const response = await fetch("/api/create-order", {
+      function savePendingAlipayOrder(order, user) {
+        if (typeof window === "undefined" || !order?.orderNo || !user?.phone) return;
+        try {
+          window.localStorage.setItem(ALIPAY_PENDING_ORDER_STORAGE_KEY, JSON.stringify({
+            orderNo: order.orderNo,
+            planId: order.planId || order.plan || "",
+            phone: user.phone,
+            createdAt: Date.now(),
+          }));
+        } catch (error) {}
+      }
+
+      function getPendingAlipayOrder(user) {
+        if (typeof window === "undefined" || !user?.phone) return null;
+        try {
+          const saved = JSON.parse(window.localStorage.getItem(ALIPAY_PENDING_ORDER_STORAGE_KEY) || "null");
+          if (!saved?.orderNo || saved.phone !== user.phone || !/^RSE\d{20,40}$/.test(saved.orderNo)) return null;
+          return saved;
+        } catch (error) {
+          return null;
+        }
+      }
+
+      function clearPendingAlipayOrder(orderNo = "") {
+        if (typeof window === "undefined") return;
+        try {
+          const current = JSON.parse(window.localStorage.getItem(ALIPAY_PENDING_ORDER_STORAGE_KEY) || "null");
+          if (!orderNo || current?.orderNo === orderNo) window.localStorage.removeItem(ALIPAY_PENDING_ORDER_STORAGE_KEY);
+        } catch (error) {
+          window.localStorage.removeItem(ALIPAY_PENDING_ORDER_STORAGE_KEY);
+        }
+      }
+
+      async function createFullVersionOrder(user, planId = "monthly") {
+        const authToken = String(user?.authToken || user?.auth_token || "").trim();
+        if (!authToken) throw new Error("unauthorized");
+        const response = await fetch("/api/alipay/create-order", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ phone, plan }),
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${authToken}`,
+          },
+          body: JSON.stringify({ planId }),
         });
         let data = null;
         try {
@@ -10535,21 +10574,22 @@
         } catch (error) {
           data = null;
         }
-        if (!response.ok || data?.ok !== true || !data.order) {
-          const orderError = new Error(data?.error || "create_order_failed");
+        if (!response.ok || data?.ok !== true || !data.order || !data.paymentUrl) {
+          const orderError = new Error(data?.error || "alipay_create_order_failed");
           orderError.status = response.status;
           orderError.detail = data?.detail || "";
+          orderError.data = data;
           throw orderError;
         }
-        return data.order;
+        return { ...data.order, paymentUrl: data.paymentUrl };
       }
 
-      async function queryAlipayOrderStatus(request) {
-        const payload = typeof request === "string" ? { orderNo: request } : request || {};
-        const response = await fetch("/api/alipay-query-order", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
+      async function queryAlipayOrderStatus(orderNo, user) {
+        const authToken = String(user?.authToken || user?.auth_token || "").trim();
+        if (!authToken) throw new Error("unauthorized");
+        const response = await fetch(`/api/alipay/order-status?outTradeNo=${encodeURIComponent(orderNo)}`, {
+          method: "GET",
+          headers: { Authorization: `Bearer ${authToken}` },
         });
         let data = null;
         try {
@@ -10558,7 +10598,7 @@
           data = null;
         }
         if (!response.ok) {
-          const queryError = new Error(data?.error || "alipay_query_order_failed");
+          const queryError = new Error(data?.error || "alipay_order_status_failed");
           queryError.status = response.status;
           queryError.detail = data?.detail || "";
           queryError.data = data;
@@ -11502,9 +11542,23 @@
 
         useEffect(() => {
           const params = new URLSearchParams(window.location.search);
-          const orderNo = String(params.get("out_trade_no") || params.get("orderNo") || "").trim();
-          const isPaymentReturn = params.get("payment_return") === "1" || Boolean(params.get("out_trade_no"));
-          if (!isPaymentReturn || !/^RSE\d{10,40}$/.test(orderNo)) return;
+          const paymentState = String(params.get("payment") || "").trim();
+          const pendingOrder = getPendingAlipayOrder(currentUser);
+          const orderNo = String(params.get("out_trade_no") || params.get("orderNo") || pendingOrder?.orderNo || "").trim();
+          if (paymentState === "cancel") {
+            setCurrentView("sceneSelect");
+            setSceneSelectNotice({
+              kind: "subscription",
+              title: "支付已取消",
+              en: "Payment Cancelled",
+              text: "本次支付没有完成，你的会员状态没有变化。",
+              detail: "你可以稍后重新选择套餐并发起支付。",
+            });
+            setSubscriptionOrder({ status: "cancelled", order: /^RSE\d{20,40}$/.test(orderNo) ? { orderNo } : null });
+            if (window.history?.replaceState) window.history.replaceState({}, document.title, window.location.pathname);
+            return;
+          }
+          if (paymentState !== "return" || !/^RSE\d{20,40}$/.test(orderNo)) return;
 
           setCurrentView("sceneSelect");
           setSceneSelectNotice({
@@ -13834,46 +13888,65 @@
           }
           setSubscriptionOrder({ status: "loading", message: "正在创建订单…" });
           try {
-            const order = await createFullVersionOrder(currentUser.phone, selectedPaymentPlan);
+            const order = await createFullVersionOrder(currentUser, selectedPaymentPlan);
+            savePendingAlipayOrder(order, currentUser);
             setSubscriptionOrder({ status: "created", order });
+            const isWechatBrowser = /MicroMessenger/i.test(navigator.userAgent || "");
+            if (!isWechatBrowser) {
+              window.setTimeout(() => {
+                window.location.assign(order.paymentUrl);
+              }, 250);
+            } else {
+              setSubscriptionOrder({
+                status: "created",
+                order,
+                message: "微信内置浏览器可能无法直接打开支付宝，请点击下方按钮，并按页面提示在浏览器中继续。",
+              });
+            }
           } catch (error) {
+            const isDisabled = error.message === "alipay_not_enabled";
+            const isUnauthorized = error.message === "unauthorized";
             setSubscriptionOrder({
               status: "error",
-              message: error.detail
+              message: isDisabled
+                ? "支付宝支付正在审核，暂未开放。"
+                : isUnauthorized
+                ? "登录状态已失效，请重新登录后再购买。"
+                : error.detail
                 ? `订单创建失败：${error.detail}`
-                : "订单接口仅在线上环境可用，请部署后测试。",
+                : "订单创建失败，请稍后重试。",
             });
           }
         }
 
-        function handleAlipaySandboxPayment() {
-          const orderNo = subscriptionOrder.order?.orderNo;
-          if (!orderNo) {
-            setSubscriptionOrder({ status: "error", message: "请先创建订单，再前往支付宝沙箱支付。" });
+        function handleAlipayPayment() {
+          const order = subscriptionOrder.order;
+          if (!order?.orderNo || !order?.paymentUrl) {
+            setSubscriptionOrder({ status: "error", message: "支付链接不可用，请重新创建订单。" });
             return;
           }
           setSubscriptionOrder((current) => ({
             ...current,
             status: "created",
-            order: current.order || { orderNo },
-            message: "正在打开支付宝支付页面... 如果页面没有跳转，请稍后重试。",
+            message: "正在打开支付宝支付页面...",
           }));
           window.setTimeout(() => {
-            window.location.href = `/api/alipay-create-payment?orderNo=${encodeURIComponent(orderNo)}`;
-          }, 300);
+            window.location.assign(order.paymentUrl);
+          }, 150);
         }
 
         function isValidOrderNo(value) {
-          return /^RSE\d{10,}$/.test(String(value || "").trim());
+          return /^RSE\d{20,40}$/.test(String(value || "").trim());
         }
 
         async function handleCheckPaymentStatus(orderNo = subscriptionOrder.order?.orderNo, { fromReturn = false } = {}) {
-          const cleanOrderNo = String(orderNo || "").trim();
+          const pendingOrder = getPendingAlipayOrder(currentUser);
+          const cleanOrderNo = String(orderNo || pendingOrder?.orderNo || "").trim();
           const hasValidOrderNo = isValidOrderNo(cleanOrderNo);
-          if (!hasValidOrderNo && !currentUser?.phone) {
+          if (!currentUser || !hasValidOrderNo) {
             setSubscriptionOrder({
               status: "not_confirmed",
-              message: "请先登录手机号，再检查开通状态。",
+              message: currentUser ? "没有可检查的支付订单，请先选择套餐。" : "请先登录手机号，再检查开通状态。",
             });
             return;
           }
@@ -13884,29 +13957,31 @@
             detail: "请不要关闭页面，系统正在向支付宝确认订单状态。",
           });
           try {
-            const result = await queryAlipayOrderStatus(
-              hasValidOrderNo
-                ? { orderNo: cleanOrderNo }
-                : { phone: currentUser.phone, repairLatestPaid: 1 }
-            );
-            if (result.paid) {
-              const premiumUntil = result.premiumUntil || result.premium_until || null;
-              const lifetimeAccess = result.lifetimeAccess === true || result.lifetime_access === true || result.plan === "lifetime";
-              if (currentUser) {
-                const upgradedUser = setCurrentUser({
-                  ...currentUser,
-                  role: "premium",
-                  plan: lifetimeAccess ? "lifetime" : result.plan || "monthly",
-                  premiumUntil,
-                  lifetimeAccess,
-                  planSource: "alipay_query_paid",
+            const delays = fromReturn ? [0, 1200, 1800, 2600, 3600, 4800, 6000, 7500] : [0];
+            let result = null;
+            for (const delay of delays) {
+              if (delay) await new Promise((resolve) => window.setTimeout(resolve, delay));
+              result = await queryAlipayOrderStatus(cleanOrderNo, currentUser);
+              if ((result.paid && result.membershipGranted) || result.status !== "pending") break;
+            }
+            if (result?.paid && result.membershipGranted) {
+              const syncedUser = await syncUserPlan(currentUser, { silent: true });
+              const premiumUntil = syncedUser?.premiumUntil || null;
+              const lifetimeAccess = syncedUser?.lifetimeAccess === true || syncedUser?.plan === "lifetime";
+              const hasSyncedAccess = lifetimeAccess || isFutureDate(premiumUntil) || syncedUser?.role === "developer";
+              if (!hasSyncedAccess) {
+                setSubscriptionOrder({
+                  status: "not_confirmed",
+                  order: { orderNo: result.orderNo || cleanOrderNo, status: "paid" },
+                  message: "支付已确认，会员状态正在同步，请稍后重新检查。",
                 });
-                if (upgradedUser) setAuthenticatedUser(upgradedUser);
+                return;
               }
+              clearPendingAlipayOrder(cleanOrderNo);
               setSubscriptionOrder({
                 status: "paid",
-                order: { orderNo: result.orderNo || cleanOrderNo, status: "paid" },
-                user: { phone: result.phone || currentUser?.phone, role: "premium", plan: lifetimeAccess ? "lifetime" : "monthly" },
+                order: { orderNo: result.orderNo || cleanOrderNo, status: "paid", plan: result.planId },
+                user: { phone: currentUser.phone, role: syncedUser?.role || "premium", plan: syncedUser?.plan || result.planId },
                 premiumUntil,
                 lifetimeAccess,
                 message: lifetimeAccess
@@ -13916,21 +13991,26 @@
                   : "当前账号已升级为 Premium，30 天完整版权限已开放。",
               });
               showAuthToast(lifetimeAccess ? "支付成功，终身版已开通。" : "支付成功，月卡已开通。");
+            } else if (result?.status && result.status !== "pending") {
+              setSubscriptionOrder({
+                status: result.status === "cancelled" ? "cancelled" : "error",
+                order: { orderNo: cleanOrderNo, status: result.status },
+                message: result.status === "cancelled" ? "本次支付已取消。" : "订单未完成支付，请重新选择套餐。",
+              });
             } else {
               setSubscriptionOrder({
                 status: "not_confirmed",
-                order: result.orderNo || cleanOrderNo ? { orderNo: result.orderNo || cleanOrderNo } : null,
-                tradeStatus: result.tradeStatus || "",
-                message: result.message || (result.tradeStatus === "WAIT_BUYER_PAY"
-                  ? "如果你已经完成支付，请稍等几秒后点击重新检查。"
-                  : "支付还在确认中，请稍后点击重新检查。"),
+                order: { orderNo: result?.orderNo || cleanOrderNo },
+                message: "支付结果处理中，请稍后点击重新检查。",
               });
             }
           } catch (error) {
             setSubscriptionOrder({
               status: "not_confirmed",
               order: cleanOrderNo ? { orderNo: cleanOrderNo } : null,
-              message: error.data?.message || "支付还在确认中，请稍后点击重新检查。",
+              message: error.message === "unauthorized"
+                ? "登录状态已失效，请重新登录后检查订单。"
+                : "支付结果处理中，请稍后点击重新检查。",
             });
           } finally {
             if (fromReturn && window.history?.replaceState) {
@@ -15276,19 +15356,19 @@
                                 <p><span className="text-cream/52">状态：</span>{subscriptionOrder.tradeStatus === "WAIT_BUYER_PAY" ? "等待付款确认" : "待支付"}</p>
                               </div>
                               <p className="mt-3 text-sm font-bold leading-6 text-cream/62">
-                                支付完成后请回到网站，系统会向支付宝确认订单状态。
+                                支付完成后请回到网站，系统会等待异步通知并确认本地订单状态。
                               </p>
                               <p className="mt-2 rounded-xl border border-white/12 bg-white/[0.06] px-3 py-2 text-xs font-bold leading-5 text-cream/62">
-                                电脑端可继续浏览器付款；手机端会尝试唤起支付宝 App，如果没有跳转，请选择继续浏览器付款。
+                                微信内置浏览器可能无法直接唤起支付宝；如未跳转，请使用系统浏览器打开并继续支付。
                               </p>
                               <button
-                                onClick={handleAlipaySandboxPayment}
+                                onClick={handleAlipayPayment}
                                 className="mt-4 w-full rounded-2xl bg-banana px-4 py-3 text-sm font-black text-ink shadow-label transition hover:bg-[#ffc83f] active:scale-[0.99]"
                               >
-                                支付宝沙箱支付
+                                继续前往支付宝支付
                               </button>
                               <p className="mt-2 text-center text-xs font-bold text-cream/48">
-                                测试环境，不会真实扣款。支付完成后请返回网站查看开通状态。
+                                支付结果以服务器收到并验签通过的支付宝异步通知为准。
                               </p>
                               <button
                                 onClick={() => handleCheckPaymentStatus(subscriptionOrder.order.orderNo)}
@@ -15311,6 +15391,13 @@
                               {subscriptionOrder.order?.orderNo && (
                                 <p className="mt-2 text-xs font-bold text-cream/52">订单号：{subscriptionOrder.order.orderNo}</p>
                               )}
+                            </div>
+                          ) : subscriptionOrder.status === "cancelled" ? (
+                            <div className="rounded-2xl border border-white/16 bg-white/[0.06] px-4 py-3">
+                              <p className="text-base font-black text-white">支付已取消</p>
+                              <p className="mt-2 text-sm font-bold leading-6 text-cream/70">
+                                本次支付没有完成，会员状态没有变化。
+                              </p>
                             </div>
                           ) : subscriptionOrder.status === "loading" ? (
                             <p className="text-sm font-black text-banana">正在创建订单…</p>
@@ -15338,7 +15425,7 @@
                             </p>
                           ) : (
                             <p className="text-sm font-bold leading-6 text-cream/62">
-                              点击立即解锁后会创建一笔待支付订单；本阶段不会自动升级 Premium。
+                              点击购买后将创建待支付订单并前往支付宝；支付确认后系统自动开通对应权限。
                             </p>
                           )}
                         </div>
@@ -15379,7 +15466,7 @@
                     </div>
                     <p className="mt-3 text-center text-xs font-bold text-cream/50">
                       {sceneSelectNotice.kind === "subscription"
-                        ? "支付成功后会自动确认并开通 30 天 Premium / Full Access。"
+                        ? `支付成功后会自动确认并开通${selectedPaymentPlan === "lifetime" ? "终身版" : " 30 天月卡"} Premium / Full Access。`
                         : "更多真实生活场景会持续加入。"}
                     </p>
                   </div>
