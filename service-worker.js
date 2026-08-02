@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "real-scene-root";
-const THEME_PACK_VERSION = "zoo-4b7c64d2342b";
+const THEME_PACK_VERSION = "themes-c940b01c395d";
 const CACHE_VERSION = `v1-${THEME_PACK_VERSION}`;
 const APP_CACHE = `${CACHE_PREFIX}-${CACHE_VERSION}`;
 const INDEX_URL = new URL("./index.html", self.registration.scope).href;

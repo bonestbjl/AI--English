@@ -1320,12 +1320,13 @@
 
       let activeLearningAudio = null;
       const MOBILE_AUDIO_MAP_SCRIPT_URL = "assets/audio/full-mobile-audio.js?v=ba0fcbb0b5d9c61e";
-      const THEME_RESOURCE_PACKS_SCRIPT_URL = "assets/theme-resource-packs.js?v=zoo-4b7c64d2342b";
+      const THEME_RESOURCE_PACKS_SCRIPT_URL = "assets/theme-resource-packs.js?v=themes-c940b01c395d";
       const deferredScriptLoaders = new Map();
       const THEME_PACK_READY_PREFIX = "realSceneThemePackReady:";
       const themeResourceRequests = new Map();
       const themePreparedResourceUrls = new Map();
       let themeResourceUrlLookup = null;
+      let activeThemeResourcePackId = null;
 
       function ensureDeferredScriptLoaded({ key, src, isReady }) {
         if (isReady()) return Promise.resolve(true);
@@ -1368,11 +1369,19 @@
         });
       }
 
-      function ensureThemeResourcePacksLoaded() {
+      function ensureThemeResourcePacksLoaded(themeId) {
         return ensureDeferredScriptLoaded({
-          key: "theme-resource-packs",
+          key: "theme-resource-pack-index",
           src: THEME_RESOURCE_PACKS_SCRIPT_URL,
-          isReady: () => Boolean(window.RealSceneThemeResourcePacks),
+          isReady: () => Boolean(window.RealSceneThemeResourcePackScripts),
+        }).then(() => {
+          const src = window.RealSceneThemeResourcePackScripts?.[themeId];
+          if (!src) throw new Error(`${themeId}_theme_pack_not_registered`);
+          return ensureDeferredScriptLoaded({
+            key: `theme-resource-pack:${themeId}`,
+            src,
+            isReady: () => Boolean(window.RealSceneThemeResourcePacks?.[themeId]),
+          });
         }).then(() => {
           themeResourceUrlLookup = null;
           return true;
@@ -1388,43 +1397,91 @@
         themeResourceUrlLookup = new Map();
         Object.values(window.RealSceneThemeResourcePacks || {}).forEach((pack) => {
           (pack.resources || []).forEach((resource) => {
-            themeResourceUrlLookup.set(resource.url, { pack, resource });
+            if (!themeResourceUrlLookup.has(resource.url)) themeResourceUrlLookup.set(resource.url, new Map());
+            themeResourceUrlLookup.get(resource.url).set(pack.id, { pack, resource });
           });
         });
         return themeResourceUrlLookup;
       }
 
-      function getVersionedThemeResourceUrl(resourceUrl) {
-        const entry = getThemeResourceLookup().get(resourceUrl);
+      function getThemeResourceEntry(resourceUrl, themeId = activeThemeResourcePackId) {
+        const entries = getThemeResourceLookup().get(resourceUrl);
+        return entries?.get(themeId) || entries?.values().next().value || null;
+      }
+
+      function getVersionedThemeResourceUrl(resourceUrl, themeId = activeThemeResourcePackId) {
+        const entry = getThemeResourceEntry(resourceUrl, themeId);
         if (!entry) return resourceUrl;
         const separator = resourceUrl.includes("?") ? "&" : "?";
         return `${resourceUrl}${separator}theme-pack=${encodeURIComponent(entry.pack.version)}`;
       }
 
-      function setPreparedThemeResourceUrl(resourceUrl, objectUrl) {
-        const previous = themePreparedResourceUrls.get(resourceUrl);
+      function getPreparedThemeResourceKey(pack, resourceUrl) {
+        return `${pack.id}:${pack.version}:${resourceUrl}`;
+      }
+
+      function setPreparedThemeResourceUrl(pack, resourceUrl, objectUrl) {
+        const key = getPreparedThemeResourceKey(pack, resourceUrl);
+        const previous = themePreparedResourceUrls.get(key);
         if (previous && previous !== objectUrl) URL.revokeObjectURL(previous);
-        themePreparedResourceUrls.set(resourceUrl, objectUrl);
+        themePreparedResourceUrls.set(key, objectUrl);
       }
 
       function getPreparedThemeResourceUrl(resourceUrl) {
-        return themePreparedResourceUrls.get(resourceUrl) || getVersionedThemeResourceUrl(resourceUrl);
+        const entry = getThemeResourceEntry(resourceUrl);
+        if (!entry) return resourceUrl;
+        return themePreparedResourceUrls.get(getPreparedThemeResourceKey(entry.pack, resourceUrl)) ||
+          getVersionedThemeResourceUrl(resourceUrl, entry.pack.id);
       }
 
-      function getThemePackReadyKey(themeId) {
-        return `${THEME_PACK_READY_PREFIX}${themeId}`;
+      function getThemePackReadyKey(themeId, version) {
+        return `${THEME_PACK_READY_PREFIX}${themeId}:${version}`;
       }
 
-      async function getCachedThemeResource(resourceUrl) {
+      function clearThemePackReadyMarkers(pack) {
+        const prefix = `${THEME_PACK_READY_PREFIX}${pack.id}:`;
+        try {
+          for (let index = localStorage.length - 1; index >= 0; index -= 1) {
+            const key = localStorage.key(index);
+            if (key?.startsWith(prefix) && key !== getThemePackReadyKey(pack.id, pack.version)) {
+              localStorage.removeItem(key);
+            }
+          }
+          localStorage.removeItem(`${THEME_PACK_READY_PREFIX}${pack.id}`);
+        } catch (error) {
+          // Cache Storage remains authoritative when localStorage is unavailable.
+        }
+      }
+
+      function setThemePackReady(pack, ready) {
+        clearThemePackReadyMarkers(pack);
+        try {
+          const key = getThemePackReadyKey(pack.id, pack.version);
+          if (ready) localStorage.setItem(key, "complete");
+          else localStorage.removeItem(key);
+        } catch (error) {
+          // A storage marker is only an optimization; resources are verified below.
+        }
+      }
+
+      function hasThemePackReadyMarker(pack) {
+        try {
+          return localStorage.getItem(getThemePackReadyKey(pack.id, pack.version)) === "complete";
+        } catch (error) {
+          return false;
+        }
+      }
+
+      async function getCachedThemeResource(pack, resource) {
         if (!("caches" in window)) return null;
         try {
-          return await window.caches.match(getVersionedThemeResourceUrl(resourceUrl));
+          return await window.caches.match(getVersionedThemeResourceUrl(resource.url, pack.id));
         } catch (error) {
           return null;
         }
       }
 
-      async function decodeThemeImage(response, resourceUrl, keepObjectUrl) {
+      async function decodeThemeImage(response, pack, resourceUrl, keepObjectUrl) {
         if (typeof Image !== "function" || !("createObjectURL" in URL)) {
           await response.arrayBuffer();
           return;
@@ -1443,7 +1500,7 @@
             });
           }
           if (keepObjectUrl) {
-            setPreparedThemeResourceUrl(resourceUrl, objectUrl);
+            setPreparedThemeResourceUrl(pack, resourceUrl, objectUrl);
             retained = true;
           }
         } finally {
@@ -1451,13 +1508,13 @@
         }
       }
 
-      async function consumeThemeResource(response, resource, keepObjectUrl) {
+      async function consumeThemeResource(response, pack, resource, keepObjectUrl) {
         if (resource.type === "image") {
-          await decodeThemeImage(response, resource.url, keepObjectUrl);
+          await decodeThemeImage(response, pack, resource.url, keepObjectUrl);
           return;
         }
         if (keepObjectUrl && "createObjectURL" in URL) {
-          setPreparedThemeResourceUrl(resource.url, URL.createObjectURL(await response.blob()));
+          setPreparedThemeResourceUrl(pack, resource.url, URL.createObjectURL(await response.blob()));
           return;
         }
         await response.arrayBuffer();
@@ -1466,11 +1523,11 @@
       async function loadThemeResource(pack, resource, options = {}) {
         const timeoutMs = options.timeoutMs || 20000;
         const keepObjectUrl = options.prepareForDisplay === true;
-        const requestUrl = getVersionedThemeResourceUrl(resource.url);
-        const cached = await getCachedThemeResource(resource.url);
+        const requestUrl = getVersionedThemeResourceUrl(resource.url, pack.id);
+        const cached = await getCachedThemeResource(pack, resource);
         if (cached) {
           try {
-            if (keepObjectUrl) await consumeThemeResource(cached.clone(), resource, true);
+            if (keepObjectUrl) await consumeThemeResource(cached.clone(), pack, resource, true);
             return { resource, cached: true };
           } catch (error) {
             try {
@@ -1493,7 +1550,7 @@
             });
             if (!response.ok) throw new Error(`resource_http_${response.status}`);
             const cacheResponse = response.clone();
-            await consumeThemeResource(response, resource, keepObjectUrl);
+            await consumeThemeResource(response, pack, resource, keepObjectUrl);
             if ("caches" in window) {
               try {
                 const cache = await window.caches.open(pack.cacheName);
@@ -1547,9 +1604,9 @@
         return { completed, total: resources.length, failures };
       }
 
-      async function areThemeResourcesCached(resources) {
+      async function areThemeResourcesCached(pack, resources) {
         if (!("caches" in window)) return false;
-        const checks = await Promise.all(resources.map((resource) => getCachedThemeResource(resource.url)));
+        const checks = await Promise.all(resources.map((resource) => getCachedThemeResource(pack, resource)));
         return checks.every(Boolean);
       }
 
@@ -1571,11 +1628,11 @@
         const request = loadThemeResourceList(pack, pack.resources, { concurrency: 4 })
           .then(async (result) => {
             if (result.failures.length) throw new Error(`theme_pack_incomplete_${result.failures.length}`);
-            if (!(await areThemeResourcesCached(pack.resources))) {
-              localStorage.removeItem(getThemePackReadyKey(pack.id));
+            if (!(await areThemeResourcesCached(pack, pack.resources))) {
+              setThemePackReady(pack, false);
               throw new Error("theme_pack_cache_incomplete");
             }
-            localStorage.setItem(getThemePackReadyKey(pack.id), pack.version);
+            setThemePackReady(pack, true);
             await pruneOldThemeCaches(pack);
             return result;
           })
@@ -11410,9 +11467,11 @@
           completed: 0,
           total: 0,
           failed: 0,
+          title: "",
+          zh: "",
         });
-        const zooPreparationRef = useRef(false);
-        const zooPreparationRunRef = useRef(0);
+        const themePreparationRef = useRef(false);
+        const themePreparationRunRef = useRef(0);
         const [wordBookReturnView, setWordBookReturnView] = useState("sceneSelect");
         const [wordBookFilter, setWordBookFilter] = useState("all");
         const [isReviewingWordBook, setIsReviewingWordBook] = useState(false);
@@ -11642,6 +11701,35 @@
             window.clearTimeout(hideTimer);
           };
         }, [currentView, showWelcome]);
+
+        useEffect(() => {
+          if (currentView !== "sceneSelect" || !canAccessTheme(currentChapter)) return undefined;
+          const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+          if (connection?.saveData || /(^|-)2g$/.test(String(connection?.effectiveType || ""))) return undefined;
+          let cancelled = false;
+          const prefetch = async () => {
+            try {
+              await ensureThemeResourcePacksLoaded(currentChapter);
+              if (cancelled) return;
+              const pack = getThemeResourcePack(currentChapter);
+              if (!pack) return;
+              const resources = getThemeCriticalResources(pack, currentChapter)
+                .filter((resource) => resource.type === "image")
+                .slice(0, 2);
+              if (resources.length) await loadThemeResourceList(pack, resources, { concurrency: 2 });
+            } catch (error) {
+              // Idle prefetch is optional and never blocks scene selection.
+            }
+          };
+          const idleId = typeof window.requestIdleCallback === "function"
+            ? window.requestIdleCallback(prefetch, { timeout: 3000 })
+            : window.setTimeout(prefetch, 1600);
+          return () => {
+            cancelled = true;
+            if (typeof window.cancelIdleCallback === "function") window.cancelIdleCallback(idleId);
+            else window.clearTimeout(idleId);
+          };
+        }, [currentView, currentChapter, currentIndex]);
 
         const isZooChapter = currentChapter === "zoo";
         const isFruitShopChapter = currentChapter === "fruitShop";
@@ -13077,12 +13165,12 @@
           setShowEnding(true);
         }
 
-        function getZooCriticalResources(pack) {
-          const targetIndex = currentChapter === "zoo"
-            ? Math.max(0, Math.min(currentIndex, scenes.length - 1))
+        function getThemeCriticalResources(pack, themeId) {
+          const targetIndex = currentChapter === themeId
+            ? Math.max(0, Math.min(currentIndex, pack.sceneOrder.length - 1))
             : 0;
           const criticalSceneIds = new Set(
-            [scenes[targetIndex]?.id, scenes[targetIndex + 1]?.id].filter(Boolean)
+            [pack.sceneOrder[targetIndex], pack.sceneOrder[targetIndex + 1]].filter(Boolean)
           );
           return pack.resources.filter((resource) =>
             resource.categories.includes("cover") ||
@@ -13090,18 +13178,64 @@
           );
         }
 
-        async function prepareZooEntry() {
-          if (zooPreparationRef.current) return;
-          zooPreparationRef.current = true;
-          const runId = zooPreparationRunRef.current + 1;
-          zooPreparationRunRef.current = runId;
+        function getThemeEntryHandler(chapter) {
+          return {
+            zoo: enterZoo,
+            fruitShop: enterFruitShop,
+            campus: enterCampus,
+            cafe: enterCafe,
+            airport: enterAirport,
+            office: enterOffice,
+            hotel: enterHotel,
+            restaurant: enterRestaurant,
+            supermarket: enterSupermarket,
+            metro: enterMetro,
+            clinic: enterClinic,
+            bank: enterBank,
+            apartment: enterApartment,
+            laundry: enterLaundry,
+          }[chapter] || null;
+        }
+
+        function resetThemePreparation() {
+          setThemePreparation({
+            themeId: null,
+            status: "idle",
+            completed: 0,
+            total: 0,
+            failed: 0,
+            title: "",
+            zh: "",
+          });
+        }
+
+        async function prepareThemeEntry(themeId) {
+          if (themePreparationRef.current) return;
+          const enterThemeNow = getThemeEntryHandler(themeId);
+          if (!enterThemeNow) return;
+          themePreparationRef.current = true;
+          const runId = themePreparationRunRef.current + 1;
+          themePreparationRunRef.current = runId;
+          const card = sceneCards.find((scene) => scene.chapter === themeId);
+          setThemePreparation({
+            themeId,
+            status: "loading",
+            completed: 0,
+            total: 0,
+            failed: 0,
+            title: card?.title || themeId,
+            zh: card?.zh || "",
+          });
 
           try {
-            await ensureThemeResourcePacksLoaded();
-            const pack = getThemeResourcePack("zoo");
-            if (!pack?.resources?.length) throw new Error("zoo_theme_pack_missing");
-            const criticalResources = getZooCriticalResources(pack);
-            const criticalReady = await areThemeResourcesCached(criticalResources);
+            await ensureThemeResourcePacksLoaded(themeId);
+            const pack = getThemeResourcePack(themeId);
+            if (!pack?.resources?.length) throw new Error(`${themeId}_theme_pack_missing`);
+            activeThemeResourcePackId = themeId;
+            const criticalResources = getThemeCriticalResources(pack, themeId);
+            const hasReadyMarker = hasThemePackReadyMarker(pack);
+            const criticalReady = await areThemeResourcesCached(pack, criticalResources);
+            if (hasReadyMarker && !criticalReady) setThemePackReady(pack, false);
             if (criticalReady) {
               const [cachedResult] = await Promise.all([
                 loadThemeResourceList(pack, criticalResources, {
@@ -13113,72 +13247,82 @@
               if (cachedResult.failures.length) {
                 throw new Error(`cached_theme_resources_invalid_${cachedResult.failures.length}`);
               }
-              setThemePreparation({ themeId: null, status: "idle", completed: 0, total: 0, failed: 0 });
-              enterZoo();
+              resetThemePreparation();
+              enterThemeNow();
               prepareFullThemePackInBackground(pack);
               return;
             }
 
             setThemePreparation({
-              themeId: "zoo",
+              themeId,
               status: "loading",
               completed: 0,
               total: criticalResources.length,
               failed: 0,
+              title: pack.title || card?.title || themeId,
+              zh: pack.zh || card?.zh || "",
             });
             const [result] = await Promise.all([
               loadThemeResourceList(pack, criticalResources, {
                 concurrency: 5,
                 prepareForDisplay: true,
                 onProgress: ({ completed, total, failed }) => {
-                  if (zooPreparationRunRef.current !== runId) return;
+                  if (themePreparationRunRef.current !== runId) return;
                   setThemePreparation({
-                    themeId: "zoo",
+                    themeId,
                     status: "loading",
                     completed,
                     total,
                     failed,
+                    title: pack.title || card?.title || themeId,
+                    zh: pack.zh || card?.zh || "",
                   });
                 },
               }),
               isMobileAudioPreferred() ? ensureMobileAudioMapLoaded() : Promise.resolve(false),
             ]);
 
-            if (zooPreparationRunRef.current !== runId) return;
+            if (themePreparationRunRef.current !== runId) return;
             if (result.failures.length) {
               setThemePreparation({
-                themeId: "zoo",
+                themeId,
                 status: "error",
                 completed: result.completed - result.failures.length,
                 total: result.total,
                 failed: result.failures.length,
+                title: pack.title || card?.title || themeId,
+                zh: pack.zh || card?.zh || "",
               });
               return;
             }
 
             setThemePreparation({
-              themeId: "zoo",
+              themeId,
               status: "ready",
               completed: result.total,
               total: result.total,
               failed: 0,
+              title: pack.title || card?.title || themeId,
+              zh: pack.zh || card?.zh || "",
             });
             await new Promise((resolve) => window.setTimeout(resolve, 220));
-            if (zooPreparationRunRef.current !== runId) return;
-            setThemePreparation({ themeId: null, status: "idle", completed: 0, total: 0, failed: 0 });
-            enterZoo();
+            if (themePreparationRunRef.current !== runId) return;
+            resetThemePreparation();
+            enterThemeNow();
             prepareFullThemePackInBackground(pack);
           } catch (error) {
-            if (zooPreparationRunRef.current === runId) {
+            if (themePreparationRunRef.current === runId) {
               setThemePreparation((current) => ({
                 ...current,
-                themeId: "zoo",
+                themeId,
                 status: "error",
                 failed: Math.max(1, current.failed || 0),
+                title: current.title || card?.title || themeId,
+                zh: current.zh || card?.zh || "",
               }));
             }
           } finally {
-            if (zooPreparationRunRef.current === runId) zooPreparationRef.current = false;
+            if (themePreparationRunRef.current === runId) themePreparationRef.current = false;
           }
         }
 
@@ -13639,36 +13783,7 @@
         }
 
         async function enterTheme(chapter) {
-          if (chapter === "zoo") {
-            prepareZooEntry();
-            return;
-          }
-          const enterByChapter = {
-            fruitShop: enterFruitShop,
-            campus: enterCampus,
-            cafe: enterCafe,
-            airport: enterAirport,
-            office: enterOffice,
-            hotel: enterHotel,
-            restaurant: enterRestaurant,
-            supermarket: enterSupermarket,
-            metro: enterMetro,
-            clinic: enterClinic,
-            bank: enterBank,
-            apartment: enterApartment,
-            laundry: enterLaundry,
-          };
-          if (!enterByChapter[chapter]) return;
-          if (isMobileAudioPreferred()) {
-            setSceneSelectHint("正在准备学习语音…");
-            try {
-              await ensureMobileAudioMapLoaded();
-            } catch (error) {
-              setSceneSelectHint("语音资源加载失败，请检查网络后重试。");
-              return;
-            }
-          }
-          enterByChapter[chapter]?.();
+          await prepareThemeEntry(chapter);
         }
 
         function showSubscriptionNotice(isUpdateCard = false) {
@@ -15157,26 +15272,30 @@
                 {renderFullVersionAccessSummary()}
                 {renderSceneLegalFooter()}
               </div>
-              {themePreparation.themeId === "zoo" && themePreparation.status !== "idle" && (
+              {themePreparation.themeId && themePreparation.status !== "idle" && (
                 <div
                   className="fixed inset-0 z-[90] flex items-center justify-center bg-[#0c1712]/90 px-5 backdrop-blur-xl"
                   role="dialog"
                   aria-modal="true"
-                  aria-labelledby="zoo-preparation-title"
+                  aria-labelledby="theme-preparation-title"
                   data-theme-preparation-status={themePreparation.status}
+                  data-theme-preparation-id={themePreparation.themeId}
                 >
                   <div className="dialogue-enter w-full max-w-md rounded-3xl border border-white/16 bg-[#172b22]/96 p-6 text-center text-cream shadow-glow sm:p-8">
-                    <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">Preparing Zoo</p>
-                    <h2 id="zoo-preparation-title" className="mt-3 text-3xl font-black text-white">
-                      正在准备学习场景
+                    <p className="text-[11px] font-black uppercase tracking-[0.24em] text-banana">
+                      Preparing {themePreparation.title}
+                    </p>
+                    <h2 id="theme-preparation-title" className="mt-3 text-3xl font-black text-white">
+                      正在准备您的学习场景
                     </h2>
+                    {themePreparation.zh && <p className="mt-2 text-base font-black text-banana/90">{themePreparation.zh}</p>}
                     {themePreparation.status === "error" ? (
                       <>
                         <p className="mt-5 text-base font-black text-white">部分学习资源加载失败</p>
                         <p className="mt-2 text-sm font-bold leading-6 text-cream/72">请检查网络后重试</p>
                         <button
                           type="button"
-                          onClick={prepareZooEntry}
+                          onClick={() => prepareThemeEntry(themePreparation.themeId)}
                           className="mt-6 min-h-12 w-full rounded-2xl bg-banana px-5 py-3 font-black text-ink shadow-label transition hover:bg-[#ffc83f] active:scale-[0.99]"
                         >
                           <ButtonCopy en="Retry" zh="重新加载" />
@@ -15196,10 +15315,16 @@
                         </div>
                         <div className="mt-4 flex items-center justify-between gap-4 text-sm font-black">
                           <span className="text-cream/70">
-                            {themePreparation.status === "ready" ? "准备完成" : "正在加载图片与语音…"}
+                            {themePreparation.status === "ready"
+                              ? "准备完成"
+                              : themePreparation.total
+                              ? "正在加载图片与语音…"
+                              : "正在读取资源清单…"}
                           </span>
                           <span className="text-banana">
-                            {preparationPercent}% · {themePreparation.completed} / {themePreparation.total}
+                            {themePreparation.total
+                              ? `${preparationPercent}% · ${themePreparation.completed} / ${themePreparation.total}`
+                              : "0%"}
                           </span>
                         </div>
                       </>

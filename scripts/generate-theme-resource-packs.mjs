@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { createHash } from "node:crypto";
-import { existsSync, readFileSync, statSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
@@ -11,10 +11,13 @@ import {
   root,
 } from "./lib/mobile-audio-pipeline.mjs";
 
-const THEME_ID = "zoo";
 const OUTPUT_PATHS = [
   resolve(root, "assets/theme-resource-packs.js"),
   resolve(root, "deploy-cn/assets/theme-resource-packs.js"),
+];
+const THEME_OUTPUT_DIRS = [
+  resolve(root, "assets/theme-resource-packs"),
+  resolve(root, "deploy-cn/assets/theme-resource-packs"),
 ];
 const HTML_PATHS = [resolve(root, "index.html"), resolve(root, "deploy-cn/index.html")];
 const SERVICE_WORKER_PATHS = [resolve(root, "service-worker.js"), resolve(root, "deploy-cn/service-worker.js")];
@@ -34,12 +37,14 @@ function fileDetails(resourcePath) {
   return { bytes: stat.size, sourceFile, deployFile };
 }
 
-export function buildZooResourcePack() {
-  const data = extractProjectAudioData();
-  const audioMap = loadRuntimeAudioMap();
-  const usages = extractSpeechUsages(data).usages.filter((usage) => usage.themeId === THEME_ID);
-  const zooCard = data.sceneCards.find((card) => card.chapter === THEME_ID);
-  const sceneOrder = new Map(data.scenes.map((scene, index) => [scene.id, index]));
+export function buildThemeResourcePack(themeId, { data, audioMap, speechData }) {
+  const metadata = speechData.chapterMetadata[themeId];
+  if (!metadata) throw new Error(`Missing chapter metadata for ${themeId}.`);
+  const scenes = data[metadata.scenesName];
+  const usages = speechData.usages.filter((usage) => usage.themeId === themeId);
+  const themeCard = data.sceneCards.find((card) => card.chapter === themeId);
+  if (!themeCard) throw new Error(`Missing scene card for ${themeId}.`);
+  const sceneOrder = new Map(scenes.map((scene, index) => [scene.id, index]));
   const resourcesByUrl = new Map();
 
   function addResource(url, values) {
@@ -66,12 +71,12 @@ export function buildZooResourcePack() {
     });
   }
 
-  addResource(extractCssUrl(zooCard?.image), {
+  addResource(extractCssUrl(themeCard.image), {
     type: "image",
     sceneIds: [],
     categories: ["cover"],
   });
-  for (const scene of data.scenes) {
+  for (const scene of scenes) {
     addResource(scene.bg, {
       type: "image",
       sceneIds: [scene.id],
@@ -82,7 +87,7 @@ export function buildZooResourcePack() {
   for (const usage of usages) {
     const audioUrl = audioMap[usage.originalText];
     if (!audioUrl) {
-      throw new Error(`Zoo speech text is missing from the mobile audio map: ${usage.originalText}`);
+      throw new Error(`${themeId} speech text is missing from the mobile audio map: ${usage.originalText}`);
     }
     addResource(audioUrl, {
       type: "audio",
@@ -110,15 +115,36 @@ export function buildZooResourcePack() {
       .update(readFileSync(resource.deployFile))
       .update("\0");
   }
-  const version = `zoo-${versionHash.digest("hex").slice(0, 12)}`;
+  const version = `${themeId}-${versionHash.digest("hex").slice(0, 12)}`;
   const publicResources = resources.map(({ sourceFile: _sourceFile, deployFile: _deployFile, ...resource }) => resource);
 
   return {
-    id: THEME_ID,
+    id: themeId,
+    title: themeCard.title,
+    zh: themeCard.zh,
     version,
     cacheName: `real-scene-theme-${version}`,
+    sceneOrder: scenes.map((scene) => scene.id),
     totalBytes: publicResources.reduce((total, resource) => total + resource.bytes, 0),
     resources: publicResources,
+  };
+}
+
+export function buildThemeResourcePacks() {
+  const data = extractProjectAudioData();
+  const audioMap = loadRuntimeAudioMap();
+  const speechData = extractSpeechUsages(data);
+  const packs = Object.fromEntries(speechData.themes.map((themeId) => [
+    themeId,
+    buildThemeResourcePack(themeId, { data, audioMap, speechData }),
+  ]));
+  const indexHash = createHash("sha256");
+  for (const pack of Object.values(packs)) {
+    indexHash.update(pack.id).update("\0").update(pack.version).update("\0");
+  }
+  return {
+    packs,
+    indexVersion: `themes-${indexHash.digest("hex").slice(0, 12)}`,
   };
 }
 
@@ -141,17 +167,38 @@ function updateServiceWorkerVersion(serviceWorkerPath, version) {
 }
 
 export function writeThemeResourcePacks() {
-  const zoo = buildZooResourcePack();
-  const payload = `window.RealSceneThemeResourcePacks = Object.freeze(${JSON.stringify({ zoo }, null, 2)});\n`;
-  for (const outputPath of OUTPUT_PATHS) writeFileSync(outputPath, payload);
-  for (const htmlPath of HTML_PATHS) updateHtmlVersion(htmlPath, zoo.version);
-  for (const serviceWorkerPath of SERVICE_WORKER_PATHS) updateServiceWorkerVersion(serviceWorkerPath, zoo.version);
+  const { packs, indexVersion } = buildThemeResourcePacks();
+  const scripts = Object.fromEntries(Object.values(packs).map((pack) => [
+    pack.id,
+    `assets/theme-resource-packs/${pack.id}.js?v=${pack.version}`,
+  ]));
+  const indexPayload = `window.RealSceneThemeResourcePackScripts = Object.freeze(${JSON.stringify(scripts, null, 2)});\n`;
+  for (const outputPath of OUTPUT_PATHS) writeFileSync(outputPath, indexPayload);
+  for (const outputDir of THEME_OUTPUT_DIRS) {
+    mkdirSync(outputDir, { recursive: true });
+    for (const pack of Object.values(packs)) {
+      const packPayload = [
+        "window.RealSceneThemeResourcePacks = window.RealSceneThemeResourcePacks || {};",
+        `window.RealSceneThemeResourcePacks[${JSON.stringify(pack.id)}] = Object.freeze(${JSON.stringify(pack, null, 2)});`,
+        "",
+      ].join("\n");
+      writeFileSync(resolve(outputDir, `${pack.id}.js`), packPayload);
+    }
+  }
+  for (const htmlPath of HTML_PATHS) updateHtmlVersion(htmlPath, indexVersion);
+  for (const serviceWorkerPath of SERVICE_WORKER_PATHS) updateServiceWorkerVersion(serviceWorkerPath, indexVersion);
   return {
-    version: zoo.version,
-    resourceCount: zoo.resources.length,
-    imageCount: zoo.resources.filter((resource) => resource.type === "image").length,
-    audioCount: zoo.resources.filter((resource) => resource.type === "audio").length,
-    totalBytes: zoo.totalBytes,
+    version: indexVersion,
+    themeCount: Object.keys(packs).length,
+    resourceCount: Object.values(packs).reduce((total, pack) => total + pack.resources.length, 0),
+    themes: Object.values(packs).map((pack) => ({
+      id: pack.id,
+      version: pack.version,
+      resourceCount: pack.resources.length,
+      imageCount: pack.resources.filter((resource) => resource.type === "image").length,
+      audioCount: pack.resources.filter((resource) => resource.type === "audio").length,
+      totalBytes: pack.totalBytes,
+    })),
   };
 }
 
