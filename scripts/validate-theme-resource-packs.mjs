@@ -54,10 +54,11 @@ for (const pack of Object.values(sourcePack)) {
   }
 }
 
+const appSource = readFileSync(resolve(root, "src/app.jsx"), "utf8");
+assert(appSource.includes(`const THEME_RESOURCE_PACKS_SCRIPT_URL = "assets/theme-resource-packs.js?v=${indexVersion}";`), "Stale deferred pack URL in src/app.jsx");
 for (const htmlPath of [resolve(root, "index.html"), resolve(root, "deploy-cn/index.html")]) {
   const html = readFileSync(htmlPath, "utf8");
-  assert(html.includes(`const THEME_RESOURCE_PACKS_SCRIPT_URL = "assets/theme-resource-packs.js?v=${indexVersion}";`), `Stale deferred pack URL in ${htmlPath}`);
-  assert(!html.includes(`<script src="assets/theme-resource-packs.js?v=${indexVersion}"></script>`), `Theme pack is still parser-blocking in ${htmlPath}`);
+  assert(!html.includes("theme-resource-packs.js"), `Theme pack must stay out of the initial HTML in ${htmlPath}`);
 }
 
 for (const serviceWorkerPath of [resolve(root, "service-worker.js"), resolve(root, "deploy-cn/service-worker.js")]) {

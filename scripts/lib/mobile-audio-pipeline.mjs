@@ -7,8 +7,10 @@ import vm from "node:vm";
 export const root = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
 export const manifestJsonPath = resolve(root, "mobile-audio-manifest.json");
 export const manifestCsvPath = resolve(root, "mobile-audio-manifest.csv");
-export const sourcePath = resolve(root, "index.html");
-export const deploySourcePath = resolve(root, "deploy-cn/index.html");
+export const sourcePath = resolve(root, "src/app.jsx");
+export const deploySourcePath = sourcePath;
+export const htmlSourcePath = resolve(root, "index.html");
+export const deployHtmlPath = resolve(root, "deploy-cn/index.html");
 export const mobileAudioMapPath = "assets/audio/full-mobile-audio.js";
 
 export const AUDIO_PROFILE = Object.freeze({
@@ -44,7 +46,7 @@ export function audioIdentity(text, profile = AUDIO_PROFILE) {
 }
 
 function staticDataNames(source) {
-  const matches = [...source.matchAll(/^      const ([A-Za-z0-9_]+)\s*=\s*(?:\[|\{)/gm)].map((match) => match[1]);
+  const matches = [...source.matchAll(/^\s*const ([A-Za-z0-9_]+)\s*=\s*(?:\[|\{)/gm)].map((match) => match[1]);
   return [...new Set(matches.filter((name) =>
     name === "scenes" ||
     name === "dialogues" ||
@@ -56,16 +58,16 @@ function staticDataNames(source) {
 }
 
 export function extractProjectAudioData(source = readFileSync(sourcePath, "utf8")) {
-  const start = source.indexOf("      const scenes = [");
-  const end = source.indexOf("      const sceneSelectCards = [");
+  const start = source.indexOf("const scenes = [");
+  const end = source.indexOf("const sceneSelectCards = [");
   if (start < 0 || end < 0 || end <= start) {
-    throw new Error("Could not locate the static scene data in index.html.");
+    throw new Error("Could not locate the static scene data in src/app.jsx.");
   }
 
   const names = staticDataNames(source.slice(start, end));
   const capture = `\nglobalThis.__mobileAudioData = { ${names.join(", ")} };\n`;
   const context = vm.createContext({ console });
-  vm.runInContext(source.slice(start, end) + capture, context, { filename: "index.html:scene-data" });
+  vm.runInContext(source.slice(start, end) + capture, context, { filename: "src/app.jsx:scene-data" });
   const data = context.__mobileAudioData;
   if (!Array.isArray(data.sceneCards)) throw new Error("sceneCards could not be extracted.");
   return data;
@@ -352,7 +354,7 @@ export function writeRuntimeAudioMaps(manifest) {
     resolve(root, `deploy-cn/${mobileAudioMapPath}`),
   ];
   const scriptUrlPattern = /const MOBILE_AUDIO_MAP_SCRIPT_URL = "assets\/audio\/full-mobile-audio\.js(?:\?v=[a-f0-9]+)?";/g;
-  const htmlOutputs = [sourcePath, deploySourcePath].map((path) => {
+  const htmlOutputs = [sourcePath].map((path) => {
     const source = readFileSync(path, "utf8");
     let replacements = 0;
     const updated = source.replace(scriptUrlPattern, () => {

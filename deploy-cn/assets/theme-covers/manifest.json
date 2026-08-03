@@ -1,0 +1,125 @@
+{
+  "generatedBy": "generate-theme-cover-thumbnails.mjs",
+  "format": "webp",
+  "optionalAvif": false,
+  "avifReason": "avifenc_not_available",
+  "settings": {
+    "width": 768,
+    "height": 432,
+    "quality": 78
+  },
+  "themes": {
+    "zoo": {
+      "webp": "assets/theme-covers/zoo-cover-65d858f54691.webp",
+      "fallback": "assets/zoo-explore-bg.png",
+      "width": 768,
+      "height": 432,
+      "bytes": 69696,
+      "sha256": "33fd070995e3180b2fc409d5969457de3e600d23b8a243c199a00cc5c40ef00f"
+    },
+    "fruitShop": {
+      "webp": "assets/theme-covers/fruitShop-cover-6d3b041189c9.webp",
+      "fallback": "assets/fruit-shop-entrance-bg.png",
+      "width": 768,
+      "height": 432,
+      "bytes": 63196,
+      "sha256": "238f19d42a6797cf65026576885389aaf613c5366e6c2496b6ea2318d81e3666"
+    },
+    "campus": {
+      "webp": "assets/theme-covers/campus-cover-04de28812cbe.webp",
+      "fallback": "assets/campus-cover.png",
+      "width": 768,
+      "height": 432,
+      "bytes": 73356,
+      "sha256": "eccd44dfbd55f4502262b24036a34f2dfdff92c442decaae39b3f5fc2f0c3955"
+    },
+    "cafe": {
+      "webp": "assets/theme-covers/cafe-cover-17413111f346.webp",
+      "fallback": "assets/cafe-cover.png",
+      "width": 768,
+      "height": 432,
+      "bytes": 56512,
+      "sha256": "dce1bd50b8491957e19cf3a2ae2d8e86e1039e3178a7703ba917b90587014b2b"
+    },
+    "airport": {
+      "webp": "assets/theme-covers/airport-cover-409eaec7640e.webp",
+      "fallback": "assets/airport-cover.png",
+      "width": 768,
+      "height": 432,
+      "bytes": 36756,
+      "sha256": "13cc10ab4b3cdd0a94f10078d3e3f3cb241f49e939057ade94b66697f84cd684"
+    },
+    "office": {
+      "webp": "assets/theme-covers/office-cover-f830164fb9f4.webp",
+      "fallback": "assets/office-cover.png",
+      "width": 768,
+      "height": 432,
+      "bytes": 30036,
+      "sha256": "7296d7cc8d9e412e861caa7595815d595805c62b05ac093298cf55b07fe6fa28"
+    },
+    "hotel": {
+      "webp": "assets/theme-covers/hotel-cover-03d634cc3471.webp",
+      "fallback": "assets/hotel-cover.png",
+      "width": 768,
+      "height": 432,
+      "bytes": 33030,
+      "sha256": "ac5d0bcb48033f79b065ea9426cf5893c8cb3676a684032fb7994b42d58ae4d8"
+    },
+    "restaurant": {
+      "webp": "assets/theme-covers/restaurant-cover-a8e1f461b60a.webp",
+      "fallback": "assets/restaurant-cover.png",
+      "width": 768,
+      "height": 432,
+      "bytes": 36774,
+      "sha256": "7b7f21e70449b886145cc3dcf5be9a40fcad1a52a5a0eb20a83219e509392397"
+    },
+    "supermarket": {
+      "webp": "assets/theme-covers/supermarket-cover-e3631f05dc1c.webp",
+      "fallback": "assets/supermarket-cover.png",
+      "width": 768,
+      "height": 432,
+      "bytes": 59076,
+      "sha256": "0c5029f72209e2c74d1fb74bd2edcafd35f8a4bf117aee1957396676b325b387"
+    },
+    "metro": {
+      "webp": "assets/theme-covers/metro-cover-345ef07e5c2d.webp",
+      "fallback": "assets/metro-cover.png",
+      "width": 768,
+      "height": 432,
+      "bytes": 31990,
+      "sha256": "a2f833b01eace791794357750e2d86f99d95cc968d9a40168f188c7481dcc414"
+    },
+    "clinic": {
+      "webp": "assets/theme-covers/clinic-cover-744d71731061.webp",
+      "fallback": "assets/clinic-cover.png",
+      "width": 768,
+      "height": 432,
+      "bytes": 32926,
+      "sha256": "a11ddaaed2ddf24f5b3d08a5793cd089b491b6dab3dfd5402984a0c24ab87c96"
+    },
+    "bank": {
+      "webp": "assets/theme-covers/bank-cover-99646cb19772.webp",
+      "fallback": "assets/bank-cover.png",
+      "width": 768,
+      "height": 432,
+      "bytes": 31468,
+      "sha256": "2180afe7b2bcbea6a65cb9e2aa6f95006161d6afccf377101abcd2a9c599e103"
+    },
+    "apartment": {
+      "webp": "assets/theme-covers/apartment-cover-8211c2a4c063.webp",
+      "fallback": "assets/apartment-cover.png",
+      "width": 768,
+      "height": 432,
+      "bytes": 21294,
+      "sha256": "9049565c403f8b93e8a7d2967267714f690f97d5b5024b0e0927c317675acc58"
+    },
+    "laundry": {
+      "webp": "assets/theme-covers/laundry-cover-f8250826a709.webp",
+      "fallback": "assets/laundry-cover.png",
+      "width": 768,
+      "height": 432,
+      "bytes": 44730,
+      "sha256": "183e35612ee2b465df2caffe9ea8e31059e9f98beb977f51dd35ff1667d431a5"
+    }
+  }
+}

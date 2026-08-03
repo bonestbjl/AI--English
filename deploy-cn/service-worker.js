@@ -1,17 +1,17 @@
 const CACHE_PREFIX = "real-scene-cn";
 const THEME_PACK_VERSION = "themes-c940b01c395d";
-const CACHE_VERSION = `v1-${THEME_PACK_VERSION}`;
+const APP_BUNDLE_VERSION = "e38358bdc7a3";
+const CACHE_VERSION = `v2-${THEME_PACK_VERSION}-${APP_BUNDLE_VERSION}`;
 const APP_CACHE = `${CACHE_PREFIX}-${CACHE_VERSION}`;
 const INDEX_URL = new URL("./index.html", self.registration.scope).href;
 const APP_SHELL = [
-  "./",
   "./index.html",
   "./manifest.json",
   "./assets/app-icon-192.png",
   "./assets/app-icon-512.png",
   "./vendor/react.production.min.js",
   "./vendor/react-dom.production.min.js",
-  "./vendor/babel.min.js",
+  "./assets/app/app-e38358bdc7a3.js",
   "./vendor/tailwind-runtime.js",
 ];
 

@@ -475,13 +475,14 @@ test("both frontends use authenticated production payment APIs and remain byte-i
   const root = path.resolve(__dirname, "..");
   const index = fs.readFileSync(path.join(root, "index.html"), "utf8");
   const deployIndex = fs.readFileSync(path.join(root, "deploy-cn/index.html"), "utf8");
+  const appSource = fs.readFileSync(path.join(root, "src/app.jsx"), "utf8");
   assert.equal(index, deployIndex);
-  assert.match(index, /fetch\("\/api\/alipay\/create-order"/);
-  assert.match(index, /\/api\/alipay\/order-status\?outTradeNo=/);
-  assert.match(index, /Authorization: `Bearer \$\{authToken\}`/);
-  assert.match(index, /支付宝支付正在审核，暂未开放/);
-  assert.doesNotMatch(index, /handleAlipaySandboxPayment|支付宝沙箱支付|测试环境，不会真实扣款/);
-  assert.doesNotMatch(index, /fetch\("\/api\/alipay-query-order"/);
+  assert.match(appSource, /fetch\("\/api\/alipay\/create-order"/);
+  assert.match(appSource, /\/api\/alipay\/order-status\?outTradeNo=/);
+  assert.match(appSource, /Authorization: `Bearer \$\{authToken\}`/);
+  assert.match(appSource, /支付宝支付正在审核，暂未开放/);
+  assert.doesNotMatch(appSource, /handleAlipaySandboxPayment|支付宝沙箱支付|测试环境，不会真实扣款/);
+  assert.doesNotMatch(appSource, /fetch\("\/api\/alipay-query-order"/);
 });
 
 test("the migration keeps order and membership updates inside one atomic database function", () => {

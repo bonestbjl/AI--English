@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 import vm from "node:vm";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const source = readFileSync(resolve(root, "index.html"), "utf8");
+const source = readFileSync(resolve(root, "src/app.jsx"), "utf8");
 const previousManifestPath = resolve(root, "p0-audio-manifest.csv");
 const outputPath = resolve(root, "full-audio-manifest.csv");
 
@@ -28,13 +28,13 @@ const chapters = [
 const dataNames = [...new Set(chapters.flatMap(([, scenesName, dialoguesName, moreName]) => [scenesName, dialoguesName, moreName]))];
 
 function extractStaticData() {
-  const start = source.indexOf("      const scenes = [");
-  const end = source.indexOf("      const sceneCards = [");
-  if (start < 0 || end < 0 || end <= start) throw new Error("Could not locate the static chapter data block in index.html.");
+  const start = source.indexOf("const scenes = [");
+  const end = source.indexOf("const sceneCards = [");
+  if (start < 0 || end < 0 || end <= start) throw new Error("Could not locate the static chapter data block in src/app.jsx.");
 
   const capture = `\nglobalThis.__audioManifestData = { ${dataNames.join(", ")} };\n`;
   const context = vm.createContext({ console });
-  vm.runInContext(source.slice(start, end) + capture, context, { filename: "index.html:data" });
+  vm.runInContext(source.slice(start, end) + capture, context, { filename: "src/app.jsx:data" });
   return context.__audioManifestData;
 }
 

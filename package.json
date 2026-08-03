@@ -8,10 +8,14 @@
   "scripts": {
     "start": "node server.js",
     "test": "node --test tests/*.test.js",
+    "build:frontend": "node scripts/build-frontend.mjs",
+    "generate:theme-covers": "node scripts/generate-theme-cover-thumbnails.mjs",
+    "validate:theme-covers": "node scripts/validate-theme-covers.mjs",
+    "serve:performance": "node scripts/serve-static-performance.mjs",
     "generate:theme-resource-packs": "node scripts/generate-theme-resource-packs.mjs",
     "validate:theme-resource-packs": "node scripts/validate-theme-resource-packs.mjs",
     "optimize:deploy-cn-images": "node scripts/optimize-deploy-cn-images.mjs",
-    "prepare:deploy-cn": "npm run optimize:deploy-cn-images && npm run generate:theme-resource-packs"
+    "prepare:deploy-cn": "npm run generate:theme-covers && npm run build:frontend && npm run optimize:deploy-cn-images && npm run generate:theme-resource-packs && npm run build:frontend"
   },
   "dependencies": {
     "alipay-sdk": "3.6.2",

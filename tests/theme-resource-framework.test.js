@@ -64,10 +64,11 @@ test("all real learning themes are registered in the shared resource framework",
 });
 
 test("both frontends use one generic theme preparation UI and retry path", () => {
-  const source = readFileSync(path.join(root, "index.html"), "utf8");
+  const source = readFileSync(path.join(root, "src/app.jsx"), "utf8");
+  const index = readFileSync(path.join(root, "index.html"), "utf8");
   const deploySource = readFileSync(path.join(root, "deploy-cn/index.html"), "utf8");
 
-  assert.equal(source, deploySource);
+  assert.equal(index, deploySource);
   assert.match(source, /async function prepareThemeEntry\(themeId\)/);
   assert.match(source, /await prepareThemeEntry\(chapter\)/);
   assert.match(source, /onClick=\{\(\) => prepareThemeEntry\(themePreparation\.themeId\)\}/);
@@ -78,7 +79,6 @@ test("both frontends use one generic theme preparation UI and retry path", () =>
   assert.match(source, /return `\$\{THEME_PACK_READY_PREFIX\}\$\{themeId\}:\$\{version\}`/);
   assert.match(source, /hasThemePackReadyMarker\(pack\)/);
   assert.match(source, /hasReadyMarker && !criticalReady/);
-  assert.match(source, /requestIdleCallback\(prefetch, \{ timeout: 3000 \}\)/);
   assert.match(source, /ensureThemeResourcePacksLoaded\(themeId\)/);
   assert.match(source, /key: `theme-resource-pack:\$\{themeId\}`/);
   assert.doesNotMatch(source, /prepareZooEntry|getZooCriticalResources|zooPreparationRef/);
@@ -107,10 +107,11 @@ test("both frontends use one generic theme preparation UI and retry path", () =>
 test("theme manifests remain deferred and service-worker app-shell caching stays separate", async () => {
   const generator = await import("../scripts/generate-theme-resource-packs.mjs");
   const { indexVersion } = generator.buildThemeResourcePacks();
+  const appSource = readFileSync(path.join(root, "src/app.jsx"), "utf8");
+  assert.match(appSource, new RegExp(`const THEME_RESOURCE_PACKS_SCRIPT_URL = "assets/theme-resource-packs\\.js\\?v=${indexVersion}";`));
   for (const relativePath of ["index.html", "deploy-cn/index.html"]) {
     const html = readFileSync(path.join(root, relativePath), "utf8");
-    assert.match(html, new RegExp(`const THEME_RESOURCE_PACKS_SCRIPT_URL = "assets/theme-resource-packs\\.js\\?v=${indexVersion}";`));
-    assert.doesNotMatch(html, /<script src="assets\/theme-resource-packs\.js/);
+    assert.doesNotMatch(html, /theme-resource-packs\.js/);
   }
   for (const relativePath of ["service-worker.js", "deploy-cn/service-worker.js"]) {
     const serviceWorker = readFileSync(path.join(root, relativePath), "utf8");

@@ -24,7 +24,7 @@ function assert(condition, message) {
 }
 
 function audioLookup(source, navigator, map, text = "gate") {
-  const runtime = between(source, "      function isMobileAudioPreferred()", "      const scenes = [");
+  const runtime = between(source, "function isMobileAudioPreferred()", "const scenes = [");
   const context = vm.createContext({
     navigator,
     getPreparedThemeResourceUrl: (url) => url,
@@ -35,7 +35,7 @@ function audioLookup(source, navigator, map, text = "gate") {
 }
 
 async function speechPath(source, mobileUrl) {
-  const runtime = between(source, "        async function speakEnglish", "        function stopLearningAudio");
+  const runtime = between(source, "async function speakEnglish", "function stopLearningAudio");
   const calls = { mobile: [], spoken: [], cancelled: 0, playing: [] };
   class MockUtterance {
     constructor(text) { this.text = text; }
@@ -60,7 +60,7 @@ async function speechPath(source, mobileUrl) {
 }
 
 function playbackPath(source, audioAvailable) {
-  const runtime = between(source, "        function stopLearningAudio", "        function playHotspotWord");
+  const runtime = between(source, "function stopLearningAudio", "function playHotspotWord");
   const fallback = [];
   const instances = [];
   class MockAudio {

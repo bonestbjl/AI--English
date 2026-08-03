@@ -7,7 +7,9 @@ import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import {
   buildManifest,
+  deployHtmlPath,
   deploySourcePath,
+  htmlSourcePath,
   loadRuntimeAudioMap,
   manifestJsonPath,
   mobileAudioMapPath,
@@ -161,7 +163,9 @@ async function deepInspect(path, workDirectory, index, decoder) {
 function sourceChecks(issues) {
   const source = readFileSync(sourcePath, "utf8");
   const deploy = readFileSync(deploySourcePath, "utf8");
-  if (source !== deploy) issues.push("index.html and deploy-cn/index.html differ.");
+  if (readFileSync(htmlSourcePath, "utf8") !== readFileSync(deployHtmlPath, "utf8")) {
+    issues.push("index.html and deploy-cn/index.html differ.");
+  }
   const required = [
     "if (!isMobileAudioPreferred()) return null;",
     "window.FullMobileAudioUrls?.[text] || null",

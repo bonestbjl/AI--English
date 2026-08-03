@@ -19,7 +19,7 @@ const THEME_OUTPUT_DIRS = [
   resolve(root, "assets/theme-resource-packs"),
   resolve(root, "deploy-cn/assets/theme-resource-packs"),
 ];
-const HTML_PATHS = [resolve(root, "index.html"), resolve(root, "deploy-cn/index.html")];
+const APP_SOURCE_PATH = resolve(root, "src/app.jsx");
 const SERVICE_WORKER_PATHS = [resolve(root, "service-worker.js"), resolve(root, "deploy-cn/service-worker.js")];
 
 function extractCssUrl(value) {
@@ -148,13 +148,13 @@ export function buildThemeResourcePacks() {
   };
 }
 
-function updateHtmlVersion(htmlPath, version) {
-  const source = readFileSync(htmlPath, "utf8");
+function updateAppSourceVersion(version) {
+  const source = readFileSync(APP_SOURCE_PATH, "utf8");
   const pattern = /const THEME_RESOURCE_PACKS_SCRIPT_URL = "assets\/theme-resource-packs\.js(?:\?v=[^\"]+)?";/g;
   if (!pattern.test(source)) {
-    throw new Error(`Missing deferred theme resource pack URL in ${htmlPath}`);
+    throw new Error(`Missing deferred theme resource pack URL in ${APP_SOURCE_PATH}`);
   }
-  writeFileSync(htmlPath, source.replace(pattern, `const THEME_RESOURCE_PACKS_SCRIPT_URL = "assets/theme-resource-packs.js?v=${version}";`));
+  writeFileSync(APP_SOURCE_PATH, source.replace(pattern, `const THEME_RESOURCE_PACKS_SCRIPT_URL = "assets/theme-resource-packs.js?v=${version}";`));
 }
 
 function updateServiceWorkerVersion(serviceWorkerPath, version) {
@@ -185,7 +185,7 @@ export function writeThemeResourcePacks() {
       writeFileSync(resolve(outputDir, `${pack.id}.js`), packPayload);
     }
   }
-  for (const htmlPath of HTML_PATHS) updateHtmlVersion(htmlPath, indexVersion);
+  updateAppSourceVersion(indexVersion);
   for (const serviceWorkerPath of SERVICE_WORKER_PATHS) updateServiceWorkerVersion(serviceWorkerPath, indexVersion);
   return {
     version: indexVersion,
