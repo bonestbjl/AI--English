@@ -1147,7 +1147,8 @@
         .home-page {
           height: auto !important;
           max-height: none !important;
-          overflow: hidden !important;
+          overflow-x: hidden !important;
+          overflow-y: auto !important;
         }
 
         .home-page .home-hero-section {
@@ -1166,9 +1167,9 @@
         }
 
         .home-page .dialogue-enter h1 {
-          font-size: clamp(1.75rem, 5vw, 2.35rem) !important;
-          line-height: 0.96 !important;
-          margin-top: 0.35rem !important;
+          font-size: clamp(2rem, 5.4vw, 2.55rem) !important;
+          line-height: 0.98 !important;
+          margin-top: 0.55rem !important;
         }
 
         .home-page .dialogue-enter h1 span + span {
@@ -1176,33 +1177,33 @@
         }
 
         .home-page .dialogue-enter p {
-          font-size: 0.62rem !important;
-          line-height: 1.16 !important;
-          margin-top: 0.22rem !important;
+          font-size: 0.7rem !important;
+          line-height: 1.32 !important;
+          margin-top: 0.3rem !important;
         }
 
         .home-page .dialogue-enter p:nth-of-type(3) {
-          font-size: 0.9rem !important;
-          line-height: 1.16 !important;
-          margin-top: 0.32rem !important;
+          font-size: 1.02rem !important;
+          line-height: 1.22 !important;
+          margin-top: 0.48rem !important;
         }
 
         .home-page .dialogue-enter p:nth-of-type(4) {
-          font-size: 0.82rem !important;
-          line-height: 1.18 !important;
-          margin-top: 0.5rem !important;
+          font-size: 0.94rem !important;
+          line-height: 1.3 !important;
+          margin-top: 0.8rem !important;
         }
 
         .home-page .dialogue-enter button {
-          margin-top: 0.55rem !important;
-          min-height: 2.35rem !important;
-          padding: 0.48rem 1.25rem !important;
+          margin-top: 0.95rem !important;
+          min-height: 2.75rem !important;
+          padding: 0.55rem 1.35rem !important;
         }
 
         .home-page .dialogue-enter > p:last-child {
-          font-size: 0.62rem !important;
-          line-height: 1.15 !important;
-          margin-top: 0.5rem !important;
+          font-size: 0.7rem !important;
+          line-height: 1.25 !important;
+          margin-top: 0.7rem !important;
         }
 
         .home-page .home-access-summary {
@@ -1210,24 +1211,32 @@
         }
 
         .home-page .home-legal-footer {
-          display: none !important;
-          bottom: max(6px, env(safe-area-inset-bottom)) !important;
-          margin-top: 8px !important;
+          bottom: auto !important;
+          display: block !important;
+          inset: auto !important;
+          margin: 0 auto calc(env(safe-area-inset-bottom) + 0.75rem) !important;
+          max-width: min(38rem, calc(100% - 2rem)) !important;
+          padding: 0 !important;
+          position: relative !important;
+          width: min(38rem, calc(100% - 2rem)) !important;
         }
 
         .home-page .home-legal-footer-panel {
-          gap: 2px !important;
-          padding: 5px 10px !important;
+          flex-direction: row !important;
+          flex-wrap: wrap !important;
+          gap: 4px 10px !important;
+          padding: 7px 10px !important;
         }
 
         .home-page .home-legal-footer-link {
-          font-size: 9px !important;
-          line-height: 1 !important;
+          font-size: 10px !important;
+          line-height: 1.2 !important;
         }
 
         .home-page .home-legal-footer-copy {
-          font-size: 8px !important;
-          line-height: 1 !important;
+          flex-basis: 100% !important;
+          font-size: 9px !important;
+          line-height: 1.2 !important;
           margin-top: 2px !important;
         }
 
@@ -1276,6 +1285,22 @@
           padding: 2px 0 !important;
           text-align: right !important;
           white-space: normal !important;
+        }
+      }
+
+      @media (max-width: 950px) and (orientation: landscape) and (max-height: 520px) {
+        .home-page .home-secondary-intro {
+          display: none !important;
+        }
+
+        .home-page nav button {
+          min-height: 2.75rem !important;
+          padding: 0.32rem 0.64rem !important;
+          font-size: 0.62rem !important;
+          line-height: 1.08 !important;
+          border-color: rgba(255, 255, 255, 0.11) !important;
+          background: rgba(255, 255, 255, 0.045) !important;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16) !important;
         }
       }
 
@@ -15223,10 +15248,10 @@
                   <p className="mx-auto mt-2 max-w-2xl text-base font-bold leading-7 text-white/56 sm:text-lg">
                     在真实生活场景中学习英语。
                   </p>
-                  <p className="mx-auto mt-7 max-w-xl text-sm font-bold leading-7 text-white/46 sm:text-base">
+                  <p className="home-secondary-intro mx-auto mt-7 max-w-xl text-sm font-bold leading-7 text-white/46 sm:text-base">
                     Click, listen, speak, and learn words in real situations.
                   </p>
-                  <p className="mx-auto mt-1 max-w-xl text-sm font-bold leading-7 text-white/34">
+                  <p className="home-secondary-intro mx-auto mt-1 max-w-xl text-sm font-bold leading-7 text-white/34">
                     点击、聆听、开口，在真实情境中学习单词。
                   </p>
                   <button
