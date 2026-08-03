@@ -1,7 +1,8 @@
 const CACHE_PREFIX = "real-scene-cn";
 const THEME_PACK_VERSION = "themes-c940b01c395d";
-const APP_BUNDLE_VERSION = "e38358bdc7a3";
-const CACHE_VERSION = `v2-${THEME_PACK_VERSION}-${APP_BUNDLE_VERSION}`;
+const APP_BUNDLE_VERSION = "434ecb8c84a8";
+const APP_STYLE_VERSION = "b4bbdbbececc";
+const CACHE_VERSION = `v3-${THEME_PACK_VERSION}-${APP_BUNDLE_VERSION}-${APP_STYLE_VERSION}`;
 const APP_CACHE = `${CACHE_PREFIX}-${CACHE_VERSION}`;
 const INDEX_URL = new URL("./index.html", self.registration.scope).href;
 const APP_SHELL = [
@@ -11,8 +12,8 @@ const APP_SHELL = [
   "./assets/app-icon-512.png",
   "./vendor/react.production.min.js",
   "./vendor/react-dom.production.min.js",
-  "./assets/app/app-e38358bdc7a3.js",
-  "./vendor/tailwind-runtime.js",
+  "./assets/app/app-434ecb8c84a8.js",
+  "./assets/app/app-b4bbdbbececc.css",
 ];
 
 self.addEventListener("install", (event) => {

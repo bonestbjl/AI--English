@@ -1,0 +1,228 @@
+{
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "overflowX": false,
+  "values": {
+    "page": {
+      "selector": "main.scene-page",
+      "text": "fruit  hop水果店Learn fruit  hopba ket篮子Learn ba ket ignboard招牌Learn  ignboardai le过道Learn ai lefre h新鲜的Learn fre h+1 More Word 更多单词Fruit Shop Trip 1/7Fruit Shop E",
+      "box": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "styles": {
+        "display": "block",
+        "position": "relative",
+        "width": "1440px",
+        "height": "900px",
+        "paddingTop": "0px",
+        "paddingRight": "0px",
+        "paddingBottom": "0px",
+        "paddingLeft": "0px",
+        "marginTop": "0px",
+        "marginRight": "0px",
+        "marginBottom": "0px",
+        "marginLeft": "0px",
+        "color": "rgb(255, 248, 231)",
+        "backgroundColor": "rgb(23, 37, 28)",
+        "borderTopWidth": "0px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(229, 231, 235)",
+        "borderRadius": "0px",
+        "fontSize": "16px",
+        "lineHeight": "24px",
+        "fontWeight": "400",
+        "boxShadow": "none",
+        "opacity": "1",
+        "transform": "none"
+      }
+    },
+    "overlay": {
+      "selector": ".welcome-intro-overlay",
+      "text": "Fruit Shop Trip水果店之旅Welcome to the fruit  hop!欢迎来到水果店！Today, you will vi it a fruit  hop, choo e fre h fruit, a k about price , and practice real  hopping Engli",
+      "box": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "styles": {
+        "display": "flex",
+        "position": "fixed",
+        "width": "1440px",
+        "height": "900px",
+        "paddingTop": "0px",
+        "paddingRight": "16px",
+        "paddingBottom": "0px",
+        "paddingLeft": "16px",
+        "marginTop": "0px",
+        "marginRight": "0px",
+        "marginBottom": "0px",
+        "marginLeft": "0px",
+        "color": "rgb(255, 248, 231)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopWidth": "0px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(229, 231, 235)",
+        "borderRadius": "0px",
+        "fontSize": "16px",
+        "lineHeight": "24px",
+        "fontWeight": "400",
+        "boxShadow": "none",
+        "opacity": "1",
+        "transform": "none"
+      }
+    },
+    "card": {
+      "selector": ".welcome-intro-card",
+      "text": "Fruit Shop Trip水果店之旅Welcome to the fruit  hop!欢迎来到水果店！Today, you will vi it a fruit  hop, choo e fre h fruit, a k about price , and practice real  hopping Engli",
+      "box": {
+        "x": 384,
+        "y": 249.5,
+        "width": 672,
+        "height": 401
+      },
+      "styles": {
+        "display": "block",
+        "position": "static",
+        "width": "672px",
+        "height": "401px",
+        "paddingTop": "24px",
+        "paddingRight": "24px",
+        "paddingBottom": "24px",
+        "paddingLeft": "24px",
+        "marginTop": "0px",
+        "marginRight": "0px",
+        "marginBottom": "0px",
+        "marginLeft": "0px",
+        "color": "rgb(255, 248, 231)",
+        "backgroundColor": "rgba(17, 35, 25, 0.9)",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(229, 231, 235)",
+        "borderRadius": "24px",
+        "fontSize": "16px",
+        "lineHeight": "24px",
+        "fontWeight": "400",
+        "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(18, 45, 28, 0.32) 0px 18px 55px 0px",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      }
+    },
+    "title": {
+      "selector": ".welcome-intro-title",
+      "text": "Welcome to the fruit  hop!",
+      "box": {
+        "x": 409,
+        "y": 327,
+        "width": 622,
+        "height": 48
+      },
+      "styles": {
+        "display": "block",
+        "position": "static",
+        "width": "622px",
+        "height": "48px",
+        "paddingTop": "0px",
+        "paddingRight": "0px",
+        "paddingBottom": "0px",
+        "paddingLeft": "0px",
+        "marginTop": "12px",
+        "marginRight": "0px",
+        "marginBottom": "0px",
+        "marginLeft": "0px",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopWidth": "0px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(229, 231, 235)",
+        "borderRadius": "0px",
+        "fontSize": "48px",
+        "lineHeight": "48px",
+        "fontWeight": "900",
+        "boxShadow": "none",
+        "opacity": "1",
+        "transform": "none"
+      }
+    },
+    "text": {
+      "selector": ".welcome-intro-text",
+      "text": "Today, you will vi it a fruit  hop, choo e fre h fruit, a k about price , and practice real  hopping Engli h.",
+      "box": {
+        "x": 409,
+        "y": 431,
+        "width": 622,
+        "height": 64
+      },
+      "styles": {
+        "display": "block",
+        "position": "static",
+        "width": "622px",
+        "height": "64px",
+        "paddingTop": "0px",
+        "paddingRight": "0px",
+        "paddingBottom": "0px",
+        "paddingLeft": "0px",
+        "marginTop": "16px",
+        "marginRight": "0px",
+        "marginBottom": "0px",
+        "marginLeft": "0px",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopWidth": "0px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(229, 231, 235)",
+        "borderRadius": "0px",
+        "fontSize": "20px",
+        "lineHeight": "32px",
+        "fontWeight": "900",
+        "boxShadow": "none",
+        "opacity": "1",
+        "transform": "none"
+      }
+    },
+    "action": {
+      "selector": ".welcome-intro-action",
+      "text": "Start Shopping开始购物",
+      "box": {
+        "x": 409,
+        "y": 563.38,
+        "width": 162.27,
+        "height": 61.75
+      },
+      "styles": {
+        "display": "block",
+        "position": "static",
+        "width": "162.266px",
+        "height": "61.75px",
+        "paddingTop": "12px",
+        "paddingRight": "20px",
+        "paddingBottom": "12px",
+        "paddingLeft": "20px",
+        "marginTop": "0px",
+        "marginRight": "0px",
+        "marginBottom": "0px",
+        "marginLeft": "0px",
+        "color": "rgb(38, 50, 56)",
+        "backgroundColor": "rgb(255, 216, 107)",
+        "borderTopWidth": "0px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(229, 231, 235)",
+        "borderRadius": "9999px",
+        "fontSize": "16px",
+        "lineHeight": "24px",
+        "fontWeight": "900",
+        "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(11, 32, 20, 0.28) 0px 12px 28px 0px",
+        "opacity": "1",
+        "transform": "none"
+      }
+    }
+  },
+  "consoleErrors": [
+    "[BABEL] Note: The code generator has deoptimised the styling of /Inline Babel script as it exceeds the max of 500KB."
+  ]
+}

@@ -6,22 +6,33 @@ const test = require("node:test");
 
 const root = path.resolve(__dirname, "..");
 
-test("frontend uses a mirrored versioned production bundle without runtime Babel", () => {
+test("frontend uses mirrored hashed JS and CSS without browser compilers", () => {
   const index = readFileSync(path.join(root, "index.html"), "utf8");
   const deploy = readFileSync(path.join(root, "deploy-cn/index.html"), "utf8");
   assert.equal(index, deploy);
   assert.ok(Buffer.byteLength(index) < 60000, "initial HTML exceeds the 60 KiB budget");
-  assert.doesNotMatch(index, /babel\.min\.js|type="text\/babel"/);
+  assert.doesNotMatch(index, /babel\.min\.js|type="text\/babel"|tailwind-runtime\.js|window\.tailwind/);
   const bundle = index.match(/assets\/app\/app-([a-f0-9]{12})\.js/)?.[0];
+  const stylesheet = index.match(/assets\/app\/app-([a-f0-9]{12})\.css/)?.[0];
   assert.ok(bundle, "versioned application bundle is missing");
+  assert.ok(stylesheet, "versioned application stylesheet is missing");
   const sourceBundle = path.join(root, bundle);
   const deployBundle = path.join(root, "deploy-cn", bundle);
+  const sourceStylesheet = path.join(root, stylesheet);
+  const deployStylesheet = path.join(root, "deploy-cn", stylesheet);
   assert.ok(existsSync(sourceBundle) && existsSync(deployBundle));
+  assert.ok(existsSync(sourceStylesheet) && existsSync(deployStylesheet));
   assert.equal(createHash("sha256").update(readFileSync(sourceBundle)).digest("hex"), createHash("sha256").update(readFileSync(deployBundle)).digest("hex"));
+  assert.equal(createHash("sha256").update(readFileSync(sourceStylesheet)).digest("hex"), createHash("sha256").update(readFileSync(deployStylesheet)).digest("hex"));
+  const css = readFileSync(sourceStylesheet, "utf8");
+  assert.match(css, /\.bg-banana\{/);
+  assert.match(css, /\.rounded-3xl\{/);
+  assert.match(css, /\.text-cream\{/);
   for (const serviceWorkerPath of ["service-worker.js", "deploy-cn/service-worker.js"]) {
     const serviceWorker = readFileSync(path.join(root, serviceWorkerPath), "utf8");
     assert.match(serviceWorker, new RegExp(bundle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
-    assert.doesNotMatch(serviceWorker, /babel\.min\.js/);
+    assert.match(serviceWorker, new RegExp(stylesheet.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.doesNotMatch(serviceWorker, /babel\.min\.js|tailwind-runtime\.js/);
   }
 });
 
@@ -33,7 +44,8 @@ test("all theme cards use budgeted optimized covers with stable fallback", () =>
   assert.match(appSource, /loading=\{sceneIndex < 3 \? "eager" : "lazy"\}/);
   assert.match(appSource, /fetchPriority=\{sceneIndex === 0 \? "high"/);
   assert.match(appSource, /data-cover-failed=/);
-  assert.doesNotMatch(appSource, /requestIdleCallback\(prefetch/);
+  assert.match(appSource, /HOME_COVER_PREFETCH_THEME_IDS = Object\.freeze\(\["zoo", "fruitShop", "campus"\]\)/);
+  assert.match(appSource, /requestIdleCallback\(\(\) => prefetchHomeThemeCovers\(\)/);
   for (const [theme, item] of themes) {
     assert.ok(statSync(path.join(root, item.webp)).size <= 120000, `${theme} cover exceeds 120 KiB`);
     assert.equal(readFileSync(path.join(root, item.webp)).compare(readFileSync(path.join(root, "deploy-cn", item.webp))), 0);

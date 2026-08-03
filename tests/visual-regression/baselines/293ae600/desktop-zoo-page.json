@@ -1,0 +1,122 @@
+{
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "overflowX": false,
+  "values": {
+    "page": {
+      "selector": "main.scene-page",
+      "text": "gate入口Learn gateexhibit展区Learn exhibitticket booth售票亭Learn ticket boothZoo Trip 1/11Entrance 入口Back to Scene 返回场景选择Word Book生词本Login登录Walk Forward继续前进Ob erveYou",
+      "box": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "styles": {
+        "display": "block",
+        "position": "relative",
+        "width": "1440px",
+        "height": "900px",
+        "paddingTop": "0px",
+        "paddingRight": "0px",
+        "paddingBottom": "0px",
+        "paddingLeft": "0px",
+        "marginTop": "0px",
+        "marginRight": "0px",
+        "marginBottom": "0px",
+        "marginLeft": "0px",
+        "color": "rgb(255, 248, 231)",
+        "backgroundColor": "rgb(23, 37, 28)",
+        "borderTopWidth": "0px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(229, 231, 235)",
+        "borderRadius": "0px",
+        "fontSize": "16px",
+        "lineHeight": "24px",
+        "fontWeight": "400",
+        "boxShadow": "none",
+        "opacity": "1",
+        "transform": "none"
+      }
+    },
+    "scene": {
+      "selector": ".scene-reveal",
+      "text": "gate入口Learn gateexhibit展区Learn exhibitticket booth售票亭Learn ticket booth",
+      "box": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "styles": {
+        "display": "block",
+        "position": "absolute",
+        "width": "1440px",
+        "height": "900px",
+        "paddingTop": "0px",
+        "paddingRight": "0px",
+        "paddingBottom": "0px",
+        "paddingLeft": "0px",
+        "marginTop": "0px",
+        "marginRight": "0px",
+        "marginBottom": "0px",
+        "marginLeft": "0px",
+        "color": "rgb(255, 248, 231)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopWidth": "0px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(229, 231, 235)",
+        "borderRadius": "0px",
+        "fontSize": "16px",
+        "lineHeight": "24px",
+        "fontWeight": "400",
+        "boxShadow": "none",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      }
+    },
+    "firstHotspot": {
+      "selector": ".hotspot-sign",
+      "text": "gate入口Learn gate",
+      "box": {
+        "x": 650.05,
+        "y": 394.25,
+        "width": 62.28,
+        "height": 59.5
+      },
+      "styles": {
+        "display": "block",
+        "position": "absolute",
+        "width": "62.2812px",
+        "height": "59.5px",
+        "paddingTop": "10px",
+        "paddingRight": "14px",
+        "paddingBottom": "10px",
+        "paddingLeft": "14px",
+        "marginTop": "0px",
+        "marginRight": "0px",
+        "marginBottom": "0px",
+        "marginLeft": "0px",
+        "color": "rgb(255, 248, 231)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgba(255, 232, 162, 0.82)",
+        "borderRadius": "16px",
+        "fontSize": "16px",
+        "lineHeight": "24px",
+        "fontWeight": "400",
+        "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(11, 32, 20, 0.28) 0px 12px 28px 0px",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, -31.1406, -29.75)"
+      }
+    },
+    "observe": null,
+    "walkForward": null
+  },
+  "consoleErrors": [
+    "[BABEL] Note: The code generator has deoptimised the styling of /Inline Babel script as it exceeds the max of 500KB."
+  ]
+}

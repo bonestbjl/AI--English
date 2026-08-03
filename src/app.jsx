@@ -4,12 +4,37 @@ let activeLearningAudio = null;
 const MOBILE_AUDIO_MAP_SCRIPT_URL = "assets/audio/full-mobile-audio.js?v=ba0fcbb0b5d9c61e";
 const THEME_RESOURCE_PACKS_SCRIPT_URL = "assets/theme-resource-packs.js?v=themes-c940b01c395d";
 const THEME_COVER_IMAGES = Object.freeze(/*__RSE_THEME_COVER_MANIFEST__*/ {});
+const HOME_COVER_PREFETCH_THEME_IDS = Object.freeze(["zoo", "fruitShop", "campus"]);
+const homeCoverPrefetches = new Map();
 const deferredScriptLoaders = new Map();
 const THEME_PACK_READY_PREFIX = "realSceneThemePackReady:";
 const themeResourceRequests = new Map();
 const themePreparedResourceUrls = new Map();
 let themeResourceUrlLookup = null;
 let activeThemeResourcePackId = null;
+
+function prefetchHomeThemeCovers() {
+  const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  if (connection?.saveData || /(^|-)2g$/.test(String(connection?.effectiveType || ""))) {
+    return Promise.resolve([]);
+  }
+  const requests = HOME_COVER_PREFETCH_THEME_IDS.map((themeId) => {
+    const source = THEME_COVER_IMAGES[themeId]?.webp;
+    if (!source) return Promise.resolve(false);
+    if (homeCoverPrefetches.has(source)) return homeCoverPrefetches.get(source);
+    const request = new Promise((resolve) => {
+      const image = new Image();
+      image.decoding = "async";
+      image.fetchPriority = "low";
+      image.onload = () => resolve(true);
+      image.onerror = () => resolve(false);
+      image.src = source;
+    });
+    homeCoverPrefetches.set(source, request);
+    return request;
+  });
+  return Promise.all(requests);
+}
 
 function ensureDeferredScriptLoaded({ key, src, isReady }) {
   if (isReady()) return Promise.resolve(true);
@@ -10277,6 +10302,30 @@ function App() {
   const [animalEffect, setAnimalEffect] = useState(null);
 
   useEffect(() => {
+    if (currentView !== "home") return undefined;
+    let timerId = null;
+    let idleId = null;
+    const schedule = () => {
+      timerId = window.setTimeout(() => {
+        if (typeof window.requestIdleCallback === "function") {
+          idleId = window.requestIdleCallback(() => prefetchHomeThemeCovers(), { timeout: 2500 });
+        } else {
+          prefetchHomeThemeCovers();
+        }
+      }, 500);
+    };
+    if (document.readyState === "complete") schedule();
+    else window.addEventListener("load", schedule, { once: true });
+    return () => {
+      window.removeEventListener("load", schedule);
+      if (timerId !== null) window.clearTimeout(timerId);
+      if (idleId !== null && typeof window.cancelIdleCallback === "function") {
+        window.cancelIdleCallback(idleId);
+      }
+    };
+  }, [currentView]);
+
+  useEffect(() => {
     loadEnglishVoices();
     if (!("speechSynthesis" in window)) return undefined;
     if (typeof window.speechSynthesis.addEventListener === "function") {
@@ -13800,6 +13849,9 @@ function App() {
             </p>
             <button
               onClick={() => setCurrentView("sceneSelect")}
+              onMouseEnter={prefetchHomeThemeCovers}
+              onFocus={prefetchHomeThemeCovers}
+              onTouchStart={prefetchHomeThemeCovers}
               className="hud-float mt-11 rounded-full border border-white/18 bg-white/12 px-7 py-3.5 text-base font-black text-white shadow-[0_18px_50px_rgba(0,0,0,0.32),inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white/18 active:scale-[0.99] sm:px-8 sm:py-4"
             >
               <ButtonCopy en="Start Journey" zh="开始旅程" />

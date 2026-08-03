@@ -29,7 +29,7 @@ createServer((request, response) => {
   }
   const extension = extname(filePath).toLowerCase();
   const compressible = [".html", ".js", ".json", ".css", ".svg"].includes(extension);
-  const immutable = /(?:app-[a-f0-9]{12}\.js|cover-[a-f0-9]{12}\.webp)$/.test(relativePath);
+  const immutable = /(?:app-[a-f0-9]{12}\.(?:js|css)|cover-[a-f0-9]{12}\.webp)$/.test(relativePath);
   response.setHeader("Content-Type", mimeTypes[extension] || "application/octet-stream");
   response.setHeader("Cache-Control", immutable ? "public, max-age=31536000, immutable" : relativePath === "index.html" ? "no-cache" : "public, max-age=86400");
   response.setHeader("Vary", "Accept-Encoding");
