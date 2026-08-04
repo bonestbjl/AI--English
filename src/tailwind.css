@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Keep the actual control as the only touch target on mobile browsers. */
+button[data-audio-playback="true"] {
+  pointer-events: auto;
+  touch-action: manipulation;
+}
+
+button[data-audio-playback="true"] > *,
+.hotspot-sign::before,
+.hotspot-sign::after {
+  pointer-events: none;
+}

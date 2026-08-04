@@ -153,12 +153,16 @@ function updateServiceWorker(path, version, styleVersion, bundleRelativePath, st
 
 extractInitialSource();
 const source = readFileSync(sourcePath, "utf8");
-const compiled = compileSource(source);
+const compiledTemplate = compileSource(source);
 const styles = compileStyles();
-const version = sha256(compiled).slice(0, 12);
+const version = sha256(compiledTemplate).slice(0, 12);
 const styleVersion = sha256(styles).slice(0, 12);
 const bundleRelativePath = `assets/app/app-${version}.js`;
 const styleRelativePath = `assets/app/app-${styleVersion}.css`;
+const compiled = compiledTemplate.replaceAll("__RSE_APP_BUNDLE__", `app-${version}.js`);
+if (compiled.includes("__RSE_APP_BUNDLE__")) {
+  throw new Error("Could not inject the expected application bundle name into the debug runtime.");
+}
 
 for (const base of [root, resolve(root, "deploy-cn")]) {
   const outputPath = resolve(base, bundleRelativePath);

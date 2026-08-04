@@ -1,8 +1,10 @@
-const { useEffect, useMemo, useRef, useState } = React;
+const { useCallback, useEffect, useMemo, useRef, useState } = React;
 
-let activeLearningAudio = null;
 const MOBILE_AUDIO_MAP_SCRIPT_URL = "assets/audio/full-mobile-audio.js?v=ba0fcbb0b5d9c61e";
 const THEME_RESOURCE_PACKS_SCRIPT_URL = "assets/theme-resource-packs.js?v=themes-c940b01c395d";
+const AUDIO_DEBUG_EXPECTED_BUNDLE = "__RSE_APP_BUNDLE__";
+const AUDIO_DEBUG_NATIVE_URL = "https://audio-test.bonestlab.com:4190/assets/audio/words/zoo/zoo-gate.mp3";
+const AUDIO_DEBUG_RELATIVE_URL = "/assets/audio/words/zoo/zoo-gate.mp3";
 const THEME_COVER_IMAGES = Object.freeze(/*__RSE_THEME_COVER_MANIFEST__*/ {});
 const HOME_COVER_PREFETCH_THEME_IDS = Object.freeze(["zoo", "fruitShop", "campus"]);
 const homeCoverPrefetches = new Map();
@@ -371,6 +373,26 @@ function getMobileAudioUrl(text) {
   if (!isMobileAudioPreferred()) return null;
   const audioUrl = window.FullMobileAudioUrls?.[text] || null;
   return audioUrl ? getPreparedThemeResourceUrl(audioUrl) : null;
+}
+
+function getLoadedAppBundleName() {
+  const script = Array.from(document.scripts).find((item) => /(?:^|\/)assets\/app\/app-[a-f0-9]{12}\.js(?:\?|$)/.test(item.src || ""));
+  const source = script?.getAttribute("src") || script?.src || "";
+  const match = source.match(/app-([a-f0-9]{12})\.js/);
+  return match ? `app-${match[1]}.js` : "not_detected";
+}
+
+function getAudioElementDebugState(audio) {
+  const mediaError = audio?.error || null;
+  return {
+    audioSrc: audio?.currentSrc || audio?.src || "",
+    muted: Boolean(audio?.muted),
+    volume: typeof audio?.volume === "number" ? audio.volume : null,
+    readyState: typeof audio?.readyState === "number" ? audio.readyState : null,
+    networkState: typeof audio?.networkState === "number" ? audio.networkState : null,
+    audioErrorCode: mediaError?.code || null,
+    audioErrorMessage: mediaError?.message || "",
+  };
 }
 
 const scenes = [
@@ -10179,11 +10201,33 @@ function layoutHotspots(hotspots, viewport, options) {
 function App() {
   const [currentView, setCurrentView] = useState("home");
   const [currentUser, setAuthenticatedUser] = useState(() => getCurrentUser());
+  const audioDebugEnabled = useMemo(
+    () => new URLSearchParams(window.location.search).get("audioDebug") === "1",
+    []
+  );
   const initialLearningData = useMemo(() => getActiveLearningData(currentUser), []);
   const cloudSyncTimerRef = useRef(null);
   const latestLearningDataRef = useRef(initialLearningData);
   const currentUserRef = useRef(currentUser);
   const scenePageRef = useRef(null);
+  const learningAudioRef = useRef(null);
+  const audioPlaybackAttemptRef = useRef(0);
+  const audioTriggerRegistryRef = useRef(new Map());
+  const lastNativeAudioTriggerRef = useRef({ triggerId: "", timestamp: 0 });
+  const audioPlaybackVisualTimerRef = useRef(null);
+  const audioPlaybackHintTimerRef = useRef(null);
+  const audioDebugSequenceRef = useRef(0);
+  const audioDebugLastEventRef = useRef(null);
+  const audioDebugNativeButtonHostRef = useRef(null);
+  const audioDebugMinimalAudioRef = useRef(null);
+  const [audioDebugEntries, setAudioDebugEntries] = useState([]);
+  const [audioDebugSnapshot, setAudioDebugSnapshot] = useState({
+    indexStatus: "not_checked",
+    targetAudioUrl: "",
+    playStatus: "not_called",
+    lastEvent: null,
+    ...getAudioElementDebugState(null),
+  });
   const [sceneLayoutMetrics, setSceneLayoutMetrics] = useState({
     fingerprint: "",
     blockedRects: [],
@@ -10301,6 +10345,105 @@ function App() {
   const [isWalking, setIsWalking] = useState(false);
   const [animalEffect, setAnimalEffect] = useState(null);
 
+  const recordAudioDebug = useCallback((label, details = {}) => {
+    if (!audioDebugEnabled) return;
+    const entry = {
+      id: audioDebugSequenceRef.current + 1,
+      time: new Date().toLocaleTimeString(),
+      label,
+      ...details,
+    };
+    audioDebugSequenceRef.current = entry.id;
+    setAudioDebugEntries((entries) => [...entries.slice(-39), entry]);
+    console.info("[RSE audio debug]", entry);
+  }, [audioDebugEnabled]);
+
+  const getAudioIndexStatus = useCallback(() => {
+    if (!isMobileAudioPreferred()) return "desktop_or_non_mobile";
+    if (window.FullMobileAudioUrls) return "ready";
+    if (deferredScriptLoaders.has("mobile-audio-map")) return "loading";
+    return "not_loaded";
+  }, []);
+
+  const refreshAudioDebugSnapshot = useCallback((updates = {}, audio = learningAudioRef.current) => {
+    if (!audioDebugEnabled) return;
+    setAudioDebugSnapshot((current) => ({
+      ...current,
+      indexStatus: getAudioIndexStatus(),
+      ...getAudioElementDebugState(audio),
+      ...updates,
+      timestamp: new Date().toLocaleTimeString(),
+    }));
+  }, [audioDebugEnabled, getAudioIndexStatus]);
+
+  const describeAudioDebugEvent = useCallback((event, source) => {
+    if (!audioDebugEnabled) return;
+    const point = event.touches?.[0] || event.changedTouches?.[0] || event;
+    const eventTarget = event.target instanceof Element ? event.target : null;
+    const hitTarget = Number.isFinite(point?.clientX) && Number.isFinite(point?.clientY)
+      ? document.elementFromPoint(point.clientX, point.clientY)
+      : null;
+    const targetStyle = eventTarget ? window.getComputedStyle(eventTarget) : null;
+    const details = {
+      source,
+      eventType: event.type || "unknown",
+      pointerType: event.pointerType || (event.touches ? "touch" : "unknown"),
+      userActivation: Boolean(navigator.userActivation?.isActive),
+      defaultPrevented: Boolean(event.defaultPrevented),
+      target: eventTarget ? `${eventTarget.tagName.toLowerCase()}${eventTarget.id ? `#${eventTarget.id}` : ""}${eventTarget.className ? `.${String(eventTarget.className).split(/\s+/).slice(0, 2).join(".")}` : ""}` : "unknown",
+      hitTarget: hitTarget ? hitTarget.tagName.toLowerCase() : "unknown",
+      targetPointerEvents: targetStyle?.pointerEvents || "unknown",
+      targetZIndex: targetStyle?.zIndex || "auto",
+      targetTouchAction: targetStyle?.touchAction || "auto",
+    };
+    audioDebugLastEventRef.current = details;
+    refreshAudioDebugSnapshot({ lastEvent: details });
+    recordAudioDebug("input event received", details);
+  }, [audioDebugEnabled, recordAudioDebug, refreshAudioDebugSnapshot]);
+
+  useEffect(() => {
+    if (!audioDebugEnabled) return undefined;
+    const eventTypes = ["pointerdown", "pointerup", "touchstart", "touchend", "click"];
+    const handler = (event) => describeAudioDebugEvent(event, "document_capture");
+    eventTypes.forEach((eventType) => document.addEventListener(eventType, handler, true));
+    refreshAudioDebugSnapshot({ bundle: getLoadedAppBundleName() });
+    recordAudioDebug("audio debug enabled", {
+      userAgent: navigator.userAgent,
+      bundle: getLoadedAppBundleName(),
+      expectedBundle: AUDIO_DEBUG_EXPECTED_BUNDLE,
+      indexStatus: getAudioIndexStatus(),
+    });
+    return () => eventTypes.forEach((eventType) => document.removeEventListener(eventType, handler, true));
+  }, [audioDebugEnabled, describeAudioDebugEvent, getAudioIndexStatus, recordAudioDebug, refreshAudioDebugSnapshot]);
+
+  useEffect(() => {
+    if (!audioDebugEnabled) return;
+    refreshAudioDebugSnapshot();
+  }, [audioDebugEnabled, currentView, currentChapter, refreshAudioDebugSnapshot]);
+
+  useEffect(() => {
+    if (!audioDebugEnabled || !audioDebugNativeButtonHostRef.current) return undefined;
+    const host = audioDebugNativeButtonHostRef.current;
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = "Native DOM event test";
+    button.style.cssText = "width:100%;margin-top:8px;padding:8px;border:1px solid #f8d77b;border-radius:8px;background:#294638;color:#fff;font-weight:700;";
+    const eventTypes = ["touchstart", "touchend", "pointerdown", "pointerup", "click"];
+    const handlers = eventTypes.map((eventType) => {
+      const handler = (event) => {
+        describeAudioDebugEvent(event, "native_dom_button");
+        if (event.type === "click") recordAudioDebug("native DOM button click handler reached");
+      };
+      button.addEventListener(eventType, handler);
+      return [eventType, handler];
+    });
+    host.replaceChildren(button);
+    return () => {
+      handlers.forEach(([eventType, handler]) => button.removeEventListener(eventType, handler));
+      if (host.contains(button)) host.removeChild(button);
+    };
+  }, [audioDebugEnabled, describeAudioDebugEvent, recordAudioDebug]);
+
   useEffect(() => {
     if (currentView !== "home") return undefined;
     let timerId = null;
@@ -10340,6 +10483,22 @@ function App() {
         window.speechSynthesis.onvoiceschanged = null;
       }
     };
+  }, []);
+
+  useEffect(() => {
+    if (currentView !== "zoo" || !isMobileAudioPreferred()) return;
+    ensureMobileAudioMapLoaded().catch((error) => {
+      console.warn("[RSE mobile audio] index preload failed", {
+        name: error?.name || "Error",
+        message: error?.message || "unknown_error",
+      });
+    });
+  }, [currentView, currentChapter]);
+
+  useEffect(() => () => {
+    if (audioPlaybackHintTimerRef.current !== null) {
+      window.clearTimeout(audioPlaybackHintTimerRef.current);
+    }
   }, []);
 
   useEffect(() => {
@@ -11285,87 +11444,300 @@ function App() {
   const endingDialogueCount = isLaundryChapter ? laundryEndingDialogs : conversationDone.length;
   const endingSavedWords = isLaundryChapter ? laundryEndingSavedWords : savedWords;
 
-  async function speakEnglish(text, rate = 0.9, key = text, skipMobileAudio = false) {
-    if (!skipMobileAudio && isMobileAudioPreferred()) {
-      try {
-        await ensureMobileAudioMapLoaded();
-      } catch (error) {
-        // Preserve the existing speech fallback and allow the next click to retry the map.
-      }
-      const audioUrl = getMobileAudioUrl(text);
-      if (audioUrl) {
-        playLearningAudio({ text, audioUrl, rate, key });
+  function showAudioPlaybackHint(message) {
+    setProgressHint(message);
+    if (audioPlaybackHintTimerRef.current !== null) {
+      window.clearTimeout(audioPlaybackHintTimerRef.current);
+    }
+    audioPlaybackHintTimerRef.current = window.setTimeout(() => {
+      setProgressHint((current) => current === message ? "" : current);
+      audioPlaybackHintTimerRef.current = null;
+    }, 3600);
+  }
+
+  function clearPendingPlaybackVisual() {
+    if (audioPlaybackVisualTimerRef.current !== null) {
+      window.clearTimeout(audioPlaybackVisualTimerRef.current);
+      audioPlaybackVisualTimerRef.current = null;
+    }
+  }
+
+  function releasePendingPlaybackVisual(key) {
+    clearPendingPlaybackVisual();
+    audioPlaybackVisualTimerRef.current = window.setTimeout(() => {
+      setPlayingKey((current) => current === key ? null : current);
+      audioPlaybackVisualTimerRef.current = null;
+    }, 700);
+  }
+
+  function resolveNativeAudioTrigger(event) {
+    const getTriggerElement = (element) =>
+      element && typeof element.closest === "function"
+        ? element.closest('[data-audio-trigger="true"]')
+        : null;
+    const direct = getTriggerElement(event.target);
+    const elements = !direct && Number.isFinite(event.clientX) && Number.isFinite(event.clientY) && typeof document.elementsFromPoint === "function"
+      ? document.elementsFromPoint(event.clientX, event.clientY)
+      : [];
+    const fallback = elements.map(getTriggerElement).find(Boolean) || null;
+    return { trigger: direct || fallback, direct, fallback, elements };
+  }
+
+  function triggerPlaybackFromInput(event, triggerId, key, action, source) {
+    const now = Date.now();
+    const last = lastNativeAudioTriggerRef.current;
+    if (last.triggerId === triggerId && now - last.timestamp < 600) {
+      recordAudioDebug("duplicate playback input ignored", { triggerId, key, source, eventType: event?.type || "unknown" });
+      return;
+    }
+    lastNativeAudioTriggerRef.current = { triggerId, timestamp: now };
+    clearPendingPlaybackVisual();
+    setPlayingKey(key);
+    describeAudioDebugEvent(event, "audio_button");
+    recordAudioDebug("native delegated trigger reached", { triggerId, key, source, eventType: event?.type || "unknown" });
+    try {
+      action();
+    } catch (error) {
+      setPlayingKey(null);
+      reportAudioDebugFailure("audio_button_trigger", error);
+      showAudioPlaybackHint("播放失败，请重试或在浏览器中打开");
+    }
+  }
+
+  function audioButtonProps(triggerId, key, action) {
+    if (typeof action !== "function") {
+      action = key;
+      key = triggerId;
+    }
+    return {
+      type: "button",
+      "data-audio-playback": "true",
+      "data-audio-trigger": "true",
+      "data-audio-trigger-id": triggerId,
+      ref: (node) => {
+        if (node) {
+          audioTriggerRegistryRef.current.set(triggerId, { key, action, node });
+        } else {
+          audioTriggerRegistryRef.current.delete(triggerId);
+        }
+      },
+      onPointerUp: (event) => {
+        if (event.pointerType === "touch" || event.pointerType === "pen") {
+          triggerPlaybackFromInput(event, triggerId, key, action, "react_pointerup");
+        }
+      },
+      onClick: (event) => triggerPlaybackFromInput(event, triggerId, key, action, "react_click"),
+    };
+  }
+
+  function handleNativeAudioPointerUp(event) {
+    if (event.pointerType !== "touch" && event.pointerType !== "pen") return;
+    const { trigger, direct, fallback, elements } = resolveNativeAudioTrigger(event);
+    recordAudioDebug("native pointerup captured", {
+      pointerType: event.pointerType,
+      directClosestResult: direct?.dataset?.audioTriggerId || "none",
+      elementsFromPointResult: elements.slice(0, 6).map((element) => element?.dataset?.audioTriggerId || element?.tagName || "unknown"),
+      fallbackResult: fallback?.dataset?.audioTriggerId || "none",
+    });
+    if (!trigger) return;
+    const triggerId = trigger.dataset.audioTriggerId;
+    recordAudioDebug("audio trigger id", { triggerId: triggerId || "missing" });
+    const entry = triggerId ? audioTriggerRegistryRef.current.get(triggerId) : null;
+    if (!entry) {
+      recordAudioDebug("native trigger found but registry entry missing", { triggerId: triggerId || "missing" });
+      return;
+    }
+    recordAudioDebug("registry entry found", { triggerId });
+    triggerPlaybackFromInput(event, triggerId, entry.key, entry.action, "native_capture");
+  }
+
+  useEffect(() => {
+    document.addEventListener("pointerup", handleNativeAudioPointerUp, true);
+    return () => document.removeEventListener("pointerup", handleNativeAudioPointerUp, true);
+  }, []);
+
+  function reportAudioDebugFailure(stage, error, audio = learningAudioRef.current) {
+    const details = {
+      stage,
+      errorName: error?.name || "Error",
+      errorMessage: error?.message || "unknown_error",
+      ...getAudioElementDebugState(audio),
+    };
+    recordAudioDebug("audio error", details);
+    refreshAudioDebugSnapshot({
+      playStatus: "error",
+      errorName: details.errorName,
+      errorMessage: details.errorMessage,
+    }, audio);
+  }
+
+  async function speakWithEnglishVoice(text, rate = 0.9, key = text, requireEnglishVoice = false) {
+    try {
+      recordAudioDebug("speechSynthesis fallback entered", {
+        text,
+        requireEnglishVoice,
+        englishVoicesReady,
+      });
+      if (!("speechSynthesis" in window)) {
+        if (requireEnglishVoice) showAudioPlaybackHint("浏览器没有可用的英文语音");
         return;
       }
+      const speechToken = activeSpeechToken + 1;
+      activeSpeechToken = speechToken;
+      setPlayingKey(key);
+      window.speechSynthesis.cancel();
+      let selectedVoice = loadEnglishVoices();
+      if (!selectedVoice && !englishVoicesReady) {
+        selectedVoice = await waitForEnglishVoice();
+      }
+      if (activeSpeechToken !== speechToken) return;
+      if (requireEnglishVoice && !selectedVoice) {
+        setPlayingKey(null);
+        showAudioPlaybackHint("浏览器没有可用的英文语音");
+        return;
+      }
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = "en-US";
+      if (selectedVoice) utterance.voice = selectedVoice;
+      utterance.rate = rate;
+      utterance.pitch = 1;
+      utterance.volume = 1;
+      utterance.onend = () => {
+        if (activeSpeechToken === speechToken) setPlayingKey(null);
+      };
+      utterance.onerror = () => {
+        if (activeSpeechToken === speechToken) setPlayingKey(null);
+      };
+      window.speechSynthesis.speak(utterance);
+    } catch (error) {
+      reportAudioDebugFailure("speechSynthesis", error);
+      if (audioDebugEnabled) {
+        showAudioPlaybackHint("播放失败，请重试或在浏览器中打开");
+        return;
+      }
+      throw error;
     }
-    if (!("speechSynthesis" in window)) return;
-    const speechToken = activeSpeechToken + 1;
-    activeSpeechToken = speechToken;
-    setPlayingKey(key);
-    window.speechSynthesis.cancel();
-    let selectedVoice = loadEnglishVoices();
-    if (!selectedVoice && !englishVoicesReady) {
-      selectedVoice = await waitForEnglishVoice();
+  }
+
+  function speakEnglish(text, rate = 0.9, key = text, skipMobileAudio = false) {
+    try {
+      recordAudioDebug("business playback entry reached", {
+        text,
+        key,
+        indexStatus: getAudioIndexStatus(),
+        lastEvent: audioDebugLastEventRef.current,
+      });
+      if (!skipMobileAudio && isMobileAudioPreferred()) {
+        const audioUrl = getMobileAudioUrl(text);
+        refreshAudioDebugSnapshot({ targetAudioUrl: audioUrl || "", indexStatus: getAudioIndexStatus() });
+        if (audioUrl) {
+          recordAudioDebug("source resolved", { text, audioUrl });
+          playLearningAudio({ text, audioUrl, rate, key });
+          return;
+        }
+        recordAudioDebug("audio index not ready or mapping missing", {
+          text,
+          indexStatus: getAudioIndexStatus(),
+        });
+        ensureMobileAudioMapLoaded().catch((error) => {
+          console.warn("[RSE mobile audio] index load failed", {
+            name: error?.name || "Error",
+            message: error?.message || "unknown_error",
+          });
+          reportAudioDebugFailure("mobile_audio_index_load", error);
+        });
+        showAudioPlaybackHint("声音准备中，请再点一次");
+        releasePendingPlaybackVisual(key);
+        return;
+      }
+      const fallback = speakWithEnglishVoice(text, rate, key, skipMobileAudio && isMobileAudioPreferred());
+      if (audioDebugEnabled && fallback && typeof fallback.catch === "function") {
+        fallback.catch((error) => reportAudioDebugFailure("speech_fallback", error));
+      }
+    } catch (error) {
+      reportAudioDebugFailure("business_playback_entry", error);
+      if (audioDebugEnabled) {
+        showAudioPlaybackHint("播放失败，请重试或在浏览器中打开");
+        return;
+      }
+      throw error;
     }
-    if (activeSpeechToken !== speechToken) return;
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = "en-US";
-    if (selectedVoice) utterance.voice = selectedVoice;
-    utterance.rate = rate;
-    utterance.pitch = 1;
-    utterance.volume = 1;
-    utterance.onend = () => {
-      if (activeSpeechToken === speechToken) setPlayingKey(null);
-    };
-    utterance.onerror = () => {
-      if (activeSpeechToken === speechToken) setPlayingKey(null);
-    };
-    window.speechSynthesis.speak(utterance);
   }
 
   function stopLearningAudio() {
-    if (!activeLearningAudio) return;
-    activeLearningAudio.onended = null;
-    activeLearningAudio.onerror = null;
-    activeLearningAudio.pause();
-    activeLearningAudio.removeAttribute("src");
-    activeLearningAudio.load();
-    activeLearningAudio = null;
+    const audio = learningAudioRef.current;
+    if (!audio) return;
+    audio.onended = null;
+    audio.onerror = null;
+    audio.pause();
+    audio.removeAttribute("src");
+    audio.load();
   }
 
   function playLearningAudio({ text, audioUrl, rate = 0.9, key = text }) {
-    if (!audioUrl || typeof Audio !== "function") {
-      stopLearningAudio();
-      speakEnglish(text, rate, key, true);
-      return;
-    }
-
-    stopLearningAudio();
-    window.speechSynthesis.cancel();
-    const audio = new Audio(audioUrl);
-    let hasFallenBack = false;
-    activeLearningAudio = audio;
-    audio.preload = "auto";
-    audio.playbackRate = rate <= 0.7 ? 0.85 : 1;
-
-    const fallBackToSpeech = () => {
-      if (hasFallenBack || activeLearningAudio !== audio) return;
-      hasFallenBack = true;
-      activeLearningAudio = null;
-      speakEnglish(text, rate, key, true);
-    };
-
-    audio.onended = () => {
-      if (activeLearningAudio === audio) {
-        activeLearningAudio = null;
-        setPlayingKey(null);
+    try {
+      if (!audioUrl || typeof Audio !== "function") {
+        recordAudioDebug("static audio unavailable, using explicit speech fallback", { text, audioUrl: audioUrl || "" });
+        stopLearningAudio();
+        const fallback = speakWithEnglishVoice(text, rate, key, true);
+        if (audioDebugEnabled && fallback && typeof fallback.catch === "function") {
+          fallback.catch((error) => reportAudioDebugFailure("missing_audio_fallback", error));
+        }
+        return;
       }
-    };
-    audio.onerror = fallBackToSpeech;
-    setPlayingKey(key);
-    const playPromise = audio.play();
-    if (playPromise && typeof playPromise.catch === "function") {
-      playPromise.catch(fallBackToSpeech);
+
+      stopLearningAudio();
+      window.speechSynthesis.cancel();
+      const audio = learningAudioRef.current || new Audio();
+      learningAudioRef.current = audio;
+      const playbackAttempt = audioPlaybackAttemptRef.current + 1;
+      audioPlaybackAttemptRef.current = playbackAttempt;
+      audio.preload = "auto";
+      audio.playbackRate = rate <= 0.7 ? 0.85 : 1;
+      audio.src = audioUrl;
+      audio.muted = false;
+      audio.volume = 1;
+      recordAudioDebug("audio src assigned", { text, audioUrl, ...getAudioElementDebugState(audio) });
+      refreshAudioDebugSnapshot({ targetAudioUrl: audioUrl, playStatus: "source_assigned" }, audio);
+
+      const reportPlaybackFailure = (error) => {
+        if (audioPlaybackAttemptRef.current !== playbackAttempt) return;
+        console.error("[RSE mobile audio] playback failed", {
+          name: error?.name || "MediaError",
+          message: error?.message || "media_playback_failed",
+        });
+        reportAudioDebugFailure("audio_playback", error, audio);
+        setPlayingKey(null);
+        showAudioPlaybackHint("播放失败，请重试或在浏览器中打开");
+      };
+
+      audio.onended = () => {
+        if (audioPlaybackAttemptRef.current === playbackAttempt) {
+          setPlayingKey(null);
+          recordAudioDebug("audio ended", getAudioElementDebugState(audio));
+          refreshAudioDebugSnapshot({ playStatus: "ended" }, audio);
+        }
+      };
+      audio.onerror = () => reportPlaybackFailure(audio.error || new Error("media_playback_failed"));
+      setPlayingKey(key);
+      recordAudioDebug("play called", { text, audioUrl, ...getAudioElementDebugState(audio) });
+      refreshAudioDebugSnapshot({ playStatus: "called" }, audio);
+      const playPromise = audio.play();
+      if (playPromise && typeof playPromise.then === "function") {
+        playPromise.then(() => {
+          recordAudioDebug("play resolved", getAudioElementDebugState(audio));
+          refreshAudioDebugSnapshot({ playStatus: "resolved" }, audio);
+        }, () => {});
+        playPromise.catch(reportPlaybackFailure);
+      }
+    } catch (error) {
+      reportAudioDebugFailure("play_learning_audio", error);
+      if (audioDebugEnabled) {
+        setPlayingKey(null);
+        showAudioPlaybackHint("播放失败，请重试或在浏览器中打开");
+        return;
+      }
+      throw error;
     }
   }
 
@@ -13520,6 +13892,120 @@ function App() {
     );
   }
 
+  function runMinimalAudioDebugTest() {
+    try {
+      recordAudioDebug("minimal JavaScript audio test button received", {
+        userActivation: Boolean(navigator.userActivation?.isActive),
+        url: AUDIO_DEBUG_RELATIVE_URL,
+      });
+      const audio = new Audio(AUDIO_DEBUG_RELATIVE_URL);
+      audioDebugMinimalAudioRef.current = audio;
+      audio.muted = false;
+      audio.volume = 1;
+      audio.oncanplay = () => {
+        recordAudioDebug("minimal JavaScript audio canplay", getAudioElementDebugState(audio));
+      };
+      audio.onerror = () => {
+        reportAudioDebugFailure("minimal_javascript_audio", audio.error || new Error("media_error"), audio);
+      };
+      recordAudioDebug("minimal JavaScript audio src assigned", getAudioElementDebugState(audio));
+      const result = audio.play();
+      recordAudioDebug("minimal JavaScript audio play called", getAudioElementDebugState(audio));
+      if (result && typeof result.then === "function") {
+        result.then(() => {
+          recordAudioDebug("minimal JavaScript audio play resolved", getAudioElementDebugState(audio));
+        }).catch((error) => reportAudioDebugFailure("minimal_javascript_audio_play", error, audio));
+      }
+    } catch (error) {
+      reportAudioDebugFailure("minimal_javascript_audio_entry", error, audioDebugMinimalAudioRef.current);
+    }
+  }
+
+  function renderAudioDebugPanel() {
+    if (!audioDebugEnabled) return null;
+    const loadedBundle = getLoadedAppBundleName();
+    const bundleMismatch = loadedBundle !== AUDIO_DEBUG_EXPECTED_BUNDLE;
+    const details = [
+      ["Current bundle", loadedBundle],
+      ["Expected bundle", AUDIO_DEBUG_EXPECTED_BUNDLE],
+      ["Bundle check", bundleMismatch ? "WARNING: loaded bundle differs" : "OK"],
+      ["Index status", audioDebugSnapshot.indexStatus],
+      ["Target URL", audioDebugSnapshot.targetAudioUrl || "not_resolved"],
+      ["audio.src", audioDebugSnapshot.audioSrc || "not_assigned"],
+      ["muted / volume", `${audioDebugSnapshot.muted} / ${audioDebugSnapshot.volume ?? "-"}`],
+      ["readyState / networkState", `${audioDebugSnapshot.readyState ?? "-"} / ${audioDebugSnapshot.networkState ?? "-"}`],
+      ["audio.error.code", audioDebugSnapshot.audioErrorCode ?? "none"],
+      ["play()", audioDebugSnapshot.playStatus],
+      ["error", audioDebugSnapshot.errorName ? `${audioDebugSnapshot.errorName}: ${audioDebugSnapshot.errorMessage}` : "none"],
+      ["Last update", audioDebugSnapshot.timestamp || "not_yet"],
+    ];
+    return (
+      <aside
+        data-audio-debug-panel
+        style={{
+          position: "fixed",
+          zIndex: 99999,
+          top: "max(8px, env(safe-area-inset-top))",
+          right: "8px",
+          width: "min(380px, calc(100vw - 16px))",
+          maxHeight: "min(76dvh, 620px)",
+          overflow: "auto",
+          padding: "12px",
+          borderRadius: "12px",
+          border: `1px solid ${bundleMismatch ? "#ff6b6b" : "#f8d77b"}`,
+          background: "rgba(8, 18, 14, 0.96)",
+          color: "#f8f3df",
+          boxShadow: "0 16px 40px rgba(0,0,0,0.42)",
+          fontSize: "12px",
+          lineHeight: 1.35,
+          fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
+        }}
+      >
+        <strong style={{ display: "block", color: "#f8d77b", fontSize: "13px" }}>Android Audio Diagnostics</strong>
+        <div style={{ marginTop: "6px", overflowWrap: "anywhere", color: "#dce8de" }}>UA: {navigator.userAgent}</div>
+        <div style={{ marginTop: "8px", display: "grid", gap: "4px" }}>
+          {details.map(([label, value]) => (
+            <div key={label} style={{ color: label === "Bundle check" && bundleMismatch ? "#ff8f8f" : "#dce8de", overflowWrap: "anywhere" }}>
+              {label}: {String(value)}
+            </div>
+          ))}
+        </div>
+        <div style={{ marginTop: "8px", color: "#dce8de", overflowWrap: "anywhere" }}>
+          Last input: {audioDebugSnapshot.lastEvent ? JSON.stringify(audioDebugSnapshot.lastEvent) : "none"}
+        </div>
+        <div style={{ marginTop: "10px", borderTop: "1px solid rgba(255,255,255,0.16)", paddingTop: "8px" }}>
+          <div style={{ color: "#f8d77b", fontWeight: 700 }}>A. Native audio control</div>
+          <audio
+            controls
+            preload="metadata"
+            src={AUDIO_DEBUG_NATIVE_URL}
+            style={{ width: "100%", marginTop: "5px" }}
+            onCanPlay={() => recordAudioDebug("native HTML audio canplay", { url: AUDIO_DEBUG_NATIVE_URL })}
+            onError={(event) => reportAudioDebugFailure("native_html_audio", event.currentTarget.error || new Error("media_error"), event.currentTarget)}
+          />
+          <button
+            type="button"
+            onClick={runMinimalAudioDebugTest}
+            style={{ width: "100%", marginTop: "8px", padding: "8px", border: "1px solid #f8d77b", borderRadius: "8px", background: "#516b2e", color: "#111614", fontWeight: 800 }}
+          >
+            B. Minimal JavaScript audio test
+          </button>
+          <div ref={audioDebugNativeButtonHostRef}></div>
+        </div>
+        <div style={{ marginTop: "10px", borderTop: "1px solid rgba(255,255,255,0.16)", paddingTop: "8px" }}>
+          <div style={{ color: "#f8d77b", fontWeight: 700 }}>Event and playback log</div>
+          <ol style={{ margin: "6px 0 0", paddingLeft: "20px", display: "grid", gap: "4px" }}>
+            {audioDebugEntries.length ? audioDebugEntries.map((entry) => (
+              <li key={entry.id} style={{ overflowWrap: "anywhere" }}>
+                {entry.time} {entry.label}{Object.keys(entry).filter((key) => !["id", "time", "label"].includes(key)).length ? ` — ${JSON.stringify(Object.fromEntries(Object.entries(entry).filter(([key]) => !["id", "time", "label"].includes(key))))}` : ""}
+              </li>
+            )) : <li>Waiting for an input event.</li>}
+          </ol>
+        </div>
+      </aside>
+    );
+  }
+
   const legalPage = legalPages[currentView];
   if (legalPage) {
     return (
@@ -13565,6 +14051,7 @@ function App() {
           </section>
           <footer className="py-8 text-center text-xs font-bold text-cream/44">© 2026 Real Scene English</footer>
         </div>
+        {renderAudioDebugPanel()}
         {renderAuthToast()}
         {showLandscapePrompt && <LandscapePrompt />}
       </main>
@@ -13646,7 +14133,7 @@ function App() {
                 })}
               </div>
               <button
-                onClick={startWordReview}
+                {...audioButtonProps("review-start", `review-${filteredSavedWords[0]?.word || "start"}`, startWordReview)}
                 disabled={!filteredSavedWords.length}
                 className={`rounded-full px-5 py-3 font-black shadow-label transition active:scale-[0.99] ${
                   filteredSavedWords.length
@@ -13664,7 +14151,7 @@ function App() {
                   Review {reviewIndex + 1}/{filteredSavedWords.length}
                 </p>
                 <button
-                  onClick={() => speakEnglish(currentReviewWord.word, 0.9, `review-${currentReviewWord.word}`)}
+                  {...audioButtonProps(`review-${currentReviewWord.word}`, () => speakEnglish(currentReviewWord.word, 0.9, `review-${currentReviewWord.word}`))}
                   className="mx-auto mt-5 block rounded-3xl border border-white/14 bg-white/10 px-6 py-5 transition hover:bg-white/16 active:scale-[0.99]"
                 >
                   <span className="block text-5xl font-black text-white">
@@ -13705,13 +14192,13 @@ function App() {
                     </div>
                     <div className="mt-5 grid gap-3 sm:grid-cols-2">
                       <button
-                        onClick={advanceReview}
+                        {...audioButtonProps("review-advance-primary", `review-${filteredSavedWords[Math.min(reviewIndex + 1, filteredSavedWords.length - 1)]?.word || "next"}`, advanceReview)}
                         className="rounded-2xl bg-banana px-5 py-4 font-black text-ink shadow-label transition hover:bg-[#ffc83f] active:scale-[0.99]"
                       >
                         <ButtonCopy en="I know it" zh="我认识了" />
                       </button>
                       <button
-                        onClick={advanceReview}
+                        {...audioButtonProps("review-advance-secondary", `review-${filteredSavedWords[Math.min(reviewIndex + 1, filteredSavedWords.length - 1)]?.word || "next"}`, advanceReview)}
                         className="rounded-2xl border border-white/18 bg-white/12 px-5 py-4 font-black text-white transition hover:bg-white/22 active:scale-[0.99]"
                       >
                         <ButtonCopy en="Review later" zh="稍后复习" />
@@ -13728,7 +14215,7 @@ function App() {
                     className="rounded-2xl border border-white/14 bg-white/10 p-4 shadow-label transition hover:border-banana/40 hover:bg-white/14"
                   >
                     <button
-                      onClick={() => speakEnglish(item.word, 0.9, `book-${item.word}`)}
+                      {...audioButtonProps(`book-${item.word}`, () => speakEnglish(item.word, 0.9, `book-${item.word}`))}
                       className="w-full text-left"
                     >
                       <div className="flex items-start justify-between gap-3">
@@ -13753,7 +14240,7 @@ function App() {
                     </button>
                     <div className="mt-4 grid grid-cols-2 gap-2">
                       <button
-                        onClick={() => speakEnglish(item.word, 0.9, `book-${item.word}-normal`)}
+                        {...audioButtonProps(`book-${item.word}-normal`, () => speakEnglish(item.word, 0.9, `book-${item.word}-normal`))}
                         className="rounded-2xl bg-banana px-3 py-3 font-black text-ink shadow-label transition hover:bg-[#ffc83f] active:scale-[0.99]"
                       >
                         <span className="inline-flex items-center justify-center gap-2">
@@ -13762,7 +14249,7 @@ function App() {
                         </span>
                       </button>
                       <button
-                        onClick={() => speakEnglish(item.word, 0.65, `book-${item.word}-slow`)}
+                        {...audioButtonProps(`book-${item.word}-slow`, () => speakEnglish(item.word, 0.65, `book-${item.word}-slow`))}
                         className="rounded-2xl border border-banana/40 bg-white/12 px-3 py-3 font-black text-white shadow-label transition hover:bg-white/22 active:scale-[0.99]"
                       >
                         <span className="inline-flex items-center justify-center gap-2">
@@ -13794,6 +14281,7 @@ function App() {
             )}
           </section>
         </div>
+        {renderAudioDebugPanel()}
         {showLandscapePrompt && <LandscapePrompt />}
       </main>
     );
@@ -13864,6 +14352,7 @@ function App() {
           </div>
         </section>
         {renderHomeFooter()}
+        {renderAudioDebugPanel()}
         {renderAuthToast()}
         {showLandscapePrompt && <LandscapePrompt />}
       </main>
@@ -14326,6 +14815,7 @@ function App() {
             </div>
           </div>
         )}
+        {renderAudioDebugPanel()}
         {renderAuthToast()}
         {showLandscapePrompt && <LandscapePrompt />}
       </main>
@@ -14578,7 +15068,7 @@ function App() {
             <button
               key={hotspot.id}
               data-scene-hotspot={hotspot.id}
-              onClick={() => openHotspot(hotspot)}
+              {...audioButtonProps(`hotspot-${hotspot.id}-open`, `${hotspot.id}-normal`, () => openHotspot(hotspot))}
               className={`hotspot-sign group absolute z-30 -translate-x-1/2 -translate-y-1/2 rounded-2xl border px-3 py-2 text-left shadow-label backdrop-blur-[2px] transition hover:z-50 active:scale-95 hotspot-active hotspot-breathe sm:px-3.5 sm:py-2.5 ${
                 hotspot.type === "action" ? "is-action" : ""
               } ${
@@ -14760,7 +15250,7 @@ function App() {
       {(!isMobileLandscape || showMobileObserve) && (
         <button
           data-hotspot-blocker="observe-panel"
-          onClick={() => speakEnglish(currentScene.intro.text, 0.9, `${currentScene.id}-intro`)}
+          {...audioButtonProps(`${currentScene.id}-intro`, () => speakEnglish(currentScene.intro.text, 0.9, `${currentScene.id}-intro`))}
           className="observe-panel dialogue-enter absolute left-4 top-[calc(env(safe-area-inset-top)+6.5rem)] z-20 max-h-[20vh] max-w-[340px] overflow-auto rounded-2xl border border-white/18 bg-nightglass p-3 text-left shadow-glow backdrop-blur-xl transition hover:bg-[#143423]/80 active:scale-[0.99] sm:left-6 md:max-w-[390px]"
         >
           {isMobileLandscape && (
@@ -14810,7 +15300,7 @@ function App() {
             </button>
           )}
           <button
-            onClick={() => speakEnglish(currentDialogue.text, 0.9, `${currentDialogue.id}-line`)}
+            {...audioButtonProps(`${currentDialogue.id}-line`, () => speakEnglish(currentDialogue.text, 0.9, `${currentDialogue.id}-line`))}
             className="mb-2 inline-flex items-center gap-2 rounded-full bg-banana px-3 py-1 text-[11px] font-black uppercase text-ink transition active:scale-95"
           >
             {playingKey === `${currentDialogue.id}-line` && <SoundBars />}
@@ -14824,7 +15314,7 @@ function App() {
             {currentDialogue.options.map((option) => (
               <button
                 key={option.text}
-                onClick={() => {
+                {...audioButtonProps(`dialogue-${option.text}`, () => {
                   setClickedChoice(option.text);
                   setDialogueReply(option);
                   speakEnglish(option.text, 0.9, `dialogue-${option.text}`);
@@ -14832,7 +15322,7 @@ function App() {
                     items.includes(currentDialogue.id) ? items : [...items, currentDialogue.id]
                   );
                   window.setTimeout(() => setClickedChoice(null), 280);
-                }}
+                })}
                 className={`rounded-xl border border-white/20 bg-white/12 px-3 py-2 text-left text-sm font-black text-white transition hover:border-banana/50 hover:bg-white/22 active:scale-[0.98] ${
                   clickedChoice === option.text ? "choice-pop bg-banana/24" : ""
                 }`}
@@ -14855,7 +15345,7 @@ function App() {
                 <p className="mt-1 text-xs font-bold text-cream/72">{dialogueReply.choiceZh}</p>
               </div>
               <button
-                onClick={() => speakEnglish(dialogueReply.reply, 0.86, `reply-${dialogueReply.reply}`)}
+                {...audioButtonProps(`reply-${dialogueReply.reply}`, () => speakEnglish(dialogueReply.reply, 0.86, `reply-${dialogueReply.reply}`))}
                 className="text-left text-sm font-black text-white"
               >
                 <span className="inline-flex items-center gap-2">
@@ -14980,7 +15470,7 @@ function App() {
 
             <div className="mt-5 grid grid-cols-2 gap-3">
               <button
-                onClick={() => playHotspotWord(selectedHotspot, 0.9, `${selectedHotspot.id}-normal`)}
+                {...audioButtonProps(`${selectedHotspot.id}-normal`, () => playHotspotWord(selectedHotspot, 0.9, `${selectedHotspot.id}-normal`))}
                 className="rounded-2xl bg-banana px-4 py-3 text-base font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
               >
                 <span className="inline-flex items-center justify-center gap-2">
@@ -14989,7 +15479,7 @@ function App() {
                 </span>
               </button>
               <button
-                onClick={() => playHotspotWord(selectedHotspot, 0.65, `${selectedHotspot.id}-slow`)}
+                {...audioButtonProps(`${selectedHotspot.id}-slow`, () => playHotspotWord(selectedHotspot, 0.65, `${selectedHotspot.id}-slow`))}
                 className="rounded-2xl border border-banana/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"
               >
                 <span className="inline-flex items-center justify-center gap-2">
@@ -15000,7 +15490,7 @@ function App() {
             </div>
 
             <button
-              onClick={() => playHotspotSentence(selectedHotspot, 0.86, `${selectedHotspot.id}-sentence`)}
+              {...audioButtonProps(`${selectedHotspot.id}-sentence`, () => playHotspotSentence(selectedHotspot, 0.86, `${selectedHotspot.id}-sentence`))}
               className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
             >
               <span className="inline-flex items-center justify-center gap-2">
@@ -15213,7 +15703,7 @@ function App() {
                   return (
                     <button
                       key={animal.id}
-                      onClick={() => openMoreAnimal(animal)}
+                      {...audioButtonProps(`more-${animal.id}-open`, `more-${animal.id}-normal`, () => openMoreAnimal(animal))}
                       className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
                         learned
                           ? "border-[#cfe89d]/50 bg-[#375236]/72"
@@ -15296,7 +15786,7 @@ function App() {
 
                 <div className="mt-5 grid grid-cols-2 gap-3">
                   <button
-                    onClick={() => speakEnglish(selectedMoreAnimal.word, 0.9, `more-${selectedMoreAnimal.id}-normal`)}
+                    {...audioButtonProps(`more-${selectedMoreAnimal.id}-normal`, () => speakEnglish(selectedMoreAnimal.word, 0.9, `more-${selectedMoreAnimal.id}-normal`))}
                     className="rounded-2xl bg-banana px-4 py-3 text-base font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
@@ -15305,7 +15795,7 @@ function App() {
                     </span>
                   </button>
                   <button
-                    onClick={() => speakEnglish(selectedMoreAnimal.word, 0.65, `more-${selectedMoreAnimal.id}-slow`)}
+                    {...audioButtonProps(`more-${selectedMoreAnimal.id}-slow`, () => speakEnglish(selectedMoreAnimal.word, 0.65, `more-${selectedMoreAnimal.id}-slow`))}
                     className="rounded-2xl border border-banana/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
@@ -15316,7 +15806,7 @@ function App() {
                 </div>
 
                 <button
-                  onClick={() => speakEnglish(selectedMoreAnimal.example, 0.86, `more-${selectedMoreAnimal.id}-sentence`)}
+                  {...audioButtonProps(`more-${selectedMoreAnimal.id}-sentence`, () => speakEnglish(selectedMoreAnimal.example, 0.86, `more-${selectedMoreAnimal.id}-sentence`))}
                   className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
                 >
                   <span className="inline-flex items-center justify-center gap-2">
@@ -15479,7 +15969,7 @@ function App() {
                   return (
                     <button
                       key={fruit.id}
-                      onClick={() => openMoreFruit(fruit)}
+                      {...audioButtonProps(`more-fruit-${fruit.id}-open`, `more-fruit-${fruit.id}-normal`, () => openMoreFruit(fruit))}
                       className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
                         learned
                           ? "border-[#ffd76d]/55 bg-[#594429]/72"
@@ -15562,7 +16052,7 @@ function App() {
 
                 <div className="mt-5 grid grid-cols-2 gap-3">
                   <button
-                    onClick={() => speakEnglish(selectedMoreFruit.word, 0.9, `more-fruit-${selectedMoreFruit.id}-normal`)}
+                    {...audioButtonProps(`more-fruit-${selectedMoreFruit.id}-normal`, () => speakEnglish(selectedMoreFruit.word, 0.9, `more-fruit-${selectedMoreFruit.id}-normal`))}
                     className="rounded-2xl bg-banana px-4 py-3 text-base font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
@@ -15571,7 +16061,7 @@ function App() {
                     </span>
                   </button>
                   <button
-                    onClick={() => speakEnglish(selectedMoreFruit.word, 0.65, `more-fruit-${selectedMoreFruit.id}-slow`)}
+                    {...audioButtonProps(`more-fruit-${selectedMoreFruit.id}-slow`, () => speakEnglish(selectedMoreFruit.word, 0.65, `more-fruit-${selectedMoreFruit.id}-slow`))}
                     className="rounded-2xl border border-banana/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
@@ -15582,7 +16072,7 @@ function App() {
                 </div>
 
                 <button
-                  onClick={() => speakEnglish(selectedMoreFruit.example, 0.86, `more-fruit-${selectedMoreFruit.id}-sentence`)}
+                  {...audioButtonProps(`more-fruit-${selectedMoreFruit.id}-sentence`, () => speakEnglish(selectedMoreFruit.example, 0.86, `more-fruit-${selectedMoreFruit.id}-sentence`))}
                   className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
                 >
                   <span className="inline-flex items-center justify-center gap-2">
@@ -15745,7 +16235,7 @@ function App() {
                   return (
                     <button
                       key={word.id}
-                      onClick={() => openMoreCampusWord(word)}
+                      {...audioButtonProps(`more-campus-${word.id}-open`, `more-campus-${word.id}-normal`, () => openMoreCampusWord(word))}
                       className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
                         learned
                           ? "border-[#9fc9ee]/55 bg-[#263f58]/72"
@@ -15828,7 +16318,7 @@ function App() {
 
                 <div className="mt-5 grid grid-cols-2 gap-3">
                   <button
-                    onClick={() => speakEnglish(selectedMoreCampusWord.word, 0.9, `more-campus-${selectedMoreCampusWord.id}-normal`)}
+                    {...audioButtonProps(`more-campus-${selectedMoreCampusWord.id}-normal`, () => speakEnglish(selectedMoreCampusWord.word, 0.9, `more-campus-${selectedMoreCampusWord.id}-normal`))}
                     className="rounded-2xl bg-banana px-4 py-3 text-base font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
@@ -15837,7 +16327,7 @@ function App() {
                     </span>
                   </button>
                   <button
-                    onClick={() => speakEnglish(selectedMoreCampusWord.word, 0.65, `more-campus-${selectedMoreCampusWord.id}-slow`)}
+                    {...audioButtonProps(`more-campus-${selectedMoreCampusWord.id}-slow`, () => speakEnglish(selectedMoreCampusWord.word, 0.65, `more-campus-${selectedMoreCampusWord.id}-slow`))}
                     className="rounded-2xl border border-banana/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
@@ -15848,7 +16338,7 @@ function App() {
                 </div>
 
                 <button
-                  onClick={() => speakEnglish(selectedMoreCampusWord.example, 0.86, `more-campus-${selectedMoreCampusWord.id}-sentence`)}
+                  {...audioButtonProps(`more-campus-${selectedMoreCampusWord.id}-sentence`, () => speakEnglish(selectedMoreCampusWord.example, 0.86, `more-campus-${selectedMoreCampusWord.id}-sentence`))}
                   className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
                 >
                   <span className="inline-flex items-center justify-center gap-2">
@@ -16011,7 +16501,7 @@ function App() {
                   return (
                     <button
                       key={word.id}
-                      onClick={() => openMoreCafeWord(word)}
+                      {...audioButtonProps(`more-cafe-${word.id}-open`, `more-cafe-${word.id}-normal`, () => openMoreCafeWord(word))}
                       className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
                         learned
                           ? "border-[#e3b071]/55 bg-[#4a3329]/72"
@@ -16094,7 +16584,7 @@ function App() {
 
                 <div className="mt-5 grid grid-cols-2 gap-3">
                   <button
-                    onClick={() => speakEnglish(selectedMoreCafeWord.word, 0.9, `more-cafe-${selectedMoreCafeWord.id}-normal`)}
+                    {...audioButtonProps(`more-cafe-${selectedMoreCafeWord.id}-normal`, () => speakEnglish(selectedMoreCafeWord.word, 0.9, `more-cafe-${selectedMoreCafeWord.id}-normal`))}
                     className="rounded-2xl bg-banana px-4 py-3 text-base font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
@@ -16103,7 +16593,7 @@ function App() {
                     </span>
                   </button>
                   <button
-                    onClick={() => speakEnglish(selectedMoreCafeWord.word, 0.65, `more-cafe-${selectedMoreCafeWord.id}-slow`)}
+                    {...audioButtonProps(`more-cafe-${selectedMoreCafeWord.id}-slow`, () => speakEnglish(selectedMoreCafeWord.word, 0.65, `more-cafe-${selectedMoreCafeWord.id}-slow`))}
                     className="rounded-2xl border border-banana/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
@@ -16114,7 +16604,7 @@ function App() {
                 </div>
 
                 <button
-                  onClick={() => speakEnglish(selectedMoreCafeWord.example, 0.86, `more-cafe-${selectedMoreCafeWord.id}-sentence`)}
+                  {...audioButtonProps(`more-cafe-${selectedMoreCafeWord.id}-sentence`, () => speakEnglish(selectedMoreCafeWord.example, 0.86, `more-cafe-${selectedMoreCafeWord.id}-sentence`))}
                   className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
                 >
                   <span className="inline-flex items-center justify-center gap-2">
@@ -16277,7 +16767,7 @@ function App() {
                   return (
                     <button
                       key={word.id}
-                      onClick={() => openMoreAirportWord(word)}
+                      {...audioButtonProps(`more-airport-${word.id}-open`, `more-airport-${word.id}-normal`, () => openMoreAirportWord(word))}
                       className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
                         learned
                           ? "border-[#9ec7ee]/55 bg-[#253a52]/72"
@@ -16360,7 +16850,7 @@ function App() {
 
                 <div className="mt-5 grid grid-cols-2 gap-3">
                   <button
-                    onClick={() => speakEnglish(selectedMoreAirportWord.word, 0.9, `more-airport-${selectedMoreAirportWord.id}-normal`)}
+                    {...audioButtonProps(`more-airport-${selectedMoreAirportWord.id}-normal`, () => speakEnglish(selectedMoreAirportWord.word, 0.9, `more-airport-${selectedMoreAirportWord.id}-normal`))}
                     className="rounded-2xl bg-banana px-4 py-3 text-base font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
@@ -16369,7 +16859,7 @@ function App() {
                     </span>
                   </button>
                   <button
-                    onClick={() => speakEnglish(selectedMoreAirportWord.word, 0.65, `more-airport-${selectedMoreAirportWord.id}-slow`)}
+                    {...audioButtonProps(`more-airport-${selectedMoreAirportWord.id}-slow`, () => speakEnglish(selectedMoreAirportWord.word, 0.65, `more-airport-${selectedMoreAirportWord.id}-slow`))}
                     className="rounded-2xl border border-banana/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
@@ -16380,7 +16870,7 @@ function App() {
                 </div>
 
                 <button
-                  onClick={() => speakEnglish(selectedMoreAirportWord.example, 0.86, `more-airport-${selectedMoreAirportWord.id}-sentence`)}
+                  {...audioButtonProps(`more-airport-${selectedMoreAirportWord.id}-sentence`, () => speakEnglish(selectedMoreAirportWord.example, 0.86, `more-airport-${selectedMoreAirportWord.id}-sentence`))}
                   className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
                 >
                   <span className="inline-flex items-center justify-center gap-2">
@@ -16545,7 +17035,7 @@ function App() {
                   return (
                     <button
                       key={word.id}
-                      onClick={() => openMoreOfficeWord(word)}
+                      {...audioButtonProps(`more-office-${word.id}-open`, `more-office-${word.id}-normal`, () => openMoreOfficeWord(word))}
                       className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
                         learned
                           ? "border-[#c9b9f4]/55 bg-[#302d3f]/72"
@@ -16628,7 +17118,7 @@ function App() {
 
                 <div className="mt-5 grid grid-cols-2 gap-3">
                   <button
-                    onClick={() => speakEnglish(selectedMoreOfficeWord.word, 0.9, `more-office-${selectedMoreOfficeWord.id}-normal`)}
+                    {...audioButtonProps(`more-office-${selectedMoreOfficeWord.id}-normal`, () => speakEnglish(selectedMoreOfficeWord.word, 0.9, `more-office-${selectedMoreOfficeWord.id}-normal`))}
                     className="rounded-2xl bg-banana px-4 py-3 text-base font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
@@ -16637,7 +17127,7 @@ function App() {
                     </span>
                   </button>
                   <button
-                    onClick={() => speakEnglish(selectedMoreOfficeWord.word, 0.65, `more-office-${selectedMoreOfficeWord.id}-slow`)}
+                    {...audioButtonProps(`more-office-${selectedMoreOfficeWord.id}-slow`, () => speakEnglish(selectedMoreOfficeWord.word, 0.65, `more-office-${selectedMoreOfficeWord.id}-slow`))}
                     className="rounded-2xl border border-banana/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
@@ -16648,7 +17138,7 @@ function App() {
                 </div>
 
                 <button
-                  onClick={() => speakEnglish(selectedMoreOfficeWord.example, 0.86, `more-office-${selectedMoreOfficeWord.id}-sentence`)}
+                  {...audioButtonProps(`more-office-${selectedMoreOfficeWord.id}-sentence`, () => speakEnglish(selectedMoreOfficeWord.example, 0.86, `more-office-${selectedMoreOfficeWord.id}-sentence`))}
                   className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
                 >
                   <span className="inline-flex items-center justify-center gap-2">
@@ -16811,7 +17301,7 @@ function App() {
                   return (
                     <button
                       key={word.id}
-                      onClick={() => openMoreHotelWord(word)}
+                      {...audioButtonProps(`more-hotel-${word.id}-open`, `more-hotel-${word.id}-normal`, () => openMoreHotelWord(word))}
                       className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
                         learned
                           ? "border-[#c9b9f4]/55 bg-[#302d3f]/72"
@@ -16894,7 +17384,7 @@ function App() {
 
                 <div className="mt-5 grid grid-cols-2 gap-3">
                   <button
-                    onClick={() => speakEnglish(selectedMoreHotelWord.word, 0.9, `more-hotel-${selectedMoreHotelWord.id}-normal`)}
+                    {...audioButtonProps(`more-hotel-${selectedMoreHotelWord.id}-normal`, () => speakEnglish(selectedMoreHotelWord.word, 0.9, `more-hotel-${selectedMoreHotelWord.id}-normal`))}
                     className="rounded-2xl bg-banana px-4 py-3 text-base font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
@@ -16903,7 +17393,7 @@ function App() {
                     </span>
                   </button>
                   <button
-                    onClick={() => speakEnglish(selectedMoreHotelWord.word, 0.65, `more-hotel-${selectedMoreHotelWord.id}-slow`)}
+                    {...audioButtonProps(`more-hotel-${selectedMoreHotelWord.id}-slow`, () => speakEnglish(selectedMoreHotelWord.word, 0.65, `more-hotel-${selectedMoreHotelWord.id}-slow`))}
                     className="rounded-2xl border border-banana/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
@@ -16914,7 +17404,7 @@ function App() {
                 </div>
 
                 <button
-                  onClick={() => speakEnglish(selectedMoreHotelWord.example, 0.86, `more-hotel-${selectedMoreHotelWord.id}-sentence`)}
+                  {...audioButtonProps(`more-hotel-${selectedMoreHotelWord.id}-sentence`, () => speakEnglish(selectedMoreHotelWord.example, 0.86, `more-hotel-${selectedMoreHotelWord.id}-sentence`))}
                   className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
                 >
                   <span className="inline-flex items-center justify-center gap-2">
@@ -17063,7 +17553,7 @@ function App() {
                   return (
                     <button
                       key={word.id}
-                      onClick={() => openMoreRestaurantWord(word)}
+                      {...audioButtonProps(`more-restaurant-${word.id}-open`, `more-restaurant-${word.id}-normal`, () => openMoreRestaurantWord(word))}
                       className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
                         learned
                           ? "border-[#d6ad83]/55 bg-[#493325]/72"
@@ -17121,7 +17611,7 @@ function App() {
                 </div>
                 <div className="mt-5 grid grid-cols-2 gap-3">
                   <button
-                    onClick={() => speakEnglish(selectedMoreRestaurantWord.word, 0.9, `more-restaurant-${selectedMoreRestaurantWord.id}-normal`)}
+                    {...audioButtonProps(`more-restaurant-${selectedMoreRestaurantWord.id}-normal`, () => speakEnglish(selectedMoreRestaurantWord.word, 0.9, `more-restaurant-${selectedMoreRestaurantWord.id}-normal`))}
                     className="rounded-2xl bg-banana px-4 py-3 text-base font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
@@ -17130,7 +17620,7 @@ function App() {
                     </span>
                   </button>
                   <button
-                    onClick={() => speakEnglish(selectedMoreRestaurantWord.word, 0.65, `more-restaurant-${selectedMoreRestaurantWord.id}-slow`)}
+                    {...audioButtonProps(`more-restaurant-${selectedMoreRestaurantWord.id}-slow`, () => speakEnglish(selectedMoreRestaurantWord.word, 0.65, `more-restaurant-${selectedMoreRestaurantWord.id}-slow`))}
                     className="rounded-2xl border border-banana/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
@@ -17140,7 +17630,7 @@ function App() {
                   </button>
                 </div>
                 <button
-                  onClick={() => speakEnglish(selectedMoreRestaurantWord.example, 0.86, `more-restaurant-${selectedMoreRestaurantWord.id}-sentence`)}
+                  {...audioButtonProps(`more-restaurant-${selectedMoreRestaurantWord.id}-sentence`, () => speakEnglish(selectedMoreRestaurantWord.example, 0.86, `more-restaurant-${selectedMoreRestaurantWord.id}-sentence`))}
                   className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
                 >
                   <span className="inline-flex items-center justify-center gap-2">
@@ -17284,7 +17774,7 @@ function App() {
                   return (
                     <button
                       key={word.id}
-                      onClick={() => openMoreSupermarketWord(word)}
+                      {...audioButtonProps(`more-supermarket-${word.id}-open`, `more-supermarket-${word.id}-normal`, () => openMoreSupermarketWord(word))}
                       className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
                         learned
                           ? "border-[#a6d8b2]/55 bg-[#294b35]/72"
@@ -17342,7 +17832,7 @@ function App() {
                 </div>
                 <div className="mt-5 grid grid-cols-2 gap-3">
                   <button
-                    onClick={() => speakEnglish(selectedMoreSupermarketWord.word, 0.9, `more-supermarket-${selectedMoreSupermarketWord.id}-normal`)}
+                    {...audioButtonProps(`more-supermarket-${selectedMoreSupermarketWord.id}-normal`, () => speakEnglish(selectedMoreSupermarketWord.word, 0.9, `more-supermarket-${selectedMoreSupermarketWord.id}-normal`))}
                     className="rounded-2xl bg-banana px-4 py-3 text-base font-black text-ink shadow-label transition hover:-translate-y-0.5 hover:bg-[#ffc83f] active:translate-y-0"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
@@ -17351,7 +17841,7 @@ function App() {
                     </span>
                   </button>
                   <button
-                    onClick={() => speakEnglish(selectedMoreSupermarketWord.word, 0.65, `more-supermarket-${selectedMoreSupermarketWord.id}-slow`)}
+                    {...audioButtonProps(`more-supermarket-${selectedMoreSupermarketWord.id}-slow`, () => speakEnglish(selectedMoreSupermarketWord.word, 0.65, `more-supermarket-${selectedMoreSupermarketWord.id}-slow`))}
                     className="rounded-2xl border border-banana/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
@@ -17361,7 +17851,7 @@ function App() {
                   </button>
                 </div>
                 <button
-                  onClick={() => speakEnglish(selectedMoreSupermarketWord.example, 0.86, `more-supermarket-${selectedMoreSupermarketWord.id}-sentence`)}
+                  {...audioButtonProps(`more-supermarket-${selectedMoreSupermarketWord.id}-sentence`, () => speakEnglish(selectedMoreSupermarketWord.example, 0.86, `more-supermarket-${selectedMoreSupermarketWord.id}-sentence`))}
                   className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
                 >
                   <span className="inline-flex items-center justify-center gap-2">
@@ -17508,7 +17998,7 @@ function App() {
                   return (
                     <button
                       key={word.id}
-                      onClick={() => openMoreMetroWord(word)}
+                      {...audioButtonProps(`more-metro-${word.id}-open`, `more-metro-${word.id}-normal`, () => openMoreMetroWord(word))}
                       className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
                         learned
                           ? "border-[#84dfe0]/55 bg-[#20444a]/75"
@@ -17566,7 +18056,7 @@ function App() {
                 </div>
                 <div className="mt-5 grid grid-cols-2 gap-3">
                   <button
-                    onClick={() => speakEnglish(selectedMoreMetroWord.word, 0.9, `more-metro-${selectedMoreMetroWord.id}-normal`)}
+                    {...audioButtonProps(`more-metro-${selectedMoreMetroWord.id}-normal`, () => speakEnglish(selectedMoreMetroWord.word, 0.9, `more-metro-${selectedMoreMetroWord.id}-normal`))}
                     className="rounded-2xl bg-[#84dfe0] px-4 py-3 text-base font-black text-[#102329] shadow-label transition hover:-translate-y-0.5 hover:bg-[#a4eff0] active:translate-y-0"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
@@ -17575,7 +18065,7 @@ function App() {
                     </span>
                   </button>
                   <button
-                    onClick={() => speakEnglish(selectedMoreMetroWord.word, 0.65, `more-metro-${selectedMoreMetroWord.id}-slow`)}
+                    {...audioButtonProps(`more-metro-${selectedMoreMetroWord.id}-slow`, () => speakEnglish(selectedMoreMetroWord.word, 0.65, `more-metro-${selectedMoreMetroWord.id}-slow`))}
                     className="rounded-2xl border border-[#84dfe0]/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
@@ -17585,7 +18075,7 @@ function App() {
                   </button>
                 </div>
                 <button
-                  onClick={() => speakEnglish(selectedMoreMetroWord.example, 0.86, `more-metro-${selectedMoreMetroWord.id}-sentence`)}
+                  {...audioButtonProps(`more-metro-${selectedMoreMetroWord.id}-sentence`, () => speakEnglish(selectedMoreMetroWord.example, 0.86, `more-metro-${selectedMoreMetroWord.id}-sentence`))}
                   className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
                 >
                   <span className="inline-flex items-center justify-center gap-2">
@@ -17732,7 +18222,7 @@ function App() {
                   return (
                     <button
                       key={word.id}
-                      onClick={() => openMoreClinicWord(word)}
+                      {...audioButtonProps(`more-clinic-${word.id}-open`, `more-clinic-${word.id}-normal`, () => openMoreClinicWord(word))}
                       className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
                         learned
                           ? "border-[#8fd6c8]/55 bg-[#21493f]/75"
@@ -17790,7 +18280,7 @@ function App() {
                 </div>
                 <div className="mt-5 grid grid-cols-2 gap-3">
                   <button
-                    onClick={() => speakEnglish(selectedMoreClinicWord.word, 0.9, `more-clinic-${selectedMoreClinicWord.id}-normal`)}
+                    {...audioButtonProps(`more-clinic-${selectedMoreClinicWord.id}-normal`, () => speakEnglish(selectedMoreClinicWord.word, 0.9, `more-clinic-${selectedMoreClinicWord.id}-normal`))}
                     className="rounded-2xl bg-[#8fd6c8] px-4 py-3 text-base font-black text-[#10261f] shadow-label transition hover:-translate-y-0.5 hover:bg-[#a9eadf] active:translate-y-0"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
@@ -17799,7 +18289,7 @@ function App() {
                     </span>
                   </button>
                   <button
-                    onClick={() => speakEnglish(selectedMoreClinicWord.word, 0.65, `more-clinic-${selectedMoreClinicWord.id}-slow`)}
+                    {...audioButtonProps(`more-clinic-${selectedMoreClinicWord.id}-slow`, () => speakEnglish(selectedMoreClinicWord.word, 0.65, `more-clinic-${selectedMoreClinicWord.id}-slow`))}
                     className="rounded-2xl border border-[#8fd6c8]/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
@@ -17809,7 +18299,7 @@ function App() {
                   </button>
                 </div>
                 <button
-                  onClick={() => speakEnglish(selectedMoreClinicWord.example, 0.86, `more-clinic-${selectedMoreClinicWord.id}-sentence`)}
+                  {...audioButtonProps(`more-clinic-${selectedMoreClinicWord.id}-sentence`, () => speakEnglish(selectedMoreClinicWord.example, 0.86, `more-clinic-${selectedMoreClinicWord.id}-sentence`))}
                   className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
                 >
                   <span className="inline-flex items-center justify-center gap-2">
@@ -17874,10 +18364,10 @@ function App() {
             <div className="mt-5 flex gap-2 overflow-x-auto pb-1">{moreBankPages.map((page, index) => <button key={page.id} onClick={() => { setMoreBankPageIndex(index); setSelectedMoreBankWord(null); }} className={`min-w-[210px] rounded-2xl px-4 py-3 text-left font-black shadow-label transition hover:-translate-y-0.5 active:translate-y-0 ${index === moreBankPageIndex ? "bg-[#426f85] text-white" : "border border-white/16 bg-white/10 text-cream hover:bg-white/18"}`}><span className="block text-sm">{page.title}</span><span className="mt-1 block text-xs font-bold opacity-75">{page.zh}</span></button>)}</div>
             <section className="mt-5 rounded-3xl border border-white/14 bg-nightglass p-4 shadow-glow backdrop-blur-xl">
               <div className="flex flex-wrap items-end justify-between gap-3"><div><p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#8eb9cf]">Page {moreBankPageIndex + 1}/3</p><h3 className="mt-1 text-2xl font-black text-white">{currentMoreBankPage.title}<span className="ml-2 text-[#8eb9cf]">{currentMoreBankPage.zh}</span></h3></div><p className="text-sm font-black text-cream/75">{currentBankPageExploredCount}/12 learned · 已学习</p></div>
-              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{currentMoreBankPage.words.map((word) => { const learned = learnedMoreBankWords.includes(word.id); return <button key={word.id} onClick={() => openMoreBankWord(word)} className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${learned ? "border-[#8eb9cf]/55 bg-[#21434f]/75" : "border-white/14 bg-white/10 hover:border-[#8eb9cf]/45 hover:bg-white/16"}`}><div className="flex items-start gap-3"><span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-[#8eb9cf]/35 bg-[#21434f]/72 text-xl font-black text-[#8eb9cf] transition group-hover:scale-105">{word.word.slice(0, 1).toUpperCase()}</span><span className="min-w-0"><span className="block text-lg font-black leading-tight text-white">{word.word}</span><span className="mt-1 block text-sm font-bold text-cream/72">{word.meaning}</span></span></div><div className="mt-3 flex items-center justify-between gap-2"><span className="text-xs font-black text-[#8eb9cf]">{word.phonetic}</span>{learned && <span className="rounded-full bg-[#8eb9cf] px-2 py-1 text-[10px] font-black uppercase text-[#10242e]">Learned · 已学习</span>}</div></button>; })}</div>
+              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{currentMoreBankPage.words.map((word) => { const learned = learnedMoreBankWords.includes(word.id); return <button key={word.id} {...audioButtonProps(`more-bank-${word.id}-open`, `more-bank-${word.id}-normal`, () => openMoreBankWord(word))} className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${learned ? "border-[#8eb9cf]/55 bg-[#21434f]/75" : "border-white/14 bg-white/10 hover:border-[#8eb9cf]/45 hover:bg-white/16"}`}><div className="flex items-start gap-3"><span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-[#8eb9cf]/35 bg-[#21434f]/72 text-xl font-black text-[#8eb9cf] transition group-hover:scale-105">{word.word.slice(0, 1).toUpperCase()}</span><span className="min-w-0"><span className="block text-lg font-black leading-tight text-white">{word.word}</span><span className="mt-1 block text-sm font-bold text-cream/72">{word.meaning}</span></span></div><div className="mt-3 flex items-center justify-between gap-2"><span className="text-xs font-black text-[#8eb9cf]">{word.phonetic}</span>{learned && <span className="rounded-full bg-[#8eb9cf] px-2 py-1 text-[10px] font-black uppercase text-[#10242e]">Learned · 已学习</span>}</div></button>; })}</div>
             </section>
           </div>
-          {selectedMoreBankWord && <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#10242e]/96 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl"><div className="flex items-start justify-between gap-3 border-b border-white/12 p-5"><div><p className="text-[10px] font-black uppercase tracking-[0.24em] text-[#8eb9cf]">Bank Word</p><h2 className="mt-2 text-4xl font-black leading-tight text-white">{selectedMoreBankWord.word}</h2><p className="mt-2 text-2xl font-extrabold text-[#8eb9cf]">{selectedMoreBankWord.phonetic}</p></div><button onClick={() => setSelectedMoreBankWord(null)} className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/12 text-2xl font-black text-white transition hover:bg-white/22 active:scale-95" aria-label="Close 关闭" title="Close / 关闭">×</button></div><div className="flex-1 overflow-auto p-5"><div className="rounded-2xl border border-white/12 bg-white/10 p-4"><p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#8eb9cf]">中文意思</p><p className="mt-2 text-2xl font-black text-white">{selectedMoreBankWord.meaning}</p></div><div className="mt-4 rounded-2xl border border-white/12 bg-black/18 p-4"><p className="text-[10px] font-black uppercase tracking-[0.2em] text-coral">Example</p><p className="mt-2 text-2xl font-black leading-9 text-white">{selectedMoreBankWord.example}</p><p className="mt-2 text-lg font-bold leading-8 text-cream/78">{selectedMoreBankWord.translation}</p></div><div className="mt-5 grid grid-cols-2 gap-3"><button onClick={() => speakEnglish(selectedMoreBankWord.word, 0.9, `more-bank-${selectedMoreBankWord.id}-normal`)} className="rounded-2xl bg-[#8eb9cf] px-4 py-3 text-base font-black text-[#10242e] shadow-label transition hover:-translate-y-0.5 hover:bg-[#b4d4e4] active:translate-y-0"><ButtonCopy en="Normal" zh="正常语速" /></button><button onClick={() => speakEnglish(selectedMoreBankWord.word, 0.65, `more-bank-${selectedMoreBankWord.id}-slow`)} className="rounded-2xl border border-[#8eb9cf]/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"><ButtonCopy en="Slow" zh="慢速朗读" /></button></div><button onClick={() => speakEnglish(selectedMoreBankWord.example, 0.86, `more-bank-${selectedMoreBankWord.id}-sentence`)} className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"><ButtonCopy en="Play Sentence" zh="朗读例句" /></button><button onClick={() => saveWordEntry(makeMoreBankWordBookEntry(selectedMoreBankWord))} disabled={isWordSaved(selectedMoreBankWord.word)} className={`mt-3 w-full rounded-2xl px-4 py-3 text-base font-black shadow-label transition active:scale-[0.99] ${isWordSaved(selectedMoreBankWord.word) ? "bg-coral text-white" : "bg-white/12 text-white hover:bg-white/22"}`}><ButtonCopy en={isWordSaved(selectedMoreBankWord.word) ? "Added to Word Book" : "Add to Word Book"} zh={isWordSaved(selectedMoreBankWord.word) ? "已加入生词本" : "加入生词本"} /></button>{isWordSaved(selectedMoreBankWord.word) && <button onClick={() => removeWordEntry(selectedMoreBankWord.word)} className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"><ButtonCopy en="Remove from Word Book" zh="移出生词本" /></button>}<button onClick={finishBankVisit} className="mt-6 w-full rounded-2xl bg-[#8eb9cf] px-4 py-4 text-lg font-black text-[#10242e] shadow-label transition hover:-translate-y-0.5 hover:bg-[#b4d4e4] active:translate-y-0"><ButtonCopy en="Finish Bank Visit" zh="结束银行之旅" /></button></div></aside>}
+          {selectedMoreBankWord && <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#10242e]/96 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl"><div className="flex items-start justify-between gap-3 border-b border-white/12 p-5"><div><p className="text-[10px] font-black uppercase tracking-[0.24em] text-[#8eb9cf]">Bank Word</p><h2 className="mt-2 text-4xl font-black leading-tight text-white">{selectedMoreBankWord.word}</h2><p className="mt-2 text-2xl font-extrabold text-[#8eb9cf]">{selectedMoreBankWord.phonetic}</p></div><button onClick={() => setSelectedMoreBankWord(null)} className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/12 text-2xl font-black text-white transition hover:bg-white/22 active:scale-95" aria-label="Close 关闭" title="Close / 关闭">×</button></div><div className="flex-1 overflow-auto p-5"><div className="rounded-2xl border border-white/12 bg-white/10 p-4"><p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#8eb9cf]">中文意思</p><p className="mt-2 text-2xl font-black text-white">{selectedMoreBankWord.meaning}</p></div><div className="mt-4 rounded-2xl border border-white/12 bg-black/18 p-4"><p className="text-[10px] font-black uppercase tracking-[0.2em] text-coral">Example</p><p className="mt-2 text-2xl font-black leading-9 text-white">{selectedMoreBankWord.example}</p><p className="mt-2 text-lg font-bold leading-8 text-cream/78">{selectedMoreBankWord.translation}</p></div><div className="mt-5 grid grid-cols-2 gap-3"><button {...audioButtonProps(`more-bank-${selectedMoreBankWord.id}-normal`, () => speakEnglish(selectedMoreBankWord.word, 0.9, `more-bank-${selectedMoreBankWord.id}-normal`))} className="rounded-2xl bg-[#8eb9cf] px-4 py-3 text-base font-black text-[#10242e] shadow-label transition hover:-translate-y-0.5 hover:bg-[#b4d4e4] active:translate-y-0"><ButtonCopy en="Normal" zh="正常语速" /></button><button {...audioButtonProps(`more-bank-${selectedMoreBankWord.id}-slow`, () => speakEnglish(selectedMoreBankWord.word, 0.65, `more-bank-${selectedMoreBankWord.id}-slow`))} className="rounded-2xl border border-[#8eb9cf]/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"><ButtonCopy en="Slow" zh="慢速朗读" /></button></div><button {...audioButtonProps(`more-bank-${selectedMoreBankWord.id}-sentence`, () => speakEnglish(selectedMoreBankWord.example, 0.86, `more-bank-${selectedMoreBankWord.id}-sentence`))} className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"><ButtonCopy en="Play Sentence" zh="朗读例句" /></button><button onClick={() => saveWordEntry(makeMoreBankWordBookEntry(selectedMoreBankWord))} disabled={isWordSaved(selectedMoreBankWord.word)} className={`mt-3 w-full rounded-2xl px-4 py-3 text-base font-black shadow-label transition active:scale-[0.99] ${isWordSaved(selectedMoreBankWord.word) ? "bg-coral text-white" : "bg-white/12 text-white hover:bg-white/22"}`}><ButtonCopy en={isWordSaved(selectedMoreBankWord.word) ? "Added to Word Book" : "Add to Word Book"} zh={isWordSaved(selectedMoreBankWord.word) ? "已加入生词本" : "加入生词本"} /></button>{isWordSaved(selectedMoreBankWord.word) && <button onClick={() => removeWordEntry(selectedMoreBankWord.word)} className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"><ButtonCopy en="Remove from Word Book" zh="移出生词本" /></button>}<button onClick={finishBankVisit} className="mt-6 w-full rounded-2xl bg-[#8eb9cf] px-4 py-4 text-lg font-black text-[#10242e] shadow-label transition hover:-translate-y-0.5 hover:bg-[#b4d4e4] active:translate-y-0"><ButtonCopy en="Finish Bank Visit" zh="结束银行之旅" /></button></div></aside>}
         </div>
       )}
 
@@ -17906,10 +18396,10 @@ function App() {
             <div className="mt-5 flex gap-2 overflow-x-auto pb-1">{moreApartmentPages.map((page, index) => <button key={page.id} onClick={() => { setMoreApartmentPageIndex(index); setSelectedMoreApartmentWord(null); }} className={`min-w-[210px] rounded-2xl px-4 py-3 text-left font-black shadow-label transition hover:-translate-y-0.5 active:translate-y-0 ${index === moreApartmentPageIndex ? "bg-[#916745] text-white" : "border border-white/16 bg-white/10 text-cream hover:bg-white/18"}`}><span className="block text-sm">{page.title}</span><span className="mt-1 block text-xs font-bold opacity-75">{page.zh}</span></button>)}</div>
             <section className="mt-5 rounded-3xl border border-white/14 bg-nightglass p-4 shadow-glow backdrop-blur-xl">
               <div className="flex flex-wrap items-end justify-between gap-3"><div><p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#e3b77d]">Page {moreApartmentPageIndex + 1}/3</p><h3 className="mt-1 text-2xl font-black text-white">{currentMoreApartmentPage.title}<span className="ml-2 text-[#e3b77d]">{currentMoreApartmentPage.zh}</span></h3></div><p className="text-sm font-black text-cream/75">{currentApartmentPageExploredCount}/12 learned · 已学习</p></div>
-              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{currentMoreApartmentPage.words.map((word) => { const learned = learnedMoreApartmentWords.includes(word.id); return <button key={word.id} onClick={() => openMoreApartmentWord(word)} className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${learned ? "border-[#e3b77d]/55 bg-[#5a4030]/75" : "border-white/14 bg-white/10 hover:border-[#e3b77d]/45 hover:bg-white/16"}`}><div className="flex items-start gap-3"><span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-[#e3b77d]/35 bg-[#5a4030]/72 text-xl font-black text-[#e3b77d] transition group-hover:scale-105">{word.word.slice(0, 1).toUpperCase()}</span><span className="min-w-0"><span className="block text-lg font-black leading-tight text-white">{word.word}</span><span className="mt-1 block text-sm font-bold text-cream/72">{word.meaning}</span></span></div><div className="mt-3 flex items-center justify-between gap-2"><span className="text-xs font-black text-[#e3b77d]">{word.phonetic}</span>{learned && <span className="rounded-full bg-[#e3b77d] px-2 py-1 text-[10px] font-black uppercase text-[#342319]">Learned · 已学习</span>}</div></button>; })}</div>
+              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{currentMoreApartmentPage.words.map((word) => { const learned = learnedMoreApartmentWords.includes(word.id); return <button key={word.id} {...audioButtonProps(`more-apartment-${word.id}-open`, `more-apartment-${word.id}-normal`, () => openMoreApartmentWord(word))} className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${learned ? "border-[#e3b77d]/55 bg-[#5a4030]/75" : "border-white/14 bg-white/10 hover:border-[#e3b77d]/45 hover:bg-white/16"}`}><div className="flex items-start gap-3"><span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-[#e3b77d]/35 bg-[#5a4030]/72 text-xl font-black text-[#e3b77d] transition group-hover:scale-105">{word.word.slice(0, 1).toUpperCase()}</span><span className="min-w-0"><span className="block text-lg font-black leading-tight text-white">{word.word}</span><span className="mt-1 block text-sm font-bold text-cream/72">{word.meaning}</span></span></div><div className="mt-3 flex items-center justify-between gap-2"><span className="text-xs font-black text-[#e3b77d]">{word.phonetic}</span>{learned && <span className="rounded-full bg-[#e3b77d] px-2 py-1 text-[10px] font-black uppercase text-[#342319]">Learned · 已学习</span>}</div></button>; })}</div>
             </section>
           </div>
-          {selectedMoreApartmentWord && <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#342319]/96 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl"><div className="flex items-start justify-between gap-3 border-b border-white/12 p-5"><div><p className="text-[10px] font-black uppercase tracking-[0.24em] text-[#e3b77d]">Apartment Word</p><h2 className="mt-2 text-4xl font-black leading-tight text-white">{selectedMoreApartmentWord.word}</h2><p className="mt-2 text-2xl font-extrabold text-[#e3b77d]">{selectedMoreApartmentWord.phonetic}</p></div><button onClick={() => setSelectedMoreApartmentWord(null)} className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/12 text-2xl font-black text-white transition hover:bg-white/22 active:scale-95" aria-label="Close 关闭" title="Close / 关闭">×</button></div><div className="flex-1 overflow-auto p-5"><div className="rounded-2xl border border-white/12 bg-white/10 p-4"><p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#e3b77d]">中文意思</p><p className="mt-2 text-2xl font-black text-white">{selectedMoreApartmentWord.meaning}</p></div><div className="mt-4 rounded-2xl border border-white/12 bg-black/18 p-4"><p className="text-[10px] font-black uppercase tracking-[0.2em] text-coral">Example</p><p className="mt-2 text-2xl font-black leading-9 text-white">{selectedMoreApartmentWord.example}</p><p className="mt-2 text-lg font-bold leading-8 text-cream/78">{selectedMoreApartmentWord.translation}</p></div><div className="mt-5 grid grid-cols-2 gap-3"><button onClick={() => speakEnglish(selectedMoreApartmentWord.word, 0.9, `more-apartment-${selectedMoreApartmentWord.id}-normal`)} className="rounded-2xl bg-[#e3b77d] px-4 py-3 text-base font-black text-[#342319] shadow-label transition hover:-translate-y-0.5 hover:bg-[#f2ce9d] active:translate-y-0"><ButtonCopy en="Normal" zh="正常语速" /></button><button onClick={() => speakEnglish(selectedMoreApartmentWord.word, 0.65, `more-apartment-${selectedMoreApartmentWord.id}-slow`)} className="rounded-2xl border border-[#e3b77d]/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"><ButtonCopy en="Slow" zh="慢速朗读" /></button></div><button onClick={() => speakEnglish(selectedMoreApartmentWord.example, 0.86, `more-apartment-${selectedMoreApartmentWord.id}-sentence`)} className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"><ButtonCopy en="Play Sentence" zh="朗读例句" /></button><button onClick={() => saveWordEntry(makeMoreApartmentWordBookEntry(selectedMoreApartmentWord))} disabled={isWordSaved(selectedMoreApartmentWord.word)} className={`mt-3 w-full rounded-2xl px-4 py-3 text-base font-black shadow-label transition active:scale-[0.99] ${isWordSaved(selectedMoreApartmentWord.word) ? "bg-coral text-white" : "bg-white/12 text-white hover:bg-white/22"}`}><ButtonCopy en={isWordSaved(selectedMoreApartmentWord.word) ? "Added to Word Book" : "Add to Word Book"} zh={isWordSaved(selectedMoreApartmentWord.word) ? "已加入生词本" : "加入生词本"} /></button>{isWordSaved(selectedMoreApartmentWord.word) && <button onClick={() => removeWordEntry(selectedMoreApartmentWord.word)} className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"><ButtonCopy en="Remove from Word Book" zh="移出生词本" /></button>}<button onClick={finishApartmentVisit} className="mt-6 w-full rounded-2xl bg-[#e3b77d] px-4 py-4 text-lg font-black text-[#342319] shadow-label transition hover:-translate-y-0.5 hover:bg-[#f2ce9d] active:translate-y-0"><ButtonCopy en="Finish Apartment Visit" zh="结束公寓看房之旅" /></button></div></aside>}
+          {selectedMoreApartmentWord && <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#342319]/96 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl"><div className="flex items-start justify-between gap-3 border-b border-white/12 p-5"><div><p className="text-[10px] font-black uppercase tracking-[0.24em] text-[#e3b77d]">Apartment Word</p><h2 className="mt-2 text-4xl font-black leading-tight text-white">{selectedMoreApartmentWord.word}</h2><p className="mt-2 text-2xl font-extrabold text-[#e3b77d]">{selectedMoreApartmentWord.phonetic}</p></div><button onClick={() => setSelectedMoreApartmentWord(null)} className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/12 text-2xl font-black text-white transition hover:bg-white/22 active:scale-95" aria-label="Close 关闭" title="Close / 关闭">×</button></div><div className="flex-1 overflow-auto p-5"><div className="rounded-2xl border border-white/12 bg-white/10 p-4"><p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#e3b77d]">中文意思</p><p className="mt-2 text-2xl font-black text-white">{selectedMoreApartmentWord.meaning}</p></div><div className="mt-4 rounded-2xl border border-white/12 bg-black/18 p-4"><p className="text-[10px] font-black uppercase tracking-[0.2em] text-coral">Example</p><p className="mt-2 text-2xl font-black leading-9 text-white">{selectedMoreApartmentWord.example}</p><p className="mt-2 text-lg font-bold leading-8 text-cream/78">{selectedMoreApartmentWord.translation}</p></div><div className="mt-5 grid grid-cols-2 gap-3"><button {...audioButtonProps(`more-apartment-${selectedMoreApartmentWord.id}-normal`, () => speakEnglish(selectedMoreApartmentWord.word, 0.9, `more-apartment-${selectedMoreApartmentWord.id}-normal`))} className="rounded-2xl bg-[#e3b77d] px-4 py-3 text-base font-black text-[#342319] shadow-label transition hover:-translate-y-0.5 hover:bg-[#f2ce9d] active:translate-y-0"><ButtonCopy en="Normal" zh="正常语速" /></button><button {...audioButtonProps(`more-apartment-${selectedMoreApartmentWord.id}-slow`, () => speakEnglish(selectedMoreApartmentWord.word, 0.65, `more-apartment-${selectedMoreApartmentWord.id}-slow`))} className="rounded-2xl border border-[#e3b77d]/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"><ButtonCopy en="Slow" zh="慢速朗读" /></button></div><button {...audioButtonProps(`more-apartment-${selectedMoreApartmentWord.id}-sentence`, () => speakEnglish(selectedMoreApartmentWord.example, 0.86, `more-apartment-${selectedMoreApartmentWord.id}-sentence`))} className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"><ButtonCopy en="Play Sentence" zh="朗读例句" /></button><button onClick={() => saveWordEntry(makeMoreApartmentWordBookEntry(selectedMoreApartmentWord))} disabled={isWordSaved(selectedMoreApartmentWord.word)} className={`mt-3 w-full rounded-2xl px-4 py-3 text-base font-black shadow-label transition active:scale-[0.99] ${isWordSaved(selectedMoreApartmentWord.word) ? "bg-coral text-white" : "bg-white/12 text-white hover:bg-white/22"}`}><ButtonCopy en={isWordSaved(selectedMoreApartmentWord.word) ? "Added to Word Book" : "Add to Word Book"} zh={isWordSaved(selectedMoreApartmentWord.word) ? "已加入生词本" : "加入生词本"} /></button>{isWordSaved(selectedMoreApartmentWord.word) && <button onClick={() => removeWordEntry(selectedMoreApartmentWord.word)} className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"><ButtonCopy en="Remove from Word Book" zh="移出生词本" /></button>}<button onClick={finishApartmentVisit} className="mt-6 w-full rounded-2xl bg-[#e3b77d] px-4 py-4 text-lg font-black text-[#342319] shadow-label transition hover:-translate-y-0.5 hover:bg-[#f2ce9d] active:translate-y-0"><ButtonCopy en="Finish Apartment Visit" zh="结束公寓看房之旅" /></button></div></aside>}
         </div>
       )}
 
@@ -17968,6 +18458,7 @@ function App() {
           </div>
         </div>
       )}
+      {renderAudioDebugPanel()}
       {renderAuthToast()}
       {showLandscapePrompt && <LandscapePrompt />}
     </main>
