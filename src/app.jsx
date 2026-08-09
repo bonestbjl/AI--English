@@ -8860,6 +8860,107 @@ function ButtonCopy({ en, zh, align = "center", size = "base" }) {
   );
 }
 
+const MOBILE_MORE_WORD_THEME_STYLES = Object.freeze({
+  zoo: { label: "More Animal", accent: "text-banana", normal: "bg-banana text-ink hover:bg-[#ffc83f]", slow: "border-banana/40" },
+  fruitShop: { label: "More Fruit", accent: "text-banana", normal: "bg-banana text-ink hover:bg-[#ffc83f]", slow: "border-banana/40" },
+  campus: { label: "Campus Word", accent: "text-banana", normal: "bg-banana text-ink hover:bg-[#ffc83f]", slow: "border-banana/40" },
+  cafe: { label: "Cafe Word", accent: "text-banana", normal: "bg-banana text-ink hover:bg-[#ffc83f]", slow: "border-banana/40" },
+  airport: { label: "Airport Word", accent: "text-banana", normal: "bg-banana text-ink hover:bg-[#ffc83f]", slow: "border-banana/40" },
+  office: { label: "Office Word", accent: "text-banana", normal: "bg-banana text-ink hover:bg-[#ffc83f]", slow: "border-banana/40" },
+  hotel: { label: "Hotel Word", accent: "text-banana", normal: "bg-banana text-ink hover:bg-[#ffc83f]", slow: "border-banana/40" },
+  restaurant: { label: "Restaurant Word", accent: "text-banana", normal: "bg-banana text-ink hover:bg-[#ffc83f]", slow: "border-banana/40" },
+  supermarket: { label: "Supermarket Word", accent: "text-banana", normal: "bg-banana text-ink hover:bg-[#ffc83f]", slow: "border-banana/40" },
+  metro: { label: "Metro Word", accent: "text-[#84dfe0]", normal: "bg-[#84dfe0] text-[#102329] hover:bg-[#a4eff0]", slow: "border-[#84dfe0]/40" },
+  clinic: { label: "Clinic Word", accent: "text-[#8fd6c8]", normal: "bg-[#8fd6c8] text-[#10261f] hover:bg-[#a9eadf]", slow: "border-[#8fd6c8]/40" },
+  bank: { label: "Bank Word", accent: "text-[#8eb9cf]", normal: "bg-[#8eb9cf] text-[#10242e] hover:bg-[#b4d4e4]", slow: "border-[#8eb9cf]/40" },
+  apartment: { label: "Apartment Word", accent: "text-[#e3b77d]", normal: "bg-[#e3b77d] text-[#342319] hover:bg-[#f2ce9d]", slow: "border-[#e3b77d]/40" },
+});
+const MOBILE_MORE_WORD_MEDIA_QUERY = "(max-width: 768px), (max-width: 950px) and (orientation: landscape) and (max-height: 520px)";
+
+function MobileMoreWordInlineDetails({
+  item,
+  themeId,
+  audioKey,
+  playingKey,
+  speakEnglish,
+  saved,
+  onSave,
+  onRemove,
+}) {
+  const detailRef = useRef(null);
+  const style = MOBILE_MORE_WORD_THEME_STYLES[themeId] || MOBILE_MORE_WORD_THEME_STYLES.zoo;
+
+  useEffect(() => {
+    const frameId = window.requestAnimationFrame(() => {
+      detailRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+    return () => window.cancelAnimationFrame(frameId);
+  }, [item.id]);
+
+  return (
+    <div
+      ref={detailRef}
+      className="more-word-mobile-detail dialogue-enter min-w-0 rounded-2xl border border-white/14 bg-black/18 p-4 text-cream shadow-label backdrop-blur-xl"
+      role="region"
+      aria-label={`${item.word} details`}
+    >
+      <p className={`text-[10px] font-black uppercase tracking-[0.2em] ${style.accent}`}>{style.label}</p>
+      <div className="mt-2 min-w-0">
+        <h3 className="break-words text-2xl font-black leading-tight text-white">{item.word}</h3>
+        <p className={`mt-1 break-words text-base font-extrabold ${style.accent}`}>{item.phonetic}</p>
+        <p className="mt-2 break-words text-lg font-black text-white">{item.meaning}</p>
+      </div>
+      <div className="mt-3 rounded-2xl border border-white/12 bg-black/18 p-3">
+        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-coral">Example</p>
+        <p className="mt-2 break-words text-base font-black leading-6 text-white">{item.example}</p>
+        <p className="mt-2 break-words text-sm font-bold leading-6 text-cream/78">{item.translation}</p>
+      </div>
+      <div className="mt-3 grid grid-cols-2 gap-2">
+        <button
+          type="button"
+          onClick={() => speakEnglish(item.word, 0.9, `${audioKey}-normal`)}
+          className={`min-w-0 rounded-2xl px-3 py-3 text-sm font-black shadow-label transition active:scale-[0.99] ${style.normal}`}
+        >
+          <span className="inline-flex items-center justify-center gap-2">
+            {playingKey === `${audioKey}-normal` && <SoundBars />}
+            <ButtonCopy en="Normal" zh="正常语速" size="small" />
+          </span>
+        </button>
+        <button
+          type="button"
+          onClick={() => speakEnglish(item.word, 0.65, `${audioKey}-slow`)}
+          className={`min-w-0 rounded-2xl border bg-white/12 px-3 py-3 text-sm font-black text-white shadow-label transition active:scale-[0.99] ${style.slow}`}
+        >
+          <span className="inline-flex items-center justify-center gap-2">
+            {playingKey === `${audioKey}-slow` && <SoundBars />}
+            <ButtonCopy en="Slow" zh="慢速朗读" size="small" />
+          </span>
+        </button>
+      </div>
+      <button
+        type="button"
+        onClick={() => speakEnglish(item.example, 0.86, `${audioKey}-sentence`)}
+        className="mt-2 w-full rounded-2xl border border-white/18 bg-white/10 px-3 py-3 text-sm font-black text-white transition hover:bg-white/20 active:scale-[0.99]"
+      >
+        <span className="inline-flex items-center justify-center gap-2">
+          {playingKey === `${audioKey}-sentence` && <SoundBars />}
+          <ButtonCopy en="Play Sentence" zh="朗读例句" size="small" />
+        </span>
+      </button>
+      <div className="mt-2 flex items-center justify-between gap-2 rounded-2xl border border-white/12 bg-white/8 px-3 py-2">
+        <span className="text-xs font-black text-cream/78">Learned · 已学习</span>
+        <button
+          type="button"
+          onClick={saved ? onRemove : onSave}
+          className={`rounded-full px-3 py-2 text-xs font-black transition active:scale-[0.98] ${saved ? "bg-coral text-white" : "bg-white/12 text-white hover:bg-white/22"}`}
+        >
+          {saved ? "Remove · 移除" : "Add to Word Book · 加入生词本"}
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function getSceneCoverFallback(image) {
   const source = String(image || "");
   const urlPattern = /url\((['\"]?)([^'\")]+)\1\)/;
@@ -10227,6 +10328,7 @@ function App() {
   const [selectedMoreClinicWord, setSelectedMoreClinicWord] = useState(null);
   const [selectedMoreBankWord, setSelectedMoreBankWord] = useState(null);
   const [selectedMoreApartmentWord, setSelectedMoreApartmentWord] = useState(null);
+  const [activeMoreWordId, setActiveMoreWordId] = useState(null);
   const [dialogueReply, setDialogueReply] = useState(null);
   const [conversationDone, setConversationDone] = useState(() => initialLearningData.completedDialogs);
   const [completedActions, setCompletedActions] = useState(() => initialLearningData.completedActions);
@@ -10300,6 +10402,57 @@ function App() {
   const [showEnding, setShowEnding] = useState(false);
   const [isWalking, setIsWalking] = useState(false);
   const [animalEffect, setAnimalEffect] = useState(null);
+
+  useEffect(() => {
+    setActiveMoreWordId(null);
+  }, [
+    moreAnimalsPageIndex,
+    moreFruitsPageIndex,
+    moreCampusPageIndex,
+    moreCafePageIndex,
+    moreAirportPageIndex,
+    moreOfficePageIndex,
+    moreHotelPageIndex,
+    moreRestaurantPageIndex,
+    moreSupermarketPageIndex,
+    moreMetroPageIndex,
+    moreClinicPageIndex,
+    moreBankPageIndex,
+    moreApartmentPageIndex,
+  ]);
+
+  useEffect(() => {
+    const anyMoreWordsOpen = [
+      showMoreAnimalsBook,
+      showMoreFruitsBook,
+      showMoreCampusBook,
+      showMoreCafeBook,
+      showMoreAirportBook,
+      showMoreOfficeBook,
+      showMoreHotelBook,
+      showMoreRestaurantBook,
+      showMoreSupermarketBook,
+      showMoreMetroBook,
+      showMoreClinicBook,
+      showMoreBankBook,
+      showMoreApartmentBook,
+    ].some(Boolean);
+    if (!anyMoreWordsOpen) setActiveMoreWordId(null);
+  }, [
+    showMoreAnimalsBook,
+    showMoreFruitsBook,
+    showMoreCampusBook,
+    showMoreCafeBook,
+    showMoreAirportBook,
+    showMoreOfficeBook,
+    showMoreHotelBook,
+    showMoreRestaurantBook,
+    showMoreSupermarketBook,
+    showMoreMetroBook,
+    showMoreClinicBook,
+    showMoreBankBook,
+    showMoreApartmentBook,
+  ]);
 
   useEffect(() => {
     if (currentView !== "home") return undefined;
@@ -10870,7 +11023,22 @@ function App() {
   const currentScene = activeScenes[currentIndex];
   const currentDialogue = currentScene.npc ? activeDialogues[currentScene.npc] : null;
   const viewport = useViewportSize();
-  const showLandscapePrompt = shouldShowLandscapePrompt(viewport);
+  const isMoreWordsBookOpen = [
+    showMoreAnimalsBook,
+    showMoreFruitsBook,
+    showMoreCampusBook,
+    showMoreCafeBook,
+    showMoreAirportBook,
+    showMoreOfficeBook,
+    showMoreHotelBook,
+    showMoreRestaurantBook,
+    showMoreSupermarketBook,
+    showMoreMetroBook,
+    showMoreClinicBook,
+    showMoreBankBook,
+    showMoreApartmentBook,
+  ].some(Boolean);
+  const showLandscapePrompt = shouldShowLandscapePrompt(viewport) && !isMoreWordsBookOpen;
   const isMobileLandscape = shouldUseMobileLandscapeMode(viewport);
 
   useEffect(() => {
@@ -11563,6 +11731,21 @@ function App() {
     setSavedWords((items) => items.filter((item) => getWordKey(item.word) !== key));
   }
 
+  function renderMobileMoreWordDetails(themeId, item, audioKey, wordBookEntry) {
+    return (
+      <MobileMoreWordInlineDetails
+        item={item}
+        themeId={themeId}
+        audioKey={audioKey}
+        playingKey={playingKey}
+        speakEnglish={speakEnglish}
+        saved={isWordSaved(item.word)}
+        onSave={() => saveWordEntry(wordBookEntry)}
+        onRemove={() => removeWordEntry(item.word)}
+      />
+    );
+  }
+
   function openWordBook(returnView = currentView) {
     if (isMobileAudioPreferred()) ensureMobileAudioMapLoaded().catch(() => {});
     setWordBookReturnView(returnView);
@@ -11690,115 +11873,71 @@ function App() {
     triggerAnimalFeedback(hotspot);
   }
 
+  function openMoreWordItem({ themeId, item, setSelected, setLearned, audioKey }) {
+    const stableId = `${themeId}:${item.id}`;
+    const isMobileLayout = window.matchMedia?.(MOBILE_MORE_WORD_MEDIA_QUERY).matches;
+    if (isMobileLayout && activeMoreWordId === stableId) {
+      setActiveMoreWordId(null);
+      setSelected(null);
+      return;
+    }
+    setActiveMoreWordId(stableId);
+    setSelected(item);
+    setLearned((items) => items.includes(item.id) ? items : [...items, item.id]);
+    rememberWord(item.word);
+    speakEnglish(item.word, 0.9, `${audioKey}-normal`);
+  }
+
   function openMoreAnimal(animal) {
-    setSelectedMoreAnimal(animal);
-    setLearnedMoreAnimals((items) =>
-      items.includes(animal.id) ? items : [...items, animal.id]
-    );
-    rememberWord(animal.word);
-    speakEnglish(animal.word, 0.9, `more-${animal.id}-normal`);
+    openMoreWordItem({ themeId: "zoo", item: animal, setSelected: setSelectedMoreAnimal, setLearned: setLearnedMoreAnimals, audioKey: `more-${animal.id}` });
   }
 
   function openMoreFruit(fruit) {
-    setSelectedMoreFruit(fruit);
-    setLearnedMoreFruits((items) =>
-      items.includes(fruit.id) ? items : [...items, fruit.id]
-    );
-    rememberWord(fruit.word);
-    speakEnglish(fruit.word, 0.9, `more-fruit-${fruit.id}-normal`);
+    openMoreWordItem({ themeId: "fruitShop", item: fruit, setSelected: setSelectedMoreFruit, setLearned: setLearnedMoreFruits, audioKey: `more-fruit-${fruit.id}` });
   }
 
   function openMoreCampusWord(word) {
-    setSelectedMoreCampusWord(word);
-    setLearnedMoreCampusWords((items) =>
-      items.includes(word.id) ? items : [...items, word.id]
-    );
-    rememberWord(word.word);
-    speakEnglish(word.word, 0.9, `more-campus-${word.id}-normal`);
+    openMoreWordItem({ themeId: "campus", item: word, setSelected: setSelectedMoreCampusWord, setLearned: setLearnedMoreCampusWords, audioKey: `more-campus-${word.id}` });
   }
 
   function openMoreCafeWord(word) {
-    setSelectedMoreCafeWord(word);
-    setLearnedMoreCafeWords((items) =>
-      items.includes(word.id) ? items : [...items, word.id]
-    );
-    rememberWord(word.word);
-    speakEnglish(word.word, 0.9, `more-cafe-${word.id}-normal`);
+    openMoreWordItem({ themeId: "cafe", item: word, setSelected: setSelectedMoreCafeWord, setLearned: setLearnedMoreCafeWords, audioKey: `more-cafe-${word.id}` });
   }
 
   function openMoreAirportWord(word) {
-    setSelectedMoreAirportWord(word);
-    setLearnedMoreAirportWords((items) =>
-      items.includes(word.id) ? items : [...items, word.id]
-    );
-    rememberWord(word.word);
-    speakEnglish(word.word, 0.9, `more-airport-${word.id}-normal`);
+    openMoreWordItem({ themeId: "airport", item: word, setSelected: setSelectedMoreAirportWord, setLearned: setLearnedMoreAirportWords, audioKey: `more-airport-${word.id}` });
   }
 
   function openMoreOfficeWord(word) {
-    setSelectedMoreOfficeWord(word);
-    setLearnedMoreOfficeWords((items) =>
-      items.includes(word.id) ? items : [...items, word.id]
-    );
-    rememberWord(word.word);
-    speakEnglish(word.word, 0.9, `more-office-${word.id}-normal`);
+    openMoreWordItem({ themeId: "office", item: word, setSelected: setSelectedMoreOfficeWord, setLearned: setLearnedMoreOfficeWords, audioKey: `more-office-${word.id}` });
   }
 
   function openMoreHotelWord(word) {
-    setSelectedMoreHotelWord(word);
-    setLearnedMoreHotelWords((items) =>
-      items.includes(word.id) ? items : [...items, word.id]
-    );
-    rememberWord(word.word);
-    speakEnglish(word.word, 0.9, `more-hotel-${word.id}-normal`);
+    openMoreWordItem({ themeId: "hotel", item: word, setSelected: setSelectedMoreHotelWord, setLearned: setLearnedMoreHotelWords, audioKey: `more-hotel-${word.id}` });
   }
 
   function openMoreRestaurantWord(word) {
-    setSelectedMoreRestaurantWord(word);
-    setLearnedMoreRestaurantWords((items) =>
-      items.includes(word.id) ? items : [...items, word.id]
-    );
-    rememberWord(word.word);
-    speakEnglish(word.word, 0.9, `more-restaurant-${word.id}-normal`);
+    openMoreWordItem({ themeId: "restaurant", item: word, setSelected: setSelectedMoreRestaurantWord, setLearned: setLearnedMoreRestaurantWords, audioKey: `more-restaurant-${word.id}` });
   }
 
   function openMoreSupermarketWord(word) {
-    setSelectedMoreSupermarketWord(word);
-    setLearnedMoreSupermarketWords((items) =>
-      items.includes(word.id) ? items : [...items, word.id]
-    );
-    rememberWord(word.word);
-    speakEnglish(word.word, 0.9, `more-supermarket-${word.id}-normal`);
+    openMoreWordItem({ themeId: "supermarket", item: word, setSelected: setSelectedMoreSupermarketWord, setLearned: setLearnedMoreSupermarketWords, audioKey: `more-supermarket-${word.id}` });
   }
 
   function openMoreMetroWord(word) {
-    setSelectedMoreMetroWord(word);
-    setLearnedMoreMetroWords((items) =>
-      items.includes(word.id) ? items : [...items, word.id]
-    );
-    rememberWord(word.word);
-    speakEnglish(word.word, 0.9, `more-metro-${word.id}-normal`);
+    openMoreWordItem({ themeId: "metro", item: word, setSelected: setSelectedMoreMetroWord, setLearned: setLearnedMoreMetroWords, audioKey: `more-metro-${word.id}` });
   }
 
   function openMoreClinicWord(word) {
-    setSelectedMoreClinicWord(word);
-    setLearnedMoreClinicWords((items) => items.includes(word.id) ? items : [...items, word.id]);
-    rememberWord(word.word);
-    speakEnglish(word.word, 0.9, "more-clinic-" + word.id + "-normal");
+    openMoreWordItem({ themeId: "clinic", item: word, setSelected: setSelectedMoreClinicWord, setLearned: setLearnedMoreClinicWords, audioKey: `more-clinic-${word.id}` });
   }
 
   function openMoreBankWord(word) {
-    setSelectedMoreBankWord(word);
-    setLearnedMoreBankWords((items) => items.includes(word.id) ? items : [...items, word.id]);
-    rememberWord(word.word);
-    speakEnglish(word.word, 0.9, "more-bank-" + word.id + "-normal");
+    openMoreWordItem({ themeId: "bank", item: word, setSelected: setSelectedMoreBankWord, setLearned: setLearnedMoreBankWords, audioKey: `more-bank-${word.id}` });
   }
 
   function openMoreApartmentWord(word) {
-    setSelectedMoreApartmentWord(word);
-    setLearnedMoreApartmentWords((items) => items.includes(word.id) ? items : [...items, word.id]);
-    rememberWord(word.word);
-    speakEnglish(word.word, 0.9, "more-apartment-" + word.id + "-normal");
+    openMoreWordItem({ themeId: "apartment", item: word, setSelected: setSelectedMoreApartmentWord, setLearned: setLearnedMoreApartmentWords, audioKey: `more-apartment-${word.id}` });
   }
 
   function finishZooTrip() {
@@ -15130,7 +15269,7 @@ function App() {
       )}
 
       {showMoreAnimalsBook && !showEnding && (
-        <div className="fixed inset-0 z-50 overflow-auto bg-[#17251c]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
+        <div className="more-word-book-page fixed inset-0 z-50 overflow-auto bg-[#17251c]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
           <div className="mx-auto max-w-6xl">
             <header className="sticky top-0 z-[55] flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
               <div>
@@ -15207,41 +15346,48 @@ function App() {
                 </p>
               </div>
 
-              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              <div className="more-word-grid mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {currentMoreAnimalsPage.animals.map((animal, index) => {
                   const learned = learnedMoreAnimals.includes(animal.id);
                   return (
-                    <button
-                      key={animal.id}
-                      onClick={() => openMoreAnimal(animal)}
-                      className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
-                        learned
-                          ? "border-[#cfe89d]/50 bg-[#375236]/72"
-                          : "border-white/14 bg-white/10 hover:border-banana/45 hover:bg-white/16"
-                      }`}
-                    >
-                      <div className="flex items-start gap-3">
-                        <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-banana/35 bg-[#6b4524]/72 text-xl font-black text-banana transition group-hover:scale-105">
-                          {animal.word.slice(0, 1).toUpperCase()}
-                        </span>
-                        <span className="min-w-0">
-                          <span className="block text-lg font-black leading-tight text-white">
-                            {animal.word}
+                    <div key={animal.id} className="contents">
+                      <button
+                        onClick={() => openMoreAnimal(animal)}
+                        className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
+                          learned
+                            ? "border-[#cfe89d]/50 bg-[#375236]/72"
+                            : "border-white/14 bg-white/10 hover:border-banana/45 hover:bg-white/16"
+                        }`}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-banana/35 bg-[#6b4524]/72 text-xl font-black text-banana transition group-hover:scale-105">
+                            {animal.word.slice(0, 1).toUpperCase()}
                           </span>
-                          <span className="mt-1 block text-sm font-bold text-cream/72">
-                            {animal.meaning}
+                          <span className="min-w-0">
+                            <span className="block text-lg font-black leading-tight text-white">
+                              {animal.word}
+                            </span>
+                            <span className="mt-1 block text-sm font-bold text-cream/72">
+                              {animal.meaning}
+                            </span>
                           </span>
-                        </span>
-                      </div>
-                      <div className="mt-3 flex items-center justify-between gap-2">
-                        <span className="text-xs font-black text-banana">{animal.phonetic}</span>
-                        {learned && (
-                          <span className="rounded-full bg-banana/90 px-2 py-1 text-[10px] font-black uppercase text-ink">
-                            Learned · 已学习
-                          </span>
-                        )}
-                      </div>
-                    </button>
+                        </div>
+                        <div className="mt-3 flex items-center justify-between gap-2">
+                          <span className="text-xs font-black text-banana">{animal.phonetic}</span>
+                          {learned && (
+                            <span className="rounded-full bg-banana/90 px-2 py-1 text-[10px] font-black uppercase text-ink">
+                              Learned · 已学习
+                            </span>
+                          )}
+                        </div>
+                      </button>
+                      {activeMoreWordId === `zoo:${animal.id}` && renderMobileMoreWordDetails(
+                        "zoo",
+                        animal,
+                        `more-${animal.id}`,
+                        makeMoreAnimalWordBookEntry(animal)
+                      )}
+                    </div>
                   );
                 })}
               </div>
@@ -15249,7 +15395,7 @@ function App() {
           </div>
 
           {selectedMoreAnimal && (
-            <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/92 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
+            <aside className="more-word-desktop-detail card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/92 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
               <div className="flex items-start justify-between gap-3 border-b border-white/12 p-5">
                 <div>
                   <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
@@ -15396,7 +15542,7 @@ function App() {
       )}
 
       {showMoreFruitsBook && !showEnding && (
-        <div className="fixed inset-0 z-50 overflow-auto bg-[#17251c]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
+        <div className="more-word-book-page fixed inset-0 z-50 overflow-auto bg-[#17251c]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
           <div className="mx-auto max-w-6xl">
             <header className="flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
               <div>
@@ -15473,12 +15619,12 @@ function App() {
                 </p>
               </div>
 
-              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              <div className="more-word-grid mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {currentMoreFruitsPage.fruits.map((fruit) => {
                   const learned = learnedMoreFruits.includes(fruit.id);
                   return (
+                    <div key={fruit.id} className="contents">
                     <button
-                      key={fruit.id}
                       onClick={() => openMoreFruit(fruit)}
                       className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
                         learned
@@ -15508,6 +15654,13 @@ function App() {
                         )}
                       </div>
                     </button>
+                    {activeMoreWordId === `fruitShop:${fruit.id}` && renderMobileMoreWordDetails(
+                      "fruitShop",
+                      fruit,
+                      `more-fruit-${fruit.id}`,
+                      makeMoreFruitWordBookEntry(fruit)
+                    )}
+                    </div>
                   );
                 })}
               </div>
@@ -15515,7 +15668,7 @@ function App() {
           </div>
 
           {selectedMoreFruit && (
-            <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/92 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
+            <aside className="more-word-desktop-detail card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/92 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
               <div className="flex items-start justify-between gap-3 border-b border-white/12 p-5">
                 <div>
                   <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
@@ -15662,7 +15815,7 @@ function App() {
       )}
 
       {showMoreCampusBook && !showEnding && (
-        <div className="fixed inset-0 z-50 overflow-auto bg-[#17251c]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
+        <div className="more-word-book-page fixed inset-0 z-50 overflow-auto bg-[#17251c]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
           <div className="mx-auto max-w-6xl">
             <header className="flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
               <div>
@@ -15739,12 +15892,12 @@ function App() {
                 </p>
               </div>
 
-              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              <div className="more-word-grid mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {currentMoreCampusPage.words.map((word) => {
                   const learned = learnedMoreCampusWords.includes(word.id);
                   return (
+                    <div key={word.id} className="contents">
                     <button
-                      key={word.id}
                       onClick={() => openMoreCampusWord(word)}
                       className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
                         learned
@@ -15774,6 +15927,13 @@ function App() {
                         )}
                       </div>
                     </button>
+                    {activeMoreWordId === `campus:${word.id}` && renderMobileMoreWordDetails(
+                      "campus",
+                      word,
+                      `more-campus-${word.id}`,
+                      makeMoreCampusWordBookEntry(word)
+                    )}
+                    </div>
                   );
                 })}
               </div>
@@ -15781,7 +15941,7 @@ function App() {
           </div>
 
           {selectedMoreCampusWord && (
-            <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/92 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
+            <aside className="more-word-desktop-detail card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/92 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
               <div className="flex items-start justify-between gap-3 border-b border-white/12 p-5">
                 <div>
                   <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
@@ -15928,7 +16088,7 @@ function App() {
       )}
 
       {showMoreCafeBook && !showEnding && (
-        <div className="fixed inset-0 z-50 overflow-auto bg-[#17251c]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
+        <div className="more-word-book-page fixed inset-0 z-50 overflow-auto bg-[#17251c]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
           <div className="mx-auto max-w-6xl">
             <header className="flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
               <div>
@@ -16005,12 +16165,12 @@ function App() {
                 </p>
               </div>
 
-              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              <div className="more-word-grid mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {currentMoreCafePage.words.map((word) => {
                   const learned = learnedMoreCafeWords.includes(word.id);
                   return (
+                    <div key={word.id} className="contents">
                     <button
-                      key={word.id}
                       onClick={() => openMoreCafeWord(word)}
                       className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
                         learned
@@ -16040,6 +16200,13 @@ function App() {
                         )}
                       </div>
                     </button>
+                    {activeMoreWordId === `cafe:${word.id}` && renderMobileMoreWordDetails(
+                      "cafe",
+                      word,
+                      `more-cafe-${word.id}`,
+                      makeMoreCafeWordBookEntry(word)
+                    )}
+                    </div>
                   );
                 })}
               </div>
@@ -16047,7 +16214,7 @@ function App() {
           </div>
 
           {selectedMoreCafeWord && (
-            <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/92 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
+            <aside className="more-word-desktop-detail card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/92 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
               <div className="flex items-start justify-between gap-3 border-b border-white/12 p-5">
                 <div>
                   <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
@@ -16194,7 +16361,7 @@ function App() {
       )}
 
       {showMoreAirportBook && !showEnding && (
-        <div className="fixed inset-0 z-50 overflow-auto bg-[#162230]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
+        <div className="more-word-book-page fixed inset-0 z-50 overflow-auto bg-[#162230]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
           <div className="mx-auto max-w-6xl">
             <header className="flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
               <div>
@@ -16271,12 +16438,12 @@ function App() {
                 </p>
               </div>
 
-              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              <div className="more-word-grid mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {currentMoreAirportPage.words.map((word) => {
                   const learned = learnedMoreAirportWords.includes(word.id);
                   return (
+                    <div key={word.id} className="contents">
                     <button
-                      key={word.id}
                       onClick={() => openMoreAirportWord(word)}
                       className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
                         learned
@@ -16306,6 +16473,13 @@ function App() {
                         )}
                       </div>
                     </button>
+                    {activeMoreWordId === `airport:${word.id}` && renderMobileMoreWordDetails(
+                      "airport",
+                      word,
+                      `more-airport-${word.id}`,
+                      makeMoreAirportWordBookEntry(word)
+                    )}
+                    </div>
                   );
                 })}
               </div>
@@ -16313,7 +16487,7 @@ function App() {
           </div>
 
           {selectedMoreAirportWord && (
-            <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/92 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
+            <aside className="more-word-desktop-detail card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/92 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
               <div className="flex items-start justify-between gap-3 border-b border-white/12 p-5">
                 <div>
                   <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
@@ -16461,7 +16635,7 @@ function App() {
       )}
 
       {showMoreOfficeBook && !showEnding && (
-        <div className="fixed inset-0 z-50 overflow-auto bg-[#191c20]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
+        <div className="more-word-book-page fixed inset-0 z-50 overflow-auto bg-[#191c20]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
           <div className="mx-auto max-w-6xl">
             <header className="flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
               <div>
@@ -16539,12 +16713,12 @@ function App() {
                 </p>
               </div>
 
-              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              <div className="more-word-grid mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {currentMoreOfficePage.words.map((word) => {
                   const learned = learnedMoreOfficeWords.includes(word.id);
                   return (
+                    <div key={word.id} className="contents">
                     <button
-                      key={word.id}
                       onClick={() => openMoreOfficeWord(word)}
                       className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
                         learned
@@ -16574,6 +16748,13 @@ function App() {
                         )}
                       </div>
                     </button>
+                    {activeMoreWordId === `office:${word.id}` && renderMobileMoreWordDetails(
+                      "office",
+                      word,
+                      `more-office-${word.id}`,
+                      makeMoreOfficeWordBookEntry(word)
+                    )}
+                    </div>
                   );
                 })}
               </div>
@@ -16581,7 +16762,7 @@ function App() {
           </div>
 
           {selectedMoreOfficeWord && (
-            <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/92 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
+            <aside className="more-word-desktop-detail card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/92 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
               <div className="flex items-start justify-between gap-3 border-b border-white/12 p-5">
                 <div>
                   <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
@@ -16728,7 +16909,7 @@ function App() {
       )}
 
       {showMoreHotelBook && !showEnding && (
-        <div className="fixed inset-0 z-50 overflow-auto bg-[#191c20]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
+        <div className="more-word-book-page fixed inset-0 z-50 overflow-auto bg-[#191c20]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
           <div className="mx-auto max-w-6xl">
             <header className="flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
               <div>
@@ -16805,12 +16986,12 @@ function App() {
                 </p>
               </div>
 
-              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              <div className="more-word-grid mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {currentMoreHotelPage.words.map((word) => {
                   const learned = learnedMoreHotelWords.includes(word.id);
                   return (
+                    <div key={word.id} className="contents">
                     <button
-                      key={word.id}
                       onClick={() => openMoreHotelWord(word)}
                       className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
                         learned
@@ -16840,6 +17021,13 @@ function App() {
                         )}
                       </div>
                     </button>
+                    {activeMoreWordId === `hotel:${word.id}` && renderMobileMoreWordDetails(
+                      "hotel",
+                      word,
+                      `more-hotel-${word.id}`,
+                      makeMoreHotelWordBookEntry(word)
+                    )}
+                    </div>
                   );
                 })}
               </div>
@@ -16847,7 +17035,7 @@ function App() {
           </div>
 
           {selectedMoreHotelWord && (
-            <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/92 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
+            <aside className="more-word-desktop-detail card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#112319]/92 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
               <div className="flex items-start justify-between gap-3 border-b border-white/12 p-5">
                 <div>
                   <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">
@@ -16994,7 +17182,7 @@ function App() {
       )}
 
       {showMoreRestaurantBook && !showEnding && (
-        <div className="fixed inset-0 z-50 overflow-auto bg-[#211914]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
+        <div className="more-word-book-page fixed inset-0 z-50 overflow-auto bg-[#211914]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
           <div className="mx-auto max-w-6xl">
             <header className="flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
               <div>
@@ -17057,12 +17245,12 @@ function App() {
                 <p className="text-sm font-black text-cream/75">{currentRestaurantPageExploredCount}/12 learned · 已学习</p>
               </div>
 
-              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              <div className="more-word-grid mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {currentMoreRestaurantPage.words.map((word) => {
                   const learned = learnedMoreRestaurantWords.includes(word.id);
                   return (
+                    <div key={word.id} className="contents">
                     <button
-                      key={word.id}
                       onClick={() => openMoreRestaurantWord(word)}
                       className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
                         learned
@@ -17086,6 +17274,13 @@ function App() {
                         )}
                       </div>
                     </button>
+                    {activeMoreWordId === `restaurant:${word.id}` && renderMobileMoreWordDetails(
+                      "restaurant",
+                      word,
+                      `more-restaurant-${word.id}`,
+                      makeMoreRestaurantWordBookEntry(word)
+                    )}
+                    </div>
                   );
                 })}
               </div>
@@ -17093,7 +17288,7 @@ function App() {
           </div>
 
           {selectedMoreRestaurantWord && (
-            <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#241914]/94 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
+            <aside className="more-word-desktop-detail card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#241914]/94 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
               <div className="flex items-start justify-between gap-3 border-b border-white/12 p-5">
                 <div>
                   <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">Restaurant Word</p>
@@ -17215,7 +17410,7 @@ function App() {
       )}
 
       {showMoreSupermarketBook && !showEnding && (
-        <div className="fixed inset-0 z-50 overflow-auto bg-[#152019]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
+        <div className="more-word-book-page fixed inset-0 z-50 overflow-auto bg-[#152019]/96 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
           <div className="mx-auto max-w-6xl">
             <header className="flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
               <div>
@@ -17278,12 +17473,12 @@ function App() {
                 <p className="text-sm font-black text-cream/75">{currentSupermarketPageExploredCount}/12 learned · 已学习</p>
               </div>
 
-              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              <div className="more-word-grid mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {currentMoreSupermarketPage.words.map((word) => {
                   const learned = learnedMoreSupermarketWords.includes(word.id);
                   return (
+                    <div key={word.id} className="contents">
                     <button
-                      key={word.id}
                       onClick={() => openMoreSupermarketWord(word)}
                       className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
                         learned
@@ -17307,6 +17502,13 @@ function App() {
                         )}
                       </div>
                     </button>
+                    {activeMoreWordId === `supermarket:${word.id}` && renderMobileMoreWordDetails(
+                      "supermarket",
+                      word,
+                      `more-supermarket-${word.id}`,
+                      makeMoreSupermarketWordBookEntry(word)
+                    )}
+                    </div>
                   );
                 })}
               </div>
@@ -17314,7 +17516,7 @@ function App() {
           </div>
 
           {selectedMoreSupermarketWord && (
-            <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#13251a]/94 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
+            <aside className="more-word-desktop-detail card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#13251a]/94 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
               <div className="flex items-start justify-between gap-3 border-b border-white/12 p-5">
                 <div>
                   <p className="text-[10px] font-black uppercase tracking-[0.24em] text-banana">Supermarket Word</p>
@@ -17438,7 +17640,7 @@ function App() {
       )}
 
       {showMoreMetroBook && isMetroChapter && !showEnding && (
-        <div className="fixed inset-0 z-50 overflow-auto bg-[#101d21]/97 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
+        <div className="more-word-book-page fixed inset-0 z-50 overflow-auto bg-[#101d21]/97 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
           <div className="mx-auto max-w-6xl">
             <header className="flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
               <div>
@@ -17502,12 +17704,12 @@ function App() {
                 <p className="text-sm font-black text-cream/75">{currentMetroPageExploredCount}/12 learned · 已学习</p>
               </div>
 
-              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              <div className="more-word-grid mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {currentMoreMetroPage.words.map((word) => {
                   const learned = learnedMoreMetroWords.includes(word.id);
                   return (
+                    <div key={word.id} className="contents">
                     <button
-                      key={word.id}
                       onClick={() => openMoreMetroWord(word)}
                       className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
                         learned
@@ -17531,6 +17733,13 @@ function App() {
                         )}
                       </div>
                     </button>
+                    {activeMoreWordId === `metro:${word.id}` && renderMobileMoreWordDetails(
+                      "metro",
+                      word,
+                      `more-metro-${word.id}`,
+                      makeMoreMetroWordBookEntry(word)
+                    )}
+                    </div>
                   );
                 })}
               </div>
@@ -17538,7 +17747,7 @@ function App() {
           </div>
 
           {selectedMoreMetroWord && (
-            <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#102329]/96 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
+            <aside className="more-word-desktop-detail card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#102329]/96 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
               <div className="flex items-start justify-between gap-3 border-b border-white/12 p-5">
                 <div>
                   <p className="text-[10px] font-black uppercase tracking-[0.24em] text-[#84dfe0]">Metro Word</p>
@@ -17662,7 +17871,7 @@ function App() {
       )}
 
       {showMoreClinicBook && isClinicChapter && !showEnding && (
-        <div className="fixed inset-0 z-50 overflow-auto bg-[#101d21]/97 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
+        <div className="more-word-book-page fixed inset-0 z-50 overflow-auto bg-[#101d21]/97 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
           <div className="mx-auto max-w-6xl">
             <header className="flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
               <div>
@@ -17726,12 +17935,12 @@ function App() {
                 <p className="text-sm font-black text-cream/75">{currentClinicPageExploredCount}/12 learned · 已学习</p>
               </div>
 
-              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              <div className="more-word-grid mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {currentMoreClinicPage.words.map((word) => {
                   const learned = learnedMoreClinicWords.includes(word.id);
                   return (
+                    <div key={word.id} className="contents">
                     <button
-                      key={word.id}
                       onClick={() => openMoreClinicWord(word)}
                       className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${
                         learned
@@ -17755,6 +17964,13 @@ function App() {
                         )}
                       </div>
                     </button>
+                    {activeMoreWordId === `clinic:${word.id}` && renderMobileMoreWordDetails(
+                      "clinic",
+                      word,
+                      `more-clinic-${word.id}`,
+                      makeMoreClinicWordBookEntry(word)
+                    )}
+                    </div>
                   );
                 })}
               </div>
@@ -17762,7 +17978,7 @@ function App() {
           </div>
 
           {selectedMoreClinicWord && (
-            <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#10261f]/96 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
+            <aside className="more-word-desktop-detail card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#10261f]/96 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl">
               <div className="flex items-start justify-between gap-3 border-b border-white/12 p-5">
                 <div>
                   <p className="text-[10px] font-black uppercase tracking-[0.24em] text-[#8fd6c8]">Clinic Word</p>
@@ -17864,7 +18080,7 @@ function App() {
       )}
 
       {showMoreBankBook && isBankChapter && !showEnding && (
-        <div className="fixed inset-0 z-50 overflow-auto bg-[#101d25]/97 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
+        <div className="more-word-book-page fixed inset-0 z-50 overflow-auto bg-[#101d25]/97 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
           <div className="mx-auto max-w-6xl">
             <header className="flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
               <div><p className="text-[11px] font-black uppercase tracking-[0.24em] text-[#8eb9cf]">More Bank Words</p><h2 className="mt-2 text-3xl font-black text-white sm:text-5xl">More Bank Words</h2><p className="mt-2 text-lg font-bold text-cream/78">更多银行词汇</p></div>
@@ -17874,7 +18090,19 @@ function App() {
             <div className="mt-5 flex gap-2 overflow-x-auto pb-1">{moreBankPages.map((page, index) => <button key={page.id} onClick={() => { setMoreBankPageIndex(index); setSelectedMoreBankWord(null); }} className={`min-w-[210px] rounded-2xl px-4 py-3 text-left font-black shadow-label transition hover:-translate-y-0.5 active:translate-y-0 ${index === moreBankPageIndex ? "bg-[#426f85] text-white" : "border border-white/16 bg-white/10 text-cream hover:bg-white/18"}`}><span className="block text-sm">{page.title}</span><span className="mt-1 block text-xs font-bold opacity-75">{page.zh}</span></button>)}</div>
             <section className="mt-5 rounded-3xl border border-white/14 bg-nightglass p-4 shadow-glow backdrop-blur-xl">
               <div className="flex flex-wrap items-end justify-between gap-3"><div><p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#8eb9cf]">Page {moreBankPageIndex + 1}/3</p><h3 className="mt-1 text-2xl font-black text-white">{currentMoreBankPage.title}<span className="ml-2 text-[#8eb9cf]">{currentMoreBankPage.zh}</span></h3></div><p className="text-sm font-black text-cream/75">{currentBankPageExploredCount}/12 learned · 已学习</p></div>
-              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{currentMoreBankPage.words.map((word) => { const learned = learnedMoreBankWords.includes(word.id); return <button key={word.id} onClick={() => openMoreBankWord(word)} className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${learned ? "border-[#8eb9cf]/55 bg-[#21434f]/75" : "border-white/14 bg-white/10 hover:border-[#8eb9cf]/45 hover:bg-white/16"}`}><div className="flex items-start gap-3"><span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-[#8eb9cf]/35 bg-[#21434f]/72 text-xl font-black text-[#8eb9cf] transition group-hover:scale-105">{word.word.slice(0, 1).toUpperCase()}</span><span className="min-w-0"><span className="block text-lg font-black leading-tight text-white">{word.word}</span><span className="mt-1 block text-sm font-bold text-cream/72">{word.meaning}</span></span></div><div className="mt-3 flex items-center justify-between gap-2"><span className="text-xs font-black text-[#8eb9cf]">{word.phonetic}</span>{learned && <span className="rounded-full bg-[#8eb9cf] px-2 py-1 text-[10px] font-black uppercase text-[#10242e]">Learned · 已学习</span>}</div></button>; })}</div>
+              <div className="more-word-grid mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {currentMoreBankPage.words.map((word) => {
+                  const learned = learnedMoreBankWords.includes(word.id);
+                  return (
+                    <div key={word.id} className="contents">
+                      <button onClick={() => openMoreBankWord(word)} className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${learned ? "border-[#8eb9cf]/55 bg-[#21434f]/75" : "border-white/14 bg-white/10 hover:border-[#8eb9cf]/45 hover:bg-white/16"}`}>
+                        <div className="flex items-start gap-3"><span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-[#8eb9cf]/35 bg-[#21434f]/72 text-xl font-black text-[#8eb9cf] transition group-hover:scale-105">{word.word.slice(0, 1).toUpperCase()}</span><span className="min-w-0"><span className="block text-lg font-black leading-tight text-white">{word.word}</span><span className="mt-1 block text-sm font-bold text-cream/72">{word.meaning}</span></span></div><div className="mt-3 flex items-center justify-between gap-2"><span className="text-xs font-black text-[#8eb9cf]">{word.phonetic}</span>{learned && <span className="rounded-full bg-[#8eb9cf] px-2 py-1 text-[10px] font-black uppercase text-[#10242e]">Learned · 已学习</span>}</div>
+                      </button>
+                      {activeMoreWordId === `bank:${word.id}` && renderMobileMoreWordDetails("bank", word, `more-bank-${word.id}`, makeMoreBankWordBookEntry(word))}
+                    </div>
+                  );
+                })}
+              </div>
             </section>
           </div>
           {selectedMoreBankWord && <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#10242e]/96 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl"><div className="flex items-start justify-between gap-3 border-b border-white/12 p-5"><div><p className="text-[10px] font-black uppercase tracking-[0.24em] text-[#8eb9cf]">Bank Word</p><h2 className="mt-2 text-4xl font-black leading-tight text-white">{selectedMoreBankWord.word}</h2><p className="mt-2 text-2xl font-extrabold text-[#8eb9cf]">{selectedMoreBankWord.phonetic}</p></div><button onClick={() => setSelectedMoreBankWord(null)} className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/12 text-2xl font-black text-white transition hover:bg-white/22 active:scale-95" aria-label="Close 关闭" title="Close / 关闭">×</button></div><div className="flex-1 overflow-auto p-5"><div className="rounded-2xl border border-white/12 bg-white/10 p-4"><p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#8eb9cf]">中文意思</p><p className="mt-2 text-2xl font-black text-white">{selectedMoreBankWord.meaning}</p></div><div className="mt-4 rounded-2xl border border-white/12 bg-black/18 p-4"><p className="text-[10px] font-black uppercase tracking-[0.2em] text-coral">Example</p><p className="mt-2 text-2xl font-black leading-9 text-white">{selectedMoreBankWord.example}</p><p className="mt-2 text-lg font-bold leading-8 text-cream/78">{selectedMoreBankWord.translation}</p></div><div className="mt-5 grid grid-cols-2 gap-3"><button onClick={() => speakEnglish(selectedMoreBankWord.word, 0.9, `more-bank-${selectedMoreBankWord.id}-normal`)} className="rounded-2xl bg-[#8eb9cf] px-4 py-3 text-base font-black text-[#10242e] shadow-label transition hover:-translate-y-0.5 hover:bg-[#b4d4e4] active:translate-y-0"><ButtonCopy en="Normal" zh="正常语速" /></button><button onClick={() => speakEnglish(selectedMoreBankWord.word, 0.65, `more-bank-${selectedMoreBankWord.id}-slow`)} className="rounded-2xl border border-[#8eb9cf]/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"><ButtonCopy en="Slow" zh="慢速朗读" /></button></div><button onClick={() => speakEnglish(selectedMoreBankWord.example, 0.86, `more-bank-${selectedMoreBankWord.id}-sentence`)} className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"><ButtonCopy en="Play Sentence" zh="朗读例句" /></button><button onClick={() => saveWordEntry(makeMoreBankWordBookEntry(selectedMoreBankWord))} disabled={isWordSaved(selectedMoreBankWord.word)} className={`mt-3 w-full rounded-2xl px-4 py-3 text-base font-black shadow-label transition active:scale-[0.99] ${isWordSaved(selectedMoreBankWord.word) ? "bg-coral text-white" : "bg-white/12 text-white hover:bg-white/22"}`}><ButtonCopy en={isWordSaved(selectedMoreBankWord.word) ? "Added to Word Book" : "Add to Word Book"} zh={isWordSaved(selectedMoreBankWord.word) ? "已加入生词本" : "加入生词本"} /></button>{isWordSaved(selectedMoreBankWord.word) && <button onClick={() => removeWordEntry(selectedMoreBankWord.word)} className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"><ButtonCopy en="Remove from Word Book" zh="移出生词本" /></button>}<button onClick={finishBankVisit} className="mt-6 w-full rounded-2xl bg-[#8eb9cf] px-4 py-4 text-lg font-black text-[#10242e] shadow-label transition hover:-translate-y-0.5 hover:bg-[#b4d4e4] active:translate-y-0"><ButtonCopy en="Finish Bank Visit" zh="结束银行之旅" /></button></div></aside>}
@@ -17896,7 +18124,7 @@ function App() {
       )}
 
       {showMoreApartmentBook && isApartmentChapter && !showEnding && (
-        <div className="fixed inset-0 z-50 overflow-auto bg-[#241b17]/97 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
+        <div className="more-word-book-page fixed inset-0 z-50 overflow-auto bg-[#241b17]/97 px-4 py-5 text-cream backdrop-blur-sm sm:px-6">
           <div className="mx-auto max-w-6xl">
             <header className="flex flex-col gap-4 rounded-3xl border border-white/16 bg-nightglass p-4 shadow-glow backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
               <div><p className="text-[11px] font-black uppercase tracking-[0.24em] text-[#e3b77d]">More Apartment Words</p><h2 className="mt-2 text-3xl font-black text-white sm:text-5xl">More Apartment Words</h2><p className="mt-2 text-lg font-bold text-cream/78">更多公寓租房词汇</p></div>
@@ -17906,7 +18134,19 @@ function App() {
             <div className="mt-5 flex gap-2 overflow-x-auto pb-1">{moreApartmentPages.map((page, index) => <button key={page.id} onClick={() => { setMoreApartmentPageIndex(index); setSelectedMoreApartmentWord(null); }} className={`min-w-[210px] rounded-2xl px-4 py-3 text-left font-black shadow-label transition hover:-translate-y-0.5 active:translate-y-0 ${index === moreApartmentPageIndex ? "bg-[#916745] text-white" : "border border-white/16 bg-white/10 text-cream hover:bg-white/18"}`}><span className="block text-sm">{page.title}</span><span className="mt-1 block text-xs font-bold opacity-75">{page.zh}</span></button>)}</div>
             <section className="mt-5 rounded-3xl border border-white/14 bg-nightglass p-4 shadow-glow backdrop-blur-xl">
               <div className="flex flex-wrap items-end justify-between gap-3"><div><p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#e3b77d]">Page {moreApartmentPageIndex + 1}/3</p><h3 className="mt-1 text-2xl font-black text-white">{currentMoreApartmentPage.title}<span className="ml-2 text-[#e3b77d]">{currentMoreApartmentPage.zh}</span></h3></div><p className="text-sm font-black text-cream/75">{currentApartmentPageExploredCount}/12 learned · 已学习</p></div>
-              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{currentMoreApartmentPage.words.map((word) => { const learned = learnedMoreApartmentWords.includes(word.id); return <button key={word.id} onClick={() => openMoreApartmentWord(word)} className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${learned ? "border-[#e3b77d]/55 bg-[#5a4030]/75" : "border-white/14 bg-white/10 hover:border-[#e3b77d]/45 hover:bg-white/16"}`}><div className="flex items-start gap-3"><span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-[#e3b77d]/35 bg-[#5a4030]/72 text-xl font-black text-[#e3b77d] transition group-hover:scale-105">{word.word.slice(0, 1).toUpperCase()}</span><span className="min-w-0"><span className="block text-lg font-black leading-tight text-white">{word.word}</span><span className="mt-1 block text-sm font-bold text-cream/72">{word.meaning}</span></span></div><div className="mt-3 flex items-center justify-between gap-2"><span className="text-xs font-black text-[#e3b77d]">{word.phonetic}</span>{learned && <span className="rounded-full bg-[#e3b77d] px-2 py-1 text-[10px] font-black uppercase text-[#342319]">Learned · 已学习</span>}</div></button>; })}</div>
+              <div className="more-word-grid mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {currentMoreApartmentPage.words.map((word) => {
+                  const learned = learnedMoreApartmentWords.includes(word.id);
+                  return (
+                    <div key={word.id} className="contents">
+                      <button onClick={() => openMoreApartmentWord(word)} className={`group rounded-2xl border p-4 text-left shadow-label transition hover:-translate-y-1 active:translate-y-0 ${learned ? "border-[#e3b77d]/55 bg-[#5a4030]/75" : "border-white/14 bg-white/10 hover:border-[#e3b77d]/45 hover:bg-white/16"}`}>
+                        <div className="flex items-start gap-3"><span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-[#e3b77d]/35 bg-[#5a4030]/72 text-xl font-black text-[#e3b77d] transition group-hover:scale-105">{word.word.slice(0, 1).toUpperCase()}</span><span className="min-w-0"><span className="block text-lg font-black leading-tight text-white">{word.word}</span><span className="mt-1 block text-sm font-bold text-cream/72">{word.meaning}</span></span></div><div className="mt-3 flex items-center justify-between gap-2"><span className="text-xs font-black text-[#e3b77d]">{word.phonetic}</span>{learned && <span className="rounded-full bg-[#e3b77d] px-2 py-1 text-[10px] font-black uppercase text-[#342319]">Learned · 已学习</span>}</div>
+                      </button>
+                      {activeMoreWordId === `apartment:${word.id}` && renderMobileMoreWordDetails("apartment", word, `more-apartment-${word.id}`, makeMoreApartmentWordBookEntry(word))}
+                    </div>
+                  );
+                })}
+              </div>
             </section>
           </div>
           {selectedMoreApartmentWord && <aside className="card-slide-in fixed bottom-0 right-0 top-0 z-[60] flex w-full max-w-md flex-col border-l border-white/16 bg-[#342319]/96 text-cream shadow-glow backdrop-blur-2xl sm:rounded-l-3xl"><div className="flex items-start justify-between gap-3 border-b border-white/12 p-5"><div><p className="text-[10px] font-black uppercase tracking-[0.24em] text-[#e3b77d]">Apartment Word</p><h2 className="mt-2 text-4xl font-black leading-tight text-white">{selectedMoreApartmentWord.word}</h2><p className="mt-2 text-2xl font-extrabold text-[#e3b77d]">{selectedMoreApartmentWord.phonetic}</p></div><button onClick={() => setSelectedMoreApartmentWord(null)} className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/12 text-2xl font-black text-white transition hover:bg-white/22 active:scale-95" aria-label="Close 关闭" title="Close / 关闭">×</button></div><div className="flex-1 overflow-auto p-5"><div className="rounded-2xl border border-white/12 bg-white/10 p-4"><p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#e3b77d]">中文意思</p><p className="mt-2 text-2xl font-black text-white">{selectedMoreApartmentWord.meaning}</p></div><div className="mt-4 rounded-2xl border border-white/12 bg-black/18 p-4"><p className="text-[10px] font-black uppercase tracking-[0.2em] text-coral">Example</p><p className="mt-2 text-2xl font-black leading-9 text-white">{selectedMoreApartmentWord.example}</p><p className="mt-2 text-lg font-bold leading-8 text-cream/78">{selectedMoreApartmentWord.translation}</p></div><div className="mt-5 grid grid-cols-2 gap-3"><button onClick={() => speakEnglish(selectedMoreApartmentWord.word, 0.9, `more-apartment-${selectedMoreApartmentWord.id}-normal`)} className="rounded-2xl bg-[#e3b77d] px-4 py-3 text-base font-black text-[#342319] shadow-label transition hover:-translate-y-0.5 hover:bg-[#f2ce9d] active:translate-y-0"><ButtonCopy en="Normal" zh="正常语速" /></button><button onClick={() => speakEnglish(selectedMoreApartmentWord.word, 0.65, `more-apartment-${selectedMoreApartmentWord.id}-slow`)} className="rounded-2xl border border-[#e3b77d]/40 bg-white/12 px-4 py-3 text-base font-black text-white shadow-label transition hover:-translate-y-0.5 hover:bg-white/22 active:translate-y-0"><ButtonCopy en="Slow" zh="慢速朗读" /></button></div><button onClick={() => speakEnglish(selectedMoreApartmentWord.example, 0.86, `more-apartment-${selectedMoreApartmentWord.id}-sentence`)} className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"><ButtonCopy en="Play Sentence" zh="朗读例句" /></button><button onClick={() => saveWordEntry(makeMoreApartmentWordBookEntry(selectedMoreApartmentWord))} disabled={isWordSaved(selectedMoreApartmentWord.word)} className={`mt-3 w-full rounded-2xl px-4 py-3 text-base font-black shadow-label transition active:scale-[0.99] ${isWordSaved(selectedMoreApartmentWord.word) ? "bg-coral text-white" : "bg-white/12 text-white hover:bg-white/22"}`}><ButtonCopy en={isWordSaved(selectedMoreApartmentWord.word) ? "Added to Word Book" : "Add to Word Book"} zh={isWordSaved(selectedMoreApartmentWord.word) ? "已加入生词本" : "加入生词本"} /></button>{isWordSaved(selectedMoreApartmentWord.word) && <button onClick={() => removeWordEntry(selectedMoreApartmentWord.word)} className="mt-3 w-full rounded-2xl border border-white/18 bg-white/10 px-4 py-3 text-base font-black text-white transition hover:bg-white/20 active:scale-[0.99]"><ButtonCopy en="Remove from Word Book" zh="移出生词本" /></button>}<button onClick={finishApartmentVisit} className="mt-6 w-full rounded-2xl bg-[#e3b77d] px-4 py-4 text-lg font-black text-[#342319] shadow-label transition hover:-translate-y-0.5 hover:bg-[#f2ce9d] active:translate-y-0"><ButtonCopy en="Finish Apartment Visit" zh="结束公寓看房之旅" /></button></div></aside>}

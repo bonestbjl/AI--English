@@ -1407,21 +1407,44 @@
       .pond-ripple { animation: pondRipple 4.4s ease-in-out infinite; }
       .reed-sway { animation: reedSway 5.5s ease-in-out infinite; }
       .hippo-yawn-drift { animation: hippoYawnDrift 1.2s ease-out both; }
+      .more-word-mobile-detail { display: none; }
 
       @media (max-width: 768px) {
         .home-page .home-legal-footer {
           display: none !important;
         }
       }
+
+      @media (max-width: 768px), (max-width: 950px) and (orientation: landscape) and (max-height: 520px) {
+        .mobile-landscape-mode > .more-word-book-page {
+          z-index: 70 !important;
+        }
+        .more-word-grid {
+          grid-template-columns: minmax(0, 1fr) !important;
+        }
+        .more-word-desktop-detail,
+        .more-word-book-page > aside {
+          display: none !important;
+        }
+        .more-word-mobile-detail {
+          display: block;
+          grid-column: 1 / -1;
+          width: 100%;
+          min-width: 0;
+          max-width: 100%;
+          overflow-wrap: anywhere;
+          scroll-margin-block: 5.5rem 1rem;
+        }
+      }
     </style>
-    <link rel="stylesheet" href="assets/app/app-b4bbdbbececc.css" />
+    <link rel="stylesheet" href="assets/app/app-469d570c485c.css" />
     <script defer src="vendor/react.production.min.js"></script>
     <script defer src="vendor/react-dom.production.min.js"></script>
   </head>
   <body class="bg-[#17251c] text-cream">
     <div id="root"></div>
 
-    <script defer src="assets/app/app-434ecb8c84a8.js"></script>
+    <script defer src="assets/app/app-3adc6edeb914.js"></script>
     <script>
       if (
         "serviceWorker" in navigator &&
