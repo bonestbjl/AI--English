@@ -1,7 +1,9 @@
-const PHONE_PATTERN = /^\d{6,20}$/;
+const crypto = require("node:crypto");
+const PHONE_PATTERN = /^1[3-9]\d{9}$/;
 
 function sendJson(res, status, body) {
   res.setHeader("Content-Type", "application/json; charset=utf-8");
+  res.setHeader("Cache-Control", "no-store");
   res.status(status).json(body);
 }
 
@@ -23,16 +25,31 @@ function normalizeUser(row, source = "supabase") {
   };
 }
 
-function readRequestBody(req) {
-  if (!req.body) return {};
-  if (typeof req.body === "string") {
-    try {
-      return JSON.parse(req.body);
-    } catch (error) {
-      return {};
-    }
+function authenticateUser(req) {
+  const authorization = String(req.headers?.authorization || req.headers?.Authorization || "");
+  const token = authorization.match(/^Bearer\s+(.+)$/i)?.[1]?.trim() || "";
+  const parts = token.split(".");
+  if (parts.length !== 2 || parts.some((part) => !/^[A-Za-z0-9_-]+$/.test(part))) return null;
+  let secret = String(process.env.AUTH_TOKEN_SECRET || process.env.SMS_CODE_SECRET || "").trim();
+  // Match the existing login issuer's development-only mock secret.
+  if (!secret && String(process.env.SMS_MODE || "mock").trim().toLowerCase() === "mock"
+      && process.env.NODE_ENV !== "production" && process.env.VERCEL_ENV !== "production") {
+    secret = "development_sms_code_secret";
   }
-  return req.body;
+  if (!secret) return null;
+  const [payloadPart, signaturePart] = parts;
+  const expected = Buffer.from(crypto.createHmac("sha256", secret).update(payloadPart).digest("base64url"));
+  const actual = Buffer.from(signaturePart);
+  if (actual.length !== expected.length || !crypto.timingSafeEqual(actual, expected)) return null;
+  try {
+    const payload = JSON.parse(Buffer.from(payloadPart, "base64url").toString("utf8"));
+    const phone = String(payload.phone || "").trim();
+    const expiresAt = Number(payload.exp);
+    if (!PHONE_PATTERN.test(phone) || !Number.isFinite(expiresAt) || expiresAt <= Math.floor(Date.now() / 1000)) return null;
+    return { phone, expiresAt };
+  } catch (error) {
+    return null;
+  }
 }
 
 function sanitizeDetail(value) {
@@ -80,33 +97,16 @@ async function fetchExistingUser({ supabaseUrl, serviceRoleKey, phone }) {
   return Array.isArray(body) ? body[0] || null : null;
 }
 
-async function createFreeUser({ supabaseUrl, serviceRoleKey, phone }) {
-  const endpoint = `${supabaseUrl}/rest/v1/users`;
-  const response = await fetch(endpoint, {
-    method: "POST",
-    headers: {
-      apikey: serviceRoleKey,
-      Authorization: `Bearer ${serviceRoleKey}`,
-      "Content-Type": "application/json",
-      Prefer: "return=representation",
-    },
-    body: JSON.stringify({ phone, role: "free", plan: "free" }),
-  });
-  const body = await readSupabaseJson(response);
-  if (!response.ok) {
-    const error = new Error("supabase_create_failed");
-    error.status = response.status;
-    error.body = body;
-    error.detail = sanitizeDetail(body);
-    throw error;
-  }
-  return Array.isArray(body) ? body[0] || { phone, role: "free", plan: "free", premium_until: null, lifetime_access: false } : body;
-}
-
 module.exports = async function handler(req, res) {
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
     sendJson(res, 405, { ok: false, error: "method_not_allowed" });
+    return;
+  }
+
+  const auth = authenticateUser(req);
+  if (!auth) {
+    sendJson(res, 401, { ok: false, error: "unauthorized" });
     return;
   }
 
@@ -117,46 +117,16 @@ module.exports = async function handler(req, res) {
     return;
   }
 
-  const body = readRequestBody(req);
-  const phone = String(body.phone || "").trim();
-  if (!PHONE_PATTERN.test(phone)) {
-    sendJson(res, 400, { ok: false, error: "invalid_phone" });
-    return;
-  }
-
   try {
-    const requestContext = { supabaseUrl: supabaseUrl.replace(/\/+$/, ""), serviceRoleKey, phone };
+    const requestContext = { supabaseUrl: supabaseUrl.replace(/\/+$/, ""), serviceRoleKey, phone: auth.phone };
     const existingUser = await fetchExistingUser(requestContext);
     if (existingUser) {
-      sendJson(res, 200, { ok: true, user: normalizeUser(existingUser) });
+      sendJson(res, 200, { ok: true, user: normalizeUser(existingUser), authExpiresAt: auth.expiresAt });
       return;
     }
 
-    const createdUser = await createFreeUser(requestContext);
-    sendJson(res, 200, { ok: true, user: normalizeUser(createdUser) });
+    sendJson(res, 404, { ok: false, error: "user_not_found" });
   } catch (error) {
-    if (error.status === 409) {
-      try {
-        const existingUser = await fetchExistingUser({
-          supabaseUrl: supabaseUrl.replace(/\/+$/, ""),
-          serviceRoleKey,
-          phone,
-        });
-        if (existingUser) {
-          sendJson(res, 200, { ok: true, user: normalizeUser(existingUser) });
-          return;
-        }
-      } catch (retryError) {
-        sendJson(res, 500, {
-          ok: false,
-          error: retryError.message || "supabase_retry_failed",
-          status: retryError.status || 500,
-          detail: sanitizeDetail(retryError.detail || retryError.body || retryError.message),
-        });
-        return;
-      }
-    }
-
     sendJson(res, 500, {
       ok: false,
       error: error.message || "supabase_request_failed",

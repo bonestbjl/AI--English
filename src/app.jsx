@@ -9247,16 +9247,8 @@ const PAYMENT_PLANS = {
     buttonZh: "购买终身版 ¥199",
   },
 };
-const LOCAL_TEST_ACCOUNT_PROFILES = {
-  "13111111111": { role: "free", plan: "free" },
-  "18888888888": { role: "free", plan: "free" },
-  "19999999999": { role: "premium", plan: "premium" },
-  "16666666666": { role: "developer", plan: "developer" },
-};
-
-function getLocalTestAccountProfile(phone) {
-  return LOCAL_TEST_ACCOUNT_PROFILES[String(phone || "").trim()] || null;
-}
+let verifiedUserPlan = null;
+let userPlanRequestId = 0;
 
 function isFutureDate(value) {
   if (!value) return false;
@@ -9277,14 +9269,17 @@ function formatPriceFromCents(amountCents) {
   return Number.isInteger(amount) ? `¥${amount}` : `¥${amount.toFixed(1)}`;
 }
 
-function getUserAccessProfile(phone, role = "free", plan = "free", premiumUntil = null, lifetimeAccess = false) {
-  if (role === "developer" || plan === "developer") return { role: "developer", plan: "developer" };
-  if (lifetimeAccess === true || plan === "lifetime") return { role: "premium", plan: "lifetime" };
-  if (isFutureDate(premiumUntil)) return { role: "premium", plan: "premium" };
-  const localProfile = getLocalTestAccountProfile(phone);
-  if (localProfile) return localProfile;
-  if (role === "premium" || plan === "premium") return { role: "free", plan: "free" };
-  return { role, plan };
+function getUserAccessProfile(phone, authToken) {
+  const free = { role: "free", plan: "free", premiumUntil: null, lifetimeAccess: false };
+  // Local storage identifies the session; only this server-verified snapshot grants access.
+  if (!authToken || !verifiedUserPlan || verifiedUserPlan.phone !== phone
+      || verifiedUserPlan.authToken !== authToken || verifiedUserPlan.authExpiresAt <= Date.now() / 1000) return free;
+  const { role, plan, premiumUntil, lifetimeAccess } = verifiedUserPlan;
+  const details = { premiumUntil, lifetimeAccess };
+  if (role === "developer" || plan === "developer") return { ...details, role: "developer", plan: "developer" };
+  if (lifetimeAccess === true) return { ...details, role: "premium", plan: "lifetime" };
+  if (isFutureDate(premiumUntil)) return { ...details, role: "premium", plan: "premium" };
+  return { ...free, premiumUntil };
 }
 
 function getCurrentUser() {
@@ -9292,16 +9287,15 @@ function getCurrentUser() {
   try {
     const saved = JSON.parse(window.localStorage.getItem(AUTH_STORAGE_KEY) || "null");
     if (!saved?.phone || saved.isLoggedIn !== true) return null;
-    const premiumUntil = saved.premiumUntil || saved.premium_until || null;
-    const lifetimeAccess = saved.lifetimeAccess === true || saved.lifetime_access === true;
-    const access = getUserAccessProfile(saved.phone, saved.role || "free", saved.plan || "free", premiumUntil, lifetimeAccess);
+    const authToken = saved.authToken || saved.auth_token || "";
+    const access = getUserAccessProfile(String(saved.phone), authToken);
     return {
       phone: String(saved.phone),
       role: access.role,
       plan: access.plan,
-      premiumUntil,
-      lifetimeAccess,
-      authToken: saved.authToken || saved.auth_token || "",
+      premiumUntil: access.premiumUntil,
+      lifetimeAccess: access.lifetimeAccess,
+      authToken,
       isLoggedIn: true,
       loginAt: saved.loginAt || Date.now(),
       planSource: saved.planSource || "local_fallback",
@@ -9314,16 +9308,20 @@ function getCurrentUser() {
 function setCurrentUser(user) {
   if (typeof window === "undefined" || !user?.phone) return null;
   const phone = String(user.phone).trim();
-  const premiumUntil = user.premiumUntil || user.premium_until || null;
-  const lifetimeAccess = user.lifetimeAccess === true || user.lifetime_access === true || user.plan === "lifetime";
-  const access = getUserAccessProfile(phone, user.role || "free", user.plan || "free", premiumUntil, lifetimeAccess);
+  const authToken = user.authToken || user.auth_token || "";
+  const previous = getCurrentUser();
+  if (previous?.phone !== phone || previous?.authToken !== authToken) {
+    verifiedUserPlan = null;
+    userPlanRequestId += 1;
+  }
+  const access = getUserAccessProfile(phone, authToken);
   const nextUser = {
     phone,
     role: access.role,
     plan: access.plan,
-    premiumUntil,
-    lifetimeAccess,
-    authToken: user.authToken || user.auth_token || "",
+    premiumUntil: access.premiumUntil,
+    lifetimeAccess: access.lifetimeAccess,
+    authToken,
     isLoggedIn: true,
     loginAt: user.loginAt || Date.now(),
     planSource: user.planSource || "local_fallback",
@@ -9336,24 +9334,48 @@ function setCurrentUser(user) {
   }
 }
 
-async function fetchUserPlanFromServer(phone) {
-  const response = await fetch("/api/get-user-plan", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ phone }),
-  });
-  let data = null;
+async function fetchUserPlanFromServer(user) {
+  const requestId = ++userPlanRequestId;
+  const authToken = String(user?.authToken || user?.auth_token || "").trim();
   try {
-    data = await response.json();
+    if (!authToken) throw new Error("unauthorized");
+    const response = await fetch("/api/get-user-plan", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: `Bearer ${authToken}` },
+      body: JSON.stringify({}),
+      cache: "no-store",
+    });
+    const data = await response.json();
+    if (!response.ok || data?.ok !== true || !data.user) {
+      const syncError = new Error(data?.error || "plan_sync_failed");
+      syncError.status = response.status;
+      throw syncError;
+    }
+    const activeUser = getCurrentUser();
+    if (requestId !== userPlanRequestId || activeUser?.phone !== user.phone || activeUser?.authToken !== authToken) {
+      throw new Error("stale_user_plan_response");
+    }
+    if (data.user.phone !== user.phone || !Number.isFinite(data.authExpiresAt) || data.authExpiresAt <= Date.now() / 1000) {
+      throw new Error("unauthorized");
+    }
+    verifiedUserPlan = Object.freeze({
+      phone: data.user.phone,
+      authToken,
+      authExpiresAt: data.authExpiresAt,
+      role: data.user.role || "free",
+      plan: data.user.plan || "free",
+      premiumUntil: data.user.premiumUntil || data.user.premium_until || null,
+      lifetimeAccess: data.user.lifetimeAccess === true || data.user.lifetime_access === true,
+    });
+    return data.user;
   } catch (error) {
-    data = null;
+    const activeUser = getCurrentUser();
+    if (requestId !== userPlanRequestId || activeUser?.phone !== user?.phone || activeUser?.authToken !== authToken) {
+      throw new Error("stale_user_plan_response");
+    }
+    verifiedUserPlan = null;
+    throw error;
   }
-  if (!response.ok || data?.ok !== true || !data.user) {
-    const syncError = new Error(data?.error || "plan_sync_failed");
-    syncError.status = response.status;
-    throw syncError;
-  }
-  return data.user;
 }
 
 async function sendLoginCode(phone) {
@@ -9497,6 +9519,8 @@ async function queryAlipayOrderStatus(orderNo, user) {
 }
 
 function logoutUser() {
+  verifiedUserPlan = null;
+  userPlanRequestId += 1;
   if (typeof window === "undefined") return;
   window.localStorage.removeItem(AUTH_STORAGE_KEY);
 }
@@ -9515,11 +9539,7 @@ function getUserPlan() {
 
 function isPremiumUser() {
   const user = getCurrentUser();
-  if (!user) return false;
-  if (user.lifetimeAccess === true || user.plan === "lifetime") return true;
-  if (isFutureDate(user.premiumUntil)) return true;
-  const localProfile = getLocalTestAccountProfile(user.phone);
-  return Boolean(localProfile && (localProfile.role === "premium" || localProfile.plan === "premium"));
+  return Boolean(user && user.role === "premium");
 }
 
 function isDeveloperUser() {
@@ -12281,10 +12301,6 @@ function App() {
     setSelectedMoreHotelWord(null);
     setSelectedMoreRestaurantWord(null);
     setDialogueReply(null);
-    setConversationDone([]);
-    setCompletedActions([]);
-    setLearnedHotspotKeys([]);
-    setLearnedWords([]);
     setProgressHint("");
     setAnimalEffect(null);
     setShowEnding(false);
@@ -12323,10 +12339,6 @@ function App() {
     setSelectedMoreHotelWord(null);
     setSelectedMoreRestaurantWord(null);
     setDialogueReply(null);
-    setConversationDone([]);
-    setCompletedActions([]);
-    setLearnedHotspotKeys([]);
-    setLearnedWords([]);
     setProgressHint("");
     setAnimalEffect(null);
     setShowEnding(false);
@@ -12365,10 +12377,6 @@ function App() {
     setSelectedMoreHotelWord(null);
     setSelectedMoreRestaurantWord(null);
     setDialogueReply(null);
-    setConversationDone([]);
-    setCompletedActions([]);
-    setLearnedHotspotKeys([]);
-    setLearnedWords([]);
     setProgressHint("");
     setAnimalEffect(null);
     setShowEnding(false);
@@ -12407,10 +12415,6 @@ function App() {
     setSelectedMoreHotelWord(null);
     setSelectedMoreRestaurantWord(null);
     setDialogueReply(null);
-    setConversationDone([]);
-    setCompletedActions([]);
-    setLearnedHotspotKeys([]);
-    setLearnedWords([]);
     setProgressHint("");
     setAnimalEffect(null);
     setShowEnding(false);
@@ -12449,10 +12453,6 @@ function App() {
     setSelectedMoreHotelWord(null);
     setSelectedMoreRestaurantWord(null);
     setDialogueReply(null);
-    setConversationDone([]);
-    setCompletedActions([]);
-    setLearnedHotspotKeys([]);
-    setLearnedWords([]);
     setProgressHint("");
     setAnimalEffect(null);
     setShowEnding(false);
@@ -12492,10 +12492,6 @@ function App() {
     setSelectedMoreRestaurantWord(null);
     setSelectedMoreSupermarketWord(null);
     setDialogueReply(null);
-    setConversationDone([]);
-    setCompletedActions([]);
-    setLearnedHotspotKeys([]);
-    setLearnedWords([]);
     setProgressHint("");
     setAnimalEffect(null);
     setShowEnding(false);
@@ -12539,10 +12535,6 @@ function App() {
     setSelectedMoreMetroWord(null);
     setSelectedMoreClinicWord(null);
     setDialogueReply(null);
-    setConversationDone([]);
-    setCompletedActions([]);
-    setLearnedHotspotKeys([]);
-    setLearnedWords([]);
     setProgressHint("");
     setAnimalEffect(null);
     setShowEnding(false);
@@ -12560,11 +12552,11 @@ function App() {
   function finishClinicVisit() { setShowMoreClinicChoice(false); setShowMoreClinicBook(false); setSelectedMoreClinicWord(null); setShowEnding(true); }
 
   function enterBank() {
-    setSceneSelectHint(""); setCurrentChapter("bank"); setCurrentIndex(0); setSelectedHotspot(null); setSelectedMoreBankWord(null); setDialogueReply(null); setConversationDone([]); setCompletedActions([]); setLearnedHotspotKeys([]); setLearnedWords([]); setProgressHint(""); setAnimalEffect(null); setShowEnding(false); setShowMoreBankChoice(false); setShowMoreBankBook(false); setMoreBankPageIndex(0); setShowWelcome(true); setWelcomeLeaving(false); setCurrentView("zoo");
+    setSceneSelectHint(""); setCurrentChapter("bank"); setCurrentIndex(0); setSelectedHotspot(null); setSelectedMoreBankWord(null); setDialogueReply(null); setProgressHint(""); setAnimalEffect(null); setShowEnding(false); setShowMoreBankChoice(false); setShowMoreBankBook(false); setMoreBankPageIndex(0); setShowWelcome(true); setWelcomeLeaving(false); setCurrentView("zoo");
   }
 
   function enterApartment() {
-    setSceneSelectHint(""); setCurrentChapter("apartment"); setCurrentIndex(0); setSelectedHotspot(null); setSelectedMoreApartmentWord(null); setDialogueReply(null); setConversationDone([]); setCompletedActions([]); setLearnedHotspotKeys([]); setLearnedWords([]); setProgressHint(""); setAnimalEffect(null); setShowEnding(false); setShowMoreApartmentChoice(false); setShowMoreApartmentBook(false); setMoreApartmentPageIndex(0); setShowWelcome(true); setWelcomeLeaving(false); setCurrentView("zoo");
+    setSceneSelectHint(""); setCurrentChapter("apartment"); setCurrentIndex(0); setSelectedHotspot(null); setSelectedMoreApartmentWord(null); setDialogueReply(null); setProgressHint(""); setAnimalEffect(null); setShowEnding(false); setShowMoreApartmentChoice(false); setShowMoreApartmentBook(false); setMoreApartmentPageIndex(0); setShowWelcome(true); setWelcomeLeaving(false); setCurrentView("zoo");
   }
 
   function enterLaundry() {
@@ -12608,7 +12600,7 @@ function App() {
   }
 
   function enterClinic() { setSceneSelectHint(""); setCurrentChapter("clinic"); setCurrentIndex(0); setSelectedHotspot(null); setSelectedMoreAnimal(null); setSelectedMoreFruit(null); setSelectedMoreCampusWord(null); setSelectedMoreCafeWord(null); setSelectedMoreAirportWord(null); setSelectedMoreOfficeWord(null); setSelectedMoreHotelWord(null); setSelectedMoreRestaurantWord(null); setSelectedMoreSupermarketWord(null); setSelectedMoreMetroWord(null);
-    setSelectedMoreClinicWord(null); setSelectedMoreClinicWord(null); setDialogueReply(null); setConversationDone([]); setCompletedActions([]); setLearnedHotspotKeys([]); setLearnedWords([]); setProgressHint(""); setAnimalEffect(null); setShowEnding(false); setShowMoreClinicChoice(false); setShowMoreClinicBook(false); setMoreClinicPageIndex(0); setShowWelcome(true); setWelcomeLeaving(false); setCurrentView("zoo"); }
+    setSelectedMoreClinicWord(null); setSelectedMoreClinicWord(null); setDialogueReply(null); setProgressHint(""); setAnimalEffect(null); setShowEnding(false); setShowMoreClinicChoice(false); setShowMoreClinicBook(false); setMoreClinicPageIndex(0); setShowWelcome(true); setWelcomeLeaving(false); setCurrentView("zoo"); }
 
   function enterCampus() {
     setSceneSelectHint("");
@@ -12625,10 +12617,6 @@ function App() {
     setSelectedMoreRestaurantWord(null);
     setSelectedMoreSupermarketWord(null);
     setDialogueReply(null);
-    setConversationDone([]);
-    setCompletedActions([]);
-    setLearnedHotspotKeys([]);
-    setLearnedWords([]);
     setProgressHint("");
     setAnimalEffect(null);
     setShowEnding(false);
@@ -12818,7 +12806,9 @@ function App() {
   async function syncUserPlan(user, { silent = false } = {}) {
     if (!user?.phone) return null;
     try {
-      const remoteUser = await fetchUserPlanFromServer(user.phone);
+      const remoteUser = await fetchUserPlanFromServer(user);
+      const activeUser = getCurrentUser();
+      if (activeUser?.phone !== user.phone || activeUser?.authToken !== user.authToken) return null;
       const syncedUser = setCurrentUser({
         ...user,
         role: remoteUser.role || "free",
@@ -12832,17 +12822,20 @@ function App() {
         return syncedUser;
       }
     } catch (error) {
-      const fallbackAccess = getUserAccessProfile(user.phone, user.role || "free", user.plan || "free", user.premiumUntil, user.lifetimeAccess);
+      if (error.message === "stale_user_plan_response") return null;
+      const activeUser = getCurrentUser();
+      if (activeUser?.phone !== user.phone || activeUser?.authToken !== user.authToken) return null;
+      const fallbackAccess = getUserAccessProfile(user.phone, user.authToken || user.auth_token || "");
       const fallbackUser = setCurrentUser({
         ...user,
         role: fallbackAccess.role,
         plan: fallbackAccess.plan,
-        premiumUntil: user.premiumUntil || null,
-        lifetimeAccess: user.lifetimeAccess === true,
+        premiumUntil: fallbackAccess.premiumUntil,
+        lifetimeAccess: fallbackAccess.lifetimeAccess,
         planSource: "local_fallback",
       });
       if (fallbackUser) setAuthenticatedUser(fallbackUser);
-      if (!silent) showAuthToast("云端身份同步失败，已使用本地测试身份。");
+      if (!silent) showAuthToast("会员状态暂时无法确认，请联网后重试。");
       return fallbackUser;
     }
     return null;
@@ -13214,6 +13207,45 @@ function App() {
   }
 
   function restartTrip() {
+    const sceneIds = new Set(activeScenes.map((scene) => scene.id));
+    const hotspotKeys = new Set(activeScenes.flatMap((scene) =>
+      scene.hotspots.map((hotspot) => `${scene.id}:${hotspot.id}`)
+    ));
+    const dialogueIds = new Set(Object.values(activeDialogues).map((dialogue) => dialogue.id));
+    const completedSceneKeys = new Set(activeScenes.map((scene) => `${currentChapter}:${scene.id}`));
+    const morePagesByChapter = {
+      zoo: moreAnimalPages,
+      fruitShop: moreFruitPages,
+      campus: moreCampusPages,
+      cafe: moreCafePages,
+      airport: moreAirportPages,
+      office: moreOfficePages,
+      hotel: moreHotelPages,
+      restaurant: moreRestaurantPages,
+      supermarket: moreSupermarketPages,
+      metro: moreMetroPages,
+      clinic: moreClinicPages,
+      bank: moreBankPages,
+      apartment: moreApartmentPages,
+    };
+    const pageWords = (pages) => pages.flatMap((page) =>
+      (page.animals || page.fruits || page.words || []).map((item) => item.word)
+    );
+    const currentWords = new Set([
+      ...activeScenes.flatMap((scene) => scene.hotspots.map((hotspot) => hotspot.word)),
+      ...pageWords(morePagesByChapter[currentChapter] || []),
+    ]);
+    // learnedWords stores text, not ownership. Preserve shared and unknown legacy words.
+    const otherWords = new Set([
+      ...[scenes, fruitShopScenes, campusScenes, cafeScenes, airportScenes, officeScenes,
+        hotelScenes, restaurantScenes, supermarketScenes, metroScenes, clinicScenes,
+        bankScenes, apartmentScenes, laundryScenes]
+        .filter((group) => group !== activeScenes)
+        .flatMap((group) => group.flatMap((scene) => scene.hotspots.map((hotspot) => hotspot.word))),
+      ...Object.entries(morePagesByChapter)
+        .filter(([chapter]) => chapter !== currentChapter)
+        .flatMap(([, pages]) => pageWords(pages)),
+    ]);
     setCurrentIndex(0);
     setSelectedHotspot(null);
     setSelectedMoreAnimal(null);
@@ -13230,23 +13262,24 @@ function App() {
     setSelectedMoreBankWord(null);
     setSelectedMoreApartmentWord(null);
     setDialogueReply(null);
-    setConversationDone([]);
-    setCompletedActions([]);
-    setLearnedHotspotKeys([]);
-    setLearnedMoreAnimals([]);
-    setLearnedMoreFruits([]);
-    setLearnedMoreCampusWords([]);
-    setLearnedMoreCafeWords([]);
-    setLearnedMoreAirportWords([]);
-    setLearnedMoreOfficeWords([]);
-    setLearnedMoreHotelWords([]);
-    setLearnedMoreRestaurantWords([]);
-    setLearnedMoreSupermarketWords([]);
-    setLearnedMoreMetroWords([]);
-    setLearnedMoreClinicWords([]);
-    setLearnedMoreBankWords([]);
-    setLearnedMoreApartmentWords([]);
-    setLearnedWords([]);
+    setConversationDone((items) => items.filter((id) => !dialogueIds.has(id)));
+    setCompletedActions((items) => items.filter((id) => !sceneIds.has(id)));
+    setLearnedHotspotKeys((items) => items.filter((key) => !hotspotKeys.has(key)));
+    setCompletedSceneIds((items) => items.filter((key) => !completedSceneKeys.has(key)));
+    if (isZooChapter) setLearnedMoreAnimals([]);
+    if (isFruitShopChapter) setLearnedMoreFruits([]);
+    if (isCampusChapter) setLearnedMoreCampusWords([]);
+    if (isCafeChapter) setLearnedMoreCafeWords([]);
+    if (isAirportChapter) setLearnedMoreAirportWords([]);
+    if (isOfficeChapter) setLearnedMoreOfficeWords([]);
+    if (isHotelChapter) setLearnedMoreHotelWords([]);
+    if (isRestaurantChapter) setLearnedMoreRestaurantWords([]);
+    if (isSupermarketChapter) setLearnedMoreSupermarketWords([]);
+    if (isMetroChapter) setLearnedMoreMetroWords([]);
+    if (isClinicChapter) setLearnedMoreClinicWords([]);
+    if (isBankChapter) setLearnedMoreBankWords([]);
+    if (isApartmentChapter) setLearnedMoreApartmentWords([]);
+    setLearnedWords((words) => words.filter((word) => !currentWords.has(word) || otherWords.has(word)));
     setShowMoreAnimalsChoice(false);
     setShowMoreAnimalsBook(false);
     setShowMoreFruitsChoice(false);

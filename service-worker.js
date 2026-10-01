@@ -1,9 +1,10 @@
 const CACHE_PREFIX = "real-scene-root";
 const THEME_PACK_VERSION = "themes-c940b01c395d";
-const APP_BUNDLE_VERSION = "3adc6edeb914";
+const APP_BUNDLE_VERSION = "6201fb1fc4a8";
 const APP_STYLE_VERSION = "469d570c485c";
 const CACHE_VERSION = `v3-${THEME_PACK_VERSION}-${APP_BUNDLE_VERSION}-${APP_STYLE_VERSION}`;
-const APP_CACHE = `${CACHE_PREFIX}-${CACHE_VERSION}`;
+// Retire the previous app cache, including any cached API responses.
+const APP_CACHE = `${CACHE_PREFIX}-${CACHE_VERSION}-api-network-only-v1`;
 const INDEX_URL = new URL("./index.html", self.registration.scope).href;
 const APP_SHELL = [
   "./index.html",
@@ -12,7 +13,7 @@ const APP_SHELL = [
   "./assets/app-icon-512.png",
   "./vendor/react.production.min.js",
   "./vendor/react-dom.production.min.js",
-  "./assets/app/app-3adc6edeb914.js",
+  "./assets/app/app-6201fb1fc4a8.js",
   "./assets/app/app-469d570c485c.css",
 ];
 
@@ -42,10 +43,14 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   const request = event.request;
-  if (request.method !== "GET") return;
-
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
+
+  if (url.pathname.startsWith("/api/")) {
+    event.respondWith(fetch(request));
+    return;
+  }
+  if (request.method !== "GET") return;
 
   if (request.mode === "navigate") {
     event.respondWith(
